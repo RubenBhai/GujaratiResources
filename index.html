@@ -84,7 +84,7 @@
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-weight: 300;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: rgba(240,230,210,0.75);
     margin: 0 0 10px;
   }
@@ -121,9 +121,19 @@
   .ornament::after  { right: -16px; }
 
   /* ── INTRO ── */
+  section.intro {
+    background: rgba(15, 18, 25, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(184,134,61,0.2);
+    border-radius: 6px;
+    padding: 32px 36px;
+    margin-bottom: 8px;
+  }
+
   section.intro p {
-    font-size: 1.08rem;
-    color: rgba(240,230,210,0.88);
+    font-size: 1.18rem;
+    color: rgba(240,230,210,0.92);
     margin: 0 0 22px;
   }
 
@@ -132,7 +142,7 @@
   .pull-quote {
     font-family: 'Fraunces', serif;
     font-style: italic;
-    font-size: 1.32rem;
+    font-size: 1.45rem;
     color: #F0E6D2;
     border-left: 3px solid var(--saffron);
     padding: 4px 0 4px 24px;
@@ -155,14 +165,14 @@
   h2.section-title {
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: 1.75rem;
+    font-size: 2rem;
     margin: 70px 0 6px;
     color: #F0E6D2;
   }
 
   .section-sub {
-    color: rgba(240,230,210,0.6);
-    font-size: 0.96rem;
+    color: rgba(240,230,210,0.65);
+    font-size: 1.05rem;
     margin: 0 0 32px;
   }
 
@@ -206,8 +216,8 @@
 
   .layer-card p {
     margin: 0 0 16px;
-    font-size: 0.96rem;
-    color: rgba(240,230,210,0.7);
+    font-size: 1.05rem;
+    color: rgba(240,230,210,0.75);
     line-height: 1.6;
   }
 
@@ -269,8 +279,8 @@
   }
 
   .commitment-block p {
-    font-size: 0.97rem;
-    color: rgba(240,230,210,0.7);
+    font-size: 1.05rem;
+    color: rgba(240,230,210,0.75);
     margin: 0;
     line-height: 1.65;
   }
