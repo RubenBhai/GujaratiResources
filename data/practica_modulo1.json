@@ -1,0 +1,98 @@
+{
+  "1-1": {
+    "titulo": "Lección 1.1 — ¿Quién hizo qué?",
+    "fuente": "Libro 1, પાઠ ૧",
+    "frases": [
+      {
+        "gujarati": "પૃથ્વી કોણે બનાવી?",
+        "espanol": "¿Quién hizo la Tierra?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-1_Audio_001.mp3"
+      },
+      {
+        "gujarati": "દરિયો કોણે બનાવ્યો?",
+        "espanol": "¿Quién hizo el mar?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-1_Audio_002.mp3"
+      },
+      {
+        "gujarati": "આપણને બધાને કોણે બનાવ્યા?",
+        "espanol": "¿Quién nos hizo a todos?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-1_Audio_003.mp3"
+      },
+      {
+        "gujarati": "રંગબેરંગી પતંગિયું કોણે બનાવ્યું?",
+        "espanol": "¿Quién hizo la mariposa colorida?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-1_Audio_004.mp3"
+      },
+      {
+        "gujarati": "યહોવા ઈશ્વરે બધું જ બનાવ્યું.",
+        "espanol": "Jehová Dios hizo todo.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-1_Audio_005.mp3"
+      }
+    ]
+  },
+  "1-2": {
+    "titulo": "Lección 1.2 — ¿Dónde está?",
+    "fuente": "Libro 1, પાઠ ૨",
+    "frases": [
+      {
+        "gujarati": "ગાય ક્યાં છે?",
+        "espanol": "¿Dónde está la vaca?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-2_Audio_001.mp3"
+      },
+      {
+        "gujarati": "કૂતરો ક્યાં છે?",
+        "espanol": "¿Dónde está el perro?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-2_Audio_002.mp3"
+      },
+      {
+        "gujarati": "સિંહ ક્યાં છે?",
+        "espanol": "¿Dónde está el león?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-2_Ejercicio_Audio_002.mp3"
+      },
+      {
+        "gujarati": "હાથી ક્યાં છે?",
+        "espanol": "¿Dónde está el elefante?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-2_Ejercicio_Audio_001.mp3"
+      }
+    ]
+  },
+  "1-3": {
+    "titulo": "Lección 1.3 — La carta de Dipu",
+    "fuente": "Libro 1, પાઠ ૩",
+    "frases": [
+      {
+        "gujarati": "દીપુને પડી ખબર, દોસ્ત તેનો થયો બીમાર.",
+        "espanol": "Dipu se enteró de que su amigo se enfermó.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-3_Audio_001.mp3"
+      },
+      {
+        "gujarati": "લખીશ તેને ચિઠ્ઠી, લાગશે તેને મીઠ્ઠી.",
+        "espanol": "Le escribiré una carta, la encontrará dulce.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-3_Audio_002.mp3"
+      },
+      {
+        "gujarati": "પછી જઈને આપીશ, એ વાંચીને ખુશ થશે તે!",
+        "espanol": "Luego iré y se la daré; al leerla, estará feliz.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-3_Audio_003.mp3"
+      },
+      {
+        "gujarati": "ભલું કરશો તો, ખુશ થશો!",
+        "espanol": "¡Si haces el bien, serás feliz!",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_1-3_Audio_004.mp3"
+      }
+    ]
+  }
+}
