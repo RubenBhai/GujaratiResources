@@ -114,6 +114,39 @@
     color: var(--ink-soft);
   }
 
+  .speed-bar {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .btn-speed {
+    border: 1px solid var(--border);
+    background: #2e2419;
+    color: var(--ink-soft);
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+  .btn-speed.active {
+    background: var(--saffron);
+    color: #1a1410;
+    border-color: var(--saffron);
+  }
+  .btn-speed:hover:not(.active) {
+    border-color: var(--saffron);
+    color: var(--saffron);
+  }
+  .speed-label {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 6px;
+  }
+
   footer { text-align: center; padding: 30px 0 10px; color: var(--ink-soft); font-size: 0.85rem; }
   footer a { color: var(--saffron); text-decoration: none; }
 </style>
@@ -127,6 +160,12 @@
     <span class="badge">Práctica con evaluación de Gemini</span>
     <h1 id="page-title">Cargando…</h1>
     <p class="subtitle" id="page-subtitle"></p>
+    <div class="speed-bar">
+      <button class="btn-speed" onclick="setSpeed(0.75)">🐢 0.75x</button>
+      <button class="btn-speed active" id="speed-1" onclick="setSpeed(1.0)">▶ 1x</button>
+      <button class="btn-speed" onclick="setSpeed(1.25)">⚡ 1.25x</button>
+    </div>
+    <p class="speed-label">Velocidad de reproducción (solo afecta el audio de referencia)</p>
   </header>
 
   <section class="audio-theater" id="theater"></section>
@@ -169,6 +208,21 @@
   let mediaRecorder;
   let audioChunks = {};
   let recordingLineId = null;
+  let currentSpeed = 1.0;
+
+  // ===================================================================
+  // Control de velocidad de reproducción (solo masterPlayer)
+  // ===================================================================
+  function setSpeed(speed) {
+    currentSpeed = speed;
+    masterPlayer.playbackRate = speed;
+    // Actualizar botón activo
+    document.querySelectorAll('.btn-speed').forEach(btn => btn.classList.remove('active'));
+    const labels = { 0.75: '🐢 0.75x', 1.0: '▶ 1x', 1.25: '⚡ 1.25x' };
+    document.querySelectorAll('.btn-speed').forEach(btn => {
+      if (btn.innerText === labels[speed]) btn.classList.add('active');
+    });
+  }
 
   // ===================================================================
   // 4. Cargar el JSON de frases y construir la interfaz
@@ -235,6 +289,7 @@
 
     masterPlayer.onloadedmetadata = function() {
       if (inicio !== null) masterPlayer.currentTime = inicio;
+      masterPlayer.playbackRate = currentSpeed;
       masterPlayer.play().then(() => {
         document.getElementById(lineId)?.classList.add('active');
       }).catch(e => console.log("Interacción requerida"));
