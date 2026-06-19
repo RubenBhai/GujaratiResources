@@ -1,0 +1,104 @@
+{
+  "2-1": {
+    "titulo": "Lección 2.1 — La lluvia de Rina",
+    "fuente": "Libro 1, પાઠ ૪",
+    "frases": [
+      {
+        "gujarati": "ઝરમર ઝરમર પડે વરસાદ.",
+        "espanol": "Caen las gotitas de lluvia.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-1_Audio_001.mp3"
+      },
+      {
+        "gujarati": "બહાર રમતા રોકે વરસાદ.",
+        "espanol": "La lluvia impide jugar afuera.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-1_Audio_002.mp3"
+      },
+      {
+        "gujarati": "વરસાદ ગયો ખસી, રીના પડી હસી!",
+        "espanol": "La lluvia se fue y Rina se echó a reír.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-1_Audio_003.mp3"
+      },
+      {
+        "gujarati": "ખુશીથી રીના બોલી, \"હવે મને ખબર પડી!\"",
+        "espanol": "Rina dijo con alegría: '¡Ahora entendí!'",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-1_Audio_004.mp3"
+      },
+      {
+        "gujarati": "મોકલે છે વરસાદ ઈશ્વર, ખીલી ઊઠે ફૂલો સુંદર!",
+        "espanol": "Dios manda la lluvia y las flores hermosas florecen.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-1_Audio_005.mp3"
+      }
+    ]
+  },
+  "2-2": {
+    "titulo": "Lección 2.2 — Gracias, siempre",
+    "fuente": "Libro 1, પાઠ ૫",
+    "frases": [
+      {
+        "gujarati": "દોસ્ત જો આપે ભેટ કોઈ, અથવા કામ કરે સારું કોઈ,",
+        "espanol": "Si un amigo te da un regalo, o alguien hace algo bueno por ti,",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-2_Audio_001.mp3"
+      },
+      {
+        "gujarati": "આપજો તેને સુંદર સ્માઇલ — નાનું નહીં પણ મોટું સ્માઇલ!",
+        "espanol": "dale una hermosa sonrisa — ¡no pequeña, sino grande!",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-2_Audio_002.mp3"
+      },
+      {
+        "gujarati": "જ્યાં પણ રહો, કંઈ પણ કરો, યાદ રાખજો —",
+        "espanol": "Dondequiera que estén, hagan lo que hagan, recuerden:",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-2_Audio_003.mp3"
+      },
+      {
+        "gujarati": "\"થેંક્યું\" કહેજો સદા!",
+        "espanol": "¡Por favor digan 'gracias' siempre!",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-2_Audio_004.mp3"
+      }
+    ]
+  },
+  "2-3": {
+    "titulo": "Lección 2.3 — El cuerpo que Jehová hizo",
+    "fuente": "Libro 1, પાઠ ૬",
+    "frases": [
+      {
+        "gujarati": "જુઓ મજાના હાથ તમારા, હવે હલાવો પગ.",
+        "espanol": "Miren sus manos tan lindas, ahora muevan los pies.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-3_Audio_001.mp3"
+      },
+      {
+        "gujarati": "ચાલો પકડો કાન તમારા, હવે બતાવો નાક.",
+        "espanol": "Vamos, agarren sus orejas, ahora muestren la nariz.",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-3_Audio_002.mp3"
+      },
+      {
+        "gujarati": "નાના નાના પગ તમારા કરે કૂદા-કૂદ, નાચે અને દોડે ખૂબ, દિલને કરે ખુશ!",
+        "espanol": "Sus pequeños pies dan saltitos, bailan y corren mucho, ¡alegran el corazón!",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-3_Audio_003.mp3"
+      },
+      {
+        "gujarati": "જુઓ અરીસામાં તમે, દેખાય શું અંદર?",
+        "espanol": "Mírate en el espejo — ¿qué ves adentro?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-3_Audio_004.mp3"
+      },
+      {
+        "gujarati": "બનાવ્યું યહોવાએ બધું અતિ સુંદર!",
+        "espanol": "¡Jehová hizo todo muy hermoso!",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/Modulo_2-3_Audio_005.mp3"
+      }
+    ]
+  }
+}
