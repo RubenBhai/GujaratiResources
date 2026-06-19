@@ -179,9 +179,13 @@
     <script>
         const BACKEND_URL = "https://gujaratitraining.onrender.com";
 
-        // Si ya tiene sesión activa, saltar el login directamente
+        // Leer el parámetro ?return= para saber a dónde redirigir tras el login
+        const params = new URLSearchParams(window.location.search);
+        const destinoFinal = params.get('return') || 'teatro.html';
+
+        // Si ya tiene sesión activa, saltar el login y redirigir al destino
         if (sessionStorage.getItem('accessToken')) {
-            window.location.href = 'teatro.html';
+            window.location.href = destinoFinal;
         }
 
         function ejecutarLogin(e) {
@@ -208,8 +212,8 @@
             .then(data => {
                 if (data.acceso) {
                     sessionStorage.setItem('accessToken', data.token);
-                    // Redirigir al teatro
-                    window.location.href = 'index.html';
+                    // Redirigir al destino final (practica.html o teatro.html)
+                    window.location.href = destinoFinal;
                 }
             })
             .catch(() => {
