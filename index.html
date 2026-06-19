@@ -1,402 +1,225 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piensa en Gujarati</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --paper:        #F0E6D2;
-    --paper-deep:   #E5D8BC;
-    --ink:          #2A2420;
-    --ink-soft:     #5B5048;
-    --sindoor:      #A8362A;
-    --sindoor-deep: #832920;
-    --saffron:      #B8863D;
-    --saffron-pale: rgba(184,134,61,0.12);
-    --olive:        #5F6E4F;
-    --rule:         rgba(42,36,32,0.14);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Learn Gujarati Ultra-Inmersivo — Acceso</title>
+    <link rel="icon" type="image/x-icon" href="LearnGujarati_SuperInmersivo.ico">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
 
-  * { box-sizing: border-box; }
+        :root {
+            --primary-color: #ffd700;
+            --accent-color: #00ffcc;
+            --bg-color: #0d0d0d;
+            --surface-color: rgba(22, 22, 22, 0.88);
+            --text-muted: #888888;
+            --border-color: #333333;
+        }
 
-  body {
-    margin: 0;
-    color: var(--ink);
-    font-family: 'Source Sans 3', sans-serif;
-    line-height: 1.7;
-    background-color: var(--paper);
-    background-image:
-      radial-gradient(ellipse at top left,  rgba(184,134,61,0.09), transparent 55%),
-      radial-gradient(ellipse at bottom right, rgba(168,54,42,0.06), transparent 55%),
-      repeating-linear-gradient(135deg, rgba(42,36,32,0.022) 0px, rgba(42,36,32,0.022) 1px,
-        transparent 1px, transparent 3px);
-    background-attachment: fixed;
-  }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-color);
 
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px 120px; }
+            /* IMAGEN DE FONDO */
+            background-image: url('LearnGujarati_SuperInmersivo_Main.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
 
-  /* ── HERO ── */
-  header.hero {
-    padding: 96px 0 56px;
-    text-align: center;
-  }
+        /* Capa oscura encima de la imagen para que el formulario sea legible */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 0;
+        }
 
-  .eyebrow-guj {
-    font-family: 'Noto Serif Gujarati', serif;
-    font-size: 1.75rem;
-    color: var(--sindoor);
-    letter-spacing: 0.03em;
-    margin: 0 0 10px;
-    line-height: 1.3;
-  }
+        .login-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
 
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-size: clamp(2.5rem, 6.5vw, 3.8rem);
-    line-height: 1.04;
-    margin: 0 0 20px;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
+        .login-box {
+            background: var(--surface-color);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 40px 36px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
 
-  .subtitle {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 1.3rem;
-    color: var(--ink-soft);
-    margin: 0 0 10px;
-  }
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
 
-  .origin-badge {
-    display: inline-block;
-    background: var(--saffron-pale);
-    border: 1px solid rgba(184,134,61,0.3);
-    border-radius: 3px;
-    font-size: 0.86rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--saffron);
-    padding: 5px 14px;
-    margin-top: 14px;
-  }
+        .level-badge {
+            display: inline-block;
+            background: #1a1a1a;
+            color: var(--primary-color);
+            border: 1px solid #333;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
 
-  /* ── ORNAMENTO ── */
-  .ornament {
-    width: 56px; height: 2px;
-    background: var(--sindoor);
-    margin: 46px auto;
-    position: relative;
-  }
-  .ornament::before, .ornament::after {
-    content: '';
-    position: absolute;
-    width: 7px; height: 7px;
-    background: var(--saffron);
-    border-radius: 50%;
-    top: -2.5px;
-  }
-  .ornament::before { left: -16px; }
-  .ornament::after  { right: -16px; }
+        h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.5px;
+        }
 
-  /* ── INTRO ── */
-  section.intro p {
-    font-size: 1.08rem;
-    color: var(--ink);
-    margin: 0 0 22px;
-  }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0 0 28px 0;
+            line-height: 1.5;
+        }
 
-  section.intro strong { color: var(--sindoor-deep); }
+        .login-input {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
 
-  .pull-quote {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.32rem;
-    color: var(--ink);
-    border-left: 3px solid var(--saffron);
-    padding: 4px 0 4px 24px;
-    margin: 42px 0;
-    line-height: 1.55;
-  }
+        .login-input:focus {
+            border-color: var(--primary-color);
+        }
 
-  .pull-quote cite {
-    display: block;
-    font-family: 'Source Sans 3', sans-serif;
-    font-style: normal;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-    margin-top: 8px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+        .login-input::placeholder {
+            color: #555;
+        }
 
-  /* ── SECCIÓN RECORRIDO ── */
-  h2.section-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin: 70px 0 6px;
-    color: var(--ink);
-  }
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, var(--primary-color), #ffa500);
+            color: #000;
+            border: none;
+            font-size: 1rem;
+            font-weight: 800;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
 
-  .section-sub {
-    color: var(--ink-soft);
-    font-size: 0.96rem;
-    margin: 0 0 32px;
-  }
+        .login-btn:hover { opacity: 0.9; }
+        .login-btn:active { transform: scale(0.98); }
 
-  /* ── TARJETAS DE CAPA ── */
-  .layer-card {
-    border: 1px solid var(--rule);
-    background: rgba(255,255,255,0.26);
-    border-radius: 4px;
-    padding: 26px 28px 22px;
-    margin-bottom: 18px;
-    position: relative;
-    overflow: hidden;
-  }
+        #login-error {
+            color: #ff4444;
+            font-size: 0.85rem;
+            margin-top: 14px;
+            display: none;
+            line-height: 1.4;
+        }
 
-  .layer-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: var(--saffron);
-    opacity: 0.5;
-  }
-
-  .layer-num {
-    font-family: 'Noto Serif Gujarati', serif;
-    position: absolute;
-    top: 14px; right: 20px;
-    font-size: 2rem;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(184,134,61,0.35);
-  }
-
-  .layer-card h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.18rem;
-    margin: 0 0 5px;
-    color: var(--sindoor-deep);
-  }
-
-  .layer-card p {
-    margin: 0 0 16px;
-    font-size: 0.96rem;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  /* ── PÍLDORAS ── */
-  .module-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-  }
-
-  .module-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.87rem;
-    padding: 6px 14px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.15s;
-  }
-
-  .module-pill.ready {
-    background: var(--sindoor);
-    color: var(--paper);
-  }
-  .module-pill.ready:hover { background: var(--sindoor-deep); }
-
-  .module-pill.pending {
-    background: transparent;
-    border: 1px dashed rgba(91,80,72,0.38);
-    color: var(--ink-soft);
-    cursor: default;
-  }
-
-  .dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.75;
-  }
-
-  /* ── COMPROMISO ── */
-  .commitment-block {
-    margin: 64px 0 0;
-    padding: 32px 36px;
-    background: rgba(168,54,42,0.06);
-    border-radius: 4px;
-    border: 1px solid rgba(168,54,42,0.14);
-  }
-
-  .commitment-block h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    color: var(--sindoor-deep);
-    margin: 0 0 12px;
-  }
-
-  .commitment-block p {
-    font-size: 0.97rem;
-    color: var(--ink-soft);
-    margin: 0;
-    line-height: 1.65;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    margin-top: 90px;
-    padding-top: 28px;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-    color: var(--ink-soft);
-    font-size: 0.88rem;
-  }
-
-  footer .gujarati-credit {
-    font-family: 'Noto Serif Gujarati', serif;
-    font-size: 1.15rem;
-    color: var(--sindoor);
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  @media (max-width: 600px) {
-    header.hero { padding: 60px 0 40px; }
-    .wrap { padding: 0 20px 90px; }
-    .commitment-block { padding: 24px 22px; }
-  }
-</style>
+        .footer-text {
+            margin-top: 24px;
+            color: #444;
+            font-size: 0.78rem;
+        }
+    </style>
 </head>
 <body>
 
-<div class="wrap">
+    <div class="login-wrapper">
+        <form class="login-box" onsubmit="ejecutarLogin(event)">
 
-  <header class="hero">
-    <p class="eyebrow-guj">ગુજરાતીમાં વિચારો</p>
-    <h1>Piensa en Gujarati</h1>
-    <p class="subtitle">Inmersión por lectura para hispanohablantes</p>
-    <span class="origin-badge">Ciudad de Panamá · Proyecto en construcción</span>
-  </header>
+            <img src="LearnGujarati_SuperInmersivo.ico" alt="Logo" class="logo-img">
 
-  <div class="ornament"></div>
+            <div class="level-badge">🔐 Sistema Privado</div>
+            <h1>Identificación</h1>
+            <p class="subtitle">Acceso exclusivo al piloto privado de<br><strong style="color: var(--primary-color);">Gujarati Ultra-Inmersivo</strong></p>
 
-  <section class="intro">
+            <input type="text" id="user-input" class="login-input" placeholder="Nombre de Usuario" required autocomplete="username">
+            <input type="password" id="pass-input" class="login-input" placeholder="Contraseña" required autocomplete="current-password">
 
-    <p>En Panamá vive una comunidad gujaratí de muchos miles de personas. La mayoría llegó hace décadas, llevan sus raíces en el lenguaje, en los negocios, en la fe. Y hay un pequeño grupo de hispanohablantes que quiere hablar con ellos — no sobre cosas triviales, sino sobre lo que más importa. Sobre la esperanza. Sobre el sentido de la vida. Sobre lo que dice la Biblia.</p>
+            <button type="submit" class="login-btn">🎭 Ingresar al Teatro</button>
 
-    <p>Para eso no alcanza con saber deletrear en gujarati. Hay que <strong>pensar en gujarati</strong>.</p>
-
-    <p>Este curso nació de esa necesidad concreta, y fue construido con una honestidad que no siempre se ve en materiales de enseñanza: cada decisión pedagógica fue razonada, discutida, y en más de un caso descartada y rehecha cuando no funcionaba. El primer intento generó un módulo completo que fue examinado con cuidado, y lo que falló se documentó antes de seguir. Eso tampoco es lo más común.</p>
-
-    <div class="pull-quote">
-      En gujarati, la acción viaja al final de la oración. No lo estudias una vez y lo aplicas. Lo haces tantas veces que deja de costarte.
+            <p id="login-error"></p>
+            <p class="footer-text">Gujarati Ultra-Inmersivo · RubenBhai Pilot</p>
+        </form>
     </div>
 
-    <p>El material fuente no fue inventado para la enseñanza: son material didáctico religioso en gujarati auténtico — el mismo gujarati que usan las comunidades que este curso quiere alcanzar. Ocho libros leídos completos, sin proyección. Cada frase verificada contra su audio original cuando existe. Cada patrón morfológico presentado agrupado desde el primer momento, no disperso lección a lección. Cada ejercicio diseñado para que construyas algo que no viste ya armado en la página.</p>
+    <script>
+        const BACKEND_URL = "https://gujaratitraining.onrender.com";
 
-    <p>El curso cubre cinco capas de habilidad comunicativa: desde las primeras oraciones concretas hasta el momento en que sabes si decir <em>Yahová</em> o <em>Khudā</em> según quien tienes enfrente — porque en ese último módulo el idioma ya no es solo gramática, es respeto.</p>
+        // Si ya tiene sesión activa, saltar el login directamente
+        if (sessionStorage.getItem('accessToken')) {
+            window.location.href = 'teatro.html';
+        }
 
-    <div class="pull-quote">
-      Diecinueve módulos. Cada uno construido con el texto fuente delante, nunca desde una proyección de lo que probablemente dice.
-      <cite>Principio de trabajo del proyecto</cite>
-    </div>
+        function ejecutarLogin(e) {
+            e.preventDefault();
 
-    <p>Esta página es el mapa del recorrido completo. El Módulo 1 ya existe y puedes empezar ahora mismo. El resto se está construyendo — módulo a módulo, con el mismo cuidado con que empezamos.</p>
+            const user = document.getElementById('user-input').value.trim();
+            const pass = document.getElementById('pass-input').value.trim();
+            const errorMsg = document.getElementById('login-error');
+            const btn = document.querySelector('.login-btn');
 
-  </section>
+            errorMsg.style.display = "none";
+            btn.textContent = "Verificando...";
+            btn.disabled = true;
 
-  <h2 class="section-title">El recorrido del curso</h2>
-  <p class="section-sub">19 módulos en cinco capas — no por dificultad creciente, sino por tipo de habilidad comunicativa. Cada capa introduce un género de lenguaje distinto, con su propio vocabulario y sus propias estructuras.</p>
-
-  <!-- CAPA 1 -->
-  <div class="layer-card">
-    <span class="layer-num">૧</span>
-    <h3>Cimentación</h3>
-    <p>Orden Sujeto-Objeto-Verbo, vocabulario concreto, morfología agrupada desde el primer día. El gujarati del Libro 1 — frases cortas, animales, acciones sencillas — resulta ser una rampa de entrada perfecta. Engañosamente simple, intencionalmente profundo.</p>
-    <div class="module-list">
-      <a class="module-pill ready" href="modulo1.html"><span class="dot"></span> Módulo 1</a>
-      <a class="module-pill ready" href="modulo2.html"><span class="dot"></span> Módulo 2</a>
-    </div>
-  </div>
-
-  <!-- CAPA 2 -->
-  <div class="layer-card">
-    <span class="layer-num">૨</span>
-    <h3>Narrativa Extendida</h3>
-    <p>Subordinación, discurso reportado, secuencias de eventos encadenados. Aquí vive el salto de complejidad real: Rebeca y Eliezer, David y Goliat, José en Egipto, las diez plagas. El gujarati narrativo que cuenta historias con tensión genuina.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 3</span>
-      <span class="module-pill pending">Módulo 4</span>
-      <span class="module-pill pending">Módulo 5</span>
-      <span class="module-pill pending">Módulo 6</span>
-      <span class="module-pill pending">Módulo 7</span>
-      <span class="module-pill pending">Módulo 8</span>
-      <span class="module-pill pending">Módulo 9</span>
-      <span class="module-pill pending">Módulo 10</span>
-      <span class="module-pill pending">Módulo 11</span>
-    </div>
-  </div>
-
-  <!-- CAPA 3 -->
-  <div class="layer-card">
-    <span class="layer-num">૩</span>
-    <h3>Opinión y Argumentación</h3>
-    <p>Vocabulario abstracto, respuesta a preguntas abiertas, manejo de objeciones. En dos registros distintos: el formal de un manual de estudio adulto, y el coloquial de un joven que razona bajo presión social. El mismo idioma, dos voces.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 12</span>
-      <span class="module-pill pending">Módulo 13</span>
-      <span class="module-pill pending">Módulo 14</span>
-      <span class="module-pill pending">Módulo 15</span>
-      <span class="module-pill pending">Módulo 16</span>
-    </div>
-  </div>
-
-  <!-- CAPA 4 -->
-  <div class="layer-card">
-    <span class="layer-num">૪</span>
-    <h3>Vocabulario Emocional</h3>
-    <p>Duelo, consuelo, resiliencia. El gujarati del corazón: <em>hridaya viNdhaaii gayu</em> — el corazón quedó traspasado. <em>Dil Daalvun</em> — desahogar el alma. Un registro que no aparece en ningún otro libro del curso, y que es exactamente el que se necesita cuando más importa.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 17</span>
-      <span class="module-pill pending">Módulo 18</span>
-    </div>
-  </div>
-
-  <!-- CAPA 5 -->
-  <div class="layer-card">
-    <span class="layer-num">૫</span>
-    <h3>Registro Sociolingüístico</h3>
-    <p>El mismo concepto — Dios, oración, bendición — cambia de palabra según si tu interlocutor viene del hinduismo o del islam. Elegir bien no es un detalle de estilo. Es la diferencia entre que alguien sienta que lo ves, o que no.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 19</span>
-    </div>
-  </div>
-
-  <div class="commitment-block">
-    <h3>Lo que este curso no promete</h3>
-    <p>No promete que vayas a hablar gujarati fluidamente con este curso solo. Promete algo más honesto: que cuando termines, el gujarati escrito va a dejar de costarte esfuerzo cognitivo activo — lo cual es el requisito previo para que cualquier conversación real sea posible. El resto lo construyes tú, con las personas reales que tienes enfrente.</p>
-  </div>
-
-  <footer>
-    <span class="gujarati-credit">રૂબેનભાઈ</span>
-    Piensa en Gujarati · Ciudad de Panamá · un módulo a la vez.
-  </footer>
-
-</div>
+            fetch(`${BACKEND_URL}/api/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: user, password: pass })
+            })
+            .then(res => {
+                if (!res.ok) throw new Error("Credenciales inválidas");
+                return res.json();
+            })
+            .then(data => {
+                if (data.acceso) {
+                    sessionStorage.setItem('accessToken', data.token);
+                    // Redirigir al teatro
+                    window.location.href = 'index.html';
+                }
+            })
+            .catch(() => {
+                errorMsg.innerText = "Usuario o contraseña incorrectos, Bhai.";
+                errorMsg.style.display = "block";
+                btn.textContent = "🎭 Ingresar al Teatro";
+                btn.disabled = false;
+            });
+        }
+    </script>
 
 </body>
 </html>
