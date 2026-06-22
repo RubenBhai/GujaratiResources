@@ -227,22 +227,33 @@
   // ===================================================================
   // 4. Cargar el JSON de frases y construir la interfaz
   // ===================================================================
-  fetch('data/practica_modulo1.json')
-    .then(res => res.json())
-    .then(data => {
-      const leccionData = data[claveLeccion];
-      if (!leccionData) {
+  // Validar que exista el parámetro 'modulo'
+  if (!modulo || !leccion) {
+    document.getElementById('theater').innerHTML =
+      `<div class="error-state">Parámetros inválidos en la URL. Verifica los valores de 'modulo' y 'leccion'.</div>`;
+  } else {
+    const jsonFile = `data/practica_modulo${modulo}.json`;
+    
+    fetch(jsonFile)
+      .then(res => {
+        if (!res.ok) throw new Error(`No se encontró ${jsonFile}`);
+        return res.json();
+      })
+      .then(data => {
+        const leccionData = data[claveLeccion];
+        if (!leccionData) {
+          document.getElementById('theater').innerHTML =
+            `<div class="error-state">No se encontró la lección ${claveLeccion}. Verifica el enlace.</div>`;
+          return;
+        }
+        construirInterfaz(leccionData);
+      })
+      .catch(err => {
+        console.error(err);
         document.getElementById('theater').innerHTML =
-          `<div class="error-state">No se encontró la lección ${claveLeccion}. Verifica el enlace.</div>`;
-        return;
-      }
-      construirInterfaz(leccionData);
-    })
-    .catch(err => {
-      console.error(err);
-      document.getElementById('theater').innerHTML =
-        `<div class="error-state">No se pudo cargar el contenido de práctica. Intenta de nuevo más tarde.</div>`;
-    });
+          `<div class="error-state">No se pudo cargar el contenido de práctica. Intenta de nuevo más tarde. (${err.message})</div>`;
+      });
+  }
 
   function construirInterfaz(leccionData) {
     document.getElementById('page-title').innerText = leccionData.titulo;
