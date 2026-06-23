@@ -3,433 +3,601 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piensa en Gujarati</title>
-<link rel="icon" type="image/x-icon" href="LearnGujarati_SuperInmersivo.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Piensa en Gujarati — Aprende gujarati para el ministerio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper:        #F0E6D2;
-    --paper-deep:   #E5D8BC;
-    --ink:          #2A2420;
-    --ink-soft:     #5B5048;
-    --sindoor:      #A8362A;
-    --sindoor-deep: #832920;
-    --saffron:      #B8863D;
-    --saffron-pale: rgba(184,134,61,0.12);
-    --olive:        #5F6E4F;
-    --rule:         rgba(42,36,32,0.14);
-  }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #C8973A;
+  --gold-light: #E8C068;
+  --teal: #2ABFB0;
+  --teal-dark: #1A8F84;
+  --ink: #0D1420;
+  --ink-soft: #1E2A3A;
+  --paper: #EAE0CC;
+  --paper-warm: #F5EDD8;
+  --mist: rgba(255,255,255,0.06);
+  --border-gold: rgba(200,151,58,0.35);
+}
 
-  * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-  body {
-    margin: 0;
-    color: var(--ink);
-    font-family: 'Source Sans 3', sans-serif;
-    line-height: 1.7;
-    background-color: #0d1117;
-    background-image: url('LearnGujarati_SuperInmersivo_Fondo.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
 
-  /* Capa oscura sobre la imagen para legibilidad del contenido */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(8, 10, 15, 0.72);
-    z-index: 0;
-  }
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 80px;
+  overflow: hidden;
+}
 
-  /* El contenido va sobre la capa oscura */
-  .wrap {
-    position: relative;
-    z-index: 1;
-  }
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(42,191,176,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(200,151,58,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 60% at 10% 60%, rgba(42,191,176,0.06) 0%, transparent 50%);
+  z-index: 0;
+}
 
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px 120px; }
+/* Partículas decorativas */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float linear infinite;
+  opacity: 0;
+}
+@keyframes float {
+  0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
 
-  /* ── HERO ── */
-  header.hero {
-    padding: 96px 0 56px;
-    text-align: center;
-  }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 720px;
+  text-align: center;
+}
 
-  .eyebrow-guj {
-    font-family: 'Noto Serif Gujarati', serif;
-    font-size: 1.75rem;
-    color: var(--saffron);
-    letter-spacing: 0.03em;
-    margin: 0 0 10px;
-    line-height: 1.3;
-  }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-gold);
+  background: rgba(200,151,58,0.08);
+  color: var(--gold-light);
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-size: clamp(2.5rem, 6.5vw, 3.8rem);
-    line-height: 1.04;
-    margin: 0 0 20px;
-    color: #F0E6D2;
-    letter-spacing: -0.01em;
-  }
+.hero-logo {
+  width: min(280px, 70vw);
+  height: min(280px, 70vw);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    0 0 0 2px rgba(200,151,58,0.4),
+    0 0 40px rgba(200,151,58,0.2),
+    0 0 80px rgba(42,191,176,0.1);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(200,151,58,0.4), 0 0 40px rgba(200,151,58,0.2), 0 0 80px rgba(42,191,176,0.1); }
+  50%       { box-shadow: 0 0 0 2px rgba(200,151,58,0.6), 0 0 60px rgba(200,151,58,0.35), 0 0 120px rgba(42,191,176,0.2); }
+}
 
-  .subtitle {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.65rem;
-    color: rgba(240,230,210,0.92);
-    margin: 0 0 10px;
-  }
+.hero-gu {
+  font-family: 'Noto Serif Gujarati', 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(200,151,58,0.4);
+}
 
-  .origin-badge {
-    display: inline-block;
-    background: rgba(184,134,61,0.28);
-    border: 1px solid rgba(184,134,61,0.65);
-    border-radius: 3px;
-    font-size: 0.92rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #FFD97D;
-    font-weight: 700;
-    padding: 6px 16px;
-    margin-top: 14px;
-  }
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--paper-warm);
+  line-height: 1.15;
+}
 
-  /* ── ORNAMENTO ── */
-  .ornament {
-    width: 56px; height: 2px;
-    background: var(--saffron);
-    margin: 46px auto;
-    position: relative;
-  }
-  .ornament::before, .ornament::after {
-    content: '';
-    position: absolute;
-    width: 7px; height: 7px;
-    background: var(--sindoor);
-    border-radius: 50%;
-    top: -2.5px;
-  }
-  .ornament::before { left: -16px; }
-  .ornament::after  { right: -16px; }
+.hero-title em {
+  font-style: italic;
+  color: var(--teal);
+}
 
-  /* ── INTRO ── */
-  section.intro {
-    background: rgba(8, 10, 18, 0.50);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(184,134,61,0.3);
-    border-radius: 6px;
-    padding: 32px 36px;
-    margin-bottom: 8px;
-  }
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(234,224,204,0.75);
+  line-height: 1.7;
+  max-width: 560px;
+}
 
-  section.intro p {
-    font-size: 1.18rem;
-    font-weight: 600;
-    color: rgba(240,230,210,0.96);
-    margin: 0 0 22px;
-  }
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
 
-  section.intro strong { color: #FFD97D; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), #A07020);
+  color: var(--ink);
+  padding: 15px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(200,151,58,0.3);
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200,151,58,0.45);
+}
 
-  .pull-quote {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.45rem;
-    color: #F0E6D2;
-    border-left: 3px solid var(--saffron);
-    padding: 4px 0 4px 24px;
-    margin: 42px 0;
-    line-height: 1.55;
-  }
+.btn-secondary {
+  background: transparent;
+  color: var(--teal);
+  padding: 15px 36px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 1px solid rgba(42,191,176,0.4);
+}
+.btn-secondary:hover {
+  background: rgba(42,191,176,0.08);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
 
-  .pull-quote cite {
-    display: block;
-    font-family: 'Source Sans 3', sans-serif;
-    font-style: normal;
-    font-size: 0.85rem;
-    color: rgba(240,230,210,0.5);
-    margin-top: 8px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(234,224,204,0.4);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+.scroll-arrow { font-size: 1.2rem; }
 
-  /* ── SECCIÓN RECORRIDO ── */
-  h2.section-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 2rem;
-    margin: 70px 0 6px;
-    color: #F0E6D2;
-  }
+/* ── MISIÓN ── */
+.mision {
+  background: var(--ink-soft);
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.mision::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
 
-  .section-sub {
-    color: rgba(240,230,210,0.88);
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin: 0 0 32px;
-  }
+.mision-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 
-  /* ── TARJETAS DE CAPA ── */
-  .layer-card {
-    border: 1px solid rgba(184,134,61,0.3);
-    background: rgba(8, 10, 18, 0.82);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 4px;
-    padding: 26px 28px 22px;
-    margin-bottom: 18px;
-    position: relative;
-    overflow: hidden;
-  }
+.section-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
 
-  .layer-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: var(--saffron);
-    opacity: 0.7;
-  }
+.mision-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--paper-warm);
+  line-height: 1.5;
+  border-left: 3px solid var(--gold);
+  padding-left: 28px;
+}
 
-  .layer-num {
-    font-family: 'Noto Serif Gujarati', serif;
-    position: absolute;
-    top: 14px; right: 20px;
-    font-size: 2rem;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(184,134,61,0.4);
-  }
+.mision-body {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(234,224,204,0.8);
+  line-height: 1.85;
+}
 
-  .layer-card h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.18rem;
-    margin: 0 0 5px;
-    color: var(--saffron);
-  }
+.mision-body strong {
+  color: var(--gold-light);
+  font-weight: 500;
+}
 
-  .layer-card p {
-    margin: 0 0 16px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: rgba(240,230,210,0.90);
-    line-height: 1.6;
-  }
+.mision-verse {
+  background: rgba(42,191,176,0.06);
+  border: 1px solid rgba(42,191,176,0.2);
+  border-radius: 12px;
+  padding: 24px 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(234,224,204,0.85);
+  line-height: 1.6;
+}
+.mision-verse cite {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  color: var(--teal);
+  letter-spacing: 0.08em;
+}
 
-  /* ── PÍLDORAS ── */
-  .module-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-  }
+/* ── STATS ── */
+.stats {
+  padding: 60px 24px;
+  background: var(--ink);
+}
+.stats-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2px;
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.stat {
+  padding: 32px 24px;
+  background: rgba(200,151,58,0.04);
+  text-align: center;
+  border-right: 1px solid var(--border-gold);
+  transition: background 0.2s;
+}
+.stat:last-child { border-right: none; }
+.stat:hover { background: rgba(200,151,58,0.09); }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(234,224,204,0.55);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
-  .module-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.87rem;
-    padding: 6px 14px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.15s;
-  }
+/* ── PARA QUIÉN ── */
+.para-quien {
+  padding: 80px 24px;
+  background: var(--ink-soft);
+  position: relative;
+}
+.para-quien::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(42,191,176,0.5), transparent);
+}
+.para-quien-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.para-quien h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--paper-warm);
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: rgba(13,20,32,0.6);
+  border: 1px solid var(--border-gold);
+  border-radius: 14px;
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+.card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  background: rgba(200,151,58,0.05);
+}
+.card-icon { font-size: 2rem; margin-bottom: 14px; }
+.card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--paper-warm);
+  margin-bottom: 8px;
+}
+.card-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(234,224,204,0.6);
+  line-height: 1.6;
+}
 
-  .module-pill.ready {
-    background: var(--sindoor);
-    color: var(--paper);
-  }
-  .module-pill.ready:hover { background: var(--sindoor-deep); }
+/* ── PROMESA ── */
+.promesa {
+  padding: 80px 24px;
+  background: var(--ink);
+  text-align: center;
+}
+.promesa-inner { max-width: 680px; margin: 0 auto; }
+.promesa h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: var(--paper-warm);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.promesa p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(234,224,204,0.7);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.promesa-gu {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 2rem;
+  color: var(--teal);
+  margin-bottom: 8px;
+  display: block;
+}
+.promesa-es {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(234,224,204,0.5);
+  display: block;
+  margin-bottom: 48px;
+}
 
-  .module-pill.pending {
-    background: transparent;
-    border: 1px dashed rgba(184,134,61,0.35);
-    color: rgba(240,230,210,0.45);
-    cursor: default;
-  }
+/* ── FOOTER ── */
+footer {
+  background: var(--ink-soft);
+  border-top: 1px solid var(--border-gold);
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(234,224,204,0.35);
+  line-height: 1.8;
+}
 
-  .dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.75;
-  }
-
-  /* ── COMPROMISO ── */
-  .commitment-block {
-    margin: 64px 0 0;
-    padding: 32px 36px;
-    background: rgba(168,54,42,0.12);
-    border-radius: 4px;
-    border: 1px solid rgba(168,54,42,0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-
-  .commitment-block h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    color: var(--saffron);
-    margin: 0 0 12px;
-  }
-
-  .commitment-block p {
-    font-size: 1.05rem;
-    color: rgba(240,230,210,0.75);
-    margin: 0;
-    line-height: 1.65;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    margin-top: 90px;
-    padding-top: 28px;
-    border-top: 1px solid rgba(184,134,61,0.2);
-    text-align: center;
-    color: rgba(240,230,210,0.45);
-    font-size: 0.88rem;
-  }
-
-  footer .gujarati-credit {
-    font-family: 'Noto Serif Gujarati', serif;
-    font-size: 1.15rem;
-    color: var(--saffron);
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  @media (max-width: 600px) {
-    header.hero { padding: 60px 0 40px; }
-    .wrap { padding: 0 20px 90px; }
-    .commitment-block { padding: 24px 22px; }
-  }
+@media (max-width: 600px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat { border-bottom: 1px solid var(--border-gold); }
+  .stat:nth-child(2n) { border-right: none; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; max-width: 300px; text-align: center; }
+}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="wrap">
+<!-- PARTÍCULAS -->
+<div class="particles" id="particles"></div>
 
-  <header class="hero">
-    <p class="eyebrow-guj">ગુજરાતીમાં વિચારો</p>
-    <h1>Piensa en Gujarati</h1>
-    <p class="subtitle">Inmersión por lectura para hispanohablantes</p>
-    <span class="origin-badge">Ciudad de Panamá · Proyecto en construcción</span>
-  </header>
-
-  <div class="ornament"></div>
-
-  <section class="intro">
-
-    <p>En Panamá vive una comunidad gujaratí de muchos miles de personas. La mayoría llegó hace décadas, llevan sus raíces en el lenguaje, en los negocios, en la fe. Y hay un pequeño grupo de hispanohablantes que quiere hablar con ellos — no sobre cosas triviales, sino sobre lo que más importa. Sobre la esperanza. Sobre el sentido de la vida. Sobre lo que dice la Biblia.</p>
-
-    <p>Para eso no alcanza con saber deletrear en gujarati. Hay que <strong>pensar en gujarati</strong>.</p>
-
-    <p>Este curso nació de esa necesidad concreta, y fue construido con una honestidad que no siempre se ve en materiales de enseñanza: cada decisión pedagógica fue razonada, discutida, y en más de un caso descartada y rehecha cuando no funcionaba. El primer intento generó un módulo completo que fue examinado con cuidado, y lo que falló se documentó antes de seguir. Eso tampoco es lo más común.</p>
-
-    <div class="pull-quote">
-      En gujarati, la acción viaja al final de la oración. No lo estudias una vez y lo aplicas. Lo haces tantas veces que deja de costarte.
-    </div>
-
-    <p>El material fuente no fue inventado para la enseñanza: son textos de contenido religioso didáctico en gujarati auténtico — el mismo gujarati que usan las comunidades que este curso quiere alcanzar. Ocho libros leídos completos, sin proyección. Cada frase verificada contra su audio original cuando existe. Cada patrón morfológico presentado agrupado desde el primer momento, no disperso lección a lección. Cada ejercicio diseñado para que construyas algo que no viste ya armado en la página.</p>
-
-    <p>El curso cubre cinco capas de habilidad comunicativa: desde las primeras oraciones concretas hasta el momento en que sabes si decir <em>Yahová</em> o <em>Khudā</em> según quien tienes enfrente — porque en ese último módulo el idioma ya no es solo gramática, es respeto.</p>
-
-    <div class="pull-quote">
-      Diecinueve módulos. Cada uno construido con el texto fuente delante, nunca desde una proyección de lo que probablemente dice.
-      <cite>Principio de trabajo del proyecto</cite>
-    </div>
-
-    <p>Esta página es el mapa del recorrido completo. Los módulos 1 y 2 ya existen y puedes empezar ahora mismo. El resto se está construyendo — módulo a módulo, con el mismo cuidado con que empezamos.</p>
-
-  </section>
-
-  <h2 class="section-title">El recorrido del curso</h2>
-  <p class="section-sub">19 módulos en cinco capas — no por dificultad creciente, sino por tipo de habilidad comunicativa. Cada capa introduce un género de lenguaje distinto, con su propio vocabulario y sus propias estructuras.</p>
-
-  <!-- CAPA 1 -->
-  <div class="layer-card">
-    <span class="layer-num">૧</span>
-    <h3>Cimentación</h3>
-    <p>Orden Sujeto-Objeto-Verbo, vocabulario concreto, morfología agrupada desde el primer día. El gujarati del Libro 1 — frases cortas, animales, acciones sencillas — resulta ser una rampa de entrada perfecta. Engañosamente simple, intencionalmente profundo.</p>
-    <div class="module-list">
-      <a class="module-pill ready" href="modulo1.html"><span class="dot"></span> Módulo 1</a>
-      <a class="module-pill ready" href="modulo2.html"><span class="dot"></span> Módulo 2</a>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-badge">&#127760; Curso de gujarati · Testigos de Jehová</span>
+    <img class="hero-logo"
+         src="https://rubenbhai.github.io/GujaratiResources/imagenes/LearnGujarati_SuperInmersivo_Main.jpg"
+         alt="Piensa en Gujarati — Misión Completa">
+    <div class="hero-gu">ગુજરાતી શીખો</div>
+    <h1 class="hero-title">
+      Lleva un mensaje de esperanza<br>
+      en el idioma del <em>corazón</em>
+    </h1>
+    <p class="hero-sub">
+      Un curso diseñado para Testigos de Jehová que aprenden gujarati
+      para compartir las buenas nuevas de la Biblia con familias gujaraties
+      que quizás nunca antes habían escuchado este mensaje.
+    </p>
+    <div class="hero-cta">
+      <a href="Contenido.html" class="btn-primary">Comenzar el curso &rarr;</a>
+      <a href="#mision" class="btn-secondary">&#9654; ¿Para quién es?</a>
     </div>
   </div>
+  <div class="scroll-hint">
+    <span class="scroll-arrow">&#8595;</span>
+    <span>Conoce más</span>
+  </div>
+</section>
 
-  <!-- CAPA 2 -->
-  <div class="layer-card">
-    <span class="layer-num">૨</span>
-    <h3>Narrativa Extendida</h3>
-    <p>Subordinación, discurso reportado, secuencias de eventos encadenados. Aquí vive el salto de complejidad real: Rebeca y Eliezer, David y Goliat, José en Egipto, las diez plagas. El gujarati narrativo que cuenta historias con tensión genuina.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 3</span>
-      <span class="module-pill pending">Módulo 4</span>
-      <span class="module-pill pending">Módulo 5</span>
-      <span class="module-pill pending">Módulo 6</span>
-      <span class="module-pill pending">Módulo 7</span>
-      <span class="module-pill pending">Módulo 8</span>
-      <span class="module-pill pending">Módulo 9</span>
-      <span class="module-pill pending">Módulo 10</span>
-      <span class="module-pill pending">Módulo 11</span>
+<!-- ══ MISIÓN ══ -->
+<section class="mision" id="mision">
+  <div class="mision-inner">
+    <div>
+      <p class="section-eyebrow">Por qué existe este curso</p>
+      <blockquote class="mision-quote">
+        "Hay familias gujaraties que, por primera vez en su vida, tienen la oportunidad de escuchar un mensaje de esperanza que viene de la Biblia."
+      </blockquote>
+    </div>
+    <p class="mision-body">
+      El gujarati no es solo un idioma — es la puerta al corazón de millones de personas.
+      Cuando un Testigo de Jehová saluda en gujarati, cuando pronuncia el nombre de Jehová
+      con el acento correcto, algo cambia en la conversación. <strong>La barrera del idioma
+      se convierte en un puente.</strong>
+      <br><br>
+      Este curso nació de una realidad concreta: muchos predicadores quieren hablar gujarati
+      pero no encuentran recursos diseñados para su contexto espiritual. Los métodos
+      tradicionales enseñan gujarati para viajes o negocios. <strong>Este curso enseña gujarati
+      para el ministerio</strong> — con las frases que realmente necesitas, en situaciones
+      que reconocerás de tu propio territorio.
+    </p>
+    <div class="mision-verse">
+      "Entonces, ¿cómo invocarán a aquel en quien no han creído?
+      ¿Y cómo creerán en aquel de quien no han oído?
+      ¿Y cómo oirán sin un predicador?"
+      <cite>— Romanos 10:14</cite>
     </div>
   </div>
+</section>
 
-  <!-- CAPA 3 -->
-  <div class="layer-card">
-    <span class="layer-num">૩</span>
-    <h3>Opinión y Argumentación</h3>
-    <p>Vocabulario abstracto, respuesta a preguntas abiertas, manejo de objeciones. En dos registros distintos: el formal de un manual de estudio adulto, y el coloquial de un joven que razona bajo presión social. El mismo idioma, dos voces.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 12</span>
-      <span class="module-pill pending">Módulo 13</span>
-      <span class="module-pill pending">Módulo 14</span>
-      <span class="module-pill pending">Módulo 15</span>
-      <span class="module-pill pending">Módulo 16</span>
+<!-- ══ STATS ══ -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">26</div>
+      <div class="stat-label">Módulos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">97</div>
+      <div class="stat-label">Lecciones</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24h</div>
+      <div class="stat-label">de contenido</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Audio nativo</div>
     </div>
   </div>
+</section>
 
-  <!-- CAPA 4 -->
-  <div class="layer-card">
-    <span class="layer-num">૪</span>
-    <h3>Vocabulario Emocional</h3>
-    <p>Duelo, consuelo, resiliencia. El gujarati del corazón: <em>hridaya viNdhaaii gayu</em> — el corazón quedó traspasado. <em>Dil Daalvun</em> — desahogar el alma. Un registro que no aparece en ningún otro libro del curso, y que es exactamente el que se necesita cuando más importa.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 17</span>
-      <span class="module-pill pending">Módulo 18</span>
+<!-- ══ PARA QUIÉN ══ -->
+<section class="para-quien">
+  <div class="para-quien-inner">
+    <p class="section-eyebrow">¿Para quién es este curso?</p>
+    <h2>Para el predicador que quiere hablar<br>directo al corazón</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">&#128218;</div>
+        <div class="card-title">Sin experiencia previa</div>
+        <div class="card-desc">Empiezas desde cero — el script gujarati, los sonidos, las primeras palabras. Paso a paso, sin abrumar.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127908;</div>
+        <div class="card-title">Pronunciación evaluada</div>
+        <div class="card-desc">Gemini escucha tu voz, te da una nota y te dice exactamente qué mejorar. No adivinas — sabes.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127968;</div>
+        <div class="card-title">Frases reales del ministerio</div>
+        <div class="card-desc">Saludar, preguntar, compartir un texto bíblico, despedirse. Las situaciones que ya conoces, en gujarati.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9654;</div>
+        <div class="card-title">Audio Sarvam nativo</div>
+        <div class="card-desc">Cada frase tiene pronunciación de un hablante nativo gujarati — hombre y mujer — para que escuches el idioma real.</div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- CAPA 5 -->
-  <div class="layer-card">
-    <span class="layer-num">૫</span>
-    <h3>Registro Sociolingüístico</h3>
-    <p>El mismo concepto — Dios, oración, bendición — cambia de palabra según si tu interlocutor viene del hinduismo o del islam. Elegir bien no es un detalle de estilo. Es la diferencia entre que alguien sienta que lo ves, o que no.</p>
-    <div class="module-list">
-      <span class="module-pill pending">Módulo 19</span>
-    </div>
+<!-- ══ PROMESA ══ -->
+<section class="promesa">
+  <div class="promesa-inner">
+    <p class="section-eyebrow">Una primera palabra cambia todo</p>
+    <h2>Imagina decir esto<br>en la puerta de una familia gujarati</h2>
+    <span class="promesa-gu">નમસ્તે! કેમ છો?</span>
+    <span class="promesa-es">"¡Hola! ¿Cómo están?"</span>
+    <p>Esa familia lo notará. Preguntarán cómo aprendiste. Se abrirá una puerta que el idioma solo habría mantenido cerrada. Este curso te lleva desde el primer sonido hasta conversaciones bíblicas completas — con paciencia, sin prisa, con propósito.</p>
+    <a href="Contenido.html" class="btn-primary">Ver el contenido del curso &rarr;</a>
   </div>
+</section>
 
-  <div class="commitment-block">
-    <h3>Lo que este curso no promete</h3>
-    <p>No promete que vayas a hablar gujarati fluidamente con este curso solo. Promete algo más honesto: que cuando termines, el gujarati escrito va a dejar de costarte esfuerzo cognitivo activo — lo cual es el requisito previo para que cualquier conversación real sea posible. El resto lo construyes tú, con las personas reales que tienes enfrente.</p>
-  </div>
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>Piensa en Gujarati · Curso ultra-inmersivo para Testigos de Jehová</p>
+  <p style="margin-top:6px">Audio Sarvam AI · Evaluación Gemini · GitHub Pages</p>
+</footer>
 
-  <footer>
-    <span class="gujarati-credit">રૂબેનભાઈ</span>
-    Piensa en Gujarati · Ciudad de Panamá · un módulo a la vez.
-  </footer>
-
-</div>
-
+<script>
+// Generar partículas flotantes
+(function() {
+  var container = document.getElementById('particles');
+  var colors = ['#C8973A', '#2ABFB0', '#E8C068', '#1A8F84'];
+  for (var i = 0; i < 18; i++) {
+    var p = document.createElement('div');
+    p.className = 'particle';
+    var size = Math.random() * 4 + 2;
+    var color = colors[Math.floor(Math.random() * colors.length)];
+    var left = Math.random() * 100;
+    var duration = Math.random() * 12 + 8;
+    var delay = Math.random() * 10;
+    p.style.cssText = [
+      'width:' + size + 'px',
+      'height:' + size + 'px',
+      'left:' + left + '%',
+      'background:' + color,
+      'animation-duration:' + duration + 's',
+      'animation-delay:' + delay + 's'
+    ].join(';');
+    container.appendChild(p);
+  }
+})();
+</script>
 </body>
 </html>
