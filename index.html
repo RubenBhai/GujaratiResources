@@ -38,7 +38,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 40px 24px 80px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-bg {
@@ -449,7 +449,7 @@ footer {
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <span class="hero-badge">&#127760; Curso de gujarati para Testigos de Jehová</span>
+    <span class="hero-badge">&#127760; Curso de gujarati · Testigos de Jehová</span>
     <img class="hero-logo"
          src="https://rubenbhai.github.io/GujaratiResources/imagenes/LearnGujarati_SuperInmersivo_Main.jpg"
          alt="Piensa en Gujarati — Misión Completa">
@@ -468,7 +468,7 @@ footer {
       <a href="#mision" class="btn-secondary">&#9654; ¿Para quién es?</a>
     </div>
   </div>
-  <div class="scroll-hint">
+  <div class="scroll-hint" onclick="document.getElementById('mision').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
     <span class="scroll-arrow">&#8595;</span>
     <span>Conoce más</span>
   </div>
