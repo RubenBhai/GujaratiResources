@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Juego &middot; Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #2C2420; --surface: #362C28; --paper: #E8D9C0;
+    --sindoor: #A8362A; --sindoor-deep: #832920;
+    --saffron: #B8863D; --olive: #5F6E4F;
+    --ink-soft: #C8B99A; --border: #4A3C34;
+  }
+  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 100px; }
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
+  .nav-btn { border: 1px solid var(--border); background: var(--surface); color: var(--paper); padding: 8px 16px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-block; cursor: pointer; }
+  .nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
+  .nav-btn.home { color: var(--saffron); }
+  .nav-bottom { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-top: 1px solid var(--border); padding: 10px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .btn-action { display: block; width: 100%; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 0.95rem; text-align: center; text-decoration: none; transition: all 0.2s; }
+  .btn-words { background: var(--sindoor); color: var(--paper); }
+  .btn-words:hover { background: var(--sindoor-deep); }
+  .btn-next-lec { background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft); }
+  .btn-next-lec:hover { border-color: var(--saffron); color: var(--saffron); }
+  .screen { display: none; }
+  .screen.active { display: block; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 5px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; text-align: center; }
+  .subtitle { color: var(--ink-soft); font-size: 1rem; line-height: 1.7; text-align: center; max-width: 420px; }
+  .btn-main { width: 100%; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1rem; background: var(--sindoor); color: var(--paper); transition: all 0.2s; }
+  .btn-main:hover { background: var(--sindoor-deep); }
+  .btn-sec { width: 100%; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 1rem; background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft); text-align: center; text-decoration: none; display: block; transition: all 0.2s; cursor: pointer; }
+  .btn-sec:hover { border-color: var(--saffron); color: var(--saffron); }
+  .repaso-card { width: 100%; background: var(--surface); border: 2px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .repaso-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+  .repaso-bottom { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border); }
+  .repaso-desc { font-size: 1.05rem; color: var(--paper); line-height: 1.5; flex: 1; }
+  .repaso-desc strong { color: var(--saffron); }
+  .repaso-counter { font-size: 0.82rem; color: var(--ink-soft); }
+  .btn-circle { border: none; width: 48px; height: 48px; border-radius: 50%; background: var(--sindoor); color: var(--paper); cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
+  .btn-circle:hover { background: var(--sindoor-deep); transform: scale(1.08); }
+  .btn-circle.playing { background: var(--olive); }
+  .game-card { width: 100%; max-width: 320px; aspect-ratio: 1; background: var(--surface); border: 2px solid var(--border); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif Gujarati', serif; font-size: clamp(6rem, 25vw, 11rem); color: var(--paper); transition: border-color 0.3s; }
+  .game-card.reveal { border-color: var(--saffron); }
+  .timer-wrap { width: 100%; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .timer-bar { height: 100%; background: var(--saffron); width: 100%; transform-origin: left; }
+  .game-answer { height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 700; color: var(--saffron); opacity: 0; transition: opacity 0.3s; }
+  .game-answer.visible { opacity: 1; }
+  .game-progress { font-size: 0.88rem; color: var(--ink-soft); }
+  .round-indicator { font-size: 0.82rem; color: var(--saffron); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .match-letters { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; }
+  .match-btn { font-family: 'Noto Serif Gujarati', serif; font-size: clamp(3.5rem, 14vw, 5.5rem); color: var(--paper); background: var(--surface); border: 2px solid var(--border); border-radius: 16px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.25s; line-height: 1; }
+  .match-btn:hover { border-color: var(--saffron); }
+  .match-btn.correct { border-color: #4A7C59; background: rgba(74,124,89,0.3); color: #7FBF8E; }
+  .match-btn.wrong { border-color: #CF4444; background: rgba(207,68,68,0.35); color: #FF9999; transform: scale(0.94); }
+  .match-prompt { font-size: 1.05rem; color: var(--ink-soft); text-align: center; min-height: 1.6rem; }
+  .match-prompt strong { color: var(--paper); font-size: 1.2rem; }
+  .match-score { font-size: 1rem; color: var(--ink-soft); }
+  .match-score span { color: var(--saffron); font-weight: 700; font-size: 1.2rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" href="Leccion_1_1_1_c4.html">&larr; Anterior</a>
+  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a>
+  <a class="nav-btn" href="Leccion_1_1_1_v1.html">Palabras &rarr;</a>
+</nav>
+
+<!-- FASE A -->
+<div class="screen active" id="screen-a">
+  <div class="wrap">
+    <span class="badge">Fase A &mdash; Repaso</span>
+    <h2>Repasemos las 4 letras</h2>
+    <p class="subtitle">Escucha cada consonante y rep&iacute;tela en voz alta.</p>
+    <div class="repaso-card">
+      <img class="repaso-img" id="repaso-img" src="" alt="">
+      <div class="repaso-bottom">
+        <div class="repaso-desc" id="repaso-desc"></div>
+        <button class="btn-circle" id="repaso-btn" onclick="repasoPlay()">&#128266;</button>
+      </div>
+    </div>
+    <div class="repaso-counter" id="repaso-counter"></div>
+    <button class="btn-main" id="btn-repaso-next" onclick="repasoNext()">Siguiente &rarr;</button>
+    <button class="btn-sec" onclick="goTo('screen-b')">Saltar al juego &rarr;</button>
+  </div>
+</div>
+
+<!-- FASE B -->
+<div class="screen" id="screen-b">
+  <div class="wrap">
+    <span class="badge">Fase B &mdash; Reconocimiento</span>
+    <h2>&iquest;Qu&eacute; letra es?</h2>
+    <p class="subtitle">Pronuncia en voz alta &mdash; tienes 3 segundos &mdash; luego escucha la respuesta.</p>
+    <div class="round-indicator" id="b-round">Ronda 1 de 3</div>
+    <div class="game-card" id="b-card">&#2724;</div>
+    <div class="timer-wrap"><div class="timer-bar" id="b-timer"></div></div>
+    <div class="game-answer" id="b-answer"></div>
+    <div class="game-progress" id="b-progress">1 de 4</div>
+    <button class="btn-main" id="btn-b-next" style="display:none" onclick="bNext()">Siguiente &rarr;</button>
+    <button class="btn-sec" onclick="goTo('screen-c')">Saltar al emparejamiento &rarr;</button>
+  </div>
+</div>
+
+<!-- FASE C -->
+<div class="screen" id="screen-c">
+  <div class="wrap">
+    <span class="badge">Fase C &mdash; Emparejamiento</span>
+    <h2>Toca la letra que escuchas</h2>
+    <p class="match-prompt" id="c-prompt">&nbsp;</p>
+    <div class="match-letters">
+      <button class="match-btn" id="mb-0" onclick="matchTap(0)"></button>
+      <button class="match-btn" id="mb-1" onclick="matchTap(1)"></button>
+      <button class="match-btn" id="mb-2" onclick="matchTap(2)"></button>
+      <button class="match-btn" id="mb-3" onclick="matchTap(3)"></button>
+    </div>
+    <div class="match-score">Correctas: <span id="c-score">0</span> / <span id="c-total">8</span></div>
+    <button class="btn-main" id="btn-c-replay" onclick="matchReplay()">&#9654; Repetir</button>
+    <button class="btn-sec" onclick="goTo('screen-fin')">Saltar al final &rarr;</button>
+  </div>
+</div>
+
+<!-- FIN -->
+<div class="screen" id="screen-fin">
+  <div class="wrap">
+    <div style="font-size:3rem">&#127942;</div>
+    <h2>&iexcl;Juego completado!</h2>
+    <p class="subtitle">Ya practicaste las 4 consonantes. &iexcl;Ahora a las palabras reales!</p>
+    <a class="btn-main" href="Leccion_1_1_1_v1.html" style="text-decoration:none;display:block;text-align:center;">&#128221; Ir a palabras &rarr;</a>
+    <button class="btn-sec" onclick="reiniciar()">&#8635; Repetir juego</button>
+  </div>
+</div>
+
+<div class="nav-bottom">
+  <a class="btn-action btn-words" href="Leccion_1_1_1_v1.html">&#128221; Ir a palabras</a>
+  <a class="btn-action btn-next-lec" href="Leccion_1_1_2_intro.html">&#9197; Siguiente lecci&oacute;n</a>
+</div>
+
+<audio id="player"></audio>
+<audio id="sfx"></audio>
+
+<script>
+const player  = document.getElementById('player');
+const sfx     = document.getElementById('sfx');
+const BASE    = 'https://rubenbhai.github.io/GujaratiResources';
+const SND_OK  = BASE + '/audios/clase_1_1/Clase_1_1_Correcto.mp3';
+const SND_ERR = BASE + '/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
+
+const letters = [
+  { letter: '\u0aa4', answer: 'ta', audio: BASE+'/audios/alfabeto/c09_ta.mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ta.png', desc: 'la "t" en <strong>ta</strong>co' },
+  { letter: '\u0ab0', answer: 'ra', audio: BASE+'/audios/alfabeto/c27_ra-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ra.png', desc: 'la "r" suave en ca<strong>r</strong>o' },
+  { letter: '\u0ab8', answer: 'sa', audio: BASE+'/audios/alfabeto/c26_sa-hombre.mp3', img: BASE+'/imagenes/Clase_1_1/img_alfa_sa.png', desc: 'la "s" en <strong>sa</strong>po' },
+  { letter: '\u0aae', answer: 'ma', audio: BASE+'/audios/alfabeto/c23_ma-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ma.png', desc: 'la "m" en <strong>ma</strong>m\u00e1' }
+];
+
+function shuffle(a) { return a.slice().sort(function() { return Math.random() - 0.5; }); }
+
+function goTo(id) {
+  var screens = document.querySelectorAll('.screen');
+  for (var i = 0; i < screens.length; i++) screens[i].classList.remove('active');
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+  if (id === 'screen-b') initB();
+  if (id === 'screen-c') initC();
+}
+
+/* ===== FASE A ===== */
+var aIdx = 0;
+
+function repasoShow() {
+  var item = letters[aIdx];
+  document.getElementById('repaso-img').src = item.img;
+  document.getElementById('repaso-desc').innerHTML = item.desc;
+  document.getElementById('repaso-counter').textContent = (aIdx + 1) + ' de 4';
+  document.getElementById('btn-repaso-next').textContent = aIdx < 3 ? 'Siguiente \u2192' : 'Ir al juego \u2192';
+  setTimeout(function() { player.src = item.audio; player.play().catch(function(){}); }, 300);
+}
+
+function repasoPlay() {
+  var item = letters[aIdx];
+  var btn = document.getElementById('repaso-btn');
+  btn.classList.add('playing');
+  player.src = item.audio; player.play();
+  player.onended = function() { btn.classList.remove('playing'); };
+}
+
+function repasoNext() {
+  aIdx++;
+  if (aIdx < 4) { repasoShow(); }
+  else { goTo('screen-b'); }
+}
+
+/* ===== FASE B ===== */
+var bRound = 0, bIdx = 0, bQueue = [], bTimer = null;
+var B_ROUNDS = 3;
+
+function initB() {
+  bRound = 0; bIdx = 0;
+  bQueue = shuffle(letters);
+  bShowCard();
+}
+
+function bShowCard() {
+  if (bTimer) clearTimeout(bTimer);
+  var item = bQueue[bIdx];
+  document.getElementById('b-round').textContent = 'Ronda ' + (bRound + 1) + ' de ' + B_ROUNDS;
+  document.getElementById('b-progress').textContent = (bIdx + 1) + ' de 4';
+  var card = document.getElementById('b-card');
+  var ans  = document.getElementById('b-answer');
+  var btn  = document.getElementById('btn-b-next');
+  var bar  = document.getElementById('b-timer');
+  card.textContent = item.letter;
+  card.classList.remove('reveal');
+  ans.textContent = ''; ans.classList.remove('visible');
+  btn.style.display = 'none';
+  bar.style.transition = 'none'; bar.style.transform = 'scaleX(1)';
+  requestAnimationFrame(function() { requestAnimationFrame(function() {
+    bar.style.transition = 'transform 3s linear'; bar.style.transform = 'scaleX(0)';
+  }); });
+  bTimer = setTimeout(function() { bReveal(item); }, 3000);
+}
+
+function bReveal(item) {
+  document.getElementById('b-card').classList.add('reveal');
+  var ans = document.getElementById('b-answer');
+  ans.textContent = item.answer; ans.classList.add('visible');
+  document.getElementById('btn-b-next').style.display = 'block';
+  player.src = item.audio; player.playbackRate = 1.0; player.play();
+}
+
+function bNext() {
+  bIdx++;
+  if (bIdx < 4) {
+    bShowCard();
+  } else {
+    bRound++;
+    if (bRound < B_ROUNDS) {
+      bIdx = 0; bQueue = shuffle(letters); bShowCard();
+    } else {
+      goTo('screen-c');
+    }
+  }
+}
+
+/* ===== FASE C ===== */
+var C_ROUNDS = 8;
+var cQueue = [], cIdx = 0, cScore = 0;
+var cCurrentItem = null, cLayout = [], cLocked = false;
+
+function initC() {
+  cQueue = shuffle(letters.concat(letters));
+  cIdx = 0; cScore = 0; cLocked = false;
+  document.getElementById('c-score').textContent = '0';
+  document.getElementById('c-total').textContent = C_ROUNDS;
+  cShowRound();
+}
+
+function cShowRound() {
+  if (cIdx >= C_ROUNDS) { goTo('screen-fin'); return; }
+  cLocked = false;
+  cCurrentItem = cQueue[cIdx];
+  cLayout = shuffle([0, 1, 2, 3]);
+  for (var i = 0; i < 4; i++) {
+    var btn = document.getElementById('mb-' + i);
+    btn.textContent = letters[cLayout[i]].letter;
+    btn.className = 'match-btn';
+  }
+  document.getElementById('c-prompt').innerHTML = '&nbsp;';
+  setTimeout(function() { player.src = cCurrentItem.audio; player.play().catch(function(){}); }, 300);
+}
+
+function matchReplay() {
+  player.src = cCurrentItem.audio; player.play().catch(function(){});
+}
+
+function matchTap(btnIdx) {
+  if (cLocked) return;
+  var tapped = letters[cLayout[btnIdx]];
+  var correct = tapped.letter === cCurrentItem.letter;
+  var btn = document.getElementById('mb-' + btnIdx);
+
+  if (correct) {
+    cLocked = true;
+    btn.classList.add('correct');
+    cScore++;
+    document.getElementById('c-score').textContent = cScore;
+    document.getElementById('c-prompt').innerHTML = '\u2714 \u00a1Correcto! &mdash; <strong>' + cCurrentItem.answer + '</strong>';
+    sfx.src = SND_OK; sfx.play().catch(function(){});
+    cIdx++;
+    setTimeout(function() { cShowRound(); }, 1200);
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById('c-prompt').innerHTML = '\u2716 \u00a1Int\u00e9ntalo de nuevo!';
+    sfx.src = SND_ERR; sfx.play().catch(function(){});
+    setTimeout(function() {
+      btn.classList.remove('wrong');
+      player.src = cCurrentItem.audio; player.play().catch(function(){});
+    }, 1000);
+  }
+}
+
+function reiniciar() {
+  aIdx = 0;
+  goTo('screen-a');
+  repasoShow();
+}
+
+/* ===== ARRANQUE ===== */
+repasoShow();
+</script>
+</body>
+</html>
