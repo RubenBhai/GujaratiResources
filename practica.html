@@ -8,21 +8,21 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   :root {
-    --bg: #1a1410;
-    --surface: #241c16;
-    --paper: #F0E6D2;
-    --sindoor: #C24A3A;
-    --sindoor-deep: #A8362A;
-    --saffron: #D4A24C;
+    --bg: #2C2420;
+    --surface: #362C28;
+    --paper: #E8D9C0;
+    --sindoor: #A8362A;
+    --sindoor-deep: #832920;
+    --saffron: #B8863D;
     --olive: #8A9678;
-    --ink-soft: #B8AC9C;
-    --border: #382c22;
+    --ink-soft: #C8B99A;
+    --border: #4A3C34;
   }
   body {
     margin: 0;
     min-height: 100vh;
     background: var(--bg);
-    background-image: radial-gradient(ellipse at top, rgba(212,162,76,0.08), transparent 60%);
+    background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%);
     color: var(--paper);
     font-family: 'Source Sans 3', sans-serif;
     padding: 20px;
@@ -179,7 +179,7 @@
 <audio id="self-player" playsinline></audio>
 
 <script>
-  const BACKEND_URL = "https://gujaratitraining-production.up.railway.app";
+  const BACKEND_URL = "https://gujaratitraining.onrender.com";
   const LOGIN_URL = "https://rubenbhai.github.io/GujaratiTraining/index.html";
 
   // ===================================================================
@@ -195,10 +195,10 @@
   // ===================================================================
   // 2. Verificación de sesión — si no hay token, ir al login con retorno
   // ===================================================================
-  //if (!sessionStorage.getItem('accessToken')) {
-  //  const returnUrl = encodeURIComponent(window.location.href);
-  //  window.location.href = `${LOGIN_URL}?return=${returnUrl}`;
-  // }
+  if (!sessionStorage.getItem('accessToken')) {
+    const returnUrl = encodeURIComponent(window.location.href);
+    window.location.href = `${LOGIN_URL}?return=${returnUrl}`;
+  }
 
   // ===================================================================
   // 3. Reproductores y estado global (igual lógica que teatro.html)
@@ -232,7 +232,7 @@
     document.getElementById('theater').innerHTML =
       `<div class="error-state">Parámetros inválidos en la URL. Verifica los valores de 'modulo' y 'leccion'.</div>`;
   } else {
-    const jsonFile = `data/practica_modulo${modulo}.json`;
+    const jsonFile = `data/practica_clase_${modulo.replace('.','_')}_${leccion}.json`;
     
     fetch(jsonFile)
       .then(res => {
@@ -257,34 +257,39 @@
 
   function construirInterfaz(leccionData) {
     document.getElementById('page-title').innerText = leccionData.titulo;
-    document.getElementById('page-subtitle').innerText = `Fuente: ${leccionData.fuente}`;
+    document.getElementById('page-subtitle').innerText = 'Fuente: ' + leccionData.fuente;
 
     const theater = document.getElementById('theater');
-    leccionData.frases.forEach((frase, i) => {
-      const lineId = `line-${i}`;
-      const div = document.createElement('div');
+    leccionData.frases.forEach(function(frase, i) {
+      var lineId = 'line-' + i;
+      var div = document.createElement('div');
       div.className = 'dialogue-line';
       div.id = lineId;
 
-      const audioArg = frase.tipo === 'audioLeccion'
-        ? `'${leccionData.audioLeccion}', '${lineId}', ${frase.inicio}, ${frase.fin}`
-        : `'${frase.audioClip}', '${lineId}', null, null`;
+      var gu = frase.gujarati.replace(/'/g, "\'");
+      var imgHtml = frase.imagen
+        ? '<img src="' + frase.imagen + '" style="width:100%;border-radius:10px;margin-bottom:12px;display:block;" onerror="this.style.display=\'none\'">'
+        : '';
+      var btnMujer = frase.audioClip2
+        ? '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip2 + '\',\'' + lineId + '\',null,null)">&#9792; Mujer</button>'
+        : '';
 
-      div.innerHTML = `
-        <div class="gujarati-text">${frase.gujarati}</div>
-        <div class="spanish-text">${frase.espanol}</div>
-        <div class="action-bar">
-          <button class="btn btn-listen" onclick="playMaster(${audioArg})">🔊 Escuchar</button>
-          <button class="btn btn-record" id="rec-${lineId}" onclick="toggleRecord('${lineId}', '${frase.gujarati.replace(/'/g, "\\'")}')">🎙️ Practicar</button>
-          <button class="btn btn-play-self" id="play-${lineId}" onclick="playRecorded('${lineId}')" disabled>🎧 Escucharme</button>
-          <span id="load-${lineId}" class="loading-ia">✨ Evaluando…</span>
-        </div>
-        <div class="eval-panel" id="eval-panel-${lineId}">
-          <p class="eval-nota" id="nota-${lineId}">⭐ Nota: 0/10</p>
-          <p class="eval-transcripcion" id="trans-${lineId}"></p>
-          <p class="eval-consejo" id="consejo-${lineId}"></p>
-        </div>
-      `;
+      div.innerHTML = imgHtml
+        + '<div class="gujarati-text">' + frase.gujarati + '</div>'
+        + '<div class="spanish-text">' + frase.espanol + '</div>'
+        + '<div class="action-bar">'
+        + '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip + '\',\'' + lineId + '\',null,null)">&#128266; Escuchar</button>'
+        + btnMujer
+        + '<button class="btn btn-record" id="rec-' + lineId + '" onclick="toggleRecord(\'' + lineId + '\',\'' + gu + '\')">&#127899; Practicar</button>'
+        + '<button class="btn btn-play-self" id="play-' + lineId + '" onclick="playRecorded(\'' + lineId + '\')" disabled>&#127911; Escucharme</button>'
+        + '<span id="load-' + lineId + '" class="loading-ia">&#10024; Evaluando&#8230;</span>'
+        + '</div>'
+        + '<div class="eval-panel" id="eval-panel-' + lineId + '">'
+        + '<p class="eval-nota" id="nota-' + lineId + '">&#11088; Nota: 0/10</p>'
+        + '<p class="eval-transcripcion" id="trans-' + lineId + '"></p>'
+        + '<p class="eval-consejo" id="consejo-' + lineId + '"></p>'
+        + '</div>';
+
       theater.appendChild(div);
     });
   }
