@@ -465,7 +465,8 @@ footer {
     </p>
     <div class="hero-cta">
       <a href="Contenido.html" class="btn-primary">Comenzar el curso &rarr;</a>
-      <a href="#mision" class="btn-secondary">&#9654; ¿Para quién es?</a>
+      <a href="#mision" class="btn-secondary" onclick="event.preventDefault();document.getElementById('mision').scrollIntoView({behavior:'smooth'})">¿Por qué este curso?</a>
+      <a href="#para-quien" class="btn-secondary" onclick="event.preventDefault();document.getElementById('para-quien').scrollIntoView({behavior:'smooth'})">¿Para quién es?</a>
     </div>
   </div>
   <div class="scroll-hint" onclick="document.getElementById('mision').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
@@ -527,7 +528,7 @@ footer {
 </section>
 
 <!-- ══ PARA QUIÉN ══ -->
-<section class="para-quien">
+<section class="para-quien" id="para-quien">
   <div class="para-quien-inner">
     <p class="section-eyebrow">¿Para quién es este curso?</p>
     <h2>Para el predicador que quiere hablar<br>directo al corazón</h2>
