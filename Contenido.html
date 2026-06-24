@@ -359,7 +359,7 @@ body {
       <div class="lecciones">
 
         <!-- LECCIÓN 1.1 — ACTIVA -->
-        <a class="leccion activa" href="Leccion_1_1_1_intro.html">
+        <a class="leccion activa" href="Leccion_1_1_1_intro.html" data-leccion="1_1_1">
           <span class="lec-num">1.1</span>
           <div class="lec-info">
             <div class="lec-title">Las primeras consonantes y vocales</div>
@@ -579,6 +579,52 @@ function toggleModulo(id) {
   var el = document.getElementById(id);
   el.classList.toggle('open');
 }
+
+// ── PROGRESO REAL CON localStorage ──
+// Lista de todas las lecciones del curso (id => true cuando exista)
+// El total se usa para calcular el porcentaje
+var TOTAL_LECCIONES = 97;
+
+function calcularProgreso() {
+  var completadas = 0;
+  var ultimaLeccion = '';
+  // Recorre todo localStorage buscando claves 'leccion_*' = 'completada'
+  for (var i = 0; i < localStorage.length; i++) {
+    var clave = localStorage.key(i);
+    if (clave && clave.indexOf('leccion_') === 0 && localStorage.getItem(clave) === 'completada') {
+      completadas++;
+      ultimaLeccion = clave;
+    }
+  }
+
+  var pct = Math.round((completadas / TOTAL_LECCIONES) * 1000) / 10; // 1 decimal
+  if (pct < 1 && completadas > 0) pct = 1; // mínimo visible
+
+  // Actualizar barra
+  var fill = document.querySelector('.progress-fill');
+  if (fill) fill.style.width = pct + '%';
+
+  // Actualizar etiquetas
+  var labels = document.querySelectorAll('.progress-label span');
+  if (labels.length >= 2) {
+    labels[0].textContent = 'Tu progreso';
+    labels[1].textContent = completadas + ' de ' + TOTAL_LECCIONES + ' lecciones';
+  }
+
+  // Marcar visualmente lecciones completadas
+  document.querySelectorAll('.leccion[data-leccion]').forEach(function(el) {
+    var id = el.getAttribute('data-leccion');
+    if (localStorage.getItem('leccion_' + id) === 'completada') {
+      var status = el.querySelector('.lec-status');
+      if (status) {
+        status.className = 'lec-status check';
+        status.innerHTML = '\u2714';
+      }
+    }
+  });
+}
+
+calcularProgreso();
 </script>
 </body>
 </html>
