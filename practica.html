@@ -92,6 +92,8 @@
   .btn-play-self { color: var(--olive); opacity: 0.4; cursor: not-allowed; }
   .btn-play-self:not([disabled]) { opacity: 1; cursor: pointer; }
   .btn-play-self:not([disabled]):hover { background: var(--olive); color: #1a1410; }
+  .btn-next-practice { background: var(--saffron); color: #1a1410; }
+  .btn-next-practice:hover { background: #cf9a48; }
   @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.02); } }
 
   .loading-ia { display: none; color: var(--saffron); font-size: 0.85rem; font-weight: 600; animation: pulse 1s infinite; }
@@ -195,10 +197,10 @@
   // ===================================================================
   // 2. Verificación de sesión — si no hay token, ir al login con retorno
   // ===================================================================
-  //if (!sessionStorage.getItem('accessToken')) {
-  //  const returnUrl = encodeURIComponent(window.location.href);
-  //  window.location.href = `${LOGIN_URL}?return=${returnUrl}`;
-  //}
+  if (!sessionStorage.getItem('accessToken')) {
+    const returnUrl = encodeURIComponent(window.location.href);
+    window.location.href = `${LOGIN_URL}?return=${returnUrl}`;
+  }
 
   // ===================================================================
   // 3. Reproductores y estado global (igual lógica que teatro.html)
@@ -260,6 +262,7 @@
     document.getElementById('page-subtitle').innerText = 'Fuente: ' + leccionData.fuente;
 
     const theater = document.getElementById('theater');
+    const total = leccionData.frases.length;
     leccionData.frases.forEach(function(frase, i) {
       var lineId = 'line-' + i;
       var div = document.createElement('div');
@@ -274,6 +277,11 @@
         ? '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip2 + '\',\'' + lineId + '\',null,null)">&#9792; Mujer</button>'
         : '';
 
+      // Botón "Próxima práctica" — salta al siguiente ejercicio (excepto en el último)
+      var btnNext = (i < total - 1)
+        ? '<button class="btn btn-next-practice" onclick="irAProxima(' + (i + 1) + ')">&#11015; Pr&oacute;xima pr&aacute;ctica</button>'
+        : '<button class="btn btn-next-practice" onclick="irAlFinal()">&#127937; Terminar</button>';
+
       div.innerHTML = imgHtml
         + '<div class="gujarati-text">' + frase.gujarati + '</div>'
         + '<div class="spanish-text">' + frase.espanol + '</div>'
@@ -282,6 +290,7 @@
         + btnMujer
         + '<button class="btn btn-record" id="rec-' + lineId + '" onclick="toggleRecord(\'' + lineId + '\',\'' + gu + '\')">&#127899; Practicar</button>'
         + '<button class="btn btn-play-self" id="play-' + lineId + '" onclick="playRecorded(\'' + lineId + '\')" disabled>&#127911; Escucharme</button>'
+        + btnNext
         + '<span id="load-' + lineId + '" class="loading-ia">&#10024; Evaluando&#8230;</span>'
         + '</div>'
         + '<div class="eval-panel" id="eval-panel-' + lineId + '">'
@@ -292,6 +301,21 @@
 
       theater.appendChild(div);
     });
+  }
+
+  // Desplaza la pantalla al siguiente ejercicio y lo resalta
+  function irAProxima(indice) {
+    var destino = document.getElementById('line-' + indice);
+    if (destino) {
+      document.querySelectorAll('.dialogue-line').forEach(function(l){ l.classList.remove('active'); });
+      destino.classList.add('active');
+      destino.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function irAlFinal() {
+    var footer = document.querySelector('footer');
+    if (footer) footer.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   // ===================================================================
