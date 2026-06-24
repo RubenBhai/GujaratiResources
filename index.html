@@ -600,5 +600,73 @@ footer {
   }
 })();
 </script>
+<!-- ═══ BOTÓN DE MÚSICA AMBIENTE ═══ -->
+<audio id="bgMusic" loop preload="none">
+  <source src="https://rubenbhai.github.io/GujaratiResources/audios/musica/Index_musica_ambiente.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" onclick="toggleMusic()" aria-label="Música de fondo"
+  style="position:fixed;bottom:20px;right:20px;z-index:9999;width:52px;height:52px;border-radius:50%;border:1px solid rgba(200,151,58,0.4);background:rgba(13,20,32,0.85);color:#C8973A;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.4);">
+  &#128263;
+</button>
+<script>
+(function() {
+  var music = document.getElementById('bgMusic');
+  var btn = document.getElementById('musicToggle');
+  music.volume = 0.0;
+  var TARGET_VOL = 0.35;
+  var fadeTimer = null;
+  var playing = false;
+
+  function fadeTo(target) {
+    if (fadeTimer) clearInterval(fadeTimer);
+    fadeTimer = setInterval(function() {
+      var diff = target - music.volume;
+      if (Math.abs(diff) < 0.02) {
+        music.volume = target;
+        clearInterval(fadeTimer);
+        if (target === 0) music.pause();
+      } else {
+        music.volume += diff * 0.1;
+      }
+    }, 50);
+  }
+
+  window.toggleMusic = function() {
+    if (playing) {
+      playing = false;
+      btn.innerHTML = '&#128263;';   // 🔇
+      btn.style.color = 'rgba(200,151,58,0.5)';
+      fadeTo(0);
+      try { localStorage.setItem('musica_pref', 'off'); } catch(e) {}
+    } else {
+      playing = true;
+      btn.innerHTML = '&#128266;';   // 🔊
+      btn.style.color = '#C8973A';
+      music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
+      try { localStorage.setItem('musica_pref', 'on'); } catch(e) {}
+    }
+  };
+
+  // Restaurar preferencia — intenta autoplay solo si el usuario ya la activó antes
+  var pref = 'off';
+  try { pref = localStorage.getItem('musica_pref') || 'off'; } catch(e) {}
+  if (pref === 'on') {
+    // Los navegadores bloquean autoplay; se activa al primer toque del usuario
+    var resume = function() {
+      if (!playing) {
+        playing = true;
+        btn.innerHTML = '&#128266;';
+        btn.style.color = '#C8973A';
+        music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
+      }
+      document.removeEventListener('click', resume);
+      document.removeEventListener('touchstart', resume);
+    };
+    document.addEventListener('click', resume);
+    document.addEventListener('touchstart', resume);
+  }
+})();
+</script>
+
 </body>
 </html>
