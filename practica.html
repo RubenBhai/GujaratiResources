@@ -197,10 +197,10 @@
   // ===================================================================
   // 2. Verificación de sesión — si no hay token, ir al login con retorno
   // ===================================================================
-  if (!sessionStorage.getItem('accessToken')) {
-    const returnUrl = encodeURIComponent(window.location.href);
-    window.location.href = `${LOGIN_URL}?return=${returnUrl}`;
-  }
+  //if (!sessionStorage.getItem('accessToken')) {
+  //  const returnUrl = encodeURIComponent(window.location.href);
+  //  window.location.href = `${LOGIN_URL}?return=${returnUrl}`;
+  // }
 
   // ===================================================================
   // 3. Reproductores y estado global (igual lógica que teatro.html)
