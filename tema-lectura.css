@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>¡Lección completa! · Piensa en Gujarati</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ==============================================
+       RESET & BASE — suave, cálido, enfocado al estudio
+       ============================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crema: #FDF8F0;
+      --crema-oscuro: #F5EDE0;
+      --marron-suave: #E8DBC8;
+      --marron-medio: #C8B89A;
+      --marron-texto: #5C4B3A;
+      --marron-oscuro: #3E3226;
+      --naranja-acento: #D4845A;
+      --naranja-claro: #F0C8A0;
+      --verde-sabio: #6B8F71;
+      --rojo-tenue: #C4655A;
+      --borde-tarjeta: #E0D3C0;
+      --sombra-suave: 0 4px 20px rgba(60, 40, 20, 0.06);
+      --sombra-tarjeta: 0 6px 24px rgba(60, 40, 20, 0.08);
+      --radio-grande: 24px;
+      --radio-medio: 16px;
+    }
+
+    body {
+      background: var(--crema);
+      background-image: 
+        radial-gradient(ellipse at 20% 10%, rgba(212, 132, 90, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 90%, rgba(107, 143, 113, 0.05) 0%, transparent 50%);
+      color: var(--marron-texto);
+      font-family: 'Source Sans 3', sans-serif;
+      min-height: 100vh;
+      padding-bottom: 100px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==============================================
+       NAVEGACIÓN SUPERIOR — flotante y elegante
+       ============================================== */
+    .nav-bar {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+      margin: 12px 16px 0;
+      background: rgba(255, 250, 245, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--marron-suave);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 8px;
+      gap: 6px;
+      box-shadow: var(--sombra-suave);
+    }
+
+    .nav-btn {
+      border: none;
+      background: transparent;
+      color: var(--marron-oscuro);
+      padding: 10px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-btn:hover {
+      background: var(--naranja-claro);
+      color: var(--marron-oscuro);
+    }
+
+    .nav-btn.home {
+      background: var(--naranja-acento);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(212, 132, 90, 0.3);
+    }
+
+    .nav-btn.home:hover {
+      background: #c77a52;
+      transform: translateY(-1px);
+    }
+
+    .nav-btn.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+      color: var(--marron-medio);
+    }
+
+    /* ==============================================
+       CONTENEDOR PRINCIPAL — respira, centrado, cálido
+       ============================================== */
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* ==============================================
+       CELEBRACIÓN — tipografía elegante
+       ============================================== */
+    .wrap > div:first-child {
+      font-size: 4.5rem;
+      line-height: 1;
+      filter: drop-shadow(0 4px 8px rgba(212, 132, 90, 0.25));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.2;
+      color: var(--marron-oscuro);
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: #7B6B5B;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 440px;
+      font-weight: 400;
+    }
+
+    /* ==============================================
+       BOTONES PRINCIPALES — orgánicos y acogedores
+       ============================================== */
+    .btn-sec,
+    .btn-fin {
+      display: block;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: var(--radio-medio);
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+      letter-spacing: 0.02em;
+    }
+
+    .btn-sec {
+      background: white;
+      border: 2px solid var(--marron-suave);
+      color: var(--marron-texto);
+    }
+
+    .btn-sec:hover {
+      border-color: var(--naranja-acento);
+      color: var(--naranja-acento);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-suave);
+    }
+
+    .btn-fin {
+      background: var(--verde-sabio);
+      border: none;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(107, 143, 113, 0.3);
+      margin-top: 4px;
+    }
+
+    .btn-fin:hover {
+      background: #5C7D62;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(107, 143, 113, 0.4);
+    }
+
+    /* ==============================================
+       TARJETAS — Lo aprendido + Próxima lección
+       ============================================== */
+    .aprendido-box,
+    .proxima-box {
+      width: 100%;
+      background: white;
+      border: 1px solid var(--borde-tarjeta);
+      border-radius: var(--radio-grande);
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: var(--sombra-tarjeta);
+      transition: all 0.3s ease;
+    }
+
+    .aprendido-box:hover,
+    .proxima-box:hover {
+      box-shadow: 0 8px 30px rgba(60, 40, 20, 0.12);
+    }
+
+    .aprendido-label,
+    .proxima-label {
+      font-size: 0.8rem;
+      color: var(--naranja-acento);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: inline-block;
+      background: rgba(212, 132, 90, 0.1);
+      padding: 6px 16px;
+      border-radius: 30px;
+    }
+
+    .proxima-texto {
+      font-size: 1.1rem;
+      color: var(--marron-texto);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    /* Letras grandes en Gujarati */
+    .aprendido-letras,
+    .proxima-letras {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .aprendido-letras .gu,
+    .proxima-letras .gu {
+      font-family: 'Noto Serif Gujarati', serif;
+      font-size: 3rem;
+      color: var(--marron-oscuro);
+      line-height: 1;
+      background: var(--crema-oscuro);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .proxima-letras .gu {
+      color: var(--naranja-acento);
+      background: rgba(212, 132, 90, 0.08);
+      font-size: 2.8rem;
+      width: 72px;
+      height: 72px;
+    }
+
+    .aprendido-letras .gu:hover,
+    .proxima-letras .gu:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* ==============================================
+       TABLA DE VOCABULARIO APRENDIDO
+       ============================================== */
+    .aprendido-tabla {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 8px;
+    }
+
+    .aprendido-tabla td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--crema-oscuro);
+      text-align: left;
+      font-size: 1.05rem;
+    }
+
+    .aprendido-tabla tr:last-child td {
+      border-bottom: none;
+    }
+
+    .aprendido-tabla .gu-cell {
+      font-family: 'Noto Serif Gujarati', serif;
+      font-size: 2rem;
+      color: var(--marron-oscuro);
+      width: 30%;
+      font-weight: 700;
+    }
+
+    .aprendido-tabla .pron-cell {
+      color: var(--naranja-acento);
+      font-weight: 600;
+      font-size: 1rem;
+      width: 30%;
+      letter-spacing: 0.03em;
+    }
+
+    .aprendido-tabla .mean-cell {
+      color: var(--marron-texto);
+      font-size: 1.05rem;
+      width: 40%;
+    }
+
+    /* ==============================================
+       NAVEGACIÓN INFERIOR (si se usara en otras páginas)
+       ============================================== */
+    .nav-bottom {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      z-index: 100;
+      background: rgba(255, 250, 245, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--marron-suave);
+      border-radius: 60px;
+      padding: 6px 8px;
+      display: flex;
+      gap: 8px;
+      box-shadow: 0 -2px 20px rgba(60, 40, 20, 0.08);
+    }
+
+    .btn-action {
+      flex: 1;
+      border: none;
+      padding: 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-words {
+      background: var(--naranja-acento);
+      color: white;
+    }
+
+    .btn-words:hover {
+      background: #c77a52;
+      transform: translateY(-1px);
+    }
+
+    .btn-next-lec {
+      background: transparent;
+      color: var(--marron-texto);
+    }
+
+    .btn-next-lec:hover {
+      background: var(--marron-suave);
+    }
+
+    /* ==============================================
+       UTILIDADES — cajas de información (mantenidas)
+       ============================================== */
+    .info-box {
+      width: 100%;
+      background: white;
+      border-left: 5px solid var(--naranja-acento);
+      border-radius: 0 var(--radio-medio) var(--radio-medio) 0;
+      padding: 18px 20px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--marron-texto);
+      box-shadow: var(--sombra-suave);
+    }
+
+    .info-box strong {
+      color: var(--marron-oscuro);
+    }
+
+    .info-box .gu {
+      font-family: 'Noto Serif Gujarati', serif;
+      font-size: 1.2rem;
+      color: var(--naranja-acento);
+    }
+
+    /* ==============================================
+       RESPONSIVE — para pantallas pequeñas
+       ============================================== */
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 20px 14px 30px;
+        gap: 18px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .aprendido-box,
+      .proxima-box {
+        padding: 20px 14px;
+      }
+
+      .aprendido-letras .gu,
+      .proxima-letras .gu {
+        font-size: 2.2rem;
+        width: 52px;
+        height: 52px;
+      }
+
+      .aprendido-tabla .gu-cell {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* ==============================================
+       TRANSICIONES GENERALES SUAVES
+       ============================================== */
+    a, button {
+      transition: all 0.25s ease;
+    }
+
+    /* Scroll suave */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación superior con diseño flotante -->
+  <nav class="nav-bar">
+    <a class="nav-btn" href="Leccion_1_1_1_v6.html">← Anterior</a>
+    <a class="nav-btn home" href="Leccion_1_1_1_intro.html">🏠 Inicio</a>
+    <span class="nav-btn disabled">Siguiente →</span>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="wrap">
+    
+    <!-- Trofeo animado -->
+    <div>🏆</div>
+    
+    <h1>¡Muy bien!</h1>
+    
+    <p class="subtitle">
+      Aprendiste tus primeras 4 letras del gujarati y 6 palabras de verdad. 
+      ¡Sigue así! Ahora practica cómo suenan.
+    </p>
+    
+    <a class="btn-sec" href="Leccion_1_1_1_intro.html">← Repetir lección</a>
+
+    <!-- Tarjeta: Lo que aprendiste -->
+    <div class="aprendido-box">
+      <div class="aprendido-label">✨ Lo que aprendiste</div>
+      <div class="aprendido-letras">
+        <span class="gu">ત</span>
+        <span class="gu">ર</span>
+        <span class="gu">સ</span>
+        <span class="gu">મ</span>
+      </div>
+      <table class="aprendido-tabla">
+        <tr><td class="gu-cell">તરત</td><td class="pron-cell">ta-rat</td><td class="mean-cell">enseguida</td></tr>
+        <tr><td class="gu-cell">રસ</td><td class="pron-cell">ras</td><td class="mean-cell">jugo</td></tr>
+        <tr><td class="gu-cell">રમત</td><td class="pron-cell">ra-mat</td><td class="mean-cell">juego</td></tr>
+        <tr><td class="gu-cell">સતત</td><td class="pron-cell">sa-tat</td><td class="mean-cell">continuo</td></tr>
+        <tr><td class="gu-cell">તરસ</td><td class="pron-cell">ta-ras</td><td class="mean-cell">sed</td></tr>
+        <tr><td class="gu-cell">સરસ</td><td class="pron-cell">sa-ras</td><td class="mean-cell">excelente</td></tr>
+      </table>
+    </div>
+
+    <!-- Tarjeta: Próxima lección -->
+    <div class="proxima-box">
+      <div class="proxima-label">📚 En la siguiente lección</div>
+      <div class="proxima-texto">Aprenderás 4 letras nuevas:</div>
+      <div class="proxima-letras">
+        <span class="gu">દ</span>
+        <span class="gu">જ</span>
+        <span class="gu">લ</span>
+        <span class="gu">હ</span>
+      </div>
+    </div>
+
+    <!-- Botón de siguiente lección -->
+    <a class="btn-fin" href="Leccion_1_1_2_intro.html">Siguiente lección →</a>
+    
+  </div>
+
+  <!-- Reproductores de audio (mantenidos del original) -->
+  <audio id="player"></audio>
+  <audio id="triunfo" preload="auto">
+    <source src="https://rubenbhai.github.io/GujaratiResources/audios/musica/level_complete_01.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Marcar esta lección como completada
+    try { localStorage.setItem('leccion_1_1_1', 'completada'); } catch(e) {}
+
+    // Sonido de triunfo al llegar al final de la lección
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var t = document.getElementById('triunfo');
+        if (t) { t.volume = 0.7; t.play().catch(function(){}); }
+      }, 350);
+    });
+
+    const player = document.getElementById('player');
+    let currentSpeed = 1.0;
+    let toggle = 'h';
+
+    function playAudio(url, btn) {
+      document.querySelectorAll('.frame-audio-btn').forEach(b => b.classList.remove('playing'));
+      btn.classList.add('playing');
+      btn.textContent = '▶ Reproduciendo...';
+      player.src = url; player.playbackRate = 1.0; player.play();
+      player.onended = () => { btn.classList.remove('playing'); btn.innerHTML = '🔊 Escuchar'; };
+    }
+
+    function setSpeed(s) {
+      currentSpeed = s;
+      const btnNormal = document.getElementById('btn-normal');
+      const btnSlow = document.getElementById('btn-slow');
+      if (btnNormal) btnNormal.classList.toggle('active', s === 1.0);
+      if (btnSlow) btnSlow.classList.toggle('active', s === 0.75);
+    }
+
+    function playVocab(btn, urlH, urlM) {
+      const useH = toggle === 'h';
+      toggle = useH ? 'm' : 'h';
+      btn.classList.add('playing');
+      btn.textContent = useH ? '♬♂' : '♬♀';
+      player.src = useH ? urlH : urlM;
+      player.playbackRate = currentSpeed; player.play();
+      player.onended = () => { btn.classList.remove('playing'); btn.textContent = '▶'; };
+    }
+
+    // JUEGO (mantenido por si se usa en otras variantes)
+    const gameData = [
+      { letter: 'ત', answer: 'ta', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c09_ta.mujer.mp3' },
+      { letter: 'ર', answer: 'ra', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3' },
+      { letter: 'સ', answer: 'sa', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c26_sa-hombre.mp3' },
+      { letter: 'મ', answer: 'ma', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c23_ma-mujer.mp3' },
+    ];
+    let queue=[], idx=0, timer=null;
+    function shuffle(a) { return [...a].sort(()=>Math.random()-0.5); }
+    function initGame() { queue=shuffle(gameData); idx=0; showCard(); }
+    function showCard() {
+      const item=queue[idx];
+      const card=document.getElementById('game-card');
+      if(!card) return;
+      const ans=document.getElementById('game-answer');
+      const prog=document.getElementById('game-progress');
+      const bar=document.getElementById('timer-bar');
+      card.textContent=item.letter; card.classList.remove('reveal');
+      ans.textContent=''; ans.classList.remove('visible');
+      prog.textContent=(idx+1)+' de '+queue.length;
+      if (bar) {
+        bar.style.transition='none'; bar.style.transform='scaleX(1)';
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{
+          bar.style.transition='transform 3s linear'; bar.style.transform='scaleX(0)';
+        }));
+      }
+      if(timer) clearTimeout(timer);
+      timer=setTimeout(()=>reveal(item), 3000);
+    }
+    function reveal(item) {
+      const card = document.getElementById('game-card');
+      if (card) card.classList.add('reveal');
+      const ans = document.getElementById('game-answer');
+      if (ans) { ans.textContent=item.answer; ans.classList.add('visible'); }
+      player.src=item.audio; player.playbackRate=1.0; player.play();
+    }
+    function gameNext() {
+      idx++;
+      if(idx<queue.length) { showCard(); }
+      else { window.location.href='Leccion_1_1_1_v1.html'; }
+    }
+    if(document.getElementById('game-card')) initGame();
+  </script>
+
+</body>
+</html>

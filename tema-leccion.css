@@ -1,0 +1,699 @@
+/* ==============================================
+   RESET & BASE — suave, cálido, enfocado al estudio
+   ============================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --crema: #FDF8F0;
+  --crema-oscuro: #F5EDE0;
+  --marron-suave: #E8DBC8;
+  --marron-medio: #C8B89A;
+  --marron-texto: #5C4B3A;
+  --marron-oscuro: #3E3226;
+  --naranja-acento: #D4845A;
+  --naranja-claro: #F0C8A0;
+  --verde-sabio: #6B8F71;
+  --rojo-ladrillo: #A0524F;
+  --rojo-ladrillo-claro: rgba(160, 82, 79, 0.12);
+  --borde-tarjeta: #E0D3C0;
+  --sombra-suave: 0 4px 20px rgba(60, 40, 20, 0.06);
+  --sombra-tarjeta: 0 6px 24px rgba(60, 40, 20, 0.08);
+  --radio-grande: 24px;
+  --radio-medio: 16px;
+}
+
+body {
+  background: var(--crema);
+  background-image: 
+    radial-gradient(ellipse at 20% 10%, rgba(212, 132, 90, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(107, 143, 113, 0.05) 0%, transparent 50%);
+  color: var(--marron-texto);
+  font-family: 'Source Sans 3', sans-serif;
+  min-height: 100vh;
+  padding-bottom: 120px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==============================================
+   NAVEGACIÓN SUPERIOR
+   ============================================== */
+.nav-bar {
+  position: sticky;
+  top: 12px;
+  z-index: 100;
+  margin: 12px 16px 0;
+  background: rgba(255, 250, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--marron-suave);
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  gap: 6px;
+  box-shadow: var(--sombra-suave);
+}
+
+.nav-btn {
+  border: none;
+  background: transparent;
+  color: var(--marron-oscuro);
+  padding: 10px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.02em;
+}
+
+.nav-btn:hover {
+  background: var(--naranja-claro);
+  color: var(--marron-oscuro);
+}
+
+.nav-btn.home {
+  background: var(--naranja-acento);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(212, 132, 90, 0.3);
+}
+
+.nav-btn.home:hover {
+  background: #c77a52;
+  transform: translateY(-1px);
+}
+
+.nav-btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ==============================================
+   CONTENEDOR PRINCIPAL
+   ============================================== */
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ==============================================
+   BADGE / ETIQUETA SUPERIOR
+   ============================================== */
+.badge {
+  display: inline-block;
+  background: var(--rojo-ladrillo);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ==============================================
+   TÍTULOS
+   ============================================== */
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  color: var(--marron-oscuro);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--marron-oscuro);
+}
+
+.subtitle {
+  color: #7B6B5B;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 440px;
+  font-weight: 400;
+}
+
+/* ==============================================
+   CAJA DE INFORMACIÓN
+   ============================================== */
+.info-box {
+  width: 100%;
+  background: white;
+  border-left: 5px solid var(--rojo-ladrillo);
+  border-radius: 0 var(--radio-medio) var(--radio-medio) 0;
+  padding: 20px 22px;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--marron-texto);
+  box-shadow: var(--sombra-suave);
+}
+
+.info-box strong {
+  color: var(--marron-oscuro);
+}
+
+.info-box .gu {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.35rem;
+  color: var(--naranja-acento);
+}
+
+/* ==============================================
+   TABLA
+   ============================================== */
+.table-wrap {
+  width: 100%;
+  background: white;
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: var(--radio-medio);
+  overflow: hidden;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--crema-oscuro);
+  color: var(--rojo-ladrillo);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--borde-tarjeta);
+  font-weight: 700;
+}
+
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--crema-oscuro);
+  font-size: 1.15rem;
+  color: var(--marron-texto);
+}
+
+td.gu-cell {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 2.3rem;
+  color: var(--marron-oscuro);
+  font-weight: 700;
+}
+
+td strong {
+  color: var(--naranja-acento);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==============================================
+   FRAMES — Imagen y Audio de consonante
+   ============================================== */
+.frame-img {
+  width: 100%;
+  border: 2px solid var(--borde-tarjeta);
+  border-radius: var(--radio-medio);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.frame-img img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.frame-img-label {
+  padding: 10px 16px;
+  font-size: 0.75rem;
+  color: var(--rojo-ladrillo);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-top: 1px solid var(--borde-tarjeta);
+  text-align: center;
+  font-weight: 700;
+}
+
+.frame-audio {
+  width: 100%;
+  border: 2px solid var(--borde-tarjeta);
+  border-radius: var(--radio-medio);
+  background: white;
+  overflow: hidden;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.frame-audio-top {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--borde-tarjeta);
+}
+
+.frame-audio-label {
+  font-size: 0.75rem;
+  color: var(--rojo-ladrillo);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.frame-audio-desc {
+  font-size: 1.1rem;
+  color: var(--marron-texto);
+  line-height: 1.5;
+}
+
+.frame-audio-desc strong {
+  color: var(--naranja-acento);
+}
+
+.frame-audio-btn {
+  width: 100%;
+  border: none;
+  padding: 14px;
+  background: transparent;
+  color: var(--marron-texto);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.frame-audio-btn:hover {
+  background: var(--rojo-ladrillo);
+  color: white;
+}
+
+.frame-audio-btn.playing {
+  background: var(--verde-sabio);
+  color: white;
+}
+
+/* ==============================================
+   FRAMES — Vocabulario
+   ============================================== */
+.frame-vocab-img {
+  width: 100%;
+  border: 2px solid var(--borde-tarjeta);
+  border-radius: var(--radio-medio);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.frame-vocab-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--borde-tarjeta);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.frame-vocab-word {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 2.4rem;
+  color: var(--marron-oscuro);
+  line-height: 1;
+}
+
+.frame-vocab-meaning {
+  font-size: 1.3rem;
+  color: var(--marron-texto);
+  font-weight: 700;
+}
+
+.frame-vocab-img img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.frame-vocab-audio {
+  width: 100%;
+  border: 2px solid var(--borde-tarjeta);
+  border-radius: var(--radio-medio);
+  background: white;
+  overflow: hidden;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.frame-vocab-audio-top {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--borde-tarjeta);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.frame-vocab-pron {
+  font-size: 1.1rem;
+  color: var(--marron-texto);
+  line-height: 1.6;
+}
+
+.frame-vocab-pron strong {
+  color: var(--naranja-acento);
+}
+
+.btn-play {
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--rojo-ladrillo);
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.btn-play:hover {
+  background: #8B3A3A;
+  transform: scale(1.08);
+}
+
+.btn-play.playing {
+  background: var(--verde-sabio);
+}
+
+.frame-vocab-audio-bottom {
+  padding: 10px 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-speed {
+  border: 1px solid var(--borde-tarjeta);
+  background: transparent;
+  color: var(--marron-medio);
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.btn-speed.active {
+  background: var(--naranja-acento);
+  color: white;
+  border-color: var(--naranja-acento);
+}
+
+.btn-speed:hover:not(.active) {
+  border-color: var(--naranja-acento);
+  color: var(--naranja-acento);
+}
+
+/* ==============================================
+   JUEGO
+   ============================================== */
+.game-card {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  background: white;
+  border: 3px solid var(--borde-tarjeta);
+  border-radius: var(--radio-grande);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: clamp(6rem, 25vw, 11rem);
+  color: var(--marron-oscuro);
+  transition: border-color 0.3s ease;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.game-card.reveal {
+  border-color: var(--naranja-acento);
+}
+
+.timer-wrap {
+  width: 100%;
+  height: 6px;
+  background: var(--crema-oscuro);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  height: 100%;
+  background: var(--naranja-acento);
+  width: 100%;
+  transform-origin: left;
+}
+
+.game-answer {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--naranja-acento);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-answer.visible {
+  opacity: 1;
+}
+
+.game-progress {
+  font-size: 0.85rem;
+  color: var(--marron-medio);
+  font-weight: 600;
+}
+
+.btn-main {
+  width: 100%;
+  border: none;
+  padding: 16px;
+  border-radius: var(--radio-medio);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: var(--rojo-ladrillo);
+  color: white;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(160, 82, 79, 0.3);
+}
+
+.btn-main:hover {
+  background: #8B3A3A;
+  transform: translateY(-2px);
+}
+
+/* ==============================================
+   BOTONES FINALES
+   ============================================== */
+.btn-fin {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 16px;
+  border-radius: var(--radio-medio);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: var(--verde-sabio);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(107, 143, 113, 0.3);
+}
+
+.btn-fin:hover {
+  background: #5C7D62;
+  transform: translateY(-2px);
+}
+
+.btn-sec {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radio-medio);
+  font-weight: 600;
+  font-size: 1.05rem;
+  background: white;
+  border: 2px solid var(--borde-tarjeta);
+  color: var(--marron-texto);
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-sec:hover {
+  border-color: var(--naranja-acento);
+  color: var(--naranja-acento);
+  transform: translateY(-2px);
+}
+
+/* ==============================================
+   NAVEGACIÓN INFERIOR
+   ============================================== */
+.nav-bottom {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 100;
+  background: rgba(255, 250, 245, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--marron-suave);
+  border-radius: 60px;
+  padding: 6px 8px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 -2px 20px rgba(60, 40, 20, 0.08);
+}
+
+.btn-action {
+  flex: 1;
+  border: none;
+  padding: 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-words {
+  background: var(--rojo-ladrillo);
+  color: white;
+}
+
+.btn-words:hover {
+  background: #8B3A3A;
+  transform: translateY(-1px);
+}
+
+.btn-next-lec {
+  background: transparent;
+  color: var(--marron-texto);
+}
+
+.btn-next-lec:hover {
+  background: var(--marron-suave);
+}
+
+/* ==============================================
+   BOTÓN DE MÚSICA (flotante)
+   ============================================== */
+#musicToggle {
+  position: fixed;
+  bottom: 110px;
+  right: 20px;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--borde-tarjeta);
+  background: rgba(255, 250, 245, 0.9);
+  color: var(--naranja-acento);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: var(--sombra-suave);
+}
+
+#musicToggle:hover {
+  transform: scale(1.08);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+@media (max-width: 480px) {
+  .wrap {
+    padding: 20px 14px 30px;
+    gap: 18px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .badge {
+    font-size: 0.78rem;
+    padding: 6px 16px;
+  }
+
+  td.gu-cell {
+    font-size: 1.8rem;
+  }
+
+  .frame-vocab-word {
+    font-size: 2rem;
+  }
+
+  .nav-bottom {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  #musicToggle {
+    bottom: 100px;
+    right: 14px;
+  }
+}
+
+/* ==============================================
+   TRANSICIONES GENERALES
+   ============================================== */
+a, button {
+  transition: all 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}

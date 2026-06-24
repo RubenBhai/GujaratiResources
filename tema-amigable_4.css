@@ -1,0 +1,406 @@
+/* =========================================
+   Piensa en Gujarati 
+   Tema Amigable 4 · Vocabulario
+   Para páginas de palabras con audio
+   ========================================= */
+
+:root {
+  /* Paleta Oscura */
+  --bg: #2C2420; 
+  --surface: #362C28; 
+  --surface-light: #423631;
+  --paper: #E8D9C0;
+  --sindoor: #A8362A; 
+  --sindoor-deep: #832920;
+  --saffron: #B8863D; 
+  --olive: #5F6E4F;
+  --verde-sabio: #6B8F71;
+  --verde-sabio-hover: #5C7D62;
+  --ink-soft: #C8B99A; 
+  --border: rgba(184, 134, 61, 0.15);
+  
+  /* Radios */
+  --radio-sm: 12px;
+  --radio-md: 16px;
+  --radio-lg: 20px;
+  --radio-full: 50px;
+  
+  /* Sombras */
+  --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  background: var(--bg); 
+  background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); 
+  color: var(--paper); 
+  font-family: 'Source Sans 3', sans-serif; 
+  min-height: 100vh; 
+  padding-bottom: 20px; 
+}
+
+/* ── NAVEGACIÓN SUPERIOR ── */
+.nav-bar { 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+  background: rgba(44, 36, 32, 0.9); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border); 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 12px 20px; 
+  gap: 8px; 
+}
+
+.nav-btn { 
+  background: var(--surface); 
+  color: var(--paper); 
+  padding: 10px 18px; 
+  border-radius: var(--radio-full); 
+  font-size: 0.9rem; 
+  font-weight: 600; 
+  text-decoration: none; 
+  transition: all 0.25s ease; 
+  white-space: nowrap; 
+  display: inline-block; 
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.nav-btn:hover { 
+  background: var(--surface-light); 
+  color: var(--saffron); 
+  border-color: var(--saffron);
+  transform: translateY(-1px);
+}
+
+.nav-btn.home { 
+  color: var(--saffron); 
+  font-size: 1.1rem; 
+  padding: 8px 16px; 
+}
+
+.nav-btn.disabled { 
+  opacity: 0.3; 
+  pointer-events: none; 
+  background: transparent;
+  border-color: transparent;
+}
+
+/* ── CONTENEDOR ── */
+.wrap { 
+  max-width: 480px; 
+  margin: 0 auto; 
+  padding: 18px 18px 24px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 14px; 
+}
+
+/* ── BADGE ── */
+.badge { 
+  display: inline-block; 
+  background: rgba(168, 54, 42, 0.2); 
+  color: #EFA69D; 
+  padding: 8px 20px; 
+  border-radius: var(--radio-full); 
+  font-size: 0.85rem; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 0.08em; 
+}
+
+/* ── TÍTULOS ── */
+h1 { 
+  font-family: 'Fraunces', serif; 
+  font-size: 2rem; 
+  font-weight: 700; 
+  text-align: center; 
+  line-height: 1.2; 
+}
+
+h2 { 
+  font-family: 'Fraunces', serif; 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  text-align: center; 
+}
+
+.subtitle { 
+  color: var(--ink-soft); 
+  font-size: 0.95rem; 
+  line-height: 1.7; 
+  text-align: center; 
+  max-width: 440px; 
+}
+
+/* ── FRAME VOCABULARIO: IMAGEN (con aura) ── */
+.frame-vocab-img { 
+  position: relative;
+  z-index: 1;
+  width: 100%; 
+  border: 2px solid var(--border); 
+  border-radius: var(--radio-lg); 
+  overflow: hidden; 
+  background: var(--surface); 
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.frame-vocab-img:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Aura mágica sutil */
+.frame-vocab-img::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, var(--saffron), var(--olive), var(--sindoor));
+  z-index: -1;
+  border-radius: 22px;
+  opacity: 0.5;
+  filter: blur(8px);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.01); filter: blur(10px); }
+}
+
+.frame-vocab-header { 
+  padding: 14px 18px; 
+  border-bottom: 1px solid var(--border); 
+  display: flex; 
+  align-items: baseline; 
+  gap: 12px; 
+}
+
+.frame-vocab-word { 
+  font-family: 'Noto Serif Gujarati', serif; 
+  font-size: 2.2rem; 
+  color: var(--paper); 
+  line-height: 1; 
+}
+
+.frame-vocab-meaning { 
+  font-size: 1.4rem; 
+  color: var(--paper); 
+  font-weight: 700; 
+}
+
+.frame-vocab-img img { 
+  width: 100%; 
+  display: block; 
+  max-height: 340px; 
+  object-fit: contain; 
+}
+
+/* ── FRAME VOCABULARIO: AUDIO (sin aura, limpio) ── */
+.frame-vocab-audio { 
+  width: 100%; 
+  border: 2px solid var(--border); 
+  border-radius: var(--radio-lg); 
+  background: var(--surface); 
+  overflow: hidden; 
+  box-shadow: var(--shadow-card);
+}
+
+.frame-vocab-audio-top { 
+  padding: 16px 18px; 
+  border-bottom: 1px solid var(--border); 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 12px; 
+}
+
+.frame-vocab-pron { 
+  font-size: 1.3rem; 
+  color: var(--paper); 
+  line-height: 1.6; 
+}
+
+.frame-vocab-pron strong { 
+  color: var(--saffron); 
+}
+
+/* ── BOTÓN PLAY CIRCULAR ── */
+.btn-play { 
+  border: none; 
+  width: 52px; 
+  height: 52px; 
+  border-radius: 50%; 
+  background: var(--sindoor); 
+  color: var(--paper); 
+  cursor: pointer; 
+  font-size: 1.2rem; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  transition: all 0.25s ease; 
+  flex-shrink: 0; 
+  box-shadow: 0 3px 10px rgba(168, 54, 42, 0.3);
+}
+
+.btn-play:hover { 
+  background: var(--sindoor-deep); 
+  transform: scale(1.08); 
+  box-shadow: 0 4px 16px rgba(168, 54, 42, 0.5);
+}
+
+.btn-play.playing { 
+  background: var(--olive); 
+  box-shadow: 0 3px 10px rgba(95, 110, 79, 0.4);
+  animation: pulse-play 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-play {
+  0%, 100% { box-shadow: 0 3px 10px rgba(95, 110, 79, 0.4); }
+  50% { box-shadow: 0 3px 24px rgba(95, 110, 79, 0.7); }
+}
+
+/* ── BOTONES DE VELOCIDAD ── */
+.frame-vocab-audio-bottom { 
+  padding: 10px 16px; 
+  display: flex; 
+  gap: 8px; 
+  justify-content: center; 
+}
+
+.btn-speed { 
+  border: 1px solid var(--border); 
+  background: transparent; 
+  color: var(--ink-soft); 
+  padding: 6px 18px; 
+  border-radius: var(--radio-full); 
+  cursor: pointer; 
+  font-size: 0.82rem; 
+  font-weight: 700; 
+  transition: all 0.25s ease; 
+}
+
+.btn-speed.active { 
+  background: var(--saffron); 
+  color: #1a1410; 
+  border-color: var(--saffron); 
+}
+
+.btn-speed:hover:not(.active) { 
+  border-color: var(--saffron); 
+  color: var(--saffron); 
+}
+
+/* ── BOTÓN PRINCIPAL (verde bosque) ── */
+.btn-main { 
+  display: block; 
+  width: 100%; 
+  border: none; 
+  padding: 14px; 
+  border-radius: var(--radio-full); 
+  cursor: pointer; 
+  font-weight: 700; 
+  font-size: 1rem; 
+  background: #4A6B53;
+  color: white; 
+  text-align: center; 
+  text-decoration: none; 
+  transition: all 0.25s ease; 
+  box-shadow: 0 4px 14px rgba(74, 107, 83, 0.3);
+}
+
+.btn-main:hover { 
+  background: #3D5A45;
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 20px rgba(74, 107, 83, 0.4);
+}
+
+.btn-main:active {
+  transform: translateY(0);
+}
+
+/* ── BOTÓN SECUNDARIO ── */
+.btn-sec { 
+  display: block; 
+  width: 100%; 
+  padding: 14px; 
+  border-radius: var(--radio-full); 
+  font-weight: 600; 
+  font-size: 1rem; 
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  color: var(--ink-soft); 
+  text-align: center; 
+  text-decoration: none; 
+  transition: all 0.25s ease; 
+  cursor: pointer; 
+}
+
+.btn-sec:hover { 
+  background: var(--surface-light); 
+  color: var(--saffron); 
+  border-color: var(--saffron);
+  transform: translateY(-2px);
+}
+
+/* ── CONTENEDOR DE BOTONES INFERIORES ── */
+.botones-inferiores {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .wrap {
+    padding: 14px 12px 20px;
+    gap: 12px;
+  }
+
+  .nav-bar {
+    padding: 10px 14px;
+    gap: 4px;
+  }
+
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .frame-vocab-word {
+    font-size: 1.8rem;
+  }
+
+  .frame-vocab-meaning {
+    font-size: 1.2rem;
+  }
+
+  .frame-vocab-pron {
+    font-size: 1.1rem;
+  }
+}
+
+/* ── UTILIDADES ── */
+html {
+  scroll-behavior: smooth;
+}
+
+a, button {
+  transition: all 0.25s ease;
+}

@@ -1,0 +1,285 @@
+/* =========================================
+   Piensa en Gujarati 
+   Tema Amigable Oscuro (tema-amigable_1.css)
+   Ideal para lecciones de símbolos y lectura
+   ========================================= */
+
+:root {
+  /* Paleta Oscura y Relajante */
+  --bg: #2C2420; 
+  --surface: #362C28; 
+  --surface-light: #423631;
+  --paper: #E8D9C0;
+  --sindoor: #A8362A; 
+  --sindoor-deep: #832920;
+  --saffron: #B8863D; 
+  --olive: #5F6E4F;
+  --ink-soft: #C8B99A; 
+  --border: rgba(184, 134, 61, 0.15);
+  
+  /* Sombras suaves para modo oscuro */
+  --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ── RESET BÁSICO ── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  background: var(--bg); 
+  background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); 
+  color: var(--paper); 
+  font-family: 'Source Sans 3', sans-serif; 
+  min-height: 100vh; 
+  padding-bottom: 24px; 
+}
+
+/* Tipografías Globales */
+.gu { font-family: 'Noto Serif Gujarati', serif; }
+h1, h2 { font-family: 'Fraunces', serif; text-align: center; }
+
+/* ── NAVEGACIÓN SUPERIOR ── */
+.nav-bar { 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+  background: rgba(44, 36, 32, 0.85); 
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border); 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 12px 20px; 
+  gap: 8px; 
+}
+
+.nav-btn { 
+  background: var(--surface); 
+  color: var(--paper); 
+  padding: 8px 18px; 
+  border-radius: 50px; 
+  font-size: 0.9rem; 
+  font-weight: 600; 
+  text-decoration: none; 
+  transition: all 0.2s ease; 
+}
+
+.nav-btn:hover:not(.disabled) { 
+  background: var(--surface-light); 
+  color: var(--saffron); 
+  transform: translateY(-1px); 
+}
+
+.nav-btn.home { 
+  color: var(--saffron); 
+  font-size: 1.1rem; 
+  padding: 6px 14px; 
+}
+
+.nav-btn.disabled { 
+  opacity: 0.3; 
+  pointer-events: none; 
+  background: transparent; 
+}
+
+/* ── CONTENEDORES PRINCIPALES ── */
+.wrap { 
+  max-width: 480px; 
+  margin: 0 auto; 
+  padding: 24px 20px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 18px; 
+}
+
+.wrap-letras {
+  max-width: 520px;
+  gap: 24px;
+}
+
+/* ── TEXTOS Y ETIQUETAS ── */
+h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 700; line-height: 1.2; }
+.subtitle { color: var(--ink-soft); font-size: 1.1rem; line-height: 1.7; text-align: center; max-width: 440px; }
+.subtitle strong { color: var(--paper); }
+
+.badge, .modulo-badge { 
+  background: rgba(168, 54, 42, 0.2); 
+  color: #EFA69D; 
+  padding: 6px 16px; 
+  border-radius: 50px; 
+  font-size: 0.8rem; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 0.08em; 
+  display: inline-block;
+}
+
+.seccion-label { 
+  width: 100%; 
+  font-size: 0.85rem; 
+  color: var(--olive); 
+  text-transform: uppercase; 
+  letter-spacing: 0.1em; 
+  font-weight: 700; 
+  text-align: center; 
+  margin-top: 12px; 
+  border-bottom: 1px dashed var(--border); 
+  padding-bottom: 8px; 
+}
+
+/* ── TARJETAS FLOTANTES (Letras Individuales) ── */
+.frame-img { 
+  width: 100%; 
+  background: var(--surface); 
+  border-radius: 20px; 
+  overflow: hidden; 
+  box-shadow: var(--shadow-soft); 
+}
+.frame-img img { width: 100%; display: block; max-height: 280px; object-fit: contain; padding: 16px 0; }
+.frame-img-label { 
+  padding: 14px 16px; 
+  font-size: 0.85rem; 
+  color: var(--ink-soft); 
+  text-transform: uppercase; 
+  letter-spacing: 0.1em; 
+  border-top: 1px dashed var(--border); 
+  text-align: center; 
+  font-weight: 600;
+}
+
+.frame-audio { 
+  width: 100%; 
+  background: var(--surface); 
+  border-radius: 20px; 
+  overflow: hidden; 
+  box-shadow: var(--shadow-soft); 
+}
+.frame-audio-top { padding: 20px 24px; border-bottom: 1px dashed var(--border); text-align: center; }
+.frame-audio-label { font-size: 0.85rem; color: var(--saffron); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; font-weight: 700; }
+.frame-audio-desc { font-size: 1.2rem; color: var(--paper); line-height: 1.6; }
+.frame-audio-desc strong { color: var(--saffron); }
+
+.frame-audio-btn { 
+  width: 100%; border: none; padding: 18px; 
+  background: transparent; color: var(--ink-soft); 
+  cursor: pointer; font-size: 1.1rem; font-weight: 600; 
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; 
+}
+.frame-audio-btn:hover { background: rgba(168, 54, 42, 0.15); color: var(--paper); }
+.frame-audio-btn.playing { background: var(--sindoor); color: var(--paper); }
+
+/* ── CUADRÍCULAS DE LETRAS (Grid) ── */
+.letras-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; width: 100%; }
+.letra-card { 
+  background: var(--surface); 
+  border-radius: 12px; padding: 16px 8px; 
+  display: flex; flex-direction: column; align-items: center; gap: 6px; 
+  box-shadow: var(--shadow-soft); transition: transform 0.2s; 
+}
+.letra-card:hover { transform: translateY(-2px); background: var(--surface-light); }
+.letra-card .gu { font-size: 2.2rem; color: var(--paper); line-height: 1; }
+.letra-card .rom { font-size: 0.95rem; color: var(--sindoor); font-weight: 700; }
+
+.letra-card.primera { background: rgba(184, 134, 61, 0.12); border: 1px solid rgba(184, 134, 61, 0.3); }
+.letra-card.primera .gu { color: var(--saffron); }
+
+.vocales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; }
+.vocal-card { 
+  background: var(--surface); border-radius: 12px; padding: 16px 8px; 
+  display: flex; flex-direction: column; align-items: center; gap: 6px; 
+  box-shadow: var(--shadow-soft); 
+}
+.vocal-card .gu { font-size: 2.2rem; color: var(--paper); line-height: 1; }
+.vocal-card .rom { font-size: 0.95rem; color: var(--sindoor); font-weight: 700; }
+.vocal-card .abrev { font-size: 1.4rem; color: var(--ink-soft); margin-top: -4px; }
+
+/* ── CAJA DE INFORMACIÓN ── */
+.info-box { 
+  width: 100%; 
+  background: var(--surface); 
+  border-left: 5px solid var(--saffron); 
+  border-radius: 12px; 
+  padding: 20px 24px; 
+  font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); 
+  box-shadow: var(--shadow-soft); 
+}
+.info-box strong { color: var(--paper); font-weight: 700; }
+
+/* ── LISTA DE LECCIONES ── */
+.lecciones-lista { 
+  width: 100%; display: flex; flex-direction: column; gap: 8px; 
+  background: rgba(255, 255, 255, 0.02); padding: 8px; 
+  border-radius: 16px; border: 1px solid var(--border); 
+}
+.leccion { 
+  display: flex; align-items: center; gap: 16px; padding: 14px 18px; 
+  background: transparent; border-radius: 12px; text-decoration: none; 
+  color: inherit; transition: all 0.2s; 
+}
+.leccion:hover { background: rgba(255, 255, 255, 0.05); }
+.leccion.activa { background: var(--surface); box-shadow: var(--shadow-soft); border: 1px solid rgba(184, 134, 61, 0.2); }
+.leccion.proxima { opacity: 0.5; cursor: default; }
+.leccion.proxima:hover { background: transparent; }
+
+.lec-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--saffron); min-width: 24px; text-align: center; }
+.lec-info { flex: 1; }
+.lec-title { font-size: 1.1rem; font-weight: 600; color: var(--paper); line-height: 1.2; }
+.lec-gu { font-size: 1.25rem; color: var(--ink-soft); margin-top: 4px; line-height: 1; }
+.lec-status { font-size: 1.2rem; color: var(--sindoor); }
+.lec-soon { font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+
+/* ── BOTONES DE ACCIÓN PRINCIPALES ── */
+.bottom-actions { 
+  width: 100%; max-width: 480px; margin: 0 auto; 
+  display: flex; flex-direction: column; gap: 12px; 
+  padding: 10px 20px 30px; 
+}
+
+.btn-empezar, .btn-fin { 
+  display: block; width: 100%; border: none; padding: 16px; 
+  border-radius: 50px; font-weight: 600; font-size: 1.05rem; 
+  background: var(--sindoor); color: var(--paper); 
+  text-align: center; text-decoration: none; transition: all 0.2s; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 10px;
+}
+.btn-empezar:hover, .btn-fin:hover { 
+  background: var(--sindoor-deep); transform: translateY(-2px); 
+  box-shadow: var(--shadow-hover); 
+}
+
+.btn-sec { 
+  display: block; width: 100%; padding: 16px; border-radius: 50px; 
+  font-weight: 600; font-size: 1.05rem; background: var(--surface); 
+  color: var(--ink-soft); text-align: center; text-decoration: none; transition: all 0.2s; 
+}
+.btn-sec:hover { 
+  background: var(--surface-light); color: var(--paper); transform: translateY(-2px); 
+}
+
+/* Aura mágica para el frame de las letras (dentro de tema-amigable_1.css) */
+.frame-img {
+  position: relative;
+  z-index: 1;
+}
+
+.frame-img::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, var(--saffron), var(--olive), var(--sindoor));
+  z-index: -1;
+  border-radius: 22px;
+  opacity: 0.6;
+  filter: blur(8px);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.01); filter: blur(12px); }
+}

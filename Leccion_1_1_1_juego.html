@@ -5,56 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Juego &middot; Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #2C2420; --surface: #362C28; --paper: #E8D9C0;
-    --sindoor: #A8362A; --sindoor-deep: #832920;
-    --saffron: #B8863D; --olive: #5F6E4F;
-    --ink-soft: #C8B99A; --border: #4A3C34;
-  }
-  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 20px; }
-  .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
-  .nav-btn { border: 1px solid var(--border); background: var(--surface); color: var(--paper); padding: 8px 16px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-block; cursor: pointer; }
-  .nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
-  .nav-btn.home { color: var(--saffron); }
-  .screen { display: none; }
-  .screen.active { display: block; }
-  .wrap { max-width: 480px; margin: 0 auto; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-  h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; text-align: center; }
-  .subtitle { color: var(--ink-soft); font-size: 1.2rem; line-height: 1.7; text-align: center; max-width: 420px; }
-  .btn-main { width: 100%; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1rem; background: var(--sindoor); color: var(--paper); transition: all 0.2s; }
-  .btn-main:hover { background: var(--sindoor-deep); }
-  .btn-sec { width: 100%; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 1rem; background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft); text-align: center; text-decoration: none; display: block; transition: all 0.2s; cursor: pointer; }
-  .btn-sec:hover { border-color: var(--saffron); color: var(--saffron); }
-  .repaso-card { width: 100%; background: var(--surface); border: 2px solid var(--border); border-radius: 16px; overflow: hidden; }
-  .repaso-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
-  .repaso-bottom { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border); }
-  .repaso-desc { font-size: 1.2rem; color: var(--paper); line-height: 1.5; flex: 1; }
-  .repaso-desc strong { color: var(--saffron); }
-  .repaso-counter { font-size: 0.82rem; color: var(--ink-soft); }
-  .btn-circle { border: none; width: 48px; height: 48px; border-radius: 50%; background: var(--sindoor); color: var(--paper); cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
-  .btn-circle:hover { background: var(--sindoor-deep); transform: scale(1.08); }
-  .btn-circle.playing { background: var(--olive); }
-  .game-card { width: 100%; max-width: 320px; aspect-ratio: 1; background: var(--surface); border: 2px solid var(--border); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif Gujarati', serif; font-size: clamp(6rem, 25vw, 11rem); color: var(--paper); transition: border-color 0.3s; }
-  .game-card.reveal { border-color: var(--saffron); }
-  .timer-wrap { width: 100%; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
-  .timer-bar { height: 100%; background: var(--saffron); width: 100%; transform-origin: left; }
-  .game-answer { height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 700; color: var(--saffron); opacity: 0; transition: opacity 0.3s; }
-  .game-answer.visible { opacity: 1; }
-  .game-progress { font-size: 0.88rem; color: var(--ink-soft); }
-  .round-indicator { font-size: 0.82rem; color: var(--saffron); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-  .match-letters { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; }
-  .match-btn { font-family: 'Noto Serif Gujarati', serif; font-size: clamp(3.5rem, 14vw, 5.5rem); color: var(--paper); background: var(--surface); border: 2px solid var(--border); border-radius: 16px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.25s; line-height: 1; }
-  .match-btn:hover { border-color: var(--saffron); }
-  .match-btn.correct { border-color: #4A7C59; background: rgba(74,124,89,0.3); color: #7FBF8E; }
-  .match-btn.wrong { border-color: #CF4444; background: rgba(207,68,68,0.35); color: #FF9999; transform: scale(0.94); }
-  .match-prompt { font-size: 1.2rem; color: var(--ink-soft); text-align: center; min-height: 1.6rem; }
-  .match-prompt strong { color: var(--paper); font-size: 1.2rem; }
-  .match-score { font-size: 1rem; color: var(--ink-soft); }
-  .match-score span { color: var(--saffron); font-weight: 700; font-size: 1.2rem; }
-</style>
+<link rel="stylesheet" href="tema-juego.css">
 </head>
 <body>
 
