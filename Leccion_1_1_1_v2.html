@@ -13,7 +13,7 @@
     --saffron: #B8863D; --olive: #5F6E4F;
     --ink-soft: #C8B99A; --border: #4A3C34;
   }
-  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 100px; }
+  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 20px; }
 
   /* NAV TOP */
   .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
@@ -23,15 +23,9 @@
   .nav-btn.disabled { opacity: 0.3; pointer-events: none; }
 
   /* NAV BOTTOM */
-  .nav-bottom { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-top: 1px solid var(--border); padding: 10px 16px; display: flex; flex-direction: column; gap: 8px; }
-  .btn-action { display: block; width: 100%; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 0.95rem; text-align: center; text-decoration: none; transition: all 0.2s; }
-  .btn-words { background: var(--sindoor); color: var(--paper); }
-  .btn-words:hover { background: var(--sindoor-deep); }
-  .btn-next-lec { background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft); }
-  .btn-next-lec:hover { border-color: var(--saffron); color: var(--saffron); }
 
   /* WRAP */
-  .wrap { max-width: 480px; margin: 0 auto; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 18px 18px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
   .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 5px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
   h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; text-align: center; line-height: 1.2; }
   h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; text-align: center; }
@@ -39,7 +33,7 @@
 
   /* FRAMES CONSONANTE */
   .frame-img { width: 100%; border: 2px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--surface); }
-  .frame-img img { width: 100%; display: block; aspect-ratio: 1; object-fit: cover; }
+  .frame-img img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
   .frame-img-label { padding: 10px 16px; font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; border-top: 1px solid var(--border); text-align: center; }
   .frame-audio { width: 100%; border: 2px solid var(--border); border-radius: 16px; background: var(--surface); overflow: hidden; }
   .frame-audio-top { padding: 16px 20px; border-bottom: 1px solid var(--border); }
@@ -53,9 +47,9 @@
   /* FRAMES VOCABULARIO */
   .frame-vocab-img { width: 100%; border: 2px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--surface); }
   .frame-vocab-header { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 12px; }
-  .frame-vocab-word { font-family: 'Noto Serif Gujarati', serif; font-size: 2.2rem; color: var(--paper); line-height: 1; }
+  .frame-vocab-word { font-family: 'Noto Serif Gujarati', serif; font-size: 1.9rem; color: var(--paper); line-height: 1; }
   .frame-vocab-meaning { font-size: 1.2rem; color: var(--paper); font-weight: 700; }
-  .frame-vocab-img img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+  .frame-vocab-img img { width: 100%; display: block; max-height: 340px; object-fit: contain; }
   .frame-vocab-audio { width: 100%; border: 2px solid var(--border); border-radius: 16px; background: var(--surface); overflow: hidden; }
   .frame-vocab-audio-top { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .frame-vocab-pron { font-size: 1.1rem; color: var(--paper); line-height: 1.6; }
@@ -119,10 +113,10 @@
       <button class="btn-speed" id="btn-slow" onclick="setSpeed(0.75)">&#128034; Lento</button>
     </div>
   </div>
-</div><div class="nav-bottom">
-  <a class="btn-action btn-words" href="https://rubenbhai.github.io/GujaratiResources/practica.html?modulo=1.1&leccion=1">&#127919; Practicar pronunciaci&oacute;n</a>
-  <a class="btn-action btn-next-lec" href="Leccion_1_1_2_intro.html">&#9197; Siguiente lecci&oacute;n</a>
-</div><audio id="player"></audio>
+<div style="width:100%;display:flex;flex-direction:column;gap:8px;margin-top:6px;">
+  <a style="display:block;width:100%;padding:12px;border-radius:10px;font-weight:700;font-size:0.95rem;text-align:center;text-decoration:none;background:var(--sindoor);color:var(--paper);" href="https://rubenbhai.github.io/GujaratiResources/practica.html?modulo=1.1&leccion=1">&#127919; Practicar pronunciaci&oacute;n</a>
+  <a style="display:block;width:100%;padding:12px;border-radius:10px;font-weight:600;font-size:0.95rem;text-align:center;text-decoration:none;background:var(--surface);border:1px solid var(--border);color:var(--ink-soft);" href="Leccion_1_1_2_intro.html">&#9197; Siguiente lecci&oacute;n</a>
+</div></div><audio id="player"></audio>
 <script>
   const player = document.getElementById('player');
   let currentSpeed = 1.0;
