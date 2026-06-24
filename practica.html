@@ -192,7 +192,7 @@
   const leccion = params.get('leccion');
   const claveLeccion = `${modulo}-${leccion}`;
 
-  document.getElementById('back-link').href = `modulo${modulo}.html`;
+  document.getElementById('back-link').href = `Leccion_${modulo.replace('.','_')}_${leccion}_fin.html`;
 
   // ===================================================================
   // 2. Verificación de sesión — si no hay token, ir al login con retorno
