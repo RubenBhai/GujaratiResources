@@ -3,76 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Tus primeras letras &middot; Piensa en Gujarati</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Tus primeras letras · Piensa en Gujarati</title>
+
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Vinculamos tu tema global amigable -->
+<link rel="stylesheet" href="tema-amigable.css">
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #2C2420; --surface: #362C28; --paper: #E8D9C0;
-    --sindoor: #A8362A; --sindoor-deep: #832920;
-    --saffron: #B8863D; --olive: #5F6E4F;
-    --ink-soft: #C8B99A; --border: #4A3C34;
+  /* ── ESTILOS ESPECÍFICOS PARA ESTA PÁGINA ── */
+  
+  .nav-bar { 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid var(--rule); 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 14px 24px; 
   }
-  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 24px; }
+  .nav-btn { 
+    background: rgba(255, 255, 255, 0.8); 
+    color: var(--sindoor-deep); 
+    padding: 8px 18px; 
+    border-radius: 50px; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    text-decoration: none; 
+    transition: all 0.2s; 
+    box-shadow: 0 2px 8px rgba(42,36,32,0.05); 
+  }
+  .nav-btn:hover { 
+    background: var(--paper); 
+    transform: translateY(-1px); 
+  }
+  .nav-btn.home { 
+    font-size: 1.1rem; 
+    padding: 6px 14px; 
+  }
 
-  .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
-  .nav-btn { border: 1px solid var(--border); background: var(--surface); color: var(--paper); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-block; }
-  .nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
-  .nav-btn.home { color: var(--saffron); }
+  .wrap-letras { 
+    max-width: 520px; 
+    margin: 0 auto; 
+    padding: 40px 24px 80px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 28px; 
+  }
 
-  .wrap { max-width: 480px; margin: 0 auto; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
-  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-  h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; text-align: center; line-height: 1.2; }
-  .subtitle { color: var(--ink-soft); font-size: 1.25rem; line-height: 1.8; text-align: center; max-width: 440px; }
-  .subtitle strong { color: var(--paper); }
+  .intro-header { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .modulo-badge { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; background: rgba(168, 54, 42, 0.1); color: var(--sindoor-deep); }
+  .intro-header h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 2.6rem); font-weight: 700; color: var(--ink); margin: 0; line-height: 1.2; }
+  .subtitle { color: var(--ink-soft); font-size: 1.15rem; line-height: 1.7; max-width: 440px; margin: 0; }
+  .subtitle strong { color: var(--sindoor-deep); }
 
-  .seccion-label { width: 100%; font-size: 0.9rem; color: var(--saffron); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; text-align: center; margin-top: 6px; }
+  .seccion-label { width: 100%; font-size: 0.85rem; color: var(--olive); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; text-align: center; margin-top: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px; }
 
-  .letras-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; }
-  .letra-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
-  .letra-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2.1rem; color: var(--paper); line-height: 1; }
-  .letra-card .rom { font-size: 0.95rem; color: var(--saffron); font-weight: 700; }
+  /* Cuadrícula de Letras */
+  .letras-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; width: 100%; }
+  .letra-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 16px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); transition: transform 0.2s; }
+  .letra-card:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.8); }
+  .letra-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2.4rem; color: var(--ink); line-height: 1; }
+  .letra-card .rom { font-size: 0.95rem; color: var(--sindoor); font-weight: 700; }
 
-  /* Las primeras 4 destacadas */
-  .letra-card.primera { border-color: var(--saffron); background: rgba(184,134,61,0.12); }
+  /* Tarjetas Destacadas */
+  .letra-card.primera { background: var(--paper-card); border: 2px solid rgba(184, 134, 61, 0.3); box-shadow: 0 6px 16px rgba(184, 134, 61, 0.08); }
+  .letra-card.primera .gu { color: var(--sindoor-deep); }
 
-  .vocales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; }
-  .vocal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
-  .vocal-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2.1rem; color: var(--paper); line-height: 1; }
-  .vocal-card .rom { font-size: 0.95rem; color: var(--saffron); font-weight: 700; }
-  .vocal-card .abrev { font-family: 'Noto Serif Gujarati', serif; font-size: 1.3rem; color: var(--ink-soft); }
+  /* Cuadrícula de Vocales */
+  .vocales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; }
+  .vocal-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 16px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); }
+  .vocal-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2.2rem; color: var(--ink); line-height: 1; }
+  .vocal-card .rom { font-size: 0.95rem; color: var(--sindoor); font-weight: 700; }
+  .vocal-card .abrev { font-family: 'Noto Serif Gujarati', serif; font-size: 1.4rem; color: var(--ink-soft); margin-top: -4px; }
 
-  .info-box { width: 100%; background: var(--surface); border-left: 4px solid var(--saffron); border-radius: 0 12px 12px 0; padding: 16px 20px; font-size: 1.2rem; line-height: 1.8; color: var(--ink-soft); }
-  .info-box strong { color: var(--paper); }
-
-  .btn-empezar { display: block; width: 100%; border: none; padding: 16px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1.1rem; background: var(--sindoor); color: var(--paper); text-align: center; text-decoration: none; transition: all 0.2s; }
-  .btn-empezar:hover { background: var(--sindoor-deep); }
+  .info-box { width: 100%; background: var(--paper-card); border-left: 5px solid var(--saffron); border-radius: 12px; padding: 20px 24px; font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); box-shadow: 0 6px 16px rgba(42,36,32,0.04); }
+  .info-box strong { color: var(--ink); font-weight: 700; }
 
   /* LISTA DE LECCIONES */
-  .lecciones-lista { width: 100%; display: flex; flex-direction: column; gap: 8px; }
-  .leccion { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; text-decoration: none; color: inherit; transition: all 0.2s; }
-  .leccion.activa { border-color: var(--saffron); background: rgba(184,134,61,0.12); }
-  .leccion.activa:hover { background: rgba(184,134,61,0.2); }
-  .leccion.proxima { opacity: 0.55; }
-  .lec-num { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--saffron); min-width: 28px; text-align: center; }
+  .lecciones-lista { width: 100%; display: flex; flex-direction: column; gap: 10px; background: rgba(255, 255, 255, 0.4); padding: 10px; border-radius: 16px; border: 1px solid rgba(42,36,32,0.04); }
+  .leccion { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: transparent; border-radius: 12px; text-decoration: none; color: inherit; transition: all 0.2s; }
+  .leccion:hover { background: rgba(255, 255, 255, 0.6); }
+  .leccion.activa { background: var(--paper-card); box-shadow: 0 4px 12px rgba(184, 134, 61, 0.08); border: 1px solid rgba(184, 134, 61, 0.2); }
+  .leccion.proxima { opacity: 0.6; cursor: default; }
+  .leccion.proxima:hover { background: transparent; }
+  
+  .lec-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--saffron); min-width: 24px; text-align: center; }
   .lec-info { flex: 1; }
-  .lec-title { font-size: 1.15rem; font-weight: 600; color: var(--paper); }
-  .lec-gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.2rem; color: var(--ink-soft); margin-top: 2px; }
-  .leccion.proxima .lec-gu { font-size: 1.1rem; }
-  .lec-status { font-size: 1.1rem; color: var(--saffron); }
-  .lec-soon { font-size: 0.8rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+  .lec-title { font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
+  .lec-gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.25rem; color: var(--ink-soft); margin-top: 4px; line-height: 1; }
+  .lec-status { font-size: 1.2rem; color: var(--sindoor); }
+  .lec-soon { font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+
+  /* Botón Principal */
+  .btn-empezar { display: block; width: 100%; border: none; padding: 18px; border-radius: 50px; font-weight: 600; font-size: 1.05rem; background: var(--sindoor); color: var(--paper); text-align: center; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 12px rgba(168, 54, 42, 0.2); margin-top: 10px; }
+  .btn-empezar:hover { background: var(--sindoor-deep); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(168, 54, 42, 0.3); }
+
 </style>
 </head>
 <body>
+
 <nav class="nav-bar">
   <a class="nav-btn" href="Contenido.html">&larr; Anterior</a>
   <a class="nav-btn home" href="index.html">&#127968;</a>
-  <span class="nav-btn" style="opacity:0.3">&nbsp;</span>
+  <span class="nav-btn" style="opacity:0; pointer-events:none;">&nbsp;</span>
 </nav>
-<div class="wrap">
-  <span class="badge">Tus primeras letras</span>
-  <h1>Lo que vas a aprender</h1>
-  <p class="subtitle">En esta parte vas a conocer <strong>8 letras</strong> y <strong>3 vocales</strong> del gujarati. Poco a poco, sin prisa.</p>
+
+<div class="wrap-letras">
+  
+  <div class="intro-header">
+    <span class="modulo-badge">Tus primeras letras</span>
+    <h1>Lo que vas a aprender</h1>
+    <p class="subtitle">En esta parte vas a conocer <strong>8 letras</strong> y <strong>3 vocales</strong> del gujarati. Poco a poco, sin prisa.</p>
+  </div>
 
   <div class="seccion-label">Las 8 letras</div>
   <div class="letras-grid">
@@ -95,7 +143,7 @@
 
   <div class="info-box">
     <strong>&#128161; Empecemos de a poco</strong><br><br>
-    Hoy vas a aprender las <strong>primeras 4 letras</strong>: <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">ત ર સ મ</span>. Las dem&aacute;s las ver&aacute;s m&aacute;s adelante.
+    Hoy vas a aprender las <strong>primeras 4 letras</strong>: <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">ત ર સ મ</span>. Las demás las verás más adelante.
   </div>
 
   <div class="seccion-label">Las lecciones</div>
@@ -113,7 +161,7 @@
     <div class="leccion proxima">
       <span class="lec-num">2</span>
       <div class="lec-info">
-        <div class="lec-title">M&aacute;s letras nuevas</div>
+        <div class="lec-title">Más letras nuevas</div>
         <div class="lec-gu">દ હ</div>
       </div>
       <span class="lec-soon">Muy pronto</span>
@@ -122,7 +170,7 @@
     <div class="leccion proxima">
       <span class="lec-num">3</span>
       <div class="lec-info">
-        <div class="lec-title">Seguimos con m&aacute;s letras</div>
+        <div class="lec-title">Seguimos con más letras</div>
         <div class="lec-gu">જ લ</div>
       </div>
       <span class="lec-soon">Muy pronto</span>
@@ -149,7 +197,7 @@
     <div class="leccion proxima">
       <span class="lec-num">6</span>
       <div class="lec-info">
-        <div class="lec-title">Una vocal m&aacute;s</div>
+        <div class="lec-title">Una vocal más</div>
         <div class="lec-gu">ઇ &middot; િ</div>
       </div>
       <span class="lec-soon">Muy pronto</span>
