@@ -13,23 +13,17 @@
     --saffron: #B8863D; --olive: #5F6E4F;
     --ink-soft: #C8B99A; --border: #4A3C34;
   }
-  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 100px; }
+  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 20px; }
   .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
   .nav-btn { border: 1px solid var(--border); background: var(--surface); color: var(--paper); padding: 8px 16px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-block; cursor: pointer; }
   .nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
   .nav-btn.home { color: var(--saffron); }
-  .nav-bottom { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-top: 1px solid var(--border); padding: 10px 16px; display: flex; flex-direction: column; gap: 8px; }
-  .btn-action { display: block; width: 100%; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 0.95rem; text-align: center; text-decoration: none; transition: all 0.2s; }
-  .btn-words { background: var(--sindoor); color: var(--paper); }
-  .btn-words:hover { background: var(--sindoor-deep); }
-  .btn-next-lec { background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft); }
-  .btn-next-lec:hover { border-color: var(--saffron); color: var(--saffron); }
   .screen { display: none; }
   .screen.active { display: block; }
   .wrap { max-width: 480px; margin: 0 auto; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 5px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
   h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; text-align: center; }
-  .subtitle { color: var(--ink-soft); font-size: 1rem; line-height: 1.7; text-align: center; max-width: 420px; }
+  .subtitle { color: var(--ink-soft); font-size: 1.2rem; line-height: 1.7; text-align: center; max-width: 420px; }
   .btn-main { width: 100%; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1rem; background: var(--sindoor); color: var(--paper); transition: all 0.2s; }
   .btn-main:hover { background: var(--sindoor-deep); }
   .btn-sec { width: 100%; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 1rem; background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft); text-align: center; text-decoration: none; display: block; transition: all 0.2s; cursor: pointer; }
@@ -37,7 +31,7 @@
   .repaso-card { width: 100%; background: var(--surface); border: 2px solid var(--border); border-radius: 16px; overflow: hidden; }
   .repaso-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
   .repaso-bottom { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border); }
-  .repaso-desc { font-size: 1.05rem; color: var(--paper); line-height: 1.5; flex: 1; }
+  .repaso-desc { font-size: 1.2rem; color: var(--paper); line-height: 1.5; flex: 1; }
   .repaso-desc strong { color: var(--saffron); }
   .repaso-counter { font-size: 0.82rem; color: var(--ink-soft); }
   .btn-circle { border: none; width: 48px; height: 48px; border-radius: 50%; background: var(--sindoor); color: var(--paper); cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
@@ -56,7 +50,7 @@
   .match-btn:hover { border-color: var(--saffron); }
   .match-btn.correct { border-color: #4A7C59; background: rgba(74,124,89,0.3); color: #7FBF8E; }
   .match-btn.wrong { border-color: #CF4444; background: rgba(207,68,68,0.35); color: #FF9999; transform: scale(0.94); }
-  .match-prompt { font-size: 1.05rem; color: var(--ink-soft); text-align: center; min-height: 1.6rem; }
+  .match-prompt { font-size: 1.2rem; color: var(--ink-soft); text-align: center; min-height: 1.6rem; }
   .match-prompt strong { color: var(--paper); font-size: 1.2rem; }
   .match-score { font-size: 1rem; color: var(--ink-soft); }
   .match-score span { color: var(--saffron); font-weight: 700; font-size: 1.2rem; }
@@ -67,15 +61,15 @@
 <nav class="nav-bar">
   <a class="nav-btn" href="Leccion_1_1_1_c4.html">&larr; Anterior</a>
   <a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a>
-  <a class="nav-btn" href="Leccion_1_1_1_v1.html">Palabras &rarr;</a>
+  <a class="nav-btn" href="Leccion_1_1_1_v_intro.html">Palabras &rarr;</a>
 </nav>
 
 <!-- FASE A -->
 <div class="screen active" id="screen-a">
   <div class="wrap">
-    <span class="badge">Fase A &mdash; Repaso</span>
+    <span class="badge">Repaso</span>
     <h2>Repasemos las 4 letras</h2>
-    <p class="subtitle">Escucha cada consonante y rep&iacute;tela en voz alta.</p>
+    <p class="subtitle">Escucha cada letra y rep&iacute;tela en voz alta.</p>
     <div class="repaso-card">
       <img class="repaso-img" id="repaso-img" src="" alt="">
       <div class="repaso-bottom">
@@ -92,9 +86,9 @@
 <!-- FASE B -->
 <div class="screen" id="screen-b">
   <div class="wrap">
-    <span class="badge">Fase B &mdash; Reconocimiento</span>
+    <span class="badge">A reconocer</span>
     <h2>&iquest;Qu&eacute; letra es?</h2>
-    <p class="subtitle">Pronuncia en voz alta &mdash; tienes 3 segundos &mdash; luego escucha la respuesta.</p>
+    <p class="subtitle">Di la letra en voz alta. Tienes 3 segundos y luego escuchas c&oacute;mo suena.</p>
     <div class="round-indicator" id="b-round">Ronda 1 de 3</div>
     <div class="game-card" id="b-card">&#2724;</div>
     <div class="timer-wrap"><div class="timer-bar" id="b-timer"></div></div>
@@ -108,7 +102,7 @@
 <!-- FASE C -->
 <div class="screen" id="screen-c">
   <div class="wrap">
-    <span class="badge">Fase C &mdash; Emparejamiento</span>
+    <span class="badge">A jugar</span>
     <h2>Toca la letra que escuchas</h2>
     <p class="match-prompt" id="c-prompt">&nbsp;</p>
     <div class="match-letters">
@@ -128,15 +122,10 @@
   <div class="wrap">
     <div style="font-size:3rem">&#127942;</div>
     <h2>&iexcl;Juego completado!</h2>
-    <p class="subtitle">Ya practicaste las 4 consonantes. &iexcl;Ahora a las palabras reales!</p>
-    <a class="btn-main" href="Leccion_1_1_1_v1.html" style="text-decoration:none;display:block;text-align:center;">&#128221; Ir a palabras &rarr;</a>
+    <p class="subtitle">Ya practicaste las 4 letras. &iexcl;Ahora a las palabras de verdad!</p>
+    <a class="btn-main" href="Leccion_1_1_1_v_intro.html" style="text-decoration:none;display:block;text-align:center;">&#128221; Ir a las palabras &rarr;</a>
     <button class="btn-sec" onclick="reiniciar()">&#8635; Repetir juego</button>
   </div>
-</div>
-
-<div class="nav-bottom">
-  <a class="btn-action btn-words" href="Leccion_1_1_1_v1.html">&#128221; Ir a palabras</a>
-  <a class="btn-action btn-next-lec" href="Leccion_1_1_2_intro.html">&#9197; Siguiente lecci&oacute;n</a>
 </div>
 
 <audio id="player"></audio>
@@ -150,10 +139,10 @@ const SND_OK  = BASE + '/audios/clase_1_1/Clase_1_1_Correcto.mp3';
 const SND_ERR = BASE + '/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
 const letters = [
-  { letter: '\u0aa4', answer: 'ta', audio: BASE+'/audios/alfabeto/c09_ta.mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ta.png', desc: 'la "t" en <strong>ta</strong>co' },
-  { letter: '\u0ab0', answer: 'ra', audio: BASE+'/audios/alfabeto/c27_ra-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ra.png', desc: 'la "r" suave en ca<strong>r</strong>o' },
-  { letter: '\u0ab8', answer: 'sa', audio: BASE+'/audios/alfabeto/c26_sa-hombre.mp3', img: BASE+'/imagenes/Clase_1_1/img_alfa_sa.png', desc: 'la "s" en <strong>sa</strong>po' },
-  { letter: '\u0aae', answer: 'ma', audio: BASE+'/audios/alfabeto/c23_ma-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ma.png', desc: 'la "m" en <strong>ma</strong>m\u00e1' }
+  { letter: '\u0aa4', answer: 'ta', audio: BASE+'/audios/alfabeto/c09_ta.mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ta.png', desc: 'Suena como la <strong>t</strong> de <strong>ta</strong>co' },
+  { letter: '\u0ab0', answer: 'ra', audio: BASE+'/audios/alfabeto/c27_ra-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ra.png', desc: 'Suena como la <strong>r</strong> suave de ca<strong>r</strong>o' },
+  { letter: '\u0ab8', answer: 'sa', audio: BASE+'/audios/alfabeto/c26_sa-hombre.mp3', img: BASE+'/imagenes/Clase_1_1/img_alfa_sa.png', desc: 'Suena como la <strong>s</strong> de <strong>sa</strong>po' },
+  { letter: '\u0aae', answer: 'ma', audio: BASE+'/audios/alfabeto/c23_ma-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ma.png', desc: 'Suena como la <strong>m</strong> de <strong>ma</strong>m\u00e1' }
 ];
 
 function shuffle(a) { return a.slice().sort(function() { return Math.random() - 0.5; }); }
