@@ -3,34 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Juego &middot; Piensa en Gujarati</title>
+<title>Juego · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-juego.css">
 </head>
 <body>
 
 <nav class="nav-bar">
-  <a class="nav-btn" href="Leccion_1_1_1_c4.html">&larr; Anterior</a>
-  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a>
-  <a class="nav-btn" href="Leccion_1_1_1_v_intro.html">Palabras &rarr;</a>
+  <a class="nav-btn" href="Leccion_1_1_1_c4.html">← Anterior</a>
+  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">🏠</a>
+  <a class="nav-btn" href="Leccion_1_1_1_v_intro.html">Siguiente →</a>
 </nav>
 
 <!-- FASE A -->
 <div class="screen active" id="screen-a">
   <div class="wrap">
-    <span class="badge">Repaso</span>
+    <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; justify-content: center;">
+      <span class="badge">Repaso</span>
+      <span class="repaso-counter" id="repaso-counter" style="font-size: 0.9rem; color: var(--ink-soft);"></span>
+    </div>
     <h2>Repasemos las 4 letras</h2>
-    <p class="subtitle">Escucha cada letra y rep&iacute;tela en voz alta.</p>
+    <p class="subtitle">Escucha cada letra y repítela en voz alta.</p>
     <div class="repaso-card">
       <img class="repaso-img" id="repaso-img" src="" alt="">
       <div class="repaso-bottom">
         <div class="repaso-desc" id="repaso-desc"></div>
-        <button class="btn-circle" id="repaso-btn" onclick="repasoPlay()">&#128266;</button>
+        <button class="btn-circle" id="repaso-btn" onclick="repasoPlay()">🔊</button>
       </div>
     </div>
-    <div class="repaso-counter" id="repaso-counter"></div>
-    <button class="btn-main" id="btn-repaso-next" onclick="repasoNext()">Siguiente &rarr;</button>
-    <button class="btn-sec" onclick="goTo('screen-b')">Saltar al juego &rarr;</button>
+    <button class="btn-main" id="btn-repaso-next" onclick="window.location.href='Leccion_1_1_1_v_intro.html'">Palabras →</button>
+    <button class="btn-sec" onclick="goTo('screen-b')">Saltar al juego →</button>
   </div>
 </div>
 
@@ -38,15 +40,15 @@
 <div class="screen" id="screen-b">
   <div class="wrap">
     <span class="badge">A reconocer</span>
-    <h2>&iquest;Qu&eacute; letra es?</h2>
-    <p class="subtitle">Di la letra en voz alta. Tienes 3 segundos y luego escuchas c&oacute;mo suena.</p>
+    <h2>¿Qué letra es?</h2>
+    <p class="subtitle">Di la letra en voz alta. Tienes 3 segundos y luego escuchas cómo suena.</p>
     <div class="round-indicator" id="b-round">Ronda 1 de 3</div>
     <div class="game-card" id="b-card">&#2724;</div>
     <div class="timer-wrap"><div class="timer-bar" id="b-timer"></div></div>
     <div class="game-answer" id="b-answer"></div>
     <div class="game-progress" id="b-progress">1 de 4</div>
-    <button class="btn-main" id="btn-b-next" style="display:none" onclick="bNext()">Siguiente &rarr;</button>
-    <button class="btn-sec" onclick="goTo('screen-c')">Saltar al emparejamiento &rarr;</button>
+    <button class="btn-main" id="btn-b-next" style="display:none" onclick="bNext()">Siguiente →</button>
+    <button class="btn-sec" onclick="goTo('screen-c')">Saltar al emparejamiento →</button>
   </div>
 </div>
 
@@ -63,19 +65,19 @@
       <button class="match-btn" id="mb-3" onclick="matchTap(3)"></button>
     </div>
     <div class="match-score">Correctas: <span id="c-score">0</span> / <span id="c-total">8</span></div>
-    <button class="btn-main" id="btn-c-replay" onclick="matchReplay()">&#9654; Repetir</button>
-    <button class="btn-sec" onclick="goTo('screen-fin')">Saltar al final &rarr;</button>
+    <button class="btn-main" id="btn-c-replay" onclick="matchReplay()">▶ Repetir</button>
+    <button class="btn-sec" onclick="goTo('screen-fin')">Saltar al final →</button>
   </div>
 </div>
 
 <!-- FIN -->
 <div class="screen" id="screen-fin">
   <div class="wrap">
-    <div style="font-size:3rem">&#127942;</div>
-    <h2>&iexcl;Juego completado!</h2>
-    <p class="subtitle">Ya practicaste las 4 letras. &iexcl;Ahora a las palabras de verdad!</p>
-    <a class="btn-main" href="Leccion_1_1_1_v_intro.html" style="text-decoration:none;display:block;text-align:center;">&#128221; Ir a las palabras &rarr;</a>
-    <button class="btn-sec" onclick="reiniciar()">&#8635; Repetir juego</button>
+    <div style="font-size:3rem">🏆</div>
+    <h2>¡Juego completado!</h2>
+    <p class="subtitle">Ya practicaste las 4 letras. ¡Ahora a las palabras de verdad!</p>
+    <a class="btn-main" href="Leccion_1_1_1_v_intro.html" style="text-decoration:none;display:block;text-align:center;">📝 Ir a las palabras →</a>
+    <button class="btn-sec" onclick="reiniciar()">🔄 Repetir juego</button>
   </div>
 </div>
 
@@ -115,7 +117,6 @@ function repasoShow() {
   document.getElementById('repaso-img').src = item.img;
   document.getElementById('repaso-desc').innerHTML = item.desc;
   document.getElementById('repaso-counter').textContent = (aIdx + 1) + ' de 4';
-  document.getElementById('btn-repaso-next').textContent = aIdx < 3 ? 'Siguiente \u2192' : 'Ir al juego \u2192';
   setTimeout(function() { player.src = item.audio; player.play().catch(function(){}); }, 300);
 }
 
@@ -127,6 +128,8 @@ function repasoPlay() {
   player.onended = function() { btn.classList.remove('playing'); };
 }
 
+// Ya no se usa repasoNext para avanzar; el botón "Palabras →" va directo a palabras.
+// Se mantiene la función por si se necesita en otro contexto.
 function repasoNext() {
   aIdx++;
   if (aIdx < 4) { repasoShow(); }
