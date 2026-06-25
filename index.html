@@ -167,12 +167,10 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
   color: var(--ink);
-  padding: 16px 40px;
+  padding: 15px 36px;
   border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s;
   box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), inset 0 2px 0 rgba(255,255,255,0.4);
@@ -467,7 +465,11 @@ footer {
   .stat { border-bottom: 1px solid var(--border-gold); }
   .stat:nth-child(2n) { border-right: none; }
   .hero-cta { flex-direction: column; align-items: center; }
-  .btn-primary, .btn-secondary { width: 100%; max-width: 320px; text-align: center; }
+  .btn-primary, .btn-secondary { 
+    width: auto;
+    max-width: 90vw;
+    text-align: center;
+  }
 }
 </style>
 </head>
@@ -625,7 +627,7 @@ footer {
       'height:' + size + 'px',
       'left:' + left + '%',
       'background:' + color,
-      'color:' + color, /* Para el box-shadow y resplandor propio */
+      'color:' + color,
       'animation-duration:' + duration + 's',
       'animation-delay:' + delay + 's'
     ].join(';');
@@ -667,20 +669,19 @@ footer {
   window.toggleMusic = function() {
     if (playing) {
       playing = false;
-      btn.innerHTML = '&#128263;';   // 🔇
+      btn.innerHTML = '&#128263;';
       btn.style.color = 'rgba(212,175,55,0.5)';
       fadeTo(0);
       try { localStorage.setItem('musica_pref', 'off'); } catch(e) {}
     } else {
       playing = true;
-      btn.innerHTML = '&#128266;';   // 🔊
+      btn.innerHTML = '&#128266;';
       btn.style.color = '#D4AF37';
       music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
       try { localStorage.setItem('musica_pref', 'on'); } catch(e) {}
     }
   };
 
-  // Restaurar preferencia
   var pref = 'off';
   try { pref = localStorage.getItem('musica_pref') || 'off'; } catch(e) {}
   if (pref === 'on') {
