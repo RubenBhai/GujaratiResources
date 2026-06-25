@@ -46,7 +46,6 @@ body {
     radial-gradient(ellipse 70% 60% at 50% 40%, rgba(0, 229, 255, 0.12) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 75% 65%, var(--purple-glow) 0%, transparent 50%),
     radial-gradient(ellipse 50% 60% at 20% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
-  background-attachment: fixed;
   color: var(--paper);
   font-family: 'Source Sans 3', sans-serif;
   min-height: 100vh;
