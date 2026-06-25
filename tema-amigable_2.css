@@ -59,8 +59,6 @@ body::before {
   z-index: 100;
   margin: 12px 16px 0;
   background: rgba(255, 250, 245, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--marron-suave);
   border-radius: 60px;
   display: flex;
@@ -339,8 +337,6 @@ h1 {
   right: 16px;
   z-index: 100;
   background: rgba(255, 250, 245, 0.9);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--marron-suave);
   border-radius: 60px;
   padding: 6px 8px;
