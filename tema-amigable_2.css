@@ -436,6 +436,7 @@ a, button {
 /* Scroll suave */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* ── PANTALLA DE PRÁCTICA ── */
