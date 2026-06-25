@@ -440,7 +440,11 @@ a, button {
 /* Scroll suave */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;   /* ← cambia hidden por clip */
+}
+
+body {
+  overscroll-behavior-y: none;  /* ← agrega esto */
 }
 
 /* ── PANTALLA DE PRÁCTICA ── */
