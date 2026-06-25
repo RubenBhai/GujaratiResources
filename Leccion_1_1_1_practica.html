@@ -3,31 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Hora de practicar · Piensa en Gujarati</title>
+<title>Hora de practicar &middot; Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #2C2420; --surface: #362C28; --paper: #E8D9C0;
+    --sindoor: #A8362A; --sindoor-deep: #832920;
+    --saffron: #B8863D; --olive: #5F6E4F;
+    --ink-soft: #C8B99A; --border: #4A3C34;
+  }
+  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 20px; }
 
-<!-- Tema claro -->
-<link rel="stylesheet" href="tema-amigable_2.css">
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
+  .nav-btn { border: 1px solid var(--border); background: var(--surface); color: var(--paper); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-block; }
+  .nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
+  .nav-btn.home { color: var(--saffron); }
+
+  .wrap { max-width: 480px; margin: 0 auto; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; }
+  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; line-height: 1.2; }
+  .subtitle { color: var(--ink-soft); font-size: 1.25rem; line-height: 1.8; max-width: 440px; }
+  .subtitle strong { color: var(--paper); }
+
+  .micro-icon { font-size: 3.5rem; }
+
+  .info-box { width: 100%; background: var(--surface); border-left: 4px solid var(--saffron); border-radius: 0 12px 12px 0; padding: 18px 20px; font-size: 1.2rem; line-height: 1.8; color: var(--ink-soft); text-align: left; }
+  .info-box strong { color: var(--paper); }
+
+  .btn-empezar { display: block; width: 100%; border: none; padding: 16px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1.1rem; background: var(--sindoor); color: var(--paper); text-align: center; text-decoration: none; transition: all 0.2s; }
+  .btn-empezar:hover { background: var(--sindoor-deep); }
+</style>
 </head>
 <body>
 <nav class="nav-bar">
-  <a class="nav-btn" href="Leccion_1_1_1_v6.html">← Anterior</a>
-  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">🏠</a>
-  <span class="nav-btn disabled"> </span>
+  <a class="nav-btn" href="Leccion_1_1_1_v6.html">&larr; Anterior</a>
+  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a>
+  <span class="nav-btn" style="opacity:0.3">&nbsp;</span>
 </nav>
 <div class="wrap">
   <span class="badge">Hora de practicar</span>
-  <div class="micro-icon">🎤</div>
-  <h1>¡Llegó el momento<br>de practicar!</h1>
-  <p class="subtitle">Ya conoces las letras y las palabras. Ahora vas a <strong>decirlas en voz alta</strong> y escuchar cómo te sale.</p>
+  <div class="micro-icon">&#127908;</div>
+  <h1>&iexcl;Lleg&oacute; el momento<br>de practicar!</h1>
+  <p class="subtitle">Ya conoces las letras y las palabras. Ahora vas a <strong>decirlas en voz alta</strong> y escuchar c&oacute;mo te sale.</p>
 
   <div class="info-box">
-    <strong>💡 Así funciona</strong><br><br>
-    Toca el botón de grabar y di la palabra. Luego verás lo que se entendió.<br><br>
+    <strong>&#128161; As&iacute; funciona</strong><br><br>
+    Toca el bot&oacute;n de grabar y di la palabra. Luego ver&aacute;s lo que se entendi&oacute;.<br><br>
     No te preocupes por equivocarte: practicar es la mejor manera de aprender.
   </div>
 
-  <a class="btn-empezar" href="https://rubenbhai.github.io/GujaratiResources/practica.html?modulo=1.1&leccion=1&volver=Leccion_1_1_1_fin.html">Empezar a practicar →</a>
+  <a class="btn-empezar" href="https://rubenbhai.github.io/GujaratiResources/practica.html?modulo=1.1&leccion=1&volver=Leccion_1_1_1_fin.html">Empezar a practicar &rarr;</a>
 </div>
 </body>
 </html>

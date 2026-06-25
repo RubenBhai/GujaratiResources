@@ -4,28 +4,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Consonante ર &middot; Piensa en Gujarati</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #2C2420; --surface: #362C28; --paper: #E8D9C0;
+    --sindoor: #A8362A; --sindoor-deep: #832920;
+    --saffron: #B8863D; --olive: #5F6E4F;
+    --ink-soft: #C8B99A; --border: #4A3C34;
+  }
+  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 20px; }
 
-<!-- Vinculamos tu tema de lectura oscura y relajante -->
-<link rel="stylesheet" href="tema-amigable_3.css">
+  /* NAV TOP */
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
+  .nav-btn { border: 1px solid var(--border); background: var(--surface); color: var(--paper); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-block; }
+  .nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
+  .nav-btn.home { color: var(--saffron); }
+  .nav-btn.disabled { opacity: 0.3; pointer-events: none; }
+
+  /* NAV BOTTOM */
+
+  /* WRAP */
+  .wrap { max-width: 480px; margin: 0 auto; padding: 18px 18px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; text-align: center; line-height: 1.2; }
+  h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; text-align: center; }
+  .subtitle { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7; text-align: center; max-width: 440px; }
+
+  /* FRAMES CONSONANTE */
+  .frame-img { width: 100%; border: 2px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--surface); }
+  .frame-img img { width: 100%; display: block; max-height: 300px; object-fit: contain; }
+  .frame-img-label { padding: 12px 16px; font-size: 0.85rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; border-top: 1px solid var(--border); text-align: center; }
+  .frame-audio { width: 100%; border: 2px solid var(--border); border-radius: 16px; background: var(--surface); overflow: hidden; }
+  .frame-audio-top { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+  .frame-audio-label { font-size: 0.85rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .frame-audio-desc { font-size: 1.3rem; color: var(--paper); line-height: 1.55; }
+  .frame-audio-desc strong { color: var(--saffron); }
+  .frame-audio-btn { width: 100%; border: none; padding: 16px; background: transparent; color: var(--ink-soft); cursor: pointer; font-size: 1.1rem; font-weight: 600; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .frame-audio-btn:hover { background: var(--sindoor); color: var(--paper); }
+  .frame-audio-btn.playing { background: var(--sindoor); color: var(--paper); }
+
+  /* FRAMES VOCABULARIO */
+  .frame-vocab-img { width: 100%; border: 2px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--surface); }
+  .frame-vocab-header { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 12px; }
+  .frame-vocab-word { font-family: 'Noto Serif Gujarati', serif; font-size: 1.9rem; color: var(--paper); line-height: 1; }
+  .frame-vocab-meaning { font-size: 1.2rem; color: var(--paper); font-weight: 700; }
+  .frame-vocab-img img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+  .frame-vocab-audio { width: 100%; border: 2px solid var(--border); border-radius: 16px; background: var(--surface); overflow: hidden; }
+  .frame-vocab-audio-top { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .frame-vocab-pron { font-size: 1.1rem; color: var(--paper); line-height: 1.6; }
+  .frame-vocab-pron strong { color: var(--saffron); }
+  .btn-play { border: none; width: 52px; height: 52px; border-radius: 50%; background: var(--sindoor); color: var(--paper); cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
+  .btn-play:hover { background: var(--sindoor-deep); transform: scale(1.08); }
+  .btn-play.playing { background: var(--olive); }
+  .frame-vocab-audio-bottom { padding: 10px 16px; display: flex; gap: 8px; justify-content: center; }
+  .btn-speed { border: 1px solid var(--border); background: transparent; color: var(--ink-soft); padding: 6px 18px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; font-weight: 700; transition: all 0.2s; }
+  .btn-speed.active { background: var(--saffron); color: #1a1410; border-color: var(--saffron); }
+  .btn-speed:hover:not(.active) { border-color: var(--saffron); color: var(--saffron); }
+
+  /* INFO */
+  .info-box { width: 100%; background: var(--surface); border-left: 4px solid var(--saffron); border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
+  .info-box strong { color: var(--paper); }
+  .info-box .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.1rem; color: var(--saffron); }
+
+  /* TABLE */
+  .table-wrap { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: var(--surface); color: var(--ink-soft); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+  td.gu-cell { font-family: 'Noto Serif Gujarati', serif; font-size: 2rem; color: var(--paper); }
+  tr:last-child td { border-bottom: none; }
+
+  /* JUEGO */
+  .game-card { width: 100%; max-width: 320px; aspect-ratio: 1; background: var(--surface); border: 2px solid var(--border); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif Gujarati', serif; font-size: clamp(6rem, 25vw, 11rem); color: var(--paper); transition: border-color 0.3s; }
+  .game-card.reveal { border-color: var(--saffron); }
+  .timer-wrap { width: 100%; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .timer-bar { height: 100%; background: var(--saffron); width: 100%; transform-origin: left; }
+  .game-answer { height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: var(--saffron); opacity: 0; transition: opacity 0.3s; }
+  .game-answer.visible { opacity: 1; }
+  .game-progress { font-size: 0.82rem; color: var(--ink-soft); }
+  .btn-main { width: 100%; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1rem; background: var(--sindoor); color: var(--paper); transition: all 0.2s; }
+  .btn-main:hover { background: var(--sindoor-deep); }
+
+  /* FIN */
+  .btn-fin { display: block; width: 100%; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1rem; background: var(--sindoor); color: var(--paper); text-align: center; text-decoration: none; transition: all 0.2s; }
+  .btn-fin:hover { background: var(--sindoor-deep); }
+  .btn-sec { display: block; width: 100%; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 1rem; background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft); text-align: center; text-decoration: none; transition: all 0.2s; }
+  .btn-sec:hover { border-color: var(--saffron); color: var(--saffron); }
+</style>
 </head>
-<body>
-
-<nav class="nav-bar">
-  <a class="nav-btn" href="Leccion_1_1_1_c1.html">&larr; Anterior</a>
-  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a>
-  <a class="nav-btn" href="Leccion_1_1_1_c3.html">Siguiente &rarr;</a>
-</nav>
-
-<div class="wrap">
+<body><nav class="nav-bar"><a class="nav-btn" href="Leccion_1_1_1_c1.html">&larr; Anterior</a><a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a><a class="nav-btn" href="Leccion_1_1_1_c3.html">Siguiente &rarr;</a></nav><div class="wrap">
   <span class="badge">Consonante 2 de 4</span>
-  
-  <!-- El frame-img ahora tendrá automáticamente el aura gracias al nuevo CSS -->
   <div class="frame-img">
     <img src="https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ra.png" alt="Consonante ર" onerror="this.style.display='none'" onclick="window.location.href='Leccion_1_1_1_c3.html'" style="cursor:pointer">
     <div class="frame-img-label">Letra gujarati</div>
   </div>
-  
   <div class="frame-audio">
     <div class="frame-audio-top">
       <div class="frame-audio-label">Suena como</div>
@@ -34,30 +107,82 @@
     <button class="frame-audio-btn" onclick="playAudio('https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3', this)">&#128266; Escuchar</button>
   </div>
 </div>
-
-<div class="bottom-actions">
-  <a class="btn-fin" href="Leccion_1_1_1_v1.html">&#128221; Ir a palabras</a>
-  <a class="btn-sec" href="Leccion_1_1_2_intro.html">&#9197; Siguiente lección</a>
-</div>
-
-<audio id="player"></audio>
-
 <script>
   window.addEventListener('load', () => {
     setTimeout(() => { document.getElementById('player').src='https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3'; document.getElementById('player').play().catch(()=>{}); }, 400);
   });
-
+</script><div style="width:100%;max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:8px;padding:0 18px 24px;">
+  <a style="display:block;width:100%;padding:12px;border-radius:10px;font-weight:700;font-size:0.95rem;text-align:center;text-decoration:none;background:var(--sindoor);color:var(--paper);" href="Leccion_1_1_1_v1.html">&#128221; Ir a palabras</a>
+  <a style="display:block;width:100%;padding:12px;border-radius:10px;font-weight:600;font-size:0.95rem;text-align:center;text-decoration:none;background:var(--surface);border:1px solid var(--border);color:var(--ink-soft);" href="Leccion_1_1_2_intro.html">&#9197; Siguiente lecci&oacute;n</a>
+</div><audio id="player"></audio>
+<script>
   const player = document.getElementById('player');
-  
+  let currentSpeed = 1.0;
+  let toggle = 'h';
+
   function playAudio(url, btn) {
     document.querySelectorAll('.frame-audio-btn').forEach(b => b.classList.remove('playing'));
     btn.classList.add('playing');
     btn.textContent = '▶ Reproduciendo...';
-    player.src = url; 
-    player.playbackRate = 1.0; 
-    player.play();
+    player.src = url; player.playbackRate = 1.0; player.play();
     player.onended = () => { btn.classList.remove('playing'); btn.innerHTML = '&#128266; Escuchar'; };
   }
+
+  function setSpeed(s) {
+    currentSpeed = s;
+    document.getElementById('btn-normal').classList.toggle('active', s === 1.0);
+    document.getElementById('btn-slow').classList.toggle('active', s === 0.75);
+  }
+
+  function playVocab(btn, urlH, urlM) {
+    const useH = toggle === 'h';
+    toggle = useH ? 'm' : 'h';
+    btn.classList.add('playing');
+    btn.textContent = useH ? '♬♂' : '♬♀';
+    player.src = useH ? urlH : urlM;
+    player.playbackRate = currentSpeed; player.play();
+    player.onended = () => { btn.classList.remove('playing'); btn.textContent = '▶'; };
+  }
+
+  // JUEGO
+  const gameData = [
+    { letter: 'ત', answer: 'ta', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c09_ta.mujer.mp3' },
+    { letter: 'ર', answer: 'ra', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3' },
+    { letter: 'સ', answer: 'sa', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c26_sa-hombre.mp3' },
+    { letter: 'મ', answer: 'ma', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c23_ma-mujer.mp3' },
+  ];
+  let queue=[], idx=0, timer=null;
+  function shuffle(a) { return [...a].sort(()=>Math.random()-0.5); }
+  function initGame() { queue=shuffle(gameData); idx=0; showCard(); }
+  function showCard() {
+    const item=queue[idx];
+    const card=document.getElementById('game-card');
+    if(!card) return;
+    const ans=document.getElementById('game-answer');
+    const prog=document.getElementById('game-progress');
+    const bar=document.getElementById('timer-bar');
+    card.textContent=item.letter; card.classList.remove('reveal');
+    ans.textContent=''; ans.classList.remove('visible');
+    prog.textContent=(idx+1)+' de '+queue.length;
+    bar.style.transition='none'; bar.style.transform='scaleX(1)';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      bar.style.transition='transform 3s linear'; bar.style.transform='scaleX(0)';
+    }));
+    if(timer) clearTimeout(timer);
+    timer=setTimeout(()=>reveal(item), 3000);
+  }
+  function reveal(item) {
+    document.getElementById('game-card').classList.add('reveal');
+    const ans=document.getElementById('game-answer');
+    ans.textContent=item.answer; ans.classList.add('visible');
+    player.src=item.audio; player.playbackRate=1.0; player.play();
+  }
+  function gameNext() {
+    idx++;
+    if(idx<queue.length) { showCard(); }
+    else { window.location.href='Leccion_1_1_1_v1.html'; }
+  }
+  if(document.getElementById('game-card')) initGame();
 </script>
 </body>
 </html>

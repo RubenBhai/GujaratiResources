@@ -36,19 +36,14 @@
     text-decoration: none;
     font-size: 0.88rem;
     margin: 18px 0 10px;
-    background: rgba(44, 36, 32, 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 8px 16px;
-    border-radius: 50px;
   }
   .top-link:hover { text-decoration: underline; }
 
   header { text-align: center; padding: 20px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
   .badge {
     display: inline-block;
-    background: rgba(168, 54, 42, 0.2);
-    color: #EFA69D;
+    background: var(--sindoor);
+    color: var(--paper);
     padding: 5px 14px;
     border-radius: 30px;
     font-size: 0.75rem;
@@ -80,14 +75,14 @@
   .btn {
     border: none;
     padding: 9px 16px;
-    border-radius: 50px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: all 0.25s ease;
+    transition: all 0.2s;
     background: #2e2419;
     color: var(--paper);
   }
@@ -132,11 +127,11 @@
     background: #2e2419;
     color: var(--ink-soft);
     padding: 6px 16px;
-    border-radius: 50px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 0.82rem;
     font-weight: 700;
-    transition: all 0.25s ease;
+    transition: all 0.2s;
   }
   .btn-speed.active {
     background: var(--saffron);
@@ -189,14 +184,29 @@
   const BACKEND_URL = "https://gujaratitraining-production.up.railway.app";
   const LOGIN_URL = "https://rubenbhai.github.io/GujaratiTraining/index.html";
 
+  // ===================================================================
+  // 1. Leer parámetros de la URL (módulo y lección)
+  // ===================================================================
   const params = new URLSearchParams(window.location.search);
   const modulo = params.get('modulo');
   const leccion = params.get('leccion');
   const claveLeccion = `${modulo}-${leccion}`;
 
+  // Página de regreso: si viene 'volver' en la URL, usar esa; si no, la página fin de la lección
   const paginaVolver = params.get('volver') || `Leccion_${modulo.replace('.','_')}_${leccion}_fin.html`;
   document.getElementById('back-link').href = paginaVolver;
 
+  // ===================================================================
+  // 2. Verificación de sesión — si no hay token, ir al login con retorno
+  // ===================================================================
+  //if (!sessionStorage.getItem('accessToken')) {
+  //  const returnUrl = encodeURIComponent(window.location.href);
+  //  window.location.href = `${LOGIN_URL}?return=${returnUrl}`;
+  // }
+
+  // ===================================================================
+  // 3. Reproductores y estado global (igual lógica que teatro.html)
+  // ===================================================================
   const masterPlayer = document.getElementById('master-player');
   const selfPlayer = document.getElementById('self-player');
   let mediaRecorder;
@@ -204,9 +214,13 @@
   let recordingLineId = null;
   let currentSpeed = 1.0;
 
+  // ===================================================================
+  // Control de velocidad de reproducción (solo masterPlayer)
+  // ===================================================================
   function setSpeed(speed) {
     currentSpeed = speed;
     masterPlayer.playbackRate = speed;
+    // Actualizar botón activo
     document.querySelectorAll('.btn-speed').forEach(btn => btn.classList.remove('active'));
     const labels = { 0.75: '🐢 0.75x', 1.0: '▶ 1x', 1.25: '⚡ 1.25x' };
     document.querySelectorAll('.btn-speed').forEach(btn => {
@@ -214,6 +228,10 @@
     });
   }
 
+  // ===================================================================
+  // 4. Cargar el JSON de frases y construir la interfaz
+  // ===================================================================
+  // Validar que exista el parámetro 'modulo'
   if (!modulo || !leccion) {
     document.getElementById('theater').innerHTML =
       `<div class="error-state">Parámetros inválidos en la URL. Verifica los valores de 'modulo' y 'leccion'.</div>`;
@@ -261,6 +279,7 @@
         ? '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip2 + '\',\'' + lineId + '\',null,null)">&#9792; Mujer</button>'
         : '';
 
+      // Botón "Próxima práctica" — salta al siguiente ejercicio (excepto en el último)
       var btnNext = (i < total - 1)
         ? '<button class="btn btn-next-practice" onclick="irAProxima(' + (i + 1) + ')">&#11015; Pr&oacute;xima pr&aacute;ctica</button>'
         : '<button class="btn btn-next-practice" onclick="irAlFinal()">&#127937; Terminar</button>';
@@ -286,6 +305,7 @@
     });
   }
 
+  // Desplaza la pantalla al siguiente ejercicio y lo resalta
   function irAProxima(indice) {
     var destino = document.getElementById('line-' + indice);
     if (destino) {
@@ -299,6 +319,9 @@
     window.location.href = paginaVolver;
   }
 
+  // ===================================================================
+  // 5. Reproductor maestro — soporta fragmento de audio largo o clip suelto
+  // ===================================================================
   function playMaster(archivoUrl, lineId, inicio, fin) {
     document.querySelectorAll('.dialogue-line').forEach(l => l.classList.remove('active'));
 
@@ -329,6 +352,9 @@
     };
   }
 
+  // ===================================================================
+  // 6. Grabación (idéntica lógica a teatro.html)
+  // ===================================================================
   function toggleRecord(lineId, fraseObjetivo) {
     const btn = document.getElementById(`rec-${lineId}`);
 
@@ -399,6 +425,9 @@
     };
   }
 
+  // ===================================================================
+  // 7. Llamada al backend de evaluación (idéntico contrato a teatro.html)
+  // ===================================================================
   function enviarAlTeatroIA(audioBase64, mimeType, fraseObjetivo, lineId) {
     const spinner = document.getElementById(`load-${lineId}`);
     const panel = document.getElementById(`eval-panel-${lineId}`);

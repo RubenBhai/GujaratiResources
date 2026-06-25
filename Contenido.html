@@ -4,12 +4,305 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contenido del curso · Piensa en Gujarati</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #C8973A;
+  --gold-light: #E8C068;
+  --teal: #2ABFB0;
+  --ink: #0D1420;
+  --ink-soft: #1E2A3A;
+  --paper: #EAE0CC;
+  --paper-warm: #F5EDD8;
+  --border-gold: rgba(200,151,58,0.3);
+  --border-teal: rgba(42,191,176,0.25);
+  --active: rgba(42,191,176,0.08);
+  --locked: rgba(255,255,255,0.03);
+}
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+}
 
-<!-- Tema cósmico -->
-<link rel="stylesheet" href="tema-contenido.css">
+/* ── HEADER ── */
+.site-header {
+  background: var(--ink-soft);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.header-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-gold);
+}
+.header-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--paper-warm);
+}
+.header-sub {
+  font-size: 0.74rem;
+  color: rgba(234,224,204,0.6);
+  letter-spacing: 0.06em;
+}
+.btn-home {
+  font-size: 0.82rem;
+  color: var(--teal);
+  text-decoration: none;
+  border: 1px solid var(--border-teal);
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.btn-home:hover { background: rgba(42,191,176,0.08); }
+
+/* ── HERO CONTENIDO ── */
+.content-hero {
+  padding: 56px 24px 40px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
+  border-bottom: 1px solid var(--border-gold);
+}
+.content-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--paper-warm);
+  margin-bottom: 12px;
+}
+.content-hero p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: rgba(234,224,204,0.85);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.progress-bar-wrap {
+  max-width: 400px;
+  margin: 28px auto 0;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(234,224,204,0.65);
+  margin-bottom: 8px;
+}
+.progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 3.8%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  border-radius: 2px;
+}
+
+/* ── CONTENIDO PRINCIPAL ── */
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── ETAPA ── */
+.etapa {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.etapa-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0 12px;
+  border-bottom: 1px solid var(--border-gold);
+  margin-bottom: 16px;
+}
+.etapa-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: rgba(200,151,58,0.55);
+  line-height: 1;
+  min-width: 48px;
+}
+.etapa-info {}
+.etapa-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--paper-warm);
+  line-height: 1.2;
+}
+.etapa-meta {
+  font-size: 0.88rem;
+  color: rgba(234,224,204,0.7);
+  margin-top: 3px;
+}
+
+/* ── MÓDULO ── */
+.modulo {
+  border: 1px solid var(--border-gold);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.modulo-header {
+  padding: 18px 22px;
+  background: rgba(200,151,58,0.04);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  user-select: none;
+}
+.modulo-header:hover { background: rgba(200,151,58,0.08); }
+.modulo-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 36px;
+}
+.modulo-info { flex: 1; }
+.modulo-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--paper-warm);
+}
+.modulo-sub {
+  font-size: 0.88rem;
+  color: rgba(234,224,204,0.72);
+  margin-top: 2px;
+}
+.modulo-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.badge-active {
+  background: rgba(42,191,176,0.15);
+  color: var(--teal);
+  border: 1px solid rgba(42,191,176,0.3);
+}
+.badge-locked {
+  background: rgba(255,255,255,0.06);
+  color: rgba(234,224,204,0.55);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.badge-coming {
+  background: rgba(200,151,58,0.1);
+  color: var(--gold);
+  border: 1px solid var(--border-gold);
+}
+.modulo-chevron {
+  color: rgba(234,224,204,0.3);
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+.modulo.open .modulo-chevron { transform: rotate(180deg); }
+
+/* ── LECCIONES ── */
+.lecciones {
+  display: none;
+  border-top: 1px solid var(--border-gold);
+}
+.modulo.open .lecciones { display: block; }
+
+.leccion {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+.leccion:last-child { border-bottom: none; }
+.leccion.activa { background: var(--active); }
+.leccion.activa:hover { background: rgba(42,191,176,0.12); }
+.leccion.bloqueada { opacity: 0.6; cursor: default; }
+.leccion.bloqueada:hover { background: transparent; }
+.leccion.proxima { opacity: 0.6; cursor: default; }
+
+.lec-num {
+  font-size: 0.9rem;
+  color: var(--gold);
+  min-width: 32px;
+  font-family: 'Cormorant Garamond', serif;
+}
+.lec-info { flex: 1; }
+.lec-title {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--paper);
+  line-height: 1.3;
+}
+.leccion.activa .lec-title { color: var(--paper-warm); }
+.lec-sub {
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  margin-top: 5px;
+  font-family: 'Noto Serif Gujarati', serif;
+  line-height: 1.5;
+}
+.lec-status {
+  font-size: 1rem;
+}
+.lec-status.check { color: var(--teal); }
+.lec-status.lock { color: rgba(234,224,204,0.4); font-size: 0.9rem; }
+.lec-status.play { color: var(--gold); }
+.lec-status.soon { color: var(--teal); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* ── NOTA ── */
+.nota-construccion {
+  background: rgba(200,151,58,0.06);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  color: rgba(234,224,204,0.7);
+  text-align: center;
+  margin: 0 22px 18px;
+}
+
+@media (max-width: 600px) {
+  .etapa-num { font-size: 1.8rem; min-width: 36px; }
+  .leccion { padding: 12px 16px; }
+  .modulo-header { padding: 14px 16px; }
+}
+</style>
 </head>
 <body>
 
@@ -23,7 +316,7 @@
       <div class="header-sub">Curso ultra-inmersivo</div>
     </div>
   </a>
-  <a href="index.html" class="btn-home">← Inicio</a>
+  <a href="index.html" class="btn-home">&larr; Inicio</a>
 </header>
 
 <div class="content-hero">
@@ -52,27 +345,30 @@
       </div>
     </div>
 
-    <details class="modulo" id="mod-1" open>
-      <summary class="modulo-header">
+    <!-- MÓDULO 1 -->
+    <div class="modulo open" id="mod-1">
+      <div class="modulo-header" onclick="toggleModulo('mod-1')">
         <div class="modulo-num">M·1</div>
         <div class="modulo-info">
           <div class="modulo-title">El script gujarati</div>
           <div class="modulo-sub">Meta: leer sílabas gujarati en voz alta</div>
         </div>
         <span class="modulo-badge badge-active">En curso</span>
-      </summary>
-      
-      <div class="details-body lecciones">
-        
+        <span class="modulo-chevron">&#9660;</span>
+      </div>
+      <div class="lecciones">
+
+        <!-- LECCIÓN 1.1 — ACTIVA -->
         <a class="leccion activa" href="Leccion_1_1_1_intro.html" data-leccion="1_1_1">
           <span class="lec-num">1.1</span>
           <div class="lec-info">
             <div class="lec-title">Las primeras consonantes y vocales</div>
             <div class="lec-sub">મ દ જ લ ત ར સ હ · આ એ ઇ · ા ે િ</div>
           </div>
-          <span class="lec-status play">▶</span>
+          <span class="lec-status play">&#9654;</span>
         </a>
 
+        <!-- LECCIÓN 1.2 — PRÓXIMA -->
         <div class="leccion proxima">
           <span class="lec-num">1.2</span>
           <div class="lec-info">
@@ -82,13 +378,14 @@
           <span class="lec-status soon">Pronto</span>
         </div>
 
+        <!-- LECCIONES 1.3–1.7 — BLOQUEADAS -->
         <div class="leccion bloqueada">
           <span class="lec-num">1.3</span>
           <div class="lec-info">
             <div class="lec-title">Consonantes y vocales III</div>
             <div class="lec-sub">પ ણ ખ ભ શ ઠ · ઈ ઊ ઐ · ી ૂ ૈ</div>
           </div>
-          <span class="lec-status lock">🔒</span>
+          <span class="lec-status lock">&#128274;</span>
         </div>
 
         <div class="leccion bloqueada">
@@ -97,7 +394,7 @@
             <div class="lec-title">Consonantes IV y conjuntas básicas</div>
             <div class="lec-sub">ક ઘ છ ડ ય ષ · ઔ અં ઋ · ત્ર દ્ર સ્ત્ર</div>
           </div>
-          <span class="lec-status lock">🔒</span>
+          <span class="lec-status lock">&#128274;</span>
         </div>
 
         <div class="leccion bloqueada">
@@ -106,7 +403,7 @@
             <div class="lec-title">Consonantes V y conjuntas avanzadas</div>
             <div class="lec-sub">ગ ચ ઝ ફ ળ ક્ષ જ્ઞ · શ્ર શ્ચ દ્દ દ્ધ</div>
           </div>
-          <span class="lec-status lock">🔒</span>
+          <span class="lec-status lock">&#128274;</span>
         </div>
 
         <div class="leccion bloqueada">
@@ -115,7 +412,7 @@
             <div class="lec-title">Conjuntas especiales</div>
             <div class="lec-sub">ન્દ ગ્ન સ્મ ત્સ લ્ક ટ્ટ ઠ્ઠ ત્ત ન્ન</div>
           </div>
-          <span class="lec-status lock">🔒</span>
+          <span class="lec-status lock">&#128274;</span>
         </div>
 
         <div class="leccion bloqueada">
@@ -124,77 +421,83 @@
             <div class="lec-title">Precauciones en la lectura y fluidez</div>
             <div class="lec-sub">Técnicas de lectura fluida en gujarati</div>
           </div>
-          <span class="lec-status lock">🔒</span>
+          <span class="lec-status lock">&#128274;</span>
         </div>
 
       </div>
-    </details>
+    </div>
 
-    <details class="modulo" id="mod-2">
-      <summary class="modulo-header">
+    <!-- MÓDULO 2 -->
+    <div class="modulo" id="mod-2">
+      <div class="modulo-header" onclick="toggleModulo('mod-2')">
         <div class="modulo-num">M·2</div>
         <div class="modulo-info">
           <div class="modulo-title">Saludos y cortesía</div>
           <div class="modulo-sub">Saludar, responder y fórmulas de cortesía</div>
         </div>
         <span class="modulo-badge badge-locked">Bloqueado</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">🔒 Disponible al completar el Módulo 1</div>
+        <span class="modulo-chevron">&#9660;</span>
       </div>
-    </details>
+      <div class="lecciones">
+        <div class="nota-construccion">&#128274; Disponible al completar el Módulo 1</div>
+      </div>
+    </div>
 
-    <details class="modulo" id="mod-3">
-      <summary class="modulo-header">
+    <!-- MÓDULOS 3–4 -->
+    <div class="modulo" id="mod-3">
+      <div class="modulo-header" onclick="toggleModulo('mod-3')">
         <div class="modulo-num">M·3</div>
         <div class="modulo-info">
           <div class="modulo-title">Nombres y descripción</div>
           <div class="modulo-sub">Nombrar personas, objetos y lugares</div>
         </div>
         <span class="modulo-badge badge-locked">Bloqueado</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">🔒 Disponible al completar el Módulo 2</div>
+        <span class="modulo-chevron">&#9660;</span>
       </div>
-    </details>
+      <div class="lecciones">
+        <div class="nota-construccion">&#128274; Disponible al completar el Módulo 2</div>
+      </div>
+    </div>
 
-    <details class="modulo" id="mod-4">
-      <summary class="modulo-header">
+    <div class="modulo" id="mod-4">
+      <div class="modulo-header" onclick="toggleModulo('mod-4')">
         <div class="modulo-num">M·4</div>
         <div class="modulo-info">
           <div class="modulo-title">Preguntas básicas</div>
           <div class="modulo-sub">¿Quién? ¿Qué? ¿Dónde? ¿Cuándo?</div>
         </div>
         <span class="modulo-badge badge-locked">Bloqueado</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">🔒 Disponible al completar el Módulo 3</div>
+        <span class="modulo-chevron">&#9660;</span>
       </div>
-    </details>
+      <div class="lecciones">
+        <div class="nota-construccion">&#128274; Disponible al completar el Módulo 3</div>
+      </div>
+    </div>
   </div>
 
-  <!-- ══ ETAPAS 2–5 ══ -->
+  <!-- ══ ETAPAS 2–5 — RESUMEN ══ -->
   <div class="etapa">
     <div class="etapa-header">
       <div class="etapa-num">2</div>
       <div class="etapa-info">
         <div class="etapa-title">Primeras oraciones</div>
-        <div class="etapa-meta">Módulos 5–9 · 22 lecciones · ~5.5h</div>
+        <div class="etapa-meta">Módulos 5–9 · 22 lecciones · ~5.5h · Describir · preguntar · presente</div>
       </div>
     </div>
-    <details class="modulo" id="mod-e2">
-      <summary class="modulo-header">
+    <div class="modulo" id="mod-e2">
+      <div class="modulo-header" onclick="toggleModulo('mod-e2')">
         <div class="modulo-num">M·5–9</div>
         <div class="modulo-info">
           <div class="modulo-title">Módulos 5 al 9</div>
-          <div class="modulo-sub">Describir · presente simple · negación</div>
+          <div class="modulo-sub">Describir · presente simple · negación · preguntas con respuesta</div>
         </div>
         <span class="modulo-badge badge-locked">Bloqueado</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">🔒 Disponible al completar la Etapa 1</div>
+        <span class="modulo-chevron">&#9660;</span>
       </div>
-    </details>
+      <div class="lecciones">
+        <div class="nota-construccion">&#128274; Disponible al completar la Etapa 1</div>
+      </div>
+    </div>
   </div>
 
   <div class="etapa">
@@ -202,22 +505,23 @@
       <div class="etapa-num">3</div>
       <div class="etapa-info">
         <div class="etapa-title">Comunicación funcional</div>
-        <div class="etapa-meta">Módulos 10–15 · 24 lecciones · ~6h</div>
+        <div class="etapa-meta">Módulos 10–15 · 24 lecciones · ~6h · Pasado · futuro · necesidad · lugar</div>
       </div>
     </div>
-    <details class="modulo" id="mod-e3">
-      <summary class="modulo-header">
+    <div class="modulo" id="mod-e3">
+      <div class="modulo-header" onclick="toggleModulo('mod-e3')">
         <div class="modulo-num">M·10–15</div>
         <div class="modulo-info">
           <div class="modulo-title">Módulos 10 al 15</div>
-          <div class="modulo-sub">Pasado · futuro · necesidad · ministerio básico</div>
+          <div class="modulo-sub">Pasado · futuro · necesidad · posesión · ministerio básico</div>
         </div>
         <span class="modulo-badge badge-locked">Bloqueado</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">🔒 Disponible al completar la Etapa 2</div>
+        <span class="modulo-chevron">&#9660;</span>
       </div>
-    </details>
+      <div class="lecciones">
+        <div class="nota-construccion">&#128274; Disponible al completar la Etapa 2</div>
+      </div>
+    </div>
   </div>
 
   <div class="etapa">
@@ -225,22 +529,23 @@
       <div class="etapa-num">4</div>
       <div class="etapa-info">
         <div class="etapa-title">Expresión elaborada</div>
-        <div class="etapa-meta">Módulos 16–21 · 18 lecciones · ~4.5h</div>
+        <div class="etapa-meta">Módulos 16–21 · 18 lecciones · ~4.5h · Subordinar · comparar · condicional</div>
       </div>
     </div>
-    <details class="modulo" id="mod-e4">
-      <summary class="modulo-header">
+    <div class="modulo" id="mod-e4">
+      <div class="modulo-header" onclick="toggleModulo('mod-e4')">
         <div class="modulo-num">M·16–21</div>
         <div class="modulo-info">
           <div class="modulo-title">Módulos 16 al 21</div>
-          <div class="modulo-sub">Condicional · relativas · textos bíblicos</div>
+          <div class="modulo-sub">Condicional · relativas · discurso indirecto · textos bíblicos</div>
         </div>
         <span class="modulo-badge badge-locked">Bloqueado</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">🔒 Disponible al completar la Etapa 3</div>
+        <span class="modulo-chevron">&#9660;</span>
       </div>
-    </details>
+      <div class="lecciones">
+        <div class="nota-construccion">&#128274; Disponible al completar la Etapa 3</div>
+      </div>
+    </div>
   </div>
 
   <div class="etapa">
@@ -248,59 +553,72 @@
       <div class="etapa-num">5</div>
       <div class="etapa-info">
         <div class="etapa-title">Dominio y registro</div>
-        <div class="etapa-meta">Módulos 22–26 · 15 lecciones · ~4h</div>
+        <div class="etapa-meta">Módulos 22–26 · 15 lecciones · ~4h · Textos auténticos · 100% en gujarati</div>
       </div>
     </div>
-    <details class="modulo" id="mod-e5">
-      <summary class="modulo-header">
+    <div class="modulo" id="mod-e5">
+      <div class="modulo-header" onclick="toggleModulo('mod-e5')">
         <div class="modulo-num">M·22–26</div>
         <div class="modulo-info">
           <div class="modulo-title">Módulos 22 al 26</div>
-          <div class="modulo-sub">Películas · textos auténticos · conversación fluida</div>
+          <div class="modulo-sub">Películas · textos auténticos · conversación espiritual fluida</div>
         </div>
         <span class="modulo-badge badge-locked">Bloqueado</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">🔒 Disponible al completar la Etapa 4</div>
+        <span class="modulo-chevron">&#9660;</span>
       </div>
-    </details>
+      <div class="lecciones">
+        <div class="nota-construccion">&#128274; Disponible al completar la Etapa 4</div>
+      </div>
+    </div>
   </div>
 
 </main>
 
 <script>
+function toggleModulo(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+// ── PROGRESO REAL CON localStorage ──
+// Lista de todas las lecciones del curso (id => true cuando exista)
+// El total se usa para calcular el porcentaje
 var TOTAL_LECCIONES = 97;
 
 function calcularProgreso() {
   var completadas = 0;
+  var ultimaLeccion = '';
+  // Recorre todo localStorage buscando claves 'leccion_*' = 'completada'
   for (var i = 0; i < localStorage.length; i++) {
     var clave = localStorage.key(i);
     if (clave && clave.indexOf('leccion_') === 0 && localStorage.getItem(clave) === 'completada') {
       completadas++;
+      ultimaLeccion = clave;
     }
   }
 
-  var pct = Math.round((completadas / TOTAL_LECCIONES) * 1000) / 10;
-  if (pct < 1 && completadas > 0) pct = 1;
+  var pct = Math.round((completadas / TOTAL_LECCIONES) * 1000) / 10; // 1 decimal
+  if (pct < 1 && completadas > 0) pct = 1; // mínimo visible
 
-  setTimeout(() => {
-    var fill = document.querySelector('.progress-fill');
-    if (fill) fill.style.width = pct + '%';
-  }, 100);
+  // Actualizar barra
+  var fill = document.querySelector('.progress-fill');
+  if (fill) fill.style.width = pct + '%';
 
+  // Actualizar etiquetas
   var labels = document.querySelectorAll('.progress-label span');
   if (labels.length >= 2) {
     labels[0].textContent = 'Tu progreso';
     labels[1].textContent = completadas + ' de ' + TOTAL_LECCIONES + ' lecciones';
   }
 
+  // Marcar visualmente lecciones completadas
   document.querySelectorAll('.leccion[data-leccion]').forEach(function(el) {
     var id = el.getAttribute('data-leccion');
     if (localStorage.getItem('leccion_' + id) === 'completada') {
       var status = el.querySelector('.lec-status');
       if (status) {
         status.className = 'lec-status check';
-        status.innerHTML = '✔';
+        status.innerHTML = '\u2714';
       }
     }
   });
@@ -308,12 +626,14 @@ function calcularProgreso() {
 
 calcularProgreso();
 </script>
-
-<!-- ═══ BOTÓN DE MÚSICA ═══ -->
+<!-- ═══ BOTÓN DE MÚSICA AMBIENTE ═══ -->
 <audio id="bgMusic" loop preload="none">
   <source src="https://rubenbhai.github.io/GujaratiResources/audios/musica/Contenido_musica_ambiente.mp3" type="audio/mpeg">
 </audio>
-<button id="musicToggle" onclick="toggleMusic()" aria-label="Música de fondo">🔇</button>
+<button id="musicToggle" onclick="toggleMusic()" aria-label="Música de fondo"
+  style="position:fixed;bottom:20px;right:20px;z-index:9999;width:52px;height:52px;border-radius:50%;border:1px solid rgba(200,151,58,0.4);background:rgba(13,20,32,0.85);color:#C8973A;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.4);">
+  &#128263;
+</button>
 <script>
 (function() {
   var music = document.getElementById('bgMusic');
@@ -340,27 +660,29 @@ calcularProgreso();
   window.toggleMusic = function() {
     if (playing) {
       playing = false;
-      btn.innerHTML = '🔇';
-      btn.style.color = 'rgba(234,224,204,0.4)';
+      btn.innerHTML = '&#128263;';   // 🔇
+      btn.style.color = 'rgba(200,151,58,0.5)';
       fadeTo(0);
       try { localStorage.setItem('musica_pref', 'off'); } catch(e) {}
     } else {
       playing = true;
-      btn.innerHTML = '🔊';
-      btn.style.color = '#D4AF37';
+      btn.innerHTML = '&#128266;';   // 🔊
+      btn.style.color = '#C8973A';
       music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
       try { localStorage.setItem('musica_pref', 'on'); } catch(e) {}
     }
   };
 
+  // Restaurar preferencia — intenta autoplay solo si el usuario ya la activó antes
   var pref = 'off';
   try { pref = localStorage.getItem('musica_pref') || 'off'; } catch(e) {}
   if (pref === 'on') {
+    // Los navegadores bloquean autoplay; se activa al primer toque del usuario
     var resume = function() {
       if (!playing) {
         playing = true;
-        btn.innerHTML = '🔊';
-        btn.style.color = '#D4AF37';
+        btn.innerHTML = '&#128266;';
+        btn.style.color = '#C8973A';
         music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
       }
       document.removeEventListener('click', resume);

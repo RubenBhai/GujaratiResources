@@ -3,26 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Tus primeras palabras · Piensa en Gujarati</title>
+<title>Tus primeras palabras &middot; Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tema-amigable_2.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #2C2420; --surface: #362C28; --paper: #E8D9C0;
+    --sindoor: #A8362A; --sindoor-deep: #832920;
+    --saffron: #B8863D; --olive: #5F6E4F;
+    --ink-soft: #C8B99A; --border: #4A3C34;
+  }
+  body { background: var(--bg); background-image: radial-gradient(ellipse at top, rgba(184,134,61,0.07), transparent 60%); color: var(--paper); font-family: 'Source Sans 3', sans-serif; min-height: 100vh; padding-bottom: 20px; }
+
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 8px; }
+  .nav-btn { border: 1px solid var(--border); background: var(--surface); color: var(--paper); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; white-space: nowrap; display: inline-block; }
+  .nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
+  .nav-btn.home { color: var(--saffron); }
+
+  .wrap { max-width: 480px; margin: 0 auto; padding: 18px 18px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .badge { display: inline-block; background: var(--sindoor); color: var(--paper); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; text-align: center; line-height: 1.2; }
+  .subtitle { color: var(--ink-soft); font-size: 1.25rem; line-height: 1.8; text-align: center; max-width: 440px; }
+
+  .info-box { width: 100%; background: var(--surface); border-left: 4px solid var(--saffron); border-radius: 0 12px 12px 0; padding: 16px 20px; font-size: 1.22rem; line-height: 1.85; color: var(--ink-soft); }
+  .info-box strong { color: var(--paper); }
+
+  .table-wrap { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: var(--surface); color: var(--ink-soft); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+  td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 1.3rem; }
+  td.gu-cell { font-family: 'Noto Serif Gujarati', serif; font-size: 2.1rem; color: var(--paper); }
+  td.pron-cell { color: var(--saffron); font-weight: 700; }
+  td.mean-cell { color: var(--paper); }
+  tr:last-child td { border-bottom: none; }
+
+  .btn-empezar { display: block; width: 100%; border: none; padding: 16px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1.1rem; background: var(--sindoor); color: var(--paper); text-align: center; text-decoration: none; transition: all 0.2s; margin-top: 4px; }
+  .btn-empezar:hover { background: var(--sindoor-deep); }
+</style>
 </head>
 <body>
-
 <nav class="nav-bar">
-  <a class="nav-btn" href="Leccion_1_1_1_juego.html">← Anterior</a>
-  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">🏠</a>
-  <a class="nav-btn" href="Leccion_1_1_1_v1.html">Empezar →</a>
+  <a class="nav-btn" href="Leccion_1_1_1_juego.html">&larr; Anterior</a>
+  <a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a>
+  <a class="nav-btn" href="Leccion_1_1_1_v1.html">Empezar &rarr;</a>
 </nav>
-
 <div class="wrap">
   <span class="badge">Tus primeras palabras</span>
-  <h1>¡Ya sabes leer!</h1>
-  <p class="subtitle">Ahora vas a juntar las letras para leer <strong>6 palabras</strong> de verdad. Recuerda: la "a" de la <strong>última letra</strong> casi no se escucha.</p>
+  <h1>&iexcl;Ya sabes leer!</h1>
+  <p class="subtitle">Ahora vas a juntar las letras para leer <strong>6 palabras</strong> de verdad. Recuerda: la &ldquo;a&rdquo; de la <strong>&uacute;ltima letra</strong> casi no se escucha.</p>
 
   <div class="info-box">
-    <strong>💡 Así suenan</strong><br><br>
-    Mira cómo se dice cada palabra. Luego las escucharás una por una.
+    <strong>&#128161; As&iacute; suenan</strong><br><br>
+    Mira c&oacute;mo se dice cada palabra. Luego las escuchar&aacute;s una por una.
   </div>
 
   <div class="table-wrap">
@@ -37,8 +69,7 @@
     </table>
   </div>
 
-  <a class="btn-empezar" href="Leccion_1_1_1_v1.html">Empezar con las palabras →</a>
+  <a class="btn-empezar" href="Leccion_1_1_1_v1.html">Empezar con las palabras &rarr;</a>
 </div>
-
 </body>
 </html>
