@@ -12,7 +12,7 @@
 <nav class="nav-bar">
   <a class="nav-btn" href="Leccion_1_1_1_c4.html">← Anterior</a>
   <a class="nav-btn home" href="Leccion_1_1_1_intro.html">🏠</a>
-  <a class="nav-btn" href="Leccion_1_1_1_v_intro.html">Siguiente →</a>
+  <a class="nav-btn" href="#" onclick="repasoNext(); return false;">Siguiente →</a>
 </nav>
 
 <!-- FASE A -->
@@ -31,7 +31,7 @@
         <button class="btn-circle" id="repaso-btn" onclick="repasoPlay()">🔊</button>
       </div>
     </div>
-    <button class="btn-main" id="btn-repaso-next" onclick="window.location.href='Leccion_1_1_1_v_intro.html'">Palabras →</button>
+    <a class="btn-main" href="Leccion_1_1_1_v_intro.html" style="text-decoration:none;display:block;text-align:center;">Palabras →</a>
     <button class="btn-sec" onclick="goTo('screen-b')">Saltar al juego →</button>
   </div>
 </div>
@@ -128,12 +128,13 @@ function repasoPlay() {
   player.onended = function() { btn.classList.remove('playing'); };
 }
 
-// Ya no se usa repasoNext para avanzar; el botón "Palabras →" va directo a palabras.
-// Se mantiene la función por si se necesita en otro contexto.
 function repasoNext() {
   aIdx++;
-  if (aIdx < 4) { repasoShow(); }
-  else { goTo('screen-b'); }
+  if (aIdx < 4) { 
+    repasoShow(); 
+  } else { 
+    window.location.href = 'Leccion_1_1_1_v_intro.html';
+  }
 }
 
 /* ===== FASE B ===== */
