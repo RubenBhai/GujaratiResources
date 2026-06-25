@@ -28,9 +28,6 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   line-height: 1.65;
   background-color: var(--crema);
-  background-image:
-    radial-gradient(ellipse at top left, rgba(212, 132, 90, 0.08), transparent 60%),
-    radial-gradient(ellipse at bottom right, rgba(160, 82, 79, 0.05), transparent 60%);
   min-height: 100vh;
 }
 
