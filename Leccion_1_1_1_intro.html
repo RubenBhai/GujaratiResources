@@ -40,16 +40,18 @@
         <tr><td class="gu-cell">મ</td><td>solo "m"</td><td><strong>ma</strong></td></tr>
       </table>
     </div>
-  </div>
 
-  <div class="nav-bottom">
-    <a class="btn-action btn-words" href="Leccion_1_1_1_v1.html">📝 Ir a palabras</a>
-    <a class="btn-action btn-next-lec" href="Leccion_1_1_2_intro.html">⏭️ Siguiente lección</a>
+    <!-- Botones al final del contenido, sin position fixed -->
+    <div style="display:flex; flex-direction:column; gap:12px; width:100%; margin-top:12px;">
+      <a class="btn-action btn-words" href="Leccion_1_1_1_v1.html">📝 Ir a palabras</a>
+      <a class="btn-action btn-next-lec" href="Leccion_1_1_2_intro.html">⏭️ Siguiente lección</a>
+    </div>
   </div>
 
   <audio id="player"></audio>
 
   <script>
+    // ... (el mismo script de siempre, lo dejo sin cambios)
     const player = document.getElementById('player');
     let currentSpeed = 1.0;
     let toggle = 'h';
