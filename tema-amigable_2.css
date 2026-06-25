@@ -400,6 +400,10 @@ h1 {
    RESPONSIVE — para pantallas pequeñas
    ============================================== */
 @media (max-width: 480px) {
+  body {
+    animation: none;
+  }
+
   .wrap {
     padding: 20px 14px 30px;
     gap: 18px;
