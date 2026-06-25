@@ -24,27 +24,20 @@
 
 body {
   margin: 0;
-  color: var(--ink);
+  color: var(--marron-texto);
   font-family: 'Source Sans 3', sans-serif;
   line-height: 1.65;
-  background-color: var(--paper);
+  background-color: var(--crema);
   background-image:
-    radial-gradient(ellipse at top left, rgba(184, 134, 61, 0.12), transparent 60%),
-    radial-gradient(ellipse at bottom right, rgba(168, 54, 42, 0.08), transparent 60%);
-  background-attachment: fixed;
+    radial-gradient(ellipse at top left, rgba(212, 132, 90, 0.08), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(160, 82, 79, 0.05), transparent 60%);
   animation: fondoVivo 8s ease-in-out infinite alternate;
 }
 
 @keyframes fondoVivo {
-  0% {
-    background-color: #F0E6D2;
-  }
-  50% {
-    background-color: #F5EDDE;
-  }
-  100% {
-    background-color: #EDE0CA;
-  }
+  0%   { background-color: #FDF8F0; }
+  50%  { background-color: #F8F0E5; }
+  100% { background-color: #FDF8F0; }
 }
 
 /* ==============================================
