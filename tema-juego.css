@@ -14,6 +14,7 @@
   --sindoor-deep: #832920;
   --saffron: #B8863D; 
   --olive: #5F6E4F;
+  --verde: #4A6B53; /* Verde de botones "Siguiente" (Fase A y B) */
   --ink-soft: #C8B99A; 
   --border: rgba(184, 134, 61, 0.15);
   
@@ -342,6 +343,7 @@ h2 {
 /* ── TIMER ── */
 .timer-wrap { 
   width: 100%; 
+  max-width: 320px; 
   height: 6px; 
   background: rgba(255,255,255,0.06); 
   border-radius: 3px; 
