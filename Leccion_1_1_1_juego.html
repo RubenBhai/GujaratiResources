@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Juego · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-juego.css">
@@ -10,9 +13,9 @@
 <body>
 
 <nav class="nav-bar">
-  <a class="nav-btn" href="Leccion_1_1_1_c4.html">← Anterior</a>
+  <a class="nav-btn" href="Leccion_1_1_1_v8.html">← Anterior</a>
   <a class="nav-btn home" href="Leccion_1_1_1_intro.html">🏠</a>
-  <a class="nav-btn" href="#" onclick="repasoNext(); return false;">Siguiente →</a>
+  <a class="nav-btn" href="Leccion_1_1_1_practica.html">Practicar →</a>
 </nav>
 
 <!-- FASE A -->
@@ -22,17 +25,17 @@
       <span class="badge">Repaso</span>
       <span class="repaso-counter" id="repaso-counter" style="font-size: 0.9rem; color: var(--ink-soft);"></span>
     </div>
-    <h2>Repasemos las 4 letras</h2>
-    <p class="subtitle">Escucha cada letra y repítela en voz alta.</p>
-    <div class="repaso-card">
-      <img class="repaso-img" id="repaso-img" src="" alt="">
-      <div class="repaso-bottom">
-        <div class="repaso-desc" id="repaso-desc"></div>
-        <button class="btn-circle" id="repaso-btn" onclick="repasoPlay()">🔊</button>
-      </div>
+    <h2>Repasemos las 6 letras</h2>
+    <p class="subtitle">Toca aquí <button onclick="repasoPlay()" style="background:var(--sindoor);border:none;border-radius:50%;width:56px;height:56px;cursor:pointer;font-size:1.6rem;vertical-align:middle;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(168,54,42,0.3);" id="repaso-btn">🔊</button> para que escuches el sonido de esta consonante o vocal, y repítela en voz alta.</p>
+    <div class="repaso-card" style="max-width:320px; margin:0 auto;">
+      <img class="repaso-img" id="repaso-img" src="" alt="" style="max-height:380px; object-fit:contain; width:100%;">
+
     </div>
-    <a class="btn-main" href="Leccion_1_1_1_v_intro.html" style="text-decoration:none;display:block;text-align:center;">Palabras →</a>
-    <button class="btn-sec" onclick="goTo('screen-b')">Saltar al juego →</button>
+    <div style="display:flex; gap:10px; width:100%; max-width:320px;">
+      <button class="btn-main" id="btn-repaso-prev" onclick="repasoPrev()" style="flex:1; background:var(--surface); box-shadow:0 4px 14px rgba(0,0,0,0.15); border:1px solid var(--border); padding:14px; border-radius:50px; font-weight:700; font-size:1rem; color:var(--ink-soft); cursor:pointer; font-family:inherit; opacity:0.4; pointer-events:none;">← Anterior</button>
+      <button class="btn-main" onclick="repasoNext()" style="flex:1; background:#4A6B53; box-shadow:0 4px 14px rgba(74,107,83,0.3); border:none; padding:14px; border-radius:50px; font-weight:700; font-size:1rem; color:white; cursor:pointer; font-family:inherit;">Siguiente →</button>
+    </div>
+    <button class="btn-sec" onclick="goTo('screen-b')" style="max-width:320px;">🎲 ¡Vamos a jugar!</button>
   </div>
 </div>
 
@@ -75,8 +78,8 @@
   <div class="wrap">
     <div style="font-size:3rem">🏆</div>
     <h2>¡Juego completado!</h2>
-    <p class="subtitle">Ya practicaste las 4 letras. ¡Ahora a las palabras de verdad!</p>
-    <a class="btn-main" href="Leccion_1_1_1_v_intro.html" style="text-decoration:none;display:block;text-align:center;">📝 Ir a las palabras →</a>
+    <p class="subtitle">Ya practicaste las 6 letras. ¡Sigue así!</p>
+    <a class="btn-main" href="Leccion_1_1_1_fin.html" style="text-decoration:none;display:block;text-align:center;">🏆 Finalizar lección →</a>
     <button class="btn-sec" onclick="reiniciar()">🔄 Repetir juego</button>
   </div>
 </div>
@@ -92,10 +95,12 @@ const SND_OK  = BASE + '/audios/clase_1_1/Clase_1_1_Correcto.mp3';
 const SND_ERR = BASE + '/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
 const letters = [
-  { letter: '\u0aa4', answer: 'ta', audio: BASE+'/audios/alfabeto/c09_ta.mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ta.png', desc: 'Suena como la <strong>t</strong> de <strong>ta</strong>co' },
-  { letter: '\u0ab0', answer: 'ra', audio: BASE+'/audios/alfabeto/c27_ra-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ra.png', desc: 'Suena como la <strong>r</strong> suave de ca<strong>r</strong>o' },
-  { letter: '\u0ab8', answer: 'sa', audio: BASE+'/audios/alfabeto/c26_sa-hombre.mp3', img: BASE+'/imagenes/Clase_1_1/img_alfa_sa.png', desc: 'Suena como la <strong>s</strong> de <strong>sa</strong>po' },
-  { letter: '\u0aae', answer: 'ma', audio: BASE+'/audios/alfabeto/c23_ma-mujer.mp3',  img: BASE+'/imagenes/Clase_1_1/img_alfa_ma.png', desc: 'Suena como la <strong>m</strong> de <strong>ma</strong>m\u00e1' }
+  { letter: 'ક', answer: 'ka',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ka.png',   desc: 'Suena como la <strong>k</strong> de <strong>ka</strong>sa' },
+  { letter: 'મ', answer: 'ma',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ma.png',   desc: 'Suena como la <strong>m</strong> de <strong>ma</strong>má' },
+  { letter: 'છ', answer: 'chha', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3', img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chha.png', desc: '<strong>ch</strong> aspirada' },
+  { letter: 'આ', answer: 'aa',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png',   desc: 'Vocal <strong>aa</strong> — "a" larga' },
+  { letter: 'એ', answer: 'e',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png',    desc: 'Vocal <strong>e</strong> — como en caf<strong>é</strong>' },
+  { letter: 'ઓ', answer: 'o',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png',    desc: 'Vocal <strong>o</strong> — como en s<strong>o</strong>l' },
 ];
 
 function shuffle(a) { return a.slice().sort(function() { return Math.random() - 0.5; }); }
@@ -115,9 +120,19 @@ var aIdx = 0;
 function repasoShow() {
   var item = letters[aIdx];
   document.getElementById('repaso-img').src = item.img;
-  document.getElementById('repaso-desc').innerHTML = item.desc;
-  document.getElementById('repaso-counter').textContent = (aIdx + 1) + ' de 4';
-  setTimeout(function() { player.src = item.audio; player.play().catch(function(){}); }, 300);
+  document.getElementById('repaso-counter').textContent = (aIdx + 1) + ' de ' + letters.length;
+  var prev = document.getElementById('btn-repaso-prev');
+  if (prev) {
+    if (aIdx === 0) { prev.style.opacity = '0.4'; prev.style.pointerEvents = 'none'; }
+    else { prev.style.opacity = '1'; prev.style.pointerEvents = 'auto'; }
+  }
+}
+
+function repasoPrev() {
+  if (aIdx > 0) {
+    aIdx--;
+    repasoShow();
+  }
 }
 
 function repasoPlay() {
@@ -130,10 +145,10 @@ function repasoPlay() {
 
 function repasoNext() {
   aIdx++;
-  if (aIdx < 4) { 
-    repasoShow(); 
+  if (aIdx < letters.length) {
+    repasoShow();
   } else { 
-    window.location.href = 'Leccion_1_1_1_v_intro.html';
+    window.location.href = 'Leccion_1_1_1_practica.html';
   }
 }
 
@@ -151,7 +166,7 @@ function bShowCard() {
   if (bTimer) clearTimeout(bTimer);
   var item = bQueue[bIdx];
   document.getElementById('b-round').textContent = 'Ronda ' + (bRound + 1) + ' de ' + B_ROUNDS;
-  document.getElementById('b-progress').textContent = (bIdx + 1) + ' de 4';
+  document.getElementById('b-progress').textContent = (bIdx + 1) + ' de ' + letters.length;
   var card = document.getElementById('b-card');
   var ans  = document.getElementById('b-answer');
   var btn  = document.getElementById('btn-b-next');
@@ -177,7 +192,7 @@ function bReveal(item) {
 
 function bNext() {
   bIdx++;
-  if (bIdx < 4) {
+  if (bIdx < letters.length) {
     bShowCard();
   } else {
     bRound++;
@@ -206,10 +221,14 @@ function cShowRound() {
   if (cIdx >= C_ROUNDS) { goTo('screen-fin'); return; }
   cLocked = false;
   cCurrentItem = cQueue[cIdx];
-  cLayout = shuffle([0, 1, 2, 3]);
+  // Seleccionar 4 letras al azar asegurando que la correcta esté incluida
+  var pool = shuffle(letters.filter(function(l){ return l.letter !== cCurrentItem.letter; })).slice(0,3);
+  pool.push(cCurrentItem);
+  pool = shuffle(pool);
+  cLayout = pool.map(function(l){ return letters.indexOf(l); });
   for (var i = 0; i < 4; i++) {
     var btn = document.getElementById('mb-' + i);
-    btn.textContent = letters[cLayout[i]].letter;
+    btn.textContent = pool[i].letter;
     btn.className = 'match-btn';
   }
   document.getElementById('c-prompt').innerHTML = '&nbsp;';
@@ -222,7 +241,7 @@ function matchReplay() {
 
 function matchTap(btnIdx) {
   if (cLocked) return;
-  var tapped = letters[cLayout[btnIdx]];
+  var tapped = letters[cLayout[btnIdx]]; if(!tapped) return;
   var correct = tapped.letter === cCurrentItem.letter;
   var btn = document.getElementById('mb-' + btnIdx);
 
@@ -254,6 +273,26 @@ function reiniciar() {
 
 /* ===== ARRANQUE ===== */
 repasoShow();
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
 </script>
 </body>
 </html>

@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
   <title>¡Lección completa! · Piensa en Gujarati</title>
 
   <!-- Fuentes de Google -->
@@ -15,7 +18,7 @@
 
   <!-- Barra de navegación superior con diseño flotante -->
   <nav class="nav-bar">
-    <a class="nav-btn" href="Leccion_1_1_1_v6.html">← Anterior</a>
+    <a class="nav-btn" href="Leccion_1_1_1_practica.html">← Anterior</a>
     <a class="nav-btn home" href="Leccion_1_1_1_intro.html">🏠 Inicio</a>
     <span class="nav-btn disabled">Siguiente →</span>
   </nav>
@@ -29,8 +32,8 @@
     <h1>¡Muy bien!</h1>
 
     <p class="subtitle">
-      Aprendiste tus primeras 4 letras del gujarati y 6 palabras de verdad.
-      ¡Sigue así! Ahora practica cómo suenan.
+      Aprendiste <strong>3 consonantes</strong>, <strong>3 vocales</strong> y <strong>8 palabras</strong> de verdad.
+      ¡Ya puedes preguntar <span style="font-family:'Noto Serif Gujarati',serif;">કેમ છો?</span>!
     </p>
 
     <a class="btn-sec" href="Leccion_1_1_1_intro.html">← Repetir lección</a>
@@ -39,18 +42,22 @@
     <div class="aprendido-box">
       <div class="aprendido-label">✨ Lo que aprendiste</div>
       <div class="aprendido-letras">
-        <span class="gu">ત</span>
-        <span class="gu">ર</span>
-        <span class="gu">સ</span>
+        <span class="gu">ક</span>
         <span class="gu">મ</span>
+        <span class="gu">છ</span>
+        <span class="gu">આ</span>
+        <span class="gu">એ</span>
+        <span class="gu">ઓ</span>
       </div>
       <table class="aprendido-tabla">
-        <tr><td class="gu-cell">તરત</td><td class="pron-cell">ta-rat</td><td class="mean-cell">enseguida</td></tr>
-        <tr><td class="gu-cell">રસ</td><td class="pron-cell">ras</td><td class="mean-cell">jugo</td></tr>
-        <tr><td class="gu-cell">રમત</td><td class="pron-cell">ra-mat</td><td class="mean-cell">juego</td></tr>
-        <tr><td class="gu-cell">સતત</td><td class="pron-cell">sa-tat</td><td class="mean-cell">continuo</td></tr>
-        <tr><td class="gu-cell">તરસ</td><td class="pron-cell">ta-ras</td><td class="mean-cell">sed</td></tr>
-        <tr><td class="gu-cell">સરસ</td><td class="pron-cell">sa-ras</td><td class="mean-cell">excelente</td></tr>
+        <tr><td class="gu-cell">કેમ છો?</td><td class="pron-cell">kem chho?</td><td class="mean-cell">¿cómo estás?</td></tr>
+        <tr><td class="gu-cell">કેમ કે</td><td class="pron-cell">kem ke</td><td class="mean-cell">porque</td></tr>
+        <tr><td class="gu-cell">કેમ</td><td class="pron-cell">kem</td><td class="mean-cell">¿cómo? / ¿por qué?</td></tr>
+        <tr><td class="gu-cell">કામ</td><td class="pron-cell">kaam</td><td class="mean-cell">trabajo</td></tr>
+        <tr><td class="gu-cell">મોકો</td><td class="pron-cell">mo-ko</td><td class="mean-cell">oportunidad</td></tr>
+        <tr><td class="gu-cell">મામા</td><td class="pron-cell">maa-maa</td><td class="mean-cell">tío materno</td></tr>
+        <tr><td class="gu-cell">કાકા</td><td class="pron-cell">kaa-kaa</td><td class="mean-cell">tío paterno</td></tr>
+        <tr><td class="gu-cell">ઓછો</td><td class="pron-cell">o-chho</td><td class="mean-cell">poco</td></tr>
       </table>
     </div>
 
@@ -59,10 +66,10 @@
       <div class="proxima-label">📚 En la siguiente lección</div>
       <div class="proxima-texto">Aprenderás 4 letras nuevas:</div>
       <div class="proxima-letras">
-        <span class="gu">દ</span>
-        <span class="gu">જ</span>
-        <span class="gu">લ</span>
+        <span class="gu">સ</span>
+        <span class="gu">ર</span>
         <span class="gu">હ</span>
+        <span class="gu">ઉ</span>
       </div>
     </div>
 
@@ -120,11 +127,14 @@
     }
 
     // JUEGO (mantenido por si se usa en otras variantes)
+    const BASE = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/';
     const gameData = [
-      { letter: 'ત', answer: 'ta', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c09_ta.mujer.mp3' },
-      { letter: 'ર', answer: 'ra', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3' },
-      { letter: 'સ', answer: 'sa', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c26_sa-hombre.mp3' },
-      { letter: 'મ', answer: 'ma', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c23_ma-mujer.mp3' },
+      { letter: 'ક', answer: 'ka',   audioM: BASE+'audio_alfa_m_ka.mp3',   audioH: BASE+'audio_alfa_h_ka.mp3'   },
+      { letter: 'મ', answer: 'ma',   audioM: BASE+'audio_alfa_m_ma.mp3',   audioH: BASE+'audio_alfa_h_ma.mp3'   },
+      { letter: 'છ', answer: 'chha', audioM: BASE+'audio_alfa_m_chha.mp3', audioH: BASE+'audio_alfa_h_chha.mp3' },
+      { letter: 'આ', answer: 'aa',   audioM: BASE+'audio_alfa_m_aa.mp3',   audioH: BASE+'audio_alfa_h_aa.mp3'   },
+      { letter: 'એ', answer: 'e',    audioM: BASE+'audio_alfa_m_e.mp3',    audioH: BASE+'audio_alfa_h_e.mp3'    },
+      { letter: 'ઓ', answer: 'o',    audioM: BASE+'audio_alfa_m_o.mp3',    audioH: BASE+'audio_alfa_h_o.mp3'    },
     ];
     let queue=[], idx=0, timer=null;
     function shuffle(a) { return [...a].sort(()=>Math.random()-0.5); }
@@ -153,7 +163,7 @@
       if (card) card.classList.add('reveal');
       const ans = document.getElementById('game-answer');
       if (ans) { ans.textContent=item.answer; ans.classList.add('visible'); }
-      player.src=item.audio; player.playbackRate=1.0; player.play();
+      player.src=item.audioM; player.playbackRate=1.0; player.play();
     }
     function gameNext() {
       idx++;
@@ -163,5 +173,25 @@
     if(document.getElementById('game-card')) initGame();
   </script>
 
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
 </body>
 </html>

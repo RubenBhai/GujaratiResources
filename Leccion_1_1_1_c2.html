@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Consonante ર &middot; Piensa en Gujarati</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Consonante મ &middot; Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Vinculamos tu tema de lectura oscura y relajante -->
+<!-- Vinculamos tu archivo centralizado -->
 <link rel="stylesheet" href="tema-amigable_3.css">
 </head>
 <body>
@@ -14,29 +17,22 @@
 <nav class="nav-bar">
   <a class="nav-btn" href="Leccion_1_1_1_c1.html">&larr; Anterior</a>
   <a class="nav-btn home" href="Leccion_1_1_1_intro.html">&#127968;</a>
-  <a class="nav-btn" href="Leccion_1_1_1_c3.html">Siguiente &rarr;</a>
+  <a class="nav-btn" href="Leccion_1_1_1_v1.html">Ir a palabras</a>
 </nav>
 
-<div class="wrap">
-  <span class="badge">Consonante 2 de 4</span>
+<div class="wrap" style="padding-bottom:8px;">
+  <span class="badge">Consonante 2 de 3</span>
   
-  <!-- El frame-img ahora tendrá automáticamente el aura gracias al nuevo CSS -->
-  <div class="frame-img">
-    <img src="https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ra.png" alt="Consonante ર" onerror="this.style.display='none'" onclick="window.location.href='Leccion_1_1_1_c3.html'" style="cursor:pointer">
-    <div class="frame-img-label">Letra gujarati</div>
+  <div class="frame-img" style="max-width:320px; margin:0 auto;">
+    <img src="https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ma.png" alt="Consonante મ" onerror="this.style.display='none'" onclick="window.location.href='Leccion_1_1_1_c2.html'" style="cursor:pointer; max-height:380px; object-fit:contain; width:100%;">
   </div>
   
-  <div class="frame-audio">
-    <div class="frame-audio-top">
-      <div class="frame-audio-label">Suena como</div>
-      <div class="frame-audio-desc">Suena como la <strong>r</strong> suave de ca<strong>r</strong>o. No es la <strong>rr</strong> fuerte de perro.</div>
-    </div>
-    <button class="frame-audio-btn" onclick="playAudio('https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3', this)">&#128266; Escuchar</button>
-  </div>
+  
 </div>
 
-<div class="bottom-actions">
-  <a class="btn-fin" href="Leccion_1_1_1_v1.html">&#128221; Ir a palabras</a>
+<div class="bottom-actions" style="max-width:320px; margin:0 auto; padding:0 0 24px 0; gap:10px;">
+  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" onclick="playAudio('https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3', this)" id="btn-escuchar">&#128266; Escuchar</button>
+  <a class="btn-fin" style="margin-top:0;" href="Leccion_1_1_1_c3.html">Siguiente &rarr;</a>
   <a class="btn-sec" href="Leccion_1_1_2_intro.html">&#9197; Siguiente lección</a>
 </div>
 
@@ -44,7 +40,7 @@
 
 <script>
   window.addEventListener('load', () => {
-    setTimeout(() => { document.getElementById('player').src='https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3'; document.getElementById('player').play().catch(()=>{}); }, 400);
+    setTimeout(() => { document.getElementById('player').src='https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3'; document.getElementById('player').play().catch(()=>{}); }, 400);
   });
 
   const player = document.getElementById('player');
@@ -53,11 +49,69 @@
     document.querySelectorAll('.frame-audio-btn').forEach(b => b.classList.remove('playing'));
     btn.classList.add('playing');
     btn.textContent = '▶ Reproduciendo...';
-    player.src = url; 
-    player.playbackRate = 1.0; 
-    player.play();
+    player.src = url; player.playbackRate = 1.0; player.play();
     player.onended = () => { btn.classList.remove('playing'); btn.innerHTML = '&#128266; Escuchar'; };
   }
+
+  // JUEGO (Lógica mantenida)
+  const BASE = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/';
+  const gameData = [
+    { letter: 'ક', answer: 'ka',   audioM: BASE+'audio_alfa_m_ka.mp3',   audioH: BASE+'audio_alfa_h_ka.mp3'   },
+    { letter: 'મ', answer: 'ma',   audioM: BASE+'audio_alfa_m_ma.mp3',   audioH: BASE+'audio_alfa_h_ma.mp3'   },
+    { letter: 'છ', answer: 'chha', audioM: BASE+'audio_alfa_m_chha.mp3', audioH: BASE+'audio_alfa_h_chha.mp3' },
+  ];
+  let queue=[], idx=0, timer=null;
+  function shuffle(a) { return [...a].sort(()=>Math.random()-0.5); }
+  function initGame() { queue=shuffle(gameData); idx=0; showCard(); }
+  function showCard() {
+    const item=queue[idx];
+    const card=document.getElementById('game-card');
+    if(!card) return;
+    const ans=document.getElementById('game-answer');
+    const prog=document.getElementById('game-progress');
+    const bar=document.getElementById('timer-bar');
+    card.textContent=item.letter; card.classList.remove('reveal');
+    ans.textContent=''; ans.classList.remove('visible');
+    prog.textContent=(idx+1)+' de '+queue.length;
+    bar.style.transition='none'; bar.style.transform='scaleX(1)';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      bar.style.transition='transform 3s linear'; bar.style.transform='scaleX(0)';
+    }));
+    if(timer) clearTimeout(timer);
+    timer=setTimeout(()=>reveal(item), 3000);
+  }
+  function reveal(item) {
+    document.getElementById('game-card').classList.add('reveal');
+    const ans=document.getElementById('game-answer');
+    ans.textContent=item.answer; ans.classList.add('visible');
+    player.src=item.audioM; player.playbackRate=1.0; player.play();
+  }
+  function gameNext() {
+    idx++;
+    if(idx<queue.length) { showCard(); }
+    else { window.location.href='Leccion_1_1_1_v1.html'; }
+  }
+  if(document.getElementById('game-card')) initGame();
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
 </script>
 </body>
 </html>

@@ -206,7 +206,7 @@ h2 {
 .frame-vocab-img img { 
   width: 100%; 
   display: block; 
-  max-height: 340px; 
+  max-height: 45vh; 
   object-fit: contain; 
 }
 

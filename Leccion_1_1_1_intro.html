@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
   <title>Lección 1.1.1 · Piensa en Gujarati</title>
 
   <!-- Fuentes de Google -->
@@ -22,22 +25,25 @@
   <div class="wrap">
     <span class="badge">Tu primera lección</span>
     <h1>¡Empezamos!</h1>
-    <p class="subtitle">Hoy aprenderás tus primeras 4 letras del gujarati. Lo mejor: sus sonidos ya los conoces, porque son los mismos del español. Solo se ven diferentes.</p>
+    <p class="subtitle">Hoy aprenderás <strong>3 consonantes</strong> — <span class="gu">ક મ છ</span> — y <strong>4 vocales</strong> con sus matras. Al final de la lección ya puedes leer:</p>
+    <div style="text-align:center; margin: 8px 0 4px;"><span class="gu" style="color:var(--saffron); font-size:2.4rem; font-weight:700; line-height:1.2;">કેમ છો?</span><br><span style="font-size:1.1rem; color:var(--ink-soft); font-style:italic;">— ¿Cómo estás?</span></div>
 
     <div class="info-box">
-      <strong>💡 Un secreto sencillo</strong><br><br>
-      Cada letra del gujarati ya trae una <strong>"a"</strong> incluida. Por eso no dices solo "t", dices <strong>"ta"</strong>.<br><br>
-      Mira: <span class="gu">ત</span> es <strong>ta</strong>, <span class="gu">ર</span> es <strong>ra</strong>, <span class="gu">સ</span> es <strong>sa</strong>, <span class="gu">મ</span> es <strong>ma</strong>.<br><br>
-      Así de fácil. Esa "a" siempre viene con la letra.
+      <strong>💡 Cómo funcionan las vocales</strong><br><br>
+      Cada consonante ya trae una <strong>"a"</strong> incluida. Pero cuando necesitas otra vocal, usas una <strong>matra</strong> — una marca que cambia el sonido.<br><br>
+      <span class="gu">ક</span> = <strong>ka</strong> &nbsp;·&nbsp;
+      <span class="gu">કા</span> = <strong>kaa</strong> &nbsp;·&nbsp;
+      <span class="gu">કે</span> = <strong>ke</strong> &nbsp;·&nbsp;
+      <span class="gu">કો</span> = <strong>ko</strong><br><br>
+      La matra va pegada a la consonante y cambia su vocal. Eso es todo.
     </div>
 
     <div class="table-wrap">
       <table>
-        <tr><th>Letra</th><th>No dices</th><th>Dices</th></tr>
-        <tr><td class="gu-cell">ત</td><td>solo "t"</td><td><strong>ta</strong></td></tr>
-        <tr><td class="gu-cell">ર</td><td>solo "r"</td><td><strong>ra</strong></td></tr>
-        <tr><td class="gu-cell">સ</td><td>solo "s"</td><td><strong>sa</strong></td></tr>
-        <tr><td class="gu-cell">મ</td><td>solo "m"</td><td><strong>ma</strong></td></tr>
+        <tr><th>Letra</th><th>Suena</th><th>+ matra</th><th>Suena</th></tr>
+        <tr><td class="gu-cell">ક</td><td><strong>ka</strong></td><td class="gu-cell">ા → કા</td><td><strong>kaa</strong></td></tr>
+        <tr><td class="gu-cell">મ</td><td><strong>ma</strong></td><td class="gu-cell">ે → મે</td><td><strong>me</strong></td></tr>
+        <tr><td class="gu-cell">છ</td><td><strong>chha</strong></td><td class="gu-cell">ો → છો</td><td><strong>chho</strong></td></tr>
       </table>
     </div>
 
@@ -81,11 +87,15 @@
     }
 
     // JUEGO
+    const BASE = 'https://rubenbhai.github.io/GujaratiResources/audios/';
     const gameData = [
-      { letter: 'ત', answer: 'ta', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c09_ta.mujer.mp3' },
-      { letter: 'ર', answer: 'ra', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3' },
-      { letter: 'સ', answer: 'sa', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c26_sa-hombre.mp3' },
-      { letter: 'મ', answer: 'ma', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c23_ma-mujer.mp3' },
+      { letter: 'ક',  answer: 'ka',   audioM: BASE+'audio_m_ka.mp3',   audioH: BASE+'audio_h_ka.mp3'   },
+      { letter: 'મ',  answer: 'ma',   audioM: BASE+'audio_m_ma.mp3',   audioH: BASE+'audio_h_ma.mp3'   },
+      { letter: 'છ',  answer: 'chha', audioM: BASE+'audio_m_chha.mp3', audioH: BASE+'audio_h_chha.mp3' },
+      { letter: 'એ',  answer: 'e',    audioM: BASE+'audio_m_e.mp3',    audioH: BASE+'audio_h_e.mp3'    },
+      { letter: 'ઓ',  answer: 'o',    audioM: BASE+'audio_m_o.mp3',    audioH: BASE+'audio_h_o.mp3'    },
+      { letter: 'કેમ', answer: 'kem',  audioM: BASE+'audio_m_kem.mp3',  audioH: BASE+'audio_h_kem.mp3'  },
+      { letter: 'છો',  answer: 'chho', audioM: BASE+'audio_m_kem_chho.mp3', audioH: BASE+'audio_h_kem_chho.mp3' },
     ];
     let queue=[], idx=0, timer=null;
     function shuffle(a) { return [...a].sort(()=>Math.random()-0.5); }
@@ -111,12 +121,12 @@
       document.getElementById('game-card').classList.add('reveal');
       const ans=document.getElementById('game-answer');
       ans.textContent=item.answer; ans.classList.add('visible');
-      player.src=item.audio; player.playbackRate=1.0; player.play();
+      player.src=item.audioM; player.playbackRate=1.0; player.play();
     }
     function gameNext() {
       idx++;
       if(idx<queue.length) { showCard(); }
-      else { window.location.href='Leccion_1_1_1_v1.html'; }
+      else { window.location.href='Leccion_1_1_1_c1.html'; }
     }
     if(document.getElementById('game-card')) initGame();
   </script>
@@ -184,5 +194,25 @@
   })();
   </script>
 
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
 </body>
 </html>
