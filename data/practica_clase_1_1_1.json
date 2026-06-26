@@ -1,83 +1,191 @@
 {
   "1.1-1": {
-    "titulo": "Lección 1.1.1 — Consonantes y vocabulario base",
+    "titulo": "Lección 1.1.1 — Consonantes, vocales, sílabas y vocabulario",
     "fuente": "Sesión 1.1 — Alfabeto",
     "frases": [
       {
-        "gujarati": "ત",
-        "espanol": "Consonante ta — como la 't' en taco",
+        "gujarati": "ક",
+        "espanol": "Consonante ka — como la 'k' en kasa",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c09_ta.mujer.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ta.png"
-      },
-      {
-        "gujarati": "ર",
-        "espanol": "Consonante ra — como la 'r' suave en caro",
-        "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c27_ra-mujer.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ra.png"
-      },
-      {
-        "gujarati": "સ",
-        "espanol": "Consonante sa — como la 's' en sapo",
-        "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c26_sa-hombre.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_sa.png"
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_ka.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ka.png"
       },
       {
         "gujarati": "મ",
         "espanol": "Consonante ma — como la 'm' en mamá",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/alfabeto/c23_ma-mujer.mp3",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_ma.mp3",
         "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ma.png"
       },
       {
-        "gujarati": "તરત",
-        "espanol": "enseguida",
+        "gujarati": "છ",
+        "espanol": "Consonante chha — ch aspirada",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.1_h_tarat.mp3",
-        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.1_m_tarat.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_1.1.1.1_tarat.png"
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_chha.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chha.png"
       },
       {
-        "gujarati": "રસ",
-        "espanol": "jugo",
+        "gujarati": "આ",
+        "espanol": "Vocal aa — 'a' larga",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.2_h_ras.mp3",
-        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.2_m_ras.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_1.1.1.2_ras.png"
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_aa.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png"
       },
       {
-        "gujarati": "રમત",
-        "espanol": "juego",
+        "gujarati": "એ",
+        "espanol": "Vocal e — como la 'e' en café",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.3_h_ramat.mp3",
-        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.3_m_ramat.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_1.1.1.3_ramat.png"
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_e.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png"
       },
       {
-        "gujarati": "સતત",
-        "espanol": "continuo",
+        "gujarati": "ઓ",
+        "espanol": "Vocal o — como la 'o' en sol",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.4_h_satat.mp3",
-        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.4_m_satat.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_1.1.1.4_satat.png"
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_o.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png"
       },
       {
-        "gujarati": "તરસ",
-        "espanol": "sed",
+        "gujarati": "કા",
+        "espanol": "sílaba kaa — ka + matra aa",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.5_h_taras.mp3",
-        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.5_m_taras.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_1.1.1.5_taras.png"
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaa.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaa.png"
       },
       {
-        "gujarati": "સરસ",
-        "espanol": "excelente",
+        "gujarati": "મા",
+        "espanol": "sílaba maa — ma + matra aa",
         "tipo": "clipIndividual",
-        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.6_h_saras.mp3",
-        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1.1.1.6_m_saras.mp3",
-        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_1.1.1.6_saras.png"
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maa.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maa.png"
+      },
+      {
+        "gujarati": "છા",
+        "espanol": "sílaba chhaa — chha + matra aa",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chhaa.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chhaa.png"
+      },
+      {
+        "gujarati": "કે",
+        "espanol": "sílaba ke — ka + matra e",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ke.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ke.png"
+      },
+      {
+        "gujarati": "મે",
+        "espanol": "sílaba me — ma + matra e",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_me.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_me.png"
+      },
+      {
+        "gujarati": "છે",
+        "espanol": "sílaba chhe — chha + matra e",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chhe.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chhe.png"
+      },
+      {
+        "gujarati": "કો",
+        "espanol": "sílaba ko — ka + matra o",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ko.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ko.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ko.png"
+      },
+      {
+        "gujarati": "મો",
+        "espanol": "sílaba mo — ma + matra o",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_mo.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_mo.png"
+      },
+      {
+        "gujarati": "છો",
+        "espanol": "sílaba chho — chha + matra o",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chho.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chho.png"
+      },
+      {
+        "gujarati": "કેમ છો?",
+        "espanol": "¿cómo estás?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_chho.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_chho.png"
+      },
+      {
+        "gujarati": "કેમ કે",
+        "espanol": "porque",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke.png"
+      },
+      {
+        "gujarati": "કેમ",
+        "espanol": "¿cómo? / ¿por qué?",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem.png"
+      },
+      {
+        "gujarati": "કામ",
+        "espanol": "trabajo",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaam.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaam.png"
+      },
+      {
+        "gujarati": "મોકો",
+        "espanol": "oportunidad",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_moko.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_moko.png"
+      },
+      {
+        "gujarati": "મામા",
+        "espanol": "tío materno",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maamaa.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa.png"
+      },
+      {
+        "gujarati": "કાકા",
+        "espanol": "tío paterno",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaakaa.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa.png"
+      },
+      {
+        "gujarati": "ઓછો",
+        "espanol": "poco",
+        "tipo": "clipIndividual",
+        "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3",
+        "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ochho.mp3",
+        "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ochho.png"
       }
     ]
   }
