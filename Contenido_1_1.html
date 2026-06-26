@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Tus primeras letras · Piensa en Gujarati</title>
 
 <!-- Fuentes -->
@@ -65,22 +68,18 @@
   .seccion-label { width: 100%; font-size: 0.85rem; color: var(--olive); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; text-align: center; margin-top: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px; }
 
   /* Cuadrícula de Letras */
-  .letras-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; width: 100%; }
-  .letra-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 16px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); transition: transform 0.2s; }
+  .letras-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; width: 100%; }
+  .letra-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 14px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); transition: transform 0.2s; }
   .letra-card:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.8); }
-  .letra-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2.4rem; color: var(--ink); line-height: 1; }
-  .letra-card .rom { font-size: 0.95rem; color: var(--sindoor); font-weight: 700; }
-
-  /* Tarjetas Destacadas */
-  .letra-card.primera { background: var(--paper-card); border: 2px solid rgba(184, 134, 61, 0.3); box-shadow: 0 6px 16px rgba(184, 134, 61, 0.08); }
-  .letra-card.primera .gu { color: var(--sindoor-deep); }
+  .letra-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2rem; color: var(--ink); line-height: 1; }
+  .letra-card .rom { font-size: 0.9rem; color: var(--sindoor); font-weight: 700; }
 
   /* Cuadrícula de Vocales */
-  .vocales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; }
-  .vocal-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 16px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); }
-  .vocal-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2.2rem; color: var(--ink); line-height: 1; }
-  .vocal-card .rom { font-size: 0.95rem; color: var(--sindoor); font-weight: 700; }
-  .vocal-card .abrev { font-family: 'Noto Serif Gujarati', serif; font-size: 1.4rem; color: var(--ink-soft); margin-top: -4px; }
+  .vocales-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; }
+  .vocal-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 14px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); }
+  .vocal-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.8rem; color: var(--ink); line-height: 1; }
+  .vocal-card .rom { font-size: 0.9rem; color: var(--sindoor); font-weight: 700; }
+  .vocal-card .abrev { font-family: 'Noto Serif Gujarati', serif; font-size: 1.3rem; color: var(--ink-soft); margin-top: -2px; }
 
   .info-box { width: 100%; background: var(--paper-card); border-left: 5px solid var(--saffron); border-radius: 12px; padding: 20px 24px; font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); box-shadow: 0 6px 16px rgba(42,36,32,0.04); }
   .info-box strong { color: var(--ink); font-weight: 700; }
@@ -93,10 +92,11 @@
   .leccion.proxima { opacity: 0.6; cursor: default; }
   .leccion.proxima:hover { background: transparent; }
   
-  .lec-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--saffron); min-width: 24px; text-align: center; }
+  .lec-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--saffron); min-width: 28px; text-align: center; }
   .lec-info { flex: 1; }
   .lec-title { font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
-  .lec-gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.25rem; color: var(--ink-soft); margin-top: 4px; line-height: 1; }
+  .lec-sub { font-size: 0.95rem; color: var(--ink-soft); margin-top: 3px; line-height: 1.3; }
+  .lec-gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.15rem; color: var(--saffron); margin-top: 2px; }
   .lec-status { font-size: 1.2rem; color: var(--sindoor); }
   .lec-soon { font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
 
@@ -109,9 +109,9 @@
 <body>
 
 <nav class="nav-bar">
-  <a class="nav-btn" href="Contenido.html">← Anterior</a>
-  <a class="nav-btn home" href="index.html">🏠</a>
-  <a class="nav-btn" href="Leccion_1_1_1_intro.html">Siguiente →</a>
+  <a class="nav-btn" href="Contenido.html">&larr; Atrás</a>
+  <a class="nav-btn home" href="index.html">&#127968;</a>
+  <span class="nav-btn" style="opacity:0; pointer-events:none;">&nbsp;</span>
 </nav>
 
 <div class="wrap-letras">
@@ -119,102 +119,94 @@
   <div class="intro-header">
     <span class="modulo-badge">Tus primeras letras</span>
     <h1>Lo que vas a aprender</h1>
-    <p class="subtitle">En esta parte vas a conocer <strong>8 letras</strong> y <strong>3 vocales</strong> del gujarati. Poco a poco, sin prisa.</p>
+    <p class="subtitle">Vas a conocer <strong>8 consonantes</strong> y <strong>5 vocales</strong>. Pero lo mejor: desde la primera lección ya <strong>formas palabras reales</strong> como <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">કેમ છો?</span>, <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">સારું છે</span> y <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">નમસ્તે</span>.</p>
   </div>
 
-  <div class="seccion-label">Las 8 letras</div>
+  <div class="seccion-label">Las 8 consonantes</div>
   <div class="letras-grid">
-    <div class="letra-card primera"><span class="gu">ત</span><span class="rom">ta</span></div>
-    <div class="letra-card primera"><span class="gu">ર</span><span class="rom">ra</span></div>
-    <div class="letra-card primera"><span class="gu">સ</span><span class="rom">sa</span></div>
-    <div class="letra-card primera"><span class="gu">મ</span><span class="rom">ma</span></div>
-    <div class="letra-card"><span class="gu">દ</span><span class="rom">da</span></div>
-    <div class="letra-card"><span class="gu">જ</span><span class="rom">lla</span></div>
-    <div class="letra-card"><span class="gu">લ</span><span class="rom">la</span></div>
-    <div class="letra-card"><span class="gu">હ</span><span class="rom">ja</span></div>
+    <div class="letra-card"><span class="gu">ક</span><span class="rom">ka</span></div>
+    <div class="letra-card"><span class="gu">મ</span><span class="rom">ma</span></div>
+    <div class="letra-card"><span class="gu">છ</span><span class="rom">chha</span></div>
+    <div class="letra-card"><span class="gu">સ</span><span class="rom">sa</span></div>
+    <div class="letra-card"><span class="gu">ર</span><span class="rom">ra</span></div>
+    <div class="letra-card"><span class="gu">હ</span><span class="rom">ha</span></div>
+    <div class="letra-card"><span class="gu">ન</span><span class="rom">na</span></div>
+    <div class="letra-card"><span class="gu">ત</span><span class="rom">ta</span></div>
   </div>
 
-  <div class="seccion-label">Las 3 vocales</div>
+  <div class="seccion-label">Las 5 vocales</div>
   <div class="vocales-grid">
+    <div class="vocal-card"><span class="gu">અ</span><span class="rom">a</span><span class="abrev">(sin)</span></div>
     <div class="vocal-card"><span class="gu">આ</span><span class="rom">aa</span><span class="abrev">ા</span></div>
     <div class="vocal-card"><span class="gu">એ</span><span class="rom">e</span><span class="abrev">ે</span></div>
-    <div class="vocal-card"><span class="gu">ઇ</span><span class="rom">i</span><span class="abrev">િ</span></div>
+    <div class="vocal-card"><span class="gu">ઓ</span><span class="rom">o</span><span class="abrev">ો</span></div>
+    <div class="vocal-card"><span class="gu">ઉ</span><span class="rom">u</span><span class="abrev">ુ</span></div>
   </div>
 
   <div class="info-box">
-    <strong>💡 Empecemos de a poco</strong><br><br>
-    Hoy vas a aprender las <strong>primeras 4 letras</strong>: <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">ત ર સ મ</span>. Las demás las verás más adelante.
+    <strong>&#128161; Aprende formando palabras desde el primer día</strong><br><br>
+    Cada lección te presenta <strong>letras nuevas</strong> y enseguida las pones en práctica con <strong>palabras y frases reales</strong>. Sin teoría aburrida. Vas directo a lo que importa: <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">કેમ છો?</span>, <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">સારું છે</span>, <span style="font-family:'Noto Serif Gujarati',serif;color:var(--saffron)">નમસ્તે</span>...
   </div>
 
-  <div class="seccion-label">Las lecciones</div>
+  <div class="seccion-label">Las 3 lecciones</div>
   <div class="lecciones-lista">
 
+    <!-- Lección 1 — ACTIVA -->
     <a class="leccion activa" href="Leccion_1_1_1_intro.html">
       <span class="lec-num">1</span>
       <div class="lec-info">
-        <div class="lec-title">Tus primeras letras</div>
-        <div class="lec-gu">ત ર સ મ</div>
+        <div class="lec-title">કેમ છો? — ¿cómo estás?</div>
+        <div class="lec-sub">Aprendes <strong>ક મ છ</strong> · vocales <strong>અ આ એ ઓ</strong> · matras <strong>ા ે ો</strong></div>
+        <div class="lec-gu">કેમ છો?</div>
       </div>
-      <span class="lec-status">▶</span>
+      <span class="lec-status">&#9654;</span>
     </a>
 
+    <!-- Lección 2 -->
     <div class="leccion proxima">
       <span class="lec-num">2</span>
       <div class="lec-info">
-        <div class="lec-title">Más letras nuevas</div>
-        <div class="lec-gu">દ હ</div>
+        <div class="lec-title">સારું છે — está bien</div>
+        <div class="lec-sub">Aprendes <strong>સ ર હ</strong> · vocal <strong>ઉ</strong> · matras <strong>ુ ું</strong></div>
+        <div class="lec-gu">સારું છે</div>
       </div>
       <span class="lec-soon">Muy pronto</span>
     </div>
 
+    <!-- Lección 3 -->
     <div class="leccion proxima">
       <span class="lec-num">3</span>
       <div class="lec-info">
-        <div class="lec-title">Seguimos con más letras</div>
-        <div class="lec-gu">જ લ</div>
-      </div>
-      <span class="lec-soon">Muy pronto</span>
-    </div>
-
-    <div class="leccion proxima">
-      <span class="lec-num">4</span>
-      <div class="lec-info">
-        <div class="lec-title">Tu primera vocal</div>
-        <div class="lec-gu">આ · ા</div>
-      </div>
-      <span class="lec-soon">Muy pronto</span>
-    </div>
-
-    <div class="leccion proxima">
-      <span class="lec-num">5</span>
-      <div class="lec-info">
-        <div class="lec-title">Otra vocal</div>
-        <div class="lec-gu">એ · ે</div>
-      </div>
-      <span class="lec-soon">Muy pronto</span>
-    </div>
-
-    <div class="leccion proxima">
-      <span class="lec-num">6</span>
-      <div class="lec-info">
-        <div class="lec-title">Una vocal más</div>
-        <div class="lec-gu">ઇ · િ</div>
-      </div>
-      <span class="lec-soon">Muy pronto</span>
-    </div>
-
-    <div class="leccion proxima">
-      <span class="lec-num">7</span>
-      <div class="lec-info">
-        <div class="lec-title">Lo juntamos todo</div>
-        <div class="lec-gu">Repaso de todo lo aprendido</div>
+        <div class="lec-title">નમસ્તે — hola</div>
+        <div class="lec-sub">Aprendes <strong>ન ત</strong> · conjuntiva <strong>સ્ત</strong></div>
+        <div class="lec-gu">નમસ્તે</div>
       </div>
       <span class="lec-soon">Muy pronto</span>
     </div>
 
   </div>
 
-  <a class="btn-empezar" href="Leccion_1_1_1_intro.html">Comenzar con las primeras 4 letras →</a>
+  <a class="btn-empezar" href="Leccion_1_1_1_intro.html">Empezar con la Lección 1 &rarr;</a>
 </div>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
 </body>
 </html>
