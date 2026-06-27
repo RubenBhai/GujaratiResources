@@ -226,21 +226,9 @@ h2 { font-size: 1.6rem; }
    SRS — Repaso espaciado estilo Memrise (mejorado)
    Persistencia: localStorage
 ============================================================ */
-const _params = new URLSearchParams(location.search);
-// Compatible con dos formatos:
-//  a) ?leccion=1.1.1
-//  b) ?modulo=1.1&leccion=1  (estilo practica.html)
-var _modulo = _params.get('modulo');
-var _lecRaw = _params.get('leccion');
-var LECCION;
-if (_modulo && _lecRaw) {
-  LECCION = _modulo + '.' + _lecRaw;       // 1.1 + 1 => 1.1.1
-} else {
-  LECCION = _lecRaw || '1.1.1';            // 1.1.1
-}
-const _leccion = LECCION.replace(/\./g, '_');
+const LECCION = '1.1.1';
 const STORAGE_KEY = 'srs_' + LECCION;
-const JSON_URL = 'data/aprende_clase_' + _leccion + '.json';
+const JSON_URL = 'https://rubenbhai.github.io/GujaratiResources/aprende_clase_1_1_1.json';
 const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
 const SND_ERR = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
@@ -507,8 +495,8 @@ function reiniciarProgreso() {
 }
 
 /* ---------- Init ---------- */
-fetch(JSON_URL)
-  .then(function(r){ if(!r.ok) throw new Error('No se encontró ' + JSON_URL); return r.json(); })
+fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+  .then(function(r){ return r.json(); })
   .then(function(data){
     ITEMS = data.items;
     cargarProgreso();
