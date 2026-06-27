@@ -1,0 +1,186 @@
+{
+  "leccion": "1.1.1",
+  "titulo": "Compón oraciones — Lección 1.1.1",
+  "instruccion": "Toca las palabras en el orden correcto para formar la oración.",
+  "boton_comprobar": "Comprobar",
+  "sonido_correcto": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3",
+  "sonido_incorrecto": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
+  "banco_palabras": [
+    {
+      "gujarati": "એ",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3"
+    },
+    {
+      "gujarati": "આ",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3"
+    },
+    {
+      "gujarati": "મા",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3"
+    },
+    {
+      "gujarati": "કામ",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3"
+    },
+    {
+      "gujarati": "મોકો",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3"
+    },
+    {
+      "gujarati": "મામા",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3"
+    },
+    {
+      "gujarati": "કાકા",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3"
+    },
+    {
+      "gujarati": "ઓછો",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3"
+    },
+    {
+      "gujarati": "આમ",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_aam.mp3"
+    },
+    {
+      "gujarati": "છે",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3"
+    },
+    {
+      "gujarati": "છ",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chha.mp3"
+    },
+    {
+      "gujarati": "કેમ",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3"
+    },
+    {
+      "gujarati": "કેમ છો?",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3"
+    }
+  ],
+  "oraciones": [
+    {
+      "id": "or_1",
+      "palabras": [
+        "એ",
+        "મા",
+        "છે"
+      ],
+      "espanol": "esa es la mamá"
+    },
+    {
+      "id": "or_2",
+      "palabras": [
+        "આ",
+        "મા",
+        "છે"
+      ],
+      "espanol": "esta es la mamá"
+    },
+    {
+      "id": "or_3",
+      "palabras": [
+        "એ",
+        "કામ",
+        "છે"
+      ],
+      "espanol": "ese es el trabajo"
+    },
+    {
+      "id": "or_4",
+      "palabras": [
+        "આ",
+        "કામ",
+        "છે"
+      ],
+      "espanol": "este es el trabajo"
+    },
+    {
+      "id": "or_5",
+      "palabras": [
+        "એ",
+        "મોકો",
+        "છે"
+      ],
+      "espanol": "esa es una oportunidad"
+    },
+    {
+      "id": "or_6",
+      "palabras": [
+        "આ",
+        "મોકો",
+        "છે"
+      ],
+      "espanol": "esta es una oportunidad"
+    },
+    {
+      "id": "or_7",
+      "palabras": [
+        "એ",
+        "મામા",
+        "છે"
+      ],
+      "espanol": "ese es el tío materno"
+    },
+    {
+      "id": "or_8",
+      "palabras": [
+        "આ",
+        "મામા",
+        "છે"
+      ],
+      "espanol": "este es el tío materno"
+    },
+    {
+      "id": "or_9",
+      "palabras": [
+        "એ",
+        "કાકા",
+        "છે"
+      ],
+      "espanol": "ese es el tío paterno"
+    },
+    {
+      "id": "or_10",
+      "palabras": [
+        "આ",
+        "કાકા",
+        "છે"
+      ],
+      "espanol": "este es el tío paterno"
+    },
+    {
+      "id": "or_11",
+      "palabras": [
+        "ઓછો",
+        "છે"
+      ],
+      "espanol": "es poco"
+    },
+    {
+      "id": "or_12",
+      "palabras": [
+        "કામ",
+        "છે"
+      ],
+      "espanol": "hay trabajo"
+    },
+    {
+      "id": "or_13",
+      "palabras": [
+        "મોકો",
+        "છે"
+      ],
+      "espanol": "hay oportunidad"
+    },
+    {
+      "id": "or_14",
+      "palabras": [
+        "આમ",
+        "છે"
+      ],
+      "espanol": "de este modo"
+    }
+  ]
+}
