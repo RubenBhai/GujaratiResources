@@ -59,12 +59,23 @@
     },
     {
       "id": 4,
+      "burbuja": 4,
       "avatar": "shriya",
       "lado": "izq",
       "ini": 6.67,
+      "fin": 9.319,
+      "gujarati": "હા, આ મામા છે, રીતુભાઈ.",
+      "espanol": "Sí, este es mi tío materno, Ritu."
+    },
+    {
+      "id": 9,
+      "burbuja": 4,
+      "avatar": "shriya",
+      "lado": "izq",
+      "ini": 9.445,
       "fin": 11.8,
-      "gujarati": "હા, આ મામા છે, રીતુભાઈ. અને એ કાકા છે, સોહાનભાઈ.",
-      "espanol": "Sí, este es mi tío materno, Ritu. Y ese es mi tío paterno, Sojan."
+      "gujarati": "અને એ કાકા છે, સોહાનભાઈ.",
+      "espanol": "Y ese es mi tío paterno, Sojan."
     },
     {
       "id": 5,
@@ -114,7 +125,8 @@
     {
       "dialogos": [
         3,
-        4
+        4,
+        9
       ],
       "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_2.png"
     },
