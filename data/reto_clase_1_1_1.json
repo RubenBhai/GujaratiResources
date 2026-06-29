@@ -4,124 +4,60 @@
   "nivel1": {
     "titulo": "Reconoce letras y vocales",
     "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
-    "sesiones": [
-      {
-        "id": "n1s1",
-        "texto": "આ મામા છે, એ કાકા છે. કેમ છો મામા? કેમ છો કાકા?",
-        "elementos": ["આ", "મા", "છે", "એ", "કેમ", "છો", "કા", "મ", "ક", "છ"]
-      },
-      {
-        "id": "n1s2",
-        "texto": "કામ છે. મોકો છે. આ મોકો છે. એ કામ છે.",
-        "elementos": ["આ", "એ", "છે", "કા", "મ", "ક", "છ", "મો", "કો"]
-      },
-      {
-        "id": "n1s3",
-        "texto": "કેમ છો? સારું છે. આ મામા છે. એ કાકા છે. ઓછો છે.",
-        "elementos": ["આ", "એ", "છે", "કેમ", "છો", "મા", "કા", "ક", "મ", "છ"]
-      },
-      {
-        "id": "n1s4",
-        "texto": "આ કામ છે. મોકો છે. કેમ? ઓછો છે. આ મામા છે.",
-        "elementos": ["આ", "એ", "છે", "કેમ", "મા", "કા", "ક", "મ", "છ", "ઓ"]
-      },
-      {
-        "id": "n1s5",
-        "texto": "એ મામા છે. આ કાકા છે. કામ છે. મોકો છે. કેમ છો?",
-        "elementos": ["આ", "એ", "છે", "કેમ", "છો", "મા", "કા", "ક", "મ", "છ"]
-      }
+    "maxSesiones": 5,
+    "texto": "મામા છે, એ કાકા છે.  કેમ છો મામા? કેમ છો કાકા?",
+    "elementos": [
+      "મા",
+      "છે",
+      "એ",
+      "કેમ",
+      "છો",
+      "કા",
+      "મ"
     ]
   },
   "nivel2": {
     "titulo": "Reconoce palabras",
     "instruccion": "Escucha el audio y toca cada etiqueta cada vez que escuches esa palabra.",
-    "sesiones": [
-      {
-        "id": "n2s1",
-        "texto": "આ મામા છે, એ કાકા છે. કેમ છો મામા? કેમ છો કાકા?",
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_n2s1.mp3",
-        "elementos": ["મામા", "કાકા", "છે", "કેમ", "છો", "આ", "એ"]
-      },
-      {
-        "id": "n2s2",
-        "texto": "કામ છે. મોકો છે. આ મોકો છે. એ કામ છે.",
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_n2s2.mp3",
-        "elementos": ["કામ", "મોકો", "છે", "આ", "એ"]
-      },
-      {
-        "id": "n2s3",
-        "texto": "કેમ છો? આ મામા છે. એ કાકા છે. ઓછો છે.",
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_n2s3.mp3",
-        "elementos": ["કેમ", "છો", "મામા", "કાકા", "છે", "આ", "એ", "ઓછો"]
-      },
-      {
-        "id": "n2s4",
-        "texto": "આ કામ છે. મોકો છે. ઓછો છે. આ મામા છે.",
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_n2s4.mp3",
-        "elementos": ["કામ", "મોકો", "ઓછો", "છે", "આ", "મામા"]
-      },
-      {
-        "id": "n2s5",
-        "texto": "એ મામા છે. આ કાકા છે. કામ છે. કેમ છો?",
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_n2s5.mp3",
-        "elementos": ["મામા", "કાકા", "છે", "કામ", "કેમ", "છો", "આ", "એ"]
-      }
+    "maxSesiones": 5,
+    "texto": "કેમ છો શ્રીયાબેન?  સારું છે.  કેમ છો રાહુલભાઈ? મજામાં.  આ મામા છે? હા, આ મામા છે, રીતુભાઈ.   નમસ્તે રીતુભાઈ.  નમસ્તે રાહુલભાઈ.  નમસ્તે સોહાનભાઈ.   નમસ્તે રાહુલભાઈ.",
+    "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio.mp3",
+    "elementos": [
+      "મામા",
+      "કાકા",
+      "છે",
+      "કેમ",
+      "છો",
+      "કેમ છો"
     ]
   },
   "nivel3": {
-    "titulo": "Pronuncia letras y palabras",
-    "instruccion": "Escucha el audio de referencia y luego pronuncia cada elemento. Se evaluará tu pronunciación.",
-    "sesiones": [
+    "titulo": "Pronuncia palabras",
+    "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
+    "maxSesiones": 2,
+    "elementos": [
       {
-        "id": "n3s1",
-        "elementos": [
-          { "gujarati": "આ",          "roman": "aa",             "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3" },
-          { "gujarati": "મામા",        "roman": "maa-maa",        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3" },
-          { "gujarati": "કાકા",        "roman": "kaa-kaa",        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3" },
-          { "gujarati": "છે",          "roman": "chhe",           "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3" },
-          { "gujarati": "કેમ છો?",     "roman": "kem chho?",      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3" }
-        ]
+        "gujarati": "આ મામા છે"
       },
       {
-        "id": "n3s2",
-        "elementos": [
-          { "gujarati": "એ",           "roman": "e",              "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3" },
-          { "gujarati": "કામ",         "roman": "kaam",           "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3" },
-          { "gujarati": "મોકો",        "roman": "mo-ko",          "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3" },
-          { "gujarati": "ઓછો",         "roman": "o-chho",         "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3" },
-          { "gujarati": "કેમ છો?",     "roman": "kem chho?",      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3" }
-        ]
+        "gujarati": "એ કાકા છે"
       },
       {
-        "id": "n3s3",
-        "elementos": [
-          { "gujarati": "ક",           "roman": "ka",             "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3" },
-          { "gujarati": "મ",           "roman": "ma",             "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3" },
-          { "gujarati": "છ",           "roman": "chha",           "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3" },
-          { "gujarati": "કેમ",         "roman": "kem",            "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3" },
-          { "gujarati": "કેમ છો મામા?","roman": "kem chho maamaa?","audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3" }
-        ]
+        "gujarati": "કેમ છો મામા?"
       },
       {
-        "id": "n3s4",
-        "elementos": [
-          { "gujarati": "આ",           "roman": "aa",             "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3" },
-          { "gujarati": "છે",          "roman": "chhe",           "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3" },
-          { "gujarati": "મામા",        "roman": "maa-maa",        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3" },
-          { "gujarati": "કામ છે",      "roman": "kaam chhe",      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3" },
-          { "gujarati": "એ મોકો છે",   "roman": "e moko chhe",    "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3" }
-        ]
-      },
-      {
-        "id": "n3s5",
-        "elementos": [
-          { "gujarati": "ઓ",           "roman": "o",              "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3" },
-          { "gujarati": "કાકા",        "roman": "kaa-kaa",        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3" },
-          { "gujarati": "ઓછો",         "roman": "o-chho",         "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3" },
-          { "gujarati": "કેમ કે...",   "roman": "kem ke...",      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3" },
-          { "gujarati": "આ કાકા છે",   "roman": "aa kaakaa chhe", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3" }
-        ]
+        "gujarati": "કેમ છો કાકા?"
       }
     ]
+  },
+  "nivel4": {
+    "titulo": "Mira el video con subtítulos",
+    "instruccion": "Observa el video y responde las preguntas.",
+    "sesiones": []
+  },
+  "nivel5": {
+    "titulo": "Mira el video sin subtítulos",
+    "instruccion": "Observa el video y graba tu respuesta a cada pregunta.",
+    "sesiones": []
   }
 }

@@ -66,9 +66,9 @@
     {
       "id": "palabra_2",
       "categoria": "palabra",
-      "gujarati": "કેમ કે...",
+      "gujarati": "કેમ કે",
       "roman": "kem ke",
-      "significado": "porque...",
+      "significado": "porque",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke.png"
@@ -76,7 +76,7 @@
     {
       "id": "palabra_3",
       "categoria": "palabra",
-      "gujarati": "કેમ?",
+      "gujarati": "કેમ",
       "roman": "kem",
       "significado": "¿por qué? / ¿cómo?",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3",
