@@ -107,25 +107,29 @@
       "dialogos": [
         1,
         2
-      ]
+      ],
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1.png"
     },
     {
       "dialogos": [
         3,
         4
-      ]
+      ],
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_2.png"
     },
     {
       "dialogos": [
         5,
         6
-      ]
+      ],
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_3.png"
     },
     {
       "dialogos": [
         7,
         8
-      ]
+      ],
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_4.png"
     }
   ]
 }
