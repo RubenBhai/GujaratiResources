@@ -1,0 +1,20 @@
+{
+  "titulo": "Practica tu pronunciación — ક",
+  "descripcion": "Pronuncia la letra tres veces. Gemini evaluará cada pronunciación.",
+  "sesiones": [
+    {
+      "titulo": "ક",
+      "elementos": [
+        {
+          "gujarati": "ક"
+        },
+        {
+          "gujarati": "ક"
+        },
+        {
+          "gujarati": "ક"
+        }
+      ]
+    }
+  ]
+}
