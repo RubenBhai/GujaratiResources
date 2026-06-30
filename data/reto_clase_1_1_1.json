@@ -4,7 +4,7 @@
   "nivel1": {
     "titulo": "Reconoce letras y vocales",
     "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
-    "maxSesiones": 5,
+    "maxSesiones": 2,
     "texto": "મામા છે, એ કાકા છે.  કેમ છો મામા? કેમ છો કાકા?",
     "elementos": [
       "મા",
@@ -19,7 +19,7 @@
   "nivel2": {
     "titulo": "Reconoce palabras",
     "instruccion": "Escucha el audio y toca cada etiqueta cada vez que escuches esa palabra.",
-    "maxSesiones": 5,
+    "maxSesiones": 2,
     "texto": "કેમ છો શ્રીયાબેન?  સારું છે.  કેમ છો રાહુલભાઈ? મજામાં.  આ મામા છે? હા, આ મામા છે, રીતુભાઈ.   નમસ્તે રીતુભાઈ.  નમસ્તે રાહુલભાઈ.  નમસ્તે સોહાનભાઈ.   નમસ્તે રાહુલભાઈ.",
     "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio.mp3",
     "elementos": [
@@ -53,11 +53,13 @@
   "nivel4": {
     "titulo": "Mira el video con subtítulos",
     "instruccion": "Observa el video y responde las preguntas.",
+    "maxSesiones": 0,
     "sesiones": []
   },
   "nivel5": {
     "titulo": "Mira el video sin subtítulos",
     "instruccion": "Observa el video y graba tu respuesta a cada pregunta.",
+    "maxSesiones": 0,
     "sesiones": []
   }
 }
