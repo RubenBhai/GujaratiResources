@@ -1,15 +1,8 @@
 {
   "leccion": "1.1.1",
-  "titulo": "Escucha esta conversación",
-  "subtitulo": "Antes de empezar",
-  "intro": "Así suena el gujarati en una charla real. Al terminar la lección podrás reconocer y entender algunas letras y palabras!",
-  "audio": "https://rubenbhai.github.io/GujaratiResources/videos/clase_1_1/Leccion_1_1_1_video.mp3",
-  "altoPorDialogo": 175,
-  "subtitulo_fin": "Al terminar la lección",
-  "intro_fin": "Es el momento de probar tus conocimientos. ¿Cuántas palabras o frases puedes reconocer?",
-  "subtitulo_desafio": "El desafío final",
-  "titulo_desafio": "¿Te animas a conversar?",
-  "intro_desafio": "Ya escuchaste el diálogo muchas veces. Ahora te toca a ti: vas a elegir un personaje y participar en la conversación. ¡Tú puedes!",
+  "titulo": "Practica la conversación",
+  "subtitulo": "Tu turno de hablar",
+  "intro": "Escoge un personaje. Cuando llegue su turno, te tocará hablar a ti en gujarati. ¡Vamos a practicar!",
   "avatares": {
     "rahul": {
       "nombre": "રાહુલભાઈ",
@@ -37,17 +30,16 @@
       "id": 1,
       "avatar": "rahul",
       "lado": "der",
-      "ini": 0.0,
-      "fin": 1.74,
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_01.mp3",
       "gujarati": "કેમ છો શ્રીયાબેન?",
-      "espanol": "¿Cómo está Shriya?"
+      "espanol": "¿Cómo está Shriya?",
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1.png"
     },
     {
       "id": 2,
       "avatar": "shriya",
       "lado": "izq",
-      "ini": 1.81,
-      "fin": 4.69,
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_02.mp3",
       "gujarati": "સારું છે. કેમ છો રાહુલભાઈ?",
       "espanol": "Bien. ¿Cómo está Rajul?"
     },
@@ -55,98 +47,60 @@
       "id": 3,
       "avatar": "rahul",
       "lado": "der",
-      "ini": 4.72,
-      "fin": 6.57,
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_03.mp3",
       "gujarati": "મજામાં. આ મામા છે?",
       "espanol": "Muy bien. ¿Este es tu tío materno?",
-      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1-2.png"
-    },
-    {
-      "id": 4,
-      "burbuja": 4,
-      "avatar": "shriya",
-      "lado": "izq",
-      "ini": 6.67,
-      "fin": 9.319,
-      "gujarati": "હા, આ મામા છે, રીતુભાઈ.",
-      "espanol": "Sí, este es mi tío materno, Ritu.",
       "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_2.png"
     },
     {
-      "id": 9,
-      "burbuja": 4,
+      "id": 4,
       "avatar": "shriya",
       "lado": "izq",
-      "ini": 9.445,
-      "fin": 11.8,
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_04.mp3",
+      "gujarati": "હા, આ મામા છે, રીતુભાઈ.",
+      "espanol": "Sí, este es mi tío materno, Ritu."
+    },
+    {
+      "id": 5,
+      "avatar": "shriya",
+      "lado": "izq",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_05.mp3",
       "gujarati": "અને એ કાકા છે, સોહાનભાઈ.",
       "espanol": "Y ese es mi tío paterno, Sojan."
     },
     {
-      "id": 5,
-      "avatar": "rahul",
-      "lado": "der",
-      "ini": 11.8,
-      "fin": 13.42,
-      "gujarati": "નમસ્તે રીતુભાઈ.",
-      "espanol": "Hola Ritu."
-    },
-    {
       "id": 6,
-      "avatar": "ritu",
-      "lado": "izq",
-      "ini": 13.47,
-      "fin": 15.22,
-      "gujarati": "નમસ્તે રાહુલભાઈ.",
-      "espanol": "Hola Rajul."
-    },
-    {
-      "id": 7,
       "avatar": "rahul",
       "lado": "der",
-      "ini": 15.23,
-      "fin": 17.21,
-      "gujarati": "નમસ્તે સોહાનભાઈ.",
-      "espanol": "Hola Sojan."
-    },
-    {
-      "id": 8,
-      "avatar": "sohan",
-      "lado": "izq",
-      "ini": 17.33,
-      "fin": 19.42,
-      "gujarati": "નમસ્તે રાહુલભાઈ.",
-      "espanol": "Hola Rajul."
-    }
-  ],
-  "secuencias": [
-    {
-      "dialogos": [
-        1,
-        2
-      ],
-      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1.png"
-    },
-    {
-      "dialogos": [
-        3,
-        4,
-        9
-      ]
-    },
-    {
-      "dialogos": [
-        5,
-        6
-      ],
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_06.mp3",
+      "gujarati": "નમસ્તે રીતુભાઈ.",
+      "espanol": "Hola Ritu.",
       "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_3.png"
     },
     {
-      "dialogos": [
-        7,
-        8
-      ],
+      "id": 7,
+      "avatar": "ritu",
+      "lado": "izq",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_07.mp3",
+      "gujarati": "નમસ્તે રાહુલભાઈ.",
+      "espanol": "Hola Rajul."
+    },
+    {
+      "id": 8,
+      "avatar": "rahul",
+      "lado": "der",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_08.mp3",
+      "gujarati": "નમસ્તે સોહાનભાઈ.",
+      "espanol": "Hola Sojan.",
       "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_4.png"
+    },
+    {
+      "id": 9,
+      "avatar": "sohan",
+      "lado": "izq",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_09.mp3",
+      "gujarati": "નમસ્તે રાહુલભાઈ.",
+      "espanol": "Hola Rajul."
     }
   ]
 }
