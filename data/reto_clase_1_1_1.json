@@ -22,19 +22,23 @@
     "sesiones": [
       {
         "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_1.mp3",
-        "elemento": "કેમ છો"
+        "elemento": "કેમ છો",
+        "respuesta": 2
       },
       {
         "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_2.mp3",
-        "elemento": "મામા,કાકા"
+        "elemento": "મામા",
+        "respuesta": 2
       },
       {
         "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_3.mp3",
-        "elemento": "ઓછો"
+        "elemento": "ઓછો",
+        "respuesta": 1
       },
       {
         "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_4.mp3",
-        "elemento": "કામ"
+        "elemento": "કામ",
+        "respuesta": 2
       }
     ]
   },
