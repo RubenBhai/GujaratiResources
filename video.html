@@ -226,7 +226,7 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 // ── Parámetros de URL ──
 const _params  = new URLSearchParams(location.search);
 const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
-const JSON_URL = 'https://rubenbhai.github.io/GujaratiResources/data/video_clase_' + _leccion + '.json';
+const JSON_URL = 'data/video_clase_' + _leccion + '.json';
 const _nextParam = _params.get('next');
 const _modo = _params.get('modo');   // 'desafio' = repaso antes del video interactivo
 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Tus primeras palabras &middot; Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-amigable_2.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" id="nav-anterior" href="#">← Anterior</a>
+  <a class="nav-btn home" id="nav-home" href="#">🏠</a>
+  <a class="nav-btn" id="nav-empezar" href="#">Empezar →</a>
+</nav>
+
+<div class="wrap">
+  <span class="badge">Tus primeras palabras</span>
+  <h1>¡Ya sabes leer!</h1>
+  <p class="subtitle" id="subtitle"></p>
+
+  <div class="info-box">
+    <strong>💡 Así suenan</strong><br><br>
+    Mira cada palabra, cómo se pronuncia y qué significa. Luego las escucharás una por una.
+  </div>
+
+  <div class="table-wrap">
+    <table id="tabla-palabras">
+      <tr><th>Palabra</th><th>Se dice</th><th>Significa</th></tr>
+    </table>
+  </div>
+
+  <a class="btn-empezar" id="btn-empezar" href="#">Empezar con las palabras →</a>
+</div>
+
+<script>
+  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
+
+  const _params     = new URLSearchParams(location.search);
+  const _leccionRaw = _params.get('leccion') || '1.1.1';
+  const _leccion     = _leccionRaw.replace(/\./g, '_');
+  const JSON_URL    = 'data/leccion_palabra_intro_' + _leccion + '.json';
+
+  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+    .then(function(data){
+      const empezarUrl = 'leccion_palabra.html?leccion=' + _leccionRaw + '&item=1';
+
+      document.getElementById('nav-home').href = data.home;
+      document.getElementById('nav-anterior').href = data.anterior;
+      document.getElementById('nav-empezar').href = empezarUrl;
+      document.getElementById('btn-empezar').href = empezarUrl;
+
+      document.getElementById('subtitle').innerHTML =
+        'Ahora vas a juntar las letras para leer <strong>' + data.palabras.length + ' palabras y frases</strong> de verdad. ' +
+        '¡Ya puedes preguntar <span style="font-family:\'Noto Serif Gujarati\',serif;color:var(--saffron)">' + data.frase_ejemplo + '</span>!';
+
+      const tabla = document.getElementById('tabla-palabras');
+      data.palabras.forEach(function(p){
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td class="gu-cell">' + p.gujarati + '</td>' +
+          '<td class="pron-cell">' + p.se_dice + '</td>' +
+          '<td class="mean-cell">' + p.significa + '</td>';
+        tabla.appendChild(tr);
+      });
+    })
+    .catch(function(){
+      document.body.innerHTML =
+        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    });
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+</body>
+</html>

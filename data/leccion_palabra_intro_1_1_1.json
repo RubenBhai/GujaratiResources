@@ -1,0 +1,22 @@
+{
+  "leccion": "1.1.1",
+  "home": "leccion_intro.html?leccion=1.1.1",
+  "anterior": "leccion_vocal.html?leccion=1.1.1&item=12",
+  "frase_ejemplo": "કેમ છો?",
+  "palabras": [
+    { "gujarati": "કેમ છો?", "se_dice": "kem chho?", "significa": "¿cómo estás?" },
+    { "gujarati": "કેમ કે", "se_dice": "kem ke", "significa": "porque" },
+    { "gujarati": "કેમ", "se_dice": "kem", "significa": "¿cómo? / ¿por qué?" },
+    { "gujarati": "કામ", "se_dice": "kaam", "significa": "trabajo" },
+    { "gujarati": "મોકો", "se_dice": "mo-ko", "significa": "oportunidad" },
+    { "gujarati": "મામા", "se_dice": "maa-maa", "significa": "tío materno" },
+    { "gujarati": "કાકા", "se_dice": "kaa-kaa", "significa": "tío paterno" },
+    { "gujarati": "ઓછો", "se_dice": "o-chho", "significa": "poco" },
+    { "gujarati": "છ", "se_dice": "chha", "significa": "número 6" },
+    { "gujarati": "એ", "se_dice": "e", "significa": "eso" },
+    { "gujarati": "છે", "se_dice": "chhe", "significa": "es, está, hay" },
+    { "gujarati": "આમ", "se_dice": "aam", "significa": "así" },
+    { "gujarati": "આ", "se_dice": "aa", "significa": "esto" },
+    { "gujarati": "મા", "se_dice": "maa", "significa": "mamá" }
+  ]
+}

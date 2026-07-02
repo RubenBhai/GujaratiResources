@@ -1,0 +1,77 @@
+{
+  "leccion": "1.1.1",
+  "anterior": "contenido_modulo.html?modulo=1.1",
+  "home": "Contenido.html",
+  "siguiente_leccion": "Leccion_1_1_2_intro.html",
+  "musica_ambiente": "https://rubenbhai.github.io/GujaratiResources/audios/musica/Leccion_1_1_1_musica_ambiente.mp3",
+  "pantallas": [
+    {
+      "badge": "Tu primera lección",
+      "titulo": "¡Empezamos!",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>En esta lección aprenderás <strong>3 consonantes</strong>, <strong>3 vocales</strong> y sus <strong>matras</strong> — una marca que cambia el sonido.</p><br><p>Cada consonante ya trae una <strong>\"a\"</strong> incluida — es una 'a' cerrada, como la segunda 'a' en <em>\"gracias\"</em>. Por ejemplo, <span class=\"gu\">ક</span> es la consonante <strong>k</strong> y se pronuncia <strong>'ka'</strong>.</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": ["Letra", "Nombre", "Suena como"],
+          "filas": [
+            [ {"tipo":"gu","valor":"ક"}, {"tipo":"acento","valor":"ka"}, {"tipo":"texto","valor":"<strong>ka</strong> en <strong>ka</strong>rate"} ],
+            [ {"tipo":"gu","valor":"મ"}, {"tipo":"acento","valor":"ma"}, {"tipo":"texto","valor":"<strong>ma</strong> en <strong>ma</strong>má"} ],
+            [ {"tipo":"gu","valor":"છ"}, {"tipo":"acento","valor":"chha"}, {"tipo":"texto","valor":"<strong>cha</strong> en <strong>cha</strong>leco"} ]
+          ]
+        }
+      ],
+      "boton_principal": { "tipo": "pantalla", "texto": "Siguiente →", "destino": 2 },
+      "boton_secundario": { "tipo": "href", "texto": "⏭️ Siguiente lección", "destino": "Leccion_1_1_2_intro.html" }
+    },
+    {
+      "badge": "Las vocales",
+      "titulo": "Vocales y matras",
+      "bloques": [
+        {
+          "tipo": "tabla",
+          "columnas": ["Vocal", "Suena como", "Matra"],
+          "filas": [
+            [ {"tipo":"gu","valor":"આ"}, {"tipo":"acento","valor":"'aa'"}, {"tipo":"matra","valor":"ા"} ],
+            [ {"tipo":"gu","valor":"એ"}, {"tipo":"acento","valor":"'e'"}, {"tipo":"matra","valor":"ે"} ],
+            [ {"tipo":"gu","valor":"ઓ"}, {"tipo":"acento","valor":"'o'"}, {"tipo":"matra","valor":"ો"} ]
+          ]
+        },
+        {
+          "tipo": "info-box",
+          "html": "<p>¿Notaste la diferencia entre <strong>'a'</strong> y <strong>'aa'</strong>? La 'a' es cerrada — como en <em>\"gracias\"</em>. La 'aa' es abierta — como en <em>\"mamá\"</em>.</p>"
+        },
+        {
+          "tipo": "info-box",
+          "html": "<p>La matra va pegada a la consonante y cambia su vocal. El pequeño círculo de <span class=\"gu\">ઓ</span> se reemplaza por la consonante. En la siguiente página verás cómo funciona.</p>"
+        }
+      ],
+      "boton_principal": { "tipo": "pantalla", "texto": "Siguiente →", "destino": 3 },
+      "boton_secundario": { "tipo": "pantalla", "texto": "← Anterior", "destino": 1 }
+    },
+    {
+      "badge": "Resumen",
+      "titulo": "Las consonantes y sus matras",
+      "bloques": [
+        {
+          "tipo": "tabla",
+          "columnas": ["Letra", "Suena", "+ matra", "Suena"],
+          "filas": [
+            [ {"tipo":"gu","valor":"ક"}, {"tipo":"texto","valor":"<strong>ka</strong>"}, {"tipo":"gu","valor":"ા → કા"}, {"tipo":"texto","valor":"<strong>kaa</strong>"} ],
+            [ {"tipo":"gu","valor":"મ"}, {"tipo":"texto","valor":"<strong>ma</strong>"}, {"tipo":"gu","valor":"ે → મે"}, {"tipo":"texto","valor":"<strong>me</strong>"} ],
+            [ {"tipo":"gu","valor":"છ"}, {"tipo":"texto","valor":"<strong>chha</strong>"}, {"tipo":"gu","valor":"ો → છો"}, {"tipo":"texto","valor":"<strong>chho</strong>"} ]
+          ]
+        },
+        {
+          "tipo": "frase-destacada",
+          "gu": "કેમ છો?",
+          "traduccion": "¿Cómo estás?"
+        }
+      ],
+      "boton_principal": { "tipo": "empezar_leccion", "texto": "¡Empezar la lección! →" },
+      "boton_secundario": { "tipo": "pantalla", "texto": "← Anterior", "destino": 2 }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Plana &middot; Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-amigable_3.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" id="nav-anterior" href="#">&larr; Anterior</a>
+  <a class="nav-btn home" id="nav-home" href="#">&#127968;</a>
+  <a class="nav-btn" id="nav-palabras" href="#">Ir a palabras</a>
+</nav>
+
+<div class="wrap" style="padding-bottom:8px;">
+  <span class="badge">Haz tu plana</span>
+
+  <div class="info-box" style="font-size:1.2rem; color:var(--paper); line-height:1.7; text-align:center;">
+    Haz esta plana <strong>varias veces</strong>.<br><br>
+    Cada vez que termines de dibujar la letra, pronuncia en voz alta:
+    <span id="roman-label" style="color:var(--saffron); font-size:1.6rem; font-weight:700;"></span>
+  </div>
+
+  <div class="frame-img" style="max-width:340px; margin:0 auto;">
+    <img id="img-plana" alt="" onerror="this.style.opacity='0.3'" style="max-height:440px; object-fit:contain; width:100%;">
+  </div>
+</div>
+
+<div class="bottom-actions" style="max-width:340px; margin:0 auto; padding:0 0 24px 0; gap:10px;">
+  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar">&#128266; Escuchar</button>
+  <a class="btn-fin" style="margin-top:0;" id="btn-continuar" href="#">Ya terminé, continuar &rarr;</a>
+</div>
+
+<audio id="player"></audio>
+
+<script>
+  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
+  const player = document.getElementById('player');
+
+  const _params     = new URLSearchParams(location.search);
+  const _leccionRaw = _params.get('leccion') || '1.1.1';
+  const _leccion     = _leccionRaw.replace(/\./g, '_');
+  const _item       = parseInt(_params.get('item') || '1', 10);
+  const JSON_URL    = 'data/leccion_plana_' + _leccion + '.json';
+
+  function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+    .then(function(data){
+      const planas = data.planas;
+      const total  = planas.length;
+      const idx    = Math.min(Math.max(_item, 1), total);
+      const actual = planas[idx - 1];
+      const label  = capitalize(actual.roman);
+
+      document.getElementById('page-title').textContent = 'Plana ' + label + ' · Piensa en Gujarati';
+      document.getElementById('roman-label').textContent = '"' + label + '"';
+
+      const img = document.getElementById('img-plana');
+      img.src = actual.imagen;
+      img.alt = 'Plana ' + label;
+
+      document.getElementById('nav-home').href = data.home;
+      document.getElementById('nav-palabras').href = data.ir_a_palabras;
+
+      // "Anterior" siempre vuelve a la MISMA consonante en leccion_letra.html (misma posición idx)
+      document.getElementById('nav-anterior').href = 'leccion_letra.html?leccion=' + _leccionRaw + '&item=' + idx;
+
+      // "Ya terminé, continuar →": próxima consonante, o siguiente_palabras si es la última plana
+      const continuarUrl = (idx < total)
+        ? ('leccion_letra.html?leccion=' + _leccionRaw + '&item=' + (idx + 1))
+        : data.siguiente_palabras;
+      document.getElementById('btn-continuar').href = continuarUrl;
+
+      const btnEscuchar = document.getElementById('btn-escuchar');
+      btnEscuchar.innerHTML = '&#128266; Escuchar "' + label + '"';
+      btnEscuchar.onclick = function(){
+        btnEscuchar.classList.add('playing');
+        btnEscuchar.textContent = '▶ Reproduciendo...';
+        player.src = actual.audio; player.playbackRate = 1.0; player.play();
+        player.onended = function(){
+          btnEscuchar.classList.remove('playing');
+          btnEscuchar.innerHTML = '&#128266; Escuchar "' + label + '"';
+        };
+      };
+    })
+    .catch(function(){
+      document.body.innerHTML =
+        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    });
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+</body>
+</html>

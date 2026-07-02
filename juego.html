@@ -15,7 +15,7 @@
 <nav class="nav-bar">
   <a class="nav-btn" href="#" onclick="history.back(); return false;">← Anterior</a>
   <a class="nav-btn home" id="nav-home" href="Leccion_1_1_1_intro.html">🏠</a>
-  <a class="nav-btn" id="nav-practica" href="Leccion_1_1_1_practica.html">Practicar →</a>
+  <a class="nav-btn" id="nav-practica" href="practica.html?modulo=1.1&leccion=1">Practicar →</a>
 </nav>
 
 <!-- FASE A -->
@@ -28,7 +28,7 @@
     <h2>Repasemos las 6 letras</h2>
     <p class="subtitle">Toca aquí <button onclick="repasoPlay()" style="background:var(--sindoor);border:none;border-radius:50%;width:56px;height:56px;cursor:pointer;font-size:1.6rem;vertical-align:middle;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(168,54,42,0.3);" id="repaso-btn">🔊</button> y repíte en voz alta.</p>
     <div class="repaso-card" style="max-width:320px; margin:0 auto;">
-      <img class="repaso-img" id="repaso-img" src="" alt="" style="max-height:380px; object-fit:contain; width:100%;">
+      <img class="repaso-img" id="repaso-img" alt="" style="max-height:380px; object-fit:contain; width:100%;">
 
     </div>
     <div style="display:flex; gap:10px; width:100%; max-width:320px;">
@@ -88,7 +88,7 @@
     <div style="font-size:3rem">🏆</div>
     <h2>¡Juego completado!</h2>
     <p class="subtitle">Ya practicaste las 6 letras. ¡Sigue así!</p>
-    <a class="btn-main" href="Leccion_1_1_1_NotasDelGujarati.html" style="text-decoration:none;display:block;text-align:center;">🏆 Finalizar lección →</a>
+    <a class="btn-main" id="btn-finalizar" href="#" style="text-decoration:none;display:block;text-align:center;">🏆 Finalizar lección →</a>
     <button class="btn-sec" onclick="reiniciar()">🔄 Repetir juego</button>
   </div>
 </div>
@@ -105,10 +105,16 @@ const SND_ERR = BASE + '/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
 const _params  = new URLSearchParams(location.search);
 const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
-const JSON_URL = BASE + '/data/juego_clase_' + _leccion + '.json';
+const JSON_URL = 'data/juego_clase_' + _leccion + '.json';
 
-document.getElementById('nav-home').href     = 'Leccion_' + _leccion + '_intro.html';
-document.getElementById('nav-practica').href = 'Leccion_' + _leccion + '_practica.html';
+const _leccionRaw   = _params.get('leccion') || '1.1.1';
+const _partesLeccion = _leccionRaw.split('.');
+const _moduloCorto   = _partesLeccion[0] + '.' + _partesLeccion[1];
+const _leccionCorta  = _partesLeccion[2];
+
+document.getElementById('nav-home').href     = 'leccion_intro.html?leccion=' + _leccionRaw;
+document.getElementById('nav-practica').href = 'practica.html?modulo=' + _moduloCorto + '&leccion=' + _leccionCorta;
+document.getElementById('btn-finalizar').href = 'leccion_notas.html?leccion=' + _leccionRaw;
 
 let letters = [];
 let extras  = [];
@@ -339,7 +345,7 @@ function reiniciar() {
 }
 
 /* ===== ARRANQUE ===== */
-fetch(JSON_URL)
+fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(function(data){
     letters = data.letters;

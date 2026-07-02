@@ -189,7 +189,7 @@ const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/
 
 const _params  = new URLSearchParams(location.search);
 const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
-const JSON_URL = 'https://rubenbhai.github.io/GujaratiResources/data/video_interactivo_clase_' + _leccion + '.json';
+const JSON_URL = 'data/video_interactivo_clase_' + _leccion + '.json';
 
 const audio  = document.getElementById('audio');
 const sfx    = document.getElementById('sfx');

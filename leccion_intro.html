@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Lección &middot; Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-amigable_2.css">
+<style>
+  /* Tipos de celda reutilizables para las tablas de esta pantalla (normalizado a un solo tamaño) */
+  .celda-gu    { font-size:2.6rem; text-align:center; }
+  .celda-acento{ text-align:center; font-size:1.4rem; color:var(--naranja-acento); font-weight:600; }
+  .celda-texto { text-align:center; font-size:1.2rem; }
+  .celda-matra { font-size:2.2rem; text-align:center; color:var(--verde-sabio); }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" id="nav-anterior" href="#">← Anterior</a>
+  <a class="nav-btn home" id="nav-home" href="#">🏠</a>
+  <a class="nav-btn" id="nav-empezar" href="#">Empezar →</a>
+</nav>
+
+<div id="contenedor-pantallas"></div>
+
+<audio id="player"></audio>
+<audio id="bgMusic" loop preload="none"></audio>
+<button id="musicToggle" aria-label="Música de fondo">🔇</button>
+
+<script>
+  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
+
+  const _params     = new URLSearchParams(location.search);
+  const _leccionRaw = _params.get('leccion') || '1.1.1';
+  const _leccion     = _leccionRaw.replace(/\./g, '_');
+  const JSON_URL    = 'data/leccion_intro_' + _leccion + '.json';
+
+  function mostrarPantalla(n) {
+    document.querySelectorAll('.pantalla-item').forEach(function(el){
+      el.style.display = (parseInt(el.dataset.n, 10) === n) ? '' : 'none';
+    });
+    window.scrollTo(0, 0);
+  }
+
+  function crearBloque(b) {
+    if (b.tipo === 'info-box') {
+      const div = document.createElement('div');
+      div.className = 'info-box';
+      div.innerHTML = b.html;
+      return div;
+    }
+    if (b.tipo === 'tabla') {
+      const wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      const table = document.createElement('table');
+      const trHead = document.createElement('tr');
+      b.columnas.forEach(function(col){
+        const th = document.createElement('th');
+        th.textContent = col;
+        trHead.appendChild(th);
+      });
+      table.appendChild(trHead);
+      b.filas.forEach(function(fila){
+        const tr = document.createElement('tr');
+        fila.forEach(function(celda){
+          const td = document.createElement('td');
+          td.className = 'celda-' + celda.tipo;
+          if (celda.tipo === 'gu' || celda.tipo === 'matra') td.classList.add('gu', 'gu-cell');
+          td.innerHTML = celda.valor;
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+      wrap.appendChild(table);
+      return wrap;
+    }
+    if (b.tipo === 'frase-destacada') {
+      const div = document.createElement('div');
+      div.style.textAlign = 'center';
+      div.style.margin = '16px 0';
+      div.innerHTML =
+        '<span class="gu" style="color:var(--saffron); font-size:2.4rem; font-weight:700; line-height:1.2;">' + b.gu + '</span><br>' +
+        '<span style="font-size:1.3rem; color:var(--ink-soft); font-style:italic;">— ' + b.traduccion + '</span>';
+      return div;
+    }
+    return document.createElement('div');
+  }
+
+  function crearBoton(btnData, claseCss, empezarUrl) {
+    const esBoton = (btnData.tipo === 'pantalla');
+    const el = document.createElement(esBoton ? 'button' : 'a');
+    el.className = 'btn-action ' + claseCss;
+    el.textContent = btnData.texto;
+    if (btnData.tipo === 'pantalla') {
+      el.onclick = function(){ mostrarPantalla(btnData.destino); };
+    } else if (btnData.tipo === 'href') {
+      el.href = btnData.destino;
+    } else if (btnData.tipo === 'empezar_leccion') {
+      el.href = empezarUrl;
+    }
+    return el;
+  }
+
+  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+    .then(function(data){
+      document.getElementById('page-title').textContent = 'Lección ' + data.leccion + ' · Piensa en Gujarati';
+
+      document.getElementById('nav-anterior').href = data.anterior;
+      document.getElementById('nav-home').href = data.home;
+
+      const primerItem = 'leccion_letra.html?leccion=' + _leccionRaw + '&item=1';
+      const empezarUrl = 'video.html?leccion=' + _leccionRaw + '&next=' + encodeURIComponent(primerItem);
+      document.getElementById('nav-empezar').href = empezarUrl;
+
+      const contenedor = document.getElementById('contenedor-pantallas');
+      data.pantallas.forEach(function(pantalla, i){
+        const n = i + 1;
+        const wrap = document.createElement('div');
+        wrap.className = 'wrap pantalla-item';
+        wrap.dataset.n = n;
+        wrap.style.display = (n === 1) ? '' : 'none';
+
+        const badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = pantalla.badge;
+        wrap.appendChild(badge);
+
+        const h1 = document.createElement('h1');
+        h1.textContent = pantalla.titulo;
+        wrap.appendChild(h1);
+
+        pantalla.bloques.forEach(function(b){ wrap.appendChild(crearBloque(b)); });
+
+        const botonera = document.createElement('div');
+        botonera.style.cssText = 'display:flex; flex-direction:column; gap:12px; width:100%; margin-top:12px;';
+        botonera.appendChild(crearBoton(pantalla.boton_principal, 'btn-words', empezarUrl));
+        botonera.appendChild(crearBoton(pantalla.boton_secundario, 'btn-next-lec', empezarUrl));
+        wrap.appendChild(botonera);
+
+        contenedor.appendChild(wrap);
+      });
+
+      // Música de fondo ambiente de la lección
+      const music = document.getElementById('bgMusic');
+      const btnMusic = document.getElementById('musicToggle');
+      music.src = data.musica_ambiente;
+      music.volume = 0.0;
+      const TARGET_VOL = 0.35;
+      let fadeTimer = null;
+      let playing = false;
+
+      function fadeTo(target) {
+        if (fadeTimer) clearInterval(fadeTimer);
+        fadeTimer = setInterval(function() {
+          const diff = target - music.volume;
+          if (Math.abs(diff) < 0.02) {
+            music.volume = target;
+            clearInterval(fadeTimer);
+            if (target === 0) music.pause();
+          } else {
+            music.volume += diff * 0.1;
+          }
+        }, 50);
+      }
+
+      function activarMusica() {
+        playing = true;
+        btnMusic.innerHTML = '🔊';
+        btnMusic.style.color = '#D4845A';
+        music.play().then(function(){ fadeTo(TARGET_VOL); }).catch(function(){});
+        try { localStorage.setItem('musica_pref', 'on'); } catch(e) {}
+      }
+
+      btnMusic.onclick = function() {
+        if (playing) {
+          playing = false;
+          btnMusic.innerHTML = '🔇';
+          btnMusic.style.color = 'rgba(212, 132, 90, 0.5)';
+          fadeTo(0);
+          try { localStorage.setItem('musica_pref', 'off'); } catch(e) {}
+        } else {
+          activarMusica();
+        }
+      };
+
+      let pref = 'off';
+      try { pref = localStorage.getItem('musica_pref') || 'off'; } catch(e) {}
+      if (pref === 'on') {
+        const resume = function() {
+          if (!playing) activarMusica();
+          document.removeEventListener('click', resume);
+          document.removeEventListener('touchstart', resume);
+        };
+        document.addEventListener('click', resume);
+        document.addEventListener('touchstart', resume);
+      }
+    })
+    .catch(function(){
+      document.body.innerHTML =
+        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    });
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+</body>
+</html>

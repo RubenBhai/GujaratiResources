@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Vocal &middot; Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-amigable_3.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" id="nav-anterior" href="#">&larr; Anterior</a>
+  <a class="nav-btn home" id="nav-home" href="#">&#127968;</a>
+  <a class="nav-btn" id="nav-palabras" href="#">Ir a palabras</a>
+</nav>
+
+<div class="wrap" style="padding-bottom:8px;">
+  <span class="badge" id="badge"></span>
+
+  <!-- tipo: vocal / con_matra (imagen 320px) -->
+  <div class="frame-img" id="frame-320" style="max-width:320px; margin:0 auto; display:none;">
+    <img id="img-320" alt="" style="cursor:pointer; max-height:380px; object-fit:contain; width:100%;">
+  </div>
+
+  <!-- tipo: matra (imagen 380px) -->
+  <div class="frame-img" id="frame-380" style="max-width:380px; margin:0 auto; display:none;">
+    <img id="img-380" alt="" style="cursor:pointer; max-height:440px; object-fit:contain; width:100%;">
+  </div>
+
+  <!-- tipo: plana -->
+  <div id="bloque-plana" style="display:none;">
+    <div class="info-box" style="font-size:1.2rem; color:var(--paper); line-height:1.7; text-align:center;">
+      Haz esta plana <strong>varias veces</strong>.<br><br>
+      Cada vez que termines de dibujar la letra, pronuncia en voz alta:
+      <span id="roman-label" style="color:var(--saffron); font-size:1.6rem; font-weight:700;"></span>
+    </div>
+    <div class="frame-img" style="max-width:340px; margin:0 auto;">
+      <img id="img-plana" alt="" style="max-height:440px; object-fit:contain; width:100%;">
+    </div>
+  </div>
+</div>
+
+<!-- tipo: vocal -->
+<div class="bottom-actions" id="bottom-vocal" style="max-width:320px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar-vocal">&#128266; Escuchar</button>
+  <a class="btn-fin" style="margin-top:0;" id="btn-siguiente-vocal" href="#">Siguiente &rarr;</a>
+  <a class="btn-sec" id="btn-sigleccion-vocal" href="#">&#9197; Siguiente lección</a>
+</div>
+
+<!-- tipo: matra -->
+<div class="bottom-actions" id="bottom-matra" style="max-width:380px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <a class="btn-fin" style="margin-top:0;" id="btn-siguiente-matra" href="#">Siguiente &rarr;</a>
+  <a class="btn-sec" id="btn-sigleccion-matra" href="#">&#9197; Siguiente lección</a>
+</div>
+
+<!-- tipo: con_matra -->
+<div class="bottom-actions" id="bottom-conmatra" style="max-width:320px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" id="btn-secuencia"></button>
+  <div style="display:flex; gap:10px;">
+    <a class="btn-fin" style="flex:1; margin-top:0; background:var(--sindoor); box-shadow:0 4px 14px rgba(168,54,42,0.3);" id="btn-practicar-cm" href="#">&#127908; A practicar</a>
+    <a class="btn-fin" style="flex:1; margin-top:0;" id="btn-siguiente-cm" href="#">Siguiente &rarr;</a>
+  </div>
+  <a class="btn-sec" id="btn-sigleccion-cm" href="#">&#9197; Siguiente lección</a>
+</div>
+
+<!-- tipo: plana -->
+<div class="bottom-actions" id="bottom-plana" style="max-width:340px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar-plana"></button>
+  <a class="btn-fin" style="margin-top:0;" id="btn-continuar-plana" href="#">Ya terminé, continuar &rarr;</a>
+</div>
+
+<audio id="player"></audio>
+
+<script>
+  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
+  const player = document.getElementById('player');
+
+  const _params     = new URLSearchParams(location.search);
+  const _leccionRaw = _params.get('leccion') || '1.1.1';
+  const _leccion     = _leccionRaw.replace(/\./g, '_');
+  const _item       = parseInt(_params.get('item') || '1', 10);
+  const JSON_URL    = 'data/leccion_vocal_' + _leccion + '.json';
+
+  function playSimple(url, btn, labelHtml) {
+    btn.classList.add('playing');
+    btn.textContent = '▶ Reproduciendo...';
+    player.src = url; player.playbackRate = 1.0; player.play();
+    player.onended = function(){ btn.classList.remove('playing'); btn.innerHTML = labelHtml; };
+  }
+
+  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+    .then(function(data){
+      const pasos = data.pasos;
+      const total = pasos.length;
+      const idx   = Math.min(Math.max(_item, 1), total);
+      const actual = pasos[idx - 1];
+
+      // Nav-bar (igual para los 12 pasos)
+      document.getElementById('nav-home').href = data.home;
+      document.getElementById('nav-palabras').href = data.ir_a_palabras;
+      document.getElementById('nav-anterior').href = (idx > 1)
+        ? ('leccion_vocal.html?leccion=' + _leccionRaw + '&item=' + (idx - 1))
+        : data.anterior_primera;
+
+      // Destino "siguiente" (igual para los 12 pasos: imagen/botón)
+      const siguienteUrl = (idx < total)
+        ? ('leccion_vocal.html?leccion=' + _leccionRaw + '&item=' + (idx + 1))
+        : data.siguiente_final;
+
+      if (actual.tipo === 'vocal') {
+        document.getElementById('page-title').textContent = 'Vocal ' + actual.gujarati + ' · Piensa en Gujarati';
+        document.getElementById('badge').textContent = actual.badge;
+
+        const img = document.getElementById('img-320');
+        img.src = actual.imagen;
+        img.alt = 'Vocal ' + actual.gujarati;
+        img.onerror = function(){ img.style.display = 'none'; };
+        img.onclick = function(){ window.location.href = siguienteUrl; };
+        document.getElementById('frame-320').style.display = '';
+
+        const btnEsc = document.getElementById('btn-escuchar-vocal');
+        btnEsc.onclick = function(){ playSimple(actual.audio, btnEsc, '&#128266; Escuchar'); };
+        document.getElementById('btn-siguiente-vocal').href = siguienteUrl;
+        document.getElementById('btn-sigleccion-vocal').href = data.siguiente_leccion;
+        document.getElementById('bottom-vocal').style.display = '';
+
+        setTimeout(function(){ player.src = actual.audio; player.play().catch(function(){}); }, 400);
+
+      } else if (actual.tipo === 'matra') {
+        document.getElementById('page-title').textContent = 'Matra ' + actual.matra + ' · Piensa en Gujarati';
+        document.getElementById('badge').textContent = actual.badge;
+
+        const img = document.getElementById('img-380');
+        img.src = actual.imagen;
+        img.alt = 'Matra ' + actual.matra;
+        img.onerror = function(){ img.style.opacity = '0.3'; img.title = 'Imagen no encontrada'; };
+        img.onclick = function(){ window.location.href = siguienteUrl; };
+        document.getElementById('frame-380').style.display = '';
+
+        document.getElementById('btn-siguiente-matra').href = siguienteUrl;
+        document.getElementById('btn-sigleccion-matra').href = data.siguiente_leccion;
+        document.getElementById('bottom-matra').style.display = '';
+
+      } else if (actual.tipo === 'con_matra') {
+        document.getElementById('page-title').textContent = 'Consonantes con matra ' + actual.matra + ' · Piensa en Gujarati';
+        document.getElementById('badge').textContent = 'Las 3 consonantes con esta matra';
+
+        const img = document.getElementById('img-320');
+        img.src = actual.imagen;
+        img.alt = 'Consonantes con matra ' + actual.matra;
+        img.onerror = function(){ img.style.opacity = '0.3'; };
+        img.onclick = function(){ window.location.href = siguienteUrl; };
+        document.getElementById('frame-320').style.display = '';
+
+        const textoBase = '&#128266; ' + actual.texto_boton;
+        const btnSec = document.getElementById('btn-secuencia');
+        btnSec.innerHTML = textoBase;
+        let seqIdx = 0;
+        function reproducirSiguiente() {
+          if (seqIdx >= actual.audios_secuencia.length) {
+            btnSec.classList.remove('playing');
+            btnSec.innerHTML = textoBase;
+            return;
+          }
+          player.src = actual.audios_secuencia[seqIdx];
+          player.playbackRate = 1.0;
+          player.play();
+          player.onended = function() {
+            seqIdx++;
+            setTimeout(reproducirSiguiente, 350);
+          };
+        }
+        btnSec.onclick = function(){
+          btnSec.classList.add('playing');
+          btnSec.textContent = '▶ Reproduciendo...';
+          seqIdx = 0;
+          reproducirSiguiente();
+        };
+
+        document.getElementById('btn-practicar-cm').href = 'reto_flash.html?json=' + actual.reto_flash_json;
+        document.getElementById('btn-siguiente-cm').href = siguienteUrl;
+        document.getElementById('btn-sigleccion-cm').href = data.siguiente_leccion;
+        document.getElementById('bottom-conmatra').style.display = '';
+
+      } else if (actual.tipo === 'plana') {
+        document.getElementById('page-title').textContent = 'Plana ' + actual.roman + ' · Piensa en Gujarati';
+        document.getElementById('badge').textContent = 'Haz tu plana';
+        document.getElementById('roman-label').textContent = '"' + actual.roman + '"';
+
+        const img = document.getElementById('img-plana');
+        img.src = actual.imagen;
+        img.alt = 'Plana ' + actual.roman;
+        img.onerror = function(){ img.style.opacity = '0.3'; };
+        document.getElementById('bloque-plana').style.display = '';
+
+        const btnEsc = document.getElementById('btn-escuchar-plana');
+        const labelHtml = '&#128266; Escuchar "' + actual.roman + '"';
+        btnEsc.innerHTML = labelHtml;
+        btnEsc.onclick = function(){ playSimple(actual.audio, btnEsc, labelHtml); };
+
+        // "Ya terminé, continuar" usa el mismo destino "siguiente" que el resto de la secuencia
+        document.getElementById('btn-continuar-plana').href = siguienteUrl;
+        document.getElementById('bottom-plana').style.display = '';
+      }
+    })
+    .catch(function(){
+      document.body.innerHTML =
+        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    });
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+</body>
+</html>

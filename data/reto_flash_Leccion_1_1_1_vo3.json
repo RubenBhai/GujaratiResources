@@ -1,0 +1,52 @@
+{
+  "titulo": "Practica tu pronunciación — Sílabas con ો",
+  "descripcion": "Pronuncia cada letra y sílaba. Gemini evaluará cada pronunciación.",
+  "sesiones": [
+    {
+      "titulo": "ઓ — છો — મો — છો",
+      "elementos": [
+        {
+          "gujarati": "ઓ"
+        },
+        {
+          "gujarati": "છો"
+        },
+        {
+          "gujarati": "મો"
+        },
+        {
+          "gujarati": "છો"
+        }
+      ]
+    },
+    {
+      "titulo": "એ — ઓ — કા — મે — મો — છો — કે — આ",
+      "elementos": [
+        {
+          "gujarati": "એ"
+        },
+        {
+          "gujarati": "ઓ"
+        },
+        {
+          "gujarati": "કા"
+        },
+        {
+          "gujarati": "મે"
+        },
+        {
+          "gujarati": "મો"
+        },
+        {
+          "gujarati": "છો"
+        },
+        {
+          "gujarati": "કે"
+        },
+        {
+          "gujarati": "આ"
+        }
+      ]
+    }
+  ]
+}

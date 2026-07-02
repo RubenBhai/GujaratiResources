@@ -1,0 +1,52 @@
+{
+  "titulo": "Practica tu pronunciación — Sílabas con ે",
+  "descripcion": "Pronuncia cada letra y sílaba. Gemini evaluará cada pronunciación.",
+  "sesiones": [
+    {
+      "titulo": "એ — છે — મે — ક — કે",
+      "elementos": [
+        {
+          "gujarati": "એ"
+        },
+        {
+          "gujarati": "છે"
+        },
+        {
+          "gujarati": "મે"
+        },
+        {
+          "gujarati": "ક"
+        },
+        {
+          "gujarati": "કે"
+        }
+      ]
+    },
+    {
+      "titulo": "આ — એ — કા — કે — મે — મા — છે",
+      "elementos": [
+        {
+          "gujarati": "આ"
+        },
+        {
+          "gujarati": "એ"
+        },
+        {
+          "gujarati": "કા"
+        },
+        {
+          "gujarati": "કે"
+        },
+        {
+          "gujarati": "મે"
+        },
+        {
+          "gujarati": "મા"
+        },
+        {
+          "gujarati": "છે"
+        }
+      ]
+    }
+  ]
+}
