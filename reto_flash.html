@@ -102,7 +102,6 @@ h2 { font-family:'Fraunces',serif; font-size:1.4rem; text-align:center; }
 
 <div class="wrap">
 
-  <!-- INTRO -->
   <div class="screen active" id="s-intro">
     <span class="badge">🎙 A practicar</span>
     <h1 id="intro-titulo">Pronuncia lo que aprendiste</h1>
@@ -112,19 +111,23 @@ h2 { font-family:'Fraunces',serif; font-size:1.4rem; text-align:center; }
     <button class="btn-sec" onclick="history.back()">Ahora no</button>
   </div>
 
-  <!-- PRÁCTICA -->
   <div class="screen" id="s-practica">
     <span class="badge" id="practica-badge">Sesión 1 de 1</span>
     <h2 id="practica-titulo"></h2>
-    <p class="lead">Toca 🔊 para escuchar el modelo, luego 🎙 para grabar tu pronunciación.</p>
+    <p class="lead">Escucha 🔊 y luego graba 🎙 tu pronunciación.</p>
+    
     <div class="pronuncia-lista" id="pronuncia-lista"></div>
-    <div class="btn-row">
-      <button class="btn-sec" onclick="repetirSesion()">🔄 Repetir</button>
-      <button class="btn-main" onclick="verificar()">Verificar</button>
+    
+    <div class="btn-row" style="margin-top: 4px;">
+      <button class="btn-sec" id="btn-elem-ant" onclick="anteriorElemento()">← Anterior</button>
+      <button class="btn-sec" id="btn-elem-sig" onclick="siguienteElemento()">Siguiente →</button>
     </div>
+    <span id="elem-indicador" style="color:var(--ink-soft); font-size:0.9rem; margin-top: 4px;"></span>
+    
+    <button class="btn-main" id="btn-verificar" onclick="verificar()" style="display:none; margin-top: 8px;">Verificar ✓</button>
+    <button class="btn-sec" onclick="repetirSesion()" style="margin-top: 4px;">🔄 Repetir sesión</button>
   </div>
 
-  <!-- RESULTADO -->
   <div class="screen" id="s-resultado">
     <div class="resultado-card">
       <div class="resultado-emoji" id="res-emoji"></div>
@@ -163,6 +166,7 @@ let sesionData  = null;
 let mediaRecorder = null;
 let audioChunks   = {};
 let recordingId   = null;
+let elemIdx       = 0;   // elemento actual dentro de la sesión
 
 /* ── Utilidades ── */
 function goTo(id){
@@ -239,7 +243,40 @@ function montarSesion(){
     lista.appendChild(div);
   });
 
+  elemIdx = 0;
+  mostrarElemento(0);
   goTo('s-practica');
+}
+
+function mostrarElemento(i){
+  var items = document.querySelectorAll('#pronuncia-lista .pronuncia-item');
+  items.forEach(function(el, idx){ el.style.display = idx === i ? 'block' : 'none'; });
+  var total = sesionData.elementos.length;
+  document.getElementById('elem-indicador').textContent = (i+1) + ' de ' + total;
+  
+  // Botón izquierdo deshabilitado en el primero
+  document.getElementById('btn-elem-ant').disabled = (i === 0);
+  document.getElementById('btn-elem-ant').style.opacity = (i === 0) ? '0.3' : '1';
+  
+  // Botón derecho deshabilitado en el último
+  document.getElementById('btn-elem-sig').disabled = (i === total-1);
+  document.getElementById('btn-elem-sig').style.opacity = (i === total-1) ? '0.3' : '1';
+  
+  // Mostrar "Verificar" solo cuando todos los elementos tienen nota
+  var todosGrabados = sesionData.elementos.every(function(el, idx){
+    var notaEl = document.getElementById('nota-' + idx);
+    return notaEl && notaEl.textContent.includes('/10');
+  });
+  document.getElementById('btn-verificar').style.display = todosGrabados ? 'block' : 'none';
+}
+
+function anteriorElemento(){
+  if(elemIdx > 0){ elemIdx--; mostrarElemento(elemIdx); }
+}
+
+function siguienteElemento(){
+  var total = sesionData.elementos.length;
+  if(elemIdx < total-1){ elemIdx++; mostrarElemento(elemIdx); }
 }
 
 function actualizarProgreso(){
@@ -253,7 +290,6 @@ function repetirSesion(){
   montarSesion();
 }
 
-/* ── Audio de referencia ── */
 /* ── Grabación ── */
 function toggleGrabacion(i, fraseObjetivo){
   var btn = document.getElementById('btn-g-' + i);
@@ -319,6 +355,7 @@ function enviarAGemini(audioBase64, mimeType, fraseObjetivo, i){
     document.getElementById('consejo-' + i).innerHTML = '💡 ' + data.consejo;
     document.getElementById('nota-'    + i).style.color = data.nota >= 7 ? 'var(--saffron)' : 'var(--wrong-text)';
     if(panel) panel.style.display = 'block';
+    mostrarElemento(elemIdx);   // actualizar botón Verificar si ya están todos
   })
   .catch(function(err){
     console.error(err);
