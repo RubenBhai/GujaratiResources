@@ -135,6 +135,20 @@ h2 { font-size: 1.6rem; }
 }
 .btn-sec:hover { background: var(--surface-light); color: var(--saffron); }
 
+/* IMAGEN */
+.learn-img {
+  width: 240px; height: 240px; object-fit: contain;
+  border-radius: var(--r-md); background: var(--surface-light);
+  display: block; margin: 0 auto;
+}
+.learn-img[src=""], .learn-img:not([src]) { display: none; }
+.quiz-img {
+  width: 200px; height: 200px; object-fit: contain;
+  border-radius: var(--r-md); background: var(--surface-light);
+  display: block; margin: 0 auto 8px;
+}
+.quiz-img[src=""], .quiz-img:not([src]) { display: none; }
+
 /* FEEDBACK */
 .feedback { font-size: 1.1rem; font-weight: 600; min-height: 28px; text-align: center; }
 .feedback.ok { color: var(--correct-text); }
@@ -183,6 +197,7 @@ h2 { font-size: 1.6rem; }
   <!-- APRENDER (plantar) -->
   <div class="screen" id="screen-aprender">
     <span class="badge">Aprende esto</span>
+    <img class="learn-img" id="learn-img" src="" alt="">
     <div class="learn-card">
       <div class="gu learn-gu" id="learn-gu"></div>
       <div class="learn-rom" id="learn-rom"></div>
@@ -198,6 +213,7 @@ h2 { font-size: 1.6rem; }
     <span class="badge" id="quiz-badge">¿Qué significa?</span>
     <div class="quiz-instruction" id="quiz-instruction"></div>
     <div class="quiz-prompt" id="quiz-prompt"></div>
+    <img class="quiz-img" id="quiz-img" src="" alt="">
     <button class="btn-audio" id="quiz-audio" onclick="reproducirActual()" style="display:none;">🔊</button>
     <div class="options" id="quiz-options"></div>
     <div class="feedback" id="quiz-feedback"></div>
@@ -240,7 +256,7 @@ if (_modulo && _lecRaw) {
 }
 const _leccion = LECCION.replace(/\./g, '_');
 const STORAGE_KEY = 'srs_' + LECCION;
-const JSON_URL = 'data/aprende_clase_' + _leccion + '.json';
+const JSON_URL = 'https://rubenbhai.github.io/GujaratiResources/data/aprende_clase_' + _leccion + '.json';
 const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
 const SND_ERR = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
@@ -300,20 +316,55 @@ function mostrar(id) {
 }
 
 function actualizarStats() {
-  document.getElementById('stat-nuevos').textContent = itemsNuevos().length;
-  document.getElementById('stat-repaso').textContent = itemsParaRepasar().length;
-  document.getElementById('stat-dominados').textContent = itemsDominados().length;
+  var nuevos    = itemsNuevos().length;
+  var repasos   = itemsParaRepasar().length;
+  var dominados = itemsDominados().length;
+  document.getElementById('stat-nuevos').textContent    = nuevos;
+  document.getElementById('stat-repaso').textContent    = repasos;
+  document.getElementById('stat-dominados').textContent = dominados;
+
+  // Mensaje cuando todo está al día pero no hay nada que hacer aún
+  var btnEmpezar = document.getElementById('btn-empezar');
+  btnEmpezar.textContent = 'Empezar →';
+  var pendientesFuturos = ITEMS.filter(function(it){
+    var st = estadoItem(it.id);
+    return st.nivel >= 0 && st.nivel < NIVEL_DOMINADO && st.proximoRepaso > Date.now();
+  });
+  if(nuevos === 0 && repasos === 0 && pendientesFuturos.length > 0){
+    // Calcular próximo vencimiento
+    var proximos = pendientesFuturos.map(function(it){ return estadoItem(it.id).proximoRepaso; });
+    var minProximo = Math.min.apply(null, proximos);
+    var minutos = Math.round((minProximo - Date.now()) / 60000);
+    var tiempoMsg = minutos < 60
+      ? 'en ' + minutos + ' min'
+      : 'en ' + Math.round(minutos/60) + 'h';
+    btnEmpezar.textContent = '¡Al día! Próximo repaso ' + tiempoMsg + ' →';
+  }
 }
 
 /* ---------- Construcción de la cola de sesión ---------- */
 function construirCola() {
   var repaso = itemsParaRepasar();
   var nuevos = itemsNuevos().slice(0, ITEMS_POR_SESION);
-  // Mezcla: primero algunos repasos, luego nuevos, intercalados
   cola = shuffle(repaso).concat(nuevos);
   if (cola.length === 0) {
-    // Nada pendiente: ofrecer repaso de dominados al azar
-    cola = shuffle(itemsDominados()).slice(0, ITEMS_POR_SESION);
+    // Nada pendiente: primero intentar dominados al azar
+    var dominados = itemsDominados();
+    if (dominados.length > 0) {
+      cola = shuffle(dominados).slice(0, ITEMS_POR_SESION);
+    } else {
+      // Todos los ítems existen pero tienen proximoRepaso en el futuro →
+      // ofrecer práctica libre con todos (ordenados por proximoRepaso más cercano)
+      var pendientes = ITEMS.filter(function(it){ return estadoItem(it.id).nivel >= 0; });
+      pendientes.sort(function(a, b){
+        return estadoItem(a.id).proximoRepaso - estadoItem(b.id).proximoRepaso;
+      });
+      cola = pendientes.slice(0, ITEMS_POR_SESION);
+      if (cola.length > 0) {
+        // Avisar que es práctica anticipada
+        document.getElementById('btn-empezar').textContent = '¡Practicar de todas formas! →';
+      }
+    }
   }
   colaIdx = 0;
 }
@@ -355,6 +406,8 @@ function mostrarAprender(item) {
   document.getElementById('learn-sig').textContent = item.significado;
   var cat = item.categoria === 'letra' ? 'Letra' : (item.categoria === 'silaba' ? 'Sílaba' : 'Palabra');
   document.getElementById('learn-cat').textContent = cat;
+  var img = document.getElementById('learn-img');
+  if(img) img.src = item.imagen || '';
   mostrar('screen-aprender');
   setTimeout(reproducirActual, 350);
 }
@@ -389,17 +442,20 @@ function mostrarQuiz(item) {
   audioBtn.style.display = 'none';
 
   var correcta, opciones, render;
+  var qImg = document.getElementById('quiz-img');
+  if(qImg) qImg.src = '';   // limpiar imagen anterior
 
   if (modoActual === 'reconocer') {
-    // ve gujarati, elige significado
+    // ve imagen + gujarati, elige significado
     badgeEl.textContent = '¿Qué significa?';
     instrEl.textContent = 'Toca el significado correcto';
     promptEl.innerHTML = '<div class="gu big-gu">' + item.gujarati + '</div>';
+    if(qImg) qImg.src = item.imagen || '';   // mostrar imagen
     correcta = item.significado;
     opciones = generarOpciones(item, 'significado');
     render = function(val){ return '<div class="opt-text">' + val + '</div>'; };
   } else if (modoActual === 'recordar') {
-    // ve significado, elige gujarati
+    // ve significado, elige gujarati — sin imagen (eso sería trampa)
     badgeEl.textContent = '¿Cómo se escribe?';
     instrEl.textContent = 'Toca la escritura correcta';
     promptEl.innerHTML = '<div class="big-sig">' + item.significado + '</div>';

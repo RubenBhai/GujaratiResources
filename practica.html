@@ -221,7 +221,7 @@
     document.getElementById('theater').innerHTML =
       `<div class="error-state">Parámetros inválidos en la URL. Verifica los valores de 'modulo' y 'leccion'.</div>`;
   } else {
-    const jsonFile = `data/practica_clase_${modulo.replace('.','_')}_${leccion}.json`;
+    const jsonFile = `https://rubenbhai.github.io/GujaratiResources/data/practica_clase_${modulo.replace('.','_')}_${leccion}.json`;
     
     fetch(jsonFile)
       .then(res => {

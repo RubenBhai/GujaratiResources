@@ -51,7 +51,7 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   display:flex; flex-direction:column; gap:14px; box-shadow:0 8px 28px rgba(0,0,0,0.25);
   transition:height 0.45s ease; 
   position: relative; 
-  justify-content: flex-start; /* Alinea desde arriba */
+  justify-content: space-between; /* 1ra arriba, 2da abajo, fondo visible en el centro */
   overflow-y: auto; overflow-x: hidden;
 }
 
@@ -61,7 +61,7 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   top: 0; left: 0; width: 100%; height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.3; /* 30% de transparencia */
+  opacity: 0.5; /* 50% de transparencia */
   z-index: 0;
   transition: background-image 0.5s ease;
   pointer-events: none;
@@ -72,10 +72,9 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 .burbuja { max-width:95%; align-items:center; gap:12px; position: relative; z-index: 1; }
 .burbuja.visible { display:flex; animation:aparecerBurbuja 0.4s ease forwards; }
 @keyframes aparecerBurbuja { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
-.burbuja.izq { align-self:flex-start; flex-direction:row-reverse; }
-.burbuja.der { align-self:flex-end; flex-direction:row; }
+.burbuja.izq, .burbuja.der { align-self:flex-end; flex-direction:row; }
 
-.burbuja .avatar { width:75px; height:150px; border-radius:var(--r-md);
+.burbuja .avatar { width:48px; height:48px; border-radius:50%;
   border:2px solid rgba(255,255,255,0.25); background-size:cover; background-position:center;
   flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
 
@@ -119,7 +118,7 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 .btn-fin { width:100%; border:none; padding:16px; border-radius:var(--r-full); cursor:pointer;
   font-weight:700; font-size:1.05rem; background:var(--verde); color:white; text-align:center;
   text-decoration:none; display:block; box-shadow:0 4px 14px rgba(74,107,83,0.3); font-family:inherit;
-  opacity:0.5; pointer-events:none; transition:opacity 0.4s; }
+  opacity:1; pointer-events:auto; transition:opacity 0.4s; }
 .btn-fin.activo { opacity:1; pointer-events:auto; }
 
 .progress { width:100%; height:5px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden; }
@@ -190,8 +189,8 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 <body>
 
 <nav class="nav-bar">
-  <button class="nav-btn" onclick="history.back()">← Lección</button>
-  <a class="nav-btn home" href="index.html">🏠</a>
+  <button class="nav-btn" onclick="audio.pause(); audio.src=''; cancelAnimationFrame(rafId); history.back();">&larr; Lecci&oacute;n</button>
+  <span class="nav-btn" style="opacity:0;pointer-events:none;">&nbsp;</span>
   <span class="nav-btn" style="opacity:0;pointer-events:none;">&nbsp;</span>
 </nav>
 
@@ -229,6 +228,7 @@ const _params  = new URLSearchParams(location.search);
 const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
 const JSON_URL = 'https://rubenbhai.github.io/GujaratiResources/data/video_clase_' + _leccion + '.json';
 const _nextParam = _params.get('next');
+const _modo = _params.get('modo');   // 'desafio' = repaso antes del video interactivo
 
 const audio  = document.getElementById('audio');
 const escena = document.getElementById('escena');
@@ -243,6 +243,7 @@ let NEXT_PAGE = null;
 let burbujas = [];
 let mostradas = [];
 let dialogoSecuencia = [];   
+let burbujaDeDialogo = [];   // burbuja física por cada diálogo
 let secuenciaActual = -1;
 let rafId = null;
 
@@ -270,27 +271,49 @@ function construirEscena(){
   escena.appendChild(bgDiv);
 
   burbujas = [];
+  burbujaDeDialogo = [];   // burbuja física (índice) que le toca a cada diálogo
   mostradas = DIALOGOS.map(()=>false);
 
+  var claveAIndice = {};   // clave de burbuja -> índice en burbujas[]
+
   DIALOGOS.forEach(function(d, i){
-    var av = AVATARES[d.avatar] || {};
-    var color = av.color || '#5F6E4F';
-    var img = av.imagen || '';
-    var b = document.createElement('div');
-    b.className = 'burbuja ' + (d.lado || 'izq');
-    b.id = 'burbuja-'+i;
-    b.innerHTML =
-      '<div class="avatar" style="background-image:url(\''+img+'\'); background-color:'+color+';"></div>'+
-      '<div class="caja" style="background:'+color+';">'+
-        '<div class="gu-texto">'+(d.gujarati||'')+'</div>'+
-        '<div class="es-texto">'+(d.espanol||'')+'</div>'+
-      '</div>';
-    escena.appendChild(b);
-    burbujas.push(b);
+    // clave de agrupación: si trae "burbuja" la comparte; si no, es única por id
+    var clave = (d.burbuja !== undefined && d.burbuja !== null) ? ('g'+d.burbuja) : ('d'+d.id);
+
+    if(claveAIndice[clave] === undefined){
+      // crear nueva burbuja física, usando los datos del PRIMER diálogo del grupo
+      var av = AVATARES[d.avatar] || {};
+      var color = av.color || '#5F6E4F';
+      var img = av.imagen || '';
+      var b = document.createElement('div');
+      b.className = 'burbuja ' + (d.lado || 'izq');
+      b.id = 'burbuja-'+burbujas.length;
+      b.innerHTML =
+        '<div class="avatar" style="background-image:url(\''+img+'\'); background-color:'+color+';"></div>'+
+        '<div class="caja" style="background:'+color+';">'+
+          '<div class="gu-texto">'+(d.gujarati||'')+'</div>'+
+          '<div class="es-texto">'+(d.espanol||'')+'</div>'+
+        '</div>';
+      escena.appendChild(b);
+      claveAIndice[clave] = burbujas.length;
+      burbujas.push(b);
+    }
+    burbujaDeDialogo[i] = claveAIndice[clave];
   });
 
   secuenciaActual = -1;
-  ajustarAltura(SECUENCIAS.length ? SECUENCIAS[0].dialogos.length : 1);
+  ajustarAltura(burbujasEnSecuencia(0));
+}
+
+/* ── Cuántas burbujas FÍSICAS hay en una secuencia (para la altura) ── */
+function burbujasEnSecuencia(sidx){
+  if(!SECUENCIAS.length) return 1;
+  var vistos = {};
+  SECUENCIAS[sidx].dialogos.forEach(function(id){
+    var i = DIALOGOS.findIndex(function(x){ return x.id === id; });
+    if(i >= 0) vistos[ burbujaDeDialogo[i] ] = true;
+  });
+  return Object.keys(vistos).length || 1;
 }
 
 /* ── Mapear cada diálogo (índice) a su secuencia ── */
@@ -372,38 +395,55 @@ function seguir(){
     fill.style.width = Math.min(100, (t/dur)*100) + '%';
 
     DIALOGOS.forEach(function(d, i){
+      var bIdx = burbujaDeDialogo[i];
+
       if(t >= d.ini && !mostradas[i]){
         var sidx = dialogoSecuencia[i];
-        
+
         if(sidx !== secuenciaActual){
           secuenciaActual = sidx;
-          
-          // Cambiar imagen de fondo
-          var imgFondo = SECUENCIAS[sidx].imagenFondo || '';
-          document.getElementById('bg-escena').style.backgroundImage = imgFondo ? "url('" + imgFondo + "')" : "none";
 
-          // Ocultar secuencias anteriores
+	  // Cambiar imagen de fondo solo si la secuencia la define; si no, mantener el actual
+          if(SECUENCIAS[sidx].imagenFondo){
+            document.getElementById('bg-escena').style.backgroundImage = "url('" + SECUENCIAS[sidx].imagenFondo + "')";
+          }
+
+          // Ocultar las burbujas que NO pertenecen a esta secuencia
           DIALOGOS.forEach(function(dd, jj){
             if(dialogoSecuencia[jj] !== sidx){
-              burbujas[jj].classList.add('saliente');
-              burbujas[jj].classList.remove('visible');
+              burbujas[ burbujaDeDialogo[jj] ].classList.add('saliente');
+              burbujas[ burbujaDeDialogo[jj] ].classList.remove('visible');
             }
           });
-          ajustarAltura(SECUENCIAS[sidx].dialogos.length);
+          ajustarAltura(burbujasEnSecuencia(sidx));
         }
-        
-        // Mostrar la secuencia actual
-        SECUENCIAS[sidx].dialogos.forEach(function(id){
-          var idx = DIALOGOS.findIndex(function(x){ return x.id === id; });
-          if(idx>=0 && !mostradas[idx]){
-            mostradas[idx] = true;
-            burbujas[idx].classList.add('visible');
-            burbujas[idx].classList.remove('saliente');
-          }
-        });
+
+        // Marcar este diálogo como mostrado
+        mostradas[i] = true;
+
+        // Escribir SU texto en SU burbuja física (reemplaza lo que hubiera)
+        var caja = burbujas[bIdx];
+        caja.classList.add('visible');
+        caja.classList.remove('saliente');
+        // Si el avatar/color cambia entre diálogos del mismo grupo, actualizarlos
+        var av = AVATARES[d.avatar] || {};
+        var color = av.color || '#5F6E4F';
+        var img = av.imagen || '';
+        caja.className = 'burbuja ' + (d.lado || 'izq') + ' visible';
+        caja.querySelector('.avatar').style.backgroundImage = "url('" + img + "')";
+        caja.querySelector('.avatar').style.backgroundColor = color;
+        caja.querySelector('.caja').style.background = color;
+        caja.querySelector('.gu-texto').textContent = d.gujarati || '';
+        caja.querySelector('.es-texto').textContent = d.espanol || '';
+
+        // Fondo por diálogo (tiene prioridad sobre el de la secuencia)
+        if(d.imagenFondo){
+          document.getElementById('bg-escena').style.backgroundImage = "url('" + d.imagenFondo + "')";
+        }
       }
+
       var activa = (t >= d.ini && t <= d.fin);
-      burbujas[i].classList.toggle('activa', activa);
+      if(bIdx !== undefined) burbujas[bIdx].classList.toggle('activa', activa);
     });
 
     if(!audio.paused && !audio.ended){
@@ -416,7 +456,7 @@ function seguir(){
 audio.addEventListener('ended', function(){
   fill.style.width = '100%';
   burbujas.forEach(function(b){ b.classList.remove('activa'); });
-  document.getElementById('btn-empezar').classList.add('activo');
+  // btn-empezar siempre activo — no necesita agregarse clase
   
   // Ocultar pausa y habilitar reproducir
   document.getElementById('btn-pause').style.display = 'none';
@@ -426,15 +466,39 @@ audio.addEventListener('ended', function(){
 /* ── Configurar el botón inferior ── */
 function configurarBotonFin(){
   var btn = document.getElementById('btn-empezar');
+
+  // Función que detiene el audio antes de navegar
+  function irADestino(destino){
+    cancelAnimationFrame(rafId);
+    audio.pause();
+    audio.src = '';
+    if(destino) window.location.href = destino;
+    else history.back();
+  }
+
+  // MODO DESAFÍO
+  if(_modo === 'desafio'){
+    var lecParam = _params.get('leccion') || '1.1.1';
+    NEXT_PAGE = (_nextParam || 'video_interactivo.html') + '?leccion=' + lecParam;
+    btn.textContent = '¡Quiero participar! →';
+    btn.href = 'javascript:void(0)';
+    btn.onclick = function(){ irADestino(NEXT_PAGE); };
+    return;
+  }
+
   NEXT_PAGE = _nextParam || DATA.next || null;
   if(NEXT_PAGE){
     btn.textContent = 'Empezar la clase →';
-    btn.href = NEXT_PAGE;
-    btn.onclick = null;
+    btn.href = 'javascript:void(0)';
+    btn.onclick = function(){ irADestino(NEXT_PAGE); };
   } else {
     btn.textContent = 'De regreso a la clase';
     btn.href = 'javascript:void(0)';
-    btn.onclick = function(){ history.back(); };
+    btn.onclick = function(){
+      if(DATA.subtitulo_fin) document.getElementById('badge').textContent = DATA.subtitulo_fin;
+      if(DATA.intro_fin)     document.getElementById('intro').textContent = DATA.intro_fin;
+      irADestino(null);
+    };
   }
 }
 
@@ -449,9 +513,16 @@ fetch(JSON_URL)
                  : DIALOGOS.map(function(d){ return { dialogos:[d.id] }; });
     AVATARES = data.avatares || {};
     
-    if(data.subtitulo) document.getElementById('badge').textContent = data.subtitulo;
-    if(data.titulo)    document.getElementById('titulo').textContent = data.titulo;
-    if(data.intro)     document.getElementById('intro').textContent = data.intro;
+    if(_modo === 'desafio'){
+      // Textos del desafío final (con respaldo a los normales si faltan)
+      document.getElementById('badge').textContent  = data.subtitulo_desafio || data.subtitulo || '';
+      document.getElementById('titulo').textContent = data.titulo_desafio    || data.titulo    || '';
+      document.getElementById('intro').textContent  = data.intro_desafio     || data.intro     || '';
+    } else {
+      if(data.subtitulo) document.getElementById('badge').textContent = data.subtitulo;
+      if(data.titulo)    document.getElementById('titulo').textContent = data.titulo;
+      if(data.intro)     document.getElementById('intro').textContent = data.intro;
+    }
 
     mapearSecuencias();
     precargarFondos();
