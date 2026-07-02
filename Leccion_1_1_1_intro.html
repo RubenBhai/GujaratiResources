@@ -7,11 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
   <title>Lección 1.1.1 · Piensa en Gujarati</title>
-
-  <!-- Fuentes de Google -->
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Tema de lección -->
   <link rel="stylesheet" href="tema-amigable_2.css">
 </head>
 <body>
@@ -19,45 +15,143 @@
   <nav class="nav-bar">
     <a class="nav-btn" href="Contenido_1_1.html">← Anterior</a>
     <a class="nav-btn home" href="Contenido.html">🏠</a>
-    <a class="nav-btn" href="Leccion_1_1_1_c1.html">Empezar →</a>
+    <a class="nav-btn" href="video.html?leccion=1.1.1&next=Leccion_1_1_1_c1.html">Empezar →</a>
   </nav>
 
-  <div class="wrap">
+  <!-- Pantalla 1: Introducción + consonantes -->
+  <div class="wrap" id="pantalla-1">
     <span class="badge">Tu primera lección</span>
     <h1>¡Empezamos!</h1>
-    <p class="subtitle">Hoy aprenderás <strong>3 consonantes</strong> — <span class="gu">ક મ છ</span> — y <strong>4 vocales</strong> con sus matras. Al final de la lección ya puedes leer:</p>
-    <div style="text-align:center; margin: 8px 0 4px;"><span class="gu" style="color:var(--saffron); font-size:2.4rem; font-weight:700; line-height:1.2;">કેમ છો?</span><br><span style="font-size:1.1rem; color:var(--ink-soft); font-style:italic;">— ¿Cómo estás?</span></div>
 
     <div class="info-box">
-      <strong>💡 Cómo funcionan las vocales</strong><br><br>
-      Cada consonante ya trae una <strong>"a"</strong> incluida. Pero cuando necesitas otra vocal, usas una <strong>matra</strong> — una marca que cambia el sonido.<br><br>
-      <span class="gu">ક</span> = <strong>ka</strong> &nbsp;·&nbsp;
-      <span class="gu">કા</span> = <strong>kaa</strong> &nbsp;·&nbsp;
-      <span class="gu">કે</span> = <strong>ke</strong> &nbsp;·&nbsp;
-      <span class="gu">કો</span> = <strong>ko</strong><br><br>
-      La matra va pegada a la consonante y cambia su vocal. Eso es todo.
+      <p>En esta lección aprenderás <strong>3 consonantes</strong>, <strong>3 vocales</strong> y sus <strong>matras</strong> — una marca que cambia el sonido.</p><br>
+      <p>Cada consonante ya trae una <strong>"a"</strong> incluida — es una 'a' cerrada, como la segunda 'a' en <em>"gracias"</em>. Por ejemplo, <span class="gu">ક</span> es la consonante <strong>k</strong> y se pronuncia <strong>'ka'</strong>.</p>
     </div>
 
     <div class="table-wrap">
       <table>
-        <tr><th>Letra</th><th>Suena</th><th>+ matra</th><th>Suena</th></tr>
-        <tr><td class="gu-cell">ક</td><td><strong>ka</strong></td><td class="gu-cell">ા → કા</td><td><strong>kaa</strong></td></tr>
-        <tr><td class="gu-cell">મ</td><td><strong>ma</strong></td><td class="gu-cell">ે → મે</td><td><strong>me</strong></td></tr>
-        <tr><td class="gu-cell">છ</td><td><strong>chha</strong></td><td class="gu-cell">ો → છો</td><td><strong>chho</strong></td></tr>
+        <tr>
+          <th style="width:34%;">Letra</th>
+          <th style="width:33%;">Nombre</th>
+          <th style="width:33%;">Suena como</th>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.6rem; text-align:center;">ક</td>
+          <td style="text-align:center; font-size:1.4rem; color:var(--naranja-acento); font-weight:600;">ka</td>
+          <td style="text-align:center; font-size:1.2rem;"><strong>ka</strong> en <strong>ka</strong>rate</td>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.6rem; text-align:center;">મ</td>
+          <td style="text-align:center; font-size:1.4rem; color:var(--naranja-acento); font-weight:600;">ma</td>
+          <td style="text-align:center; font-size:1.2rem;"><strong>ma</strong> en <strong>ma</strong>má</td>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.6rem; text-align:center;">છ</td>
+          <td style="text-align:center; font-size:1.4rem; color:var(--naranja-acento); font-weight:600;">chha</td>
+          <td style="text-align:center; font-size:1.2rem;"><strong>cha</strong> en <strong>cha</strong>leco</td>
+        </tr>
       </table>
     </div>
 
-    <!-- Botones al final del contenido, sin position fixed -->
     <div style="display:flex; flex-direction:column; gap:12px; width:100%; margin-top:12px;">
-      <a class="btn-action btn-words" href="Leccion_1_1_1_v1.html">📝 Ir a palabras</a>
+      <button class="btn-action btn-words" onclick="mostrarPantalla(2)">Siguiente →</button>
       <a class="btn-action btn-next-lec" href="Leccion_1_1_2_intro.html">⏭️ Siguiente lección</a>
     </div>
   </div>
 
+  <!-- Pantalla 2: Vocales y matras -->
+  <div class="wrap" id="pantalla-2" style="display:none;">
+    <span class="badge">Las vocales</span>
+    <h1>Vocales y matras</h1>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width:34%;">Vocal</th>
+          <th style="width:33%;">Suena como</th>
+          <th style="width:33%;">Matra</th>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.6rem; text-align:center;">આ</td>
+          <td style="text-align:center; font-size:1.4rem; color:var(--naranja-acento); font-weight:600;">'aa'</td>
+          <td class="gu-cell" style="font-size:2.2rem; text-align:center; color:var(--verde-sabio);">ા</td>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.6rem; text-align:center;">એ</td>
+          <td style="text-align:center; font-size:1.4rem; color:var(--naranja-acento); font-weight:600;">'e'</td>
+          <td class="gu-cell" style="font-size:2.2rem; text-align:center; color:var(--verde-sabio);">ે</td>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.6rem; text-align:center;">ઓ</td>
+          <td style="text-align:center; font-size:1.4rem; color:var(--naranja-acento); font-weight:600;">'o'</td>
+          <td class="gu-cell" style="font-size:2.2rem; text-align:center; color:var(--verde-sabio);">ો</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="info-box">
+      <p>¿Notaste la diferencia entre <strong>'a'</strong> y <strong>'aa'</strong>? La 'a' es cerrada — como en <em>"gracias"</em>. La 'aa' es abierta — como en <em>"mamá"</em>.</p>
+    </div>
+
+    <div class="info-box">
+      <p>La matra va pegada a la consonante y cambia su vocal. El pequeño círculo de <span class="gu">ઓ</span> se reemplaza por la consonante. En la siguiente página verás cómo funciona.</p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px; width:100%; margin-top:12px;">
+      <button class="btn-action btn-words" onclick="mostrarPantalla(3)">Siguiente →</button>
+      <button class="btn-action btn-next-lec" onclick="mostrarPantalla(1)">← Anterior</button>
+    </div>
+  </div>
+
+  <!-- Pantalla 3: Resumen tabla -->
+  <div class="wrap" id="pantalla-3" style="display:none;">
+    <span class="badge">Resumen</span>
+    <h1>Las consonantes y sus matras</h1>
+    <div class="table-wrap">
+      <table style="font-size:1.3rem;">
+        <tr><th>Letra</th><th>Suena</th><th>+ matra</th><th>Suena</th></tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.8rem;">ક</td>
+          <td style="font-size:1.3rem;"><strong>ka</strong></td>
+          <td class="gu-cell" style="font-size:2.8rem;">ા → કા</td>
+          <td style="font-size:1.3rem;"><strong>kaa</strong></td>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.8rem;">મ</td>
+          <td style="font-size:1.3rem;"><strong>ma</strong></td>
+          <td class="gu-cell" style="font-size:2.8rem;">ે → મે</td>
+          <td style="font-size:1.3rem;"><strong>me</strong></td>
+        </tr>
+        <tr>
+          <td class="gu-cell" style="font-size:2.8rem;">છ</td>
+          <td style="font-size:1.3rem;"><strong>chha</strong></td>
+          <td class="gu-cell" style="font-size:2.8rem;">ો → છો</td>
+          <td style="font-size:1.3rem;"><strong>chho</strong></td>
+        </tr>
+      </table>
+    </div>
+    <div style="text-align:center; margin: 16px 0;">
+      <span class="gu" style="color:var(--saffron); font-size:2.4rem; font-weight:700; line-height:1.2;">કેમ છો?</span><br>
+      <span style="font-size:1.3rem; color:var(--ink-soft); font-style:italic;">— ¿Cómo estás?</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px; width:100%; margin-top:12px;">
+      <a class="btn-action btn-words" href="video.html?leccion=1.1.1&next=Leccion_1_1_1_c1.html">¡Empezar la lección! →</a>
+      <button class="btn-action btn-next-lec" onclick="mostrarPantalla(2)">← Anterior</button>
+    </div>
+  </div>
+
+  <script>
+  function mostrarPantalla(n) {
+    document.getElementById('pantalla-1').style.display = n === 1 ? '' : 'none';
+    document.getElementById('pantalla-2').style.display = n === 2 ? '' : 'none';
+    document.getElementById('pantalla-3').style.display = n === 3 ? '' : 'none';
+    window.scrollTo(0, 0);
+  }
+  </script>
+
   <audio id="player"></audio>
 
   <script>
-    // ... (el mismo script de siempre, lo dejo sin cambios)
     const player = document.getElementById('player');
     let currentSpeed = 1.0;
     let toggle = 'h';
@@ -86,7 +180,6 @@
       player.onended = () => { btn.classList.remove('playing'); btn.textContent = '▶'; };
     }
 
-    // JUEGO
     const BASE = 'https://rubenbhai.github.io/GujaratiResources/audios/';
     const gameData = [
       { letter: 'ક',  answer: 'ka',   audioM: BASE+'audio_m_ka.mp3',   audioH: BASE+'audio_h_ka.mp3'   },
@@ -131,7 +224,6 @@
     if(document.getElementById('game-card')) initGame();
   </script>
 
-  <!-- ═══ BOTÓN DE MÚSICA AMBIENTE ═══ -->
   <audio id="bgMusic" loop preload="none">
     <source src="https://rubenbhai.github.io/GujaratiResources/audios/musica/Leccion_1_1_1_musica_ambiente.mp3" type="audio/mpeg">
   </audio>
@@ -193,7 +285,6 @@
     }
   })();
   </script>
-
 
 <script>
 (function() {

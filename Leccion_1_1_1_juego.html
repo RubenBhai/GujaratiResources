@@ -88,7 +88,7 @@
     <div style="font-size:3rem">🏆</div>
     <h2>¡Juego completado!</h2>
     <p class="subtitle">Ya practicaste las 6 letras. ¡Sigue así!</p>
-    <a class="btn-main" href="Leccion_1_1_1_fin.html" style="text-decoration:none;display:block;text-align:center;">🏆 Finalizar lección →</a>
+    <a class="btn-main" href="Leccion_1_1_1_NotasDelGujarati.html" style="text-decoration:none;display:block;text-align:center;">🏆 Finalizar lección →</a>
     <button class="btn-sec" onclick="reiniciar()">🔄 Repetir juego</button>
   </div>
 </div>
@@ -106,9 +106,9 @@ const SND_ERR = BASE + '/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 const letters = [
   { letter: 'ક', answer: 'ka',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ka.png',   desc: 'Suena como la <strong>k</strong> de <strong>ka</strong>sa' },
   { letter: 'મ', answer: 'ma',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ma.png',   desc: 'Suena como la <strong>m</strong> de <strong>ma</strong>má' },
-  { letter: 'છ', answer: 'chha', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3', img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chha.png', desc: '<strong>ch</strong> aspirada' },
-  { letter: 'આ', answer: 'aa',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png',   desc: 'Vocal <strong>aa</strong> — "a" larga' },
-  { letter: 'એ', answer: 'e',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png',    desc: 'Vocal <strong>e</strong> — como en caf<strong>é</strong>' },
+  { letter: 'છ', answer: 'chha', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3', img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chha.png', desc: '<strong>ch</strong> aspirada', significado: 'número 6' },
+  { letter: 'આ', answer: 'aa',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png',   desc: 'Vocal <strong>aa</strong> — "a" larga', significado: 'esto' },
+  { letter: 'એ', answer: 'e',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png',    desc: 'Vocal <strong>e</strong> — como en caf<strong>é</strong>', significado: 'eso' },
   { letter: 'ઓ', answer: 'o',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png',    desc: 'Vocal <strong>o</strong> — como en s<strong>o</strong>l' },
 ];
 
@@ -124,11 +124,11 @@ const extras = [
   { letter: 'કા',  answer: 'kaa',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_kaa.png' },
   { letter: 'કે',  answer: 'ke',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ke.png' },
   { letter: 'કો',  answer: 'ko',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ko.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ko.png' },
-  { letter: 'મા',  answer: 'maa',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_maa.png' },
+  { letter: 'મા',  answer: 'maa',   audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3',   img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_maa.png', significado: 'mamá' },
   { letter: 'મે',  answer: 'me',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_me.png' },
   { letter: 'મો',  answer: 'mo',    audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3',    img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_mo.png' },
   { letter: 'છા',  answer: 'chhaa', audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3', img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhaa.png' },
-  { letter: 'છે',  answer: 'chhe',  audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3',  img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhe.png' },
+  { letter: 'છે',  answer: 'chhe',  audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3',  img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhe.png', significado: 'es, está, hay' },
   { letter: 'છો',  answer: 'chho',  audio: 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3',  img: 'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chho.png' },
 
   // --- Frase estrella ---

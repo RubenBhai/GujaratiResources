@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Video de introducción · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --bg:#2C2420; --surface:#362C28; --surface-light:#423631; --paper:#E8D9C0;
+  --sindoor:#A8362A; --sindoor-deep:#832920; --saffron:#B8863D;
+  --verde:#4A6B53; --verde-h:#3D5A45; --olive:#5F6E4F;
+  --ink-soft:#C8B99A; --border:rgba(184,134,61,0.18);
+  --r-md:16px; --r-lg:20px; --r-full:50px;
+  /* Colores por personaje */
+  --c-rahul:#5F6E4F; --c-shriya:#A8362A; --c-ritu:#B8863D; --c-sohan:#4A6B8A;
+}
+body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.08),transparent 60%);
+  color:var(--paper); font-family:'Source Sans 3',sans-serif; min-height:100vh; padding-bottom:24px; }
+.gu { font-family:'Noto Serif Gujarati',serif; }
+
+.nav-bar { position:sticky; top:0; z-index:100; background:rgba(44,36,32,0.9); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:12px 20px; }
+.nav-btn { background:var(--surface); color:var(--paper); padding:10px 18px; border-radius:var(--r-full);
+  font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid var(--border); cursor:pointer; font-family:inherit; }
+.nav-btn.home { color:var(--saffron); font-size:1.1rem; }
+
+.wrap { max-width:520px; margin:0 auto; padding:24px 18px; display:flex; flex-direction:column; align-items:center; gap:20px; }
+
+.badge { display:inline-block; background:rgba(184,134,61,0.18); color:var(--saffron);
+  padding:8px 20px; border-radius:var(--r-full); font-size:0.85rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.08em; }
+h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-height:1.25; }
+.lead { color:var(--ink-soft); font-size:1.05rem; line-height:1.6; text-align:center; max-width:440px; }
+
+/* Escenario tipo chat a 350px de altura */
+.escena { width:100%; height:350px; background:var(--surface);
+  border:1px solid var(--border); border-radius:var(--r-lg); padding:20px 16px;
+  display:flex; flex-direction:column; gap:14px; box-shadow:0 8px 28px rgba(0,0,0,0.25);
+  overflow:hidden; justify-content:flex-end; }
+
+/* Burbujas - Flexbox para soportar Avatares */
+.burbuja:not(.visible):not(.saliente) { 
+  display: none; 
+}
+.burbuja { max-width:95%; align-items: center; gap: 12px; }
+
+.burbuja.visible { 
+  display: flex;
+  max-height: 350px;
+  animation: aparecerBurbuja 0.4s ease forwards; 
+}
+@keyframes aparecerBurbuja {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Alineaciones de la cara del personaje */
+.burbuja.izq { align-self:flex-start; flex-direction: row-reverse; } 
+.burbuja.der { align-self:flex-end; flex-direction: row; }        
+
+/* Estilos para el Avatar - Proporción vertical aumentada a 75x150px */
+.burbuja .avatar {
+  width: 75px;
+  height: 150px;
+  border-radius: var(--r-md);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.burbuja .caja { padding:14px 18px; border-radius:18px; box-shadow:0 4px 12px rgba(0,0,0,0.18); flex-grow: 1; }
+.burbuja.izq .caja { border-top-left-radius:4px; }
+.burbuja.der .caja { border-top-right-radius:4px; }
+.burbuja .gu-texto { font-family:'Noto Serif Gujarati',serif; font-size:1.5rem; line-height:1.5; color:#fff; }
+.burbuja .es-texto { font-size:0.95rem; color:rgba(255,255,255,0.85); margin-top:6px; font-style:italic; }
+
+/* activa (resaltada) */
+.burbuja.activa .caja { outline:3px solid rgba(255,255,255,0.4); }
+
+.burbuja.saliente { 
+  display: flex; 
+  opacity:0; 
+  max-height:0; 
+  margin:0; 
+  padding:0; 
+  pointer-events:none;
+  transition:opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease, padding 0.4s ease; 
+  overflow:hidden; 
+}
+
+/* Controles */
+.controls { display:flex; gap:12px; align-items:center; justify-content:center; width:100%; }
+.btn-play { background:var(--sindoor); border:none; border-radius:var(--r-full);
+  padding:16px 32px; cursor:pointer; font-size:1.1rem; font-weight:700; color:white;
+  font-family:inherit; display:flex; align-items:center; gap:10px;
+  box-shadow:0 4px 16px rgba(168,54,42,0.35); transition:all 0.2s; }
+.btn-play:hover { background:var(--sindoor-deep); transform:translateY(-1px); }
+.btn-replay { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-full);
+  padding:14px 24px; cursor:pointer; font-size:0.95rem; font-weight:600; color:var(--ink-soft);
+  font-family:inherit; }
+.btn-replay:hover { background:var(--surface-light); color:var(--saffron); }
+
+.btn-fin { width:100%; border:none; padding:16px; border-radius:var(--r-full); cursor:pointer;
+  font-weight:700; font-size:1.05rem; background:var(--verde); color:white; text-align:center;
+  text-decoration:none; display:block; box-shadow:0 4px 14px rgba(74,107,83,0.3); font-family:inherit;
+  opacity:0.5; pointer-events:none; transition:opacity 0.4s; }
+.btn-fin.activo { opacity:1; pointer-events:auto; }
+
+.progress { width:100%; height:5px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden; }
+.progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--saffron),var(--sindoor)); transition:width 0.2s linear; }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" href="Leccion_1_1_1_intro.html">← Lección</a>
+  <a class="nav-btn home" href="index.html">🏠</a>
+  <span class="nav-btn" style="opacity:0;pointer-events:none;">&nbsp;</span>
+</nav>
+
+<div class="wrap">
+  <span class="badge">Antes de empezar</span>
+  <h1>Escucha esta conversación</h1>
+  <p class="lead">Así suena el gujarati en una charla real. No te preocupes si no entiendes todo todavía: ¡al terminar la lección lo entenderás!</p>
+
+  <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+
+  <div class="controls">
+    <button class="btn-play" id="btn-play" onclick="reproducir()">▶ Reproducir</button>
+    <button class="btn-replay" id="btn-replay" onclick="reiniciar()" style="display:none;">🔄 De nuevo</button>
+  </div>
+
+  <div class="escena" id="escena"></div>
+
+  <a class="btn-fin" id="btn-empezar" href="Leccion_1_1_1_c1.html">Empezar la clase →</a>
+</div>
+
+<audio id="audio"></audio>
+
+<script>
+const AUDIO_URL = 'https://rubenbhai.github.io/GujaratiResources/videos/clase_1_1/Leccion_1_1_1_video.mp3';
+
+/* DIÁLOGO CON RUTAS ABSOLUTAS COMPLETAS Y AVATARES CON MAYOR TAMAÑO */
+const DIALOGO = [
+  { personaje:'રાહુલભાઈ',  ini:0.00,  fin:1.74,  lado:'der', color:'var(--c-rahul)',  gujarati:'કેમ છો શ્રીયાબેન?', espanol:'¿Cómo está Shriya?', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_rahul.png' },
+  { personaje:'શ્રીયાબેન', ini:1.81,  fin:4.69,  lado:'izq', color:'var(--c-shriya)', gujarati:'સારું છે. કેમ છો રાહુલભાઈ?', espanol:'Bien. ¿Cómo está Rajul?', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_shriya.png' },
+  { personaje:'રાહુલભાઈ',  ini:4.72,  fin:6.57,  lado:'der', color:'var(--c-rahul)',  gujarati:'મજામાં. આ મામા છે?', espanol:'Muy bien. ¿Este es tu tío materno?', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_rahul.png' },
+  { personaje:'શ્રીયાબેન', ini:6.67,  fin:11.80, lado:'izq', color:'var(--c-shriya)', gujarati:'હા, આ મામા છે, રીતુભાઈ. અને એ કાકા  છે, સોહાનભાઈ.', espanol:'Sí, este es mi tío materno, Ritu. Y ese es mi tío paterno, Sojan.', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_shriya.png' },
+  { personaje:'રાહુલભાઈ',  ini:11.80, fin:13.42, lado:'der', color:'var(--c-rahul)',  gujarati:'નમસ્તે રીતુભાઈ.', espanol:'Hola Ritu.', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_rahul.png' },
+  { personaje:'રીતુભાઈ',   ini:13.47, fin:15.22, lado:'izq', color:'var(--c-ritu)',   gujarati:'નમસ્તે  રાહુલભાઈ.', espanol:'Hola Rajul.', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_ritu.png' },
+  { personaje:'રાહુલભાઈ',  ini:15.23, fin:17.21, lado:'der', color:'var(--c-rahul)',  gujarati:'નમસ્તે સોહાનભાઈ.', espanol:'Hola Sojan.', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_rahul.png' },
+  { personaje:'સોહાનભાઈ',  ini:17.33, fin:19.42, lado:'izq', color:'var(--c-sohan)',  gujarati:'નમસ્તે  રાહુલભાઈ.', espanol:'Hola Rajul.', avatar:'https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_sohan.png' },
+];
+
+const audio = document.getElementById('audio');
+const escena = document.getElementById('escena');
+const fill = document.getElementById('progress-fill');
+let burbujas = [];
+let mostradas = [];
+let rafId = null;
+
+function construirEscena(){
+  escena.innerHTML = '';
+  burbujas = [];
+  mostradas = DIALOGO.map(()=>false);
+  DIALOGO.forEach(function(d, i){
+    var b = document.createElement('div');
+    b.className = 'burbuja ' + d.lado;
+    b.id = 'burbuja-'+i;
+    b.innerHTML =
+      '<div class="avatar" style="background-image: url(\''+d.avatar+'\'); background-color: '+d.color+';"></div>'+
+      '<div class="caja" style="background:'+d.color+';">'+
+        '<div class="gu-texto">'+d.gujarati+'</div>'+
+        '<div class="es-texto">'+d.espanol+'</div>'+
+      '</div>';
+    escena.appendChild(b);
+    burbujas.push(b);
+  });
+}
+
+function reproducir(){
+  audio.src = AUDIO_URL;
+  audio.currentTime = 0;
+  audio.play().catch(function(){
+    alert('No se pudo reproducir el audio. Verifica tu conexión.');
+  });
+  document.getElementById('btn-play').style.display = 'none';
+  document.getElementById('btn-replay').style.display = 'inline-block';
+  seguir();
+}
+
+var VISIBLES_MAX = 2;
+
+function seguir(){
+  cancelAnimationFrame(rafId);
+  function loop(){
+    var t = audio.currentTime;
+    var dur = audio.duration || 19.5;
+    fill.style.width = Math.min(100, (t/dur)*100) + '%';
+
+    DIALOGO.forEach(function(d, i){
+      
+      // Agrupar los índices en pares: 0 y 1 son un par, 2 y 3 otro, 4 y 5, etc.
+      var parInicio = Math.floor(i / 2) * 2;
+      var parFin = parInicio + 1;
+
+      if(t >= d.ini && !mostradas[i]){
+        
+        // 1. Mostrar la primera burbuja del par
+        if (!mostradas[parInicio]) {
+          mostradas[parInicio] = true;
+          burbujas[parInicio].classList.add('visible');
+          burbujas[parInicio].classList.remove('saliente');
+        }
+        
+        // 2. Mostrar la segunda burbuja del par AL MISMO TIEMPO (si existe en el array)
+        if (parFin < DIALOGO.length && !mostradas[parFin]) {
+          mostradas[parFin] = true;
+          burbujas[parFin].classList.add('visible');
+          burbujas[parFin].classList.remove('saliente');
+        }
+
+        // 3. Ocultar todas las burbujas de los pares anteriores
+        for(var j = 0; j < parInicio; j++){
+          burbujas[j].classList.add('saliente');
+          burbujas[j].classList.remove('visible');
+        }
+      }
+      
+      // 4. El efecto de "iluminar" (activa) sigue funcionando para cada personaje en su turno
+      var activa = (t >= d.ini && t <= d.fin);
+      burbujas[i].classList.toggle('activa', activa);
+    });
+
+    if(!audio.paused && !audio.ended){
+      rafId = requestAnimationFrame(loop);
+    }
+  }
+  rafId = requestAnimationFrame(loop);
+}
+
+audio.addEventListener('ended', function(){
+  fill.style.width = '100%';
+  burbujas.forEach(function(b){ b.classList.remove('activa'); });
+  document.getElementById('btn-empezar').classList.add('activo');
+});
+
+function reiniciar(){
+  audio.pause();
+  audio.currentTime = 0;
+  fill.style.width = '0%';
+  construirEscena();
+  reproducir();
+}
+
+construirEscena();
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+</body>
+</html>
