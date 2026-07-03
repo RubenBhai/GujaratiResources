@@ -1,0 +1,65 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#2C2420; --surface:#362C28; --surface-light:#423631; --paper:#E8D9C0;
+  --sindoor:#A8362A; --sindoor-deep:#832920; --saffron:#B8863D; --olive:#5F6E4F;
+  --verde:#4A6B53; --verde-h:#3D5A45; --ink-soft:#C8B99A; --border:rgba(184,134,61,0.15);
+  --correct:#4A7C59; --correct-bg:rgba(74,124,89,0.25); --correct-text:#7FBF8E;
+  --wrong:#CF4444; --wrong-bg:rgba(207,68,68,0.25); --wrong-text:#FF9999;
+  --r-sm:12px; --r-md:16px; --r-lg:20px; --r-full:50px;
+}
+body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.07),transparent 60%);
+  color:var(--paper); font-family:'Source Sans 3',sans-serif; min-height:100vh; padding-bottom:20px; }
+.gu { font-family:'Noto Serif Gujarati',serif; }
+.nav-bar { position:sticky; top:0; z-index:100; background:rgba(44,36,32,0.9); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:12px 20px; gap:8px; }
+.nav-btn { background:var(--surface); color:var(--paper); padding:10px 18px; border-radius:var(--r-full);
+  font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid var(--border); cursor:pointer; }
+.nav-btn.home { color:var(--saffron); font-size:1.1rem; }
+.wrap { max-width:480px; margin:0 auto; padding:24px 20px; display:flex; flex-direction:column; align-items:center; gap:20px; }
+.badge { display:inline-block; background:rgba(168,54,42,0.2); color:#EFA69D; padding:8px 20px;
+  border-radius:var(--r-full); font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; }
+h2 { font-family:'Fraunces',serif; font-size:1.5rem; text-align:center; }
+.subtitle { color:var(--ink-soft); font-size:1rem; line-height:1.6; text-align:center; }
+
+/* Tarjeta con la oración en español */
+.target-card { width:100%; background:var(--surface); border:2px solid var(--saffron);
+  border-radius:var(--r-lg); padding:24px; text-align:center; box-shadow:0 8px 28px rgba(0,0,0,0.25); }
+.target-label { font-size:0.8rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px; }
+.target-es { font-size:1.6rem; color:var(--paper); font-weight:600; }
+
+/* Zona de construcción (lo que el estudiante arma) */
+.build-zone { width:100%; min-height:72px; background:var(--surface); border:2px dashed var(--border);
+  border-radius:var(--r-md); padding:14px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center; }
+.build-zone.empty::before { content:'Toca las palabras de abajo...'; color:var(--ink-soft); font-size:0.95rem; }
+
+/* Sopa de palabras (opciones) */
+.word-bank { width:100%; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+.word-chip { font-family:'Noto Serif Gujarati',serif; font-size:1.8rem; color:var(--paper);
+  background:var(--surface); border:2px solid var(--border); border-radius:var(--r-md);
+  padding:14px 22px; cursor:pointer; transition:all 0.2s; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+.word-chip:hover { border-color:var(--saffron); background:var(--surface-light); transform:translateY(-2px); }
+.word-chip.used { opacity:0.3; pointer-events:none; }
+.chip-built { font-family:'Noto Serif Gujarati',serif; font-size:1.8rem; color:var(--paper);
+  background:var(--surface-light); border:2px solid var(--saffron); border-radius:var(--r-md);
+  padding:12px 20px; cursor:pointer; }
+.chip-built:hover { border-color:var(--sindoor); }
+
+/* Botones */
+.btn-main { width:100%; border:none; padding:16px; border-radius:var(--r-full); cursor:pointer;
+  font-weight:700; font-size:1.05rem; background:var(--verde); color:white; text-align:center;
+  display:block; box-shadow:0 4px 14px rgba(74,107,83,0.3); font-family:inherit; }
+.btn-main:hover { background:var(--verde-h); }
+.btn-main:disabled { opacity:0.4; cursor:default; }
+.btn-sec { width:100%; padding:14px; border-radius:var(--r-full); font-weight:600; font-size:1rem;
+  background:var(--surface); border:1px solid var(--border); color:var(--ink-soft); text-align:center;
+  cursor:pointer; font-family:inherit; }
+.btn-sec:hover { background:var(--surface-light); color:var(--saffron); }
+
+.feedback { font-size:1.2rem; font-weight:700; min-height:30px; text-align:center; }
+.feedback.ok { color:var(--correct-text); }
+.feedback.err { color:var(--wrong-text); }
+.feedback .traduccion { display:block; font-size:1rem; color:var(--ink-soft); font-weight:400; margin-top:4px; }
+
+.score-pill { font-size:0.9rem; color:var(--ink-soft); background:rgba(255,255,255,0.03);
+  padding:8px 18px; border-radius:var(--r-full); }
+.score-pill span { color:var(--saffron); font-weight:700; }
