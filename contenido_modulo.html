@@ -11,10 +11,46 @@
 <!-- Fuentes -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Vinculamos tu tema global amigable -->
-<link rel="stylesheet" href="tema-amigable.css">
-
 <style>
+  * { box-sizing: border-box; }
+
+  :root {
+    --paper: #F0E6D2;
+    --paper-deep: #E5D8BC;
+    --paper-card: rgba(255,255,255,0.34);
+    --ink: #2A2420;
+    --ink-soft: #5B5048;
+    --sindoor: #A8362A;
+    --sindoor-deep: #832920;
+    --saffron: #B8863D;
+    --olive: #5F6E4F;
+    --rule: rgba(42, 36, 32, 0.16);
+  }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.65;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(184, 134, 61, 0.12), transparent 60%),
+      radial-gradient(ellipse at 70% 80%, rgba(168, 54, 42, 0.08), transparent 60%);
+    animation: fondoVivo 8s ease-in-out infinite alternate, moverDestellos 12s ease-in-out infinite;
+  }
+
+  @keyframes fondoVivo {
+    0%   { background-color: #F0E6D2; }
+    50%  { background-color: #F5EDDE; }
+    100% { background-color: #EDE0CA; }
+  }
+
+  @keyframes moverDestellos {
+    0% { background-position: 30% 20%, 70% 80%; }
+    50% { background-position: 40% 30%, 60% 70%; }
+    100% { background-position: 20% 15%, 80% 85%; }
+  }
+
   /* ── ESTILOS ESPECÍFICOS PARA ESTA PÁGINA ── */
 
   .nav-bar {
