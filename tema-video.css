@@ -36,11 +36,14 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 /* Escenario tipo chat */
 .escena { 
   width:100%; background:var(--surface);
-  border:1px solid var(--border); border-radius:var(--r-lg); padding:20px 16px;
-  display:flex; flex-direction:column; gap:14px; box-shadow:0 8px 28px rgba(0,0,0,0.25);
+  border:1px solid var(--border); border-radius:var(--r-lg); 
+  padding:14px 12px; /* Reducido de 20px 16px */
+  display:flex; flex-direction:column; 
+  gap:10px; /* Reducido de 14px */
+  box-shadow:0 8px 28px rgba(0,0,0,0.25);
   transition:height 0.45s ease; 
   position: relative; 
-  justify-content: space-between; /* 1ra arriba, 2da abajo, fondo visible en el centro */
+  justify-content: space-between;
   overflow-y: auto; overflow-x: hidden;
 }
 
@@ -58,20 +61,36 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 }
 
 .burbuja:not(.visible):not(.saliente) { display:none; }
-.burbuja { max-width:95%; align-items:center; gap:12px; position: relative; z-index: 1; }
+.burbuja { max-width:95%; align-items:center; gap:8px; position: relative; z-index: 1; }
 .burbuja.visible { display:flex; animation:aparecerBurbuja 0.4s ease forwards; }
 @keyframes aparecerBurbuja { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
 .burbuja.izq, .burbuja.der { align-self:flex-end; flex-direction:row; }
 
-.burbuja .avatar { width:48px; height:48px; border-radius:50%;
+.burbuja .avatar { 
+  width:40px; height:40px; /* Reducido de 48px */
   border:2px solid rgba(255,255,255,0.25); background-size:cover; background-position:center;
-  flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.3); }
+  flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.3); 
+}
 
-.burbuja .caja { padding:14px 18px; border-radius:18px; box-shadow:0 4px 12px rgba(0,0,0,0.18); flex-grow:1; }
+.burbuja .caja { 
+  padding:10px 14px; /* Reducido de 14px 18px */
+  border-radius:14px; /* Un poco más sutil para el nuevo tamaño */
+  box-shadow:0 4px 12px rgba(0,0,0,0.18); flex-grow:1; 
+}
 .burbuja.izq .caja { border-top-left-radius:4px; }
 .burbuja.der .caja { border-top-right-radius:4px; }
-.burbuja .gu-texto { font-family:'Noto Serif Gujarati',serif; font-size:1.5rem; line-height:1.5; color:#fff; }
-.burbuja .es-texto { font-size:0.95rem; color:rgba(255,255,255,0.85); margin-top:6px; font-style:italic; }
+
+.burbuja .gu-texto { 
+  font-family:'Noto Serif Gujarati',serif; 
+  font-size:1.2rem; /* Reducido de 1.5rem para que no sature tanto */
+  line-height:1.4; color:#fff; 
+}
+
+.burbuja .es-texto { 
+  font-size:0.85rem; /* Reducido de 0.95rem */
+  color:rgba(255,255,255,0.85); margin-top:4px; font-style:italic; 
+}
+
 .burbuja.activa .caja { outline:3px solid rgba(255,255,255,0.4); }
 
 /* Fix de flexbox gap (Display none borra márgenes fantasmas) */
@@ -87,7 +106,9 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 
 /* Modo idioma: ocultar textos según clase en .escena */
 .escena.solo-esp .gu-texto { display:none; }
-.escena.solo-esp .es-texto { margin-top:0; font-style:normal; font-size:1.15rem; color:#fff; }
+
+.escena.solo-esp .es-texto { margin-top:0; font-style:normal; font-size:1rem; color:#fff; }
+
 .escena.solo-guj .es-texto { display:none; }
 
 /* Controles */
