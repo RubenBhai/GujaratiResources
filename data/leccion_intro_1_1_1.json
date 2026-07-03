@@ -41,11 +41,11 @@
         },
         {
           "tipo": "info-box",
-          "html": "<p>¿Notaste la diferencia entre <strong>'a'</strong> y <strong>'aa'</strong>? La 'a' es cerrada — como en <em>\"gracias\"</em>. La 'aa' es abierta — como en <em>\"mamá\"</em>.</p>"
+          "html": "<p>¿Notaste la diferencia entre <strong>'a'</strong> y <strong>'aa'</strong>? La 'a' es cerrada — como en <em>\"graci<strong>a</strong>s\"</em>. La 'aa' es abierta — como en <em>\"mam<strong>á</strong>\"</em>.</p>"
         },
         {
           "tipo": "info-box",
-          "html": "<p>La matra va pegada a la consonante y cambia su vocal. El pequeño círculo de <span class=\"gu\">ઓ</span> se reemplaza por la consonante. En la siguiente página verás cómo funciona.</p>"
+          "html": "<p>La matra va pegada a la consonante y cambia su vocal. Por ejemplo, para ઓ  su matra es  ો.   El pequeño círculo se reemplaza por la consonante. En la siguiente página verás cómo funciona.</p>"
         }
       ],
       "boton_principal": { "tipo": "pantalla", "texto": "Siguiente →", "destino": 3 },
