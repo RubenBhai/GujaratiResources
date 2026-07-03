@@ -1,0 +1,43 @@
+{
+  "titulo": "Practica tu pronunciación — છ",
+  "descripcion": "Pronuncia cada letra. Gemini evaluará cada pronunciación.",
+  "sesiones": [
+    {
+      "titulo": "છ",
+      "elementos": [
+        {
+          "gujarati": "છ"
+        },
+        {
+          "gujarati": "છ"
+        },
+        {
+          "gujarati": "છ"
+        }
+      ]
+    },
+    {
+      "titulo": "ક — મ — છ",
+      "elementos": [
+        {
+          "gujarati": "ક"
+        },
+        {
+          "gujarati": "મ"
+        },
+        {
+          "gujarati": "છ"
+        },
+        {
+          "gujarati": "ક"
+        },
+        {
+          "gujarati": "મ"
+        },
+        {
+          "gujarati": "છ"
+        }
+      ]
+    }
+  ]
+}

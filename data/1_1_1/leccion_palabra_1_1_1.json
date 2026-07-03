@@ -1,0 +1,74 @@
+{
+  "leccion": "1.1.1",
+  "home": "leccion_intro.html?leccion=1.1.1",
+  "anterior_primera": "leccion_palabra_intro.html?leccion=1.1.1",
+  "practicar": "practica.html?modulo=1.1&leccion=1",
+  "siguiente_leccion": "Leccion_1_1_2_intro.html",
+  "siguiente_final": "juego.html?leccion=1.1.1",
+  "palabras": [
+    {
+      "gujarati": "કેમ છો?",
+      "significado": "¿cómo estás?",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_chho.png",
+      "pronunciacion": "ક-ે-મ + છ-ો → kem + <strong>chho</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_chho.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3"
+    },
+    {
+      "gujarati": "કેમ કે",
+      "significado": "porque",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke.png",
+      "pronunciacion": "ક-ે-મ + ક-ે → kem + <strong>ke</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3"
+    },
+    {
+      "gujarati": "કેમ",
+      "significado": "¿cómo? / ¿por qué?",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem.png",
+      "pronunciacion": "ક-ે-મ → <strong>kem</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3"
+    },
+    {
+      "gujarati": "કામ",
+      "significado": "trabajo",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaam.png",
+      "pronunciacion": "ક-ા-મ → kaa-<strong>m</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaam.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3"
+    },
+    {
+      "gujarati": "મોકો",
+      "significado": "oportunidad",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_moko.png",
+      "pronunciacion": "મ-ો-ક-ો → mo-<strong>ko</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_moko.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3"
+    },
+    {
+      "gujarati": "મામા",
+      "significado": "tío materno",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa_info.png",
+      "pronunciacion": "મ-ા-મ-ા → maa-<strong>maa</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maamaa.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3"
+    },
+    {
+      "gujarati": "કાકા",
+      "significado": "tío paterno",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa_info.png",
+      "pronunciacion": "ક-ા-ક-ા → kaa-<strong>kaa</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaakaa.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3"
+    },
+    {
+      "gujarati": "ઓછો",
+      "significado": "poco",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ochho.png",
+      "pronunciacion": "ઓ-છ-ો → o-<strong>chho</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ochho.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3"
+    }
+  ]
+}

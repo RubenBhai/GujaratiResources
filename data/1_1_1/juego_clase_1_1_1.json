@@ -1,0 +1,30 @@
+{
+  "leccion": "1.1.1",
+  "letters": [
+    { "letter": "ક", "answer": "ka", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ka.png", "desc": "Suena como la <strong>k</strong> de <strong>ka</strong>sa" },
+    { "letter": "મ", "answer": "ma", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ma.png", "desc": "Suena como la <strong>m</strong> de <strong>ma</strong>má" },
+    { "letter": "છ", "answer": "chha", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chha.png", "desc": "<strong>ch</strong> aspirada", "significado": "número 6" },
+    { "letter": "આ", "answer": "aa", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png", "desc": "Vocal <strong>aa</strong> — \"a\" larga", "significado": "esto" },
+    { "letter": "એ", "answer": "e", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png", "desc": "Vocal <strong>e</strong> — como en caf<strong>é</strong>", "significado": "eso" },
+    { "letter": "ઓ", "answer": "o", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png", "desc": "Vocal <strong>o</strong> — como en s<strong>o</strong>l" }
+  ],
+  "extras": [
+    { "letter": "કા", "answer": "kaa", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_kaa.png" },
+    { "letter": "કે", "answer": "ke", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ke.png" },
+    { "letter": "કો", "answer": "ko", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ko.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ko.png" },
+    { "letter": "મા", "answer": "maa", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_maa.png", "significado": "mamá" },
+    { "letter": "મે", "answer": "me", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_me.png" },
+    { "letter": "મો", "answer": "mo", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_mo.png" },
+    { "letter": "છા", "answer": "chhaa", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhaa.png" },
+    { "letter": "છે", "answer": "chhe", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhe.png", "significado": "es, está, hay" },
+    { "letter": "છો", "answer": "chho", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chho.png" },
+    { "letter": "કેમ છો?", "answer": "kem chho?", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_chho.png", "significado": "¿cómo estás?" },
+    { "letter": "મામા", "answer": "maamaa", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa.png", "significado": "tío materno" },
+    { "letter": "કાકા", "answer": "kaakaa", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa.png", "significado": "tío paterno" },
+    { "letter": "મોકો", "answer": "moko", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_moko.png", "significado": "oportunidad" },
+    { "letter": "કામ", "answer": "kaam", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaam.png", "significado": "trabajo" },
+    { "letter": "કેમ?", "answer": "kem", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem.png", "significado": "¿por qué?" },
+    { "letter": "કેમ કે...", "answer": "kem ke...", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke.png", "significado": "porque..." },
+    { "letter": "ઓછો", "answer": "ochho", "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3", "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ochho.png", "significado": "poco" }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "leccion": "1.1.1",
+  "resumen": {
+    "consonantes": 3,
+    "vocales": 3,
+    "palabras": 8,
+    "frase_ejemplo": "કેમ છો?"
+  },
+  "letras_aprendidas": ["ક", "મ", "છ", "આ", "એ", "ઓ"],
+  "palabras_aprendidas": [
+    { "gujarati": "કેમ છો?", "se_dice": "kem chho?", "significa": "¿cómo estás?" },
+    { "gujarati": "કેમ કે", "se_dice": "kem ke", "significa": "porque" },
+    { "gujarati": "કેમ", "se_dice": "kem", "significa": "¿cómo? / ¿por qué?" },
+    { "gujarati": "કામ", "se_dice": "kaam", "significa": "trabajo" },
+    { "gujarati": "મોકો", "se_dice": "mo-ko", "significa": "oportunidad" },
+    { "gujarati": "મામા", "se_dice": "maa-maa", "significa": "tío materno" },
+    { "gujarati": "કાકા", "se_dice": "kaa-kaa", "significa": "tío paterno" },
+    { "gujarati": "ઓછો", "se_dice": "o-chho", "significa": "poco" }
+  ],
+  "proxima_leccion": {
+    "cantidad_letras": 4,
+    "letras": ["સ", "ર", "હ", "ઉ"],
+    "codigo": "1.1.2"
+  }
+}

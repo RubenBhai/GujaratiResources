@@ -1,0 +1,37 @@
+{
+  "titulo": "Practica tu pronunciación — મ",
+  "descripcion": "Pronuncia cada letra. Gemini evaluará cada pronunciación.",
+  "sesiones": [
+    {
+      "titulo": "મ",
+      "elementos": [
+        {
+          "gujarati": "મ"
+        },
+        {
+          "gujarati": "મ"
+        },
+        {
+          "gujarati": "મ"
+        }
+      ]
+    },
+    {
+      "titulo": "ક — મ",
+      "elementos": [
+        {
+          "gujarati": "ક"
+        },
+        {
+          "gujarati": "મ"
+        },
+        {
+          "gujarati": "ક"
+        },
+        {
+          "gujarati": "મ"
+        }
+      ]
+    }
+  ]
+}
