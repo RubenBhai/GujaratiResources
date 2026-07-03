@@ -151,13 +151,13 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     position: fixed; 
     top: 0; left: 0; 
     width: 100vw; 
-    height: 100vh !important; 
+    height: 100vh !important; /* Anula el cálculo de altura de JavaScript */
     border-radius: 0; 
     border: none; 
     padding: 20px 5%;
     z-index: 10;
-    align-items: flex-end; 
-    justify-content: flex-start;
+    align-items: flex-end; /* Mantiene las burbujas alineadas a la derecha */
+    justify-content: space-between; /* ¡CAMBIADO! Distribuye la 1ra arriba y la 2da abajo */
   }
   
   .bg-escena { border-radius: 0; opacity: 0.4; }
@@ -179,10 +179,10 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     display: none !important;
   }
 
-  /* 5. PLAY/PAUSE (Un poco más ARRIBA) */
+  /* 5. BOTÓN REPRODUCIR / PAUSA (Ahora ABAJO) */
   body.video-iniciado .wrap > div[style*="display: flex"] {
     position: fixed; 
-    bottom: 75px; /* Subido de 20px a 75px */
+    bottom: 20px; /* Bajó a la base de la pantalla */
     left: 20px; 
     transform: none; 
     z-index: 100;
@@ -195,12 +195,12 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
-  /* 6. BOTÓN EMPEZAR (Un poco más ABAJO, alineado verticalmente) */
+  /* 6. BOTÓN EMPEZAR (Ahora ARRIBA de reproducir) */
   body.video-iniciado #btn-empezar {
     display: block !important;
     position: fixed;
-    bottom: 20px; /* Bajado a la base de la pantalla */
-    left: 20px;  /* Alineado perfectamente debajo del Play */
+    bottom: 75px; /* Subió a la posición superior */
+    left: 20px;  /* Alineado perfectamente en el mismo eje izquierdo */
     width: auto;
     padding: 10px 22px;
     font-size: 0.95rem;
