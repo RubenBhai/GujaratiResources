@@ -135,41 +135,38 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 .progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--saffron),var(--sindoor)); transition:width 0.2s linear; }
 
 /* =========================================================
-   MODO INMERSIVO HORIZONTAL (Landscape)
+   MODO INMERSIVO HORIZONTAL OPTIMIZADO (Landscape)
 ========================================================= */
 @media (orientation: landscape) and (max-height: 600px) {
-  /* 1. Ocultar textos y barras para tener lienzo limpio */
-  .nav-bar, #badge, #titulo, #intro, #btn-empezar { 
+  /* 1. Ocultar textos fijos superiores para limpiar el lienzo */
+  .nav-bar, #badge, #titulo, #intro { 
     display: none !important; 
   }
   
   body { padding-bottom: 0; }
   .wrap { padding: 0; max-width: 100%; height: 100vh; }
   
-  /* 2. La escena se vuelve de pantalla completa */
+  /* 2. La escena ocupa toda la pantalla */
   .escena {
     position: fixed; 
     top: 0; left: 0; 
     width: 100vw; 
-    height: 100vh !important; /* Anula el cálculo de altura de JavaScript */
+    height: 100vh !important; 
     border-radius: 0; 
     border: none; 
     padding: 20px 5%;
     z-index: 10;
-    /* Forzamos a que todo el contenido se vaya a la derecha */
     align-items: flex-end; 
     justify-content: flex-start;
   }
   
   .bg-escena { border-radius: 0; opacity: 0.4; }
   
-  /* 3. Las burbujas ocupan máximo la mitad de la pantalla y se alinean a la derecha */
+  /* 3. Ajuste de burbujas en horizontal */
   .burbuja { 
     max-width: 50%; 
     align-self: flex-end !important; 
   }
-  
-  /* Asegurar que las burbujas de la izquierda no se estiren */
   .burbuja.izq, .burbuja.der { flex-direction: row; }
   
   /* 4. Barra de progreso fija arriba */
@@ -177,19 +174,45 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; border-radius: 0; 
   }
   
-  /* 5. Controles flotantes en la parte inferior central */
-  .wrap > div[style*="display: flex"] {
+  /* Por defecto ocultamos el botón de salida en horizontal hasta que le den Play */
+  #btn-empezar {
+    display: none !important;
+  }
+
+  /* 5. CUANDO EL VIDEO YA INICIÓ (Mover controles abajo a la izquierda) */
+  body.video-iniciado .wrap > div[style*="display: flex"] {
     position: fixed; 
     bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%);
+    left: 20px; /* Alineación a la izquierda */
+    transform: none; /* Quitamos el centrado horizontal */
     z-index: 100;
     background: rgba(44,36,32,0.85); 
     backdrop-filter: blur(8px);
-    padding: 10px 20px; 
+    padding: 10px; 
     border-radius: var(--r-full); 
     width: auto !important;
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  /* Mostrar y reubicar el botón "Empezar" justo al lado del Play/Pause */
+  body.video-iniciado #btn-empezar {
+    display: block !important;
+    position: fixed;
+    bottom: 20px;
+    left: 95px; /* Separación matemática perfecta respecto al Play/Pause */
+    width: auto;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    z-index: 100;
+    border-radius: var(--r-full);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: var(--verde);
+  }
+
+  /* Ocultar el selector de idioma para evitar ruidos visuales durante la reproducción */
+  body.video-iniciado .lang-row {
+    display: none !important;
   }
 }

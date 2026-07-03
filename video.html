@@ -175,6 +175,10 @@ function setIdioma(modo){
 
 /* ── Reproducir / Pausar ── */
 function reproducir(){
+
+  document.body.classList.add('video-iniciado');
+  document.getElementById('btn-empezar').textContent = 'Empezar →';
+
   // Si ya hay burbujas mostradas (el usuario repite), reiniciamos la escena
   if (mostradas.some(function(m) { return m; })) {
     fill.style.width = '0%';
