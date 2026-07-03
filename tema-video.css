@@ -179,28 +179,28 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     display: none !important;
   }
 
-  /* 5. CUANDO EL VIDEO YA INICIÓ (Mover controles abajo a la izquierda) */
+  /* 5. PLAY/PAUSE (Un poco más ARRIBA) */
   body.video-iniciado .wrap > div[style*="display: flex"] {
     position: fixed; 
-    bottom: 20px; 
-    left: 20px; /* Alineación a la izquierda */
-    transform: none; /* Quitamos el centrado horizontal */
+    bottom: 75px; /* Subido de 20px a 75px */
+    left: 20px; 
+    transform: none; 
     z-index: 100;
     background: rgba(44,36,32,0.85); 
     backdrop-filter: blur(8px);
-    padding: 10px; 
+    padding: 8px; 
     border-radius: var(--r-full); 
     width: auto !important;
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
-  /* Mostrar y reubicar el botón "Empezar" justo al lado del Play/Pause */
+  /* 6. BOTÓN EMPEZAR (Un poco más ABAJO, alineado verticalmente) */
   body.video-iniciado #btn-empezar {
     display: block !important;
     position: fixed;
-    bottom: 20px;
-    left: 95px; /* Separación matemática perfecta respecto al Play/Pause */
+    bottom: 20px; /* Bajado a la base de la pantalla */
+    left: 20px;  /* Alineado perfectamente debajo del Play */
     width: auto;
     padding: 10px 22px;
     font-size: 0.95rem;
