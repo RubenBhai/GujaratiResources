@@ -45,7 +45,7 @@
         },
         {
           "tipo": "info-box",
-          "html": "<p>La matra va pegada a la consonante y cambia su vocal. Por ejemplo, para ઓ  su matra es  ો.   El pequeño círculo se reemplaza por la consonante. En la siguiente página verás cómo funciona.</p>"
+          "html": "<p>La matra va pegada a la consonante y cambia su vocal. Por ejemplo, para <strong>ઓ</strong>  su matra es  <strong>ો</strong>.   El pequeño círculo se reemplaza por la consonante. En la siguiente página verás cómo funciona.</p>"
         }
       ],
       "boton_principal": { "tipo": "pantalla", "texto": "Siguiente →", "destino": 3 },
