@@ -19,11 +19,11 @@
 </nav>
 
 <div class="wrap" style="padding-bottom:8px;">
-  <span class="badge">Haz tu plana</span>
 
   <div class="info-box" style="font-size:1.2rem; color:var(--paper); line-height:1.7; text-align:center;">
-    Haz esta plana <strong>varias veces</strong>.<br><br>
-    Cada vez que termines de dibujar la letra, pronuncia en voz alta:
+    Haz esta plana <strong>varias veces</strong>.<br>
+    Al terminar de dibujarla,<br>
+    pronuncia en voz alta:
     <span id="roman-label" style="color:var(--saffron); font-size:1.6rem; font-weight:700;"></span>
   </div>
 
@@ -33,8 +33,10 @@
 </div>
 
 <div class="bottom-actions" style="max-width:340px; margin:0 auto; padding:0 0 24px 0; gap:10px;">
-  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar">&#128266; Escuchar</button>
-  <a class="btn-fin" style="margin-top:0;" id="btn-continuar" href="#">Ya terminé, continuar &rarr;</a>
+  <div style="display:flex; gap:10px;">
+    <button class="btn-sec" style="flex:1; margin-top:0; padding:12px 8px; font-size:0.9rem; border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar">🎵 Escucha</button>
+    <a class="btn-fin" style="flex:1; margin-top:0; padding:12px 8px; font-size:0.9rem;" id="btn-continuar" href="#">Continuar</a>
+  </div>
 </div>
 
 <audio id="player"></audio>
@@ -80,14 +82,14 @@
       document.getElementById('btn-continuar').href = continuarUrl;
 
       const btnEscuchar = document.getElementById('btn-escuchar');
-      btnEscuchar.innerHTML = '&#128266; Escuchar "' + label + '"';
+      btnEscuchar.innerHTML = '🎵 Escucha';
       btnEscuchar.onclick = function(){
         btnEscuchar.classList.add('playing');
         btnEscuchar.textContent = '▶ Reproduciendo...';
         player.src = actual.audio; player.playbackRate = 1.0; player.play();
         player.onended = function(){
           btnEscuchar.classList.remove('playing');
-          btnEscuchar.innerHTML = '&#128266; Escuchar "' + label + '"';
+          btnEscuchar.innerHTML = '🎵 Escucha';
         };
       };
     })

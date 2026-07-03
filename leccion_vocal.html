@@ -34,8 +34,9 @@
   <!-- tipo: plana -->
   <div id="bloque-plana" style="display:none;">
     <div class="info-box" style="font-size:1.2rem; color:var(--paper); line-height:1.7; text-align:center;">
-      Haz esta plana <strong>varias veces</strong>.<br><br>
-      Cada vez que termines de dibujar la letra, pronuncia en voz alta:
+      Haz esta plana <strong>varias veces</strong>.<br>
+      Al terminar de dibujarla,<br>
+      pronuncia en voz alta:
       <span id="roman-label" style="color:var(--saffron); font-size:1.6rem; font-weight:700;"></span>
     </div>
     <div class="frame-img" style="max-width:340px; margin:0 auto;">
@@ -69,8 +70,10 @@
 
 <!-- tipo: plana -->
 <div class="bottom-actions" id="bottom-plana" style="max-width:340px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
-  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar-plana"></button>
-  <a class="btn-fin" style="margin-top:0;" id="btn-continuar-plana" href="#">Ya terminé, continuar &rarr;</a>
+  <div style="display:flex; gap:10px;">
+    <button class="btn-sec" style="flex:1; margin-top:0; padding:12px 8px; font-size:0.9rem; border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar-plana"></button>
+    <a class="btn-fin" style="flex:1; margin-top:0; padding:12px 8px; font-size:0.9rem;" id="btn-continuar-plana" href="#">Continuar</a>
+  </div>
 </div>
 
 <audio id="player"></audio>
@@ -189,7 +192,7 @@
 
       } else if (actual.tipo === 'plana') {
         document.getElementById('page-title').textContent = 'Plana ' + actual.roman + ' · Piensa en Gujarati';
-        document.getElementById('badge').textContent = 'Haz tu plana';
+        document.getElementById('badge').style.display = 'none';
         document.getElementById('roman-label').textContent = '"' + actual.roman + '"';
 
         const img = document.getElementById('img-plana');
@@ -199,7 +202,7 @@
         document.getElementById('bloque-plana').style.display = '';
 
         const btnEsc = document.getElementById('btn-escuchar-plana');
-        const labelHtml = '&#128266; Escuchar "' + actual.roman + '"';
+        const labelHtml = '🎵 Escucha';
         btnEsc.innerHTML = labelHtml;
         btnEsc.onclick = function(){ playSimple(actual.audio, btnEsc, labelHtml); };
 
