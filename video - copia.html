@@ -50,7 +50,7 @@
 // ── Parámetros de URL ──
 const _params  = new URLSearchParams(location.search);
 const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
-const JSON_URL = 'data/' + _leccion + '/video_clase_' + _leccion + '.json';
+const JSON_URL = 'data/video_clase_' + _leccion + '.json';
 const _nextParam = _params.get('next');
 const _modo = _params.get('modo');   // 'desafio' = repaso antes del video interactivo
 
@@ -153,12 +153,12 @@ function mapearSecuencias(){
 
 /* ── Altura del frame = matemáticas exactas ── */
 function ajustarAltura(numDialogos){
-  // 1. Sumamos el nuevo padding de la .escena (14px arriba + 14px abajo = 28px)
-  var paddingTotal = 28; 
-  // 2. Sumamos los nuevos espacios entre burbujas (10px de gap)
-  var gapTotal = (numDialogos > 1) ? (numDialogos - 1) * 10 : 0; 
-  // 3. Bajamos la constante a 110px (40px del avatar + el alto promedio del texto compacto)
-  var alturaReal = paddingTotal + gapTotal + (110 * numDialogos);
+  // 1. Sumamos el padding de la .escena (20px arriba + 20px abajo = 40px)
+  var paddingTotal = 40; 
+  // 2. Sumamos los espacios entre burbujas (14px de gap solo si hay más de 1 diálogo)
+  var gapTotal = (numDialogos > 1) ? (numDialogos - 1) * 14 : 0; 
+  // 3. Calculamos la altura (155px es perfecto: 150 del avatar + 5 de margen para el texto)
+  var alturaReal = paddingTotal + gapTotal + (155 * numDialogos);
   
   escena.style.height = alturaReal + 'px';
 }
@@ -175,10 +175,6 @@ function setIdioma(modo){
 
 /* ── Reproducir / Pausar ── */
 function reproducir(){
-
-  document.body.classList.add('video-iniciado');
-  document.getElementById('btn-empezar').textContent = 'Empezar →';
-
   // Si ya hay burbujas mostradas (el usuario repite), reiniciamos la escena
   if (mostradas.some(function(m) { return m; })) {
     fill.style.width = '0%';

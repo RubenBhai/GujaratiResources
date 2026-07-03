@@ -11,6 +11,7 @@
 
 <!-- Vinculamos tu archivo centralizado -->
 <link rel="stylesheet" href="tema-amigable_3.css">
+<style>.frame-img::before { content: none; }</style>
 </head>
 <body>
 
@@ -49,9 +50,9 @@
 
   const _params     = new URLSearchParams(location.search);
   const _leccionRaw = _params.get('leccion') || '1.1.1';
-  const _leccion     = _leccionRaw.replace(/\./g, '_');
+  const _leccion    = _leccionRaw.replace(/\./g, '_');
   const _item       = parseInt(_params.get('item') || '1', 10);
-  const JSON_URL    = 'data/leccion_letra_' + _leccion + '.json';
+  const JSON_URL    = 'data/' + _leccion + '/leccion_letra_' + _leccion + '.json';
 
   function playAudio(url, btn) {
     btn.classList.add('playing');

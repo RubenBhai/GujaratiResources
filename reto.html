@@ -146,7 +146,7 @@
 const BACKEND_URL = 'https://gujaratitraining-production.up.railway.app';
 const _params     = new URLSearchParams(location.search);
 const _leccion    = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
-const JSON_URL    = 'data/reto_clase_' + _leccion + '.json';
+const JSON_URL    = 'data/' + _leccion + '/reto_clase_' + _leccion + '.json';
 
 document.getElementById('nav-home').href = 'leccion_intro.html?leccion=' + (_params.get('leccion') || '1.1.1');
 const SND_OK      = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';

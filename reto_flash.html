@@ -77,7 +77,15 @@ const sfx        = document.getElementById('sfx');
 // Leer parámetro ?json=nombre (sin extensión) desde la URL
 const _params  = new URLSearchParams(location.search);
 const _jsonKey = _params.get('json') || '';   // ej: "Leccion_1_1_1_c3"
-const JSON_URL = _jsonKey ? 'data/reto_flash_' + _jsonKey + '.json' : '';
+
+// Extraemos automáticamente el código de la lección (ej: "1_1_1") a partir del nombre recibido
+const _matchLeccion = _jsonKey.match(/Leccion_(\d+_\d+_\d+)/);
+const _folderLeccion = _matchLeccion ? _matchLeccion[1] : '';
+
+// Construimos la ruta dinámica apuntando a la nueva estructura de carpetas
+const JSON_URL = _jsonKey && _folderLeccion 
+  ? 'data/' + _folderLeccion + '/reto_flash_' + _jsonKey + '.json' 
+  : (_jsonKey ? 'data/reto_flash_' + _jsonKey + '.json' : '');
 
 let DATA        = null;
 let sesiones    = [];

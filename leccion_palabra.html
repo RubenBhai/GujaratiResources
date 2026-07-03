@@ -57,7 +57,7 @@
   const _leccionRaw = _params.get('leccion') || '1.1.1';
   const _leccion     = _leccionRaw.replace(/\./g, '_');
   const _item       = parseInt(_params.get('item') || '1', 10);
-  const JSON_URL    = 'data/leccion_palabra_' + _leccion + '.json';
+  const JSON_URL    = 'data/' + _leccion + '/leccion_palabra_' + _leccion + '.json';
 
   function setSpeed(s) {
     currentSpeed = s;

@@ -41,7 +41,13 @@
 <audio id="sfx"></audio>
 
 <script>
-const JSON_URL = 'data/compone_clase_1_1_1.json';
+// Leemos el parámetro 'leccion' de la URL (por ejemplo: ?leccion=1.1.1)
+const _params  = new URLSearchParams(location.search);
+const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
+
+// Construimos la ruta totalmente relativa hacia la subcarpeta correspondiente
+const JSON_URL = 'data/' + _leccion + '/compone_clase_' + _leccion + '.json';
+
 const player = document.getElementById('player');
 const sfx = document.getElementById('sfx');
 

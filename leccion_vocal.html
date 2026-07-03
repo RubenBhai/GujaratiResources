@@ -9,6 +9,7 @@
 <title id="page-title">Vocal &middot; Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-amigable_3.css">
+<style>.frame-img::before { content: none; }</style>
 </head>
 <body>
 
@@ -90,7 +91,7 @@
   const _leccionRaw = _params.get('leccion') || '1.1.1';
   const _leccion     = _leccionRaw.replace(/\./g, '_');
   const _item       = parseInt(_params.get('item') || '1', 10);
-  const JSON_URL    = 'data/leccion_vocal_' + _leccion + '.json';
+  const JSON_URL    = 'data/' + _leccion + '/leccion_vocal_' + _leccion + '.json';
 
   function playSimple(url, btn, labelHtml) {
     btn.classList.add('playing');
