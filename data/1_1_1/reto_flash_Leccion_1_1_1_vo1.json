@@ -1,29 +1,49 @@
 {
-  "titulo": "Practica tu pronunciación — Sílabas con ા",
-  "descripcion": "Pronuncia cada letra y sílaba. Gemini evaluará cada pronunciación.",
-  "sesiones": [
+  "leccion": "1.1.1",
+  "letters": [
     {
-      "titulo": "આ — છ — છા — મ — મા — કા",
-      "elementos": [
-        {
-          "gujarati": "આ"
-        },
-        {
-          "gujarati": "છ"
-        },
-        {
-          "gujarati": "છા"
-        },
-        {
-          "gujarati": "મ"
-        },
-        {
-          "gujarati": "મા"
-        },
-        {
-          "gujarati": "કા"
-        }
-      ]
+      "letter": "આ",
+      "answer": "aa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png",
+      "desc": "Vocal <strong>aa</strong> — \"a\" larga",
+      "significado": "esto"
+    },
+    {
+      "letter": "છ",
+      "answer": "chha",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chha.png",
+      "desc": "<strong>ch</strong> aspirada",
+      "significado": "número 6"
+    },
+    {
+      "letter": "મ",
+      "answer": "ma",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ma.png",
+      "desc": "Suena como la <strong>m</strong> de <strong>ma</strong>má"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "છા",
+      "answer": "chhaa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhaa.png"
+    },
+    {
+      "letter": "મા",
+      "answer": "maa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_maa.png",
+      "significado": "mamá"
+    },
+    {
+      "letter": "કા",
+      "answer": "kaa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_kaa.png"
     }
   ]
 }

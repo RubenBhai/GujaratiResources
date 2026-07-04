@@ -1,52 +1,62 @@
 {
-  "titulo": "Practica tu pronunciación — Sílabas con ે",
-  "descripcion": "Pronuncia cada letra y sílaba. Gemini evaluará cada pronunciación.",
-  "sesiones": [
+  "leccion": "1.1.1",
+  "letters": [
     {
-      "titulo": "એ — છે — મે — ક — કે",
-      "elementos": [
-        {
-          "gujarati": "એ"
-        },
-        {
-          "gujarati": "છે"
-        },
-        {
-          "gujarati": "મે"
-        },
-        {
-          "gujarati": "ક"
-        },
-        {
-          "gujarati": "કે"
-        }
-      ]
+      "letter": "એ",
+      "answer": "e",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png",
+      "desc": "Vocal <strong>e</strong> — como en caf<strong>é</strong>",
+      "significado": "eso"
     },
     {
-      "titulo": "આ — એ — કા — કે — મે — મા — છે",
-      "elementos": [
-        {
-          "gujarati": "આ"
-        },
-        {
-          "gujarati": "એ"
-        },
-        {
-          "gujarati": "કા"
-        },
-        {
-          "gujarati": "કે"
-        },
-        {
-          "gujarati": "મે"
-        },
-        {
-          "gujarati": "મા"
-        },
-        {
-          "gujarati": "છે"
-        }
-      ]
+      "letter": "ક",
+      "answer": "ka",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ka.png",
+      "desc": "Suena como la <strong>k</strong> de <strong>ka</strong>sa"
+    },
+    {
+      "letter": "આ",
+      "answer": "aa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png",
+      "desc": "Vocal <strong>aa</strong> — \"a\" larga",
+      "significado": "esto"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "છે",
+      "answer": "chhe",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhe.png",
+      "significado": "es, está, hay"
+    },
+    {
+      "letter": "મે",
+      "answer": "me",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_me.png"
+    },
+    {
+      "letter": "કે",
+      "answer": "ke",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ke.png"
+    },
+    {
+      "letter": "કા",
+      "answer": "kaa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_kaa.png"
+    },
+    {
+      "letter": "મા",
+      "answer": "maa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_maa.png",
+      "significado": "mamá"
     }
   ]
 }

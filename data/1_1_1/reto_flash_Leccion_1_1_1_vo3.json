@@ -1,52 +1,60 @@
 {
-  "titulo": "Practica tu pronunciación — Sílabas con ો",
-  "descripcion": "Pronuncia cada letra y sílaba. Gemini evaluará cada pronunciación.",
-  "sesiones": [
+  "leccion": "1.1.1",
+  "letters": [
     {
-      "titulo": "ઓ — છો — મો — છો",
-      "elementos": [
-        {
-          "gujarati": "ઓ"
-        },
-        {
-          "gujarati": "છો"
-        },
-        {
-          "gujarati": "મો"
-        },
-        {
-          "gujarati": "છો"
-        }
-      ]
+      "letter": "ઓ",
+      "answer": "o",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png",
+      "desc": "Vocal <strong>o</strong> — como en s<strong>o</strong>l"
     },
     {
-      "titulo": "એ — ઓ — કા — મે — મો — છો — કે — આ",
-      "elementos": [
-        {
-          "gujarati": "એ"
-        },
-        {
-          "gujarati": "ઓ"
-        },
-        {
-          "gujarati": "કા"
-        },
-        {
-          "gujarati": "મે"
-        },
-        {
-          "gujarati": "મો"
-        },
-        {
-          "gujarati": "છો"
-        },
-        {
-          "gujarati": "કે"
-        },
-        {
-          "gujarati": "આ"
-        }
-      ]
+      "letter": "એ",
+      "answer": "e",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png",
+      "desc": "Vocal <strong>e</strong> — como en caf<strong>é</strong>",
+      "significado": "eso"
+    },
+    {
+      "letter": "આ",
+      "answer": "aa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png",
+      "desc": "Vocal <strong>aa</strong> — \"a\" larga",
+      "significado": "esto"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "છો",
+      "answer": "chho",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chho.png"
+    },
+    {
+      "letter": "મો",
+      "answer": "mo",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_mo.png"
+    },
+    {
+      "letter": "કા",
+      "answer": "kaa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_kaa.png"
+    },
+    {
+      "letter": "મે",
+      "answer": "me",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_me.png"
+    },
+    {
+      "letter": "કે",
+      "answer": "ke",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3",
+      "img": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ke.png"
     }
   ]
 }
