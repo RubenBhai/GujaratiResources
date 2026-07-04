@@ -21,350 +21,315 @@
 
 <div class="wrap">
 
+  <!-- INTRO -->
   <div class="screen active" id="s-intro">
-    <span class="badge">🎙 A practicar</span>
-    <h1 id="intro-titulo">Pronuncia lo que aprendiste</h1>
+    <span class="badge">🎯 A reconocer</span>
+    <h1 id="intro-titulo">¡A reconocer y emparejar!</h1>
     <p class="lead" id="intro-desc"></p>
-    <p class="sesion-info" id="intro-sesiones"></p>
-    <button class="btn-main" onclick="iniciarSesion()">¡Empezar! →</button>
+    <button class="btn-main" onclick="iniciarFaseB()">¡Empezar! →</button>
     <button class="btn-sec" onclick="history.back()">Ahora no</button>
   </div>
 
-  <div class="screen" id="s-practica">
-    <span class="badge" id="practica-badge">Sesión 1 de 1</span>
-    <h2 id="practica-titulo"></h2>
-    <p class="lead">Lee y graba 🎙 tu pronunciación.</p>
-    <div style="width: 100%; max-width: 350px; display: flex; flex-direction: column; align-items: center; gap: 16px; margin: 0 auto;">
-      <div class="pronuncia-lista" id="pronuncia-lista"></div>
-      <div class="btn-row">
-        <button class="btn-sec" id="btn-elem-ant" onclick="anteriorElemento()">← Anterior</button>
-        <button class="btn-sec" id="btn-elem-sig" onclick="siguienteElemento()">Siguiente →</button>
-      </div>
-      <span id="elem-indicador" style="color:var(--ink-soft); font-size:0.9rem; margin-top: -4px;"></span>
-      <button class="btn-main" id="btn-verificar" onclick="verificar()" style="display:none;">Verificar ✓</button>
-      <div class="btn-row">
-        <button class="btn-sec" onclick="repetirSesion()">🔄 Repetir sesión</button>
-        <button class="btn-sec" onclick="history.back()">← Volver</button>
-      </div>
+  <!-- FASE B: RECONOCIMIENTO -->
+  <div class="screen" id="screen-b">
+    <span class="badge">A reconocer</span>
+    <h2>Lee antes que se revele</h2>
+    <p class="subtitle">Tienes 2 segundos</p>
+    <div style="display:flex; align-items:center; justify-content:space-between; width:100%; max-width:320px; gap:8px;">
+      <div class="game-progress" id="b-progress">1 de 10</div>
+      <div class="game-answer" id="b-answer" style="flex:1; text-align:center;"></div>
     </div>
+    <div class="game-card" id="b-card" onclick="bNext()" style="cursor:pointer; margin:0 auto;">&#2724;</div>
+    <div class="timer-wrap" style="margin:0 auto;"><div class="timer-bar" id="b-timer"></div></div>
+    <div style="display:flex; gap:10px; width:100%; max-width:320px; margin:0 auto;">
+      <button class="btn-main" id="btn-b-prev" onclick="bPrev()" style="flex:1; background:var(--surface); box-shadow:0 4px 14px rgba(0,0,0,0.15); border:1px solid var(--border); padding:14px; border-radius:50px; font-weight:700; font-size:1rem; color:var(--ink-soft); cursor:pointer; font-family:inherit; opacity:0.4; pointer-events:none;">← Anterior</button>
+      <button class="btn-main" id="btn-b-next" onclick="bNext()" style="flex:1; background:var(--verde); box-shadow:0 4px 14px rgba(74,107,83,0.3); border:none; padding:14px; border-radius:50px; font-weight:700; font-size:1rem; color:white; cursor:pointer; font-family:inherit;">Siguiente →</button>
+    </div>
+    <button class="btn-sec" id="btn-saltar-b" style="max-width:320px; width:100%; margin:0 auto;" onclick="terminarFaseB()"></button>
   </div>
 
+  <!-- FASE C: EMPAREJAMIENTO -->
+  <div class="screen" id="screen-c">
+    <div style="display:flex; align-items:center; justify-content:space-between; width:100%; gap:10px;">
+      <span class="badge">A emparejar</span>
+      <div class="match-score">Correctas: <span id="c-score">0</span> / <span id="c-total">10</span></div>
+    </div>
+    <h2>Toca la letra que escuchas</h2>
+    <div class="match-letters" id="match-letters-container"></div>
+    <p class="match-prompt" id="c-prompt">&nbsp;</p>
+    <div style="display:flex; gap:10px; width:100%;">
+      <button class="btn-main" id="btn-c-replay" onclick="matchReplay()" style="flex:1;">▶ Repetir</button>
+      <button class="btn-main" onclick="goTo('screen-b')" style="flex:1; background:var(--surface); color:var(--ink-soft); box-shadow:0 4px 14px rgba(0,0,0,0.15); border:1px solid var(--border);">← Volver</button>
+    </div>
+    <button class="btn-sec" onclick="mostrarResultadoFinal()">Saltar al final →</button>
+  </div>
+
+  <!-- RESULTADO -->
   <div class="screen" id="s-resultado">
     <div class="resultado-card">
       <div class="resultado-emoji" id="res-emoji"></div>
       <div class="resultado-msg"   id="res-msg"></div>
       <div class="resultado-pct"   id="res-pct"></div>
-      <div class="resultado-detalle" id="res-detalle"></div>
     </div>
-    <button class="btn-main" id="btn-siguiente" onclick="siguienteSesion()" style="display:none;">Siguiente sesión →</button>
     <button class="btn-main" onclick="history.back()" style="background:var(--sindoor);">✓ Continuar lección</button>
-    <button class="btn-sec"  onclick="repetirDesdeResultado()">🔄 Repetir esta sesión</button>
+    <button class="btn-sec" onclick="reiniciarTodo()">🔄 Repetir</button>
   </div>
 
 </div>
 
-<audio id="player-self"></audio>
+<audio id="player"></audio>
 <audio id="sfx"></audio>
 
 <script>
-const BACKEND_URL = 'https://gujaratitraining-production.up.railway.app';
+const player = document.getElementById('player');
+const sfx    = document.getElementById('sfx');
 const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
 const SND_ERR = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
-const playerSelf = document.getElementById('player-self');
-const sfx        = document.getElementById('sfx');
-
-// Leer parámetro ?json=nombre (sin extensión) desde la URL
+// Leer parámetro ?json=nombre (sin extensión) desde la URL — igual que antes
 const _params  = new URLSearchParams(location.search);
 const _jsonKey = _params.get('json') || '';   // ej: "Leccion_1_1_1_c3"
 
-// Extraemos automáticamente el código de la lección (ej: "1_1_1") a partir del nombre recibido
 const _matchLeccion = _jsonKey.match(/Leccion_(\d+_\d+_\d+)/);
 const _folderLeccion = _matchLeccion ? _matchLeccion[1] : '';
 
-// Construimos la ruta dinámica apuntando a la nueva estructura de carpetas
-const JSON_URL = _jsonKey && _folderLeccion 
-  ? 'data/' + _folderLeccion + '/reto_flash_' + _jsonKey + '.json' 
+const JSON_URL = _jsonKey && _folderLeccion
+  ? 'data/' + _folderLeccion + '/reto_flash_' + _jsonKey + '.json'
   : (_jsonKey ? 'data/reto_flash_' + _jsonKey + '.json' : '');
 
-let DATA        = null;
-let sesiones    = [];
-let sesionIdx   = 0;       // índice de sesión actual (0-based)
-let sesionData  = null;
+let letters = [];
+let extras  = [];
+let LetrasYFrases = [];
+let hayFaseC = false;
+let B_TOTAL = 10;
+let C_ROUNDS = 10;
 
-let mediaRecorder = null;
-let audioChunks   = {};
-let recordingId   = null;
-let elemIdx       = 0;   // elemento actual dentro de la sesión
+function shuffle(a) { return a.slice().sort(function() { return Math.random() - 0.5; }); }
 
-/* ── Utilidades ── */
-function goTo(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+function htmlConSignificado(item, sigRem) {
+  var sig = item.significado
+    ? '<div style="font-size:' + sigRem + 'rem; color:var(--saffron); font-weight:800; margin-top:6px; line-height:1.15; font-family:\'Source Sans 3\',sans-serif;">' + item.significado + '</div>'
+    : '';
+  return '<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1;">'
+       + '<div>' + item.letter + '</div>' + sig + '</div>';
+}
+
+function indicesAleatorios(cantidad) {
+  var MAX_INTENTOS = 12;
+  var total = LetrasYFrases.length;
+  var out = [];
+  for (var i = 0; i < cantidad; i++) {
+    var idx = Math.floor(Math.random() * total);
+    var intentos = 0;
+    while (out.indexOf(idx) !== -1 && intentos < MAX_INTENTOS) {
+      idx = Math.floor(Math.random() * total);
+      intentos++;
+    }
+    out.push(idx);
+  }
+  return out;
+}
+
+function goTo(id) {
+  var screens = document.querySelectorAll('.screen');
+  for (var i = 0; i < screens.length; i++) screens[i].classList.remove('active');
   document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-}
-function evalMsg(pct){
-  if(pct>=91) return {emoji:'🏆', msg:'¡Felicidades!',   snd:SND_OK};
-  if(pct>=81) return {emoji:'⭐', msg:'Muy bien',         snd:SND_OK};
-  if(pct>=71) return {emoji:'👍', msg:'Ya casi lo logras',snd:SND_ERR};
-  if(pct>=61) return {emoji:'💪', msg:'Vas bien...',      snd:SND_ERR};
-  return            {emoji:'🔄', msg:'Reintenta',         snd:SND_ERR};
+  window.scrollTo(0, 0);
 }
 
-/* ── Pantalla intro ── */
-function montarIntro(){
-  document.getElementById('intro-titulo').textContent  = DATA.titulo || 'Pronuncia lo que aprendiste';
-  document.getElementById('intro-desc').textContent    = DATA.descripcion || '';
-  document.getElementById('intro-sesiones').textContent =
-    'Tiene ' + sesiones.length + (sesiones.length===1 ? ' sesión' : ' sesiones') + ' de práctica.';
-  goTo('s-intro');
+/* ===== INTRO ===== */
+function montarIntro() {
+  var n = LetrasYFrases.length;
+  document.getElementById('intro-desc').textContent =
+    n + (n === 1 ? ' símbolo para practicar.' : ' símbolos para practicar.');
 }
 
-/* ── Iniciar / cambiar sesión ── */
-function iniciarSesion(){
-  sesionIdx  = 0;
-  montarSesion();
+function iniciarFaseB() {
+  goTo('screen-b');
+  initB();
 }
 
-function siguienteSesion(){
-  sesionIdx++;
-  if(sesionIdx < sesiones.length) montarSesion();
-  else history.back();
+/* ===== FASE B ===== */
+var bIdx = 0, bQueue = [], bTimer = null;
+var bCardBaseFont = null;
+var audiosB = [];
+
+function initB() {
+  bIdx = 0;
+  var idx = indicesAleatorios(B_TOTAL);
+  bQueue  = idx.map(function(i){ return LetrasYFrases[i]; });
+  audiosB = bQueue.map(function(o){ return o.audio; });
+  document.getElementById('btn-saltar-b').textContent = hayFaseC ? '¡Vamos a emparejar! →' : 'Terminar →';
+  bShowCard();
 }
 
-function montarSesion(){
-  sesionData   = sesiones[sesionIdx];
-  audioChunks  = {};
-  recordingId  = null;
-
-  var total = sesiones.length;
-  document.getElementById('practica-badge').textContent =
-    '🎙 Sesión ' + (sesionIdx+1) + ' de ' + total;
-  document.getElementById('practica-titulo').textContent =
-    sesionData.titulo || ('Sesión ' + (sesionIdx+1));
-
-  actualizarProgreso();
-
-  var lista = document.getElementById('pronuncia-lista');
-  lista.innerHTML = '';
-
-  sesionData.elementos.forEach(function(el, i){
-    var div = document.createElement('div');
-    div.className = 'pronuncia-item';
-    div.id = 'item-' + i;
-    div.innerHTML =
-      '<div class="pi-top">' +
-        '<div>' +
-          '<div class="pi-gu gu">' + el.gujarati + '</div>' +
-          (el.roman ? '<div class="pi-rom">' + el.roman + '</div>' : '') +
-        '</div>' +
-        '<div class="pi-btns">' +
-          '<button class="btn-grabar" id="btn-g-' + i + '" ' +
-            'onclick="toggleGrabacion(' + i + ', \'' + el.gujarati.replace(/'/g,"\\'") + '\')">🎙 Grabar</button>' +
-        '</div>' +
-      '</div>' +
-      '<div class="spinner" id="load-' + i + '">⏳ Evaluando...</div>' +
-      '<div class="eval-panel" id="eval-' + i + '">' +
-        '<div class="eval-nota"    id="nota-'    + i + '"></div>' +
-        '<div class="eval-trans"   id="trans-'   + i + '"></div>' +
-        '<div class="eval-consejo" id="consejo-' + i + '"></div>' +
-      '</div>';
-    lista.appendChild(div);
-  });
-
-  elemIdx = 0;
-  mostrarElemento(0);
-  goTo('s-practica');
+function bShowCard() {
+  if (bTimer) clearTimeout(bTimer);
+  var item = bQueue[bIdx];
+  document.getElementById('b-progress').textContent = (bIdx + 1) + ' de ' + B_TOTAL;
+  var card = document.getElementById('b-card');
+  var ans  = document.getElementById('b-answer');
+  var bar  = document.getElementById('b-timer');
+  card.innerHTML = htmlConSignificado(item, 1.8);
+  if (bCardBaseFont === null) bCardBaseFont = parseFloat(getComputedStyle(card).fontSize);
+  card.style.fontSize = (item.letter.length >= 4 ? bCardBaseFont * 0.6 : bCardBaseFont) + 'px';
+  card.classList.remove('reveal');
+  ans.textContent = ''; ans.classList.remove('visible');
+  var prev = document.getElementById('btn-b-prev');
+  if (bIdx === 0) { prev.style.opacity = '0.4'; prev.style.pointerEvents = 'none'; }
+  else { prev.style.opacity = '1'; prev.style.pointerEvents = 'auto'; }
+  bar.style.transition = 'none'; bar.style.transform = 'scaleX(1)';
+  requestAnimationFrame(function() { requestAnimationFrame(function() {
+    bar.style.transition = 'transform 2s linear'; bar.style.transform = 'scaleX(0)';
+  }); });
+  bTimer = setTimeout(function() { bReveal(item); }, 2000);
 }
 
-function mostrarElemento(i){
-  var items = document.querySelectorAll('#pronuncia-lista .pronuncia-item');
-  items.forEach(function(el, idx){ el.style.display = idx === i ? 'block' : 'none'; });
-  var total = sesionData.elementos.length;
-  document.getElementById('elem-indicador').textContent = (i+1) + ' de ' + total;
-  // Flecha izquierda deshabilitada en el primero
-  document.getElementById('btn-elem-ant').disabled = (i === 0);
-  document.getElementById('btn-elem-ant').style.opacity = (i === 0) ? '0.3' : '1';
-  // Flecha derecha deshabilitada en el último
-  document.getElementById('btn-elem-sig').disabled = (i === total-1);
-  document.getElementById('btn-elem-sig').style.opacity = (i === total-1) ? '0.3' : '1';
-  // Mostrar "Verificar" solo cuando todos los elementos tienen nota
-  var todosGrabados = sesionData.elementos.every(function(el, idx){
-    var notaEl = document.getElementById('nota-' + idx);
-    return notaEl && notaEl.textContent.includes('/10');
-  });
-  document.getElementById('btn-verificar').style.display = todosGrabados ? 'block' : 'none';
+function bReveal(item) {
+  document.getElementById('b-card').classList.add('reveal');
+  var ans = document.getElementById('b-answer');
+  ans.textContent = item.answer; ans.classList.add('visible');
+  player.src = audiosB[bIdx]; player.playbackRate = 1.0; player.play().catch(function(){});
 }
 
-function anteriorElemento(){
-  if(elemIdx > 0){ elemIdx--; mostrarElemento(elemIdx); }
+function bPrev() {
+  player.pause(); player.currentTime = 0;
+  if (bIdx > 0) { bIdx--; bShowCard(); }
 }
 
-function siguienteElemento(){
-  var total = sesionData.elementos.length;
-  if(elemIdx < total-1){ elemIdx++; mostrarElemento(elemIdx); }
+function bNext() {
+  player.pause(); player.currentTime = 0;
+  bIdx++;
+  if (bIdx < B_TOTAL) { bShowCard(); }
+  else { terminarFaseB(); }
 }
 
-function actualizarProgreso(){
-  var pct = sesiones.length > 1
-    ? Math.round((sesionIdx / sesiones.length) * 100)
-    : 0;
-  document.getElementById('top-fill').style.width = pct + '%';
+function terminarFaseB() {
+  if (bTimer) clearTimeout(bTimer);
+  player.pause();
+  if (hayFaseC) { goTo('screen-c'); initC(); }
+  else { mostrarResultadoFinal(); }
 }
 
-function repetirSesion(){
-  montarSesion();
+/* ===== FASE C ===== */
+var cIdx = 0, cScore = 0;
+var cCurrentItem = null, cLayout = [], cLocked = false;
+var cBtnBaseFont = null;
+var audiosC = [];
+
+function initC() {
+  var idx  = indicesAleatorios(C_ROUNDS);
+  var cQueue = idx.map(function(i){ return LetrasYFrases[i]; });
+  audiosC = cQueue.map(function(o){ return o.audio; });
+  window._cQueue = cQueue; // guardado para cShowRound
+  cIdx = 0; cScore = 0; cLocked = false;
+  document.getElementById('c-score').textContent = '0';
+  document.getElementById('c-total').textContent = C_ROUNDS;
+  cShowRound();
 }
 
-/* ── Grabación ── */
-function toggleGrabacion(i, fraseObjetivo){
-  var btn = document.getElementById('btn-g-' + i);
-  if(recordingId === i){
-    mediaRecorder.stop();
-    recordingId = null;
-    btn.innerHTML = '🎙 Grabar';
-    btn.classList.remove('recording');
-    return;
+function cShowRound() {
+  if (cIdx >= C_ROUNDS) { mostrarResultadoFinal(); return; }
+  cLocked = false;
+  cCurrentItem = window._cQueue[cIdx];
+
+  // Mínimo 2 botones (1 correcta + al menos 1 distractor), máximo 4 — según cuántos
+  // símbolos distintos haya disponibles en el pool de esta sesión.
+  var numBotones = Math.min(4, LetrasYFrases.length);
+  var distractores = shuffle(LetrasYFrases.filter(function(l){ return l.letter !== cCurrentItem.letter; })).slice(0, numBotones - 1);
+  var pool = shuffle(distractores.concat([cCurrentItem]));
+  cLayout = pool.map(function(l){ return LetrasYFrases.indexOf(l); });
+
+  var cont = document.getElementById('match-letters-container');
+  cont.innerHTML = '';
+  for (var i = 0; i < pool.length; i++) {
+    var btn = document.createElement('button');
+    btn.className = 'match-btn';
+    btn.id = 'mb-' + i;
+    if (cBtnBaseFont === null) cBtnBaseFont = 5; // rem aproximado base, clamp ya lo ajusta
+    btn.style.fontSize = (pool[i].letter.length >= 4 ? '3rem' : '');
+    btn.innerHTML = htmlConSignificado(pool[i], 1.2);
+    btn.onclick = (function(idx){ return function(){ matchTap(idx); }; })(i);
+    cont.appendChild(btn);
   }
-  if(mediaRecorder && mediaRecorder.state === 'recording'){
-    mediaRecorder.stop();
+  document.getElementById('c-prompt').innerHTML = '&nbsp;';
+  setTimeout(function() { player.src = audiosC[cIdx]; player.play().catch(function(){}); }, 300);
+}
+
+function matchReplay() {
+  player.src = audiosC[cIdx]; player.play().catch(function(){});
+}
+
+function matchTap(btnIdx) {
+  if (cLocked) return;
+  var tapped = LetrasYFrases[cLayout[btnIdx]]; if (!tapped) return;
+  var correct = tapped.letter === cCurrentItem.letter;
+  var btn = document.getElementById('mb-' + btnIdx);
+
+  if (correct) {
+    cLocked = true;
+    btn.classList.add('correct');
+    cScore++;
+    document.getElementById('c-score').textContent = cScore;
+    document.getElementById('c-prompt').innerHTML = '✔ ¡Correcto! — <strong>' + cCurrentItem.answer + '</strong>';
+    sfx.src = SND_OK; sfx.play().catch(function(){});
+    cIdx++;
+    setTimeout(function() { cShowRound(); }, 1200);
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById('c-prompt').innerHTML = '✖ ¡Inténtalo de nuevo!';
+    sfx.src = SND_ERR; sfx.play().catch(function(){});
+    setTimeout(function() {
+      btn.classList.remove('wrong');
+      player.src = audiosC[cIdx]; player.play().catch(function(){});
+    }, 1000);
   }
-  recordingId = i;
-  navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
-    mediaRecorder = new MediaRecorder(stream);
-    audioChunks[i] = [];
-    mediaRecorder.ondataavailable = function(e){
-      if(e.data && e.data.size > 0) audioChunks[i].push(e.data);
-    };
-    mediaRecorder.onstop = function(){
-      var tipoReal = mediaRecorder.mimeType || 'audio/webm';
-      var blob = new Blob(audioChunks[i], {type: tipoReal});
-      convertirYEnviar(blob, i, fraseObjetivo);
-      stream.getTracks().forEach(function(t){ t.stop(); });
-    };
-    mediaRecorder.start();
-    btn.innerHTML = '🛑 Detener';
-    btn.classList.add('recording');
-  }).catch(function(){
-    alert('Verifica los permisos de tu micrófono en los ajustes del dispositivo.');
-  });
 }
 
-function convertirYEnviar(blob, i, fraseObjetivo){
-  var reader = new FileReader();
-  reader.readAsDataURL(blob);
-  reader.onloadend = function(){
-    var base64   = reader.result.split(',')[1];
-    var mimeType = blob.type || 'audio/webm';
-    enviarAGemini(base64, mimeType, fraseObjetivo, i);
-  };
+/* ===== RESULTADO ===== */
+function evalMsgJuego(pct) {
+  if (pct >= 91) return { emoji: '🏆', msg: '¡Felicidades!' };
+  if (pct >= 81) return { emoji: '⭐', msg: 'Muy bien' };
+  if (pct >= 71) return { emoji: '👍', msg: 'Ya casi lo logras' };
+  if (pct >= 61) return { emoji: '💪', msg: 'Vas bien...' };
+  return { emoji: '🔄', msg: 'Sigue practicando' };
 }
 
-function enviarAGemini(audioBase64, mimeType, fraseObjetivo, i){
-  var spinner = document.getElementById('load-' + i);
-  var panel   = document.getElementById('eval-' + i);
-  if(spinner) spinner.style.display = 'block';
-  if(panel)   panel.style.display   = 'none';
-
-  fetch(BACKEND_URL + '/api/evaluar-audio', {
-    method: 'POST',
-    headers: {
-      'Content-Type':   'application/json',
-      'x-access-token': sessionStorage.getItem('accessToken') || ''
-    },
-    body: JSON.stringify({ audioBase64: audioBase64, mimeType: mimeType, fraseObjetivo: fraseObjetivo })
-  })
-  .then(function(r){ if(!r.ok) throw new Error('Error servidor'); return r.json(); })
-  .then(function(data){
-    document.getElementById('nota-'    + i).innerHTML = '⭐ Nota: ' + data.nota + '/10';
-    document.getElementById('trans-'   + i).innerHTML = 'Gemini entendió: "' + data.transcripcion + '"';
-    document.getElementById('consejo-' + i).innerHTML = '💡 ' + data.consejo;
-    document.getElementById('nota-'    + i).style.color = data.nota >= 7 ? 'var(--saffron)' : 'var(--wrong-text)';
-    if(panel) panel.style.display = 'block';
-    mostrarElemento(elemIdx);   // actualizar botón Verificar si ya están todos
-  })
-  .catch(function(err){
-    console.error(err);
-    document.getElementById('nota-' + i).innerHTML = '⚠️ No se pudo conectar con Gemini. Inténtalo de nuevo.';
-    if(panel) panel.style.display = 'block';
-  })
-  .finally(function(){
-    if(spinner) spinner.style.display = 'none';
-  });
-}
-
-/* ── Verificar ── */
-function verificar(){
-  var notas  = [];
-  var detalle = [];
-  var todos  = true;
-
-  sesionData.elementos.forEach(function(el, i){
-    var notaEl = document.getElementById('nota-' + i);
-    if(!notaEl || !notaEl.textContent.includes('/10')){
-      todos = false;
-      return;
-    }
-    var match = notaEl.textContent.match(/(\d+(?:\.\d+)?)\/10/);
-    if(match){
-      var n = parseFloat(match[1]);
-      notas.push(n);
-      detalle.push({ gu: el.gujarati, nota: n, ok: n >= 7 });
-    }
-  });
-
-  if(!todos || notas.length === 0){
-    alert('Graba y evalúa todos los elementos antes de verificar.');
-    return;
-  }
-
-  var promedio = notas.reduce(function(a,b){ return a+b; }, 0) / notas.length;
-  var pct = Math.round(promedio * 10);
-
-  mostrarResultado(pct, detalle);
-}
-
-/* ── Resultado ── */
-function mostrarResultado(pct, detalle){
-  var ev = evalMsg(pct);
-  sfx.src = ev.snd; sfx.play().catch(function(){});
+function mostrarResultadoFinal() {
   document.getElementById('top-fill').style.width = '100%';
-
-  document.getElementById('res-emoji').textContent = ev.emoji;
-  document.getElementById('res-msg').textContent   = ev.msg;
-  document.getElementById('res-pct').textContent   = 'Resultado: ' + pct + '%';
-
-  var html = '';
-  detalle.forEach(function(d){
-    html += '<div class="detalle-fila">' +
-      '<span class="df-gu">' + d.gu + '</span>' +
-      '<span class="' + (d.ok ? 'df-ok' : 'df-err') + '">⭐ ' + d.nota + '/10</span>' +
-      '</div>';
-  });
-  document.getElementById('res-detalle').innerHTML = html;
-
-  // Mostrar "Siguiente sesión" solo si hay más
-  var haySiguiente = (sesionIdx + 1) < sesiones.length;
-  document.getElementById('btn-siguiente').style.display = haySiguiente ? 'block' : 'none';
-
+  if (hayFaseC) {
+    var pct = Math.round((cScore / C_ROUNDS) * 100);
+    var ev = evalMsgJuego(pct);
+    document.getElementById('res-emoji').textContent = ev.emoji;
+    document.getElementById('res-msg').textContent   = ev.msg;
+    document.getElementById('res-pct').textContent   = 'Correctas: ' + cScore + ' / ' + C_ROUNDS + ' (' + pct + '%)';
+  } else {
+    document.getElementById('res-emoji').textContent = '🎉';
+    document.getElementById('res-msg').textContent   = '¡Bien hecho!';
+    document.getElementById('res-pct').textContent   = '';
+  }
   goTo('s-resultado');
 }
 
-function repetirDesdeResultado(){
-  montarSesion();
+function reiniciarTodo() {
+  document.getElementById('top-fill').style.width = '0%';
+  goTo('s-intro');
 }
 
-/* ── Init ── */
-if(!JSON_URL){
+/* ===== ARRANQUE ===== */
+if (!JSON_URL) {
   document.querySelector('.wrap').innerHTML =
     '<p style="text-align:center;color:var(--ink-soft);padding:40px 20px;">Falta el parámetro <strong>?json=</strong> en la URL.</p>';
 } else {
-  fetch(JSON_URL)
-    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('404'); return r.json(); })
     .then(function(data){
-      DATA     = data;
-      sesiones = data.sesiones || [];
-      if(sesiones.length === 0) throw new Error('Sin sesiones');
+      letters = data.letters || [];
+      extras  = data.extras  || [];
+      LetrasYFrases = letters.concat(extras);
+      hayFaseC = LetrasYFrases.length >= 2;
+      B_TOTAL  = LetrasYFrases.length * 2;
+      C_ROUNDS = LetrasYFrases.length * 2;
       montarIntro();
     })
     .catch(function(){
