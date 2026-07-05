@@ -57,6 +57,7 @@
 
 <!-- tipo: matra -->
 <div class="bottom-actions" id="bottom-matra" style="max-width:380px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <a class="btn-fin" style="margin-top:0; background:var(--sindoor); box-shadow:0 4px 14px rgba(168,54,42,0.3); display:none;" id="btn-nota-especial" href="#">&#128161; &iexcl;Nota especial!</a>
   <div style="display:flex; gap:10px;">
     <a class="btn-sec" style="flex:1;" id="btn-sigleccion-matra" href="#">&#9197; Sig. lección</a>
     <a class="btn-fin" style="flex:1; margin-top:0;" id="btn-siguiente-matra" href="#">Siguiente &rarr;</a>
@@ -152,6 +153,15 @@
 
         document.getElementById('btn-siguiente-matra').href = siguienteUrl;
         document.getElementById('btn-sigleccion-matra').href = data.siguiente_leccion;
+
+        const btnNota = document.getElementById('btn-nota-especial');
+        if (actual.nota_especial) {
+          btnNota.href = actual.nota_especial;
+          btnNota.style.display = '';
+        } else {
+          btnNota.style.display = 'none';
+        }
+
         document.getElementById('bottom-matra').style.display = '';
 
       } else if (actual.tipo === 'con_matra') {
