@@ -75,6 +75,14 @@
 <audio id="sfx"></audio>
 
 <script>
+try {
+  if (screen.orientation && screen.orientation.lock) {
+    screen.orientation.lock('portrait').catch(function() {});
+  }
+} catch (e) {}
+</script>
+
+<script>
 const BACKEND_URL = 'https://gujaratitraining-production.up.railway.app';
 const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
 
