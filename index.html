@@ -30,7 +30,7 @@
   <div class="hero-content">
     <span class="hero-badge">&#127760; Curso de gujarati · Testigos de Jehová</span>
     <img class="hero-logo"
-         src="https://rubenbhai.github.io/GujaratiResources/imagenes/LearnGujarati_SuperInmersivo_Fondo.png"
+         src="https://rubenbhai.github.io/GujaratiResources/imagenes/LearnGujarati_SuperInmersivo_Main.jpg"
          alt="Piensa en Gujarati — Misión Completa">
     <div class="hero-gu">ગુજરાતી શીખો</div>
     <h1 class="hero-title">
@@ -244,6 +244,17 @@
     document.addEventListener('click', resume);
     document.addEventListener('touchstart', resume);
   }
+
+  // Pausar la música en cuanto la app pasa a segundo plano o se cierra,
+  // y reanudarla si el usuario vuelve a la misma pestaña sin recargar
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      if (!music.paused) music.pause();
+    } else if (playing && music.paused) {
+      music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
+    }
+  });
+
 })();
 </script>
 
