@@ -73,15 +73,35 @@ let rafId = null;
 
 var imagenesCacheadas = []; 
 
-/* ── Precargar imágenes de fondo para evitar delays ── */
-function precargarFondos() {
-  SECUENCIAS.forEach(function(sec) {
-    if (sec.imagenFondo) {
-      var img = new Image();
-      img.src = sec.imagenFondo;
-      imagenesCacheadas.push(img);
-    }
+/* ── Precargar TODAS las imágenes de la escena (fondos + avatares) antes de arrancar ── */
+function precargarImagenes(){
+  var urls = [];
+
+  SECUENCIAS.forEach(function(sec){
+    if (sec.imagenFondo) urls.push(sec.imagenFondo);
   });
+  DIALOGOS.forEach(function(d){
+    if (d.imagenFondo) urls.push(d.imagenFondo);
+  });
+  Object.keys(AVATARES).forEach(function(key){
+    if (AVATARES[key].imagen) urls.push(AVATARES[key].imagen);
+  });
+
+  urls = urls.filter(function(u, i){ return urls.indexOf(u) === i; }); // sin duplicados
+
+  var promesas = urls.map(function(url){
+    return new Promise(function(resolve){
+      var img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve; // una imagen rota no debe colgar el resto
+      img.src = url;
+      imagenesCacheadas.push(img);
+    });
+  });
+
+  // Salvavidas: no esperar más de 8s aunque algo se cuelgue en la red
+  var limite = new Promise(function(resolve){ setTimeout(resolve, 8000); });
+  return Promise.race([ Promise.all(promesas), limite ]);
 }
 
 /* ── Construir la escena ── */
@@ -353,9 +373,19 @@ fetch(JSON_URL)
     }
 
     mapearSecuencias();
-    precargarFondos();
     construirEscena();
     configurarBotonFin();
+
+    // No dejar arrancar el diálogo hasta tener fondos y avatares listos
+    var btnPlay = document.getElementById('btn-play');
+    var textoPlayOriginal = btnPlay.textContent;
+    btnPlay.disabled = true;
+    btnPlay.textContent = 'Cargando…';
+    precargarImagenes().then(function(){
+      btnPlay.disabled = false;
+      btnPlay.textContent = textoPlayOriginal;
+    });
+
   })
   .catch(function(){
     document.querySelector('.wrap').innerHTML =

@@ -115,6 +115,35 @@ let grabando = false;
 let guiaEsVisible = true;
 let guiaGuVisible = true;
 
+var imagenesCacheadas = [];
+
+/* ── Precargar TODAS las imágenes (fondos por línea + avatares) antes de arrancar ── */
+function precargarImagenes(){
+  var urls = [];
+
+  DIALOGOS.forEach(function(d){
+    if (d.imagenFondo) urls.push(d.imagenFondo);
+  });
+  Object.keys(AVATARES).forEach(function(key){
+    if (AVATARES[key].imagen) urls.push(AVATARES[key].imagen);
+  });
+
+  urls = urls.filter(function(u, i){ return urls.indexOf(u) === i; });
+
+  var promesas = urls.map(function(url){
+    return new Promise(function(resolve){
+      var img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve;
+      img.src = url;
+      imagenesCacheadas.push(img);
+    });
+  });
+
+  var limite = new Promise(function(resolve){ setTimeout(resolve, 8000); });
+  return Promise.race([ Promise.all(promesas), limite ]);
+}
+
 /* ── Utilidades ── */
 function goTo(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
@@ -511,6 +540,17 @@ fetch(JSON_URL)
     if(data.titulo)    document.getElementById('titulo').textContent = data.titulo;
     if(data.intro)     document.getElementById('intro').textContent = data.intro;
     montarAvatares();
+
+    // No dejar arrancar la conversación hasta tener fondos y avatares listos
+    var btnIniciar = document.getElementById('btn-iniciar');
+    var textoIniciarOriginal = btnIniciar.textContent;
+    btnIniciar.disabled = true;
+    btnIniciar.textContent = 'Cargando…';
+    precargarImagenes().then(function(){
+      btnIniciar.disabled = false;
+      btnIniciar.textContent = textoIniciarOriginal;
+    });
+
   })
   .catch(function(){
     document.querySelector('.wrap').innerHTML =
