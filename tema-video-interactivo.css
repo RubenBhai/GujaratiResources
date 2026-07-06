@@ -94,6 +94,18 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 
 .burbuja.saliente { display: none; }
 
+.resaltado-avatar {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.25s ease, left 0.25s ease, top 0.25s ease;
+}
+.resaltado-avatar.visible { opacity: 1; }
+
 /* Turno del estudiante */
 .turno-box { 
   width:100%; background:var(--surface); border:2px solid var(--saffron);

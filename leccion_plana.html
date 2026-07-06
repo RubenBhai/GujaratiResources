@@ -9,7 +9,10 @@
 <title id="page-title">Plana &middot; Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-amigable_3.css">
-<style>.frame-img::before { content: none; }</style>
+<style>
+.frame-img::before { content: none; }
+.frame-img:hover { transform: none; box-shadow: var(--shadow-soft); }
+</style>
 </head>
 <body>
 
@@ -30,7 +33,15 @@
 
   <div class="frame-img" style="max-width:340px; margin:0 auto;">
     <img id="img-plana" alt="" onerror="this.style.opacity='0.3'" style="max-height:440px; object-fit:contain; width:100%;">
+    <canvas id="canvas-plana" style="position:absolute; touch-action:none; cursor:crosshair;"></canvas>
   </div>
+
+  <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+    <button id="btn-reintentar" type="button" style="background:var(--surface); color:var(--ink-soft); border:1px solid var(--border); border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:inherit;">🔄 Reintentar</button>
+    <button id="btn-ver" type="button" style="display:none; background:var(--surface); color:var(--saffron); border:1px solid var(--saffron); border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:inherit;">👁️ Ver</button>
+    <button id="btn-evaluar" type="button" style="display:none; background:var(--sindoor); color:white; border:none; border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:700; cursor:pointer; font-family:inherit; box-shadow:0 4px 14px rgba(168,54,42,0.3);">✓ Evaluar</button>
+  </div>
+  <div id="resultado-evaluacion" style="display:none; text-align:center; font-size:1.15rem; font-weight:700; color:var(--saffron);"></div>
 </div>
 
 <div class="bottom-actions" style="max-width:340px; margin:0 auto; padding:0 0 24px 0; gap:10px;">
@@ -54,6 +65,189 @@
 
   function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
+  /* ── Validación de trazos (matemática pura, sin llamadas a red) ── */
+  const RADIO_TOLERANCIA = 38;   // px, en espacio de pantalla ya escalado
+  const UMBRAL_DIRECCION = 0.5;  // coseno mínimo aceptable (~60° de margen)
+
+  function distanciaPuntos(p1, p2){ return Math.hypot(p1.x - p2.x, p1.y - p2.y); }
+
+  function aplanarSegmentos(segmentosJSON){
+    const nombresOrdenados = Object.keys(segmentosJSON)
+      .sort(function(a, b){ return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]); });
+    let subVectores = [];
+    nombresOrdenados.forEach(function(nombre){ subVectores = subVectores.concat(segmentosJSON[nombre]); });
+    return subVectores;
+  }
+
+  // Sirve tanto si el estudiante dibujó todo en un solo trazo como si levantó el dedo varias veces:
+  // concatena todos los trazos en un solo camino, en el orden en que se dibujaron.
+  function validarPlanaCompleta(segmentosJSON, trazosEstudiante){
+    const subVectores = aplanarSegmentos(segmentosJSON);
+    const puntosGuia = [subVectores[0].origen].concat(subVectores.map(function(v){ return v.destino; }));
+    const camino = [].concat.apply([], trazosEstudiante);
+
+    if (camino.length < 2) return { porcentaje: 0, correctos: 0, total: subVectores.length };
+
+    let ultimoIndice = -1;
+    const indices = [];
+    puntosGuia.forEach(function(pg){
+      let mejorIdx = -1, mejorDist = Infinity;
+      for (let i = Math.max(0, ultimoIndice); i < camino.length; i++) {
+        const d = distanciaPuntos(camino[i], pg);
+        if (d < mejorDist) { mejorDist = d; mejorIdx = i; }
+      }
+      if (mejorIdx === -1 || mejorDist > RADIO_TOLERANCIA) { indices.push(null); }
+      else { indices.push(mejorIdx); ultimoIndice = mejorIdx; }
+    });
+
+    let correctos = 0;
+    for (let i = 0; i < subVectores.length; i++) {
+      const idxInicio = indices[i], idxFin = indices[i + 1];
+      if (idxInicio === null || idxFin === null || idxInicio === idxFin) continue;
+
+      const pInicio = camino[idxInicio], pFin = camino[idxFin];
+      const vEsperado = { x: subVectores[i].destino.x - subVectores[i].origen.x, y: subVectores[i].destino.y - subVectores[i].origen.y };
+      const vTrazo    = { x: pFin.x - pInicio.x, y: pFin.y - pInicio.y };
+      const magE = Math.hypot(vEsperado.x, vEsperado.y), magT = Math.hypot(vTrazo.x, vTrazo.y);
+      const coseno = (magE && magT) ? (vEsperado.x * vTrazo.x + vEsperado.y * vTrazo.y) / (magE * magT) : 0;
+
+      if (coseno >= UMBRAL_DIRECCION) correctos++;
+    }
+
+    const total = subVectores.length;
+    return { porcentaje: total ? Math.round((correctos / total) * 100) : 0, correctos: correctos, total: total };
+  }
+
+  function mensajeParaPorcentaje(p){
+    if (p === 100) return '¡Bravo! 100%';
+    if (p >= 90)   return 'Excelente — ' + p + '%';
+    if (p >= 70)   return 'Muy bien — ' + p + '%';
+    if (p >= 50)   return 'Buen intento — ' + p + '%';
+    return 'Sigue practicando — ' + p + '%';
+  }
+
+  /* ── Canvas de práctica: se superpone exacto sobre la imagen de guía, mide su tamaño real ── */
+  function configurarCanvasPlana(img, segmentosJSON){
+    const canvas = document.getElementById('canvas-plana');
+    const ctx = canvas.getContext('2d');
+    let dibujando = false;
+    let ultimoX = 0, ultimoY = 0;
+    let trazoActual = [];
+    let trazos = [];
+
+    const colorTrazo = '#0066FF';
+
+    function ajustarCanvas(){
+      const dpr = window.devicePixelRatio || 1;
+      const w = img.clientWidth, h = img.clientHeight;
+      if (!w || !h) return; // imagen aún sin tamaño real; se reintenta en el evento 'load'
+
+      canvas.style.left   = img.offsetLeft + 'px';
+      canvas.style.top    = img.offsetTop + 'px';
+      canvas.style.width  = w + 'px';
+      canvas.style.height = h + 'px';
+      canvas.width  = w * dpr;
+      canvas.height = h * dpr;
+
+      ctx.scale(dpr, dpr);
+      ctx.lineWidth = 7;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = colorTrazo;
+    }
+
+    function posicionDesdeEvento(e){
+      const rect = canvas.getBoundingClientRect();
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top, t: Date.now() };
+    }
+
+    canvas.addEventListener('pointerdown', function(e){
+      dibujando = true;
+      const p = posicionDesdeEvento(e);
+      ultimoX = p.x; ultimoY = p.y;
+      trazoActual = [p];
+      canvas.setPointerCapture(e.pointerId);
+    });
+    canvas.addEventListener('pointermove', function(e){
+      if(!dibujando) return;
+      const p = posicionDesdeEvento(e);
+      ctx.beginPath();
+      ctx.moveTo(ultimoX, ultimoY);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+      ultimoX = p.x; ultimoY = p.y;
+      trazoActual.push(p);
+    });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function(ev){
+      canvas.addEventListener(ev, function(){
+        if (dibujando && trazoActual.length > 1) trazos.push(trazoActual);
+        dibujando = false;
+        trazoActual = [];
+      });
+    });
+
+    const btnEvaluar = document.getElementById('btn-evaluar');
+    const btnVer = document.getElementById('btn-ver');
+    const etiquetaResultado = document.getElementById('resultado-evaluacion');
+
+    document.getElementById('btn-reintentar').onclick = function(){
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      trazos = [];
+      etiquetaResultado.style.display = 'none';
+    };
+
+    function escalarSegmentos(){
+      const naturalW = img.naturalWidth, naturalH = img.naturalHeight;
+      const cw = canvas.clientWidth, ch = canvas.clientHeight;
+      const scale = Math.min(cw / naturalW, ch / naturalH);
+      const offsetX = (cw - naturalW * scale) / 2;
+      const offsetY = (ch - naturalH * scale) / 2;
+      function transformar(p){ return { x: offsetX + p.x * scale, y: offsetY + p.y * scale }; }
+
+      const segmentosEscalados = {};
+      Object.keys(segmentosJSON).forEach(function(nombre){
+        segmentosEscalados[nombre] = segmentosJSON[nombre].map(function(v){
+          return { origen: transformar(v.origen), destino: transformar(v.destino) };
+        });
+      });
+      return segmentosEscalados;
+    }
+
+    // Los botones Ver y Evaluar solo aparecen si esta plana ya trae datos de segmentos medidos
+    if (segmentosJSON) {
+      btnEvaluar.style.display = '';
+      btnEvaluar.onclick = function(){
+        const resultado = validarPlanaCompleta(escalarSegmentos(), trazos);
+        etiquetaResultado.textContent = mensajeParaPorcentaje(resultado.porcentaje);
+        etiquetaResultado.style.display = '';
+      };
+
+      btnVer.style.display = '';
+      btnVer.onclick = function(){
+        const segmentosEscalados = escalarSegmentos();
+        const colorPrevio = ctx.strokeStyle, grosorPrevio = ctx.lineWidth;
+        ctx.strokeStyle = '#FF0000';
+        ctx.lineWidth = 5;
+        Object.keys(segmentosEscalados).forEach(function(nombre){
+          segmentosEscalados[nombre].forEach(function(v){
+            ctx.beginPath();
+            ctx.moveTo(v.origen.x, v.origen.y);
+            ctx.lineTo(v.destino.x, v.destino.y);
+            ctx.stroke();
+          });
+        });
+        ctx.strokeStyle = colorPrevio;
+        ctx.lineWidth = grosorPrevio;
+      };
+    } else {
+      btnEvaluar.style.display = 'none';
+      btnVer.style.display = 'none';
+    }
+
+    if (img.complete && img.naturalWidth) ajustarCanvas();
+    else img.addEventListener('load', ajustarCanvas);
+  }
+
   fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
     .then(function(data){
@@ -69,6 +263,11 @@
       const img = document.getElementById('img-plana');
       img.src = actual.imagen;
       img.alt = 'Plana ' + label;
+      const trazosUrl = 'data/' + _leccion + '/trazos_' + actual.roman + '.json';
+      fetch(trazosUrl + '?t=' + Date.now(), { cache: 'no-store' })
+        .then(function(r){ if(!r.ok) throw new Error('sin trazos'); return r.json(); })
+        .then(function(segmentos){ configurarCanvasPlana(img, segmentos); })
+        .catch(function(){ configurarCanvasPlana(img, null); });
 
       document.getElementById('nav-home').href = data.home;
       document.getElementById('nav-palabras').href = data.ir_a_palabras;

@@ -12,12 +12,6 @@
 </head>
 <body>
 
-<nav class="nav-bar">
-  <button class="nav-btn" onclick="audio.pause(); audio.src=''; cancelAnimationFrame(rafId); history.back();">&larr; Lecci&oacute;n</button>
-  <span class="nav-btn" style="opacity:0;pointer-events:none;">&nbsp;</span>
-  <span class="nav-btn" style="opacity:0;pointer-events:none;">&nbsp;</span>
-</nav>
-
 <div class="wrap">
   <span class="badge" id="badge">Antes de empezar</span>
   <h1 id="titulo">Escucha esta conversación</h1>
@@ -41,7 +35,11 @@
 
   <div class="escena" id="escena"></div>
 
-  <a class="btn-fin" id="btn-empezar" href="#">Empezar la clase →</a>
+  <div style="display:flex; gap:10px; width:100%;">
+   <button class="nav-btn" style="flex:1;" onclick="audio.pause(); audio.src=''; cancelAnimationFrame(rafId); history.back();">&larr; Lecci&oacute;n</button>
+   <a class="btn-fin" id="btn-empezar" href="#" style="flex:1; margin-top:0;">Empezar la clase →</a>  
+  </div>
+
 </div>
 
 <audio id="audio"></audio>
@@ -63,6 +61,7 @@ let DIALOGOS = [];
 let SECUENCIAS = [];
 let AVATARES = {};
 let NEXT_PAGE = null;
+let RESALTADOR_URL = null;
 
 let burbujas = [];
 let mostradas = [];
@@ -70,6 +69,10 @@ let dialogoSecuencia = [];
 let burbujaDeDialogo = [];   // burbuja física por cada diálogo
 let secuenciaActual = -1;
 let rafId = null;
+
+var dimensionesImagen = {};   // { url: {w, h} } — dimensiones reales de cada imagen de fondo
+var fondoActualUrl = null;    // qué imagen se está mostrando ahora mismo
+var elResaltado = null;       // el div del recuadro que resalta al avatar activo
 
 var imagenesCacheadas = []; 
 
@@ -86,13 +89,15 @@ function precargarImagenes(){
   Object.keys(AVATARES).forEach(function(key){
     if (AVATARES[key].imagen) urls.push(AVATARES[key].imagen);
   });
+  
+  if (RESALTADOR_URL) urls.push(RESALTADOR_URL);
 
   urls = urls.filter(function(u, i){ return urls.indexOf(u) === i; }); // sin duplicados
 
   var promesas = urls.map(function(url){
     return new Promise(function(resolve){
       var img = new Image();
-      img.onload = resolve;
+      img.onload = function(){ dimensionesImagen[url] = { w: img.naturalWidth, h: img.naturalHeight }; resolve(); };
       img.onerror = resolve; // una imagen rota no debe colgar el resto
       img.src = url;
       imagenesCacheadas.push(img);
@@ -113,6 +118,12 @@ function construirEscena(){
   bgDiv.id = 'bg-escena';
   bgDiv.className = 'bg-escena';
   escena.appendChild(bgDiv);
+
+  var resaltado = document.createElement('div');
+  resaltado.className = 'resaltado-avatar';
+  if (RESALTADOR_URL) resaltado.style.backgroundImage = "url('" + RESALTADOR_URL + "')";
+  escena.appendChild(resaltado);
+  elResaltado = resaltado;
 
   burbujas = [];
   burbujaDeDialogo = [];   // burbuja física (índice) que le toca a cada diálogo
@@ -181,6 +192,30 @@ function ajustarAltura(numDialogos){
   var alturaReal = paddingTotal + gapTotal + (110 * numDialogos);
   
   escena.style.height = alturaReal + 'px';
+}
+
+/* ── Posicionar el recuadro que resalta al avatar activo, respetando el recorte de background-size:cover ── */
+function posicionarResaltado(coords){
+  var dimFondo = dimensionesImagen[fondoActualUrl];
+  var dimBadge = dimensionesImagen[RESALTADOR_URL];
+  var bg = document.getElementById('bg-escena');
+  if(!dimFondo || !dimBadge || !bg || !coords){ elResaltado.classList.remove('visible'); return; }
+
+  var cw = bg.clientWidth, ch = bg.clientHeight;
+  var scale = Math.max(cw / dimFondo.w, ch / dimFondo.h);
+  var offsetX = (cw - dimFondo.w * scale) / 2;
+  var offsetY = (ch - dimFondo.h * scale) / 2;
+
+  var badgeW = dimBadge.w * scale;
+  var badgeH = dimBadge.h * scale;
+  var centroX = offsetX + coords.x * scale;
+  var centroY = offsetY + coords.y * scale;
+
+  elResaltado.style.left   = (centroX - badgeW/2) + 'px';
+  elResaltado.style.top    = (centroY - badgeH/2) + 'px';
+  elResaltado.style.width  = badgeW + 'px';
+  elResaltado.style.height = badgeH + 'px';
+  elResaltado.classList.add('visible');
 }
 
 /* ── Idioma ── */
@@ -252,9 +287,10 @@ function seguir(){
           secuenciaActual = sidx;
 
 	  // Cambiar imagen de fondo solo si la secuencia la define; si no, mantener el actual
-          if(SECUENCIAS[sidx].imagenFondo){
-            document.getElementById('bg-escena').style.backgroundImage = "url('" + SECUENCIAS[sidx].imagenFondo + "')";
-          }
+	  if(SECUENCIAS[sidx].imagenFondo){
+	    document.getElementById('bg-escena').style.backgroundImage = "url('" + SECUENCIAS[sidx].imagenFondo + "')";
+	    fondoActualUrl = SECUENCIAS[sidx].imagenFondo;
+	  }
 
           // Ocultar las burbujas que NO pertenecen a esta secuencia
           DIALOGOS.forEach(function(dd, jj){
@@ -287,11 +323,14 @@ function seguir(){
         // Fondo por diálogo (tiene prioridad sobre el de la secuencia)
         if(d.imagenFondo){
           document.getElementById('bg-escena').style.backgroundImage = "url('" + d.imagenFondo + "')";
+          fondoActualUrl = d.imagenFondo;
         }
       }
 
       var activa = (t >= d.ini && t <= d.fin);
       if(bIdx !== undefined) burbujas[bIdx].classList.toggle('activa', activa);
+      if(activa && d.avatarActivo) posicionarResaltado(d.avatarActivo);
+
     });
 
     if(!audio.paused && !audio.ended){
@@ -360,6 +399,8 @@ fetch(JSON_URL)
                  ? data.secuencias
                  : DIALOGOS.map(function(d){ return { dialogos:[d.id] }; });
     AVATARES = data.avatares || {};
+
+    RESALTADOR_URL = data.imagenAvatarActivo || null;
     
     if(_modo === 'desafio'){
       // Textos del desafío final (con respaldo a los normales si faltan)
