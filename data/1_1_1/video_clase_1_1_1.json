@@ -32,6 +32,9 @@
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_sohan.png"
     }
   },
+
+  "imagenAvatarActivo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatarActivo.png",
+  
   "dialogos": [
     {
       "id": 1,
@@ -40,7 +43,8 @@
       "ini": 0.0,
       "fin": 1.74,
       "gujarati": "કેમ છો શ્રીયાબેન?",
-      "espanol": "¿Cómo está Shriya?"
+      "espanol": "¿Cómo está Shriya?",
+      "avatarActivo": { "x": 201, "y": 67 }
     },
     {
       "id": 2,
@@ -49,7 +53,8 @@
       "ini": 1.81,
       "fin": 4.69,
       "gujarati": "સારું છે. કેમ છો રાહુલભાઈ?",
-      "espanol": "Bien. ¿Cómo está Rajul?"
+      "espanol": "Bien. ¿Cómo está Rajul?",
+      "avatarActivo": { "x": 378, "y": 115 }
     },
     {
       "id": 3,
@@ -59,7 +64,8 @@
       "fin": 6.57,
       "gujarati": "મજામાં. આ મામા છે?",
       "espanol": "Muy bien. ¿Este es tu tío materno?",
-      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1-2.png"
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1-2.png",
+      "avatarActivo": { "x": 201, "y": 67 }
     },
     {
       "id": 4,
@@ -70,7 +76,8 @@
       "fin": 9.319,
       "gujarati": "હા, આ મામા છે, રીતુભાઈ.",
       "espanol": "Sí, este es mi tío materno, Ritu.",
-      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_2.png"
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_2.png",
+      "avatarActivo": { "x": 378, "y": 115 }
     },
     {
       "id": 9,
@@ -80,7 +87,8 @@
       "ini": 9.445,
       "fin": 11.8,
       "gujarati": "અને એ કાકા છે, સોહાનભાઈ.",
-      "espanol": "Y ese es mi tío paterno, Sojan."
+      "espanol": "Y ese es mi tío paterno, Sojan.",
+      "avatarActivo": { "x": 378, "y": 115 }
     },
     {
       "id": 5,
@@ -89,7 +97,8 @@
       "ini": 11.8,
       "fin": 13.42,
       "gujarati": "નમસ્તે રીતુભાઈ.",
-      "espanol": "Hola Ritu."
+      "espanol": "Hola Ritu.",
+      "avatarActivo": { "x": 198, "y": 64 }
     },
     {
       "id": 6,
@@ -98,7 +107,8 @@
       "ini": 13.47,
       "fin": 15.22,
       "gujarati": "નમસ્તે રાહુલભાઈ.",
-      "espanol": "Hola Rajul."
+      "espanol": "Hola Rajul.",
+      "avatarActivo": { "x": 393, "y": 103 }
     },
     {
       "id": 7,
@@ -107,7 +117,8 @@
       "ini": 15.23,
       "fin": 17.21,
       "gujarati": "નમસ્તે સોહાનભાઈ.",
-      "espanol": "Hola Sojan."
+      "espanol": "Hola Sojan.",
+      "avatarActivo": { "x": 201, "y": 67 }
     },
     {
       "id": 8,
@@ -116,7 +127,8 @@
       "ini": 17.33,
       "fin": 19.42,
       "gujarati": "નમસ્તે રાહુલભાઈ.",
-      "espanol": "Hola Rajul."
+      "espanol": "Hola Rajul.",
+      "avatarActivo": { "x": 393, "y": 103 }
     }
   ],
   "secuencias": [
