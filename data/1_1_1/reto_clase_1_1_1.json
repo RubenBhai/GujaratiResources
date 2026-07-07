@@ -2,7 +2,7 @@
   "leccion": "1.1.1",
   "titulo": "Reto — Lección 1.1.1",
   "sonido_victoria": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/victoria.mp3",
-  "programa_efecto_victoria": "pinata",
+  "programa_efecto_victoria": "estrellas",
   "nivel1": {
     "titulo": "Reconoce letras y vocales",
     "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
