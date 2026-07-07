@@ -130,8 +130,8 @@ function indicesAleatorios(cantidad) {
   for (var i = 0; i < cantidad; i++) {
     var idx = Math.floor(Math.random() * total);
     var intentos = 0;
-    // si el valor ya salió, reintenta — pero nunca más de MAX_INTENTOS veces
-    while (out.indexOf(idx) !== -1 && intentos < MAX_INTENTOS) {
+    // evita que se repita el INMEDIATO anterior — no toda la lista, eso sí es necesario que se repita
+    while (out.length > 0 && idx === out[out.length - 1] && intentos < MAX_INTENTOS) {
       idx = Math.floor(Math.random() * total);
       intentos++;
     }
