@@ -280,24 +280,14 @@
         const segmentosEscalados = evaluarSegmentos();
         const resultado = validarPlanaCompleta(segmentosEscalados, trazos);
 
-        /*
-        // Copiado de seguridad y diagnóstico al Clipboard
-        const textoDiagnostico = JSON.stringify({
-          segmentos: segmentosEscalados,
-          trazos: trazos,
-          resultado: resultado
-        }, null, 2);
-
-        console.log(textoDiagnostico);
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(textoDiagnostico).catch(function(){});
-        }
-        */
-
         etiquetaResultado.textContent = mensajeParaPorcentaje(resultado.porcentaje);
         etiquetaResultado.style.display = '';
         yaEvaluado = true;
+
+        // 👇 AGREGA ESTA LÍNEA AQUÍ
+        document.getElementById('btn-escuchar').click();
       };
+      
       btnVer.style.display = '';
 
       let tokenAnimacionVer = 0;
