@@ -320,6 +320,7 @@
     }
 
     // Los botones Ver y Evaluar solo aparecen si esta plana ya trae datos de segmentos medidos
+    // Los botones Ver y Evaluar solo aparecen si esta plana ya trae datos de segmentos medidos
     if (segmentosJSON) {
       btnEvaluar.style.display = '';
       btnEvaluar.onclick = function(){
@@ -329,6 +330,9 @@
         etiquetaResultado.textContent = mensajeParaPorcentaje(resultado.porcentaje);
         etiquetaResultado.style.display = '';
         yaEvaluado = true;
+
+        // 👇 AGREGA ESTA LÍNEA AQUÍ (Nota el "-plana" al final del ID)
+        document.getElementById('btn-escuchar-plana').click();
       };
       btnVer.style.display = '';
 
