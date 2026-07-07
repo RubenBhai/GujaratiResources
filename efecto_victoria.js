@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════════════════
    Este archivo va en la raíz del sitio (junto a los .html), es fijo
    y no cambia entre lecciones. NO contiene el efecto visual en sí —
-   ese vive por lección, en data/{leccion}/{programa_efecto_victoria}.js
+   ese vive por lección, en data/{programa_efecto_victoria}.js
 
    Uso desde cualquier motor:
 
@@ -11,7 +11,7 @@
      ...
      revisarVictoria(resultado.porcentaje, data.sonido_victoria, data.programa_efecto_victoria, _leccion);
 
-   Convención que debe cumplir el archivo del efecto (ej. data/1_1_1/pinata.js):
+   Convención que debe cumplir el archivo del efecto (ej. data/pinata.js):
    debe definir una función global llamada exactamente ejecutarEfectoVictoria(),
    sin parámetros, que arme y dispare su propia animación (crea sus propios
    elementos, se limpia sola al terminar). Cada lección puede tener un
@@ -32,7 +32,7 @@ function revisarVictoria(porcentaje, sonidoUrl, nombrePrograma, leccionFolder) {
     } catch (e) {}
   }
 
-  var url = 'data/' + leccionFolder + '/' + nombrePrograma + '.js';
+  var url = 'data/' + nombrePrograma + '.js';
   var script = document.createElement('script');
   script.src = url + '?t=' + Date.now(); // evita caché vieja, mismo patrón que el resto del sitio
   script.onload = function() {

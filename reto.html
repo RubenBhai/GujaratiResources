@@ -9,6 +9,7 @@
 <title>Reto · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-reto.css">
+<script src="efecto_victoria.js"></script>
 </head>
 <body>
 
@@ -560,6 +561,11 @@ function mostrarResultado(pct, detalle, modo){
   }
 
   goTo('s-resultado');
+
+  if (pct >= 81) {
+    revisarVictoria(pct, data.sonido_victoria, data.programa_efecto_victoria, _leccion);
+  }
+
 }
 
 function siguienteSesion(){
