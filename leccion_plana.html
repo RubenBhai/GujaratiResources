@@ -53,6 +53,7 @@
 
 <audio id="player"></audio>
 
+<script src="efecto_victoria.js"></script>
 <script>
   const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
   const player = document.getElementById('player');
@@ -179,7 +180,7 @@
   }
 
   /* ── Canvas de práctica ── */
-  function configurarCanvasPlana(img, segmentosJSON){
+  function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfectoVictoria){
     const canvas = document.getElementById('canvas-plana');
     const ctx = canvas.getContext('2d');
     let dibujando = false;
@@ -286,12 +287,15 @@
 
         // 👇 AGREGA ESTA LÍNEA AQUÍ
         document.getElementById('btn-escuchar').click();
+
+        revisarVictoria(resultado.porcentaje, sonidoVictoria, programaEfectoVictoria, _leccion);
       };
       
       btnVer.style.display = '';
 
       let tokenAnimacionVer = 0;
       btnVer.onclick = function(){
+        document.getElementById('btn-reintentar').click();
         const segmentosEscalados = evaluarSegmentos();
         const miToken = ++tokenAnimacionVer;
 
@@ -373,8 +377,8 @@
       const trazosUrl = 'data/' + _leccion + '/trazos_' + actual.roman + '.json';
       fetch(trazosUrl + '?t=' + Date.now(), { cache: 'no-store' })
         .then(function(r){ if(!r.ok) throw new Error('sin trazos'); return r.json(); })
-        .then(function(segmentos){ configurarCanvasPlana(img, segmentos); })
-        .catch(function(){ configurarCanvasPlana(img, null); });
+        .then(function(segmentos){ configurarCanvasPlana(img, segmentos, data.sonido_victoria, data.programa_efecto_victoria); })
+        .catch(function(){ configurarCanvasPlana(img, null, data.sonido_victoria, data.programa_efecto_victoria); });
 
       document.getElementById('nav-home').href = data.home;
       document.getElementById('nav-palabras').href = data.ir_a_palabras;
