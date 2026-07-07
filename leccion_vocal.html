@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Vocal &middot; Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-amigable_3.css">
+<style>
+.frame-img::before { content: none; }
+.frame-img:hover { transform: none; box-shadow: var(--shadow-soft); }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" id="nav-anterior" href="#">&larr; Anterior</a>
+  <a class="nav-btn home" id="nav-home" href="#">&#127968;</a>
+  <a class="nav-btn" id="nav-palabras" href="#">Ir a palabras</a>
+</nav>
+
+<div class="wrap" style="padding-bottom:8px;">
+  <span class="badge" id="badge"></span>
+
+  <!-- tipo: vocal / con_matra (imagen 320px) -->
+  <div class="frame-img" id="frame-320" style="max-width:320px; margin:0 auto; display:none;">
+    <img id="img-320" alt="" style="cursor:pointer; max-height:380px; object-fit:contain; width:100%;">
+  </div>
+
+  <!-- tipo: matra (imagen 380px) -->
+  <div class="frame-img" id="frame-380" style="max-width:380px; margin:0 auto; display:none;">
+    <img id="img-380" alt="" style="cursor:pointer; max-height:440px; object-fit:contain; width:100%;">
+  </div>
+
+  <!-- tipo: plana -->
+  <div id="bloque-plana" style="display:none;">
+    <div class="info-box" style="font-size:1.2rem; color:var(--paper); line-height:1.7; text-align:center;">
+      Haz esta plana <strong>varias veces</strong>.<br>
+      Al terminar de dibujarla,<br>
+      pronuncia en voz alta:
+      <span id="roman-label" style="color:var(--saffron); font-size:1.6rem; font-weight:700;"></span>
+    </div>
+    <div class="frame-img" style="max-width:340px; margin:0 auto;">
+      <img id="img-plana" alt="" style="max-height:440px; object-fit:contain; width:100%;">
+      <canvas id="canvas-plana" style="position:absolute; touch-action:none; cursor:crosshair;"></canvas>
+    </div>
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px;">
+      <button id="btn-reintentar" type="button" style="background:var(--surface); color:var(--ink-soft); border:1px solid var(--border); border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:inherit;">🔄 Reintentar</button>
+      <button id="btn-ver" type="button" style="display:none; background:var(--surface); color:var(--saffron); border:1px solid var(--saffron); border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:inherit;">👁️ Ver</button>
+      <button id="btn-evaluar" type="button" style="display:none; background:var(--sindoor); color:white; border:none; border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:700; cursor:pointer; font-family:inherit; box-shadow:0 4px 14px rgba(168,54,42,0.3);">✓ Evaluar</button>
+    </div>
+    <div id="resultado-evaluacion" style="display:none; text-align:center; font-size:1.15rem; font-weight:700; color:var(--saffron);"></div>
+  </div>
+</div>
+
+<!-- tipo: vocal -->
+<div class="bottom-actions" id="bottom-vocal" style="max-width:320px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <button class="btn-sec" style="border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar-vocal">&#128266; Escuchar</button>
+  <div style="display:flex; gap:10px;">
+    <a class="btn-sec" style="flex:1;" id="btn-sigleccion-vocal" href="#">&#9197; Sig. lección</a>
+    <a class="btn-fin" style="flex:1; margin-top:0;" id="btn-siguiente-vocal" href="#">Siguiente &rarr;</a>
+  </div>
+</div>
+
+<!-- tipo: matra -->
+<div class="bottom-actions" id="bottom-matra" style="max-width:380px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <a class="btn-fin" style="margin-top:0; background:var(--sindoor); box-shadow:0 4px 14px rgba(168,54,42,0.3); display:none;" id="btn-nota-especial" href="#">&#128161; &iexcl;Nota especial!</a>
+  <div style="display:flex; gap:10px;">
+    <a class="btn-sec" style="flex:1;" id="btn-sigleccion-matra" href="#">&#9197; Sig. lección</a>
+    <a class="btn-fin" style="flex:1; margin-top:0;" id="btn-siguiente-matra" href="#">Siguiente &rarr;</a>
+  </div>
+</div>
+
+<!-- tipo: con_matra -->
+<div class="bottom-actions" id="bottom-conmatra" style="max-width:320px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <button class="btn-sec" style="margin-top:0; border:none; cursor:pointer; font-family:inherit;" id="btn-secuencia"></button>
+  <a class="btn-fin" style="margin-top:0; background:var(--sindoor); box-shadow:0 4px 14px rgba(168,54,42,0.3);" id="btn-practicar-cm" href="#">&#127908; A practicar la lectura</a>
+  <div style="display:flex; gap:10px;">
+    <a class="btn-sec" style="flex:1;" id="btn-sigleccion-cm" href="#">&#9197; Sig. lección</a>
+    <a class="btn-fin" style="flex:1; margin-top:0;" id="btn-siguiente-cm" href="#">Siguiente &rarr;</a>
+  </div>
+</div>
+
+<!-- tipo: plana -->
+<div class="bottom-actions" id="bottom-plana" style="max-width:340px; margin:0 auto; padding:0 0 24px 0; gap:10px; display:none;">
+  <div style="display:flex; gap:10px;">
+    <button class="btn-sec" style="flex:1; margin-top:0; padding:12px 8px; font-size:0.9rem; border:none; cursor:pointer; font-family:inherit;" id="btn-escuchar-plana"></button>
+    <a class="btn-fin" style="flex:1; margin-top:0; padding:12px 8px; font-size:0.9rem;" id="btn-continuar-plana" href="#">Continuar</a>
+  </div>
+</div>
+
+<audio id="player"></audio>
+
+<script>
+  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
+  const player = document.getElementById('player');
+
+  const _params     = new URLSearchParams(location.search);
+  const _leccionRaw = _params.get('leccion') || '1.1.1';
+  const _leccion     = _leccionRaw.replace(/\./g, '_');
+  const _item       = parseInt(_params.get('item') || '1', 10);
+  const JSON_URL    = 'data/' + _leccion + '/leccion_vocal_' + _leccion + '.json';
+
+  function playSimple(url, btn, labelHtml) {
+    btn.classList.add('playing');
+    btn.textContent = '▶ Reproduciendo...';
+    player.src = url; player.playbackRate = 1.0; player.play();
+    player.onended = function(){ btn.classList.remove('playing'); btn.innerHTML = labelHtml; };
+  }
+
+  /* ── Validación de trazos: remuestreo equidistante + distancia promedio ── */
+  const N_REMUESTREO = 64;            // Puntos equidistantes fijos para comparar la geometría
+  const DISTANCIA_MAX_PARA_CERO = 40; // Umbral en píxeles promedio a partir del cual el puntaje es 0%
+
+  function distanciaPuntos(p1, p2){ return Math.hypot(p1.x - p2.x, p1.y - p2.y); }
+
+  function longitudTotal(puntos){
+    let total = 0;
+    for (let i = 1; i < puntos.length; i++) total += distanciaPuntos(puntos[i-1], puntos[i]);
+    return total;
+  }
+
+  function remuestrear(puntosOriginales, n){
+    if (!puntosOriginales || puntosOriginales.length === 0) {
+      return new Array(n).fill(0).map(function(){ return { x: 0, y: 0 }; });
+    }
+    if (puntosOriginales.length < 2) {
+      const p = puntosOriginales[0];
+      return new Array(n).fill(0).map(function(){ return { x: p.x, y: p.y }; });
+    }
+
+    const totalLen = longitudTotal(puntosOriginales);
+    if (totalLen === 0) {
+      return new Array(n).fill(0).map(function(){ return { x: puntosOriginales[0].x, y: puntosOriginales[0].y }; });
+    }
+
+    const espaciado = totalLen / (n - 1);
+    let distanciaAcumulada = 0;
+    const nuevosPuntos = [{ x: puntosOriginales[0].x, y: puntosOriginales[0].y }];
+
+    let pt1 = puntosOriginales[0];
+    let i = 1;
+
+    while (i < puntosOriginales.length) {
+      const pt2 = puntosOriginales[i];
+      const d = distanciaPuntos(pt1, pt2);
+
+      if (distanciaAcumulada + d >= espaciado) {
+        const proporcion = (espaciado - distanciaAcumulada) / (d || 1);
+        const q = {
+          x: pt1.x + proporcion * (pt2.x - pt1.x),
+          y: pt1.y + proporcion * (pt2.y - pt1.y)
+        };
+        nuevosPuntos.push(q);
+        pt1 = q;
+        distanciaAcumulada = 0;
+      } else {
+        distanciaAcumulada += d;
+        pt1 = pt2;
+        i++;
+      }
+    }
+
+    while (nuevosPuntos.length < n) {
+      const u = puntosOriginales[puntosOriginales.length - 1];
+      nuevosPuntos.push({ x: u.x, y: u.y });
+    }
+    while (nuevosPuntos.length > n) {
+      nuevosPuntos.pop();
+    }
+
+    return nuevosPuntos;
+  }
+
+  function poligonoDesdeSubVectores(subVectores){
+    return [subVectores[0].origen].concat(subVectores.map(function(v){ return v.destino; }));
+  }
+
+  function distanciaPromedioRemuestreada(subVectores, trazo){
+    const guia = remuestrear(poligonoDesdeSubVectores(subVectores), N_REMUESTREO);
+    const est  = remuestrear(trazo, N_REMUESTREO);
+    let suma = 0;
+    for (let i = 0; i < N_REMUESTREO; i++) suma += distanciaPuntos(guia[i], est[i]);
+    return suma / N_REMUESTREO;
+  }
+
+  function validarPlanaCompleta(segmentosJSON, trazosEstudiante){
+    const nombresOrdenados = Object.keys(segmentosJSON)
+      .sort(function(a, b){ return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]); });
+
+    const porcentajesPorSegmento = [];
+
+    nombresOrdenados.forEach(function(nombre){
+      const subVectores = segmentosJSON[nombre];
+
+      let mejorDistancia = Infinity;
+      trazosEstudiante.forEach(function(trazo){
+        const d = distanciaPromedioRemuestreada(subVectores, trazo);
+        if (d < mejorDistancia) mejorDistancia = d;
+      });
+
+      const pctSegmento = Math.max(0, Math.min(100, Math.round(100 * (1 - mejorDistancia / DISTANCIA_MAX_PARA_CERO))));
+      porcentajesPorSegmento.push(pctSegmento);
+    });
+
+    const porcentajeFinal = porcentajesPorSegmento.length
+      ? Math.round(porcentajesPorSegmento.reduce(function(a,b){ return a+b; }, 0) / porcentajesPorSegmento.length)
+      : 0;
+
+    return { porcentaje: porcentajeFinal, porSegmento: porcentajesPorSegmento };
+  }
+
+  function mensajeParaPorcentaje(p){
+    if (p === 100) return '¡Magnífico!';
+    if (p >= 85)   return '¡Bravo!'; // <-- CORREGIDO: Faltaba la comilla de cierre aquí
+    if (p >= 71)   return '¡Excelente!';
+    if (p >= 61)   return 'Buen intento';
+    return '¡Bien! Sigue practicando';
+  }
+
+  /* ── Canvas de práctica ── */
+  function configurarCanvasPlana(img, segmentosJSON){
+    const canvas = document.getElementById('canvas-plana');
+    const ctx = canvas.getContext('2d');
+    let dibujando = false;
+    let yaEvaluado = false;
+    let ultimoX = 0, ultimoY = 0;
+    let trazoActual = [];
+    let trazos = [];
+
+    const colorTrazo = '#0066FF';
+    const GROSOR_TRAZO = 7;
+
+    function ajustarCanvas(){
+      const dpr = window.devicePixelRatio || 1;
+      const w = img.clientWidth, h = img.clientHeight;
+      if (!w || !h) return;
+
+      canvas.style.left   = img.offsetLeft + 'px';
+      canvas.style.top    = img.offsetTop + 'px';
+      canvas.style.width  = w + 'px';
+      canvas.style.height = h + 'px';
+      canvas.width  = w * dpr;
+      canvas.height = h * dpr;
+
+      ctx.scale(dpr, dpr);
+      ctx.lineWidth = GROSOR_TRAZO;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = colorTrazo;
+    }
+
+    function posicionDesdeEvento(e){
+      const rect = canvas.getBoundingClientRect();
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top, t: Date.now() };
+    }
+
+    canvas.addEventListener('pointerdown', function(e){
+      if (yaEvaluado) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        trazos = [];
+        etiquetaResultado.style.display = 'none';
+        yaEvaluado = false;
+      }
+      dibujando = true;
+      const p = posicionDesdeEvento(e);
+      ultimoX = p.x; ultimoY = p.y;
+      trazoActual = [p];
+      canvas.setPointerCapture(e.pointerId);
+    });
+    canvas.addEventListener('pointermove', function(e){
+      if(!dibujando) return;
+      const p = posicionDesdeEvento(e);
+      ctx.beginPath();
+      ctx.moveTo(ultimoX, ultimoY);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+      ultimoX = p.x; ultimoY = p.y;
+      trazoActual.push(p);
+    });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function(ev){
+      canvas.addEventListener(ev, function(){
+        if (dibujando && trazoActual.length > 1) trazos.push(trazoActual);
+        dibujando = false;
+        trazoActual = [];
+      });
+    });
+
+    const btnEvaluar = document.getElementById('btn-evaluar');
+    const btnVer = document.getElementById('btn-ver');
+    const etiquetaResultado = document.getElementById('resultado-evaluacion');
+
+    document.getElementById('btn-reintentar').onclick = function(){
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      trazos = [];
+      yaEvaluado = false;
+      etiquetaResultado.style.display = 'none';
+    };
+
+    function evaluarSegmentos(){
+      const naturalW = img.naturalWidth, naturalH = img.naturalHeight;
+      const cw = canvas.clientWidth, ch = canvas.clientHeight;
+      const scale = Math.min(cw / naturalW, ch / naturalH);
+      const offsetX = (cw - naturalW * scale) / 2;
+      const offsetY = (ch - naturalH * scale) / 2;
+      function transformar(p){ return { x: offsetX + p.x * scale, y: offsetY + p.y * scale }; }
+
+      const segmentosEscalados = {};
+      Object.keys(segmentosJSON).forEach(function(nombre){
+        segmentosEscalados[nombre] = segmentosJSON[nombre].map(function(v){
+          return { origen: transformar(v.origen), destino: transformar(v.destino) };
+        });
+      });
+      return segmentosEscalados;
+    }
+
+    if (segmentosJSON) {
+      btnEvaluar.style.display = '';
+      btnEvaluar.onclick = function(){
+        const segmentosEscalados = evaluarSegmentos();
+        const resultado = validarPlanaCompleta(segmentosEscalados, trazos);
+
+        etiquetaResultado.textContent = mensajeParaPorcentaje(resultado.porcentaje);
+        etiquetaResultado.style.display = '';
+        yaEvaluado = true;
+
+        // NUEVO: Ejecuta automáticamente el clic de reproducción de audio de la plana
+        document.getElementById('btn-escuchar-plana').click();
+      };
+      btnVer.style.display = '';
+
+      let tokenAnimacionVer = 0;
+      btnVer.onclick = function(){
+        const segmentosEscalados = evaluarSegmentos();
+        const miToken = ++tokenAnimacionVer;
+
+        const nombresOrdenados = Object.keys(segmentosEscalados)
+          .sort(function(a, b){ return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]); });
+        let subVectores = [];
+        nombresOrdenados.forEach(function(nombre){ subVectores = subVectores.concat(segmentosEscalados[nombre]); });
+
+        let acumulado = 0;
+        const acumuladas = subVectores.map(function(v){
+          acumulado += Math.hypot(v.destino.x - v.origen.x, v.destino.y - v.origen.y);
+          return acumulado;
+        });
+        const longitudTotal = acumulado;
+        const DURACION_MS = 2000;
+        const inicio = performance.now();
+
+        function dibujarHasta(distanciaObjetivo){
+          const colorPrevio = ctx.strokeStyle, grosorPrevio = ctx.lineWidth;
+          ctx.strokeStyle = '#FF0000';
+          ctx.lineWidth = GROSOR_TRAZO;
+
+          let dibujadoHastaAqui = 0;
+          for (let i = 0; i < subVectores.length; i++) {
+            const finTramo = acumuladas[i];
+            if (distanciaObjetivo <= dibujadoHastaAqui) break;
+
+            const v = subVectores[i];
+            ctx.beginPath();
+            ctx.moveTo(v.origen.x, v.origen.y);
+            if (distanciaObjetivo >= finTramo) {
+              ctx.lineTo(v.destino.x, v.destino.y);
+            } else {
+              const t = (distanciaObjetivo - dibujadoHastaAqui) / (finTramo - dibujadoHastaAqui);
+              ctx.lineTo(v.origen.x + t * (v.destino.x - v.origen.x), v.origen.y + t * (v.destino.y - v.origen.y));
+            }
+            ctx.stroke();
+            dibujadoHastaAqui = finTramo;
+          }
+
+          ctx.strokeStyle = colorPrevio;
+          ctx.lineWidth = grosorPrevio;
+        }
+
+        function frame(ahora){
+          if (miToken !== tokenAnimacionVer) return;
+          const proporcion = Math.min(1, (ahora - inicio) / DURACION_MS);
+          dibujarHasta(proporcion * longitudTotal);
+          if (proporcion < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      };
+    } else {
+      btnEvaluar.style.display = 'none';
+      btnVer.style.display = 'none';
+    }
+
+    if (img.complete && img.naturalWidth) ajustarCanvas();
+    else img.addEventListener('load', ajustarCanvas);
+  }
+
+  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+    .then(function(data){
+      const pasos = data.pasos;
+      const total = pasos.length;
+      const idx   = Math.min(Math.max(_item, 1), total);
+      const actual = pasos[idx - 1];
+
+      document.getElementById('nav-home').href = data.home;
+      document.getElementById('nav-palabras').href = data.ir_a_palabras;
+      document.getElementById('nav-anterior').href = (idx > 1)
+        ? ('leccion_vocal.html?leccion=' + _leccionRaw + '&item=' + (idx - 1))
+        : data.anterior_primera;
+
+      const siguienteUrl = (idx < total)
+        ? ('leccion_vocal.html?leccion=' + _leccionRaw + '&item=' + (idx + 1))
+        : data.siguiente_final;
+
+      if (actual.tipo === 'vocal') {
+        document.getElementById('page-title').textContent = 'Vocal ' + actual.gujarati + ' · Piensa en Gujarati';
+        document.getElementById('badge').textContent = actual.badge;
+
+        const img = document.getElementById('img-320');
+        img.src = actual.imagen;
+        img.alt = 'Vocal ' + actual.gujarati;
+        img.onerror = function(){ img.style.display = 'none'; };
+        img.onclick = function(){ window.location.href = siguienteUrl; };
+        document.getElementById('frame-320').style.display = '';
+
+        const btnEsc = document.getElementById('btn-escuchar-vocal');
+        btnEsc.onclick = function(){ playSimple(actual.audio, btnEsc, '&#128266; Escuchar'); };
+        document.getElementById('btn-siguiente-vocal').href = siguienteUrl;
+        document.getElementById('btn-sigleccion-vocal').href = data.siguiente_leccion;
+        document.getElementById('bottom-vocal').style.display = '';
+
+        setTimeout(function(){ player.src = actual.audio; player.play().catch(function(){}); }, 400);
+
+      } else if (actual.tipo === 'matra') {
+        document.getElementById('page-title').textContent = 'Matra ' + actual.matra + ' · Piensa en Gujarati';
+        document.getElementById('badge').textContent = actual.badge;
+
+        const img = document.getElementById('img-380');
+        img.src = actual.imagen;
+        img.alt = 'Matra ' + actual.matra;
+        img.onerror = function(){ img.style.opacity = '0.3'; img.title = 'Imagen no encontrada'; };
+        img.onclick = function(){ window.location.href = siguienteUrl; };
+        document.getElementById('frame-380').style.display = '';
+
+        document.getElementById('btn-siguiente-matra').href = siguienteUrl;
+        document.getElementById('btn-sigleccion-matra').href = data.siguiente_leccion;
+
+        const btnNota = document.getElementById('btn-nota-especial');
+        if (actual.nota_especial) {
+          btnNota.href = actual.nota_especial;
+          btnNota.style.display = '';
+        } else {
+          btnNota.style.display = 'none';
+        }
+
+        document.getElementById('bottom-matra').style.display = '';
+
+      } else if (actual.tipo === 'con_matra') {
+        document.getElementById('page-title').textContent = 'Consonantes con matra ' + actual.matra + ' · Piensa en Gujarati';
+        document.getElementById('badge').textContent = 'Las 3 consonantes con esta matra';
+
+        const img = document.getElementById('img-320');
+        img.src = actual.imagen;
+        img.alt = 'Consonantes con matra ' + actual.matra;
+        img.onerror = function(){ img.style.opacity = '0.3'; };
+        img.onclick = function(){ window.location.href = siguienteUrl; };
+        document.getElementById('frame-320').style.display = '';
+
+        const textoBase = '&#128266; ' + actual.texto_boton;
+        const btnSec = document.getElementById('btn-secuencia');
+        btnSec.innerHTML = textoBase;
+        let seqIdx = 0;
+        function reproducirSiguiente() {
+          if (seqIdx >= actual.audios_secuencia.length) {
+            btnSec.classList.remove('playing');
+            btnSec.innerHTML = textoBase;
+            return;
+          }
+          player.src = actual.audios_secuencia[seqIdx];
+          player.playbackRate = 1.0;
+          player.play();
+          player.onended = function() {
+            seqIdx++;
+            setTimeout(reproducirSiguiente, 350);
+          };
+        }
+        btnSec.onclick = function(){
+          btnSec.classList.add('playing');
+          btnSec.textContent = '▶ Reproduciendo...';
+          seqIdx = 0;
+          reproducirSiguiente();
+        };
+
+        document.getElementById('btn-practicar-cm').href = 'reto_flash.html?json=' + actual.reto_flash_json;
+        document.getElementById('btn-siguiente-cm').href = siguienteUrl;
+        document.getElementById('btn-sigleccion-cm').href = data.siguiente_leccion;
+        document.getElementById('bottom-conmatra').style.display = '';
+
+      } else if (actual.tipo === 'plana') {
+        document.getElementById('page-title').textContent = 'Plana ' + actual.roman + ' · Piensa en Gujarati';
+        document.getElementById('badge').style.display = 'none';
+        document.getElementById('roman-label').textContent = '"' + actual.roman + '"';
+
+        const img = document.getElementById('img-plana');
+        img.src = actual.imagen;
+        img.alt = 'Plana ' + actual.roman;
+        img.onerror = function(){ img.style.opacity = '0.3'; };
+        const trazosUrl = 'data/' + _leccion + '/trazos_' + actual.roman + '.json';
+        fetch(trazosUrl + '?t=' + Date.now(), { cache: 'no-store' })
+          .then(function(r){ if(!r.ok) throw new Error('sin trazos'); return r.json(); })
+          .then(function(segmentos){ configurarCanvasPlana(img, segmentos); })
+          .catch(function(){ configurarCanvasPlana(img, null); });
+        document.getElementById('bloque-plana').style.display = '';
+
+        const btnEsc = document.getElementById('btn-escuchar-plana');
+        const labelHtml = '🎵 Escucha';
+        btnEsc.innerHTML = labelHtml;
+        btnEsc.onclick = function(){ playSimple(actual.audio, btnEsc, labelHtml); };
+
+        document.getElementById('btn-continuar-plana').href = siguienteUrl;
+        document.getElementById('bottom-plana').style.display = '';
+      }
+    })
+    .catch(function(){
+      document.body.innerHTML =
+        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    });
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+</body>
+</html>
