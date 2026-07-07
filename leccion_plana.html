@@ -41,7 +41,7 @@
     <button id="btn-ver" type="button" style="display:none; background:var(--surface); color:var(--saffron); border:1px solid var(--saffron); border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:inherit;">👁️ Ver</button>
     <button id="btn-evaluar" type="button" style="display:none; background:var(--sindoor); color:white; border:none; border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem; font-weight:700; cursor:pointer; font-family:inherit; box-shadow:0 4px 14px rgba(168,54,42,0.3);">✓ Evaluar</button>
   </div>
-  <div id="resultado-evaluacion" style="display:none; text-align:center; font-size:1.15rem; font-weight:700; color:var(--saffron);"></div>
+  <div id="resultado-evaluacion" style="display:none; text-align:center; font-size:1.15rem; font-weight:700; color:var(--saffron); margin-top: 15px;"></div>
 </div>
 
 <div class="bottom-actions" style="max-width:340px; margin:0 auto; padding:0 0 24px 0; gap:10px;">
@@ -65,57 +65,109 @@
 
   function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
-  /* ── Validación de trazos (matemática pura, sin llamadas a red) ── */
-  const RADIO_TOLERANCIA = 38;   // px, en espacio de pantalla ya escalado
-  const UMBRAL_DIRECCION = 0.5;  // coseno mínimo aceptable (~60° de margen)
+  /* ── Validación de trazos (Modelo de Remuestreo Espacial Seguro) ── */
+  const N_REMUESTREO = 64;            // Puntos equidistantes fijos para comparar la geometría
+  const DISTANCIA_MAX_PARA_CERO = 40; // Umbral en píxeles promedio a partir del cual el puntaje es 0%
 
   function distanciaPuntos(p1, p2){ return Math.hypot(p1.x - p2.x, p1.y - p2.y); }
 
-  function aplanarSegmentos(segmentosJSON){
-    const nombresOrdenados = Object.keys(segmentosJSON)
-      .sort(function(a, b){ return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]); });
-    let subVectores = [];
-    nombresOrdenados.forEach(function(nombre){ subVectores = subVectores.concat(segmentosJSON[nombre]); });
-    return subVectores;
+  function longitudTotal(puntos){
+    let total = 0;
+    for (let i = 1; i < puntos.length; i++) total += distanciaPuntos(puntos[i-1], puntos[i]);
+    return total;
   }
 
-  // Sirve tanto si el estudiante dibujó todo en un solo trazo como si levantó el dedo varias veces:
-  // concatena todos los trazos en un solo camino, en el orden en que se dibujaron.
-  function validarPlanaCompleta(segmentosJSON, trazosEstudiante){
-    const subVectores = aplanarSegmentos(segmentosJSON);
-    const puntosGuia = [subVectores[0].origen].concat(subVectores.map(function(v){ return v.destino; }));
-    const camino = [].concat.apply([], trazosEstudiante);
-
-    if (camino.length < 2) return { porcentaje: 0, correctos: 0, total: subVectores.length };
-
-    let ultimoIndice = -1;
-    const indices = [];
-    puntosGuia.forEach(function(pg){
-      let mejorIdx = -1, mejorDist = Infinity;
-      for (let i = Math.max(0, ultimoIndice); i < camino.length; i++) {
-        const d = distanciaPuntos(camino[i], pg);
-        if (d < mejorDist) { mejorDist = d; mejorIdx = i; }
-      }
-      if (mejorIdx === -1 || mejorDist > RADIO_TOLERANCIA) { indices.push(null); }
-      else { indices.push(mejorIdx); ultimoIndice = mejorIdx; }
-    });
-
-    let correctos = 0;
-    for (let i = 0; i < subVectores.length; i++) {
-      const idxInicio = indices[i], idxFin = indices[i + 1];
-      if (idxInicio === null || idxFin === null || idxInicio === idxFin) continue;
-
-      const pInicio = camino[idxInicio], pFin = camino[idxFin];
-      const vEsperado = { x: subVectores[i].destino.x - subVectores[i].origen.x, y: subVectores[i].destino.y - subVectores[i].origen.y };
-      const vTrazo    = { x: pFin.x - pInicio.x, y: pFin.y - pInicio.y };
-      const magE = Math.hypot(vEsperado.x, vEsperado.y), magT = Math.hypot(vTrazo.x, vTrazo.y);
-      const coseno = (magE && magT) ? (vEsperado.x * vTrazo.x + vEsperado.y * vTrazo.y) / (magE * magT) : 0;
-
-      if (coseno >= UMBRAL_DIRECCION) correctos++;
+  // Divide y normaliza cualquier trazo en exactamente N puntos equidistantes.
+  // Cuenta con protección absoluta contra divisiones por cero y bucles infinitos.
+  function remuestrear(puntosOriginales, n){
+    if (!puntosOriginales || puntosOriginales.length === 0) {
+      return new Array(n).fill(0).map(function(){ return { x: 0, y: 0 }; });
+    }
+    if (puntosOriginales.length < 2) {
+      const p = puntosOriginales[0];
+      return new Array(n).fill(0).map(function(){ return { x: p.x, y: p.y }; });
+    }
+    
+    const totalLen = longitudTotal(puntosOriginales);
+    if (totalLen === 0) {
+      return new Array(n).fill(0).map(function(){ return { x: puntosOriginales[0].x, y: puntosOriginales[0].y }; });
     }
 
-    const total = subVectores.length;
-    return { porcentaje: total ? Math.round((correctos / total) * 100) : 0, correctos: correctos, total: total };
+    const espaciado = totalLen / (n - 1);
+    let distanciaAcumulada = 0;
+    const nuevosPuntos = [{ x: puntosOriginales[0].x, y: puntosOriginales[0].y }];
+    
+    let pt1 = puntosOriginales[0];
+    let i = 1;
+
+    while (i < puntosOriginales.length) {
+      const pt2 = puntosOriginales[i];
+      const d = distanciaPuntos(pt1, pt2);
+
+      if (distanciaAcumulada + d >= espaciado) {
+        const proporcion = (espaciado - distanciaAcumulada) / (d || 1);
+        const q = {
+          x: pt1.x + proporcion * (pt2.x - pt1.x),
+          y: pt1.y + proporcion * (pt2.y - pt1.y)
+        };
+        nuevosPuntos.push(q);
+        pt1 = q; // El nuevo inicio de medición se mueve al punto interpolado
+        distanciaAcumulada = 0; 
+      } else {
+        distanciaAcumulada += d;
+        pt1 = pt2;
+        i++; // Avanza de manera estrictamente secuencial sobre el arreglo original
+      }
+    }
+
+    // Ajustes de precisión por redondeos de punto flotante
+    while (nuevosPuntos.length < n) {
+      const u = puntosOriginales[puntosOriginales.length - 1];
+      nuevosPuntos.push({ x: u.x, y: u.y });
+    }
+    while (nuevosPuntos.length > n) {
+      nuevosPuntos.pop();
+    }
+
+    return nuevosPuntos;
+  }
+
+  function poligonoDesdeSubVectores(subVectores){
+    return [subVectores[0].origen].concat(subVectores.map(function(v){ return v.destino; }));
+  }
+
+  function distanciaPromedioRemuestreada(subVectores, trazo){
+    const guia = remuestrear(poligonoDesdeSubVectores(subVectores), N_REMUESTREO);
+    const est  = remuestrear(trazo, N_REMUESTREO);
+    let suma = 0;
+    for (let i = 0; i < N_REMUESTREO; i++) suma += distanciaPuntos(guia[i], est[i]);
+    return suma / N_REMUESTREO;
+  }
+
+  function validarPlanaCompleta(segmentosJSON, trazosEstudiante){
+    const nombresOrdenados = Object.keys(segmentosJSON)
+      .sort(function(a, b){ return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]); });
+
+    const porcentajesPorSegmento = [];
+
+    nombresOrdenados.forEach(function(nombre){
+      const subVectores = segmentosJSON[nombre];
+
+      let mejorDistancia = Infinity;
+      trazosEstudiante.forEach(function(trazo){
+        const d = distanciaPromedioRemuestreada(subVectores, trazo);
+        if (d < mejorDistancia) mejorDistancia = d;
+      });
+
+      const pctSegmento = Math.max(0, Math.min(100, Math.round(100 * (1 - mejorDistancia / DISTANCIA_MAX_PARA_CERO))));
+      porcentajesPorSegmento.push(pctSegmento);
+    });
+
+    const porcentajeFinal = porcentajesPorSegmento.length
+      ? Math.round(porcentajesPorSegmento.reduce(function(a,b){ return a+b; }, 0) / porcentajesPorSegmento.length)
+      : 0;
+
+    return { porcentaje: porcentajeFinal, porSegmento: porcentajesPorSegmento };
   }
 
   function mensajeParaPorcentaje(p){
@@ -126,21 +178,23 @@
     return 'Sigue practicando — ' + p + '%';
   }
 
-  /* ── Canvas de práctica: se superpone exacto sobre la imagen de guía, mide su tamaño real ── */
+  /* ── Canvas de práctica ── */
   function configurarCanvasPlana(img, segmentosJSON){
     const canvas = document.getElementById('canvas-plana');
     const ctx = canvas.getContext('2d');
     let dibujando = false;
+    let yaEvaluado = false;
     let ultimoX = 0, ultimoY = 0;
     let trazoActual = [];
     let trazos = [];
 
     const colorTrazo = '#0066FF';
+    const GROSOR_TRAZO = 7; // mismo grosor para el trazo del estudiante y para "Ver"
 
     function ajustarCanvas(){
       const dpr = window.devicePixelRatio || 1;
       const w = img.clientWidth, h = img.clientHeight;
-      if (!w || !h) return; // imagen aún sin tamaño real; se reintenta en el evento 'load'
+      if (!w || !h) return;
 
       canvas.style.left   = img.offsetLeft + 'px';
       canvas.style.top    = img.offsetTop + 'px';
@@ -150,7 +204,7 @@
       canvas.height = h * dpr;
 
       ctx.scale(dpr, dpr);
-      ctx.lineWidth = 7;
+      ctx.lineWidth = GROSOR_TRAZO;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
       ctx.strokeStyle = colorTrazo;
@@ -162,6 +216,12 @@
     }
 
     canvas.addEventListener('pointerdown', function(e){
+      if (yaEvaluado) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        trazos = [];
+        etiquetaResultado.style.display = 'none';
+        yaEvaluado = false;
+      }
       dibujando = true;
       const p = posicionDesdeEvento(e);
       ultimoX = p.x; ultimoY = p.y;
@@ -193,10 +253,11 @@
     document.getElementById('btn-reintentar').onclick = function(){
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       trazos = [];
+      yaEvaluado = false;
       etiquetaResultado.style.display = 'none';
     };
 
-    function escalarSegmentos(){
+    function evaluarSegmentos(){
       const naturalW = img.naturalWidth, naturalH = img.naturalHeight;
       const cw = canvas.clientWidth, ch = canvas.clientHeight;
       const scale = Math.min(cw / naturalW, ch / naturalH);
@@ -213,31 +274,87 @@
       return segmentosEscalados;
     }
 
-    // Los botones Ver y Evaluar solo aparecen si esta plana ya trae datos de segmentos medidos
     if (segmentosJSON) {
       btnEvaluar.style.display = '';
       btnEvaluar.onclick = function(){
-        const resultado = validarPlanaCompleta(escalarSegmentos(), trazos);
+        const segmentosEscalados = evaluarSegmentos();
+        const resultado = validarPlanaCompleta(segmentosEscalados, trazos);
+
+        /*
+        // Copiado de seguridad y diagnóstico al Clipboard
+        const textoDiagnostico = JSON.stringify({
+          segmentos: segmentosEscalados,
+          trazos: trazos,
+          resultado: resultado
+        }, null, 2);
+
+        console.log(textoDiagnostico);
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(textoDiagnostico).catch(function(){});
+        }
+        */
+
         etiquetaResultado.textContent = mensajeParaPorcentaje(resultado.porcentaje);
         etiquetaResultado.style.display = '';
+        yaEvaluado = true;
       };
-
       btnVer.style.display = '';
+
+      let tokenAnimacionVer = 0;
       btnVer.onclick = function(){
-        const segmentosEscalados = escalarSegmentos();
-        const colorPrevio = ctx.strokeStyle, grosorPrevio = ctx.lineWidth;
-        ctx.strokeStyle = '#FF0000';
-        ctx.lineWidth = 5;
-        Object.keys(segmentosEscalados).forEach(function(nombre){
-          segmentosEscalados[nombre].forEach(function(v){
+        const segmentosEscalados = evaluarSegmentos();
+        const miToken = ++tokenAnimacionVer;
+
+        // Aplanar todos los segmentos, en orden, en una sola secuencia de sub-vectores
+        const nombresOrdenados = Object.keys(segmentosEscalados)
+          .sort(function(a, b){ return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]); });
+        let subVectores = [];
+        nombresOrdenados.forEach(function(nombre){ subVectores = subVectores.concat(segmentosEscalados[nombre]); });
+
+        // Longitud acumulada hasta el fin de cada sub-vector, para saber cuánto llevamos dibujado según el tiempo
+        let acumulado = 0;
+        const acumuladas = subVectores.map(function(v){
+          acumulado += Math.hypot(v.destino.x - v.origen.x, v.destino.y - v.origen.y);
+          return acumulado;
+        });
+        const longitudTotal = acumulado;
+        const DURACION_MS = 2000;
+        const inicio = performance.now();
+
+        function dibujarHasta(distanciaObjetivo){
+          const colorPrevio = ctx.strokeStyle, grosorPrevio = ctx.lineWidth;
+          ctx.strokeStyle = '#FF0000';
+          ctx.lineWidth = GROSOR_TRAZO;
+
+          let dibujadoHastaAqui = 0;
+          for (let i = 0; i < subVectores.length; i++) {
+            const finTramo = acumuladas[i];
+            if (distanciaObjetivo <= dibujadoHastaAqui) break;
+
+            const v = subVectores[i];
             ctx.beginPath();
             ctx.moveTo(v.origen.x, v.origen.y);
-            ctx.lineTo(v.destino.x, v.destino.y);
+            if (distanciaObjetivo >= finTramo) {
+              ctx.lineTo(v.destino.x, v.destino.y);
+            } else {
+              const t = (distanciaObjetivo - dibujadoHastaAqui) / (finTramo - dibujadoHastaAqui);
+              ctx.lineTo(v.origen.x + t * (v.destino.x - v.origen.x), v.origen.y + t * (v.destino.y - v.origen.y));
+            }
             ctx.stroke();
-          });
-        });
-        ctx.strokeStyle = colorPrevio;
-        ctx.lineWidth = grosorPrevio;
+            dibujadoHastaAqui = finTramo;
+          }
+
+          ctx.strokeStyle = colorPrevio;
+          ctx.lineWidth = grosorPrevio;
+        }
+
+        function frame(ahora){
+          if (miToken !== tokenAnimacionVer) return; // se pidió un "Ver" más nuevo; este se cancela
+          const proporcion = Math.min(1, (ahora - inicio) / DURACION_MS);
+          dibujarHasta(proporcion * longitudTotal);
+          if (proporcion < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
       };
     } else {
       btnEvaluar.style.display = 'none';
@@ -271,11 +388,8 @@
 
       document.getElementById('nav-home').href = data.home;
       document.getElementById('nav-palabras').href = data.ir_a_palabras;
-
-      // "Anterior" siempre vuelve a la MISMA consonante en leccion_letra.html (misma posición idx)
       document.getElementById('nav-anterior').href = 'leccion_letra.html?leccion=' + _leccionRaw + '&item=' + idx;
 
-      // "Ya terminé, continuar →": próxima consonante, o siguiente_palabras si es la última plana
       const continuarUrl = (idx < total)
         ? ('leccion_letra.html?leccion=' + _leccionRaw + '&item=' + (idx + 1))
         : data.siguiente_palabras;
