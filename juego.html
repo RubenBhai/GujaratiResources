@@ -152,6 +152,43 @@ function htmlConSignificado(item, sigRem) {
        + '<div>' + item.letter + '</div>' + sig + '</div>';
 }
 
+/* Calcula el font-size (px) para que 'texto' quepa en el contenedor 'el'
+   (ancho y alto reales), dejando 5px de margen en cada lado de ambos ejes.
+   Mide con un span oculto a un tamaño de prueba fijo y escala proporcional
+   (ancho y alto escalan igual que el font-size), en vez de asumir un
+   tamaño por cantidad de caracteres. Usa el MENOR de los dos límites
+   (ancho, alto) para garantizar que nunca se desborde en ningún eje.
+   'tamanoMaximoPx' es un techo duro: el tamaño original del CSS para ese
+   elemento, para que la medición dinámica nunca lo supere aunque el
+   cálculo por ancho/alto dé un valor mayor. */
+var _medidorSpan = null;
+function fontSizeParaAncho(el, texto, tamanoMaximoPx) {
+  if (!_medidorSpan) {
+    _medidorSpan = document.createElement('span');
+    _medidorSpan.style.position = 'absolute';
+    _medidorSpan.style.visibility = 'hidden';
+    _medidorSpan.style.whiteSpace = 'nowrap';
+    _medidorSpan.style.lineHeight = '1';
+    _medidorSpan.style.fontFamily = "'Noto Serif Gujarati', serif";
+    _medidorSpan.style.fontWeight = '700';
+    document.body.appendChild(_medidorSpan);
+  }
+  var TAMANO_PRUEBA = 100;
+  _medidorSpan.style.fontSize = TAMANO_PRUEBA + 'px';
+  _medidorSpan.textContent = texto;
+  var anchoMedido = _medidorSpan.scrollWidth;
+  var altoMedido  = _medidorSpan.scrollHeight;
+  var anchoDisponible = el.clientWidth - 5;
+  var altoDisponible   = el.clientHeight - 5;
+
+  var tamanoPorAncho = anchoMedido > 0 ? (anchoDisponible / anchoMedido) * TAMANO_PRUEBA : TAMANO_PRUEBA;
+  var tamanoPorAlto  = altoMedido  > 0 ? (altoDisponible  / altoMedido)  * TAMANO_PRUEBA : TAMANO_PRUEBA;
+
+  var resultado = Math.min(tamanoPorAncho, tamanoPorAlto);
+  if (tamanoMaximoPx) resultado = Math.min(resultado, tamanoMaximoPx);
+  return resultado;
+}
+
 function goTo(id) {
   var screens = document.querySelectorAll('.screen');
   for (var i = 0; i < screens.length; i++) screens[i].classList.remove('active');
@@ -229,8 +266,7 @@ function bShowCard() {
   var ans  = document.getElementById('b-answer');
   var bar  = document.getElementById('b-timer');
   card.innerHTML = htmlConSignificado(item, 1.8);
-  if (bCardBaseFont === null) bCardBaseFont = parseFloat(getComputedStyle(card).fontSize);
-  card.style.fontSize = (item.letter.length >= 4 ? bCardBaseFont * 0.6 : bCardBaseFont) + 'px';
+  card.style.fontSize = fontSizeParaAncho(card, item.letter, 144) + 'px'; // techo: clamp original .game-card móvil = 9rem = 144px
   card.classList.remove('reveal');
   ans.textContent = ''; ans.classList.remove('visible');
   var prev = document.getElementById('btn-b-prev');
@@ -300,8 +336,7 @@ function cShowRound() {
   for (var i = 0; i < 4; i++) {
     var btn = document.getElementById('mb-' + i);
     btn.className = 'match-btn';
-    if (cBtnBaseFont === null) cBtnBaseFont = parseFloat(getComputedStyle(btn).fontSize);
-    btn.style.fontSize = (pool[i].letter.length >= 4 ? cBtnBaseFont * 0.6 : cBtnBaseFont) + 'px';
+    btn.style.fontSize = fontSizeParaAncho(btn, pool[i].letter, 72) + 'px'; // techo: clamp original .match-btn móvil = 4.5rem = 72px
     btn.innerHTML = htmlConSignificado(pool[i], 1.2);
   }
   document.getElementById('c-prompt').innerHTML = '&nbsp;';
