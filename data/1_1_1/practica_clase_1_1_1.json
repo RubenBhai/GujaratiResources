@@ -5,7 +5,7 @@
     "frases": [
       {
         "gujarati": "ક",
-        "espanol": "Consonante ka — como la 'k' en kasa",
+        "espanol": "Consonante ka — como la 'k' en kilo",
         "tipo": "clipIndividual",
         "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3",
         "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_ka.mp3",
@@ -132,15 +132,15 @@
         "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_chho.png"
       },
       {
-        "gujarati": "કેમ કે",
-        "espanol": "porque",
+        "gujarati": "કેમ કે...",
+        "espanol": "porque...",
         "tipo": "clipIndividual",
         "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3",
         "audioClip2": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3",
         "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke.png"
       },
       {
-        "gujarati": "કેમ",
+        "gujarati": "કેમ?",
         "espanol": "¿cómo? / ¿por qué?",
         "tipo": "clipIndividual",
         "audioClip": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3",
