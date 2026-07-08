@@ -2,7 +2,7 @@
   "leccion": "1.1.1",
   "home": "leccion_intro.html?leccion=1.1.1",
   "salir": "juego.html?leccion=1.1.1",
-  "fin": "leccion_fin.html?leccion=1.1.1",
+  "fin": "leccion_pensarEnGUJ.html?leccion=1.1.1",
   "intro": {
     "titulo": "Algunas cosas curiosas del idioma",
     "texto": "Antes de terminar, vamos a entender <strong>cómo funcionan</strong> algunas de las palabras que aprendiste. Son detalles que te ayudarán a leer con sentido."
@@ -52,7 +52,7 @@
   ],
   "fin_pantalla": {
     "titulo": "Ya entiendes cómo se arman las frases",
-    "texto": "Con esto puedes leer y entender oraciones completas en gujarati. ¡Vamos a cerrar la lección!",
+    "texto": "Con esto puedes leer y entender oraciones completas en gujarati. ¡Vamos a crear algunas oraciones!",
     "boton_extra": {
       "habilitado": true,
       "caption": "🎉Vamos a crear oraciones🥳",

@@ -15,15 +15,15 @@
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3"
     },
     {
-      "gujarati": "કેમ કે",
-      "significado": "porque",
+      "gujarati": "કેમ કે...",
+      "significado": "porque...",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke.png",
       "pronunciacion": "ક-ે-મ + ક-ે → kem + <strong>ke</strong>",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3"
     },
     {
-      "gujarati": "કેમ",
+      "gujarati": "કેમ?",
       "significado": "¿cómo? / ¿por qué?",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem.png",
       "pronunciacion": "ક-ે-મ → <strong>kem</strong>",
@@ -49,7 +49,7 @@
     {
       "gujarati": "મામા",
       "significado": "tío materno",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa_info.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa.png",
       "pronunciacion": "મ-ા-મ-ા → maa-<strong>maa</strong>",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maamaa.mp3",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3"
@@ -57,7 +57,7 @@
     {
       "gujarati": "કાકા",
       "significado": "tío paterno",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa_info.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa.png",
       "pronunciacion": "ક-ા-ક-ા → kaa-<strong>kaa</strong>",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaakaa.mp3",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3"
@@ -69,6 +69,46 @@
       "pronunciacion": "ઓ-છ-ો → o-<strong>chho</strong>",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ochho.mp3",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3"
+    },
+    {
+      "gujarati": "છ",
+      "significado": "número 6",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chha.png",
+      "pronunciacion": "છ <strong>chha</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chha.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chha.mp3"
+    },
+    {
+      "gujarati": "છે",
+      "significado": "es/está/hay",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chhe.png",
+      "pronunciacion": " છ- ે  → <strong>chhe</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chhe.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3"
+    },
+    {
+      "gujarati": "એ",
+      "significado": "eso",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_e.png",
+      "pronunciacion": " એે  → <strong>e</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_e.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3"
+    },
+    {
+      "gujarati": "આ",
+      "significado": "esto",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aa.png",
+      "pronunciacion": " આ  → <strong>aa</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_aa.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3"
+    },
+    {
+      "gujarati": "મા",
+      "significado": "mamá",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maa.png",
+      "pronunciacion": " મ - ા  → <strong>maa</strong>",
+      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maa.mp3",
+      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3"
     }
   ]
 }
