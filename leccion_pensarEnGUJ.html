@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Pensar en Gujarati &middot; Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-amigable_2.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" id="nav-anterior" href="#">← Anterior</a>
+  <a class="nav-btn home" id="nav-home" href="#">🏠 Inicio</a>
+  <span class="nav-btn disabled">Siguiente →</span>
+</nav>
+
+<div class="wrap">
+
+  <div>🎯</div>
+
+  <h1>Pasos finales para pensar en Gujarati</h1>
+
+  <p class="subtitle">Elige por dónde seguir. Puedes hacerlos en el orden que quieras.</p>
+
+  <a class="btn-fin" id="btn-aprende" href="#" style="background:linear-gradient(135deg,#B8863D,#A8362A); box-shadow:0 4px 16px rgba(184,134,61,0.4);">🌱 Aprende las palabras de esta lección</a>
+
+  <a class="btn-fin" id="btn-compone" href="#" style="background:linear-gradient(135deg,#5F6E4F,#4A6B53); box-shadow:0 4px 16px rgba(95,110,79,0.4);">🧩 Aprende a crear oraciones</a>
+
+  <a class="btn-fin" id="btn-reto" href="#" style="background:linear-gradient(135deg,#832920,#A8362A); box-shadow:0 4px 16px rgba(131,41,32,0.4);">🏆 Reto — ¿cuánto aprendiste?</a>
+
+  <a class="btn-fin" id="btn-dialogo" href="#" style="background:linear-gradient(135deg,#4a4a4a,#2a2a2a); box-shadow:0 4px 16px rgba(74,74,74,0.4);">🎬👂 Escucha y participa en el diálogo</a>
+
+  <div style="height:14px;"></div>
+
+  <a class="btn-fin" id="btn-fin-leccion" href="#" style="background:linear-gradient(135deg,#D9A441,#B8863D); box-shadow:0 4px 16px rgba(217,164,65,0.45);">✅ Fin de la Lección</a>
+
+</div>
+
+<script>
+  const _params     = new URLSearchParams(location.search);
+  const _leccionRaw = _params.get('leccion') || '1.1.1';
+  const _leccion     = _leccionRaw.replace(/\./g, '_');
+  const JSON_URL = 'data/' + _leccion + '/leccion_pensarEnGUJ_' + _leccion + '.json';
+
+  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+    .then(function(data){
+      document.getElementById('nav-anterior').onclick = function(){ history.back(); return false; };
+      document.getElementById('nav-home').href = data.home;
+
+      function configurarBoton(id, mostrarCampo, href){
+        const el = document.getElementById(id);
+        if (mostrarCampo === false) { el.style.display = 'none'; }
+        else { el.href = href; }
+      }
+
+      configurarBoton('btn-aprende',  data.mostrar_aprende,  'aprende.html?leccion=' + _leccionRaw);
+      configurarBoton('btn-compone',  data.mostrar_compone,  'compone.html?leccion=' + _leccionRaw);
+      configurarBoton('btn-reto',     data.mostrar_reto,     'reto.html?leccion=' + _leccionRaw);
+      configurarBoton('btn-dialogo',  data.mostrar_dialogo,  'video.html?leccion=' + _leccionRaw + '&next=video_interactivo.html&modo=desafio');
+
+      document.getElementById('btn-fin-leccion').href = 'leccion_fin.html?leccion=' + _leccionRaw;
+    })
+    .catch(function(){
+      document.querySelector('.wrap').innerHTML =
+        '<p style="text-align:center;color:var(--ink-soft);padding:40px 20px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    });
+</script>
+
+<script>
+(function() {
+  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { return r.text(); })
+    .then(function(serverV) {
+      serverV = serverV.trim();
+      var localV = null;
+      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+      } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
+        location.reload(true);
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+</body>
+</html>

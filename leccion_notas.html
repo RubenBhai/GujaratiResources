@@ -15,7 +15,7 @@
 <nav class="nav-bar">
   <a class="nav-btn" id="nav-salir" href="#">← Salir</a>
   <a class="nav-btn home" id="nav-home" href="#">🏠</a>
-  <a class="nav-btn" id="nav-terminar" href="#">Terminar →</a>
+  <a class="nav-btn" id="nav-terminar" href="#">Pensar en GUJ →</a>
 </nav>
 <div class="top-progress"><div class="top-progress-fill" id="top-fill"></div></div>
 
@@ -67,7 +67,7 @@
     .then(function(data){
       document.getElementById('nav-salir').href = data.salir;
       document.getElementById('nav-home').href = data.home;
-      document.getElementById('nav-terminar').href = data.fin;
+      document.getElementById('nav-terminar').href = 'leccion_pensarEnGUJ.html?leccion=' + _leccionRaw;
 
       const notas = data.notas;
       const totalNotas = notas.length;
@@ -151,7 +151,7 @@
       const btnFin = document.createElement('a');
       btnFin.className = 'btn-main';
       btnFin.href = data.fin;
-      btnFin.textContent = 'Terminar lección →';
+      btnFin.textContent = 'A Pensar en GUJARATI →';
       sFin.appendChild(btnFin);
       contenedor.appendChild(sFin);
     })

@@ -28,14 +28,6 @@
 
   <a class="btn-sec" id="btn-repetir" href="#">← Repetir lección</a>
 
-  <a class="btn-fin" id="btn-aprende" href="#" style="background:linear-gradient(135deg,#B8863D,#A8362A); box-shadow:0 4px 16px rgba(184,134,61,0.4);">🌱 Aprende las palabras de esta lección</a>
-
-  <a class="btn-fin" id="btn-compone" href="#" style="background:linear-gradient(135deg,#5F6E4F,#4A6B53); box-shadow:0 4px 16px rgba(95,110,79,0.4);">🧩 Aprende a crear oraciones</a>
-
-  <a class="btn-fin" id="btn-reto" href="#" style="background:linear-gradient(135deg,#832920,#A8362A); box-shadow:0 4px 16px rgba(131,41,32,0.4);">🏆 Reto — ¿cuánto aprendiste?</a>
-
-  <a class="btn-fin" id="btn-dialogo" href="#" style="background:linear-gradient(135deg,#4a4a4a,#2a2a2a); box-shadow:0 4px 16px rgba(74,74,74,0.4);">🎬👂 Escucha y participa en el diálogo</a>
-
   <div class="aprendido-box">
     <div class="aprendido-label">✨ Lo que aprendiste</div>
     <div class="aprendido-letras" id="letras-aprendidas"></div>
@@ -57,6 +49,7 @@
   <source src="https://rubenbhai.github.io/GujaratiResources/audios/musica/level_complete_01.mp3" type="audio/mpeg">
 </audio>
 
+<script src="efecto_victoria.js"></script>
 <script>
   const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
 
@@ -81,10 +74,9 @@
       document.getElementById('nav-home').href = 'leccion_intro.html?leccion=' + _leccionRaw;
       document.getElementById('btn-repetir').href = 'leccion_intro.html?leccion=' + _leccionRaw;
 
-      document.getElementById('btn-aprende').href = 'aprende.html?leccion=' + _leccionRaw;
-      document.getElementById('btn-compone').href = 'compone.html?leccion=' + _leccionRaw;
-      document.getElementById('btn-reto').href = 'reto.html?leccion=' + _leccionRaw;
-      document.getElementById('btn-dialogo').href = 'video.html?leccion=' + _leccionRaw + '&next=video_interactivo.html&modo=desafio';
+      // Terminar toda la lección siempre merece la celebración — sin puntaje que evaluar aquí,
+      // por eso se llama con 100 fijo (revisarVictoria solo compara contra el umbral, no lo usa para nada más).
+      revisarVictoria(100, data.sonido_victoria, data.programa_efecto_victoria, _leccion);
 
       const r = data.resumen;
       document.getElementById('subtitle').innerHTML =

@@ -93,7 +93,7 @@ const _leccionRaw = _params.get('leccion') || '1.1.1';
 const JSON_URL = 'data/' + _leccion + '/video_interactivo_clase_' + _leccion + '.json';
 
 var _navHome = document.getElementById('nav-home');
-if (_navHome) _navHome.href = 'leccion_fin.html?leccion=' + _leccionRaw;
+if (_navHome) _navHome.href = 'leccion_pensarEnGUJ.html?leccion=' + _leccionRaw;
 
 const audio  = document.getElementById('audio');
 const sfx    = document.getElementById('sfx');
@@ -566,7 +566,7 @@ function siguienteReplay(){
 }
 
 function volverAFin(){
-  window.location.href = 'leccion_fin.html?leccion=' + _leccionRaw;
+  window.location.href = 'leccion_pensarEnGUJ?leccion=' + _leccionRaw;
 }
 
 /* ── Init ── */

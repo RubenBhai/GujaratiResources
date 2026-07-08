@@ -95,6 +95,7 @@
 <audio id="player"></audio>
 
 <script src="efecto_victoria.js"></script>
+<script src="evaluacion_trazos.js"></script>
 <script>
   const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
   const player = document.getElementById('player');
@@ -110,108 +111,6 @@
     btn.textContent = '▶ Reproduciendo...';
     player.src = url; player.playbackRate = 1.0; player.play();
     player.onended = function(){ btn.classList.remove('playing'); btn.innerHTML = labelHtml; };
-  }
-
-  /* ── Validación de trazos: remuestreo equidistante + distancia promedio ── */
-  const N_REMUESTREO = 64;            // Puntos equidistantes fijos para comparar la geometría
-  const DISTANCIA_MAX_PARA_CERO = 40; // Umbral en píxeles promedio a partir del cual el puntaje es 0%
-
-  function distanciaPuntos(p1, p2){ return Math.hypot(p1.x - p2.x, p1.y - p2.y); }
-
-  function longitudTotal(puntos){
-    let total = 0;
-    for (let i = 1; i < puntos.length; i++) total += distanciaPuntos(puntos[i-1], puntos[i]);
-    return total;
-  }
-
-  function remuestrear(puntosOriginales, n){
-    if (!puntosOriginales || puntosOriginales.length === 0) {
-      return new Array(n).fill(0).map(function(){ return { x: 0, y: 0 }; });
-    }
-    if (puntosOriginales.length < 2) {
-      const p = puntosOriginales[0];
-      return new Array(n).fill(0).map(function(){ return { x: p.x, y: p.y }; });
-    }
-
-    const totalLen = longitudTotal(puntosOriginales);
-    if (totalLen === 0) {
-      return new Array(n).fill(0).map(function(){ return { x: puntosOriginales[0].x, y: puntosOriginales[0].y }; });
-    }
-
-    const espaciado = totalLen / (n - 1);
-    let distanciaAcumulada = 0;
-    const nuevosPuntos = [{ x: puntosOriginales[0].x, y: puntosOriginales[0].y }];
-
-    let pt1 = puntosOriginales[0];
-    let i = 1;
-
-    while (i < puntosOriginales.length) {
-      const pt2 = puntosOriginales[i];
-      const d = distanciaPuntos(pt1, pt2);
-
-      if (distanciaAcumulada + d >= espaciado) {
-        const proporcion = (espaciado - distanciaAcumulada) / (d || 1);
-        const q = {
-          x: pt1.x + proporcion * (pt2.x - pt1.x),
-          y: pt1.y + proporcion * (pt2.y - pt1.y)
-        };
-        nuevosPuntos.push(q);
-        pt1 = q;
-        distanciaAcumulada = 0;
-      } else {
-        distanciaAcumulada += d;
-        pt1 = pt2;
-        i++;
-      }
-    }
-
-    while (nuevosPuntos.length < n) {
-      const u = puntosOriginales[puntosOriginales.length - 1];
-      nuevosPuntos.push({ x: u.x, y: u.y });
-    }
-    while (nuevosPuntos.length > n) {
-      nuevosPuntos.pop();
-    }
-
-    return nuevosPuntos;
-  }
-
-  function poligonoDesdeSubVectores(subVectores){
-    return [subVectores[0].origen].concat(subVectores.map(function(v){ return v.destino; }));
-  }
-
-  function distanciaPromedioRemuestreada(subVectores, trazo){
-    const guia = remuestrear(poligonoDesdeSubVectores(subVectores), N_REMUESTREO);
-    const est  = remuestrear(trazo, N_REMUESTREO);
-    let suma = 0;
-    for (let i = 0; i < N_REMUESTREO; i++) suma += distanciaPuntos(guia[i], est[i]);
-    return suma / N_REMUESTREO;
-  }
-
-  function validarPlanaCompleta(segmentosJSON, trazosEstudiante){
-    const nombresOrdenados = Object.keys(segmentosJSON)
-      .sort(function(a, b){ return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]); });
-
-    const porcentajesPorSegmento = [];
-
-    nombresOrdenados.forEach(function(nombre){
-      const subVectores = segmentosJSON[nombre];
-
-      let mejorDistancia = Infinity;
-      trazosEstudiante.forEach(function(trazo){
-        const d = distanciaPromedioRemuestreada(subVectores, trazo);
-        if (d < mejorDistancia) mejorDistancia = d;
-      });
-
-      const pctSegmento = Math.max(0, Math.min(100, Math.round(100 * (1 - mejorDistancia / DISTANCIA_MAX_PARA_CERO))));
-      porcentajesPorSegmento.push(pctSegmento);
-    });
-
-    const porcentajeFinal = porcentajesPorSegmento.length
-      ? Math.round(porcentajesPorSegmento.reduce(function(a,b){ return a+b; }, 0) / porcentajesPorSegmento.length)
-      : 0;
-
-    return { porcentaje: porcentajeFinal, porSegmento: porcentajesPorSegmento };
   }
 
   function mensajeParaPorcentaje(p){
