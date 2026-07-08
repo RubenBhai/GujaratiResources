@@ -14,7 +14,7 @@
 
 <div class="wrap">
   <div class="top-bar">
-    <span class="badge">Práctica con evaluación de Gemini</span>
+    <span class="badge">Práctica con Gemini IA</span>
     <a class="btn-footer" href="#" onclick="history.back(); return false;">De regreso a la clase</a>
   </div>
   <header>
@@ -25,11 +25,11 @@
       <span class="progreso-indicador" id="progreso-indicador"></span>
     </p>
     <div class="speed-bar">
+      <span class="speed-label">Velocidad</span>
       <button class="btn-speed" onclick="setSpeed(0.75)">🐢 0.75x</button>
       <button class="btn-speed active" id="speed-1" onclick="setSpeed(1.0)">▶ 1x</button>
       <button class="btn-speed" onclick="setSpeed(1.25)">⚡ 1.25x</button>
     </div>
-    <p class="speed-label">Velocidad de reproducción (solo afecta el audio de referencia)</p>
   </header>
 
   <section class="audio-theater" id="theater"></section>
@@ -96,6 +96,41 @@
       });
   }
 
+  /* Calcula el font-size (px) para que 'texto' quepa en el contenedor 'el'
+     (ancho y alto reales), dejando 5px de margen en cada lado de ambos ejes.
+     Mide con un span oculto a un tamaño de prueba fijo y escala proporcional,
+     en vez de asumir un tamaño por cantidad de caracteres. Usa el MENOR de
+     los dos límites (ancho, alto) para no desbordar en ningún eje.
+     'tamanoMaximoPx' es un techo duro: el tamaño original del CSS, para que
+     la medición dinámica nunca lo supere aunque el cálculo dé un valor mayor. */
+  var _medidorSpan = null;
+  function fontSizeParaAncho(el, texto, tamanoMaximoPx) {
+    if (!_medidorSpan) {
+      _medidorSpan = document.createElement('span');
+      _medidorSpan.style.position = 'absolute';
+      _medidorSpan.style.visibility = 'hidden';
+      _medidorSpan.style.whiteSpace = 'nowrap';
+      _medidorSpan.style.lineHeight = '1';
+      _medidorSpan.style.fontFamily = "'Noto Serif Gujarati', serif";
+      _medidorSpan.style.fontWeight = '700';
+      document.body.appendChild(_medidorSpan);
+    }
+    var TAMANO_PRUEBA = 100;
+    _medidorSpan.style.fontSize = TAMANO_PRUEBA + 'px';
+    _medidorSpan.textContent = texto;
+    var anchoMedido = _medidorSpan.scrollWidth;
+    var altoMedido  = _medidorSpan.scrollHeight;
+    var anchoDisponible = el.clientWidth - 5;
+    var altoDisponible   = el.clientHeight - 5;
+
+    var tamanoPorAncho = anchoMedido > 0 ? (anchoDisponible / anchoMedido) * TAMANO_PRUEBA : TAMANO_PRUEBA;
+    var tamanoPorAlto  = altoMedido  > 0 ? (altoDisponible  / altoMedido)  * TAMANO_PRUEBA : TAMANO_PRUEBA;
+
+    var resultado = Math.min(tamanoPorAncho, tamanoPorAlto);
+    if (tamanoMaximoPx) resultado = Math.min(resultado, tamanoMaximoPx);
+    return resultado;
+  }
+
   function construirInterfaz(leccionData) {
     document.getElementById('page-title').innerText = leccionData.titulo;
     document.getElementById('page-subtitle').innerText = 'Fuente: ' + leccionData.fuente;
@@ -109,11 +144,8 @@
       div.id = lineId;
 
       var gu = frase.gujarati.replace(/'/g, "\'");
-      var imgHtml = frase.imagen
-        ? '<img src="' + frase.imagen + '" onerror="this.style.display=\'none\'">'
-        : '';
-      var btnMujer = frase.audioClip2
-        ? '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip2 + '\',\'' + lineId + '\',null,null)">&#9792; Mujer</button>'
+      var btnHombre = frase.audioClip2
+        ? '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip2 + '\',\'' + lineId + '\',null,null)">&#9794; Hombre</button>'
         : '';
 
       var btnBack = '<button class="btn btn-nav-arrow" onclick="history.back(); return false;">&#8592; Volver</button>';
@@ -126,12 +158,11 @@
         ? '<button class="btn btn-next-practice" onclick="irAProxima(' + (i + 1) + ')">Siguiente &#8594;</button>'
         : '<button class="btn btn-next-practice" onclick="irAlFinal()">&#127937; Terminar</button>';
 
-      div.innerHTML = imgHtml
-        + '<div class="gujarati-text">' + frase.gujarati + '</div>'
+      div.innerHTML = '<div class="gujarati-frame"><div class="gujarati-text">' + frase.gujarati + '</div></div>'
         + '<div class="spanish-text">' + frase.espanol + '</div>'
         + '<div class="action-bar">'
-        + '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip + '\',\'' + lineId + '\',null,null)">&#128266; Escuchar</button>'
-        + btnMujer
+        + '<button class="btn btn-listen" onclick="playMaster(\'' + frase.audioClip + '\',\'' + lineId + '\',null,null)">&#9792; Mujer</button>'
+        + btnHombre
         + '<button class="btn btn-record" id="rec-' + lineId + '" onclick="toggleRecord(\'' + lineId + '\',\'' + gu + '\')">&#127899; Practicar</button>'
         + '<button class="btn btn-play-self" id="play-' + lineId + '" onclick="playRecorded(\'' + lineId + '\')" disabled>&#127911; Escucharme</button>'
         + '<span id="load-' + lineId + '" class="loading-ia">&#10024; Evaluando&#8230;</span>'
@@ -146,7 +177,19 @@
       theater.appendChild(div);
     });
 
+    ajustarTamanoGujarati(document.getElementById('line-0'));
     actualizarProgreso(0);
+  }
+
+  /* Ajusta el tamaño del gujarati dentro de una línea ya visible (display:block).
+     Debe llamarse solo cuando la línea es la .active, porque clientWidth/Height
+     de un elemento oculto (display:none) da 0 y arruinaría el cálculo. */
+  function ajustarTamanoGujarati(lineEl) {
+    if (!lineEl) return;
+    var frame = lineEl.querySelector('.gujarati-frame');
+    var texto = lineEl.querySelector('.gujarati-text');
+    if (!frame || !texto) return;
+    texto.style.fontSize = fontSizeParaAncho(frame, texto.textContent, 48) + 'px'; // techo: tamaño base original .gujarati-text = 3rem = 48px
   }
 
   function irAProxima(indice) {
@@ -155,6 +198,7 @@
       document.querySelectorAll('.dialogue-line').forEach(function(l){ l.classList.remove('active'); });
       destino.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      ajustarTamanoGujarati(destino);
       actualizarProgreso(indice);
     }
   }

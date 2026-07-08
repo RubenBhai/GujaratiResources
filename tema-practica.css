@@ -63,7 +63,28 @@
     margin: 0 auto 12px;
     border-radius: 10px;
   }
-  .gujarati-text { font-size: 1.7rem; line-height: 2.5rem; color: #8a8174; margin-bottom: 6px; font-family: 'Noto Serif Gujarati', serif; transition: color 0.15s; }
+  .gujarati-frame {
+    width: 100%;
+    min-height: 140px;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .gujarati-text {
+    font-size: 3rem;
+    line-height: 1;
+    color: #8a8174;
+    font-family: 'Noto Serif Gujarati', serif;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: color 0.15s;
+  }
   .dialogue-line.active .gujarati-text { color: var(--paper); }
   .spanish-text { font-size: 0.98rem; color: var(--ink-soft); margin-bottom: 16px; }
 
@@ -72,7 +93,8 @@
   .btn-nav-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
   .btn-nav-arrow:disabled:hover { background: #2e2419; color: var(--paper); }
 
-  .action-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .action-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: center; }
+  .action-bar .btn { width: 100%; justify-content: center; }
   .btn {
     border: none;
     padding: 9px 16px;
@@ -135,6 +157,7 @@
   .speed-bar {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
     margin-top: 12px;
   }
@@ -162,6 +185,5 @@
     font-size: 0.7rem;
     color: var(--ink-soft);
     opacity: 0.75;
-    text-align: center;
-    margin-top: 4px;
+    margin-right: 2px;
   }
