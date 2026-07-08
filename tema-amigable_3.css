@@ -26,6 +26,13 @@
   /* Sombras suaves para modo oscuro */
   --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.15);
   --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.3);
+
+  /* Escala de espaciado */
+  --sp-1: 8px;
+  --sp-2: 12px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 32px;
 }
 
 /* ── RESET BÁSICO ── */
@@ -96,11 +103,11 @@ h1, h2 { font-family: 'Fraunces', serif; text-align: center; }
 .wrap { 
   max-width: 480px; 
   margin: 0 auto; 
-  padding: 24px 20px; 
+  padding: var(--sp-4) var(--sp-3); 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
-  gap: 18px; 
+  gap: var(--sp-3); 
 }
 
 .wrap-letras {
@@ -443,8 +450,8 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 700; line-height: 1.2; 
   margin: 0 auto; 
   display: flex; 
   flex-direction: column; 
-  gap: 12px; 
-  padding: 10px 20px 30px; 
+  gap: var(--sp-2); 
+  padding: var(--sp-3) var(--sp-3) var(--sp-5); 
 }
 
 .btn-empezar, .btn-fin { 
