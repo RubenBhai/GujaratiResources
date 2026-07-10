@@ -12,8 +12,23 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
 
 .nav-bar { position:sticky; top:0; z-index:100; background:rgba(44,36,32,0.9); backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:12px 20px; }
-.nav-btn { background:var(--surface); color:var(--paper); padding:10px 18px; border-radius:var(--r-full);
-  font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid var(--border); cursor:pointer; font-family:inherit; }
+
+.nav-btn { 
+  background:var(--surface); 
+  color:var(--paper); 
+  padding:10px 14px; 
+  border-radius:var(--r-full);
+  font-size:0.9rem; 
+  font-weight:600; 
+  text-decoration:none; 
+  border:1px solid var(--border); 
+  cursor:pointer; 
+  font-family:inherit; 
+  white-space: nowrap; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 .nav-btn.home { color:var(--saffron); font-size:1.1rem; }
 
 .wrap { max-width:520px; margin:0 auto; padding:24px 18px; display:flex; flex-direction:column; align-items:center; gap:18px; }
@@ -23,7 +38,6 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
   text-transform:uppercase; letter-spacing:0.08em; }
 h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-height:1.25; }
 
-/* Control estricto de 2 líneas para evitar empujar el marco */
 .lead { 
   color:var(--ink-soft); font-size:1.05rem; line-height:1.6; text-align:center; max-width:440px; 
   display: -webkit-box;
@@ -37,9 +51,9 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 .escena { 
   width:100%; background:var(--surface);
   border:1px solid var(--border); border-radius:var(--r-lg); 
-  padding:14px 12px; /* Reducido de 20px 16px */
+  padding:14px 12px; 
   display:flex; flex-direction:column; 
-  gap:10px; /* Reducido de 14px */
+  gap:10px; 
   box-shadow:0 8px 28px rgba(0,0,0,0.25);
   transition:height 0.45s ease; 
   position: relative; 
@@ -47,13 +61,12 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   overflow-y: auto; overflow-x: hidden;
 }
 
-/* NUEVA CAPA DE FONDO */
 .bg-escena {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.5; /* 50% de transparencia */
+  opacity: 1.0; 
   z-index: 0;
   transition: background-image 0.5s ease;
   pointer-events: none;
@@ -61,34 +74,87 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 }
 
 .burbuja:not(.visible):not(.saliente) { display:none; }
-.burbuja { max-width:95%; align-items:center; gap:8px; position: relative; z-index: 1; }
+.burbuja { max-width:82%; align-items:center; gap:8px; position: relative; z-index: 1; }
 .burbuja.visible { display:flex; animation:aparecerBurbuja 0.4s ease forwards; }
 @keyframes aparecerBurbuja { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
-.burbuja.izq, .burbuja.der { align-self:flex-end; flex-direction:row; }
+
+/* ── Layout izquierda (default) ── */
+.burbuja.izq { align-self:flex-end; flex-direction:row; }
+
+/* ── Layout derecha: avatar a la derecha, flecha a la derecha ── */
+.burbuja.der { align-self:flex-start; flex-direction:row-reverse; }
+
+/* ── Layout centro: avatar arriba, burbuja centrada ── */
+.burbuja.centro { align-self:center; flex-direction:column; align-items:center; max-width:90%; }
+.burbuja.centro .caja { border-radius:14px; margin-top:6px; }
 
 .burbuja .avatar { 
-  width:40px; height:40px; /* Reducido de 48px */
+  width:40px; height:40px; 
   border:2px solid rgba(255,255,255,0.25); background-size:cover; background-position:center;
   flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.3); 
 }
 
 .burbuja .caja { 
-  padding:10px 14px; /* Reducido de 14px 18px */
-  border-radius:14px; /* Un poco más sutil para el nuevo tamaño */
+  padding: 8px 12px; 
+  border-radius:14px; 
   box-shadow:0 4px 12px rgba(0,0,0,0.18); flex-grow:1; 
+  position:relative;
+  min-height: 34px;
 }
-.burbuja.izq .caja { border-top-left-radius:4px; }
-.burbuja.der .caja { border-top-right-radius:4px; }
+
+/* ── Radios de esquina según lado ── */
+.burbuja.izq .caja  { border-top-left-radius:4px; }
+.burbuja.der .caja  { border-top-right-radius:4px; }
+
+/* ── Colas de burbuja ── */
+
+/* Base: resetea todo */
+.burbuja .caja::after {
+  content:'';
+  position:absolute;
+  width:0; height:0;
+}
+
+/* Izquierda: flecha apunta a la izquierda */
+.burbuja.izq .caja::after {
+  left: -15px;
+  top: 12px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 15px solid var(--color-burbuja, var(--olive));
+  border-left: none;
+}
+
+/* Derecha: flecha apunta a la derecha */
+.burbuja.der .caja::after {
+  left: auto;
+  right: -15px;
+  top: 12px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid var(--color-burbuja, var(--olive));
+  border-right: none;
+}
+
+/* Centro: flecha apunta hacia arriba (hacia el avatar encima) */
+.burbuja.centro .caja::after {
+  left: 50%;
+  transform: translateX(-50%);
+  top: -14px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 14px solid var(--color-burbuja, var(--olive));
+  border-top: none;
+}
 
 .burbuja .gu-texto { 
   font-family:'Noto Serif Gujarati',serif; 
-  font-size:1.2rem; /* Reducido de 1.5rem para que no sature tanto */
+  font-size: 1.1rem; 
   line-height:1.4; color:#fff; 
 }
 
 .burbuja .es-texto { 
-  font-size:0.85rem; /* Reducido de 0.95rem */
-  color:rgba(255,255,255,0.85); margin-top:4px; font-style:italic; 
+  display: none !important; 
 }
 
 .burbuja.activa .caja { outline:3px solid rgba(255,255,255,0.4); }
@@ -105,23 +171,27 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 }
 .resaltado-avatar.visible { opacity: 1; }
 
-/* Fix de flexbox gap (Display none borra márgenes fantasmas) */
 .burbuja.saliente { display: none; }
 
-/* Selector de idioma (ESP / GUJ / ESP+GUJ) */
-.lang-row { display:flex; gap:8px; justify-content:center; }
+/* Selector de idioma */
+.lang-row { display:flex; gap:3px; justify-content:center; }
 .lang-btn { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-full);
-  padding:8px 16px; cursor:pointer; font-size:0.85rem; font-weight:700; color:var(--ink-soft);
-  font-family:inherit; transition:all 0.2s; }
+  padding:10px 14px; cursor:pointer; font-size:0.85rem; font-weight:700; color:var(--ink-soft);
+  font-family:inherit; transition:all 0.2s; height:42px; display:inline-flex; align-items:center; justify-content:center;}
 .lang-btn:hover { background:var(--surface-light); color:var(--saffron); }
 .lang-btn.active { background:var(--saffron); color:#2C2420; border-color:var(--saffron); }
 
-/* Modo idioma: ocultar textos según clase en .escena */
-.escena.solo-esp .gu-texto { display:none; }
+/* ── NUEVAS CLASES DE SEPARACIÓN DE RESPONSABILIDADES ── */
 
-.escena.solo-esp .es-texto { margin-top:0; font-style:normal; font-size:1rem; color:#fff; }
+/* Si el botón general de burbujas 💬 está OFF, se oculta toda la burbuja de la interfaz */
+.escena.burbujas-ocultas .burbuja { 
+  display: none !important; 
+}
 
-.escena.solo-guj .es-texto { display:none; }
+/* Si el texto Gujarati está inactivo (por no tener el botón 'ગ'), solo se limpia el texto dejando la burbuja vacía */
+.escena.gujarati-oculto .gu-texto { 
+  display: none !important; 
+}
 
 /* Controles */
 .controls { display:flex; gap:10px; align-items:center; justify-content:center; width:100%; flex-wrap:wrap; }
@@ -137,64 +207,117 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   font-family:inherit; }
 .btn-replay:hover { background:var(--surface-light); color:var(--saffron); }
 
-.btn-fin { width:100%; border:none; padding:16px; border-radius:var(--r-full); cursor:pointer;
-  font-weight:700; font-size:1.05rem; background:var(--verde); color:white; text-align:center;
-  text-decoration:none; display:block; box-shadow:0 4px 14px rgba(74,107,83,0.3); font-family:inherit;
-  opacity:1; pointer-events:auto; transition:opacity 0.4s; }
+/* Fila inferior */
+.nav-bottom-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; 
+  gap: 6px; 
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bottom-row > * {
+  flex: 0 0 auto !important; 
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+.btn-fin { 
+  border: none; 
+  padding: 10px 14px; 
+  border-radius: var(--r-full); 
+  cursor: pointer;
+  font-weight: 700; 
+  font-size: 0.95rem; 
+  background: var(--verde); 
+  color: white; 
+  text-align: center;
+  text-decoration: none; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(74,107,83,0.3); 
+  font-family: inherit;
+}
 .btn-fin.activo { opacity:1; pointer-events:auto; }
 
 .progress { width:100%; height:5px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden; }
 .progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--saffron),var(--sindoor)); transition:width 0.2s linear; }
 
+/* Frame de subtítulos */
+.subtitulos {
+  width:100%; 
+  background:#000; 
+  border-radius:var(--r-md);
+  padding:10px 16px; 
+  display:flex; 
+  align-items:center; 
+  gap:8px;
+  height:42px; 
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.subtitulos .sub-avatar { color:var(--ink-soft); font-weight:700; font-size:0.95rem; white-space:nowrap; flex-shrink:0; }
+.subtitulos .sub-textos { 
+  display:flex; 
+  flex-direction:row; 
+  align-items:center; 
+  gap:8px; 
+  min-width:0; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.subtitulos .sub-mensaje-escucha { 
+  display:none; color:var(--ink-soft); font-size:0.9rem; font-style:italic; text-align:center; width:100%; 
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.subtitulos .es-texto { 
+  color:#6FA8C9; font-weight:700; font-size:0.95rem; font-style:normal; margin-top:0; 
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
 /* =========================================================
    MODO INMERSIVO HORIZONTAL OPTIMIZADO (Landscape)
 ========================================================= */
 @media (orientation: landscape) and (max-height: 600px) {
-  /* 1. Ocultar textos fijos superiores para limpiar el lienzo */
-  .nav-bar, #badge, #titulo, #intro { 
+  .nav-bar, #badge, #titulo, #intro, #subtitulos, .nav-bottom-row, .lang-row { 
     display: none !important; 
   }
   
   body { padding-bottom: 0; }
   .wrap { padding: 0; max-width: 100%; height: 100vh; }
   
-  /* 2. La escena ocupa toda la pantalla */
   .escena {
     position: fixed; 
     top: 0; left: 0; 
     width: 100vw; 
-    height: 100vh !important; /* Anula el cálculo de altura de JavaScript */
+    height: 100vh !important; 
     border-radius: 0; 
     border: none; 
     padding: 20px 5%;
     z-index: 10;
-    align-items: flex-end; /* Mantiene las burbujas alineadas a la derecha */
-    justify-content: space-between; /* ¡CAMBIADO! Distribuye la 1ra arriba y la 2da abajo */
+    align-items: flex-end; 
+    justify-content: space-between; 
   }
   
   .bg-escena { border-radius: 0; opacity: 0.4; }
   
-  /* 3. Ajuste de burbujas en horizontal */
   .burbuja { 
     max-width: 50%; 
     align-self: flex-end !important; 
   }
   .burbuja.izq, .burbuja.der { flex-direction: row; }
   
-  /* 4. Barra de progreso fija arriba */
   .progress { 
     position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; border-radius: 0; 
   }
-  
-  /* Por defecto ocultamos el botón de salida en horizontal hasta que le den Play */
-  #btn-empezar {
-    display: none !important;
-  }
 
-  /* 5. BOTÓN REPRODUCIR / PAUSA (Ahora ABAJO) */
-  body.video-iniciado .wrap > div[style*="display: flex"] {
+  .wrap > div[style*="display: flex"] {
     position: fixed; 
-    bottom: 20px; /* Bajó a la base de la pantalla */
+    bottom: 20px; 
     left: 20px; 
     transform: none; 
     z-index: 100;
@@ -205,26 +328,6 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     width: auto !important;
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
-
-  /* 6. BOTÓN EMPEZAR (Ahora ARRIBA de reproducir) */
-  body.video-iniciado #btn-empezar {
-    display: block !important;
-    position: fixed;
-    bottom: 75px; /* Subió a la posición superior */
-    left: 20px;  /* Alineado perfectamente en el mismo eje izquierdo */
-    width: auto;
-    padding: 10px 22px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    z-index: 100;
-    border-radius: var(--r-full);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    background: var(--verde);
-  }
-
-  /* Ocultar el selector de idioma para evitar ruidos visuales durante la reproducción */
-  body.video-iniciado .lang-row {
-    display: none !important;
+    display: flex !important; 
   }
 }

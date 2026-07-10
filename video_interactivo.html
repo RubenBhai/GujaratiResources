@@ -33,13 +33,30 @@
   <div class="screen" id="s-conversar">
     <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
 
+    <div class="lang-row">
+      <button class="lang-btn active" id="lang-esp" onclick="toggleIdioma('esp')">E</button>
+      <button class="lang-btn active" id="lang-guj" onclick="toggleIdioma('guj')">ગ</button>
+      <button class="lang-btn active" id="toggle-burbujas" onclick="toggleBurbujasTexto()" title="Mostrar/ocultar las burbujas de diálogo">💬</button>
+      <button class="lang-btn" id="toggle-avatar-icono" onclick="toggleAvatarIcono()" title="Mostrar/ocultar ícono de avatar">👤</button>
+      <button class="lang-btn" id="toggle-marcador" onclick="toggleMarcadorActivo()" title="Mostrar/ocultar marcador de quien habla">🎯</button>
+    </div>
+
     <div class="escena-wrap">
       <div class="bg-escena" id="bg-escena"></div>
       <div class="resaltado-avatar" id="resaltado-avatar"></div>
       <div class="escena" id="escena"></div>
     </div>
 
-    <!-- Turno del estudiante (oculto hasta que toca) -->
+    <!-- MÁRCO INFERIOR DE SUBTÍTULOS AGREGADO INTEGRALMENTE -->
+    <div class="subtitulos" id="subtitulos">
+      <span class="sub-avatar" id="sub-avatar"></span>
+      <span class="sub-textos" id="sub-textos">
+        <span class="es-texto" id="sub-es"></span>
+      </span>
+      <span class="sub-mensaje-escucha" id="sub-mensaje-escucha">🎧 Escucha atentamente el diálogo</span>
+    </div>
+
+    <!-- Turno del estudiante -->
     <div class="turno-box" id="turno-box" style="display:none;">
       <div class="turno-titulo">🎙 ¡Es tu turno! Di esta frase:</div>
       <div class="guia-box" id="guia-box">
@@ -90,8 +107,6 @@ const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/
 const _params  = new URLSearchParams(location.search);
 const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
 const _leccionRaw = _params.get('leccion') || '1.1.1';
-const JSON_URL = 'data/' + _leccion + '/video_interactivo_clase_' + _leccion + '.json';
-
 var _navHome = document.getElementById('nav-home');
 if (_navHome) _navHome.href = 'leccion_pensarEnGUJ.html?leccion=' + _leccionRaw;
 
@@ -107,36 +122,37 @@ let AVATARES = {};
 let avatarElegido = null;
 
 let idxActual = 0;
-let pasoActual = -1;   // diálogo en proceso (protege contra avances duplicados)
-let runToken = 0;      // token de sesión: invalida cualquier callback viejo
+let pasoActual = -1;   
+let runToken = 0;      
 let burbujas = [];
+let burbujaDeDialogo = []; 
 
-let notasEstudiante = [];   // % de cada turno del estudiante
-let turnosEstudiante = 0;   // cuántas veces le toca
+let notasEstudiante = [];   
+let turnosEstudiante = 0;   
 
 let mediaRecorder = null;
 let audioChunks = [];
-let audioBlobsEstudiante = {};  // {idxActual: Blob} — audio grabado por el estudiante
+let audioBlobsEstudiante = {};  
 let grabando = false;
 let guiaEsVisible = true;
 let guiaGuVisible = true;
 
 var imagenesCacheadas = [];
-var dimensionesImagen = {};   // { url: {w, h} } — dimensiones reales de cada imagen de fondo/resaltador
-var fondoActualUrl = null;    // qué imagen de fondo se está mostrando ahora mismo
-var RESALTADOR_URL = null;    // viene de data.imagenAvatarActivo, no es fijo por archivo
-var GAP_RESALTADOR = 4;       // px, medido en el espacio de la imagen original
+var dimensionesImagen = {};   
+var fondoActualUrl = null;    
+var RESALTADOR_URL = null;    
 
-/* ── Precargar TODAS las imágenes (fondos por línea + avatares) antes de arrancar ── */
+var mostrarAvatarIcono = false;     
+var mostrarMarcadorActivo = false;  
+var idiomaEspActivo = true;
+var idiomaGujActivo = true;  
+var burbujasTextoActivo = true; 
+
+/* ── Precarga global de assets ── */
 function precargarImagenes(){
   var urls = [];
-
-  DIALOGOS.forEach(function(d){
-    if (d.imagenFondo) urls.push(d.imagenFondo);
-  });
-  Object.keys(AVATARES).forEach(function(key){
-    if (AVATARES[key].imagen) urls.push(AVATARES[key].imagen);
-  });
+  DIALOGOS.forEach(function(d){ if (d.imagenFondo) urls.push(d.imagenFondo); });
+  Object.keys(AVATARES).forEach(function(key){ if (AVATARES[key].imagen) urls.push(AVATARES[key].imagen); });
   if (RESALTADOR_URL) urls.push(RESALTADOR_URL);
 
   urls = urls.filter(function(u, i){ return urls.indexOf(u) === i; });
@@ -150,41 +166,103 @@ function precargarImagenes(){
       imagenesCacheadas.push(img);
     });
   });
-
   var limite = new Promise(function(resolve){ setTimeout(resolve, 8000); });
   return Promise.race([ Promise.all(promesas), limite ]);
 }
 
-/* ── Posicionar el resaltado del avatar activo, respetando el recorte de background-size:cover ── */
-function posicionarResaltado(coords){
+/* ── Motor de Transformación de Coordenadas Relativas ── */
+function coordsAPixeles(coords){
   var dimFondo = dimensionesImagen[fondoActualUrl];
-  var dimBadge = dimensionesImagen[RESALTADOR_URL];
-  if(!dimFondo || !dimBadge || !coords){ elResaltado.classList.remove('visible'); return; }
+  if(!dimFondo || !bgEscena || !coords) return null;
 
   var cw = bgEscena.clientWidth, ch = bgEscena.clientHeight;
   var scale = Math.max(cw / dimFondo.w, ch / dimFondo.h);
   var offsetX = (cw - dimFondo.w * scale) / 2;
   var offsetY = (ch - dimFondo.h * scale) / 2;
 
-  var badgeW = dimBadge.w * scale;
-  var badgeH = dimBadge.h * scale;
+  return { x: offsetX + coords.x * scale, y: offsetY + coords.y * scale, scale: scale };
+}
 
-  var centroX   = offsetX + coords.x * scale;   // centro horizontal de la cabeza
-  var topCabeza = offsetY + coords.y * scale;    // borde superior de la cabeza
-  var gap       = GAP_RESALTADOR * scale;
+function posicionarResaltado(coords){
+  if(!mostrarMarcadorActivo || !coords) { elResaltado.classList.remove('visible'); return; }
+  var dimBadge = dimensionesImagen[RESALTADOR_URL];
+  var punto = coordsAPixeles(coords);
+  if(!dimBadge || !punto){ elResaltado.classList.remove('visible'); return; }
 
-  elResaltado.style.left   = (centroX - badgeW/2) + 'px';
-  elResaltado.style.top    = (topCabeza - gap - badgeH) + 'px';
+  var badgeW = dimBadge.w * punto.scale;
+  var badgeH = dimBadge.h * punto.scale;
+
+  elResaltado.style.left   = (punto.x - badgeW/2) + 'px';
+  elResaltado.style.top    = (punto.y - badgeH/2) + 'px';
   elResaltado.style.width  = badgeW + 'px';
   elResaltado.style.height = badgeH + 'px';
   elResaltado.classList.add('visible');
 }
 
-/* ── Utilidades ── */
+function posicionarBurbuja(burbujaEl, coords){
+  if(!coords){
+    burbujaEl.style.position = ''; burbujaEl.style.left = ''; burbujaEl.style.top = ''; return;
+  }
+  var punto = coordsAPixeles(coords);
+  if(!punto) return; 
+  burbujaEl.style.position = 'absolute';
+  burbujaEl.style.left = punto.x + 'px';
+  burbujaEl.style.top  = punto.y + 'px';
+}
+
+/* ── Toggles de Capas e Interfaz ── */
+function toggleIdioma(cual){
+  if(cual === 'esp') idiomaEspActivo = !idiomaEspActivo;
+  if(cual === 'guj') idiomaGujActivo = !idiomaGujActivo;
+  if(document.getElementById('lang-esp')) document.getElementById('lang-esp').classList.toggle('active', idiomaEspActivo);
+  if(document.getElementById('lang-guj')) document.getElementById('lang-guj').classList.toggle('active', idiomaGujActivo);
+  aplicarModoBurbujas();
+  aplicarModoIdiomaSubtitulos();
+}
+
+function toggleBurbujasTexto(){
+  burbujasTextoActivo = !burbujasTextoActivo;
+  document.getElementById('toggle-burbujas').classList.toggle('active', burbujasTextoActivo);
+  aplicarModoBurbujas();
+}
+
+function aplicarModoBurbujas(){
+  escena.classList.toggle('burbujas-ocultas', !burbujasTextoActivo);
+  escena.classList.toggle('gujarati-oculto', !idiomaGujActivo);
+  escena.classList.toggle('espanol-oculto', !idiomaEspActivo);
+}
+
+/* Lógica del marco de subtítulos inferior directo de video.html */
+function aplicarModoIdiomaSubtitulos(){
+  var textos = document.getElementById('sub-textos');
+  var avatar = document.getElementById('sub-avatar');
+  var mensaje = document.getElementById('sub-mensaje-escucha');
+  if(!textos || !avatar || !mensaje) return;
+
+  var modoEscucha = !idiomaEspActivo;
+  textos.style.display   = modoEscucha ? 'none' : '';
+  avatar.style.display   = modoEscucha ? 'none' : '';
+  mensaje.style.display  = modoEscucha ? 'block' : 'none';
+}
+
+function toggleAvatarIcono(){
+  mostrarAvatarIcono = !mostrarAvatarIcono;
+  document.getElementById('toggle-avatar-icono').classList.toggle('active', mostrarAvatarIcono);
+  burbujas.forEach(function(b){
+    var av = b.querySelector('.avatar'); if(av) av.style.display = mostrarAvatarIcono ? '' : 'none';
+  });
+}
+
+function toggleMarcadorActivo(){
+  mostrarMarcadorActivo = !mostrarMarcadorActivo;
+  document.getElementById('toggle-marcador').classList.toggle('active', mostrarMarcadorActivo);
+  if(!mostrarMarcadorActivo && elResaltado) elResaltado.classList.remove('visible');
+  if(mostrarMarcadorActivo && DIALOGOS[idxActual]) posicionarResaltado(DIALOGOS[idxActual].avatarActivo);
+}
+
 function goTo(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
+  document.getElementById(id).classList.add('active'); window.scrollTo(0,0);
 }
 function evalMsg(pct){
   if(pct>=91) return {emoji:'🏆', msg:'¡Felicidades!'};
@@ -194,14 +272,10 @@ function evalMsg(pct){
   return            {emoji:'🔄', msg:'Sigue practicando'};
 }
 
-/* ── Pantalla de selección de avatar ── */
 function montarAvatares(){
-  var grid = document.getElementById('avatares-grid');
-  grid.innerHTML = '';
+  var grid = document.getElementById('avatares-grid'); grid.innerHTML = '';
   Object.keys(AVATARES).forEach(function(key){
-    var av = AVATARES[key];
-    var card = document.createElement('div');
-    card.className = 'avatar-card';
+    var av = AVATARES[key]; var card = document.createElement('div'); card.className = 'avatar-card';
     card.onclick = function(){ elegirAvatar(key); };
     card.innerHTML =
       '<div class="foto" style="background-image:url(\''+av.imagen+'\'); background-color:'+av.color+';"></div>'+
@@ -212,391 +286,297 @@ function montarAvatares(){
 
 function elegirAvatar(key){
   avatarElegido = key;
-  // Contar cuántos turnos tendrá el estudiante
   turnosEstudiante = DIALOGOS.filter(function(d){ return d.avatar === key; }).length;
-  construirEscena();
-  goTo('s-conversar');
+  construirEscena(); goTo('s-conversar');
 }
 
-/* ── Construir escena (burbujas vacías, se llenan al avanzar) ── */
+/* ── Construcción de Escena Estilo video.html ── */
 function construirEscena(){
-  escena.innerHTML = '';
-  burbujas = [];
-  idxActual = 0;
-  notasEstudiante = [];
-  audioBlobsEstudiante = {};
+  escena.innerHTML = ''; burbujas = []; burbujaDeDialogo = []; idxActual = 0; notasEstudiante = []; audioBlobsEstudiante = {};
+  var claveAIndice = {};
+
+  var subAv = document.getElementById('sub-avatar');
+  var subEs = document.getElementById('sub-es');
+  if(subAv) subAv.textContent = '';
+  if(subEs) subEs.textContent = '';
+
   DIALOGOS.forEach(function(d, i){
-    var av = AVATARES[d.avatar] || {};
-    var color = av.color || '#5F6E4F';
-    var img = av.imagen || '';
-    var b = document.createElement('div');
-    b.className = 'burbuja ' + (d.lado || 'izq');
-    b.id = 'b-'+i;
-    b.innerHTML =
-      '<div class="avatar" style="background-image:url(\''+img+'\'); background-color:'+color+';"></div>'+
-      '<div class="caja" style="background:'+color+';">'+
-        '<div class="gu-texto"></div>'+
-        '<div class="es-texto"></div>'+
-      '</div>';
-    escena.appendChild(b);
-    burbujas.push(b);
+    var clave = (d.burbuja !== undefined && d.burbuja !== null) ? ('g'+d.burbuja) : ('d'+d.id);
+
+    if(claveAIndice[clave] === undefined){
+      var av = AVATARES[d.avatar] || {}; var color = av.color || '#5F6E4F'; var img = av.imagen || '';
+      var b = document.createElement('div'); b.className = 'burbuja ' + (d.lado || 'izq');
+      b.id = 'burbuja-' + burbujas.length;
+      b.innerHTML =
+        '<div class="avatar" style="background-image:url(\''+img+'\'); background-color:'+color+';"></div>'+
+        '<div class="caja" style="background:'+color+'; --color-burbuja:'+color+';">'+
+          '<div class="gu-texto"></div>'+
+          '<div class="es-texto"></div>'+
+        '</div>';
+      
+      if(!mostrarAvatarIcono){ var avEl = b.querySelector('.avatar'); if(avEl) avEl.style.display = 'none'; }
+      escena.appendChild(b);
+      claveAIndice[clave] = burbujas.length;
+      burbujas.push(b);
+    }
+    burbujaDeDialogo[i] = claveAIndice[clave];
   });
+  aplicarModoBurbujas();
+  aplicarModoIdiomaSubtitulos();
 }
 
-/* ── Iniciar la conversación ── */
 function iniciarConversacion(){
-  console.log('🔵 INICIAR conversacion. avatarElegido=', avatarElegido, 'runToken=', runToken+1);
-  document.getElementById('btn-iniciar').style.display = 'none';
-  runToken++;
-  idxActual = 0;
-  avanzar();
+  document.getElementById('btn-iniciar').style.display = 'none'; runToken++; idxActual = 0; avanzar();
 }
 
-/* ── Mostrar una burbuja con su contenido ── */
+/* ── Pintar Burbuja e Inyección Dinámica al Marco Inferior de Subtítulos ── */
 function pintarBurbuja(i, gujarati, espanol){
-  var d = DIALOGOS[i];
-  // Mantener solo las 2 últimas visibles
-  for(var j=0; j<=i-2; j++){
-    burbujas[j].classList.add('saliente');
-    burbujas[j].classList.remove('visible');
-  }
-  var b = burbujas[i];
+  var d = DIALOGOS[i]; var bIdx = burbujaDeDialogo[i];
+
+  burbujas.forEach(function(b, idx){
+    if(idx !== bIdx){ b.classList.add('saliente'); b.classList.remove('visible'); b.classList.remove('activa'); }
+  });
+
+  var b = burbujas[bIdx]; if(!b) return;
+
   b.querySelector('.gu-texto').textContent = gujarati || '';
   b.querySelector('.es-texto').textContent = espanol || '';
-  b.classList.add('visible');
-  b.classList.remove('saliente');
-  // Fondo
-  if(d.imagenFondo){
-    bgEscena.style.backgroundImage = "url('" + d.imagenFondo + "')";
-    fondoActualUrl = d.imagenFondo;
+  
+  var av = AVATARES[d.avatar] || {}; var color = av.color || '#5F6E4F'; var img = av.imagen || '';
+  b.className = 'burbuja ' + (d.lado || 'izq') + ' visible activa';
+  
+  var avEl = b.querySelector('.avatar');
+  if(avEl){
+    avEl.style.backgroundImage = "url('" + img + "')"; avEl.style.backgroundColor = color;
+    avEl.style.display = mostrarAvatarIcono ? '' : 'none';
   }
-  // Resaltado del avatar activo (se oculta solo si el diálogo no trae avatarActivo)
-  posicionarResaltado(d.avatarActivo);
-  // Progreso
+  var cajaEl = b.querySelector('.caja');
+  if(cajaEl){ cajaEl.style.background = color; cajaEl.style.setProperty('--color-burbuja', color); }
+
+  if(d.imagenFondo){ bgEscena.style.backgroundImage = "url('" + d.imagenFondo + "')"; fondoActualUrl = d.imagenFondo; }
+
+  if(d.Burbuja_Posicion){ posicionarBurbuja(b, d.Burbuja_Posicion); } else { posicionarBurbuja(b, null); }
+  if(mostrarMarcadorActivo) { posicionarResaltado(d.avatarActivo); } else { elResaltado.classList.remove('visible'); }
+  
+  /* Sincronización exacta con el marco inferior de subtítulos de video.html */
+  var nombreRoman = (d.avatar || '').charAt(0).toUpperCase() + (d.avatar || '').slice(1);
+  var subAv = document.getElementById('sub-avatar');
+  var subEs = document.getElementById('sub-es');
+  if(subAv) subAv.textContent = nombreRoman + ' : ';
+  if(subEs) subEs.textContent = espanol || '';
+
   document.getElementById('progress-fill').style.width = Math.round(((i+1)/DIALOGOS.length)*100) + '%';
 }
 
-/* ── Avanzar al siguiente diálogo ── */
-function detenerAudio(){
-  // Apaga el audio y desconecta TODOS sus handlers
-  audio.onended = null;
-  audio.onerror = null;
-  try { audio.pause(); } catch(e){}
-}
+function detenerAudio(){ audio.onended = null; audio.onerror = null; try { audio.pause(); } catch(e){} }
 
 function avanzar(){
   detenerAudio();
-
-  if(idxActual >= DIALOGOS.length){
-    console.log('🔵 AVANZAR idx=', idxActual, '>= total → FINALIZAR');
-    finalizar();
-    return;
-  }
+  if(idxActual >= DIALOGOS.length){ finalizar(); return; }
   var d = DIALOGOS[idxActual];
-  console.log('🔵 AVANZAR idx=', idxActual, '| id=', d.id, '| avatar=', d.avatar, '| esEstudiante=', (d.avatar===avatarElegido), '| runToken=', runToken);
 
-  // ── TURNO DEL ESTUDIANTE ──
   if(d.avatar === avatarElegido){
     pasoActual = idxActual;
-    mostrarTurnoEstudiante(d);
-    return;
+    if (mostrarMarcadorActivo) posicionarResaltado(d.avatarActivo);
+    mostrarTurnoEstudiante(d); return;
   }
 
-  // ── TURNO DE OTRO PERSONAJE ──
   pintarBurbuja(idxActual, d.gujarati, d.espanol);
   document.getElementById('turno-box').style.display = 'none';
 
-  var miPaso  = idxActual;
-  var miToken = runToken;
-  var yaAvanzo = false;
+  var miPaso = idxActual; var miToken = runToken; var yaAvanzo = false;
 
   function continuar(){
-    if(yaAvanzo){ console.log('🟡 continuar IGNORADO (ya avanzó) miPaso=', miPaso); return; }
-    yaAvanzo = true;
-    detenerAudio();
-    if(miToken !== runToken){ console.log('🟡 continuar IGNORADO (token viejo) miToken=', miToken, 'runToken=', runToken); return; }
-    if(idxActual !== miPaso){ console.log('🟡 continuar IGNORADO (paso cambió) idxActual=', idxActual, 'miPaso=', miPaso); return; }
-    console.log('🟢 continuar OK: audio del id terminó, idx', miPaso, '→', miPaso+1);
-    idxActual++;
-    setTimeout(avanzar, 400);
+    if(yaAvanzo) return; yaAvanzo = true; detenerAudio();
+    if(miToken !== runToken || idxActual !== miPaso) return;
+    idxActual++; setTimeout(avanzar, 400);
   }
-
-  audio.addEventListener('error', function(){ console.log('🔴 AUDIO ERROR en src=', audio.src); }, { once:true });
-
-  audio.onended = continuar;
-  audio.onerror = continuar;   // si el audio no existe (404), avanza igual en vez de colgarse
-
-  audio.src = d.audio;
-  var p = audio.play();
-  if(p && p.catch){ p.catch(function(){}); }   // si play() es rechazado, onerror se encarga
+  audio.addEventListener('error', function(){ console.log('🔴 AUDIO ERROR'); }, { once:true });
+  audio.onended = continuar; audio.onerror = continuar; audio.src = d.audio;
+  var p = audio.play(); if(p && p.catch){ p.catch(function(){}); }   
 }
 
-/* ── Turno del estudiante ── */
 function mostrarTurnoEstudiante(d){
-  console.log('🎙 TURNO ESTUDIANTE idx=', idxActual, '| id=', d.id, '| pasoActual=', pasoActual);
-  detenerAudio();
-  // Pintar la burbuja vacía (se llenará con lo que diga)
-  pintarBurbuja(idxActual, '', '');
-  var box = document.getElementById('turno-box');
-  box.style.display = 'flex';
+  detenerAudio(); pintarBurbuja(idxActual, '', '');
+  var box = document.getElementById('turno-box'); box.style.display = 'flex';
   document.getElementById('guia-gu').textContent = d.gujarati;
   document.getElementById('guia-es').textContent = d.espanol;
   document.getElementById('guia-box').classList.remove('guia-oculta');
-  // Ambas ayudas visibles al inicio del turno
-  guiaEsVisible = true;
-  guiaGuVisible = true;
+  
+  guiaEsVisible = true; guiaGuVisible = true;
   document.getElementById('guia-es').classList.remove('oculta');
   document.getElementById('guia-gu').classList.remove('oculta');
   document.getElementById('btn-guia-es').classList.add('activo');
   document.getElementById('btn-guia-gu').classList.add('activo');
   document.getElementById('estado-turno').textContent = '';
-  var btn = document.getElementById('btn-grabar');
-  btn.innerHTML = '🎙 Grabar mi voz';
-  btn.classList.remove('recording');
-  btn.disabled = false;
+  var btn = document.getElementById('btn-grabar'); btn.innerHTML = '🎙 Grabar mi voz';
+  btn.classList.remove('recording'); btn.disabled = false;
 }
 
 function toggleGuiaES(){
   guiaEsVisible = !guiaEsVisible;
   document.getElementById('guia-es').classList.toggle('oculta', !guiaEsVisible);
-  document.getElementById('btn-guia-es').classList.toggle('activo', guiaEsVisible);
+  document.getElementById('btn-guia-es').classList.toggle('active', guiaEsVisible);
 }
-
 function toggleGuiaGUJ(){
   guiaGuVisible = !guiaGuVisible;
   document.getElementById('guia-gu').classList.toggle('oculta', !guiaGuVisible);
-  document.getElementById('btn-guia-gu').classList.toggle('activo', guiaGuVisible);
+  document.getElementById('btn-guia-gu').classList.toggle('active', guiaGuVisible);
 }
 
-/* ── Grabación ── */
 function toggleGrabacion(){
   var btn = document.getElementById('btn-grabar');
-  if(grabando){
-    mediaRecorder.stop();
-    grabando = false;
-    btn.innerHTML = '🎙 Grabar mi voz';
-    btn.classList.remove('recording');
-    return;
-  }
+  if(grabando){ mediaRecorder.stop(); grabando = false; btn.innerHTML = '🎙 Grabar mi voz'; btn.classList.remove('recording'); return; }
   navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
-    mediaRecorder = new MediaRecorder(stream);
-    audioChunks = [];
+    mediaRecorder = new MediaRecorder(stream); audioChunks = [];
     mediaRecorder.ondataavailable = function(e){ if(e.data && e.data.size>0) audioChunks.push(e.data); };
     mediaRecorder.onstop = function(){
-      var blob = new Blob(audioChunks, {type: mediaRecorder.mimeType||'audio/webm'});
-      enviarTurno(blob);
+      var blob = new Blob(audioChunks, {type: mediaRecorder.mimeType||'audio/webm'}); enviarTurno(blob);
       stream.getTracks().forEach(function(t){ t.stop(); });
     };
-    mediaRecorder.start();
-    grabando = true;
-    btn.innerHTML = '🛑 Detener';
-    btn.classList.add('recording');
-  }).catch(function(){
-    alert('Verifica los permisos de tu micrófono.');
-  });
+    mediaRecorder.start(); grabando = true; btn.innerHTML = '🛑 Detener'; btn.classList.add('recording');
+  }).catch(function(){ alert('Verifica los permisos de tu micrófono.'); });
 }
 
 function enviarTurno(blob){
-  // Guardar para reproducción del diálogo al final
-  audioBlobsEstudiante[idxActual] = blob;
-  var d = DIALOGOS[idxActual];
+  audioBlobsEstudiante[idxActual] = blob; var d = DIALOGOS[idxActual];
   document.getElementById('estado-turno').textContent = '⏳ Procesando tu voz...';
   document.getElementById('btn-grabar').disabled = true;
 
-  var reader = new FileReader();
-  reader.readAsDataURL(blob);
+  var reader = new FileReader(); reader.readAsDataURL(blob);
   reader.onloadend = function(){
-    var base64 = reader.result.split(',')[1];
-    var mimeType = blob.type || 'audio/webm';
+    var base64 = reader.result.split(',')[1]; var mimeType = blob.type || 'audio/webm';
     fetch(BACKEND_URL + '/api/evaluar-audio', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','x-access-token':sessionStorage.getItem('accessToken')||''},
+      method:'POST', headers:{'Content-Type':'application/json','x-access-token':sessionStorage.getItem('accessToken')||''},
       body: JSON.stringify({ audioBase64:base64, mimeType:mimeType, fraseObjetivo:d.gujarati })
     })
     .then(function(r){ if(!r.ok) throw new Error('err'); return r.json(); })
     .then(function(data){
-      // Retener el % SIN mostrar la evaluación
       notasEstudiante.push(data.nota);
-      // Poner en la burbuja el gujarati que Gemini transcribió
       var transcrito = data.transcripcion || d.gujarati;
-      burbujas[idxActual].querySelector('.gu-texto').textContent = transcrito;
-      burbujas[idxActual].querySelector('.es-texto').textContent = d.espanol;
+      d.gujaratiTranscrito = transcrito; 
+      
+      var bIdx = burbujaDeDialogo[idxActual];
+      burbujas[bIdx].querySelector('.gu-texto').textContent = transcrito;
+      burbujas[bIdx].querySelector('.es-texto').textContent = d.espanol;
+      
+      /* Actualiza el marco inferior al procesar con éxito */
+      var subEs = document.getElementById('sub-es');
+      if(subEs) subEs.textContent = d.espanol;
+
       sfx.src = SND_OK; sfx.play().catch(function(){});
-      // Ocultar caja de turno y continuar
-      document.getElementById('turno-box').style.display = 'none';
-      detenerAudio();
-      console.log('🎤 GRABACION enviada. idxActual=', idxActual, 'pasoActual=', pasoActual, '→ avanzar?', (idxActual===pasoActual));
-      if(idxActual === pasoActual){
-        idxActual++;
-        setTimeout(avanzar, 600);
-      }
+      document.getElementById('turno-box').style.display = 'none'; detenerAudio();
+      if(idxActual === pasoActual){ idxActual++; setTimeout(avanzar, 600); }
     })
     .catch(function(err){
-      console.log('🔴 GEMINI/FETCH falló:', err);
       document.getElementById('estado-turno').textContent = '⚠️ No se pudo procesar. Intenta de nuevo.';
       document.getElementById('btn-grabar').disabled = false;
     });
   };
 }
 
-/* ── Final ── */
 function finalizar(){
-  console.log('🏁 FINALIZAR llamado. notas=', notasEstudiante.length);
-  document.getElementById('progress-fill').style.width = '100%';
-  var pct;
-  if(notasEstudiante.length === 0){
-    pct = 0;
-  } else {
-    var prom = notasEstudiante.reduce(function(a,b){return a+b;},0) / notasEstudiante.length;
-    pct = Math.round(prom * 10);
+  document.getElementById('progress-fill').style.width = '100%'; var pct;
+  if(notasEstudiante.length === 0){ pct = 0; } else {
+    var prom = notasEstudiante.reduce(function(a,b){return a+b;},0) / notasEstudiante.length; pct = Math.round(prom * 10);
   }
   var ev = evalMsg(pct);
-  document.getElementById('res-emoji').textContent = ev.emoji;
-  document.getElementById('res-msg').textContent = ev.msg;
+  document.getElementById('res-emoji').textContent = ev.emoji; document.getElementById('res-msg').textContent = ev.msg;
   document.getElementById('res-pct').textContent = 'Tu pronunciación: ' + pct + '%';
-  document.getElementById('res-sub').textContent =
-    'Participaste ' + notasEstudiante.length + ' de ' + turnosEstudiante + ' veces como ' + (AVATARES[avatarElegido] ? AVATARES[avatarElegido].nombre : '');
+  document.getElementById('res-sub').textContent = 'Participaste ' + notasEstudiante.length + ' de ' + turnosEstudiante + ' veces como ' + (AVATARES[avatarElegido] ? AVATARES[avatarElegido].nombre : '');
+  
+  var subAv = document.getElementById('sub-avatar');
+  var subEs = document.getElementById('sub-es');
+  if(subAv) subAv.textContent = '';
+  if(subEs) subEs.textContent = '';
+
   goTo('s-resultado');
 }
 
 function reiniciarTodo(){
-  console.log('🔴🔴 REINICIAR TODO llamado!! (esto resetea idx=0 y avatar=null)');
-  runToken++;
-  detenerAudio();
-  avatarElegido = null;
-  idxActual = 0;
-  notasEstudiante = [];
-  audioBlobsEstudiante = {};
-  document.getElementById('btn-iniciar').style.display = 'block';
-  document.getElementById('turno-box').style.display = 'none';
-  bgEscena.style.backgroundImage = 'none';
-  fondoActualUrl = null;
-  elResaltado.classList.remove('visible');
+  runToken++; detenerAudio(); avatarElegido = null; idxActual = 0; notasEstudiante = []; audioBlobsEstudiante = {};
+  DIALOGOS.forEach(function(d){ delete d.gujaratiTranscrito; });
+  document.getElementById('btn-iniciar').style.display = 'block'; document.getElementById('turno-box').style.display = 'none';
+  bgEscena.style.backgroundImage = 'none'; fondoActualUrl = null; elResaltado.classList.remove('visible');
+  
+  var subAv = document.getElementById('sub-avatar');
+  var subEs = document.getElementById('sub-es');
+  if(subAv) subAv.textContent = '';
+  if(subEs) subEs.textContent = '';
+
   goTo('s-elegir');
 }
 
-/* ── Retorno a la página fin de la lección ── */
-/* ── Reproducir el diálogo completo con audio del estudiante ── */
-var replayIdx = 0;
-var replayActivo = false;
-var textosReplay = [];   // textos de burbujas guardados para el replay
+/* ── Replay Inmune a Desfases ── */
+var replayIdx = 0; var replayActivo = false;
 
 function reproducirDialogo(){
-  if(replayActivo) return;
-  replayActivo = true;
-  replayIdx = 0;
+  if(replayActivo) return; replayActivo = true; replayIdx = 0;
   document.getElementById('btn-replay-dialogo').textContent = '⏹ Reproduciendo...';
   document.getElementById('btn-replay-dialogo').onclick = detenerReplay;
-  // Preservar Blobs y textos de burbujas antes de que construirEscena los borre
+  
   var blobsGuardados = audioBlobsEstudiante;
-  var textosGuardados = burbujas.map(function(b){
-    return {
-      gu: b.querySelector('.gu-texto') ? b.querySelector('.gu-texto').textContent : '',
-      es: b.querySelector('.es-texto') ? b.querySelector('.es-texto').textContent : ''
-    };
-  });
-  document.getElementById('escena').innerHTML = '';
   construirEscena();
-  // Restaurar Blobs y textos
   audioBlobsEstudiante = blobsGuardados;
-  textosReplay = textosGuardados;
-  // Ir a la pantalla de conversación para mostrar las burbujas
+  
   document.getElementById('turno-box').style.display = 'none';
   document.getElementById('btn-iniciar').style.display = 'none';
-  goTo('s-conversar');
-  siguienteReplay();
+  goTo('s-conversar'); siguienteReplay();
 }
 
 function detenerReplay(){
-  replayActivo = false;
-  detenerAudio();
+  replayActivo = false; detenerAudio();
   document.getElementById('btn-replay-dialogo').textContent = '▶ Ver el diálogo completo';
-  document.getElementById('btn-replay-dialogo').onclick = reproducirDialogo;
-  // Volver a la pantalla de resultado
+  document.getElementById('btn-replay-dialogo').onclick = reproducirDialogo; 
+  
+  var subAv = document.getElementById('sub-avatar');
+  var subEs = document.getElementById('sub-es');
+  if(subAv) subAv.textContent = '';
+  if(subEs) subEs.textContent = '';
+
   goTo('s-resultado');
 }
 
 function siguienteReplay(){
-  if(!replayActivo || replayIdx >= DIALOGOS.length){
-    detenerReplay();
-    return;
-  }
-  var d = DIALOGOS[replayIdx];
-  var i = replayIdx;
+  if(!replayActivo || replayIdx >= DIALOGOS.length){ detenerReplay(); return; }
+  var d = DIALOGOS[replayIdx]; var i = replayIdx;
 
-  // Mostrar burbuja con el texto guardado (transcrito por Gemini o original)
-  var guTexto = (textosReplay[i] && textosReplay[i].gu) ? textosReplay[i].gu : d.gujarati;
-  var esTexto = (textosReplay[i] && textosReplay[i].es) ? textosReplay[i].es : d.espanol;
-  pintarBurbuja(i, guTexto, esTexto);
+  var guTexto = d.gujaratiTranscrito || d.gujarati;
+  pintarBurbuja(i, guTexto, d.espanol);
 
   if(d.avatar === avatarElegido && audioBlobsEstudiante[i]){
-    // Reproducir audio grabado del estudiante
     var blobUrl = URL.createObjectURL(audioBlobsEstudiante[i]);
-    audio.onended = null; audio.onerror = null;
-    audio.src = blobUrl;
-    audio.play().catch(function(){});
-    audio.onended = function(){
-      URL.revokeObjectURL(blobUrl);
-      audio.onended = null;
-      replayIdx++;
-      setTimeout(siguienteReplay, 400);
-    };
-    audio.onerror = function(){
-      URL.revokeObjectURL(blobUrl);
-      audio.onerror = null;
-      replayIdx++;
-      setTimeout(siguienteReplay, 400);
-    };
+    audio.onended = null; audio.onerror = null; audio.src = blobUrl; audio.play().catch(function(){});
+    audio.onended = function(){ URL.revokeObjectURL(blobUrl); replayIdx++; setTimeout(siguienteReplay, 400); };
+    audio.onerror = function(){ URL.revokeObjectURL(blobUrl); replayIdx++; setTimeout(siguienteReplay, 400); };
   } else {
-    // Reproducir audio original del personaje
-    audio.onended = null; audio.onerror = null;
-    audio.src = d.audio;
-    audio.play().catch(function(){});
-    audio.onended = function(){
-      audio.onended = null;
-      replayIdx++;
-      setTimeout(siguienteReplay, 400);
-    };
-    audio.onerror = function(){
-      audio.onerror = null;
-      replayIdx++;
-      setTimeout(siguienteReplay, 400);
-    };
+    audio.onended = null; audio.onerror = null; audio.src = d.audio; audio.play().catch(function(){});
+    audio.onended = function(){ replayIdx++; setTimeout(siguienteReplay, 400); };
+    audio.onerror = function(){ replayIdx++; setTimeout(siguienteReplay, 400); };
   }
 }
 
-function volverAFin(){
-  window.location.href = 'leccion_pensarEnGUJ?leccion=' + _leccionRaw;
-}
+function volverAFin(){ window.location.href = 'leccion_pensarEnGUJ?leccion=' + _leccionRaw; }
 
 /* ── Init ── */
-fetch(JSON_URL)
+fetch('data/' + _leccion + '/dialogo_' + _leccion + '.json')
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
-  .then(function(data){
-    DATA = data;
-    DIALOGOS = data.dialogos || [];
-    AVATARES = data.avatares || {};
-    RESALTADOR_URL = data.imagenAvatarActivo || null;
-    if (RESALTADOR_URL) elResaltado.style.backgroundImage = "url('" + RESALTADOR_URL + "')";
-    if(data.subtitulo) document.getElementById('badge').textContent = data.subtitulo;
-    if(data.titulo)    document.getElementById('titulo').textContent = data.titulo;
-    if(data.intro)     document.getElementById('intro').textContent = data.intro;
+  .then(function(json){
+    var vi = json.video_interactivo || {};
+    DATA = json; DIALOGOS = json.dialogos || []; AVATARES = json.avatares || {};
+    RESALTADOR_URL = json.imagenAvatarActivo || null;
+    if(RESALTADOR_URL) elResaltado.style.backgroundImage = "url('" + RESALTADOR_URL + "')";
+    if(vi.subtitulo) document.getElementById('badge').textContent = vi.subtitulo;
+    if(vi.titulo)    document.getElementById('titulo').textContent = vi.titulo;
+    if(vi.intro)     document.getElementById('intro').textContent  = vi.intro;
     montarAvatares();
 
-    // No dejar arrancar la conversación hasta tener fondos y avatares listos
-    var btnIniciar = document.getElementById('btn-iniciar');
-    var textoIniciarOriginal = btnIniciar.textContent;
-    btnIniciar.disabled = true;
-    btnIniciar.textContent = 'Cargando…';
-    precargarImagenes().then(function(){
-      btnIniciar.disabled = false;
-      btnIniciar.textContent = textoIniciarOriginal;
-    });
-
+    var btnIniciar = document.getElementById('btn-iniciar'); var textoIniciarOriginal = btnIniciar.textContent;
+    btnIniciar.disabled = true; btnIniciar.textContent = 'Cargando…';
+    precargarImagenes().then(function(){ btnIniciar.disabled = false; btnIniciar.textContent = textoIniciarOriginal; });
   })
   .catch(function(){
-    document.querySelector('.wrap').innerHTML =
-      '<p style="text-align:center;color:var(--ink-soft);padding:40px 20px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    document.querySelector('.wrap').innerHTML = '<p style="text-align:center;color:var(--ink-soft);padding:40px 20px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
   });
 </script>
 
@@ -606,14 +586,9 @@ fetch(JSON_URL)
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r) { return r.text(); })
     .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
+      serverV = serverV.trim(); var localV = null; try { localV = localStorage.getItem('appVersion'); } catch(e) {}
+      if (localV === null) { try { localStorage.setItem('appVersion', serverV); } catch(e) {} } else if (localV !== serverV) {
+        try { localStorage.setItem('appVersion', serverV); } catch(e) {} location.reload(true);
       }
     })
     .catch(function() {});

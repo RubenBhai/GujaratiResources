@@ -22,12 +22,6 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
 .screen.active { display:flex; animation:fadeIn 0.4s ease; }
 @keyframes fadeIn { from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);} }
 
-.badge { display:inline-block; background:rgba(184,134,61,0.18); color:var(--saffron);
-  padding:8px 20px; border-radius:var(--r-full); font-size:0.85rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:0.08em; }
-h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-height:1.25; }
-.lead { color:var(--ink-soft); font-size:1.05rem; line-height:1.6; text-align:center; max-width:440px; }
-
 /* Selección de avatar */
 .avatares-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:100%; }
 .avatar-card { background:var(--surface); border:2px solid var(--border); border-radius:var(--r-lg);
@@ -38,61 +32,109 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   border:3px solid rgba(255,255,255,0.2); }
 .avatar-card .nombre { font-family:'Noto Serif Gujarati',serif; font-size:1.2rem; font-weight:600; }
 
-/* Escena */
+/* Escena y Contenedores */
 .escena-wrap { position:relative; width:100%; border-radius:var(--r-lg); overflow:hidden;
   box-shadow:0 8px 28px rgba(0,0,0,0.25); }
 .bg-escena { position:absolute; inset:0; background-size:cover; background-position:center;
-  opacity:0.45; transition:background-image 0.5s ease; z-index:0; }
+  opacity:1.00; transition:background-image 0.5s ease; z-index:0; }
 
 .escena { 
   position:relative; z-index:1; width:100%; 
-  height:260px; /* Reducido de 350px para salvar los laterales de la imagen */
-  background:rgba(54,44,40,0.55);
+  height:260px; 
+  background:transparent;
   border:1px solid var(--border); border-radius:var(--r-lg); 
-  padding:14px 12px; /* Reducido de 20px 16px */
-  display:flex; flex-direction:column; 
-  gap:10px; /* Reducido de 14px */
-  overflow:hidden; justify-content:space-between; 
+  padding:14px 12px; 
+  overflow-y:auto; overflow-x:hidden;
 }
 
+/* Burbujas */
 .burbuja:not(.visible):not(.saliente) { display:none; }
-
-.burbuja { max-width:95%; align-items:center; gap:8px; } /* gap de 12px a 8px */
-
+.burbuja { max-width:82%; align-items:center; gap:8px; z-index:1; }
 .burbuja.visible { display:flex; animation:aparecerBurbuja 0.4s ease forwards; }
 @keyframes aparecerBurbuja { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
-.burbuja.izq, .burbuja.der { align-self:flex-end; flex-direction:row; }
+
+/* ── Layout izquierda (default) ── */
+.burbuja.izq { flex-direction:row; }
+
+/* ── Layout derecha: avatar a la derecha, flecha a la derecha ── */
+.burbuja.der { align-self:flex-start; flex-direction:row-reverse; }
+
+/* ── Layout centro: avatar arriba, burbuja centrada ── */
+.burbuja.centro { align-self:center; flex-direction:column; align-items:center; max-width:90%; }
+.burbuja.centro .caja { border-radius:14px; margin-top:6px; }
 
 .burbuja .avatar { 
-  width:40px; height:40px; /* Reducido de 48px */
+  width:40px; height:40px; 
   border:2px solid rgba(255,255,255,0.25); background-size:cover; background-position:center;
   flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.3); 
 }
 
 .burbuja .caja { 
-  padding:10px 14px; /* Reducido de 14px 18px */
+  padding:8px 12px; 
   border-radius:14px; 
   box-shadow:0 4px 12px rgba(0,0,0,0.18); flex-grow:1; 
+  position:relative;
+  min-height:34px;
 }
 
+/* ── Radios de esquina según lado ── */
+.burbuja.izq .caja { border-top-left-radius:4px; }
 .burbuja.der .caja { border-top-right-radius:4px; }
+
+/* ── Colas de burbuja ── */
+
+/* Base: resetea todo */
+.burbuja .caja::after {
+  content:'';
+  position:absolute;
+  width:0; height:0;
+}
+
+/* Izquierda: flecha apunta a la izquierda */
+.burbuja.izq .caja::after {
+  left: -15px;
+  top: 12px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 15px solid var(--color-burbuja, var(--olive));
+  border-left: none;
+}
+
+/* Derecha: flecha apunta a la derecha */
+.burbuja.der .caja::after {
+  left: auto;
+  right: -15px;
+  top: 12px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid var(--color-burbuja, var(--olive));
+  border-right: none;
+}
+
+/* Centro: flecha apunta hacia arriba (hacia el avatar encima) */
+.burbuja.centro .caja::after {
+  left: 50%;
+  transform: translateX(-50%);
+  top: -14px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 14px solid var(--color-burbuja, var(--olive));
+  border-top: none;
+}
 
 .burbuja .gu-texto { 
   font-family:'Noto Serif Gujarati',serif; 
-  font-size:1.2rem; /* Reducido de 1.5rem */
+  font-size:1.1rem; 
   line-height:1.4; color:#fff; 
 }
 
+/* TRADUCCIÓN AL ESPAÑOL FORZADA COMO OCULTA DENTRO DE LA BURBUJA */
 .burbuja .es-texto { 
-  font-size:0.85rem; /* Reducido de 0.95rem */
-  color:rgba(255,255,255,0.85); 
-  margin-top:4px; /* Reducido de 6px */
-  font-style:italic;
+  display: none !important; 
 }
 
 .burbuja.activa .caja { outline:3px solid rgba(255,255,255,0.4); }
-
-.burbuja.saliente { display: none; }
+.burbuja.saliente { display: none !important; }
 
 .resaltado-avatar {
   position: absolute;
@@ -109,41 +151,27 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 /* Turno del estudiante */
 .turno-box { 
   width:100%; background:var(--surface); border:2px solid var(--saffron);
-  border-radius:var(--r-lg); 
-  padding:14px; /* Reducido de 20px */
-  display:flex; flex-direction:column; 
-  gap:10px; /* Reducido de 14px */
-  align-items:center; 
+  border-radius:var(--r-lg); padding:14px; display:flex; flex-direction:column; gap:10px; align-items:center; 
 }
-
 .turno-titulo { font-family:'Fraunces',serif; font-size:1.1rem; color:var(--saffron); text-align:center; }
 
-.guia-box { 
-  width:100%; background:var(--surface-light); border-radius:var(--r-md); 
-  padding:12px; /* Reducido de 16px */
-  text-align:center; 
-}
-
-.guia-gu { font-family:'Noto Serif Gujarati',serif; font-size:1.35rem; color:#fff; } /* Reducido de 1.6rem */
+.guia-box { width:100%; background:var(--surface-light); border-radius:var(--r-md); padding:12px; text-align:center; }
+.guia-gu { font-family:'Noto Serif Gujarati',serif; font-size:1.35rem; color:#fff; } 
 .guia-es { font-size:0.85rem; color:var(--ink-soft); margin-top:4px; font-style:italic; }
 
 .guia-oculta { display:none; }
-
 .guia-gu.oculta, .guia-es.oculta { display:none; }
 
 .btn-guia.activo { background:var(--saffron); color:#2C2420; border-color:var(--saffron); }
-
 .btn-guia { background:var(--surface-light); border:1px solid var(--border); border-radius:var(--r-full);
   padding:8px 18px; cursor:pointer; font-size:0.85rem; font-weight:600; color:var(--ink-soft); font-family:inherit; }
 .btn-guia:hover { color:var(--saffron); border-color:var(--saffron); }
 
 .btn-grabar { 
-  background:var(--sindoor); border:none; border-radius:var(--r-full);
-  padding:11px 24px; /* Más compacto */
+  background:var(--sindoor); border:none; border-radius:var(--r-full); padding:11px 24px; 
   cursor:pointer; font-size:0.95rem; font-weight:700; color:white; font-family:inherit;
   box-shadow:0 4px 14px rgba(168,54,42,0.3); transition:all 0.2s; 
 }
-
 .btn-grabar.recording { background:#8B0000; animation:pulso 1s infinite; }
 @keyframes pulso { 0%,100%{opacity:1;} 50%{opacity:0.6;} }
 .estado-turno { font-size:0.9rem; color:var(--ink-soft); min-height:20px; text-align:center; }
@@ -169,3 +197,48 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 .resultado-msg { font-family:'Fraunces',serif; font-size:1.6rem; color:var(--saffron); margin-bottom:8px; }
 .resultado-pct { font-size:1.1rem; color:var(--ink-soft); }
 .resultado-sub { font-size:0.9rem; color:var(--ink-soft); margin-top:10px; }
+
+/* Toggles e idioma */
+.lang-row { display:flex; gap:6px; justify-content:center; width:100%; margin-bottom:4px; flex-wrap:nowrap; }
+.lang-btn { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-full);
+  padding:10px 14px; cursor:pointer; font-size:0.85rem; font-weight:700; color:var(--ink-soft);
+  font-family:inherit; transition:all 0.2s; height:42px; display:inline-flex; align-items:center; justify-content:center; white-space:nowrap; }
+.lang-btn:hover { background:var(--surface-light); color:var(--saffron); }
+.lang-btn.active { background:var(--saffron); color:#2C2420; border-color:var(--saffron); }
+
+.escena.burbujas-ocultas .burbuja { display: none !important; }
+.escena.gujarati-oculto .gu-texto { display: none !important; }
+
+/* FRAME DE SUBTÍTULOS INFERIOR */
+.subtitulos {
+  width:100%; 
+  background:#000; 
+  border-radius:var(--r-md);
+  padding:10px 16px; 
+  display:flex; 
+  align-items:center; 
+  gap:8px;
+  height:42px; 
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.subtitulos .sub-avatar { color:var(--ink-soft); font-weight:700; font-size:0.95rem; white-space:nowrap; flex-shrink:0; }
+.subtitulos .sub-textos { 
+  display:flex; 
+  flex-direction:row; 
+  align-items:center; 
+  gap:8px; 
+  min-width:0; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.subtitulos .sub-mensaje-escucha { 
+  display:none; color:var(--ink-soft); font-size:0.9rem; font-style:italic; text-align:center; width:100%; 
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.subtitulos .es-texto { 
+  color:#6FA8C9; font-weight:700; font-size:0.95rem; font-style:normal; margin-top:0; 
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}

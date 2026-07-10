@@ -21,23 +21,34 @@
 
   <div style="display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;">
     <div class="controls" style="width: auto; display: flex; gap: 8px;">
-      <button class="btn-play" id="btn-play" onclick="reproducir()">▶ Reproducir</button>
+      <button class="btn-play" id="btn-play" onclick="reproducir()">▶</button>
       
       <button class="btn-replay" id="btn-pause" onclick="togglePausa()" style="display:none; padding: 10px 16px;">⏸</button>
     </div>
 
     <div class="lang-row">
-      <button class="lang-btn" id="lang-esp" onclick="setIdioma('esp')">ESP</button>
-      <button class="lang-btn" id="lang-guj" onclick="setIdioma('guj')">GUJ</button>
-      <button class="lang-btn active" id="lang-ambos" onclick="setIdioma('ambos')">ESP / GUJ</button>
+      <button class="lang-btn active" id="lang-esp" onclick="toggleIdioma('esp')">E</button>
+      <!-- Botón 'ગ' restaurado y configurado como activo por defecto -->
+      <button class="lang-btn active" id="lang-guj" onclick="toggleIdioma('guj')">ગ</button>
+      <button class="lang-btn active" id="toggle-burbujas" onclick="toggleBurbujasTexto()" title="Mostrar/ocultar las burbujas de diálogo">💬</button>
     </div>
   </div>
 
   <div class="escena" id="escena"></div>
 
-  <div style="display:flex; gap:10px; width:100%;">
-   <button class="nav-btn" style="flex:1;" onclick="audio.pause(); audio.src=''; cancelAnimationFrame(rafId); history.back();">&larr; Lecci&oacute;n</button>
-   <a class="btn-fin" id="btn-empezar" href="#" style="flex:1; margin-top:0;">Empezar la clase →</a>  
+  <div class="subtitulos" id="subtitulos">
+    <span class="sub-avatar" id="sub-avatar"></span>
+    <span class="sub-textos" id="sub-textos">
+      <span class="es-texto" id="sub-es"></span>
+    </span>
+    <span class="sub-mensaje-escucha" id="sub-mensaje-escucha">🎧 Escucha atentamente el diálogo</span>
+  </div>
+
+  <div class="nav-bottom-row">
+   <button class="nav-btn" onclick="audio.pause(); audio.src=''; cancelAnimationFrame(rafId); history.back();">&larr; Lecci&oacute;n</button>
+   <button class="lang-btn" id="toggle-avatar-icono" onclick="toggleAvatarIcono()" title="Mostrar/ocultar ícono de avatar">👤</button>
+   <button class="lang-btn" id="toggle-marcador" onclick="toggleMarcadorActivo()" title="Mostrar/ocultar marcador de quien habla">🎯</button>
+   <a class="btn-fin" id="btn-empezar" href="#">Empezar →</a>  
   </div>
 
 </div>
@@ -48,9 +59,8 @@
 // ── Parámetros de URL ──
 const _params  = new URLSearchParams(location.search);
 const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
-const JSON_URL = 'data/' + _leccion + '/video_clase_' + _leccion + '.json';
 const _nextParam = _params.get('next');
-const _modo = _params.get('modo');   // 'desafio' = repaso antes del video interactivo
+const _modo = _params.get('modo'); 
 
 const audio  = document.getElementById('audio');
 const escena = document.getElementById('escena');
@@ -66,54 +76,43 @@ let RESALTADOR_URL = null;
 let burbujas = [];
 let mostradas = [];
 let dialogoSecuencia = [];   
-let burbujaDeDialogo = [];   // burbuja física por cada diálogo
+let burbujaDeDialogo = [];   
 let secuenciaActual = -1;
 let rafId = null;
 
-var dimensionesImagen = {};   // { url: {w, h} } — dimensiones reales de cada imagen de fondo
-var fondoActualUrl = null;    // qué imagen se está mostrando ahora mismo
-var elResaltado = null;       // el div del recuadro que resalta al avatar activo
+var dimensionesImagen = {};   
+var fondoActualUrl = null;    
+var elResaltado = null;       
+
+var mostrarAvatarIcono = false;     
+var mostrarMarcadorActivo = false;  
 
 var imagenesCacheadas = []; 
 
-/* ── Precargar TODAS las imágenes de la escena (fondos + avatares) antes de arrancar ── */
 function precargarImagenes(){
   var urls = [];
-
-  SECUENCIAS.forEach(function(sec){
-    if (sec.imagenFondo) urls.push(sec.imagenFondo);
-  });
-  DIALOGOS.forEach(function(d){
-    if (d.imagenFondo) urls.push(d.imagenFondo);
-  });
-  Object.keys(AVATARES).forEach(function(key){
-    if (AVATARES[key].imagen) urls.push(AVATARES[key].imagen);
-  });
-  
+  SECUENCIAS.forEach(function(sec){ if (sec.imagenFondo) urls.push(sec.imagenFondo); });
+  DIALOGOS.forEach(function(d){ if (d.imagenFondo) urls.push(d.imagenFondo); });
+  Object.keys(AVATARES).forEach(function(key){ if (AVATARES[key].imagen) urls.push(AVATARES[key].imagen); });
   if (RESALTADOR_URL) urls.push(RESALTADOR_URL);
-
-  urls = urls.filter(function(u, i){ return urls.indexOf(u) === i; }); // sin duplicados
+  urls = urls.filter(function(u, i){ return urls.indexOf(u) === i; });
 
   var promesas = urls.map(function(url){
     return new Promise(function(resolve){
       var img = new Image();
       img.onload = function(){ dimensionesImagen[url] = { w: img.naturalWidth, h: img.naturalHeight }; resolve(); };
-      img.onerror = resolve; // una imagen rota no debe colgar el resto
+      img.onerror = resolve; 
       img.src = url;
       imagenesCacheadas.push(img);
     });
   });
-
-  // Salvavidas: no esperar más de 8s aunque algo se cuelgue en la red
   var limite = new Promise(function(resolve){ setTimeout(resolve, 8000); });
   return Promise.race([ Promise.all(promesas), limite ]);
 }
 
-/* ── Construir la escena ── */
 function construirEscena(){
   escena.innerHTML = '';
   
-  // 1. Crear y añadir la capa de fondo
   var bgDiv = document.createElement('div');
   bgDiv.id = 'bg-escena';
   bgDiv.className = 'bg-escena';
@@ -126,17 +125,15 @@ function construirEscena(){
   elResaltado = resaltado;
 
   burbujas = [];
-  burbujaDeDialogo = [];   // burbuja física (índice) que le toca a cada diálogo
+  burbujaDeDialogo = [];   
   mostradas = DIALOGOS.map(()=>false);
 
-  var claveAIndice = {};   // clave de burbuja -> índice en burbujas[]
+  var claveAIndice = {};   
 
   DIALOGOS.forEach(function(d, i){
-    // clave de agrupación: si trae "burbuja" la comparte; si no, es única por id
     var clave = (d.burbuja !== undefined && d.burbuja !== null) ? ('g'+d.burbuja) : ('d'+d.id);
 
     if(claveAIndice[clave] === undefined){
-      // crear nueva burbuja física, usando los datos del PRIMER diálogo del grupo
       var av = AVATARES[d.avatar] || {};
       var color = av.color || '#5F6E4F';
       var img = av.imagen || '';
@@ -145,13 +142,16 @@ function construirEscena(){
       b.id = 'burbuja-'+burbujas.length;
       b.innerHTML =
         '<div class="avatar" style="background-image:url(\''+img+'\'); background-color:'+color+';"></div>'+
-        '<div class="caja" style="background:'+color+';">'+
+        '<div class="caja" style="background:'+color+'; --color-burbuja:'+color+';">'+
           '<div class="gu-texto">'+(d.gujarati||'')+'</div>'+
-          '<div class="es-texto">'+(d.espanol||'')+'</div>'+
         '</div>';
       escena.appendChild(b);
       claveAIndice[clave] = burbujas.length;
       burbujas.push(b);
+      if(!mostrarAvatarIcono){
+        var avNueva = b.querySelector('.avatar');
+        if(avNueva) avNueva.style.display = 'none';
+      }
     }
     burbujaDeDialogo[i] = claveAIndice[clave];
   });
@@ -160,7 +160,6 @@ function construirEscena(){
   ajustarAltura(burbujasEnSecuencia(0));
 }
 
-/* ── Cuántas burbujas FÍSICAS hay en una secuencia (para la altura) ── */
 function burbujasEnSecuencia(sidx){
   if(!SECUENCIAS.length) return 1;
   var vistos = {};
@@ -171,7 +170,6 @@ function burbujasEnSecuencia(sidx){
   return Object.keys(vistos).length || 1;
 }
 
-/* ── Mapear cada diálogo (índice) a su secuencia ── */
 function mapearSecuencias(){
   dialogoSecuencia = DIALOGOS.map(()=>0);
   SECUENCIAS.forEach(function(sec, sidx){
@@ -182,59 +180,125 @@ function mapearSecuencias(){
   });
 }
 
-/* ── Altura del frame = matemáticas exactas ── */
 function ajustarAltura(numDialogos){
-  // 1. Sumamos el nuevo padding de la .escena (14px arriba + 14px abajo = 28px)
   var paddingTotal = 28; 
-  // 2. Sumamos los nuevos espacios entre burbujas (10px de gap)
   var gapTotal = (numDialogos > 1) ? (numDialogos - 1) * 10 : 0; 
-  // 3. Bajamos la constante a 110px (40px del avatar + el alto promedio del texto compacto)
-  var alturaReal = paddingTotal + gapTotal + (110 * numDialogos);
-  
+  var alturaReal = paddingTotal + gapTotal + (75 * numDialogos);
   escena.style.height = alturaReal + 'px';
 }
 
-/* ── Posicionar el recuadro que resalta al avatar activo, respetando el recorte de background-size:cover ── */
-function posicionarResaltado(coords){
+function coordsAPixeles(coords){
   var dimFondo = dimensionesImagen[fondoActualUrl];
-  var dimBadge = dimensionesImagen[RESALTADOR_URL];
   var bg = document.getElementById('bg-escena');
-  if(!dimFondo || !dimBadge || !bg || !coords){ elResaltado.classList.remove('visible'); return; }
+  if(!dimFondo || !bg || !coords) return null;
 
   var cw = bg.clientWidth, ch = bg.clientHeight;
   var scale = Math.max(cw / dimFondo.w, ch / dimFondo.h);
   var offsetX = (cw - dimFondo.w * scale) / 2;
   var offsetY = (ch - dimFondo.h * scale) / 2;
 
-  var badgeW = dimBadge.w * scale;
-  var badgeH = dimBadge.h * scale;
-  var centroX = offsetX + coords.x * scale;
-  var centroY = offsetY + coords.y * scale;
+  return { x: offsetX + coords.x * scale, y: offsetY + coords.y * scale, scale: scale };
+}
 
-  elResaltado.style.left   = (centroX - badgeW/2) + 'px';
-  elResaltado.style.top    = (centroY - badgeH/2) + 'px';
+function posicionarResaltado(coords){
+  var dimBadge = dimensionesImagen[RESALTADOR_URL];
+  var punto = coordsAPixeles(coords);
+  if(!dimBadge || !punto){ elResaltado.classList.remove('visible'); return; }
+
+  var badgeW = dimBadge.w * punto.scale;
+  var badgeH = dimBadge.h * punto.scale;
+
+  var escenaRect = escena.getBoundingClientRect();
+  var bgRect = document.getElementById('bg-escena').getBoundingClientRect();
+  var diffY = bgRect.top - escenaRect.top;
+
+  elResaltado.style.left   = (punto.x - badgeW/2) + 'px';
+  elResaltado.style.top    = (punto.y - badgeH/2 + diffY) + 'px';
   elResaltado.style.width  = badgeW + 'px';
   elResaltado.style.height = badgeH + 'px';
   elResaltado.classList.add('visible');
 }
 
-/* ── Idioma ── */
-function setIdioma(modo){
-  escena.classList.remove('solo-esp','solo-guj');
-  if(modo==='esp')  escena.classList.add('solo-esp');
-  if(modo==='guj')  escena.classList.add('solo-guj');
-  document.getElementById('lang-esp').classList.toggle('active', modo==='esp');
-  document.getElementById('lang-guj').classList.toggle('active', modo==='guj');
-  document.getElementById('lang-ambos').classList.toggle('active', modo==='ambos');
+function posicionarBurbuja(burbujaEl, coords){
+  if(!coords){
+    burbujaEl.style.position = '';
+    burbujaEl.style.left = '';
+    burbujaEl.style.top = '';
+    return;
+  }
+  var punto = coordsAPixeles(coords);
+  if(!punto) return; 
+  burbujaEl.style.position = 'absolute';
+  burbujaEl.style.left = punto.x + 'px';
+  burbujaEl.style.top  = punto.y + 'px';
 }
 
-/* ── Reproducir / Pausar ── */
-function reproducir(){
+function toggleAvatarIcono(){
+  mostrarAvatarIcono = !mostrarAvatarIcono;
+  document.getElementById('toggle-avatar-icono').classList.toggle('active', mostrarAvatarIcono);
+  burbujas.forEach(function(b){
+    var av = b.querySelector('.avatar');
+    if(av) av.style.display = mostrarAvatarIcono ? '' : 'none';
+  });
+}
 
+function toggleMarcadorActivo(){
+  mostrarMarcadorActivo = !mostrarMarcadorActivo;
+  document.getElementById('toggle-marcador').classList.toggle('active', mostrarMarcadorActivo);
+  if(!mostrarMarcadorActivo && elResaltado) elResaltado.classList.remove('visible');
+}
+
+/* ── Toggles de Idioma Independientes (Restaurado a true por defecto) ── */
+var idiomaEspActivo = true;
+var idiomaGujActivo = true;  
+var burbujasTextoActivo = true; 
+
+function toggleIdioma(cual){
+  if(cual === 'esp') idiomaEspActivo = !idiomaEspActivo;
+  if(cual === 'guj') idiomaGujActivo = !idiomaGujActivo;
+
+  if(document.getElementById('lang-esp')) document.getElementById('lang-esp').classList.toggle('active', idiomaEspActivo);
+  if(document.getElementById('lang-guj')) document.getElementById('lang-guj').classList.toggle('active', idiomaGujActivo);
+
+  aplicarModoIdiomaSubtitulos();
+  aplicarModoBurbujas();
+}
+
+function toggleBurbujasTexto(){
+  burbujasTextoActivo = !burbujasTextoActivo;
+  document.getElementById('toggle-burbujas').classList.toggle('active', burbujasTextoActivo);
+  aplicarModoBurbujas();
+}
+
+function aplicarModoBurbujas(){
+  if(!burbujasTextoActivo){
+    escena.classList.add('burbujas-ocultas');
+  } else {
+    escena.classList.remove('burbujas-ocultas');
+  }
+
+  if(!idiomaGujActivo){
+    escena.classList.add('gujarati-oculto');
+  } else {
+    escena.classList.remove('gujarati-oculto');
+  }
+}
+
+function aplicarModoIdiomaSubtitulos(){
+  var textos = document.getElementById('sub-textos');
+  var avatar = document.getElementById('sub-avatar');
+  var mensaje = document.getElementById('sub-mensaje-escucha');
+
+  var modoEscucha = !idiomaEspActivo;
+  textos.style.display   = modoEscucha ? 'none' : '';
+  avatar.style.display   = modoEscucha ? 'none' : '';
+  mensaje.style.display  = modoEscucha ? 'block' : 'none';
+}
+
+function reproducir(){
   document.body.classList.add('video-iniciado');
   document.getElementById('btn-empezar').textContent = 'Empezar →';
 
-  // Si ya hay burbujas mostradas (el usuario repite), reiniciamos la escena
   if (mostradas.some(function(m) { return m; })) {
     fill.style.width = '0%';
     construirEscena();
@@ -242,14 +306,9 @@ function reproducir(){
 
   audio.src = DATA.audio;
   audio.currentTime = 0;
-  audio.play().catch(function(){
-    alert('No se pudo reproducir el audio. Verifica tu conexión.');
-  });
+  audio.play().catch(function(){ alert('No se pudo reproducir el audio.'); });
   
-  // Deshabilitar botón Reproducir
   document.getElementById('btn-play').disabled = true;
-  
-  // Mostrar botón Pausa
   var btnP = document.getElementById('btn-pause');
   btnP.textContent = '⏸';
   btnP.style.display = 'inline-block';
@@ -285,14 +344,10 @@ function seguir(){
 
         if(sidx !== secuenciaActual){
           secuenciaActual = sidx;
-
-	  // Cambiar imagen de fondo solo si la secuencia la define; si no, mantener el actual
 	  if(SECUENCIAS[sidx].imagenFondo){
 	    document.getElementById('bg-escena').style.backgroundImage = "url('" + SECUENCIAS[sidx].imagenFondo + "')";
 	    fondoActualUrl = SECUENCIAS[sidx].imagenFondo;
 	  }
-
-          // Ocultar las burbujas que NO pertenecen a esta secuencia
           DIALOGOS.forEach(function(dd, jj){
             if(dialogoSecuencia[jj] !== sidx){
               burbujas[ burbujaDeDialogo[jj] ].classList.add('saliente');
@@ -302,14 +357,11 @@ function seguir(){
           ajustarAltura(burbujasEnSecuencia(sidx));
         }
 
-        // Marcar este diálogo como mostrado
         mostradas[i] = true;
 
-        // Escribir SU texto en SU burbuja física (reemplaza lo que hubiera)
         var caja = burbujas[bIdx];
         caja.classList.add('visible');
         caja.classList.remove('saliente');
-        // Si el avatar/color cambia entre diálogos del mismo grupo, actualizarlos
         var av = AVATARES[d.avatar] || {};
         var color = av.color || '#5F6E4F';
         var img = av.imagen || '';
@@ -317,10 +369,9 @@ function seguir(){
         caja.querySelector('.avatar').style.backgroundImage = "url('" + img + "')";
         caja.querySelector('.avatar').style.backgroundColor = color;
         caja.querySelector('.caja').style.background = color;
+        caja.querySelector('.caja').style.setProperty('--color-burbuja', color);
         caja.querySelector('.gu-texto').textContent = d.gujarati || '';
-        caja.querySelector('.es-texto').textContent = d.espanol || '';
 
-        // Fondo por diálogo (tiene prioridad sobre el de la secuencia)
         if(d.imagenFondo){
           document.getElementById('bg-escena').style.backgroundImage = "url('" + d.imagenFondo + "')";
           fondoActualUrl = d.imagenFondo;
@@ -329,13 +380,33 @@ function seguir(){
 
       var activa = (t >= d.ini && t <= d.fin);
       if(bIdx !== undefined) burbujas[bIdx].classList.toggle('activa', activa);
-      if(activa && d.avatarActivo) posicionarResaltado(d.avatarActivo);
+      if(activa && d.avatarActivo && mostrarMarcadorActivo) posicionarResaltado(d.avatarActivo);
+      if(activa && bIdx !== undefined) posicionarBurbuja(burbujas[bIdx], d.Burbuja_Posicion);
 
+      if(d.Burbuja_Posicion && bIdx !== undefined && t > d.fin && mostradas[i]){
+        var reasignadaAOtroActivo = DIALOGOS.some(function(otro, otroI){
+          return otroI !== i && burbujaDeDialogo[otroI] === bIdx && (t >= otro.ini && t <= otro.fin);
+        });
+        if(!reasignadaAOtroActivo){
+          burbujas[bIdx].classList.remove('visible');
+          burbujas[bIdx].classList.add('saliente');
+        }
+      }
+
+      if(activa){
+        var nombreRoman = (d.avatar || '').charAt(0).toUpperCase() + (d.avatar || '').slice(1);
+        document.getElementById('sub-avatar').textContent = nombreRoman + ' : ';
+        document.getElementById('sub-es').textContent = d.espanol || '';
+      }
     });
 
-    if(!audio.paused && !audio.ended){
-      rafId = requestAnimationFrame(loop);
+    var algunaActiva = DIALOGOS.some(function(d){ return t >= d.ini && t <= d.fin; });
+    if(!algunaActiva){
+      document.getElementById('sub-avatar').textContent = '';
+      document.getElementById('sub-es').textContent = '';
     }
+
+    if(!audio.paused && !audio.ended){ rafId = requestAnimationFrame(loop); }
   }
   rafId = requestAnimationFrame(loop);
 }
@@ -343,43 +414,33 @@ function seguir(){
 audio.addEventListener('ended', function(){
   fill.style.width = '100%';
   burbujas.forEach(function(b){ b.classList.remove('activa'); });
-  // btn-empezar siempre activo — no necesita agregarse clase
-  
-  // Ocultar pausa y habilitar reproducir
   document.getElementById('btn-pause').style.display = 'none';
   document.getElementById('btn-play').disabled = false;
 });
 
-/* ── Configurar el botón inferior ── */
 function configurarBotonFin(){
   var btn = document.getElementById('btn-empezar');
-
-  // Función que detiene el audio antes de navegar
   function irADestino(destino){
     cancelAnimationFrame(rafId);
-    audio.pause();
-    audio.src = '';
+    audio.pause(); audio.src = '';
     if(destino) window.location.href = destino;
     else history.back();
   }
-
-  // MODO DESAFÍO
   if(_modo === 'desafio'){
     var lecParam = _params.get('leccion') || '1.1.1';
     NEXT_PAGE = (_nextParam || 'video_interactivo.html') + '?leccion=' + lecParam;
-    btn.textContent = '¡Quiero participar! →';
+    btn.textContent = 'Empezar →'; 
     btn.href = 'javascript:void(0)';
     btn.onclick = function(){ irADestino(NEXT_PAGE); };
     return;
   }
-
   NEXT_PAGE = _nextParam || DATA.next || null;
   if(NEXT_PAGE){
-    btn.textContent = 'Empezar la clase →';
+    btn.textContent = 'Empezar →'; 
     btn.href = 'javascript:void(0)';
     btn.onclick = function(){ irADestino(NEXT_PAGE); };
   } else {
-    btn.textContent = 'De regreso a la clase';
+    btn.textContent = 'Regresar'; 
     btn.href = 'javascript:void(0)';
     btn.onclick = function(){
       if(DATA.subtitulo_fin) document.getElementById('badge').textContent = DATA.subtitulo_fin;
@@ -389,69 +450,52 @@ function configurarBotonFin(){
   }
 }
 
-/* ── Init ── */
-fetch(JSON_URL)
+fetch('data/' + _leccion + '/dialogo_' + _leccion + '.json')
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
-  .then(function(data){
-    DATA = data;
-    DIALOGOS = data.dialogos || [];
-    SECUENCIAS = data.secuencias && data.secuencias.length
-                 ? data.secuencias
-                 : DIALOGOS.map(function(d){ return { dialogos:[d.id] }; });
-    AVATARES = data.avatares || {};
+  .then(function(json){
+    var v = json.video || {};
+    DATA = json;
+    DATA.audio            = v.audio            || null;
+    DATA.altoPorDialogo   = v.altoPorDialogo   || null;
+    DATA.subtitulo_fin    = v.subtitulo_fin    || null;
+    DATA.intro_fin        = v.intro_fin        || null;
+    DATA.subtitulo_desafio = v.subtitulo_desafio || null;
+    DATA.titulo_desafio   = v.titulo_desafio   || null;
+    DATA.intro_desafio    = v.intro_desafio    || null;
 
-    RESALTADOR_URL = data.imagenAvatarActivo || null;
-    
+    DIALOGOS  = json.dialogos || [];
+    SECUENCIAS = (v.secuencias && v.secuencias.length)
+      ? v.secuencias
+      : DIALOGOS.map(function(d){ return { dialogos:[d.id] }; });
+    AVATARES      = json.avatares || {};
+    RESALTADOR_URL = json.imagenAvatarActivo || null;
+
     if(_modo === 'desafio'){
-      // Textos del desafío final (con respaldo a los normales si faltan)
-      document.getElementById('badge').textContent  = data.subtitulo_desafio || data.subtitulo || '';
-      document.getElementById('titulo').textContent = data.titulo_desafio    || data.titulo    || '';
-      document.getElementById('intro').textContent  = data.intro_desafio     || data.intro     || '';
+      document.getElementById('badge').textContent  = v.subtitulo_desafio || v.subtitulo || '';
+      document.getElementById('titulo').textContent = v.titulo_desafio    || v.titulo    || '';
+      document.getElementById('intro').textContent  = v.intro_desafio     || v.intro     || '';
     } else {
-      if(data.subtitulo) document.getElementById('badge').textContent = data.subtitulo;
-      if(data.titulo)    document.getElementById('titulo').textContent = data.titulo;
-      if(data.intro)     document.getElementById('intro').textContent = data.intro;
+      if(v.subtitulo) document.getElementById('badge').textContent = v.subtitulo;
+      if(v.titulo)    document.getElementById('titulo').textContent = v.titulo;
+      if(v.intro)     document.getElementById('intro').textContent  = v.intro;
     }
 
     mapearSecuencias();
     construirEscena();
+    aplicarModoBurbujas();
+    aplicarModoIdiomaSubtitulos();
     configurarBotonFin();
 
-    // No dejar arrancar el diálogo hasta tener fondos y avatares listos
     var btnPlay = document.getElementById('btn-play');
     var textoPlayOriginal = btnPlay.textContent;
-    btnPlay.disabled = true;
-    btnPlay.textContent = 'Cargando…';
+    btnPlay.disabled = true; btnPlay.textContent = 'Cargando…';
     precargarImagenes().then(function(){
-      btnPlay.disabled = false;
-      btnPlay.textContent = textoPlayOriginal;
+      btnPlay.disabled = false; btnPlay.textContent = textoPlayOriginal;
     });
-
   })
   .catch(function(){
-    document.querySelector('.wrap').innerHTML =
-      '<p style="text-align:center;color:var(--ink-soft);padding:40px 20px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    document.querySelector('.wrap').innerHTML = '<p style="text-align:center;color:var(--ink-soft);padding:40px 20px;">No se pudo cargar el contenido.</p>';
   });
-</script>
-
-<script>
-(function() {
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
-  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { return r.text(); })
-    .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
-      }
-    })
-    .catch(function() {});
-})();
 </script>
 </body>
 </html>
