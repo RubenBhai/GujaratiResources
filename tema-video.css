@@ -68,10 +68,17 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   background-position: center;
   opacity: 1.0; 
   z-index: 0;
-  transition: background-image 0.5s ease;
   pointer-events: none;
   border-radius: var(--r-lg);
 }
+
+/* Segunda capa de fondo para cross-fade sin parpadeo negro */
+.bg-escena.bg-capa-b {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.bg-escena.bg-capa-b.activa { opacity: 1; }
 
 .burbuja:not(.visible):not(.saliente) { display:none; }
 .burbuja { max-width:82%; align-items:center; gap:8px; position: relative; z-index: 1; }
@@ -138,8 +145,7 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 
 /* Centro: flecha apunta hacia arriba (hacia el avatar encima) */
 .burbuja.centro .caja::after {
-  left: 50%;
-  transform: translateX(-50%);
+  left: 16px;
   top: -14px;
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
@@ -155,6 +161,11 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 
 .burbuja .es-texto { 
   display: none !important; 
+  font-size: 0.9rem;
+  color: #6FA8C9;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-top: 3px;
 }
 
 .burbuja.activa .caja { outline:3px solid rgba(255,255,255,0.4); }
@@ -304,12 +315,19 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   }
   
   .bg-escena { border-radius: 0; opacity: 0.4; }
+  .bg-escena.bg-capa-b.activa { opacity: 0.4; }
   
   .burbuja { 
     max-width: 50%; 
     align-self: flex-end !important; 
   }
   .burbuja.izq, .burbuja.der { flex-direction: row; }
+
+  /* Español dentro de la burbuja, solo en horizontal y solo si "E" está activo.
+     (En horizontal el marco inferior de subtítulos está oculto.) */
+  .escena.espanol-activo .burbuja .es-texto {
+    display: block !important;
+  }
   
   .progress { 
     position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; border-radius: 0; 

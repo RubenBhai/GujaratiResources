@@ -118,6 +118,11 @@ function construirEscena(){
   bgDiv.className = 'bg-escena';
   escena.appendChild(bgDiv);
 
+  var bgDivB = document.createElement('div');
+  bgDivB.id = 'bg-escena-b';
+  bgDivB.className = 'bg-escena bg-capa-b';
+  escena.appendChild(bgDivB);
+
   var resaltado = document.createElement('div');
   resaltado.className = 'resaltado-avatar';
   if (RESALTADOR_URL) resaltado.style.backgroundImage = "url('" + RESALTADOR_URL + "')";
@@ -144,6 +149,7 @@ function construirEscena(){
         '<div class="avatar" style="background-image:url(\''+img+'\'); background-color:'+color+';"></div>'+
         '<div class="caja" style="background:'+color+'; --color-burbuja:'+color+';">'+
           '<div class="gu-texto">'+(d.gujarati||'')+'</div>'+
+          '<div class="es-texto">'+(d.espanol||'')+'</div>'+
         '</div>';
       escena.appendChild(b);
       claveAIndice[clave] = burbujas.length;
@@ -157,6 +163,18 @@ function construirEscena(){
   });
 
   secuenciaActual = -1;
+
+  // Establecer el fondo inicial directamente (sin fade) para arrancar con imagen, no en negro.
+  fondoActualUrl = null;
+  var fondoInicial = null;
+  if(SECUENCIAS.length && SECUENCIAS[0].imagenFondo) fondoInicial = SECUENCIAS[0].imagenFondo;
+  else if(DIALOGOS.length && DIALOGOS[0].imagenFondo) fondoInicial = DIALOGOS[0].imagenFondo;
+  if(fondoInicial){
+    var base0 = document.getElementById('bg-escena');
+    if(base0) base0.style.backgroundImage = "url('" + fondoInicial + "')";
+    fondoActualUrl = fondoInicial;
+  }
+
   ajustarAltura(burbujasEnSecuencia(0));
 }
 
@@ -185,6 +203,35 @@ function ajustarAltura(numDialogos){
   var gapTotal = (numDialogos > 1) ? (numDialogos - 1) * 10 : 0; 
   var alturaReal = paddingTotal + gapTotal + (75 * numDialogos);
   escena.style.height = alturaReal + 'px';
+}
+
+/* Cambio de fondo con cross-fade entre dos capas (sin parpadeo negro).
+   La capa base (bg-escena) siempre muestra el fondo "asentado".
+   La capa B hace fade-in con el fondo nuevo; al terminar, se copia a la base. */
+var _bgFadeTimer = null;
+function cambiarFondo(url){
+  if(!url || url === fondoActualUrl) return;
+  var base = document.getElementById('bg-escena');
+  var capaB = document.getElementById('bg-escena-b');
+  if(!base || !capaB){
+    if(base) base.style.backgroundImage = "url('" + url + "')";
+    fondoActualUrl = url;
+    return;
+  }
+  // Preparar capa B con el fondo nuevo y desvanecerla hacia visible
+  capaB.style.backgroundImage = "url('" + url + "')";
+  // reflow para asegurar la transición de opacidad
+  void capaB.offsetWidth;
+  capaB.classList.add('activa');
+
+  fondoActualUrl = url;
+
+  if(_bgFadeTimer) clearTimeout(_bgFadeTimer);
+  _bgFadeTimer = setTimeout(function(){
+    // Al terminar el fade, asentar el fondo en la capa base y reiniciar la capa B
+    base.style.backgroundImage = "url('" + url + "')";
+    capaB.classList.remove('activa');
+  }, 520); // un poco más que la transición de 0.5s
 }
 
 function coordsAPixeles(coords){
@@ -282,6 +329,9 @@ function aplicarModoBurbujas(){
   } else {
     escena.classList.remove('gujarati-oculto');
   }
+
+  // Marca si el español ("E") está activo, para mostrarlo en la burbuja solo en horizontal.
+  escena.classList.toggle('espanol-activo', idiomaEspActivo);
 }
 
 function aplicarModoIdiomaSubtitulos(){
@@ -345,8 +395,7 @@ function seguir(){
         if(sidx !== secuenciaActual){
           secuenciaActual = sidx;
 	  if(SECUENCIAS[sidx].imagenFondo){
-	    document.getElementById('bg-escena').style.backgroundImage = "url('" + SECUENCIAS[sidx].imagenFondo + "')";
-	    fondoActualUrl = SECUENCIAS[sidx].imagenFondo;
+	    cambiarFondo(SECUENCIAS[sidx].imagenFondo);
 	  }
           DIALOGOS.forEach(function(dd, jj){
             if(dialogoSecuencia[jj] !== sidx){
@@ -371,10 +420,11 @@ function seguir(){
         caja.querySelector('.caja').style.background = color;
         caja.querySelector('.caja').style.setProperty('--color-burbuja', color);
         caja.querySelector('.gu-texto').textContent = d.gujarati || '';
+        var esEl = caja.querySelector('.es-texto');
+        if(esEl) esEl.textContent = d.espanol || '';
 
         if(d.imagenFondo){
-          document.getElementById('bg-escena').style.backgroundImage = "url('" + d.imagenFondo + "')";
-          fondoActualUrl = d.imagenFondo;
+          cambiarFondo(d.imagenFondo);
         }
       }
 

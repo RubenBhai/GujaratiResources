@@ -36,7 +36,11 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
 .escena-wrap { position:relative; width:100%; border-radius:var(--r-lg); overflow:hidden;
   box-shadow:0 8px 28px rgba(0,0,0,0.25); }
 .bg-escena { position:absolute; inset:0; background-size:cover; background-position:center;
-  opacity:1.00; transition:background-image 0.5s ease; z-index:0; }
+  opacity:1.00; z-index:0; }
+
+/* Segunda capa de fondo para cross-fade sin parpadeo negro */
+.bg-escena.bg-capa-b { opacity:0; transition:opacity 0.5s ease; }
+.bg-escena.bg-capa-b.activa { opacity:1; }
 
 .escena { 
   position:relative; z-index:1; width:100%; 
@@ -113,8 +117,7 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
 
 /* Centro: flecha apunta hacia arriba (hacia el avatar encima) */
 .burbuja.centro .caja::after {
-  left: 50%;
-  transform: translateX(-50%);
+  left: 16px;
   top: -14px;
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;

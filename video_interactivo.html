@@ -43,6 +43,7 @@
 
     <div class="escena-wrap">
       <div class="bg-escena" id="bg-escena"></div>
+      <div class="bg-escena bg-capa-b" id="bg-escena-b"></div>
       <div class="resaltado-avatar" id="resaltado-avatar"></div>
       <div class="escena" id="escena"></div>
     </div>
@@ -171,6 +172,28 @@ function precargarImagenes(){
 }
 
 /* ── Motor de Transformación de Coordenadas Relativas ── */
+
+/* Cambio de fondo con cross-fade entre dos capas (sin parpadeo negro). */
+var _bgEscenaB = document.getElementById('bg-escena-b');
+var _bgFadeTimer = null;
+function cambiarFondo(url){
+  if(!url || url === fondoActualUrl) return;
+  if(!_bgEscenaB){
+    bgEscena.style.backgroundImage = "url('" + url + "')";
+    fondoActualUrl = url;
+    return;
+  }
+  _bgEscenaB.style.backgroundImage = "url('" + url + "')";
+  void _bgEscenaB.offsetWidth;
+  _bgEscenaB.classList.add('activa');
+  fondoActualUrl = url;
+  if(_bgFadeTimer) clearTimeout(_bgFadeTimer);
+  _bgFadeTimer = setTimeout(function(){
+    bgEscena.style.backgroundImage = "url('" + url + "')";
+    _bgEscenaB.classList.remove('activa');
+  }, 520);
+}
+
 function coordsAPixeles(coords){
   var dimFondo = dimensionesImagen[fondoActualUrl];
   if(!dimFondo || !bgEscena || !coords) return null;
@@ -323,6 +346,18 @@ function construirEscena(){
   });
   aplicarModoBurbujas();
   aplicarModoIdiomaSubtitulos();
+
+  // Establecer el fondo inicial directamente (sin fade) para arrancar con imagen, no en negro.
+  fondoActualUrl = null;
+  if(_bgEscenaB){ _bgEscenaB.style.backgroundImage = 'none'; _bgEscenaB.classList.remove('activa'); }
+  var fondoInicial = null;
+  for(var k=0; k<DIALOGOS.length; k++){ if(DIALOGOS[k].imagenFondo){ fondoInicial = DIALOGOS[k].imagenFondo; break; } }
+  if(fondoInicial){
+    bgEscena.style.backgroundImage = "url('" + fondoInicial + "')";
+    fondoActualUrl = fondoInicial;
+  } else {
+    bgEscena.style.backgroundImage = 'none';
+  }
 }
 
 function iniciarConversacion(){
@@ -353,7 +388,7 @@ function pintarBurbuja(i, gujarati, espanol){
   var cajaEl = b.querySelector('.caja');
   if(cajaEl){ cajaEl.style.background = color; cajaEl.style.setProperty('--color-burbuja', color); }
 
-  if(d.imagenFondo){ bgEscena.style.backgroundImage = "url('" + d.imagenFondo + "')"; fondoActualUrl = d.imagenFondo; }
+  if(d.imagenFondo){ cambiarFondo(d.imagenFondo); }
 
   if(d.Burbuja_Posicion){ posicionarBurbuja(b, d.Burbuja_Posicion); } else { posicionarBurbuja(b, null); }
   if(mostrarMarcadorActivo) { posicionarResaltado(d.avatarActivo); } else { elResaltado.classList.remove('visible'); }
@@ -497,7 +532,9 @@ function reiniciarTodo(){
   runToken++; detenerAudio(); avatarElegido = null; idxActual = 0; notasEstudiante = []; audioBlobsEstudiante = {};
   DIALOGOS.forEach(function(d){ delete d.gujaratiTranscrito; });
   document.getElementById('btn-iniciar').style.display = 'block'; document.getElementById('turno-box').style.display = 'none';
-  bgEscena.style.backgroundImage = 'none'; fondoActualUrl = null; elResaltado.classList.remove('visible');
+  bgEscena.style.backgroundImage = 'none';
+  if(_bgEscenaB){ _bgEscenaB.style.backgroundImage = 'none'; _bgEscenaB.classList.remove('activa'); }
+  fondoActualUrl = null; elResaltado.classList.remove('visible');
   
   var subAv = document.getElementById('sub-avatar');
   var subEs = document.getElementById('sub-es');
