@@ -1,0 +1,151 @@
+/* Fuentes y Reseteo General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F7FAFC;
+    color: #2D3748;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+.guia-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.guia-header h1 {
+    margin: 10px 0 5px 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.guia-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* Botón Volver */
+.btn-volver {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    transition: background 0.2s ease;
+}
+
+.btn-volver:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Contenedor del Mapa (Grid Dinámico) */
+.guia-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tarjetas de Categorías (Cards) */
+.guia-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 6px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.guia-card h2 {
+    font-size: 1.3rem;
+    margin: 0 0 15px 0;
+    color: #4A5568;
+}
+
+/* Contenedor de Enlaces */
+.card-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo de los Enlaces del Menú */
+.link-item {
+    background-color: #EDF2F7;
+    color: #4A5568;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.link-item:hover {
+    background-color: #cbd5e0;
+    color: #2D3748;
+}
+
+/* Colores Temáticos por Tarjeta (Acentos) */
+.tema-alfabeto { border-top-color: #4FD1C5; } /* Verde menta */
+.tema-juegos { border-top-color: #ED64A6; }    /* Rosa */
+.tema-practica { border-top-color: #ECC94B; }  /* Amarillo */
+.tema-pensar { border-top-color: #4299E1; }    /* Azul */
+
+/* Cambios de color específicos al pasar el mouse por los enlaces según su bloque */
+.tema-alfabeto .link-item:hover { background-color: #E6FFFA; color: #234E52; }
+.tema-juegos .link-item:hover { background-color: #FFF5F5; color: #742A2A; }
+.tema-practica .link-item:hover { background-color: #FEFCBF; color: #744210; }
+.tema-pensar .link-item:hover { background-color: #EBF8FF; color: #2B6CB0; }
+
+/* Pie de Página */
+.guia-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #A0AEC0;
+    background-color: #EDF2F7;
+    margin-top: 40px;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    .guia-header h1 { font-size: 1.7rem; }
+    .guia-container { margin: 20px auto; gap: 15px; }
+}
