@@ -1,0 +1,28 @@
+.nav-header-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+}
+
+.nav-header-container:not(:has(.casita)) {
+    justify-content: center;
+}
+
+.nav-header-container:has(.casita) {
+    justify-content: flex-start;
+    gap: 15px; 
+}
+
+.btn-guia-mapa {
+    color: #4A5568;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-guia-mapa:hover {
+    transform: scale(1.1);
+    color: #3182CE;
+}
