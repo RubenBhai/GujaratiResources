@@ -26,3 +26,17 @@
     transform: scale(1.1);
     color: #3182CE;
 }
+
+/* Si la barra de navegación NO contiene la casita, centra el mapa automáticamente */
+.nav-bar:not(:has(#nav-home)) {
+    justify-content: center;
+}
+
+/* Opcional: Un pequeño efecto hover para el mapa idéntico al de tus otros botones */
+#nav-mapa {
+    transition: transform 0.2s ease;
+}
+#nav-mapa:hover {
+    transform: scale(1.15);
+}
+
