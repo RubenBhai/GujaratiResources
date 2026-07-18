@@ -1,0 +1,609 @@
+{
+  "leccion": "1.1.1",
+  "assets": [
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_aa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_chha.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_e.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_ka.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_ma.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_o.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_aam.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chha.mp3",
+      "lastModified": 1784396946177
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chhaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chhe.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chho.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaakaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaam.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ke.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_chho.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ko.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maamaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_me.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_mo.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_moko.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ochho.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_aam.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chha.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ko.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_01.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_02.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_03.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_04.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_05.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_06.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_07.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_08.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_09.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_1.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_2.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_3.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_4.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/victoria.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/audios/musica/Leccion_1_1_1_musica_ambiente.mp3",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_1.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_2.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_3.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_4.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1-2.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_2.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_3.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_4.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatarActivo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_rahul.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_ritu.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_shriya.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_sohan.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_alfabeto.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_juegos.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_pensarengujarati.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_pronunciacion.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aa_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aam.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aam_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_a.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chha.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhaa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chhe.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_chho.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ka.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_kaa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ke.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ko.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_ma.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_maa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_aa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_e.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_o.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_me.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_mo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chha.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chha_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chhaa.png",
+      "lastModified": 1784396970220
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chhe.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chhe_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chho.png",
+      "lastModified": 1784396970929
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_e.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_e_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaa.png",
+      "lastModified": 1784396971440
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaa_maa_chhaa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaam.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaam_noinfo.png",
+      "lastModified": 1784396972417
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ke.png",
+      "lastModified": 1784396972563
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ke_me_chhe.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_chho.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_chho_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ko.png",
+      "lastModified": 1784396975384
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ko_mo_chho.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maa_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_me.png",
+      "lastModified": 1784396976454
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_mo.png",
+      "lastModified": 1784396976607
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_moko.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_moko_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ochho.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ochho_noinfo.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_a.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_aa.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_chha.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_e.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_ka.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_ma.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_o.png",
+      "lastModified": 1784133916000
+    },
+    {
+      "url": "https://rubenbhai.github.io/GujaratiResources/videos/clase_1_1/leccion_1_1_1_video.mp3",
+      "lastModified": 1784133916000
+    }
+  ]
+}
