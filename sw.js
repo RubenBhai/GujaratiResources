@@ -35,9 +35,23 @@ self.addEventListener('fetch', function (event) {
   const req = event.request;
   const url = new URL(req.url);
 
-  // Solo manejamos GET de nuestro propio sitio (no tocamos audios/imágenes
-  // de rubenbhai.github.io si el sitio corre en otro dominio, ni llamadas
-  // a APIs externas como Gemini).
+  // 1. ESTRATEGIA PARA RECURSOS MULTIMEDIA: Caché primero.
+  // Intercepta específicamente los audios e imágenes de tu repositorio.
+  if (url.href.includes('rubenbhai.github.io') && (url.pathname.endsWith('.mp3') || url.pathname.endsWith('.png'))) {
+    event.respondWith(
+      caches.match(req).then(function (enCache) {
+        // Si el leccion_loader ya lo bajó, lo entregamos al instante.
+        if (enCache) {
+          return enCache;
+        }
+        // Si por alguna razón no está, intenta descargarlo.
+        return fetch(req);
+      })
+    );
+    return; // Detenemos la ejecución aquí para estos archivos.
+  }
+
+  // 2. ESTRATEGIA PARA ARCHIVOS ESTRUCTURALES: Red primero (tu código original).
   if (req.method !== 'GET' || url.origin !== self.location.origin) {
     return;
   }
