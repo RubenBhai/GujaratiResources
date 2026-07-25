@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --bg:#2C2420; --surface:#362C28; --surface-light:#423631; --paper:#E8D9C0;
+  --sindoor:#A8362A; --saffron:#B8863D; --olive:#5F6E4F;
+  --verde:#4A6B53; --verde-h:#3D5A45; --ink-soft:#C8B99A;
+  --border:rgba(184,134,61,0.18); --r-full:50px; --r-md:16px;
+}
+body {
+  background:var(--bg);
+  background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.07),transparent 60%);
+  color:var(--paper); font-family:'Source Sans 3',sans-serif;
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  padding:24px; text-align:center;
+}
+.gu { font-family:'Noto Serif Gujarati',serif; }
+
+.caja {
+  max-width:440px; width:100%;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:24px; padding:44px 32px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  display:flex; flex-direction:column; align-items:center; gap:18px;
+}
+
+.emoji { font-size:3.4rem; line-height:1; }
+
+h1 {
+  font-family:'Fraunces',serif; font-size:1.7rem; font-weight:700;
+  color:var(--paper); line-height:1.25;
+}
+
+.mensaje { color:var(--ink-soft); font-size:1.05rem; line-height:1.6; }
+
+.gu-deco { font-size:2.2rem; color:var(--saffron); margin:2px 0; }
+
+.botones { display:flex; flex-direction:column; gap:12px; width:100%; margin-top:8px; }
+
+.btn {
+  border:none; border-radius:var(--r-full); padding:16px;
+  font-family:inherit; font-weight:700; font-size:1.05rem;
+  cursor:pointer; text-decoration:none; display:flex;
+  align-items:center; justify-content:center; gap:10px;
+  transition:background 0.2s, transform 0.2s;
+}
+.btn-principal { background:var(--verde); color:#fff; box-shadow:0 4px 14px rgba(74,107,83,0.3); }
+.btn-principal:hover { background:var(--verde-h); transform:translateY(-2px); }
+.btn-secundario { background:var(--surface-light); color:var(--ink-soft); border:1px solid var(--border); }
+.btn-secundario:hover { background:#4d3f39; color:var(--saffron); }
+</style>
+</head>
+<body>
+
+  <div class="caja">
+    <div class="emoji">🧭</div>
+    <div class="gu-deco gu">અરે!</div>
+    <h1>Esta página todavía no está aquí</h1>
+    <p class="mensaje">Puede que la lección aún esté en preparación, o que el enlace haya cambiado. No te preocupes, no has hecho nada malo.</p>
+
+    <div class="botones">
+      <button type="button" class="btn btn-principal" id="btn-volver">← Regresar</button>
+      <a class="btn btn-secundario" href="/GujaratiResources/index.html">🏠 Ir al inicio</a>
+    </div>
+  </div>
+
+<script>
+  (function(){
+    var btn = document.getElementById('btn-volver');
+    btn.addEventListener('click', function(){
+      // Si hay historial de navegación, vuelve atrás.
+      if (window.history.length > 1) {
+        history.back();
+      } else {
+        // Llegó directo (enlace externo, sin historial): al inicio.
+        window.location.href = '/GujaratiResources/index.html';
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
