@@ -4,14 +4,14 @@
   "home": "Contenido.html",
   "badge": "Tus primeras letras",
   "titulo": "Lo que vas a aprender",
-  "subtitulo_html": "Vas a conocer <strong>8 consonantes</strong> y <strong>5 vocales</strong>. Pero lo mejor: desde la primera lección ya <strong>formas palabras reales</strong> como <span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-deep);font-size:1.5rem;font-weight:600\">કેમ છો?</span>, <span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-deep);font-size:1.5rem;font-weight:600\">સારું છે</span> y <span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-deep);font-size:1.5rem;font-weight:600\">નમસ્તે</span>.",
+  "subtitulo_html": "Vas a conocer <strong>8 consonantes</strong> y <strong>5 vocales</strong>.<br>Pero lo mejor: desde la primera lección ya <strong>formas palabras reales</strong> como: <br> <span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">કેમ છો?</span> - kem chho? - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">¿Cómo estás?</span> <br><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">સારું છે</span> - saaru<sup>n</sup> chhe - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">estoy bien</span><br> <span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">નમસ્તે</span> - namaste - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">hola (para hindúes)</span>",
   "consonantes": [
     { "gu": "ક", "rom": "ka" },
     { "gu": "મ", "rom": "ma" },
     { "gu": "છ", "rom": "chha" },
     { "gu": "સ", "rom": "sa" },
     { "gu": "ર", "rom": "ra" },
-    { "gu": "હ", "rom": "ja" },
+    { "gu": "હ", "rom": "ha" },
     { "gu": "ન", "rom": "na" },
     { "gu": "ત", "rom": "ta" }
   ],
@@ -34,14 +34,14 @@
     },
     {
       "numero": 2,
-      "titulo": "સારું છે — está bien",
+      "titulo": "સારું છે — estoy bien",
       "sub_html": "Aprendes <strong>સ ર હ</strong> · vocal <strong>ઉ</strong> · matras <strong>ુ ું</strong>",
       "gu": "સારું છે",
       "estado": "proxima"
     },
     {
       "numero": 3,
-      "titulo": "નમસ્તે — hola",
+      "titulo": "નમસ્તે — hola (para hindúes)",
       "sub_html": "Aprendes <strong>ન ત</strong> · conjuntiva <strong>સ્ત</strong>",
       "gu": "નમસ્તે",
       "estado": "proxima"
