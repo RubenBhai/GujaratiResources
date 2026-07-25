@@ -61,97 +61,107 @@
   ],
   "oraciones": [
     {
-      "id": "or_1",
+      "id": "1",
       "palabras": [
         "એ",
         "મા",
         "છે"
       ],
-      "espanol": "esa es la mamá"
+      "espanol": "esa es la mamá",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_maa_chhe.mp3"
     },
     {
-      "id": "or_2",
+      "id": "2",
       "palabras": [
         "આ",
         "મા",
         "છે"
       ],
-      "espanol": "esta es la mamá"
+      "espanol": "esta es la mamá",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_maa_chhe.mp3"
     },
     {
-      "id": "or_3",
+      "id": "3",
       "palabras": [
         "એ",
         "કામ",
         "છે"
       ],
-      "espanol": "ese es el trabajo"
+      "espanol": "ese es el trabajo",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_kaam_chhe.mp3"
     },
     {
-      "id": "or_4",
+      "id": "4",
       "palabras": [
         "આ",
         "કામ",
         "છે"
       ],
-      "espanol": "este es el trabajo"
+      "espanol": "este es el trabajo",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_kaam_chhe.mp3"
     },
     {
-      "id": "or_5",
+      "id": "5",
       "palabras": [
         "એ",
         "મોકો",
         "છે"
       ],
-      "espanol": "esa es una oportunidad"
+      "espanol": "esa es una oportunidad",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_moko_chhe.mp3"
     },
     {
-      "id": "or_6",
+      "id": "6",
       "palabras": [
         "આ",
         "મોકો",
         "છે"
       ],
-      "espanol": "esta es una oportunidad"
+      "espanol": "esta es una oportunidad",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_moko_chhe.mp3"
     },
     {
-      "id": "or_7",
+      "id": "7",
       "palabras": [
         "એ",
         "મામા",
         "છે"
       ],
-      "espanol": "ese es el tío materno"
+      "espanol": "ese es el tío materno",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_maamaa_chhe.mp3"
     },
     {
-      "id": "or_8",
+      "id": "8",
       "palabras": [
         "આ",
         "મામા",
         "છે"
       ],
-      "espanol": "este es el tío materno"
+      "espanol": "este es el tío materno",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_maamaa_chhe.mp3"
     },
     {
-      "id": "or_9",
+      "id": "9",
       "palabras": [
         "એ",
         "કાકા",
         "છે"
       ],
-      "espanol": "ese es el tío paterno"
+      "espanol": "ese es el tío paterno",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_kaakaa_chhe.mp3"
     },
     {
-      "id": "or_10",
+      "id": "10",
       "palabras": [
         "આ",
         "કાકા",
         "છે"
       ],
-      "espanol": "este es el tío paterno"
+      "espanol": "este es el tío paterno",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_kaakaa_chhe.mp3"
     },
     {
-      "id": "or_11",
+      "id": "11",
       "palabras": [
         "ઓછો",
         "છે"
@@ -159,7 +169,7 @@
       "espanol": "es poco"
     },
     {
-      "id": "or_12",
+      "id": "12",
       "palabras": [
         "કામ",
         "છે"
@@ -167,7 +177,7 @@
       "espanol": "hay trabajo"
     },
     {
-      "id": "or_13",
+      "id": "13",
       "palabras": [
         "મોકો",
         "છે"
@@ -175,7 +185,17 @@
       "espanol": "hay oportunidad"
     },
     {
-      "id": "or_14",
+      "id": "14",
+      "palabras": [
+        "મોકો",
+        "ઓછો",
+        "છે"
+      ],
+      "espanol": "hay poca oportunidad",
+      "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_moko_ochho_chhe.mp3"
+    },
+    {
+      "id": "15",
       "palabras": [
         "આમ"
       ],

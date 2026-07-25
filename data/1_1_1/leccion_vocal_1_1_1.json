@@ -7,14 +7,32 @@
   "siguiente_leccion": "Leccion_1_1_2_intro.html",
   "sonido_victoria": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/victoria.mp3",
   "programa_efecto_victoria": "estrellas",
+  "repaso_final": true,
   "pasos": [
+    {
+      "tipo": "vocal",
+      "vocal": "a",
+      "gujarati": "અ",
+      "badge": "Vocal 1 de 7",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_a.png",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">a</strong> como en 'a' de '<strong class=\"det-p\">a<span class=\"det-s\">migo</span></strong>' dicho rápido y sin énfasis en la 'a'"
+    },
+    {
+      "tipo": "plana",
+      "vocal": "a",
+      "roman": "a",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_a.png",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3"
+    },
     {
       "tipo": "vocal",
       "vocal": "aa",
       "gujarati": "આ",
-      "badge": "Vocal 1 de 6",
+      "badge": "Vocal 2 de 7",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3"
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">aa</strong> como en la segunda 'a' de '<strong class=\"det-p\">mam<span class=\"det-s\">á</span></strong>'"
     },
     {
       "tipo": "plana",
@@ -27,7 +45,7 @@
       "tipo": "matra",
       "vocal": "aa",
       "matra": "ા",
-      "badge": "Matra 2 de 6",
+      "badge": "Matra 3 de 7",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_aa.png",
       "nota_especial": "especial_a_abierta_vs_cerrada.html"
     },
@@ -41,16 +59,31 @@
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3"
       ],
-      "texto_boton": "Toca aquí y escucharás: kaa, maa y chhaa",
-      "reto_flash_json": "Leccion_1_1_1_vo1"
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_1_1_vo1",
+      "ecuaciones": [
+        {
+          "partes": "ક + ા",
+          "resultado": "કા"
+        },
+        {
+          "partes": "મ + ા",
+          "resultado": "મા"
+        },
+        {
+          "partes": "છ + ા",
+          "resultado": "છા"
+        }
+      ]
     },
     {
       "tipo": "vocal",
       "vocal": "e",
       "gujarati": "એ",
-      "badge": "Vocal 3 de 6",
+      "badge": "Vocal 4 de 7",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3"
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">e</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">e</span>lla</strong>'"
     },
     {
       "tipo": "plana",
@@ -63,7 +96,7 @@
       "tipo": "matra",
       "vocal": "e",
       "matra": "ે",
-      "badge": "Matra 4 de 6",
+      "badge": "Matra 5 de 7",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_e.png"
     },
     {
@@ -76,16 +109,31 @@
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3",
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3"
       ],
-      "texto_boton": "Toca aquí y escucharás: ke, me y chhe",
-      "reto_flash_json": "Leccion_1_1_1_vo2"
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_1_1_vo2",
+      "ecuaciones": [
+        {
+          "partes": "ક + ે",
+          "resultado": "કે"
+        },
+        {
+          "partes": "મ + ે",
+          "resultado": "મે"
+        },
+        {
+          "partes": "છ + ે",
+          "resultado": "છે"
+        }
+      ]
     },
     {
       "tipo": "vocal",
       "vocal": "o",
       "gujarati": "ઓ",
-      "badge": "Vocal 5 de 6",
+      "badge": "Vocal 6 de 7",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3"
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">o</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">o</span>so</strong>'"
     },
     {
       "tipo": "plana",
@@ -98,7 +146,7 @@
       "tipo": "matra",
       "vocal": "o",
       "matra": "ો",
-      "badge": "Matra 6 de 6",
+      "badge": "Matra 7 de 7",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_o.png"
     },
     {
@@ -111,8 +159,22 @@
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3",
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3"
       ],
-      "texto_boton": "Toca aquí y escucharás: ko, mo y chho",
-      "reto_flash_json": "Leccion_1_1_1_vo3"
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_1_1_vo3",
+      "ecuaciones": [
+        {
+          "partes": "ક + ો",
+          "resultado": "કો"
+        },
+        {
+          "partes": "મ + ો",
+          "resultado": "મો"
+        },
+        {
+          "partes": "છ + ો",
+          "resultado": "છો"
+        }
+      ]
     }
   ]
 }

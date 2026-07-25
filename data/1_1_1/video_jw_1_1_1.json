@@ -1,0 +1,38 @@
+{
+  "leccion": "1.1.1",
+  "home": "leccion_intro.html?leccion=1.1.1",
+
+  "badge": "Escucha gujarati real",
+  "titulo": "Un video en gujarati de verdad",
+  "lead": "No entenderás todo, y no hace falta. Escucha y caza las palabras que ya conoces.",
+
+  "antes": {
+    "titulo": "Antes de ver · escucha estas",
+    "palabras": [
+      { "gu": "કેમ છો?", "es": "¿cómo estás?" },
+      { "gu": "છે",      "es": "es / está / hay" },
+      { "gu": "આ",       "es": "esto / esta" }
+    ]
+  },
+
+  "video": {
+    "kicker": "Video",
+    "titulo": "Ministerio: 1ra Visita",
+    "descripcion": "El video está en el sitio oficial. Cuando termines, vuelve aquí para las preguntas.",
+    "boton": "▶ Ver el video en JW.ORG",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/વીડિયો/#gu/mediaitems/VODSampleConversations/pub-mwbv_201903_1_VIDEO"
+  },
+
+  "despues": {
+    "titulo": "Después de ver",
+    "preguntas": [
+      "¿Escuchaste <b class=\"gu\">છે</b>? ¿Cuántas veces, más o menos?",
+      "¿Reconociste algún saludo al principio?",
+      "Sin entender las palabras, ¿de qué crees que hablaban?"
+    ]
+  },
+
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.1.1",
+  "continuar_caption": "Continuar →"
+}

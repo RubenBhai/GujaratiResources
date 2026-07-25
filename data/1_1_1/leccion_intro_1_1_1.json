@@ -1,7 +1,7 @@
 {
   "leccion": "1.1.1",
   "anterior": "contenido_modulo.html?modulo=1.1",
-  "home": "Contenido.html",
+  "home": "contenido_modulo.html?modulo=1.1",
   "siguiente_leccion": "Leccion_1_1_2_intro.html",
   "musica_ambiente": "https://rubenbhai.github.io/GujaratiResources/audios/musica/Leccion_1_1_1_musica_ambiente.mp3",
   "pantallas": [
@@ -11,7 +11,11 @@
       "bloques": [
         {
           "tipo": "info-box",
-          "html": "<p>En esta lección aprenderás <strong>3 consonantes</strong>, <strong>3 vocales</strong> y sus <strong>matras</strong> — una marca que cambia el sonido.</p><br><p>Cada consonante ya trae una <strong>\"a\"</strong> incluida — es una 'a' cerrada, como la segunda 'a' en <em>\"gracias\"</em>. Por ejemplo, <span class=\"gu\">ક</span> es la consonante <strong>k</strong> y se pronuncia <strong>'ka'</strong>.</p>"
+          "html": "<p style=\"text-align: center;\"><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">કેમ છો?</span> - <span style=\"color:var(--rojo-ladrillo);font-size:1.5rem;font-weight:600\">kem chho?</span> - <span style=\"color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">¿Cómo estás?</span></p>"
+        },
+        {
+          "tipo": "info-box",
+          "html": "<p>En esta lección aprenderás <strong>3 consonantes</strong>, <strong>3 vocales</strong> y sus <strong>matras</strong> (una matra es la vocal abreviada cuando se combina con una consonante).</p><br><p>Cada consonante ya trae una <strong>\"a\"</strong> incluida — es una 'a' cerrada, como la segunda 'a' en <em>\"gracias\"</em>. Por ejemplo, <span class=\"gu\">ક</span> es la consonante <strong>k</strong> y se pronuncia <strong>'ka'</strong>.</p>"
         },
         {
           "tipo": "tabla",
@@ -34,6 +38,7 @@
           "tipo": "tabla",
           "columnas": ["Vocal", "Suena como", "Matra"],
           "filas": [
+            [ {"tipo":"gu","valor":"અ"}, {"tipo":"acento","valor":"'a'"}, {"tipo":"matra","valor":"..."} ],
             [ {"tipo":"gu","valor":"આ"}, {"tipo":"acento","valor":"'aa'"}, {"tipo":"matra","valor":"ા"} ],
             [ {"tipo":"gu","valor":"એ"}, {"tipo":"acento","valor":"'e'"}, {"tipo":"matra","valor":"ે"} ],
             [ {"tipo":"gu","valor":"ઓ"}, {"tipo":"acento","valor":"'o'"}, {"tipo":"matra","valor":"ો"} ]

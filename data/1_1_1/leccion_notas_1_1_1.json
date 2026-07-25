@@ -11,42 +11,132 @@
     {
       "destacado": false,
       "bloques": [
-        { "tipo": "texto", "gu": "છ", "html": "Ya sabes que <span class=\"gu\">છ</span> es una <strong>consonante</strong>.<br>Pero también es el <strong>número 6</strong>." }
+        {
+          "tipo": "texto",
+          "gu": "છ",
+          "html": "Ya sabes que <span class=\"gu\">છ</span> es una <strong>consonante</strong>.<br>Pero también es el <strong>número 6</strong>."
+        }
       ]
     },
     {
       "destacado": false,
       "bloques": [
-        { "tipo": "texto", "gu": "એ", "html": "La vocal <span class=\"gu\">એ</span> (\"e\") significa <strong>\"eso\"</strong> o <strong>\"esa\"</strong>.<br>Se usa para señalar algo que está <strong>un poco lejos</strong> de la persona." }
+        {
+          "tipo": "texto",
+          "gu": "એ",
+          "html": "La vocal <span class=\"gu\">એ</span> (\"e\") significa <strong>\"eso\"</strong> o <strong>\"esa\"</strong>.<br>Se usa para señalar algo que está <strong>un poco lejos</strong> de la persona."
+        }
       ]
     },
     {
       "destacado": false,
       "bloques": [
-        { "tipo": "texto", "gu": "આ", "html": "La vocal <span class=\"gu\">આ</span> (\"aa\") significa <strong>\"esto\"</strong> o <strong>\"esta\"</strong>.<br>Se usa para señalar algo que está <strong>cerca</strong> de la persona." }
+        {
+          "tipo": "texto",
+          "gu": "આ",
+          "html": "La vocal <span class=\"gu\">આ</span> (\"aa\") significa <strong>\"esto\"</strong> o <strong>\"esta\"</strong>.<br>Se usa para señalar algo que está <strong>cerca</strong> de la persona."
+        }
       ]
     },
     {
       "destacado": true,
       "bloques": [
-        { "tipo": "texto", "gu": "છે", "html": "Esta es <strong>la palabra más importante</strong> del gujarati.<br><br><span class=\"gu\">છે</span> es el verbo <strong>\"ser\"</strong> o <strong>\"estar\"</strong>.<br>Significa <strong>\"es / está / son\"</strong>." }
+        {
+          "tipo": "texto",
+          "gu": "છે",
+          "html": "Esta es <strong>la palabra más importante</strong> del gujarati.<br><br><span class=\"gu\">છે</span> es el verbo <strong>\"ser\"</strong> o <strong>\"estar\"</strong>.<br>Significa <strong>\"es / está / son\"</strong>."
+        }
       ]
     },
     {
       "destacado": false,
+      "practica_flash": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "11"
+      ],
       "bloques": [
-        { "tipo": "texto", "html": "En gujarati, <strong>el verbo siempre va al final</strong> de la oración." },
-        { "tipo": "ejemplo", "gu": "ઓછો છે", "literal": "poco es", "significado": "es poco" },
-        { "tipo": "texto", "html": "El verbo <span class=\"gu\">છે</span> también significa <strong>\"hay\"</strong>." },
-        { "tipo": "ejemplo", "gu": "કામ છે", "literal": "trabajo hay", "significado": "hay trabajo" }
+        {
+          "tipo": "texto",
+          "html": "En gujarati, <strong>el verbo siempre va al final</strong> de la oración."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "ઓછો છે",
+          "literal": "poco es",
+          "significado": "es poco"
+        },
+        {
+          "tipo": "texto",
+          "html": "El verbo <span class=\"gu\">છે</span> también significa <strong>\"hay\"</strong>."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "કામ છે",
+          "literal": "trabajo hay",
+          "significado": "hay trabajo"
+        },
+        {
+          "tipo": "correspondencia",
+          "titulo": "Fíjate en el orden en Gujarati y Español",
+          "gujarati": [
+            {
+              "texto": "આ",
+              "color": 1
+            },
+            {
+              "texto": "કાકા",
+              "color": 2
+            },
+            {
+              "texto": "છે",
+              "color": 3
+            }
+          ],
+          "espanol": [
+            {
+              "texto": "este",
+              "color": 1
+            },
+            {
+              "texto": "es",
+              "color": 3
+            },
+            {
+              "texto": "el tío paterno",
+              "color": 2
+            }
+          ]
+        }
       ]
     },
     {
       "destacado": false,
+      "practica_flash": [
+        "12",
+        "13",
+        "10",
+        "8"
+      ],
       "bloques": [
-        { "tipo": "texto", "html": "En gujarati <strong>no existe</strong> el \"el\", \"un\" ni \"una\".<br>Se sobre-entienden." },
-        { "tipo": "ejemplo", "gu": "આ કાકા છે", "literal": "este tío paterno es", "significado": "este es el tío paterno" },
-        { "tipo": "ejemplo", "gu": "એ મોકો છે", "literal": "esa oportunidad es", "significado": "esa es una oportunidad" }
+        {
+          "tipo": "texto",
+          "html": "En gujarati <strong>no existe</strong> el \"el\", \"un\" ni \"una\".<br>Se sobre-entienden."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આ કાકા છે",
+          "literal": "este tío paterno es",
+          "significado": "este es el tío paterno"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "એ મોકો છે",
+          "literal": "esa oportunidad es",
+          "significado": "esa es una oportunidad"
+        }
       ]
     }
   ],

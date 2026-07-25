@@ -63,6 +63,7 @@
       }
     ]
   },
-  "video_jw": true,
-  "cancion_jw": true
+  "video_jw": false,
+  "cantar_jw": false,
+  "cancion_jw": false
 }

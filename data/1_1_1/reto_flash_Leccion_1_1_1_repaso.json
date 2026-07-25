@@ -1,0 +1,96 @@
+{
+  "leccion": "1.1.1",
+  "modo": "repaso",
+  "titulo": "Repaso final de lectura",
+  "badge": "Repaso final",
+  "unidad": "letras",
+  "columnas": 4,
+  "espera_ms": 1500,
+  "vueltas": 2,
+  "letters": [
+    {
+      "letter": "ક",
+      "answer": "ka",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3"
+    },
+    {
+      "letter": "મ",
+      "answer": "ma",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3"
+    },
+    {
+      "letter": "છ",
+      "answer": "chha",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3"
+    },
+    {
+      "letter": "અ",
+      "answer": "a",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3"
+    },
+
+    {
+      "letter": "કા",
+      "answer": "kaa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3"
+    },
+    {
+      "letter": "મા",
+      "answer": "maa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3"
+    },
+    {
+      "letter": "છા",
+      "answer": "chhaa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3"
+    },
+    {
+      "letter": "આ",
+      "answer": "aa",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3"
+    },
+
+    {
+      "letter": "કે",
+      "answer": "ke",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3"
+    },
+    {
+      "letter": "મે",
+      "answer": "me",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3"
+    },
+    {
+      "letter": "છે",
+      "answer": "chhe",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3"
+    },
+    {
+      "letter": "એ",
+      "answer": "e",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3"
+    },
+
+    {
+      "letter": "કો",
+      "answer": "ko",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ko.mp3"
+    },
+    {
+      "letter": "મો",
+      "answer": "mo",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3"
+    },
+    {
+      "letter": "છો",
+      "answer": "chho",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3"
+    },
+    {
+      "letter": "ઓ",
+      "answer": "o",
+      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3"
+    }
+  ],
+  "extras": []
+}
