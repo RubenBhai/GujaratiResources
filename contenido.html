@@ -10,9 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Tema cósmico -->
 <link rel="stylesheet" href="tema-contenido.css">
+<link rel="stylesheet" href="tema-contenido_desktop.css" media="(min-width: 1440px) and (min-height: 720px)">
 </head>
 <body>
 
@@ -63,14 +62,15 @@
           <div class="modulo-sub">Reconoce cada letra y léela en voz alta</div>
         </div>
       </summary>
-      
+
       <div class="details-body lecciones">
-        
+
         <a class="leccion activa" href="contenido_modulo.html?modulo=1.1" data-leccion="1_1_1">
           <span class="lec-num">1.1</span>
           <div class="lec-info">
             <div class="lec-title">Tus primeras letras</div>
             <div class="lec-sub">ક મ છ સ ર હ ન ત સ્ત અ આ એ ઓ ઉ ા ે ો ુ ું </div>
+            <div class="lec-sub">કેમ છો? - સારું છે - નમસ્તે</div>
             <span class="modulo-badge badge-active">Empieza aquí</span>
           </div>
           <span class="lec-status play">▶</span>
@@ -271,129 +271,12 @@
 
 </main>
 
-<script>
-var TOTAL_LECCIONES = 97;
-
-function calcularProgreso() {
-  var completadas = 0;
-  for (var i = 0; i < localStorage.length; i++) {
-    var clave = localStorage.key(i);
-    if (clave && clave.indexOf('leccion_') === 0 && localStorage.getItem(clave) === 'completada') {
-      completadas++;
-    }
-  }
-
-  var pct = Math.round((completadas / TOTAL_LECCIONES) * 1000) / 10;
-  if (pct < 1 && completadas > 0) pct = 1;
-
-  setTimeout(() => {
-    var fill = document.querySelector('.progress-fill');
-    if (fill) fill.style.width = pct + '%';
-  }, 100);
-
-  var labels = document.querySelectorAll('.progress-label span');
-  if (labels.length >= 2) {
-    labels[0].textContent = 'Tu progreso';
-    labels[1].textContent = completadas + ' de ' + TOTAL_LECCIONES + ' lecciones';
-  }
-
-  document.querySelectorAll('.leccion[data-leccion]').forEach(function(el) {
-    var id = el.getAttribute('data-leccion');
-    if (localStorage.getItem('leccion_' + id) === 'completada') {
-      var status = el.querySelector('.lec-status');
-      if (status) {
-        status.className = 'lec-status check';
-        status.innerHTML = '✔';
-      }
-    }
-  });
-}
-
-calcularProgreso();
-</script>
-
-<!-- ═══ BOTÓN DE MÚSICA ═══ -->
 <audio id="bgMusic" loop preload="none">
   <source src="https://rubenbhai.github.io/GujaratiResources/audios/musica/contenido_musica_ambiente.mp3" type="audio/mpeg">
 </audio>
 <button id="musicToggle" onclick="toggleMusic()" aria-label="Música de fondo">🔇</button>
-<script>
-(function() {
-  var music = document.getElementById('bgMusic');
-  var btn = document.getElementById('musicToggle');
-  music.volume = 0.0;
-  var TARGET_VOL = 0.35;
-  var fadeTimer = null;
-  var playing = false;
 
-  function fadeTo(target) {
-    if (fadeTimer) clearInterval(fadeTimer);
-    fadeTimer = setInterval(function() {
-      var diff = target - music.volume;
-      if (Math.abs(diff) < 0.02) {
-        music.volume = target;
-        clearInterval(fadeTimer);
-        if (target === 0) music.pause();
-      } else {
-        music.volume += diff * 0.1;
-      }
-    }, 50);
-  }
+<script src="contenido.js"></script>
 
-  window.toggleMusic = function() {
-    if (playing) {
-      playing = false;
-      btn.innerHTML = '🔇';
-      btn.style.color = 'rgba(234,224,204,0.4)';
-      fadeTo(0);
-      try { localStorage.setItem('musica_pref', 'off'); } catch(e) {}
-    } else {
-      playing = true;
-      btn.innerHTML = '🔊';
-      btn.style.color = '#D4AF37';
-      music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
-      try { localStorage.setItem('musica_pref', 'on'); } catch(e) {}
-    }
-  };
-
-  var pref = 'off';
-  try { pref = localStorage.getItem('musica_pref') || 'off'; } catch(e) {}
-  if (pref === 'on') {
-    var resume = function() {
-      if (!playing) {
-        playing = true;
-        btn.innerHTML = '🔊';
-        btn.style.color = '#D4AF37';
-        music.play().then(function() { fadeTo(TARGET_VOL); }).catch(function(){});
-      }
-      document.removeEventListener('click', resume);
-      document.removeEventListener('touchstart', resume);
-    };
-    document.addEventListener('click', resume);
-    document.addEventListener('touchstart', resume);
-  }
-})();
-</script>
-
-
-<script>
-(function() {
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
-  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { return r.text(); })
-    .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
-      }
-    })
-    .catch(function() {});
-})();
-</script>
 </body>
 </html>

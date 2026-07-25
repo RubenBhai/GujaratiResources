@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Navegación Rápida</title>
-    <link rel="stylesheet" href="guia_navegacion.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Navegación Rápida</title>
+  <link rel="stylesheet" href="guia_navegacion.css">
+  <link rel="stylesheet" href="guia_navegacion_desktop.css" media="(min-width: 1024px)">
 </head>
 <body>
 
-    <header class="guia-header">
-    <!-- Modificado: Ahora usa history.back() para regresar a la pantalla anterior -->
-    <a href="#" onclick="history.back(); return false;" class="btn-volver" title="<-- Regresar">
-        <!-- Nuevo Icono: Flecha hacia atrás en lugar de la casa -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-        </svg>
-        <span>Atrás</span>
+  <header class="guia-header">
+    <a href="#" onclick="history.back(); return false;" class="btn-volver" title="← Regresar">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+      </svg>
+      <span>Atrás</span>
     </a>
     <h1>Mapa de Navegación Libre</h1>
     <p>Selecciona cualquier recurso para repasar o practicar directamente sin restricciones.</p>
-</header>
+  </header>
 
-    <main class="guia-container">
-        
-        <!-- SECCIÓN A: ALFABETO -->
-        <section class="guia-card tema-alfabeto">
-            <div class="card-icon">✏️</div>
-            <h2>Estudio del Alfabeto</h2>
-            <div class="card-links">
-                <a href="leccion_letra.html" class="link-item">Consonantes</a>
-                <a href="leccion_vocal.html" class="link-item">Vocales</a>
-            </div>
-        </section>
+  <main class="guia-container">
 
-        <!-- SECCIÓN B: JUEGOS GAMIFICADOS -->
-        <section class="guia-card tema-juegos">
-            <div class="card-icon">🎮</div>
-            <h2>Zona de Juegos</h2>
-            <div class="card-links">
-                <a href="juego.html?seccion=A" class="link-item">Juegos Sección A</a>
-                <a href="juego.html?seccion=B" class="link-item">Juegos Sección B</a>
-                <a href="juego.html?seccion=C" class="link-item">Juegos Sección C</a>
-            </div>
-        </section>
+    <!-- SECCIÓN A: ALFABETO -->
+    <section class="guia-card tema-alfabeto">
+      <div class="card-icon" id="icon-alfabeto">✏️</div>
+      <h2>Estudio del Alfabeto</h2>
+      <div class="card-links">
+        <a href="#" id="link-consonantes" class="link-item">Consonantes</a>
+        <a href="#" id="link-vocales"     class="link-item">Vocales</a>
+      </div>
+    </section>
 
-        <!-- SECCIÓN C: PRÁCTICA -->
-        <section class="guia-card tema-practica">
-            <div class="card-icon">💪</div>
-            <h2>Entrenamiento</h2>
-            <div class="card-links">
-                <a href="practica.html" class="link-item">Práctica General</a>
-                <a href="reto.html" class="link-item">Retos de Evaluación</a>
-            </div>
-        </section>
+    <!-- SECCIÓN B: JUEGOS -->
+    <section class="guia-card tema-juegos">
+      <div class="card-icon" id="icon-juegos">🎮</div>
+      <h2>Zona de Juegos</h2>
+      <div class="card-links">
+        <a href="#" id="link-juego-a" class="link-item">Juego-Repaso</a>
+        <a href="#" id="link-juego-b" class="link-item">Juego-Lectura</a>
+        <a href="#" id="link-juego-c" class="link-item">Juego-Pareo</a>
+      </div>
+    </section>
 
-        <!-- SECCIÓN D: PENSAR EN GUJARATI -->
-        <section class="guia-card tema-pensar">
-            <div class="card-icon">🧠</div>
-            <h2>Pensar en Gujarati</h2>
-            <div class="card-links">
-                <!-- Enlaces basados en las opciones que maneja tu archivo leccion_pensarEnGUJ.html -->
-                <a href="leccion_pensarEnGUJ.html?modo=asociacion" class="link-item">Asociación de Imágenes</a>
-                <a href="leccion_pensarEnGUJ.html?modo=velocidad" class="link-item">Fluidez Mental</a>
-                <a href="leccion_pensarEnGUJ.html?modo=traduccion" class="link-item">Traducción Directa</a>
-            </div>
-        </section>
+    <!-- SECCIÓN C: PRÁCTICA -->
+    <section class="guia-card tema-practica">
+      <div class="card-icon" id="icon-practica">🎙️</div>
+      <h2>Practica tu Pronunciación</h2>
+      <div class="card-links">
+        <a id="link-practica" href="#" class="link-item">Práctica General</a>
+      </div>
+    </section>
 
-    </main>
+    <!-- SECCIÓN D: PENSAR EN GUJARATI -->
+    <section class="guia-card tema-pensar">
+      <div class="card-icon" id="icon-pensar">🧠</div>
+      <h2>Pensar en Gujarati</h2>
+      <div class="card-links">
+        <a id="link-aprende" href="#" class="link-item">🌱 Aprende las palabras</a>
+        <a id="link-compone" href="#" class="link-item">🧩 Crea oraciones</a>
+        <a id="link-reto"    href="#" class="link-item">🏆 Reto</a>
+        <a id="link-dialogo" href="#" class="link-item">🎬👂 Diálogo Interactivo</a>
+      </div>
+    </section>
 
-    <footer class="guia-footer">
-        <p>Piensa en Gujarati — Aprende gujarati para el ministerio</p>
-    </footer>
+  </main>
+
+  <footer class="guia-footer">
+    <p>Piensa en Gujarati — Aprende gujarati para el ministerio</p>
+  </footer>
+
+  <script src="guia_navegacion.js"></script>
 
 </body>
 </html>

@@ -9,227 +9,113 @@
 <title>Compón oraciones · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-compone.css">
+<link rel="stylesheet" href="tema-compone_desktop.css" media="(min-width: 1440px) and (min-height: 720px)">
+<link rel="stylesheet" href="guia_navegacion_common.css">
 </head>
 <body>
 
 <nav class="nav-bar">
   <a class="nav-btn" href="#" onclick="history.back(); return false;">← Salir</a>
   <a class="nav-btn home" href="index.html">🏠</a>
-  <span class="nav-btn" style="opacity:0; pointer-events:none;">&nbsp;</span>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
+  <span class="nav-btn nav-phantom">&nbsp;</span>
 </nav>
 
 <div class="wrap">
-  <span class="badge">Compón oraciones</span>
-  <div class="score-pill">Aciertos: <span id="score">0</span></div>
 
-  <div class="target-card">
-    <div class="target-label">Forma esta oración en gujarati</div>
-    <div class="target-es" id="target-es">—</div>
+  <!-- ═══ FASE GUIADA: español → gujarati ═══ -->
+  <div class="screen active" id="fase-guiada">
+    <span class="badge">Compón oraciones</span>
+    <div class="score-pill">Aciertos: <span id="score">0</span></div>
+
+    <div class="target-card">
+      <div class="target-label">Forma esta oración en gujarati</div>
+      <div class="target-es" id="target-es">—</div>
+    </div>
+
+    <div class="build-zone empty" id="build-zone"></div>
+
+    <div class="word-bank" id="word-bank"></div>
+
+    <button class="btn-main" id="btn-check" onclick="comprobar()">Comprobar</button>
+    <button class="btn-sec" onclick="limpiar()">🔄 Limpiar</button>
+
+    <div class="feedback" id="feedback"></div>
   </div>
 
-  <div class="build-zone empty" id="build-zone"></div>
+  <!-- ═══ FASE DE ESCUCHA: audio → gujarati en orden ═══ -->
+  <div class="screen" id="fase-escucha">
+    <span class="badge">¿Qué escuchaste?</span>
+    <div class="score-pill">Ronda: <span id="esc-ronda">0</span> / <span id="esc-total">0</span></div>
 
-  <div class="word-bank" id="word-bank"></div>
+    <div class="target-card">
+      <div class="target-label" id="esc-titulo">Escucha y arma la oración</div>
+      <div class="libre-instruccion" id="esc-instruccion"></div>
+      <button class="btn-escuchar" id="esc-play" onclick="escReproducir()">🎧 Escuchar</button>
+    </div>
 
-  <button class="btn-main" id="btn-check" onclick="comprobar()">Comprobar</button>
-  <button class="btn-sec" onclick="limpiar()">🔄 Limpiar</button>
+    <div class="build-zone empty" id="esc-build"></div>
 
-  <div class="feedback" id="feedback"></div>
+    <div class="word-bank" id="esc-bank"></div>
+
+    <button class="btn-main" id="esc-comprobar" onclick="escComprobar()">Comprobar</button>
+    <button class="btn-sec"  id="esc-limpiar"   onclick="escLimpiar()">🔄 Limpiar</button>
+
+    <div class="feedback" id="esc-feedback"></div>
+
+    <div class="frame-hallazgos">
+      <div class="frame-titulo">Oraciones que reconociste</div>
+      <div class="lista-hallazgos" id="esc-lista"></div>
+    </div>
+  </div>
+
+  <!-- ═══ FASE LIBRE: sin pista, el estudiante crea ═══ -->
+  <div class="screen" id="fase-libre">
+    <span class="badge">¡Ahora creas tú!</span>
+    <div class="score-pill">Encontradas: <span id="libre-score">0</span> / <span id="libre-total">0</span></div>
+
+    <div class="target-card">
+      <div class="target-label" id="libre-titulo">¿Cuántas oraciones puedes crear?</div>
+      <div class="libre-instruccion" id="libre-instruccion"></div>
+    </div>
+
+    <div class="build-zone empty" id="libre-build"></div>
+
+    <div class="word-bank" id="libre-bank"></div>
+
+    <button class="btn-main" id="libre-comprobar" onclick="libreComprobar()">Comprobar</button>
+    <button class="btn-sec"  id="libre-limpiar"   onclick="libreLimpiar()">🔄 Limpiar</button>
+
+    <div class="feedback" id="libre-feedback"></div>
+
+    <div class="frame-hallazgos">
+      <div class="frame-titulo">Tus oraciones</div>
+      <div class="lista-hallazgos" id="libre-lista"></div>
+    </div>
+
+    <button class="btn-sec btn-terminar" id="libre-terminar" onclick="terminarFaseLibre()">✓ Terminar</button>
+  </div>
+
+  <!-- ═══ RESULTADO ═══ -->
+  <div class="screen" id="fase-resultado">
+    <div class="resultado-card">
+      <div class="resultado-emoji" id="res-emoji"></div>
+      <div class="resultado-msg"   id="res-msg"></div>
+      <div class="resultado-pct"   id="res-pct"></div>
+      <div class="resultado-dictado" id="res-dictado"></div>
+    </div>
+
+    <div class="resultado-detalle" id="res-detalle"></div>
+
+    <button class="btn-main" id="res-continuar" onclick="history.back()">✓ Continuar</button>
+  </div>
+
 </div>
 
 <audio id="player"></audio>
 <audio id="sfx"></audio>
 
-<script>
-// Leemos el parámetro 'leccion' de la URL (por ejemplo: ?leccion=1.1.1)
-const _params  = new URLSearchParams(location.search);
-const _leccion = (_params.get('leccion') || '1.1.1').replace(/\./g, '_');
+<script src="compone.js"></script>
 
-// Construimos la ruta totalmente relativa hacia la subcarpeta correspondiente
-const JSON_URL = 'data/' + _leccion + '/compone_clase_' + _leccion + '.json';
-
-const player = document.getElementById('player');
-const sfx = document.getElementById('sfx');
-
-let DATA = null;
-let BANCO = [];           // [{gujarati, audio}]
-let ORACIONES = [];       // [{id, palabras[], espanol}]
-let SND_OK = '', SND_ERR = '';
-let actual = null;        // oración actual
-let colaOraciones = [];   // cola de oraciones pendientes (sin repetir hasta agotar)
-let construido = [];      // palabras que el usuario tocó, en orden
-let score = 0;
-
-function shuffle(a){ return a.slice().sort(function(){ return Math.random()-0.5; }); }
-
-function audioDe(gu) {
-  var item = BANCO.find(function(b){ return b.gujarati === gu; });
-  return item ? item.audio : null;
-}
-
-function reproducir(gu) {
-  var url = audioDe(gu);
-  if (url) { player.src = url; player.play().catch(function(){}); }
-}
-
-/* Elegir oración sin repetir hasta agotar todas; devuelve null al terminar */
-function elegirOracion() {
-  if (colaOraciones.length === 0) return null;   // ciclo completo → terminar
-  return colaOraciones.shift();
-}
-
-function iniciarCola() {
-  var mezclada = shuffle(ORACIONES.slice());
-  if (actual && mezclada.length > 1 && mezclada[0].id === actual.id) {
-    mezclada.push(mezclada.shift());
-  }
-  colaOraciones = mezclada;
-}
-
-/* Construir la sopa: palabras correctas + 2 a 4 distractores de todo el banco */
-function construirSopa(oracion) {
-  var correctas = oracion.palabras.slice();
-  var numDistractores = 2 + Math.floor(Math.random() * 3); // 2,3,4
-  var pool = BANCO.map(function(b){ return b.gujarati; })
-    .filter(function(g){ return correctas.indexOf(g) === -1; });
-  var distractores = shuffle(pool).slice(0, numDistractores);
-  return shuffle(correctas.concat(distractores));
-}
-
-function nuevaRonda() {
-  actual = elegirOracion();
-  if (!actual) {
-    // Se agotaron todas las oraciones
-    var btn = document.getElementById('btn-check');
-    btn.textContent = 'Regresar';
-    btn.onclick = function(){ history.back(); };
-    document.getElementById('feedback').textContent = '¡Completaste todos los ejercicios!';
-    document.getElementById('feedback').className = 'feedback ok';
-    document.getElementById('word-bank').innerHTML = '';
-    document.getElementById('build-zone').innerHTML = '';
-    document.getElementById('build-zone').classList.add('empty');
-    document.getElementById('target-es').textContent = '—';
-    return;
-  }
-  construido = [];
-  document.getElementById('feedback').textContent = '';
-  document.getElementById('feedback').className = 'feedback';
-  document.getElementById('target-es').textContent = actual.espanol;
-
-  var sopa = construirSopa(actual);
-  var bank = document.getElementById('word-bank');
-  bank.innerHTML = '';
-  sopa.forEach(function(gu, idx){
-    var chip = document.createElement('button');
-    chip.className = 'word-chip gu';
-    chip.textContent = gu;
-    chip.dataset.gu = gu;
-    chip.dataset.idx = idx;
-    chip.onclick = function(){ tocarPalabra(chip, gu); };
-    bank.appendChild(chip);
-  });
-  renderBuild();
-}
-
-function tocarPalabra(chip, gu) {
-  chip.classList.add('used');
-  construido.push({ gu: gu, chipIdx: chip.dataset.idx });
-  reproducir(gu);
-  renderBuild();
-}
-
-function renderBuild() {
-  var zone = document.getElementById('build-zone');
-  zone.innerHTML = '';
-  if (construido.length === 0) { zone.classList.add('empty'); return; }
-  zone.classList.remove('empty');
-  construido.forEach(function(item, i){
-    var c = document.createElement('button');
-    c.className = 'chip-built gu';
-    c.textContent = item.gu;
-    c.onclick = function(){ quitarPalabra(i); };
-    zone.appendChild(c);
-  });
-}
-
-function quitarPalabra(i) {
-  var item = construido[i];
-  // reactivar el chip original
-  var chip = document.querySelector('.word-chip[data-idx="' + item.chipIdx + '"]');
-  if (chip) chip.classList.remove('used');
-  construido.splice(i, 1);
-  renderBuild();
-}
-
-function limpiar() {
-  construido = [];
-  document.querySelectorAll('.word-chip').forEach(function(c){ c.classList.remove('used'); });
-  document.getElementById('feedback').textContent = '';
-  document.getElementById('feedback').className = 'feedback';
-  renderBuild();
-}
-
-function comprobar() {
-  if (construido.length === 0) return;
-  var intento = construido.map(function(x){ return x.gu; });
-  var correcto = actual.palabras;
-  var fb = document.getElementById('feedback');
-
-  var igual = intento.length === correcto.length &&
-              intento.every(function(g, i){ return g === correcto[i]; });
-
-  if (igual) {
-    fb.innerHTML = '✓ ¡Correcto! <span class="traduccion gu">' + correcto.join(' ') + '</span>';
-    fb.className = 'feedback ok';
-    sfx.src = SND_OK; sfx.play().catch(function(){});
-    score++;
-    document.getElementById('score').textContent = score;
-    setTimeout(nuevaRonda, 1800);
-  } else {
-    fb.textContent = '✗ Inténtalo de nuevo';
-    fb.className = 'feedback err';
-    sfx.src = SND_ERR; sfx.play().catch(function(){});
-    setTimeout(limpiar, 1200);
-  }
-}
-
-/* Init */
-fetch(JSON_URL)
-  .then(function(r){ if(!r.ok) throw new Error('No se encontró ' + JSON_URL); return r.json(); })
-  .then(function(data){
-    DATA = data;
-    BANCO = data.banco_palabras || [];
-    ORACIONES = data.oraciones || [];
-    SND_OK = data.sonido_correcto;
-    SND_ERR = data.sonido_incorrecto;
-    if (data.boton_comprobar) document.getElementById('btn-check').textContent = data.boton_comprobar;
-    iniciarCola();
-    nuevaRonda();
-  })
-  .catch(function(e){
-    document.querySelector('.wrap').innerHTML =
-      '<p class="subtitle">No se pudo cargar el contenido. Revisa tu conexión.</p>';
-  });
-</script>
-
-<script>
-(function() {
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
-  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { return r.text(); })
-    .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
-      }
-    })
-    .catch(function() {});
-})();
-</script>
 </body>
 </html>

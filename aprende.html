@@ -9,13 +9,16 @@
 <title>Aprende · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-aprende.css">
+<link rel="stylesheet" href="tema-aprende_desktop.css" media="(min-width: 1440px) and (min-height: 720px)">
+<link rel="stylesheet" href="guia_navegacion_common.css">
 </head>
 <body>
 
 <nav class="nav-bar">
   <a class="nav-btn" href="#" onclick="history.back(); return false;">← Salir</a>
   <a class="nav-btn home" href="index.html">🏠</a>
-  <span class="nav-btn" style="opacity:0; pointer-events:none;">&nbsp;</span>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
+  <span class="nav-btn nav-phantom">&nbsp;</span>
 </nav>
 <div class="top-progress"><div class="top-progress-fill" id="top-fill"></div></div>
 
@@ -40,25 +43,46 @@
     <span class="badge">Aprende esto</span>
     <img class="learn-img" id="learn-img" src="" alt="">
     <div class="learn-card">
-      <div class="gu learn-gu" id="learn-gu"></div>
-      <div class="learn-rom" id="learn-rom"></div>
-      <div class="learn-sig" id="learn-sig"></div>
-      <div class="learn-cat" id="learn-cat"></div>
+      <div class="gu learn-gu"  id="learn-gu"></div>
+      <div class="learn-rom"    id="learn-rom"></div>
+      <div class="learn-sig"    id="learn-sig"></div>
+      <div class="learn-cat"    id="learn-cat"></div>
     </div>
     <button class="btn-audio big" id="learn-audio" onclick="reproducirActual()">🔊</button>
     <button class="btn-main" onclick="trasAprender()">Ya lo memoricé →</button>
   </div>
 
-  <!-- QUIZ: reconocer (gu → significado) -->
+  <!-- QUIZ -->
   <div class="screen" id="screen-quiz">
-    <span class="badge" id="quiz-badge">¿Qué significa?</span>
+    <span class="badge"         id="quiz-badge">¿Qué significa?</span>
     <div class="quiz-instruction" id="quiz-instruction"></div>
-    <div class="quiz-prompt" id="quiz-prompt"></div>
-    <img class="quiz-img" id="quiz-img" src="" alt="">
-    <button class="btn-audio" id="quiz-audio" onclick="reproducirActual()" style="display:none;">🔊</button>
-    <div class="options" id="quiz-options"></div>
-    <div class="feedback" id="quiz-feedback"></div>
+    <div class="quiz-prompt"    id="quiz-prompt"></div>
+    <img class="quiz-img"       id="quiz-img" src="" alt="">
+    <button class="btn-audio"   id="quiz-audio" onclick="reproducirActual()">🔊</button>
+    <div class="options"        id="quiz-options"></div>
+    <div class="feedback"       id="quiz-feedback"></div>
   </div>
+
+  <!-- ACCIÓN -->
+  <div class="screen" id="screen-accion">
+    <span class="badge">¡Hazlo tú!</span>
+    <div class="accion-orden">
+      <div class="gu accion-gu"  id="accion-gu"></div>
+      <div class="accion-sig"    id="accion-sig"></div>
+    </div>
+    <div class="accion-zona suspense" id="accion-zona">
+      <div class="accion-barra-wrap">
+        <div class="accion-barra" id="accion-barra"></div>
+      </div>
+      <img class="accion-icono" id="accion-icono" src="" alt="" style="display:none;">
+    </div>
+    <div class="accion-eval" id="accion-eval" style="display:none;">
+      <p class="accion-eval-titulo">¿Cómo te fue?</p>
+      <div class="accion-eval-btns" id="accion-eval-btns"></div>
+    </div>
+    <div class="feedback" id="accion-feedback"></div>
+  </div>
+
 
   <!-- FIN -->
   <div class="screen" id="screen-fin">
@@ -78,363 +102,7 @@
 <audio id="player"></audio>
 <audio id="sfx"></audio>
 
-<script>
-/* ============================================================
-   SRS — Repaso espaciado estilo Memrise (mejorado)
-   Persistencia: localStorage
-============================================================ */
-const _params = new URLSearchParams(location.search);
-// Compatible con dos formatos:
-//  a) ?leccion=1.1.1
-//  b) ?modulo=1.1&leccion=1  (estilo practica.html)
-var _modulo = _params.get('modulo');
-var _lecRaw = _params.get('leccion');
-var LECCION;
-if (_modulo && _lecRaw) {
-  LECCION = _modulo + '.' + _lecRaw;       // 1.1 + 1 => 1.1.1
-} else {
-  LECCION = _lecRaw || '1.1.1';            // 1.1.1
-}
-const _leccion = LECCION.replace(/\./g, '_');
-const STORAGE_KEY = 'srs_' + LECCION;
-const JSON_URL = 'data/' + _leccion + '/aprende_clase_' + _leccion + '.json';
-const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
-const SND_ERR = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
+<script src="aprende.js"></script>
 
-// Intervalos SRS en minutos: nivel 0..6
-const INTERVALOS = [0, 10, 60, 1440, 4320, 10080, 20160]; // 0, 10min, 1h, 1d, 3d, 7d, 14d
-const NIVEL_DOMINADO = 5;
-const ITEMS_POR_SESION = 7;   // ítems nuevos máximos por sesión
-const MAX_OPCIONES = 4;
-
-const player = document.getElementById('player');
-const sfx = document.getElementById('sfx');
-
-let ITEMS = [];          // todos los ítems del JSON
-let progreso = {};       // { id: { nivel, proximoRepaso (timestamp), aciertos, fallos } }
-let cola = [];           // ítems de esta sesión (objetos completos)
-let colaIdx = 0;
-let modoActual = '';     // 'aprender' | 'reconocer' | 'recordar' | 'escuchar'
-let sesionPracticados = 0;
-let sesionAciertos = 0;
-
-/* ---------- Carga y persistencia ---------- */
-function cargarProgreso() {
-  try {
-    var raw = localStorage.getItem(STORAGE_KEY);
-    progreso = raw ? JSON.parse(raw) : {};
-  } catch(e) { progreso = {}; }
-}
-function guardarProgreso() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progreso)); } catch(e) {}
-}
-function estadoItem(id) {
-  if (!progreso[id]) progreso[id] = { nivel: -1, proximoRepaso: 0, aciertos: 0, fallos: 0 };
-  return progreso[id];
-}
-
-/* ---------- Clasificación ---------- */
-function ahora() { return Date.now(); }
-
-function itemsNuevos() {
-  return ITEMS.filter(function(it){ return estadoItem(it.id).nivel === -1; });
-}
-function itemsParaRepasar() {
-  return ITEMS.filter(function(it){
-    var st = estadoItem(it.id);
-    return st.nivel >= 0 && st.nivel < NIVEL_DOMINADO && st.proximoRepaso <= ahora();
-  });
-}
-function itemsDominados() {
-  return ITEMS.filter(function(it){ return estadoItem(it.id).nivel >= NIVEL_DOMINADO; });
-}
-
-/* ---------- Pantallas ---------- */
-function mostrar(id) {
-  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-}
-
-function actualizarStats() {
-  var nuevos    = itemsNuevos().length;
-  var repasos   = itemsParaRepasar().length;
-  var dominados = itemsDominados().length;
-  document.getElementById('stat-nuevos').textContent    = nuevos;
-  document.getElementById('stat-repaso').textContent    = repasos;
-  document.getElementById('stat-dominados').textContent = dominados;
-
-  // Mensaje cuando todo está al día pero no hay nada que hacer aún
-  var btnEmpezar = document.getElementById('btn-empezar');
-  btnEmpezar.textContent = 'Empezar →';
-  var pendientesFuturos = ITEMS.filter(function(it){
-    var st = estadoItem(it.id);
-    return st.nivel >= 0 && st.nivel < NIVEL_DOMINADO && st.proximoRepaso > Date.now();
-  });
-  if(nuevos === 0 && repasos === 0 && pendientesFuturos.length > 0){
-    // Calcular próximo vencimiento
-    var proximos = pendientesFuturos.map(function(it){ return estadoItem(it.id).proximoRepaso; });
-    var minProximo = Math.min.apply(null, proximos);
-    var minutos = Math.round((minProximo - Date.now()) / 60000);
-    var tiempoMsg = minutos < 60
-      ? 'en ' + minutos + ' min'
-      : 'en ' + Math.round(minutos/60) + 'h';
-    btnEmpezar.textContent = '¡Al día! Próximo repaso ' + tiempoMsg + ' →';
-  }
-}
-
-/* ---------- Construcción de la cola de sesión ---------- */
-function construirCola() {
-  var repaso = itemsParaRepasar();
-  var nuevos = itemsNuevos().slice(0, ITEMS_POR_SESION);
-  cola = shuffle(repaso).concat(nuevos);
-  if (cola.length === 0) {
-    // Nada pendiente: primero intentar dominados al azar
-    var dominados = itemsDominados();
-    if (dominados.length > 0) {
-      cola = shuffle(dominados).slice(0, ITEMS_POR_SESION);
-    } else {
-      // Todos los ítems existen pero tienen proximoRepaso en el futuro →
-      // ofrecer práctica libre con todos (ordenados por proximoRepaso más cercano)
-      var pendientes = ITEMS.filter(function(it){ return estadoItem(it.id).nivel >= 0; });
-      pendientes.sort(function(a, b){
-        return estadoItem(a.id).proximoRepaso - estadoItem(b.id).proximoRepaso;
-      });
-      cola = pendientes.slice(0, ITEMS_POR_SESION);
-      if (cola.length > 0) {
-        // Avisar que es práctica anticipada
-        document.getElementById('btn-empezar').textContent = '¡Practicar de todas formas! →';
-      }
-    }
-  }
-  colaIdx = 0;
-}
-
-function shuffle(a){ return a.slice().sort(function(){ return Math.random()-0.5; }); }
-
-/* ---------- Flujo principal ---------- */
-function empezarSesion() {
-  construirCola();
-  sesionPracticados = 0;
-  sesionAciertos = 0;
-  if (cola.length === 0) { irAFin(); return; }
-  siguienteItem();
-}
-
-function siguienteItem() {
-  if (colaIdx >= cola.length) { irAFin(); return; }
-  actualizarTopProgress();
-  var item = cola[colaIdx];
-  var st = estadoItem(item.id);
-  // Si es nuevo (nivel -1) → pantalla aprender. Si no → quiz directo.
-  if (st.nivel === -1) {
-    mostrarAprender(item);
-  } else {
-    mostrarQuiz(item);
-  }
-}
-
-function actualizarTopProgress() {
-  var pct = cola.length ? Math.round((colaIdx / cola.length) * 100) : 0;
-  document.getElementById('top-fill').style.width = pct + '%';
-}
-
-/* ---------- APRENDER ---------- */
-function mostrarAprender(item) {
-  modoActual = 'aprender';
-  document.getElementById('learn-gu').textContent = item.gujarati;
-  document.getElementById('learn-rom').textContent = item.roman;
-  document.getElementById('learn-sig').textContent = item.significado;
-  var cat = item.categoria === 'letra' ? 'Letra' : (item.categoria === 'silaba' ? 'Sílaba' : 'Palabra');
-  document.getElementById('learn-cat').textContent = cat;
-  var img = document.getElementById('learn-img');
-  if(img) img.src = item.imagen || '';
-  mostrar('screen-aprender');
-  setTimeout(reproducirActual, 350);
-}
-
-function trasAprender() {
-  // marcar nivel 0 (plantado) y pasar a un quiz de reconocer
-  var item = cola[colaIdx];
-  var st = estadoItem(item.id);
-  if (st.nivel === -1) st.nivel = 0;
-  guardarProgreso();
-  mostrarQuiz(item);
-}
-
-/* ---------- QUIZ ---------- */
-function elegirModo(item) {
-  // Modo según nivel: bajo→reconocer, medio→recordar, alto→escuchar
-  var st = estadoItem(item.id);
-  if (st.nivel <= 0) return 'reconocer';      // gu → significado
-  if (st.nivel === 1) return 'recordar';      // significado → gu
-  return Math.random() < 0.5 ? 'escuchar' : 'reconocer';
-}
-
-function mostrarQuiz(item) {
-  modoActual = elegirModo(item);
-  var promptEl = document.getElementById('quiz-prompt');
-  var instrEl = document.getElementById('quiz-instruction');
-  var badgeEl = document.getElementById('quiz-badge');
-  var audioBtn = document.getElementById('quiz-audio');
-  var optionsEl = document.getElementById('quiz-options');
-  document.getElementById('quiz-feedback').textContent = '';
-  optionsEl.innerHTML = '';
-  audioBtn.style.display = 'none';
-
-  var correcta, opciones, render;
-  var qImg = document.getElementById('quiz-img');
-  if(qImg) qImg.src = '';   // limpiar imagen anterior
-
-  if (modoActual === 'reconocer') {
-    // ve imagen + gujarati, elige significado
-    badgeEl.textContent = '¿Qué significa?';
-    instrEl.textContent = 'Toca el significado correcto';
-    promptEl.innerHTML = '<div class="gu big-gu">' + item.gujarati + '</div>';
-    if(qImg) qImg.src = item.imagen || '';   // mostrar imagen
-    correcta = item.significado;
-    opciones = generarOpciones(item, 'significado');
-    render = function(val){ return '<div class="opt-text">' + val + '</div>'; };
-  } else if (modoActual === 'recordar') {
-    // ve significado, elige gujarati — sin imagen (eso sería trampa)
-    badgeEl.textContent = '¿Cómo se escribe?';
-    instrEl.textContent = 'Toca la escritura correcta';
-    promptEl.innerHTML = '<div class="big-sig">' + item.significado + '</div>';
-    correcta = item.gujarati;
-    opciones = generarOpciones(item, 'gujarati');
-    render = function(val){ return '<div class="gu">' + val + '</div>'; };
-  } else { // escuchar
-    badgeEl.textContent = '¿Qué escuchaste?';
-    instrEl.textContent = 'Toca lo que oíste';
-    promptEl.innerHTML = '<div style="font-size:3rem;">🎧</div>';
-    audioBtn.style.display = 'flex';
-    correcta = item.gujarati;
-    opciones = generarOpciones(item, 'gujarati');
-    render = function(val){ return '<div class="gu">' + val + '</div>'; };
-    setTimeout(reproducirActual, 350);
-  }
-
-  opciones.forEach(function(val){
-    var btn = document.createElement('button');
-    btn.className = 'opt-btn' + (modoActual === 'reconocer' ? ' opt-text' : '');
-    btn.innerHTML = render(val);
-    btn.onclick = function(){ responder(btn, val, correcta, item); };
-    optionsEl.appendChild(btn);
-  });
-
-  mostrar('screen-quiz');
-}
-
-function generarOpciones(item, campo) {
-  var correcta = item[campo];
-  var distractores = shuffle(ITEMS.filter(function(it){ return it.id !== item.id; }))
-    .slice(0, MAX_OPCIONES - 1)
-    .map(function(it){ return it[campo]; });
-  return shuffle([correcta].concat(distractores));
-}
-
-function responder(btn, elegido, correcta, item) {
-  var todos = document.querySelectorAll('.opt-btn');
-  todos.forEach(function(b){ b.disabled = true; });
-  var fb = document.getElementById('quiz-feedback');
-  var st = estadoItem(item.id);
-  sesionPracticados++;
-
-  if (elegido === correcta) {
-    btn.classList.add('correct');
-    fb.textContent = '✓ ¡Correcto!';
-    fb.className = 'feedback ok';
-    sfx.src = SND_OK; sfx.play().catch(function(){});
-    sesionAciertos++;
-    // subir nivel
-    st.nivel = Math.min(st.nivel + 1, INTERVALOS.length - 1);
-    st.aciertos++;
-    st.proximoRepaso = ahora() + INTERVALOS[st.nivel] * 60000;
-    guardarProgreso();
-    setTimeout(avanzar, 900);
-  } else {
-    btn.classList.add('wrong');
-    fb.textContent = '✗ Era: ' + correcta;
-    fb.className = 'feedback err';
-    sfx.src = SND_ERR; sfx.play().catch(function(){});
-    // marcar la correcta
-    todos.forEach(function(b){
-      if (b.textContent.trim() === String(correcta).trim()) b.classList.add('correct');
-    });
-    // bajar nivel (vuelve a 0, pero no a -1)
-    st.nivel = 0;
-    st.fallos++;
-    st.proximoRepaso = ahora() + INTERVALOS[1] * 60000;
-    guardarProgreso();
-    // reinsertar el ítem más adelante en la cola para reforzar
-    cola.push(item);
-    setTimeout(avanzar, 1600);
-  }
-}
-
-function avanzar() {
-  colaIdx++;
-  siguienteItem();
-}
-
-/* ---------- Audio ---------- */
-function reproducirActual() {
-  var item = cola[colaIdx];
-  if (!item) return;
-  player.src = item.audioM;
-  player.play().catch(function(){});
-}
-
-/* ---------- FIN ---------- */
-function irAFin() {
-  document.getElementById('top-fill').style.width = '100%';
-  document.getElementById('fin-practicados').textContent = sesionPracticados;
-  document.getElementById('fin-aciertos').textContent = sesionAciertos;
-  document.getElementById('fin-dominados').textContent = itemsDominados().length;
-  mostrar('screen-fin');
-}
-
-/* ---------- Reiniciar ---------- */
-function reiniciarProgreso() {
-  if (confirm('¿Seguro que quieres borrar tu progreso de esta lección y empezar de cero?')) {
-    progreso = {};
-    guardarProgreso();
-    actualizarStats();
-  }
-}
-
-/* ---------- Init ---------- */
-fetch(JSON_URL)
-  .then(function(r){ if(!r.ok) throw new Error('No se encontró ' + JSON_URL); return r.json(); })
-  .then(function(data){
-    ITEMS = data.items;
-    cargarProgreso();
-    actualizarStats();
-  })
-  .catch(function(e){
-    document.getElementById('screen-inicio').innerHTML =
-      '<p class="subtitle">No se pudo cargar el contenido. Revisa tu conexión.</p>';
-  });
-</script>
-
-<script>
-(function() {
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
-  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { return r.text(); })
-    .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
-      }
-    })
-    .catch(function() {});
-})();
-</script>
 </body>
 </html>

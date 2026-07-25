@@ -6,179 +6,25 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Notas del Gujarati &middot; Piensa en Gujarati</title>
+<title>Notas del Gujarati · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-notas.css">
+<link rel="stylesheet" href="tema-notas_desktop.css" media="(min-width: 1024px)">
+<link rel="stylesheet" href="guia_navegacion_common.css">
 </head>
 <body>
 
 <nav class="nav-bar">
   <a class="nav-btn" id="nav-salir" href="#">← Salir</a>
   <a class="nav-btn home" id="nav-home" href="#">🏠</a>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
   <a class="nav-btn" id="nav-terminar" href="#">Pensar en GUJ →</a>
 </nav>
 <div class="top-progress"><div class="top-progress-fill" id="top-fill"></div></div>
 
 <div class="wrap" id="contenedor-pantallas"></div>
 
-<script>
-  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
-  const _params     = new URLSearchParams(location.search);
-  const _leccionRaw = _params.get('leccion') || '1.1.1';
-  const _leccion     = _leccionRaw.replace(/\./g, '_');
-  const JSON_URL = 'data/' + _leccion + '/leccion_notas_' + _leccion + '.json';
+<script src="leccion_notas.js"></script>
 
-  let TOTAL = 0;
-
-  function ir(n) {
-    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
-    document.getElementById('s' + n).classList.add('active');
-    document.getElementById('top-fill').style.width = Math.round((n / (TOTAL - 1)) * 100) + '%';
-    window.scrollTo(0, 0);
-  }
-
-  function crearBloqueNota(b) {
-    const nodos = [];
-    if (b.tipo === 'texto') {
-      if (b.gu) {
-        const guDiv = document.createElement('div');
-        guDiv.className = 'gu nota-gu';
-        guDiv.textContent = b.gu;
-        nodos.push(guDiv);
-      }
-      const texDiv = document.createElement('div');
-      texDiv.className = 'nota-texto';
-      texDiv.innerHTML = b.html;
-      nodos.push(texDiv);
-    } else if (b.tipo === 'ejemplo') {
-      const div = document.createElement('div');
-      div.className = 'ejemplo';
-      div.innerHTML =
-        '<div class="gu ejemplo-gu">' + b.gu + '</div>' +
-        '<div class="ejemplo-lit">literalmente: "' + b.literal + '"</div>' +
-        '<div class="ejemplo-sig">se entiende: "' + b.significado + '"</div>';
-      nodos.push(div);
-    }
-    return nodos;
-  }
-
-  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
-    .then(function(data){
-      document.getElementById('nav-salir').href = data.salir;
-      document.getElementById('nav-home').href = data.home;
-      document.getElementById('nav-terminar').href = 'leccion_pensarEnGUJ.html?leccion=' + _leccionRaw;
-
-      const notas = data.notas;
-      const totalNotas = notas.length;
-      TOTAL = totalNotas + 2; // intro + notas + fin
-
-      const contenedor = document.getElementById('contenedor-pantallas');
-
-      // s0: intro
-      const s0 = document.createElement('div');
-      s0.className = 'screen active';
-      s0.id = 's0';
-      s0.innerHTML =
-        '<span class="badge">Notas del Gujarati</span>' +
-        '<h1>' + data.intro.titulo + '</h1>' +
-        '<p class="lead">' + data.intro.texto + '</p>';
-      const btnEmpezar = document.createElement('button');
-      btnEmpezar.className = 'btn-main';
-      btnEmpezar.textContent = 'Empecemos →';
-      btnEmpezar.onclick = function(){ ir(1); };
-      s0.appendChild(btnEmpezar);
-      contenedor.appendChild(s0);
-
-      // s1..sN: notas
-      notas.forEach(function(nota, i){
-        const n = i + 1;
-        const s = document.createElement('div');
-        s.className = 'screen';
-        s.id = 's' + n;
-
-        const badge = document.createElement('span');
-        badge.className = 'badge';
-        badge.textContent = n + ' de ' + totalNotas;
-        s.appendChild(badge);
-
-        const card = document.createElement('div');
-        card.className = 'nota-card' + (nota.destacado ? ' destacado' : '');
-        nota.bloques.forEach(function(b, bi){
-          const bloqueNodos = crearBloqueNota(b);
-          bloqueNodos.forEach(function(nodo){
-            if (b.tipo === 'texto' && bi > 0) nodo.style.marginTop = '18px';
-            card.appendChild(nodo);
-          });
-        });
-        s.appendChild(card);
-
-        const btnRow = document.createElement('div');
-        btnRow.className = 'btn-row';
-        const btnAtras = document.createElement('button');
-        btnAtras.className = 'btn-sec';
-        btnAtras.textContent = '← Atrás';
-        btnAtras.onclick = function(){ ir(n - 1); };
-        const btnSig = document.createElement('button');
-        btnSig.className = 'btn-main';
-        btnSig.textContent = (n === totalNotas) ? 'Entendido →' : 'Siguiente →';
-        btnSig.onclick = function(){ ir(n + 1); };
-        btnRow.appendChild(btnAtras);
-        btnRow.appendChild(btnSig);
-        s.appendChild(btnRow);
-
-        contenedor.appendChild(s);
-      });
-
-      // s(N+1): fin
-      const sFin = document.createElement('div');
-      sFin.className = 'screen';
-      sFin.id = 's' + (totalNotas + 1);
-      sFin.innerHTML =
-        '<span class="badge">¡Listo!</span>' +
-        '<h1>' + data.fin_pantalla.titulo + '</h1>' +
-        '<p class="lead">' + data.fin_pantalla.texto + '</p>';
-
-      const extra = data.fin_pantalla.boton_extra;
-      if (extra && extra.habilitado) {
-        const btnExtra = document.createElement('a');
-        btnExtra.className = 'btn-sec';
-        btnExtra.href = extra.pagina + '?leccion=' + _leccionRaw;
-        btnExtra.textContent = extra.caption;
-        sFin.appendChild(btnExtra);
-      }
-
-      const btnFin = document.createElement('a');
-      btnFin.className = 'btn-main';
-      btnFin.href = data.fin;
-      btnFin.textContent = 'A Pensar en GUJARATI →';
-      sFin.appendChild(btnFin);
-      contenedor.appendChild(sFin);
-    })
-    .catch(function(){
-      document.body.innerHTML =
-        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
-    });
-</script>
-
-<script>
-(function() {
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
-  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { return r.text(); })
-    .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
-      }
-    })
-    .catch(function() {});
-})();
-</script>
 </body>
 </html>

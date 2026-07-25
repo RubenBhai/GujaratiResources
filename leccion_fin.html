@@ -6,15 +6,18 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>¡Lección completa! &middot; Piensa en Gujarati</title>
+<title>¡Lección completa! · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tema-amigable_2.css">
+<link rel="stylesheet" href="tema-leccion_fin.css">
+<link rel="stylesheet" href="tema-leccion_fin_desktop.css" media="(min-width: 1024px)">
+<link rel="stylesheet" href="guia_navegacion_common.css">
 </head>
 <body>
 
 <nav class="nav-bar">
   <a class="nav-btn" id="nav-anterior" href="#">← Anterior</a>
   <a class="nav-btn home" id="nav-home" href="#">🏠 Inicio</a>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
   <span class="nav-btn disabled">Siguiente →</span>
 </nav>
 
@@ -50,91 +53,7 @@
 </audio>
 
 <script src="efecto_victoria.js"></script>
-<script>
-  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
+<script src="leccion_fin.js"></script>
 
-  const _params     = new URLSearchParams(location.search);
-  const _leccionRaw = _params.get('leccion') || '1.1.1';
-  const _leccion     = _leccionRaw.replace(/\./g, '_');
-  const JSON_URL = 'data/' + _leccion + '/leccion_fin_' + _leccion + '.json';
-
-  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
-    .then(function(data){
-      // Marcar esta lección como completada
-      try { localStorage.setItem('leccion_' + _leccion, 'completada'); } catch(e) {}
-
-      // Sonido de triunfo al llegar al final de la lección
-      setTimeout(function() {
-        var t = document.getElementById('triunfo');
-        if (t) { t.volume = 0.7; t.play().catch(function(){}); }
-      }, 350);
-
-      document.getElementById('nav-anterior').onclick = function(){ history.back(); return false; };
-      document.getElementById('nav-home').href = 'leccion_intro.html?leccion=' + _leccionRaw;
-      document.getElementById('btn-repetir').href = 'leccion_intro.html?leccion=' + _leccionRaw;
-
-      // Terminar toda la lección siempre merece la celebración — sin puntaje que evaluar aquí,
-      // por eso se llama con 100 fijo (revisarVictoria solo compara contra el umbral, no lo usa para nada más).
-      revisarVictoria(100, data.sonido_victoria, data.programa_efecto_victoria, _leccion);
-
-      const r = data.resumen;
-      document.getElementById('subtitle').innerHTML =
-        'Aprendiste <strong>' + r.consonantes + ' consonantes</strong>, <strong>' + r.vocales + ' vocales</strong> y <strong>' + r.palabras + ' palabras</strong> de verdad.\n      ¡Ya puedes preguntar <span style="font-family:\'Noto Serif Gujarati\',serif;">' + r.frase_ejemplo + '</span>!';
-
-      const letrasCont = document.getElementById('letras-aprendidas');
-      data.letras_aprendidas.forEach(function(l){
-        const span = document.createElement('span');
-        span.className = 'gu';
-        span.textContent = l;
-        letrasCont.appendChild(span);
-      });
-
-      const tabla = document.getElementById('tabla-aprendido');
-      data.palabras_aprendidas.forEach(function(p){
-        const tr = document.createElement('tr');
-        tr.innerHTML =
-          '<td class="gu-cell">' + p.gujarati + '</td>' +
-          '<td class="pron-cell">' + p.se_dice + '</td>' +
-          '<td class="mean-cell">' + p.significa + '</td>';
-        tabla.appendChild(tr);
-      });
-
-      const prox = data.proxima_leccion;
-      document.getElementById('proxima-texto').textContent = 'Aprenderás ' + prox.cantidad_letras + ' letras nuevas:';
-      const proxLetrasCont = document.getElementById('proxima-letras');
-      prox.letras.forEach(function(l){
-        const span = document.createElement('span');
-        span.className = 'gu';
-        span.textContent = l;
-        proxLetrasCont.appendChild(span);
-      });
-      document.getElementById('btn-siguiente-leccion').href = 'leccion_intro.html?leccion=' + prox.codigo;
-    })
-    .catch(function(){
-      document.body.innerHTML =
-        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
-    });
-</script>
-
-<script>
-(function() {
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
-  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { return r.text(); })
-    .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
-      }
-    })
-    .catch(function() {});
-})();
-</script>
 </body>
 </html>

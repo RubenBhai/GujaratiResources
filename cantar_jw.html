@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Canta en gujarati · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-cantar-jw.css">
+<link rel="stylesheet" href="tema-cantar-jw_desktop.css" media="(min-width: 1024px)">
+<link rel="stylesheet" href="guia_navegacion_common.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" id="nav-salir" href="#" onclick="history.back(); return false;">← Salir</a>
+  <a class="nav-btn home" id="nav-home" href="index.html">🏠</a>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
+  <span class="nav-btn nav-phantom">&nbsp;</span>
+</nav>
+
+<div class="wrap" id="wrap">
+
+  <span class="badge" id="badge"></span>
+  <h1 id="titulo"></h1>
+  <p class="lead" id="lead"></p>
+
+  <!-- ANTES: palabras clave de la canción -->
+  <div class="card" id="card-antes">
+    <div class="card-titulo" id="antes-titulo"></div>
+    <div class="chips" id="antes-chips"></div>
+  </div>
+
+  <!-- LAS DOS OPCIONES DE CANTO -->
+  <div class="modos" id="modos">
+
+    <div class="modo-card modo-escuchar">
+      <div class="modo-icono">🎧</div>
+      <div class="modo-titulo" id="esc-titulo"></div>
+      <p class="modo-desc" id="esc-desc"></p>
+      <a class="btn-modo btn-modo-escuchar" id="esc-boton" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <div class="modo-aviso"><span class="ext">↗</span> <span id="esc-aviso"></span></div>
+    </div>
+
+    <div class="modo-card modo-cantar">
+      <div class="modo-icono">🎤</div>
+      <div class="modo-titulo" id="kar-titulo"></div>
+      <p class="modo-desc" id="kar-desc"></p>
+      <a class="btn-modo btn-modo-cantar" id="kar-boton" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <div class="modo-aviso"><span class="ext">↗</span> <span id="kar-aviso"></span></div>
+    </div>
+
+  </div>
+
+  <!-- DESPUÉS: reflexión (dos columnas, una por modo) -->
+  <div class="card" id="card-despues">
+    <div class="card-titulo" id="despues-titulo"></div>
+    <div class="despues-cols">
+      <div class="despues-col">
+        <div class="dc-cabecera dc-escuchar">🎧 <span id="desp-esc-label"></span></div>
+        <div id="desp-esc-preguntas"></div>
+      </div>
+      <div class="despues-col">
+        <div class="dc-cabecera dc-cantar">🎤 <span id="desp-kar-label"></span></div>
+        <div id="desp-kar-preguntas"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn-sec" onclick="history.back()">← Atrás</button>
+    <a class="btn-main" id="btn-continuar" href="#">Continuar →</a>
+  </div>
+
+</div>
+
+<script src="cantar_jw.js"></script>
+
+</body>
+</html>

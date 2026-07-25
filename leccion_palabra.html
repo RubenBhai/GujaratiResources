@@ -6,15 +6,18 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title id="page-title">Vocabulario &middot; Piensa en Gujarati</title>
+<title id="page-title">Vocabulario · Piensa en Gujarati</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tema-amigable_4.css">
+<link rel="stylesheet" href="tema-leccion_palabra.css">
+<link rel="stylesheet" href="tema-leccion_palabra_desktop.css" media="(min-width: 1024px)">
+<link rel="stylesheet" href="guia_navegacion_common.css">
 </head>
 <body>
 
 <nav class="nav-bar">
   <a class="nav-btn" id="nav-anterior" href="#">← Anterior</a>
   <a class="nav-btn home" id="nav-home" href="#">🏠</a>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
   <a class="nav-btn" id="nav-practicar" href="#">Practicar →</a>
 </nav>
 
@@ -22,7 +25,8 @@
   <span class="badge" id="badge"></span>
 
   <div class="frame-vocab-img">
-    <img id="img-palabra" alt="" onerror="this.style.display='none'" style="cursor:pointer">
+    <img id="img-palabra" alt="" onerror="this.style.display='none'">
+    <button type="button" class="btn-ampliar" id="btn-ampliar" aria-label="Ver en pantalla completa" title="Ver en pantalla completa">⛶</button>
   </div>
 
   <div class="frame-vocab-audio">
@@ -32,121 +36,28 @@
     </div>
     <div class="frame-vocab-audio-bottom">
       <button class="btn-speed active" id="btn-normal" onclick="setSpeed(1.0)">▶ Normal</button>
-      <button class="btn-speed" id="btn-slow" onclick="setSpeed(0.75)">🐢 Lento</button>
+      <button class="btn-speed"        id="btn-slow"   onclick="setSpeed(0.75)">🐢 Lento</button>
     </div>
   </div>
 
   <div class="botones-inferiores">
     <a class="btn-sec" id="btn-practicar-pronunciacion" href="#" style="display:none;">🎙 A practicar la pronunciación</a>
-    <div style="display:flex; gap:10px;">
-      <a class="btn-sec" style="flex:1;" id="btn-sigleccion" href="#">⏭️ Siguiente lección</a>
-      <a class="btn-main" style="flex:1;" id="btn-siguiente" href="#">Siguiente →</a>
+    <div class="btn-row">
+      <a class="btn-sec btn-flex" id="btn-sigleccion" href="#">⏭️ Siguiente lección</a>
+      <a class="btn-main btn-flex" id="btn-siguiente" href="#">Siguiente →</a>
     </div>
   </div>
 </div>
 
 <audio id="player"></audio>
 
-<script>
-  const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
-  const player = document.getElementById('player');
-  let currentSpeed = 1.0;
-  let toggle = 'm';
+<script src="leccion_palabra.js"></script>
 
-  const _params     = new URLSearchParams(location.search);
-  const _leccionRaw = _params.get('leccion') || '1.1.1';
-  const _leccion     = _leccionRaw.replace(/\./g, '_');
-  const _item       = parseInt(_params.get('item') || '1', 10);
-  const JSON_URL    = 'data/' + _leccion + '/leccion_palabra_' + _leccion + '.json';
+  <!-- Modo pantalla completa 16:9 -->
+  <div class="wide-overlay" id="wide-overlay" aria-hidden="true">
+    <img id="wide-img" alt="">
+    <button type="button" class="wide-cerrar" id="wide-cerrar" aria-label="Salir de pantalla completa" title="Salir">✕</button>
+  </div>
 
-  function setSpeed(s) {
-    currentSpeed = s;
-    document.getElementById('btn-normal').classList.toggle('active', s === 1.0);
-    document.getElementById('btn-slow').classList.toggle('active', s === 0.75);
-  }
-
-  function playVocab(btn, urlH, urlM) {
-    const useH = toggle === 'h';
-    toggle = useH ? 'm' : 'h';
-    btn.classList.add('playing');
-    btn.textContent = useH ? '♬♂' : '♬♀';
-    player.src = useH ? urlH : urlM;
-    player.playbackRate = currentSpeed;
-    player.play();
-    player.onended = () => { btn.classList.remove('playing'); btn.textContent = '▶'; };
-  }
-
-  fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
-    .then(function(data){
-      const palabras = data.palabras;
-      const total    = palabras.length;
-      const idx      = Math.min(Math.max(_item, 1), total);
-      const actual   = palabras[idx - 1];
-
-      document.getElementById('page-title').textContent = actual.gujarati + ' — ' + actual.significado + ' · Piensa en Gujarati';
-      document.getElementById('badge').textContent = 'Vocabulario ' + idx + ' de ' + total;
-
-      document.getElementById('nav-home').href = data.home;
-      document.getElementById('nav-practicar').href = data.practicar;
-      document.getElementById('nav-anterior').href = (idx > 1)
-        ? ('leccion_palabra.html?leccion=' + _leccionRaw + '&item=' + (idx - 1))
-        : data.anterior_primera;
-
-      const siguienteUrl = (idx < total)
-        ? ('leccion_palabra.html?leccion=' + _leccionRaw + '&item=' + (idx + 1))
-        : data.siguiente_final;
-
-      const btnPracticarPron = document.getElementById('btn-practicar-pronunciacion');
-      if (idx === total) {
-        btnPracticarPron.href = data.practicar;
-        btnPracticarPron.style.display = '';
-      } else {
-        btnPracticarPron.style.display = 'none';
-      }
-
-      const img = document.getElementById('img-palabra');
-      img.src = actual.imagen;
-      img.alt = actual.gujarati;
-      img.onclick = function(){ window.location.href = siguienteUrl; };
-
-      document.getElementById('pronunciacion').innerHTML = '💡 ' + actual.pronunciacion;
-
-      const btnPlay = document.getElementById('btn-play');
-      btnPlay.onclick = function(){ playVocab(btnPlay, actual.audioH, actual.audioM); };
-
-      document.getElementById('btn-siguiente').href = siguienteUrl;
-      document.getElementById('btn-sigleccion').href = data.siguiente_leccion;
-
-      setTimeout(function() {
-        player.src = actual.audioM;
-        player.play().catch(function(){});
-      }, 400);
-    })
-    .catch(function(){
-      document.body.innerHTML =
-        '<p style="text-align:center;color:var(--ink-soft);padding:40px;">No se pudo cargar el contenido. Revisa tu conexión.</p>';
-    });
-</script>
-
-<script>
-(function() {
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
-  fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { return r.text(); })
-    .then(function(serverV) {
-      serverV = serverV.trim();
-      var localV = null;
-      try { localV = localStorage.getItem('appVersion'); } catch(e) {}
-      if (localV === null) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-      } else if (localV !== serverV) {
-        try { localStorage.setItem('appVersion', serverV); } catch(e) {}
-        location.reload(true);
-      }
-    })
-    .catch(function() {});
-})();
-</script>
 </body>
 </html>
