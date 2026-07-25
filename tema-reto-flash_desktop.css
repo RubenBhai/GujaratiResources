@@ -1,0 +1,170 @@
+/* ==========================================================================
+   TEMA RETO FLASH DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Rediseño modular para maximizar el espacio horizontal en pantallas de escritorio.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GLOBAL DE APLICACIÓN ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-bar {
+    max-width: 100%;
+    padding: 15px 40px;
+  }
+
+  /* Área expandida del área de trabajo */
+  .wrap {
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    gap: 0;
+  }
+
+  .screen {
+    width: 100%;
+    gap: 0;
+  }
+
+  /* ── PANTALLA DE INTRO: ACCIÓN DIVIDIDA RECTANGULAR ── */
+  #s-intro.active {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    column-gap: 60px;
+    align-items: center;
+    text-align: left;
+  }
+
+  #s-intro .badge { grid-column: 1; grid-row: 1; justify-self: start; }
+  #s-intro h1 { grid-column: 1; grid-row: 2; text-align: left; font-size: 3rem; }
+  #s-intro #intro-desc { grid-column: 1; grid-row: 3; text-align: left; font-size: 1.2rem; }
+  #s-intro .btn-main { 
+    grid-column: 2; 
+    grid-row: 2 / span 2; 
+    max-width: 340px; 
+    padding: 22px; 
+    font-size: 1.2rem; 
+    border-radius: var(--r-md); 
+  }
+
+  /* ── FASE B: LECTURA EN TABLERO ASIMÉTRICO ── */
+  #screen-b.active {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    column-gap: 60px;
+    row-gap: 16px;
+    align-items: center;
+  }
+
+  #screen-b .badge { grid-column: 1; grid-row: 1; justify-self: start; }
+  #screen-b h2 { grid-column: 1; grid-row: 2; text-align: left; font-size: 2.2rem; }
+  #screen-b .lead { grid-column: 1; grid-row: 3; text-align: left; }
+  #screen-b .prog-ans-row { grid-column: 1; grid-row: 4; max-width: 100%; }
+  #screen-b .nav-row-320c { grid-column: 1; grid-row: 5; max-width: 100%; margin: 0; }
+  #screen-b #btn-saltar-b { grid-column: 1; grid-row: 6; max-width: 100%; margin: 0; }
+
+  /* Bloque visual de la tarjeta a la derecha */
+  #screen-b .game-card { 
+    grid-column: 2; 
+    grid-row: 1 / span 4; 
+    max-width: 420px; 
+    width: 100%; 
+    aspect-ratio: 1; 
+    justify-self: center; 
+    font-size: 12rem; 
+    border-radius: 24px;
+  }
+  
+  #screen-b .timer-wrap { 
+    grid-column: 2; 
+    grid-row: 5; 
+    max-width: 420px; 
+    width: 100%; 
+    height: 8px; 
+    justify-self: center; 
+  }
+
+  /* ── FASE C: EMPAREJAMIENTO HORIZONTAL COMPLETO ── */
+  #screen-c.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    text-align: center;
+    max-width: 1100px;
+  }
+
+  #screen-c h2 { font-size: 2.2rem; }
+  .badge-score-row { justify-content: center; }
+
+  /* Reorganiza los botones del juego en una sola fila horizontal */
+  #screen-c .match-letters {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .match-btn {
+    font-size: 6rem;
+    aspect-ratio: 1.15; /* Proporción balanceada para pantallas anchas */
+    border-radius: var(--r-lg);
+  }
+
+  #screen-c .match-prompt { font-size: 1.5rem; }
+  #screen-c .btn-row { max-width: 500px; margin: 0 auto; }
+
+  /* ── PANTALLA DE RESULTADOS FINAL ── */
+  #s-resultado.active {
+    max-width: 550px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  .resultado-card {
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  }
+
+  .resultado-emoji { font-size: 4.5rem; }
+  .resultado-msg { font-size: 2rem; }
+
+  /* Normalización de botones de acción de escritorio */
+  .btn-main, .btn-sec {
+    padding: 16px 24px;
+    font-size: 1.05rem;
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+ #screen-repaso.active {
+    display:grid; grid-template-columns:1fr; row-gap:16px;
+    max-width:600px; justify-items:center; text-align:center;
+  }
+  #screen-repaso h2    { font-size:1.8rem; }
+  #screen-repaso .lead { font-size:0.95rem; }
+  #screen-repaso .repaso-grid  { gap:10px; max-width:440px; }
+  #screen-repaso .rc-letra  { font-size:1.9rem; }
+  #screen-repaso .rc-answer { font-size:0.78rem; bottom:5px; }
+  #screen-repaso .btn-main  { max-width:400px; }
+
+  #screen-repaso .repaso-grid.grid-palabras   { max-width:640px; gap:12px; }
+  #screen-repaso .grid-palabras .repaso-celda { aspect-ratio:3.4; }
+  #screen-repaso .grid-palabras .rc-letra     { font-size:2rem; }
+  #screen-repaso .grid-palabras .rc-answer    { font-size:1.5rem; }
+}

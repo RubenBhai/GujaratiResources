@@ -1,0 +1,72 @@
+/* ==========================================================================
+   TEMA CANTAR JW — DESKTOP (1024px+)
+   Las dos opciones de canto se ponen lado a lado; la reflexión debajo,
+   también en dos columnas alineadas con sus modos.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+
+  body { padding-bottom: 60px; }
+
+  .nav-bar { padding: 15px 40px; max-width: 100%; }
+  .nav-btn { padding: 12px 22px; font-size: 1rem; }
+
+  .wrap {
+    max-width: 1000px;
+    padding: 44px 40px;
+    gap: 28px;
+  }
+
+  h1   { font-size: 2.6rem; line-height: 1.15; }
+  .lead { font-size: 1.2rem; max-width: 720px; }
+
+  .card { padding: 30px 34px; border-radius: 22px; }
+  .card-titulo { font-size: 0.85rem; margin-bottom: 18px; }
+
+  .chips { gap: 12px; }
+  .chip { min-width: 112px; padding: 12px 16px; }
+  .chip-gu { font-size: 1.8rem; }
+  .chip-es { font-size: 0.9rem; }
+
+  /* ── LAS DOS OPCIONES, LADO A LADO ── */
+  .modos {
+    flex-direction: row;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .modo-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+    border-radius: 24px;
+  }
+  .modo-icono  { font-size: 3rem; }
+  .modo-titulo { font-size: 1.6rem; }
+  .modo-desc   { font-size: 1.05rem; flex: 1; }   /* empuja el botón al fondo, ambas parejas */
+
+  .btn-modo {
+    padding: 18px;
+    font-size: 1.12rem;
+    border-radius: var(--r-md);
+  }
+  .btn-modo:hover { transform: translateY(-2px); }
+  .modo-aviso { font-size: 0.92rem; margin-top: 14px; }
+
+  /* ── DESPUÉS: dos columnas alineadas con los modos ── */
+  .despues-cols {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .despues-col { flex: 1; }
+  .dc-cabecera { font-size: 1rem; margin-bottom: 4px; }
+  .pregunta { font-size: 1.05rem; padding: 16px 20px; }
+
+  /* ── BOTONES ── */
+  .btn-row { max-width: 500px; margin: 0 auto; gap: 16px; }
+  .btn-main, .btn-sec {
+    padding: 16px 24px;
+    font-size: 1.05rem;
+    border-radius: var(--r-md);
+  }
+}

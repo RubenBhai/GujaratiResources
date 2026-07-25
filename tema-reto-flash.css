@@ -193,3 +193,89 @@ h2 { font-family:'Fraunces',serif; font-size:1.4rem; text-align:center; }
   background: rgba(255,255,255,0.03); padding: 8px 18px; border-radius: var(--r-full);
 }
 .match-score span { color: var(--saffron); font-weight: 700; font-size: 1.3rem; }
+
+.nav-phantom      { opacity:0; pointer-events:none; }
+.prog-ans-row     { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:320px; gap:8px; }
+.b-answer-flex    { flex:1; }
+.timer-wrap       { margin:0 auto; }
+.nav-row-320c     { display:flex; gap:10px; width:100%; max-width:320px; margin:0 auto; }
+.btn-nav-prev     { flex:1; background:var(--surface); border:1px solid var(--border); box-shadow:0 4px 14px rgba(0,0,0,0.15); padding:14px; border-radius:50px; font-weight:700; font-size:1rem; color:var(--ink-soft); cursor:pointer; font-family:inherit; }
+.btn-nav-next     { flex:1; background:var(--verde); border:none; box-shadow:0 4px 14px rgba(74,107,83,0.3); padding:14px; border-radius:50px; font-weight:700; font-size:1rem; color:white; cursor:pointer; font-family:inherit; }
+.btn-disabled     { opacity:0.4; pointer-events:none; }
+.btn-sec-320c     { max-width:320px; width:100%; margin:0 auto; }
+.badge-score-row  { display:flex; align-items:center; justify-content:space-between; width:100%; gap:10px; }
+.btn-row          { display:flex; gap:10px; width:100%; }
+.btn-flex         { flex:1; }
+.btn-volver-c     { background:var(--surface); color:var(--ink-soft); box-shadow:0 4px 14px rgba(0,0,0,0.15); border:1px solid var(--border); }
+#btn-continuar    { background:var(--sindoor); }
+.game-card        { cursor:pointer; margin:0 auto; }
+.guj-card-content { display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1; }
+.guj-sig          { color:var(--saffron); font-weight:800; margin-top:6px; line-height:1.15; font-family:'Source Sans 3',sans-serif; }
+.error-carga      { text-align:center; color:var(--ink-soft); padding:40px 20px; }
+
+/* ── FASE REPASO ── */
+.repaso-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:auto;
+  gap:6px; width:100%;
+}
+.repaso-celda {
+  position:relative; aspect-ratio:1; padding-bottom:12px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--surface); border:2px solid var(--border); border-radius:var(--r-sm);
+  transition:background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.rc-letra {
+  font-family:'Noto Serif Gujarati',serif; font-size:clamp(1.35rem,6.2vw,1.9rem);
+  color:var(--paper); line-height:1; transition:color .25s ease;
+}
+.rc-answer {
+  position:absolute; bottom:3px; left:0; right:0;
+  font-family:'Source Sans 3',sans-serif; font-size:0.62rem; font-weight:700;
+  color:var(--saffron); text-align:center; letter-spacing:0.02em;
+  opacity:0; transition:opacity .2s ease; pointer-events:none;
+}
+.rc-answer.visible { opacity:1; }
+
+.repaso-celda.activa {
+  background:var(--saffron); border-color:var(--paper);
+  transform:scale(1.08); box-shadow:var(--shadow-hover); z-index:2;
+}
+.repaso-celda.activa .rc-letra { color:var(--bg); }
+
+.repaso-celda.sonando { background:var(--verde); border-color:var(--correct-text); }
+.repaso-celda.sonando .rc-letra  { color:#fff; }
+.repaso-celda.sonando .rc-answer { color:#fff; }
+
+/* Celdas sobrantes: ocultas pero conservan su hueco en la cuadrícula */
+.repaso-celda.vacia { visibility:hidden; }
+
+.btn-detener       { background:var(--sindoor); }
+.btn-detener:hover { background:var(--sindoor-deep); }
+
+.rc-letra  { font-size:clamp(1.7rem, 8vw, 2.4rem); }
+.rc-answer { font-size:1.10rem; }
+
+.rc-timer {
+  position:absolute; bottom:7px; left:20%; right:20%; height:4px;
+  background:rgba(0,0,0,0.22); border-radius:2px; overflow:hidden;
+  opacity:0; transition:opacity .15s ease; pointer-events:none;
+}
+.rc-timer.visible { opacity:1; }
+.rc-timer i {
+  display:block; width:100%; height:100%;
+  background:var(--bg); transform-origin:left; border-radius:2px;
+}
+
+.btn-reiniciar {
+  background:var(--surface); color:var(--ink-soft);
+  border:1px solid var(--border); box-shadow:0 4px 14px rgba(0,0,0,0.15);
+}
+.btn-reiniciar:hover { background:var(--surface-light); color:var(--saffron); }
+
+/* Modo palabras: 2 columnas, celdas anchas */
+.repaso-grid.grid-palabras { grid-template-rows:none; grid-auto-rows:auto; gap:8px; }
+.repaso-grid.grid-palabras .repaso-celda { aspect-ratio:2.6; padding:0 10px 18px; }
+.repaso-grid.grid-palabras .rc-letra  { font-size:clamp(1.4rem,6.5vw,2rem); line-height:1.2; text-align:center; }
+.repaso-grid.grid-palabras .rc-answer { font-size:1.50rem; bottom:5px; }
+.repaso-grid.grid-palabras .rc-timer  { left:30%; right:30%; }
+

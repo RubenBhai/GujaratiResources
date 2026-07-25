@@ -533,3 +533,6 @@ html {
 a, button {
   transition: all 0.25s ease;
 }
+
+/* Estado del botón de música */
+#musicToggle.music-off { color: rgba(234,224,204,0.4); }+

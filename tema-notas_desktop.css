@@ -1,0 +1,152 @@
+/* ==========================================================================
+   TEMA NOTAS DEL GUJARATI — DESKTOP (1024px+)
+   Lectura en columna centrada. Las notas con letra gujarati destacada
+   se abren en dos columnas: letra a la izquierda, contenido a la derecha.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+
+  /* ── ESTRUCTURA ──
+     Sin height:100vh ni overflow:hidden: las notas largas deben poder
+     desplazarse con normalidad. */
+  body {
+    padding-bottom: 60px;
+  }
+
+  .nav-bar {
+    padding: 15px 40px;
+    max-width: 100%;
+  }
+
+  .nav-btn {
+    padding: 12px 22px;
+    font-size: 1rem;
+  }
+
+  .wrap {
+    max-width: 760px;
+    padding: 48px 32px;
+    gap: 28px;
+  }
+
+  .screen {
+    gap: 28px;
+  }
+
+  /* ── TIPOGRAFÍA ── */
+  .badge {
+    font-size: 0.9rem;
+    padding: 10px 26px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    max-width: 640px;
+  }
+
+  /* ── TARJETA DE NOTA ── */
+  .nota-card {
+    padding: 40px 44px;
+    border-radius: 24px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+  }
+
+  .nota-gu {
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+
+  .nota-texto {
+    font-size: 1.35rem;
+    line-height: 1.75;
+  }
+
+  .nota-bloque-extra {
+    margin-top: 26px;
+  }
+
+  /* Nota con letra destacada: dos columnas.
+     :has() ya se usa en guia_navegacion_common.css, así que es seguro aquí. */
+  .nota-card:has(.nota-gu) {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    column-gap: 44px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .nota-card:has(.nota-gu) > .nota-gu {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    font-size: 7rem;
+    align-self: center;
+  }
+
+  /* Todo lo que no sea la letra se apila en la columna derecha */
+  .nota-card:has(.nota-gu) > *:not(.nota-gu) {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .nota-card:has(.nota-gu) > .nota-texto {
+    text-align: left;
+  }
+
+  /* ── EJEMPLOS ── */
+  .ejemplo {
+    padding: 22px 26px;
+    border-radius: 14px;
+    margin-top: 18px;
+  }
+
+  .ejemplo-gu {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+  }
+
+  .ejemplo-lit {
+    font-size: 1.05rem;
+  }
+
+  .ejemplo-sig {
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+
+  /* ── BOTONES ── */
+  .btn-row {
+    max-width: 560px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  .btn-main,
+  .btn-sec {
+    padding: 17px 28px;
+    font-size: 1.08rem;
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Botón de práctica y botón extra: mismo ancho que la fila de navegación */
+  .screen > .btn-main,
+  .screen > .btn-sec {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .corresp { padding: 26px 24px; border-radius: 18px; }
+  .corresp-linea.gu { font-size: 2.3rem; }
+  .corresp-linea.es { font-size: 1.3rem; }
+  .corresp-linea { gap: 10px 20px; }
+}

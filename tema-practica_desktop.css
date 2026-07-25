@@ -1,0 +1,196 @@
+/* ==========================================================================
+   TEMA PRÁCTICA DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Espacio de trabajo dividido (Split Workspace) para entrenamiento de voz con IA.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GENERAL DE LA APLICACIÓN ── */
+  body {
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Contenedor principal expandido como Workspace de escritorio */
+  .wrap {
+    max-width: 1320px;
+    width: 100%;
+    height: 100vh;
+    padding: 30px 40px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 50px;
+    row-gap: 24px;
+    box-sizing: border-box;
+  }
+
+  /* Barra superior completa de lado a lado */
+  .top-bar {
+    grid-column: 1 / -1;
+    padding: 0;
+  }
+
+  /* ── COLUMNA IZQUIERDA: PANEL DE CONTROL CENTRAL (HEADER) ── */
+  header {
+    grid-column: 1;
+    grid-row: 2;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 35px 28px;
+    text-align: left;
+    margin-bottom: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: start;
+    height: auto;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .subtitle-row {
+    justify-content: flex-start;
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+
+  /* Consola de barra de velocidades */
+  .speed-bar {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 14px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .speed-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-speed {
+    width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  /* ── COLUMNA DERECHA: ESTACIÓN DE AUDIO Y DIÁLOGO ── */
+  .audio-theater {
+    grid-column: 2;
+    grid-row: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  /* Tarjeta de Línea Activa en formato Dashboard horizontal */
+  .dialogue-line.active {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-areas:
+      "img guj"
+      "img esp"
+      "img actions"
+      "img eval"
+      "img nav";
+    column-gap: 40px;
+    row-gap: 16px;
+    align-items: center;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Mapeo de áreas internas del Grid */
+  .dialogue-line img {
+    grid-area: img;
+    width: 100%;
+    max-width: 320px;
+    max-height: 320px;
+    margin: 0;
+    align-self: center;
+  }
+
+  .gujarati-frame {
+    grid-area: guj;
+    margin-bottom: 0;
+    padding: 20px;
+  }
+
+  .spanish-text {
+    grid-area: esp;
+    text-align: left;
+    margin-bottom: 4px;
+    font-size: 1.25rem;
+    padding-left: 4px;
+  }
+
+  .action-bar {
+    grid-area: actions;
+    gap: 14px;
+  }
+
+  .eval-panel {
+    grid-area: eval;
+    margin-top: 4px;
+    padding: 16px 20px;
+    border-radius: 12px;
+  }
+
+  .nav-row {
+    grid-area: nav;
+    margin-top: 4px;
+    gap: 14px;
+  }
+
+  /* Botones de acción del Workspace */
+  .btn {
+    padding: 14px 22px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    justify-content: center;
+  }
+
+  /* ── COMPORTAMIENTO DINÁMICO CUANDO NO HAY IMAGEN ── */
+  .dialogue-line.active:not(:has(img)),
+  .dialogue-line.active:has(img[style*="display: none"]) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "guj"
+      "esp"
+      "actions"
+      "eval"
+      "nav";
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .dialogue-line.active:not(:has(img)) .spanish-text,
+  .dialogue-line.active:has(img[style*="display: none"]) .spanish-text {
+    text-align: center;
+  }
+}

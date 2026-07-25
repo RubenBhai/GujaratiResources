@@ -1,0 +1,283 @@
+/* ==============================================
+   leccion_intro.css — Pantalla de intro de lección
+   Basado en el tema Amigable 2 · solo lo necesario
+   ============================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --crema:          #FDF8F0;
+  --crema-oscuro:   #F5EDE0;
+  --marron-suave:   #E8DBC8;
+  --marron-medio:   #C8B89A;
+  --marron-texto:   #5C4B3A;
+  --marron-oscuro:  #3E3226;
+  --naranja-acento: #D4845A;
+  --naranja-claro:  #F0C8A0;
+  --verde-sabio:    #6B8F71;
+  --rojo-ladrillo:  #A0524F;
+  --borde-tarjeta:  #E0D3C0;
+  --sombra-suave:   0 4px 20px rgba(60, 40, 20, 0.06);
+  --sombra-tarjeta: 0 6px 24px rgba(60, 40, 20, 0.08);
+  --radio-grande:   24px;
+  --radio-medio:    16px;
+  --sindoor-azul:   #0F4C81;
+  --rojo-ladrillo:  #5F6E4F;
+
+  /* Variables extra usadas por el JS y el contenido JSON */
+  --saffron:  #D4845A;   /* alias de naranja-acento */
+  --ink-soft: #9A8070;   /* tono suave para textos secundarios */
+}
+
+body {
+  margin: 0;
+  padding-bottom: 40px;
+  color: var(--marron-texto);
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.65;
+  background-color: var(--crema);
+  background-image:
+    radial-gradient(ellipse at top left,    rgba(212, 132, 90, 0.08), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(160, 82, 79, 0.05),  transparent 60%);
+  animation: fondoVivo 8s ease-in-out infinite alternate;
+  min-height: 100vh;
+}
+
+@keyframes fondoVivo {
+  0%   { background-color: #FDF8F0; }
+  50%  { background-color: #F8F0E5; }
+  100% { background-color: #FDF8F0; }
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+a, button { transition: all 0.25s ease; }
+
+/* ── NAV ── */
+.nav-bar {
+  position: sticky;
+  top: 12px;
+  z-index: 100;
+  margin: 12px 16px 0;
+  background: rgba(255, 250, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--marron-suave);
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  gap: 6px;
+  box-shadow: var(--sombra-suave);
+}
+
+.nav-btn {
+  border: none;
+  background: transparent;
+  color: var(--marron-oscuro);
+  padding: 10px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.02em;
+}
+
+.nav-btn:hover { background: var(--naranja-claro); }
+
+.nav-btn.home {
+  background: var(--naranja-acento);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(212, 132, 90, 0.3);
+}
+.nav-btn.home:hover { background: #c77a52; transform: translateY(-1px); }
+
+.nav-btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  color: var(--marron-medio);
+}
+
+/* ── WRAP (generado dinámicamente por JS) ── */
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── TIPOGRAFÍA ── */
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  color: var(--marron-oscuro);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #7B6B5B;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 440px;
+  font-weight: 400;
+}
+
+/* ── BADGE ── */
+.badge {
+  display: inline-block;
+  background: rgba(160, 82, 79, 0.12);
+  color: var(--rojo-ladrillo);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── INFO-BOX ── */
+.info-box {
+  width: 100%;
+  background: white;
+  border-left: 5px solid var(--naranja-acento);
+  border-radius: 0 var(--radio-medio) var(--radio-medio) 0;
+  padding: 18px 20px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--marron-texto);
+  box-shadow: var(--sombra-suave);
+}
+.info-box strong { color: var(--marron-oscuro); }
+.info-box .gu    { font-family: 'Noto Serif Gujarati', serif; font-size: 1.2rem; color: var(--naranja-acento); }
+
+/* ── TABLA ── */
+.table-wrap {
+  width: 100%;
+  background: white;
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: var(--radio-medio);
+  overflow: hidden;
+  box-shadow: var(--sombra-tarjeta);
+}
+.table-wrap table { width: 100%; border-collapse: collapse; }
+
+.table-wrap th {
+  background: var(--crema-oscuro);
+  color: var(--rojo-ladrillo);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--borde-tarjeta);
+  font-weight: 700;
+}
+
+.table-wrap td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--crema-oscuro);
+  font-size: 1.15rem;
+  color: var(--marron-texto);
+}
+.table-wrap td strong        { color: var(--naranja-acento); }
+.table-wrap tr:last-child td { border-bottom: none; }
+
+.gu-cell {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 2.3rem;
+  color: var(--marron-oscuro);
+  font-weight: 700;
+}
+
+/* Tipos de celda de las tablas de intro (sustituyen el <style> inline del HTML) */
+.celda-gu     { font-size: 2.6rem; text-align: center; }
+.celda-acento { text-align: center; font-size: 1.4rem; color: var(--naranja-acento); font-weight: 600; }
+.celda-texto  { text-align: center; font-size: 1.2rem; }
+.celda-matra  { font-size: 2.2rem; text-align: center; color: var(--verde-sabio); }
+
+/* ── BOTONES DE PANTALLA (btn-action) ── */
+.btn-action {
+  flex: 1;
+  border: none;
+  padding: 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: block;
+  width: 100%;
+}
+
+.btn-words {
+  background: var(--naranja-acento);
+  color: white;
+}
+.btn-words:hover { background: #c77a52; transform: translateY(-1px); }
+
+.btn-next-lec { background: transparent; color: var(--marron-texto); }
+.btn-next-lec:hover { background: var(--marron-suave); }
+
+/* Contenedor de los dos botones en cada pantalla (sustituye botonera.style.cssText del JS) */
+.botonera-pantalla {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ── FRASE DESTACADA (sustituyen inline styles en crearBloque) ── */
+.frase-destacada  { text-align: center; margin: 16px 0; }
+.frase-gu         { font-family: 'Noto Serif Gujarati', serif; color: var(--naranja-acento); font-size: 2.4rem; font-weight: 700; line-height: 1.2; }
+.frase-traduccion { font-size: 1.3rem; color: var(--ink-soft); font-style: italic; }
+
+/* ── BOTÓN DE MÚSICA (flotante) ── */
+#musicToggle {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--borde-tarjeta);
+  background: rgba(255, 250, 245, 0.9);
+  color: var(--naranja-acento);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--sombra-suave);
+}
+#musicToggle:hover       { transform: scale(1.08); box-shadow: var(--sombra-tarjeta); }
+#musicToggle.music-off   { color: rgba(212, 132, 90, 0.5); }
+
+/* ── ERROR DE CARGA ── */
+.error-carga { text-align: center; color: var(--ink-soft); padding: 40px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  body { animation: none; padding-bottom: 30px; }
+  .wrap { padding: 20px 14px 30px; gap: 18px; }
+  h1 { font-size: 2rem; }
+  #musicToggle { bottom: 18px; right: 14px; }
+}

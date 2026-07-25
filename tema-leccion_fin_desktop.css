@@ -1,0 +1,108 @@
+/* ==========================================================================
+   TEMA LECCIÓN FIN DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Optimización de espacio horizontal convirtiendo la pantalla en un split dashboard.
+   ========================================================================== */
+
+body {
+  padding-bottom: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Nav Bar Centrada en Desktop */
+.nav-bar {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+}
+
+/* Layout de Dos Columnas con Grid */
+.wrap {
+  max-width: 1200px;
+  width: 100%;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  column-gap: 60px;
+  row-gap: 24px;
+  align-items: start;
+}
+
+/* Columna 1: Logro y Acciones (Izquierda) */
+.wrap > div:first-child {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 5.5rem;
+  justify-self: start;
+  margin-bottom: 10px;
+}
+
+h1 {
+  grid-column: 1;
+  grid-row: 2;
+  text-align: left;
+  font-size: 3rem;
+}
+
+.subtitle {
+  grid-column: 1;
+  grid-row: 3;
+  text-align: left;
+  max-width: 100%;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.btn-sec {
+  grid-column: 1;
+  grid-row: 4;
+  margin-top: 10px;
+}
+
+.btn-fin {
+  grid-column: 1;
+  grid-row: 5;
+  margin-top: 0;
+}
+
+/* Columna 2: Tarjetas de Progreso (Derecha) */
+.aprendido-box {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.proxima-box {
+  grid-column: 2;
+  grid-row: 4 / span 2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Ajustes de alineación interna para las tarjetas en Desktop */
+.aprendido-label,
+.proxima-label {
+  align-self: flex-start;
+}
+
+.aprendido-letras,
+.proxima-letras {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.aprendido-tabla {
+  margin-top: 15px;
+}
+
+.aprendido-tabla td {
+  padding: 16px 12px;
+}

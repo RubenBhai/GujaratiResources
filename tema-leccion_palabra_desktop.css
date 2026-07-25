@@ -1,0 +1,114 @@
+/* ==========================================================================
+   TEMA VOCABULARIO DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Maquetación en split horizontal: Imagen destacada a la izquierda y controles a la derecha.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GLOBAL DE LA APP ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav-bar {
+    max-width: 100%;
+    padding: 15px 40px;
+  }
+
+  /* ── GRID DEL CONTENEDOR PRINCIPAL ── */
+  .wrap {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-areas:
+      "img badge"
+      "img audio"
+      "img buttons";
+    column-gap: 60px;
+    row-gap: 24px;
+    align-items: center;
+    max-width: 1150px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  /* Imagen a la Izquierda (Área 'img') */
+  .frame-vocab-img {
+    grid-area: img;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1.15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+  }
+
+  .frame-vocab-img img {
+    max-height: 400px !important;
+    padding: 24px;
+    object-fit: contain;
+  }
+
+  /* Badge arriba a la derecha (Área 'badge') */
+  .badge {
+    grid-area: badge;
+    justify-self: start;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* Audio en el medio a la derecha (Área 'audio') */
+  .frame-vocab-audio {
+    grid-area: audio;
+    width: 100%;
+    border-radius: 24px;
+  }
+
+  .frame-vocab-audio-top {
+    padding: 24px;
+  }
+
+  .frame-vocab-pron {
+    font-size: 1.5rem;
+  }
+
+  .btn-play {
+    width: 58px;
+    height: 58px;
+    font-size: 1.3rem;
+  }
+
+  .frame-vocab-audio-bottom {
+    padding: 14px 20px;
+  }
+
+  /* Botones de acción abajo a la derecha (Área 'buttons') */
+  .botones-inferiores {
+    grid-area: buttons;
+    width: 100%;
+    gap: 14px;
+    margin-top: 0;
+  }
+
+  .btn-row {
+    gap: 16px;
+  }
+
+  .btn-main,
+  .btn-sec {
+    padding: 18px 24px;
+    font-size: 1.05rem;
+    border-radius: var(--radio-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}

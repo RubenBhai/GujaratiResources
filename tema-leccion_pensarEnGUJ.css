@@ -1,0 +1,175 @@
+/* ==============================================
+   leccion_pensarEnGUJ.css — Menú "Pensar en Gujarati"
+   Basado en Amigable 2 · solo lo necesario
+   ============================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --crema:          #FDF8F0;
+  --crema-oscuro:   #F5EDE0;
+  --marron-suave:   #E8DBC8;
+  --marron-medio:   #C8B89A;
+  --marron-texto:   #5C4B3A;
+  --marron-oscuro:  #3E3226;
+  --naranja-acento: #D4845A;
+  --naranja-claro:  #F0C8A0;
+  --verde-sabio:    #6B8F71;
+  --sombra-suave:   0 4px 20px rgba(60, 40, 20, 0.06);
+  --radio-medio:    16px;
+
+  /* Variable usada por el error de carga en JS */
+  --ink-soft: #9A8070;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 40px;
+  color: var(--marron-texto);
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.65;
+  background-color: var(--crema);
+  background-image:
+    radial-gradient(ellipse at top left,    rgba(212, 132, 90, 0.08), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(160, 82, 79, 0.05),  transparent 60%);
+  animation: fondoVivo 8s ease-in-out infinite alternate;
+  min-height: 100vh;
+}
+
+@keyframes fondoVivo {
+  0%   { background-color: #FDF8F0; }
+  50%  { background-color: #F8F0E5; }
+  100% { background-color: #FDF8F0; }
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+a, button { transition: all 0.25s ease; }
+
+/* ── NAV ── */
+.nav-bar {
+  position: sticky;
+  top: 12px;
+  z-index: 100;
+  margin: 12px 16px 0;
+  background: rgba(255, 250, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--marron-suave);
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  gap: 6px;
+  box-shadow: var(--sombra-suave);
+}
+
+.nav-btn {
+  border: none;
+  background: transparent;
+  color: var(--marron-oscuro);
+  padding: 10px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.02em;
+}
+
+.nav-btn:hover   { background: var(--naranja-claro); }
+
+.nav-btn.home {
+  background: var(--naranja-acento);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(212, 132, 90, 0.3);
+}
+.nav-btn.home:hover  { background: #c77a52; transform: translateY(-1px); }
+.nav-btn.disabled    { opacity: 0.35; pointer-events: none; color: var(--marron-medio); }
+
+/* ── WRAP ── */
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── EMOJI FLOTANTE (primer hijo del wrap) ── */
+.wrap > div:first-child {
+  font-size: 4.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(212, 132, 90, 0.25));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── TIPOGRAFÍA ── */
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  color: var(--marron-oscuro);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #7B6B5B;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 440px;
+  font-weight: 400;
+}
+
+/* ── BTN-FIN BASE ── */
+.btn-fin {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: var(--radio-medio);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+  letter-spacing: 0.02em;
+}
+
+.btn-fin:hover { transform: translateY(-2px); filter: brightness(1.08); }
+
+/* Gradientes individuales — sustituyen los style= inline del HTML */
+#btn-aprende     { background: linear-gradient(135deg,#B8863D,#A8362A); box-shadow: 0 4px 16px rgba(184,134,61,0.40); }
+#btn-compone     { background: linear-gradient(135deg,#5F6E4F,#4A6B53); box-shadow: 0 4px 16px rgba(95,110,79,0.40);  }
+#btn-reto        { background: linear-gradient(135deg,#832920,#A8362A); box-shadow: 0 4px 16px rgba(131,41,32,0.40); }
+#btn-dialogo     { background: linear-gradient(135deg,#4a4a4a,#2a2a2a); box-shadow: 0 4px 16px rgba(74,74,74,0.40);  }
+#btn-fin-leccion { background: linear-gradient(135deg,#D9A441,#B8863D); box-shadow: 0 4px 16px rgba(217,164,65,0.45); }
+
+/* ── SPACER ── */
+.spacer-sm { height: 14px; }   /* sustituye div style="height:14px" */
+
+/* ── ERROR DE CARGA ── */
+.error-carga { text-align: center; color: var(--ink-soft); padding: 40px 20px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  body { animation: none; padding-bottom: 30px; }
+  .wrap { padding: 20px 14px 30px; gap: 18px; }
+  h1 { font-size: 2rem; }
+}

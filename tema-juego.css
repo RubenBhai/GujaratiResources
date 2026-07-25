@@ -206,59 +206,6 @@ h2 {
   transform: translateY(-1px);
 }
 
-/* ── FASE A: REPASO ── */
-.repaso-card { 
-  width: 100%; 
-  background: var(--surface); 
-  border: 2px solid var(--border); 
-  border-radius: var(--radio-lg); 
-  overflow: hidden; 
-  box-shadow: var(--shadow-card);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.repaso-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
-}
-
-.repaso-img { 
-  width: 100%; 
-  display: block; 
-  max-height: 280px; 
-  object-fit: contain; 
-  padding: 16px 0;
-}
-
-.repaso-bottom { 
-  padding: 18px 20px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  gap: 14px; 
-  border-top: 1px solid var(--border); 
-}
-
-.repaso-desc { 
-  font-size: 1.15rem; 
-  color: var(--paper); 
-  line-height: 1.5; 
-  flex: 1; 
-}
-
-.repaso-desc strong { 
-  color: var(--saffron); 
-  font-weight: 700;
-}
-
-.repaso-counter { 
-  font-size: 0.85rem; 
-  color: var(--ink-soft); 
-  font-weight: 600;
-  background: rgba(255,255,255,0.03);
-  padding: 6px 14px;
-  border-radius: var(--radio-full);
-}
 
 /* ── BOTÓN CIRCULAR DE AUDIO ── */
 .btn-circle { 
@@ -543,3 +490,49 @@ html {
 a, button {
   transition: all 0.25s ease;
 }
+
+/* === Helpers — sustituyen inline styles del HTML y del JS === */
+
+/* Layout */
+.badge-row        { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; justify-content:center; }
+.nav-row-320      { display:flex; gap:10px; width:100%; max-width:320px; }
+.nav-row-320c     { display:flex; gap:10px; width:100%; max-width:320px; margin:0 auto; }
+.prog-ans-row     { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:320px; gap:8px; }
+.badge-score-row  { display:flex; align-items:center; justify-content:space-between; width:100%; gap:10px; }
+.btn-row          { display:flex; gap:10px; width:100%; }
+.flex-1           { flex:1; }
+
+/* Fase A */
+#repaso-btn.btn-repaso-grande { width:56px; height:56px; font-size:1.6rem; vertical-align:middle; }
+.repaso-card-wrap { max-width:320px; margin:0 auto; width:100%; }
+.repaso-img       { max-height:380px; }   /* sobrescribe el 280px del CSS base */
+
+/* Botones prev/next de fases */
+.btn-nav-prev {
+  flex:1; background:var(--surface); border:1px solid var(--border);
+  box-shadow:0 4px 14px rgba(0,0,0,0.15); padding:14px; border-radius:50px;
+  font-weight:700; font-size:1rem; color:var(--ink-soft); cursor:pointer; font-family:inherit;
+}
+.btn-nav-next {
+  flex:1; background:var(--verde); border:none;
+  box-shadow:0 4px 14px rgba(74,107,83,0.3); padding:14px; border-radius:50px;
+  font-weight:700; font-size:1rem; color:white; cursor:pointer; font-family:inherit;
+}
+.btn-disabled     { opacity:0.4; pointer-events:none; }
+
+/* Fase B */
+.game-progress    { white-space:nowrap; }
+.game-card-click  { cursor:pointer; }
+.btn-sec-320      { max-width:320px; width:100%; margin:0 auto; }
+
+/* Fase C */
+.btn-volver-c { background:var(--surface); color:var(--ink-soft); box-shadow:0 4px 14px rgba(0,0,0,0.15); border:1px solid var(--border); }
+
+/* htmlConSignificado() */
+.guj-card-content { display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1; }
+.guj-sig          { color:var(--saffron); font-weight:800; margin-top:6px; line-height:1.15; font-family:'Source Sans 3',sans-serif; }
+
+/* Fin y error */
+.trophy-icon      { font-size:3rem; }
+.error-carga      { text-align:center; color:var(--ink-soft); padding:40px; }
+

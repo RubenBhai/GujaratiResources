@@ -1,0 +1,145 @@
+/* ==========================================================================
+   TEMA JUEGO DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Aprovechamiento del espacio horizontal convirtiendo las fases en Dashboards divididos.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GLOBAL DE APLICACIÓN ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-bar {
+    max-width: 100%;
+    padding: 15px 40px;
+  }
+
+  .screen {
+    flex: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 70px);
+  }
+
+  .screen.active {
+    display: flex;
+  }
+
+  /* Contenedor expandido horizontalmente */
+  .wrap {
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px;
+    gap: 0; /* Manejado por los márgenes internos del grid */
+  }
+
+  .badge-row { grid-area: badge; justify-content: flex-start; }
+  #screen-a h2 { grid-area: title; text-align: left; font-size: 2.2rem; }
+  #screen-a .subtitle { grid-area: sub; text-align: left; max-width: 100%; }
+  #screen-a .repaso-card { grid-area: card; max-width: 440px; justify-self: center; }
+  .nav-row-320 { grid-area: nav; max-width: 100%; }
+  #screen-a .btn-sec-320 { grid-area: sec; max-width: 100%; }
+
+
+  /* ── FASE B: LECTURA (Split Layout con Enfoque Visual) ── */
+  #screen-b .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-areas:
+      "badge card"
+      "title card"
+      "sub card"
+      "prog card"
+      "timer card"
+      "nav card"
+      "sec card";
+    column-gap: 80px;
+    row-gap: 16px;
+    align-items: center;
+    text-align: left;
+  }
+
+  #screen-b .badge { grid-area: badge; justify-self: start; }
+  #screen-b h2 { grid-area: title; text-align: left; font-size: 2.2rem; }
+  #screen-b .subtitle { grid-area: sub; text-align: left; max-width: 100%; }
+  #screen-b .prog-ans-row { grid-area: prog; max-width: 100%; }
+  #screen-b .game-card { grid-area: card; max-width: 440px; width: 100%; aspect-ratio: 1; justify-self: center; font-size: 12rem; }
+  #screen-b .timer-wrap { grid-area: timer; max-width: 100%; height: 8px; }
+  #screen-b .nav-row-320c { grid-area: nav; max-width: 100%; margin: 0; }
+  #screen-b .btn-sec-320 { grid-area: sec; max-width: 100%; margin: 0; }
+
+  /* ── FASE C: EMPAREJAMIENTO (Estructura de Fila Horizontal Única) ── */
+  #screen-c .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "score"
+      "title"
+      "letters"
+      "prompt"
+      "btns";
+    row-gap: 24px;
+    text-align: center;
+    max-width: 1100px;
+  }
+
+  .badge-score-row { grid-area: score; justify-content: space-between; width: 100%; }
+  #screen-c h2 { grid-area: title; font-size: 2.2rem; }
+  
+  /* Convertimos el tablero 2x2 en una hermosa fila horizontal de 4 botones */
+  #screen-c .match-letters {
+    grid-area: letters;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .match-btn {
+    font-size: 6rem;
+    aspect-ratio: 1.15; /* Ligeramente rectangular horizontal para balancear el escritorio */
+  }
+
+  #screen-c .match-prompt { grid-area: prompt; font-size: 1.5rem; }
+  #screen-c .btn-row { grid-area: btns; max-width: 500px; margin: 0 auto; width: 100%; }
+
+  /* Ocultamos el botón secundario de saltar en desktop para limpiar espacio */
+  #screen-c .btn-sec {
+    display: none;
+  }
+
+  /* ── PANTALLA FINAL ── */
+  #screen-fin .wrap {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-areas:
+      "trophy title"
+      "trophy sub"
+      "trophy btn1"
+      "trophy btn2";
+    column-gap: 60px;
+    row-gap: 20px;
+    align-items: center;
+    text-align: left;
+    max-width: 900px;
+  }
+
+  #screen-fin .wrap > div:first-child {
+    grid-area: trophy;
+    font-size: 9rem;
+    justify-self: center;
+  }
+
+  #screen-fin h2 { grid-area: title; text-align: left; font-size: 2.6rem; }
+  #screen-fin .subtitle { grid-area: sub; text-align: left; }
+  #screen-fin #btn-finalizar { grid-area: btn1; }
+  #screen-fin .btn-sec { grid-area: btn2; }
+}

@@ -1,0 +1,178 @@
+/* ==========================================================================
+   tema-contenido_desktop.css — Optimizado para pantallas Desktop (Min 1440x720)
+   Transformación del Mapa del Curso en un Tablero Panorámico de Aprendizaje.
+   ========================================================================== */
+
+@media (min-width: 1440px) and (min-height: 720px) {
+
+  /* ── 1. CABECERA Y HERO DIVIDIDO ── */
+  .site-header {
+    padding: 18px 80px; /* Expandimos el espacio lateral de navegación */
+  }
+
+  /* El Hero deja de ser un bloque vertical gigante y se convierte en un banner dividido lateralmente */
+  .content-hero {
+    max-width: 1340px;
+    margin: 40px auto;
+    padding: 60px 60px 50px;
+    display: grid;
+    grid-template-columns: 1fr 460px; /* Texto descriptivo a la izquierda, barra a la derecha */
+    column-gap: 80px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .content-hero::after {
+    left: 0;
+    transform: none;
+    width: 300px; /* Línea decorativa alineada horizontalmente con el texto */
+  }
+
+  .content-hero h1 {
+    margin-bottom: 16px;
+  }
+
+  /* La barra de progreso se acopla perfectamente a la derecha sin flotar perdida */
+  .progress-bar-wrap {
+    margin: 0;
+    width: 100%;
+    padding: 26px;
+    background: rgba(17, 26, 44, 0.9);
+  }
+
+
+  /* ── 2. CONTENEDOR DE ETAPAS (WORKSPACE EXPANDIDO) ── */
+  .main {
+    max-width: 1340px;
+    padding: 0 60px 100px;
+    gap: 80px; /* Mayor separación entre los grandes hitos del curso */
+  }
+
+
+  /* ── 3. ARQUITECTURA DE ETAPAS ASIMÉTRICAS ── 
+     Pasamos de un bloque apilado a un sistema donde el número de etapa 
+     y su descripción actúan como una barra lateral fija mientras recorres los módulos. */
+  .etapa {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Columna fija para el hito | Columna flexible para módulos */
+    column-gap: 60px;
+    align-items: start;
+  }
+
+  .etapa-header {
+    position: sticky;
+    top: 120px; /* Se queda estático al hacer scroll para no perder el contexto de la etapa */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: none;
+    border-right: 1px solid var(--border-gold); /* Separador elegante vertical */
+    padding-bottom: 0;
+    padding-right: 32px;
+  }
+
+  .etapa-num {
+    font-size: 5rem; /* Número masivo con gran impacto visual cósmico */
+    text-align: left;
+  }
+
+  .etapa-title {
+    font-size: 1.9rem;
+  }
+
+  .etapa-meta {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+
+  /* ── 4. MÓDULOS Y DESPLEGABLES (ACORDEONES) ── */
+  details.modulo {
+    margin-bottom: 20px;
+  }
+
+  details.modulo summary {
+    padding: 26px 32px 26px 60px; /* Más espacio para hacer clic cómodamente con el mouse */
+  }
+
+  details.modulo summary::before {
+    left: 28px;
+    font-size: 1.4rem;
+  }
+
+  .modulo-title {
+    font-size: 1.3rem;
+  }
+
+  .modulo-sub {
+    font-size: 1rem;
+    margin-top: 4px;
+  }
+
+
+  /* ── 5. EL GRAN CAMBIO: CUADRÍCULA DE LECCIONES (GRID CARDS) ──
+     En lugar de una fila delgada y eterna por cada lección, transformamos 
+     el bloque abierto en un catálogo de tarjetas a dos columnas. */
+  .lecciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas de lección por fila */
+    gap: 18px;
+    padding: 28px 32px;
+    background: rgba(7, 11, 20, 0.7);
+  }
+
+  .leccion {
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: var(--radio-md);
+    padding: 22px 26px;
+    background: rgba(17, 26, 44, 0.4);
+    align-items: center;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1); /* Anula el reset original */
+  }
+
+  .leccion:last-child {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .leccion:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px); /* Efecto de flotado sutil */
+  }
+
+  .leccion.activa {
+    border-left-width: 4px;
+    background: rgba(0, 229, 255, 0.03);
+  }
+  .leccion.activa:hover {
+    background: rgba(0, 229, 255, 0.06);
+  }
+
+  .lec-num {
+    font-size: 1.25rem;
+    min-width: 40px;
+  }
+
+  .lec-title {
+    font-size: 1.15rem;
+  }
+
+  /* MAXIMIZACIÓN CARACTERES GUJARATI: 
+     Aumentamos drásticamente el tamaño de las letras dentro del mapa del curso 
+     para que el estudiante pueda repasar el alfabeto de un vistazo sin forzar la vista. */
+  .lec-sub {
+    font-size: 1.45rem; 
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+    margin-top: 6px;
+    color: rgba(234, 224, 204, 0.7);
+  }
+
+  /* Ajuste de mensajes alternativos dentro del Grid */
+  .nota-construccion {
+    grid-column: 1 / span 2; /* Ocupa las dos columnas si el módulo está vacío */
+    margin: 12px 0;
+    padding: 24px;
+    font-size: 1.05rem;
+  }
+}

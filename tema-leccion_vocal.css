@@ -1,0 +1,204 @@
+/* ==============================================
+   leccion_vocal.css — Pantalla vocal/matra/plana
+   Basado en Amigable 3 · solo lo necesario
+   Sin aura en frame-img (::before suprimido)
+   ============================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:           #2C2420;
+  --surface:      #362C28;
+  --surface-light:#423631;
+  --paper:        #E8D9C0;
+  --sindoor:      #A8362A;
+  --sindoor-deep: #832920;
+  --saffron:      #B8863D;
+  --olive:        #5F6E4F;
+  --ink-soft:     #C8B99A;
+  --border:       rgba(184, 134, 61, 0.15);
+  --radio-sm:     12px;
+  --radio-lg:     20px;
+  --radio-full:   50px;
+  --shadow-soft:  0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.07),transparent 60%);
+  color:var(--paper); font-family:'Source Sans 3',sans-serif; min-height:100vh; padding-bottom:24px; }
+.gu { font-family:'Noto Serif Gujarati',serif; }
+a, button { transition:all 0.25s ease; }
+
+/* ── NAV ── */
+.nav-bar { position:sticky; top:0; z-index:100; background:rgba(44,36,32,0.85); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; gap:8px; }
+.nav-btn { background:var(--surface); color:var(--paper); padding:8px 18px; border-radius:var(--radio-full);
+  font-size:0.9rem; font-weight:600; text-decoration:none; }
+.nav-btn:hover:not(.disabled) { background:var(--surface-light); color:var(--saffron); transform:translateY(-1px); }
+.nav-btn.home { color:var(--saffron); font-size:1.1rem; padding:6px 14px; }
+.nav-btn.disabled { opacity:0.3; pointer-events:none; background:transparent; }
+
+/* ── WRAP (padding-bottom reducido) ── */
+.wrap { max-width:480px; margin:0 auto; padding:24px 20px 8px;
+  display:flex; flex-direction:column; align-items:center; gap:18px; }
+
+/* ── BADGE ── */
+.badge { background:rgba(168,54,42,0.2); color:#EFA69D; padding:8px 20px; border-radius:var(--radio-full);
+  font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; display:inline-block; }
+
+/* ── FRAME-IMG sin aura y sin hover activo ── */
+.frame-img { position:relative; z-index:1; width:100%; background:var(--surface);
+  border-radius:var(--radio-lg); overflow:hidden; box-shadow:var(--shadow-soft); }
+.frame-img:hover { transform:none; box-shadow:var(--shadow-soft); }  /* sin elevación */
+
+/* Tamaños por tipo (display:none inicial en HTML, JS lo muestra) */
+#frame-320 { max-width:320px; margin:0 auto; }
+#frame-380 { max-width:380px; margin:0 auto; }
+.frame-img-340 { max-width:340px; margin:0 auto; }   /* plana dentro de bloque-plana */
+
+/* Imágenes de cada tipo */
+#img-320   { cursor:pointer; max-height:380px; object-fit:contain; width:100%; display:block; }
+#img-380   { cursor:pointer; max-height:440px; object-fit:contain; width:100%; display:block; }
+#img-plana {               max-height:440px; object-fit:contain; width:100%; display:block; }
+
+/* Canvas de trazos */
+#canvas-plana { position:absolute; touch-action:none; cursor:crosshair; }
+
+/* ── INFO-BOX adaptada para la plana ── */
+.info-box { width:100%; background:var(--surface); border-left:5px solid var(--saffron);
+  border-radius:var(--radio-sm); padding:20px 24px; box-shadow:var(--shadow-soft);
+  font-size:1.2rem; color:var(--paper); line-height:1.7; text-align:center; }
+.info-box strong { color:var(--paper); font-weight:700; }
+
+/* label romanización dentro de info-box */
+#roman-label { color:var(--saffron); font-size:1.6rem; font-weight:700; }
+
+/* ── TOOLBAR DE BOTONES (reintentar / ver / evaluar) ── */
+.btn-toolbar { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
+.btn-toolbar button { border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem;
+  font-weight:600; cursor:pointer; font-family:inherit; }
+#btn-reintentar { background:var(--surface); color:var(--ink-soft); border:1px solid var(--border); }
+#btn-ver        { background:var(--surface); color:var(--saffron);  border:1px solid var(--saffron); }
+#btn-evaluar    { background:var(--sindoor); color:white; border:none; font-weight:700;
+                  box-shadow:0 4px 14px rgba(168,54,42,0.3); }
+#resultado-evaluacion { text-align:center; font-size:1.15rem; font-weight:700; color:var(--saffron); }
+
+/* ── BOTTOM-ACTIONS ── */
+.bottom-actions { width:100%; margin:0 auto; display:flex; flex-direction:column;
+  padding:0 0 24px 0; gap:10px; }
+#bottom-vocal, #bottom-conmatra { max-width:320px; }
+#bottom-matra                   { max-width:380px; }
+#bottom-plana                   { max-width:340px; }
+
+/* ── BOTONES ── */
+.btn-fin { display:block; width:100%; border:none; padding:16px; border-radius:var(--radio-full);
+  font-weight:600; font-size:1.05rem; background:#4A6B53; color:white;
+  text-align:center; text-decoration:none; margin-top:10px; box-shadow:0 4px 14px rgba(74,107,83,0.3); }
+.btn-fin:hover { background:#3D5A45; transform:translateY(-2px); box-shadow:0 6px 20px rgba(74,107,83,0.4); }
+
+.btn-sec { display:block; width:100%; padding:16px; border-radius:var(--radio-full);
+  font-weight:600; font-size:1.05rem; background:var(--surface); color:var(--ink-soft);
+  text-align:center; text-decoration:none; }
+.btn-sec:hover { background:var(--surface-light); color:var(--paper); transform:translateY(-2px); }
+.btn-sec.playing { background:var(--sindoor); color:var(--paper); }
+
+/* helpers reutilizados en varias secciones */
+.btn-flex     { flex:1; }
+.btn-mt0      { margin-top:0; }
+.btn-row      { display:flex; gap:10px; }
+
+/* ── CUADRANTES (tipo vocal) ── */
+.frame-cuadrantes {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.cuadrante-letra {
+  flex: 0 0 auto;
+  min-height: 120px;
+  background: var(--surface-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#q1-vocal {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 8.5rem;
+  font-weight: 700;
+  color: #F0C860;
+  line-height: 1.2;
+  text-align: center;
+  padding-top: 0.15em; 
+}
+
+.cuadrante-detalle {
+  flex: 1;
+  min-height: 90px;
+  min-width: 220px;
+  background: #F5EDE0;
+  color: #2C1A0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.10rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.cuadrante-detalle p { margin: 0; }
+
+.det-s { color: #6B2A00; }
+.det-p { font-weight: 700; font-size: 1.1em; }
+
+/* ── ECUACIONES (tipo con_matra) ── */
+.frame-ecuaciones {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  max-width: 440px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.eq-celda {
+  flex: 1;
+  min-width: 105px;
+  background: #F5EDE0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 18px 14px;
+  border-left: 1px solid rgba(107, 42, 0, 0.15);
+}
+
+.eq-celda:first-child { border-left: none; }
+
+.eq-partes   { font-size: 1.2rem;  color: #6B2A00; text-align: center; line-height: 1.5; }
+.eq-resultado{ font-size: 3.5rem; font-weight: 700; color: #6B2A00;
+               text-align: center; line-height: 1.1; margin-top: 10px; }
+
+
+/* btn-escuchar-vocal y btn-secuencia: son <button> dentro de btn-sec */
+.btn-sec-btn  { border:none; cursor:pointer; font-family:inherit; }
+
+/* btn-nota-especial y btn-practicar-cm: btn-fin en sindoor */
+.btn-fin-sindoor { background:var(--sindoor) !important; box-shadow:0 4px 14px rgba(168,54,42,0.3) !important; }
+
+/* botones compactos de la fila bottom-plana */
+.btn-flex-plana { flex:1; margin-top:0; padding:12px 8px; font-size:0.9rem; }
+
+/* ── ERROR DE CARGA ── */
+.error-carga { text-align:center; color:var(--ink-soft); padding:40px; }

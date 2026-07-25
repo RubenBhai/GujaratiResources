@@ -1,0 +1,100 @@
+/* ==========================================================================
+   TEMA LECCIÓN PALABRA INTRO DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Diseño horizontal estructurado: Panel de presentación a la izquierda y tabla a la derecha.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA DE PANTALLA COMPLETA ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Barra de navegación centrada */
+  .nav-bar {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+  }
+
+  /* ── GRID DE DOS COLUMNAS EN EL CONTENEDOR ── */
+  .wrap {
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px 20px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    column-gap: 60px;
+    row-gap: 20px;
+    align-items: center;
+    margin: auto;
+  }
+
+  /* Columna Izquierda: Introducción y Acción */
+  .badge, 
+  h1, 
+  .subtitle, 
+  .info-box, 
+  .btn-empezar {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .badge {
+    justify-self: start;
+    padding: 10px 24px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  .subtitle {
+    text-align: left;
+    max-width: 100%;
+    font-size: 1.25rem;
+  }
+
+  .info-box {
+    border-radius: var(--radio-medio);
+    padding: 22px;
+    font-size: 1.05rem;
+  }
+
+  .btn-empezar {
+    margin-top: 10px;
+    padding: 18px 24px;
+    border-radius: var(--radio-medio);
+    font-size: 1.15rem;
+  }
+
+  /* Columna Derecha: Tabla de Vocabulario Completa */
+  .table-wrap {
+    grid-column: 2;
+    grid-row: 1 / span 6; /* Se expande de arriba a abajo cubriendo el bloque izquierdo */
+    align-self: center;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto; /* Scroll interno si la tabla crece demasiado */
+    border-radius: var(--radio-medio);
+    box-shadow: 0 15px 35px rgba(60, 40, 20, 0.12);
+  }
+
+  /* Espaciado interno premium para las celdas en pantallas grandes */
+  .table-wrap th {
+    padding: 16px 20px;
+    font-size: 0.85rem;
+  }
+
+  .table-wrap td {
+    padding: 18px 20px;
+  }
+}

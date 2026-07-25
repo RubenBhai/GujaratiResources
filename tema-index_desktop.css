@@ -1,0 +1,260 @@
+/* ==========================================================================
+   TEMA-INDEX DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Optimización de espacio horizontal para la landing page principal.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── AJUSTES DE ESTRUCTURA Y FONDO GLOBAL ── */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* ── HERO REDISEÑADO (Split Layout de 2 Columnas) ── */
+  .hero {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 80px;
+    box-sizing: border-box;
+  }
+
+  .hero-content {
+    max-width: 1280px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: auto;
+    grid-template-areas: "text image";
+    align-items: center;
+    gap: 60px;
+    text-align: left;
+  }
+
+  /* Agrupación de textos del Hero */
+  .hero-text-block {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-badge {
+    align-self: flex-start;
+    margin-bottom: 5px;
+  }
+
+  .hero-gu {
+    order: -1; /* Coloca el texto en gujarati arriba del título principal */
+    font-size: 3.5rem;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .hero-title {
+    font-size: 3.4rem;
+    line-height: 1.15;
+    text-align: left;
+    margin: 0;
+  }
+
+  .hero-sub {
+    font-size: 1.2rem;
+    text-align: left;
+    max-width: 620px;
+    margin: 10px 0 15px 0;
+  }
+
+  .hero-cta {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  /* Contenedor de la Imagen del Logo en el Hero */
+  .hero-logo {
+    grid-area: image;
+    justify-self: center;
+    width: 380px;
+    height: 380px;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Ajuste de scroll-hint para no interferir */
+  .scroll-hint {
+    bottom: 25px;
+  }
+
+  /* ── SECCIÓN MISIÓN (Split Layout) ── */
+  .mision {
+    padding: 120px 80px;
+  }
+
+  .mision-inner {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .mision-quote {
+    font-size: 2.3rem;
+    padding-left: 35px;
+    margin: 0;
+  }
+
+  .mision-body {
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+
+  .mision-verse {
+    grid-column: 1 / -1; /* El verso abarca todo el ancho abajo */
+    margin-top: 40px;
+    padding: 40px 50px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── SECCIÓN STATS (Fila Horizontal Perfecta) ── */
+  .stats {
+    padding: 80px 80px;
+  }
+
+  .stats-inner {
+    max-width: 1280px;
+    grid-template-columns: repeat(4, 1fr); /* Forzar 4 columnas en desktop */
+  }
+
+  .stat {
+    padding: 45px 30px;
+  }
+
+  .stat-num {
+    font-size: 3.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* ── SECCIÓN PARA QUIÉN (Grid de Tarjetas 4x1) ── */
+  .para-quien {
+    padding: 120px 80px;
+  }
+
+  .para-quien-inner {
+    max-width: 1280px;
+  }
+
+  .para-quien h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(4, 1fr); /* Fila horizontal completa de 4 tarjetas */
+    gap: 24px;
+  }
+
+  .card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* ── SECCIÓN PROMESA (Split Layout de Interacción) ── */
+  .promesa {
+    padding: 140px 80px;
+  }
+
+  .promesa-inner {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .promesa-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .promesa h2 {
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .promesa p {
+    text-align: left;
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+  }
+
+  /* Caja visual para la promesa en Gujarati */
+  .promesa-display {
+    background: rgba(7, 11, 20, 0.5);
+    border: 1px solid var(--border-gold);
+    padding: 60px 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    width: 100%;
+  }
+
+  .promesa-gu {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+
+  .promesa-rom {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .promesa-es {
+    font-size: 1.8rem;
+    margin-bottom: 0; /* Sin margen inferior ya que está encerrado */
+  }
+
+  /* ── FOOTER DESKTOP ── */
+  footer {
+    padding: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .footer-sub {
+    margin-top: 0;
+  }
+
+  /* ── BOTÓN DE MÚSICA DESKTOP ── */
+  #musicToggle {
+    bottom: 35px;
+    right: 35px;
+    width: 64px;
+    height: 64px;
+    font-size: 1.6rem;
+  }
+}

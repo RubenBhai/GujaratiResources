@@ -1,0 +1,119 @@
+/* ==========================================================================
+   TEMA PENSAR EN GUJARATI DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Conversión del flujo vertical a una matriz de tablero interactivo horizontal.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── CONFIGURACIÓN GLOBAL DE LA APLICACIÓN ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Barra de navegación expandida */
+  .nav-bar {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+  }
+
+  /* ── GRID ESTRUCTURAL HORIZONTAL (3 COLUMNAS) ── */
+  .wrap {
+    max-width: 1240px;
+    width: 100%;
+    padding: 40px 20px;
+    flex: 1;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 20px;
+    align-items: center;
+  }
+
+  /* COLUMNA IZQUIERDA: Textos Informativos de Presentación */
+  .wrap > div:first-child {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 5.5rem;
+    justify-self: start;
+    margin-bottom: 0;
+  }
+
+  h1 {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+    font-size: 2.8rem;
+    line-height: 1.25;
+  }
+
+  .subtitle {
+    grid-column: 1;
+    grid-row: 3;
+    text-align: left;
+    max-width: 100%;
+    font-size: 1.25rem;
+    color: #7B6B5B;
+  }
+
+  /* Ocultamos el espaciador de la versión móvil */
+  .spacer-sm {
+    display: none;
+  }
+
+  /* COLUMNAS DERECHAS: Matriz 2x2 para los Pasos del Curso */
+  #btn-aprende {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  #btn-compone {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  #btn-reto {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  #btn-dialogo {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  /* Botón de Cierre Completo centrado en la base del bloque de acciones */
+  #btn-fin-leccion {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+    width: 100%;
+    max-width: 400px;
+    justify-self: center;
+    padding: 18px 32px;
+    font-size: 1.15rem;
+    margin-top: 10px;
+  }
+
+  /* Ajustes generales de los botones de acción en Desktop */
+  .btn-fin {
+    padding: 24px 20px;
+    font-size: 1.1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radio-medio);
+    line-height: 1.4;
+  }
+}

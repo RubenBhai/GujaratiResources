@@ -1,0 +1,277 @@
+/* ==========================================================================
+   TEMA RETO DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Transformación modular para retos dinámicos e interactivos en formato horizontal.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── INTERFAZ DE APLICACIÓN INMERSIVA ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .nav-bar {
+    max-width: 100%;
+    padding: 14px 40px;
+  }
+
+  /* Área expandida del panel principal con scroll de seguridad interno */
+  .wrap {
+    max-width: 1320px;
+    width: 100%;
+    padding: 30px 40px;
+    flex: 1;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    gap: 0;
+  }
+
+  .screen {
+    width: 100%;
+    gap: 0;
+  }
+
+  /* ── PANTALLA DE INICIO: REORGANIZACIÓN EN GRID MULTICOLUMNA ── */
+  #s-inicio {
+    display: none;
+    grid-template-columns: 0.9fr 1.1fr;
+    column-gap: 60px;
+    align-items: center;
+  }
+
+  #s-inicio.active {
+    display: grid;
+  }
+
+  #s-inicio .badge,
+  #s-inicio h1,
+  #s-inicio .lead {
+    grid-column: 1;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  #s-inicio .badge { justify-self: start; }
+  #s-inicio h1 { font-size: 2.8rem; }
+  #s-inicio .lead { font-size: 1.15rem; margin-bottom: 0; }
+
+  /* Lista de niveles en rejilla de dos columnas a la derecha */
+  .nivel-btns {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+  }
+
+  .btn-nivel {
+    padding: 22px 20px;
+    height: 100%;
+    align-items: flex-start;
+  }
+
+  .btn-nivel .num {
+    font-size: 2.2rem;
+  }
+
+  #btn-video-jw { grid-column: 1 / span 2; }
+  #btn-cantar-jw { grid-column: 1 / span 2; }
+
+  /* ── NIVELES 1 Y 2: PANTALLAS DE IDENTIFICACIÓN CON TEXTO/AUDIO (SPLIT VIEW) ── */
+  #s-n1.active, 
+  #s-n2.active {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-areas:
+      "badge right-side"
+      "title right-side"
+      "inst right-side"
+      "aud right-side"
+      "info right-side"
+      "btns right-side";
+    column-gap: 60px;
+    row-gap: 16px;
+    align-items: center;
+    text-align: left;
+  }
+
+  /* Contenedores del lado izquierdo */
+  #s-n1 .badge, #s-n2 .badge { grid-area: badge; justify-self: start; }
+  #s-n1 h2, #s-n2 h2 { grid-area: title; text-align: left; font-size: 2.2rem; }
+  #s-n1 .lead, #s-n2 .lead { grid-area: inst; text-align: left; margin: 0; font-size: 1.1rem; }
+  .audio-row { grid-area: aud; justify-content: flex-start; margin: 4px 0; }
+  .sesion-info { grid-area: info; text-align: left; font-size: 0.9rem; }
+  #s-n1 .btn-row, #s-n2 .btn-row { grid-area: btns; max-width: 400px; margin-top: 10px; }
+
+  /* Bloque unificado del lado derecho (Marcos + Grid de Etiquetas) */
+  #s-n1 .texto-frame, 
+  #s-n2 .texto-frame {
+    margin-bottom: 24px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+  }
+
+  #s-n1::after, 
+  #s-n2::after {
+    content: "";
+    grid-area: right-side;
+    display: none; /* Elemento técnico de control */
+  }
+
+  /* Forzamos que el contenido interactivo se ensamble a la derecha */
+  #n1-texto, #n1-etiquetas, #n2-texto, #n2-etiquetas {
+    grid-column: 2;
+  }
+
+  #n1-texto, #n2-texto {
+    grid-row: 1 / span 2;
+  }
+
+  #n1-etiquetas, #n2-etiquetas {
+    grid-row: 3 / span 4;
+    align-self: start;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 14px;
+  }
+
+  .etiqueta {
+    padding: 16px;
+  }
+
+  /* ── NIVEL 3: PRONUNCIACIÓN DE ELEMENTOS MULTIPLES ── */
+  #s-n3.active {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-areas:
+      "badge list"
+      "title list"
+      "inst list"
+      "btn list";
+    column-gap: 60px;
+    row-gap: 20px;
+    align-items: center;
+  }
+
+  #s-n3 .badge { grid-area: badge; justify-self: start; }
+  #s-n3 h2 { grid-area: title; text-align: left; font-size: 2.2rem; }
+  #s-n3 .lead { grid-area: inst; text-align: left; font-size: 1.1rem; margin: 0; }
+  #btn-verificar-n3 { grid-area: btn; max-width: 380px; align-self: start; }
+  #n3-lista { grid-area: list; height: auto; max-height: 65vh; overflow-y: auto; padding-right: 8px; }
+
+  /* ── NIVELES 4 Y 5: INTEGRACIÓN DE VIDEO MULTIMEDIA (CINEMATIC VIEW) ── */
+  #s-n4.active,
+  #s-n5.active {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-areas:
+      "video badge"
+      "video title"
+      "video card"
+      "video side-content";
+    column-gap: 50px;
+    row-gap: 16px;
+    align-items: center;
+  }
+
+  /* Distribución de Video a la izquierda */
+  .video-wrap {
+    grid-area: video;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  }
+
+  .video-wrap video {
+    max-height: 420px;
+  }
+
+  /* Consola de Control Lateral Derecha */
+  #s-n4 .badge, #s-n5 .badge { grid-area: badge; justify-self: start; }
+  #s-n4 h2, #s-n5 h2 { grid-area: title; text-align: left; font-size: 1.8rem; margin: 0; }
+  
+  .pregunta-card {
+    grid-area: card;
+    text-align: left;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .pregunta-gu {
+    font-size: 2.1rem;
+    text-align: left;
+  }
+
+  /* Opciones (Nivel 4) / Transcripciones de Voz (Nivel 5) */
+  .opciones, #n5-respuesta-wrap {
+    grid-area: side-content;
+    align-self: start;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .opciones {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 14px;
+  }
+
+  .opcion {
+    font-size: 1.7rem;
+    padding: 16px;
+  }
+
+  #n5-btn-verificar-row {
+    grid-area: side-content;
+    align-self: end;
+    width: 100%;
+    margin-top: 130px; /* Separación prudente de la consola de grabación */
+  }
+
+  /* ── PANTALLA DE RESULTADO FINAL (SUMMARY CARD) ── */
+  #s-resultado {
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  .resultado-card {
+    padding: 35px;
+    border-radius: 24px;
+  }
+
+  .resultado-emoji {
+    font-size: 4.5rem;
+  }
+
+  .resultado-msg {
+    font-size: 2rem;
+  }
+
+  .resultado-detalle {
+    margin-top: 24px;
+    gap: 10px;
+  }
+
+  .detalle-fila {
+    padding: 14px 20px;
+  }
+
+  /* Normalización Global de Botones de Desktop */
+  .btn-main, .btn-sec {
+    padding: 16px 24px;
+    font-size: 1.05rem;
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+}

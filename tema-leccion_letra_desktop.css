@@ -1,0 +1,115 @@
+/* ==========================================================================
+   TEMA LECCIÓN LETRA DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Optimización de espacio horizontal distribuyendo la tarjeta y botones en pantalla dividida.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GLOBAL DE PANTALLA DIVIDIDA ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "nav nav"
+      "actions wrap";
+    background-image: radial-gradient(circle at 75% 30%, rgba(184,134,61,0.1), transparent 70%);
+  }
+
+  /* Barra de Navegación */
+  .nav-bar {
+    grid-area: nav;
+    padding: 15px 40px;
+    max-width: 100%;
+  }
+
+  /* ── COLUMNA IZQUIERDA: ACCIONES Y BOTONES ── */
+  .bottom-actions {
+    grid-area: actions;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .btn-row {
+    gap: 16px;
+    width: 100%;
+  }
+
+  .btn-fin, 
+  .btn-sec {
+    padding: 18px 24px;
+    font-size: 1.1rem;
+    border-radius: var(--radio-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-fin {
+    margin-top: 0; /* Resetea el margen móvil */
+  }
+
+  /* ── COLUMNA DERECHA: TARJETA DE LA LETRA ── */
+  .wrap {
+    grid-area: wrap;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    max-width: 460px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+    padding: 10px 24px;
+    align-self: center;
+  }
+
+  /* Contenedor de la Imagen */
+  .frame-img {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 1.15;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #img-consonante {
+    max-height: 380px;
+    padding: 24px;
+    object-fit: contain;
+  }
+
+/* ── CUADRANTES (consonante) en desktop ── */
+  .frame-cuadrantes {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #q1-letra {
+    font-size: 10rem;
+  }
+
+  .cuadrante-detalle {
+    font-size: 1.15rem;
+    padding: 20px 28px;
+  }
+
+}

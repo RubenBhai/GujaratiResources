@@ -149,3 +149,6 @@ body {
     .guia-header h1 { font-size: 1.7rem; }
     .guia-container { margin: 20px auto; gap: 15px; }
 }
+
+/* Imagen de ícono personalizado inyectada por JS */
+.card-icon-img { width:56px; height:56px; object-fit:contain; }

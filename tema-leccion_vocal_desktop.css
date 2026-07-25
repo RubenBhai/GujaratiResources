@@ -1,0 +1,164 @@
+/* ==========================================================================
+   TEMA LECCIÓN VOCAL DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Optimización de espacio horizontal unificada para todos los modos (vocal/matra/plana).
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GLOBAL DE PANTALLA DIVIDIDA ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "nav nav"
+      "actions wrap";
+    background-image: radial-gradient(circle at 75% 30%, rgba(184,134,61,0.1), transparent 70%);
+  }
+
+  /* Barra de Navegación */
+  .nav-bar {
+    grid-area: nav;
+    padding: 15px 40px;
+    max-width: 100%;
+  }
+
+  /* ── COLUMNA IZQUIERDA: ACCIONES DINÁMICAS (Cualquier panel activo) ── */
+  .bottom-actions {
+    grid-area: actions;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+  }
+
+  /* Forzar ancho consistente independientemente del ID activo */
+  #bottom-vocal, #bottom-matra, #bottom-conmatra, #bottom-plana {
+    max-width: 440px !important;
+  }
+
+  .btn-row {
+    gap: 16px;
+    width: 100%;
+  }
+
+  /* Normalización de botones interactivos */
+  .btn-fin, 
+  .btn-sec,
+  .btn-sec-btn,
+  .btn-fin-sindoor {
+    padding: 18px 24px;
+    font-size: 1.1rem;
+    border-radius: var(--radio-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .btn-fin {
+    margin-top: 0 !important; /* Remueve márgenes móviles */
+  }
+
+  /* Botones compactos de la variante de trazos */
+  .btn-flex-plana {
+    padding: 16px 20px;
+    font-size: 1.05rem;
+  }
+
+  /* ── COLUMNA DERECHA: MULTI-CONTENEDOR VISUAL (MEDIA PANEL) ── */
+  .wrap {
+    grid-area: wrap;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+    padding: 10px 24px;
+    align-self: center;
+  }
+
+  /* Caja informativa para la variante de escritura */
+  .info-box {
+    border-radius: var(--radio-md);
+    padding: 18px 24px;
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Encapsulador para el bloque dinámico de trazos */
+  #bloque-plana {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Marcos de Imagen Universales */
+  .frame-img,
+  #frame-320,
+  #frame-380,
+  .frame-img-340 {
+    max-width: 100% !important;
+    width: 100%;
+    aspect-ratio: 1.15;
+    border-radius: var(--radio-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    margin: 0 auto;
+  }
+
+  /* Ajuste responsivo de imágenes internas */
+  #img-320, 
+  #img-380, 
+  #img-plana {
+    max-height: 380px !important;
+    padding: 20px;
+    object-fit: contain;
+  }
+
+  /* Barra de herramientas para el Canvas de trazos */
+  .btn-toolbar {
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .btn-toolbar button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    border-radius: var(--radio-md);
+  }
+
+/* Cuadrantes (tipo vocal) y ecuaciones (tipo con_matra) en desktop */
+  .frame-cuadrantes,
+  .frame-ecuaciones {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #q1-vocal    { font-size: 10rem; }
+  .eq-resultado { font-size: 4.5rem; }
+  .eq-partes    { font-size: 1.4rem; }
+
+}

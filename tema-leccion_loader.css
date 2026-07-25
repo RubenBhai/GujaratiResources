@@ -1,0 +1,122 @@
+/* ==============================================
+   leccion_loader.css — Pantalla "Preparando la lección"
+   ============================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #2C2420;
+  --surface: #362C28;
+  --paper:   #E8D9C0;
+  --saffron: #F0C860;
+  --ink-soft:#C8B99A;
+  --verde:   #4A6B53;
+}
+
+body {
+  background: var(--bg);
+  background-image: radial-gradient(ellipse at top, rgba(240,200,96,0.07), transparent 60%);
+  color: var(--paper);
+  font-family: 'Source Sans 3', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 15vh;
+  justify-content: center;
+  padding: 24px;
+}
+
+.loader-card {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.loader-logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
+  object-fit: cover;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+}
+
+.loader-titulo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--saffron);
+  line-height: 1.2;
+}
+
+.loader-subtitulo {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-top: 8vh; 
+}
+
+/* ── Barra de progreso ── */
+.progress-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 10px;
+  background: var(--surface);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--verde), var(--saffron));
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.progress-pct {
+  font-weight: 700;
+  color: var(--saffron);
+}
+
+/* ── Estado ── */
+.loader-estado {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  min-height: 1.4em;
+}
+
+.loader-estado.error {
+  color: #E08080;
+}
+
+.loader-recurso {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: 4px;
+  opacity: 0.7;
+  /* Evita que URLs o nombres largos rompan el contenedor */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.2em;
+}
+
+

@@ -63,3 +63,100 @@ h2 { font-family:'Fraunces',serif; font-size:1.5rem; text-align:center; }
 .score-pill { font-size:0.9rem; color:var(--ink-soft); background:rgba(255,255,255,0.03);
   padding:8px 18px; border-radius:var(--r-full); }
 .score-pill span { color:var(--saffron); font-weight:700; }
+
+/* Helper — sustituye inline style del HTML */
+.nav-phantom { opacity:0; pointer-events:none; }
+
+
+/* ══════════════════════════════════════════
+   SISTEMA DE PANTALLAS (fase guiada / libre / resultado)
+   ══════════════════════════════════════════ */
+.screen { display:none; width:100%; flex-direction:column; align-items:center; gap:20px; }
+.screen.active { display:flex; animation:fadeIn 0.4s ease; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+
+/* ── FASE LIBRE ── */
+.libre-instruccion { font-size:1rem; color:var(--ink-soft); line-height:1.5; margin-top:6px; }
+
+.lista-hallazgos { width:100%; display:flex; flex-direction:column; gap:8px; }
+.fila-hallazgo {
+  background:var(--surface-light); border-left:4px solid var(--correct);
+  border-radius:10px; padding:10px 16px; font-size:1.4rem; color:var(--paper);
+  animation:entraFila 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes entraFila { from{opacity:0; transform:translateX(-14px);} to{opacity:1; transform:translateX(0);} }
+
+.btn-terminar { border-color:var(--saffron); color:var(--saffron); }
+.btn-terminar:hover { background:var(--surface-light); }
+
+/* ── RESULTADO ── */
+.resultado-card {
+  width:100%; background:var(--surface); border:2px solid var(--saffron);
+  border-radius:var(--r-lg); padding:28px 24px; text-align:center;
+  box-shadow:0 8px 28px rgba(0,0,0,0.25);
+}
+.resultado-emoji { font-size:3.5rem; margin-bottom:8px; }
+.resultado-msg   { font-family:'Fraunces',serif; font-size:1.6rem; color:var(--saffron); margin-bottom:8px; }
+.resultado-pct   { font-size:1.05rem; color:var(--ink-soft); }
+
+.resultado-detalle { width:100%; display:flex; flex-direction:column; gap:8px; }
+.detalle-fila {
+  display:flex; align-items:center; gap:12px;
+  background:var(--surface-light); border-radius:10px; padding:10px 14px;
+}
+.detalle-fila.faltante { opacity:0.5; }
+.detalle-fila .df-mark { font-weight:700; font-size:1.1rem; flex-shrink:0; width:18px; text-align:center; }
+.detalle-fila .df-ok   { color:var(--correct-text); }
+.detalle-fila .df-err  { color:var(--ink-soft); }
+.detalle-fila .df-gu   { font-family:'Noto Serif Gujarati',serif; font-size:1.3rem; color:var(--paper); flex-shrink:0; }
+.detalle-fila .df-es   { font-size:0.88rem; color:var(--ink-soft); flex:1; text-align:right; }
+
+/* ── Zona donde se va formando la oración (línea oscura) ── */
+#libre-build, #esc-build {
+  background:#1E1815;
+  border:2px solid rgba(184,134,61,0.22);
+  box-shadow:inset 0 2px 10px rgba(0,0,0,0.45);
+}
+#libre-build.empty::before, #esc-build.empty::before { color:rgba(200,185,154,0.5); }
+
+/* ── Marco de oraciones encontradas ── */
+.frame-hallazgos {
+  width:100%; background:var(--surface); border:2px solid var(--border);
+  border-radius:var(--r-lg); padding:18px 16px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.22);
+}
+.frame-titulo {
+  font-size:0.78rem; color:var(--saffron); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.08em;
+  text-align:center; margin-bottom:14px;
+}
+.hallazgo-vacio {
+  font-size:0.92rem; color:var(--ink-soft); text-align:center;
+  font-style:italic; padding:10px 6px;
+}
+.fila-hallazgo .fh-gu {
+  font-size:1.5rem; color:var(--paper); line-height:1.3;
+}
+.fila-hallazgo .fh-es {
+  font-size:0.88rem; color:var(--ink-soft); margin-top:2px; line-height:1.35;
+}
+
+/* ── Botón de escuchar (fase de dictado) ── */
+.btn-escuchar {
+  margin-top:14px; border:none; border-radius:var(--r-full);
+  padding:14px 28px; cursor:pointer; font-family:inherit;
+  font-weight:700; font-size:1.05rem; color:white;
+  background:var(--sindoor); box-shadow:0 4px 14px rgba(168,54,42,0.3);
+  display:inline-flex; align-items:center; gap:10px; transition:all 0.2s;
+}
+.btn-escuchar:hover { background:var(--sindoor-deep); transform:translateY(-1px); }
+.btn-escuchar.sonando {
+  background:var(--olive);
+  animation:latido 1.4s ease-in-out infinite;
+}
+@keyframes latido {
+  0%,100% { box-shadow:0 4px 14px rgba(95,110,79,0.4); }
+  50%     { box-shadow:0 4px 26px rgba(95,110,79,0.8); }
+}
+
+.resultado-dictado { font-size:1rem; color:var(--ink-soft); margin-top:6px; }

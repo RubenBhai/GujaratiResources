@@ -143,3 +143,20 @@ h2 { font-family:'Fraunces',serif; font-size:1.4rem; text-align:center; }
 .detalle-fila .df-gu { font-family:'Noto Serif Gujarati',serif; font-size:1.3rem; }
 .detalle-fila .df-ok { color:var(--correct-text); font-weight:700; }
 .detalle-fila .df-err { color:var(--wrong-text); font-weight:700; }
+
+.nav-phantom       { opacity:0; pointer-events:none; }
+#n2-texto          { font-size:1.1rem; color:var(--ink-soft); font-family:'Source Sans 3',sans-serif; }
+#n5-respuesta-wrap { width:100%; }
+.pi-flex           { flex:1; }
+.pi-pregunta-label { font-size:0.75rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px; }
+.pi-gu-grande      { font-size:1.6rem; }
+.error-carga       { text-align:center; color:var(--ink-soft); padding:40px; }
+
+.btn-flash { text-decoration:none; }
+.btn-flash .num { color:var(--sindoor); }
+
+.btn-video-jw { text-decoration:none; }
+.btn-video-jw .num { color:var(--olive); }
+.btn-cantar-jw { text-decoration:none; }
+.btn-cantar-jw .num { color:var(--morado, #7A5A8A); }
+

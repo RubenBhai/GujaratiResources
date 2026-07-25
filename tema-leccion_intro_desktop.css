@@ -1,0 +1,153 @@
+/* ==========================================================================
+   leccion_desktop.css — Optimizado para pantallas Desktop (Min 1440x720)
+   Aprovecha el espacio horizontal distribuyendo el contenido en 2 paneles.
+   ========================================================================== */
+
+@media (min-width: 1440px) and (min-height: 720px) {
+  
+  /* ── OPTIMIZACIÓN DEL ESPACIO GENERAL ── */
+  body {
+    padding-bottom: 60px;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN EXTENDIDA ── */
+  .nav-bar {
+    max-width: 1340px; /* Se expande en armonía con el contenido de PC */
+    margin: 24px auto 0;
+    padding: 10px 24px;
+    top: 20px;
+  }
+
+  .nav-btn {
+    padding: 12px 24px;
+    font-size: 1rem; /* Botones ligeramente más grandes para hacer clic con mouse */
+  }
+
+  /* ── DISEÑO EN DOS COLUMNAS (PANEL DE APRENDIZAJE) ──
+     Pasamos del bloque angosto centralizado a una distribución lateral.
+     Evita el scroll vertical excesivo ordenando la intro a la izquierda y los datos a la derecha. */
+  .wrap {
+    max-width: 1340px;
+    margin: 50px auto 0;
+    padding: 20px 40px;
+    display: grid;
+    /* Columna 1 fija para textos/títulos (460px) y Columna 2 flexible para el contenido de estudio */
+    grid-template-columns: 460px 1fr; 
+    column-gap: 80px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  /* ── COLUMNA 1: IDENTIFICACIÓN, TÍTULOS Y ACCIONES ── */
+  .badge {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start; /* Alineado a la izquierda */
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 3.5rem; /* La fuente Fraunces luce espectacular a gran escala */
+    text-align: left;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 1.35rem;
+    text-align: left;
+    max-width: 100%; /* Rompe el límite de 440px del móvil */
+    line-height: 1.65;
+  }
+
+  /* La botonera inferior cambia a formato horizontal */
+  .botonera-pantalla {
+    grid-column: 1;
+    grid-row: 4;
+    flex-direction: row; /* Botones uno al lado del otro en lugar de apilados */
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .btn-action {
+    padding: 16px;
+    font-size: 1.05rem;
+  }
+
+  /* ── COLUMNA 2: CONTENIDO DINÁMICO (TABLAS, FRASES, INFO) ──
+     Gracias al algoritmo de CSS Grid, cualquier elemento que inyecte el JS 
+     dentro de esta columna se apilará automáticamente hacia abajo de forma perfecta. */
+  .info-box, 
+  .table-wrap, 
+  .frase-destacada {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  /* Caja de notas / Información */
+  .info-box {
+    padding: 26px 30px;
+    font-size: 1.1rem;
+    border-left-width: 6px;
+  }
+  .info-box .gu {
+    font-size: 1.4rem;
+  }
+
+  /* Tablas de estudio optimizadas */
+  .table-wrap {
+    margin-top: 8px;
+  }
+  
+  .table-wrap th {
+    padding: 16px 24px;
+    font-size: 0.85rem;
+  }
+
+  .table-wrap td {
+    padding: 20px 24px;
+    font-size: 1.3rem;
+  }
+
+  /* Maximización de caracteres Gujarati para lectura clara desde el monitor */
+  .gu-cell {
+    font-size: 3rem;
+  }
+  .celda-gu {
+    font-size: 3.6rem;
+  }
+  .celda-acento {
+    font-size: 1.6rem;
+  }
+  .celda-matra {
+    font-size: 2.8rem;
+  }
+
+  /* Bloque de frases destacadas */
+  .frase-destacada {
+    text-align: left;
+    padding: 24px 0;
+    margin: 8px 0;
+  }
+  .frase-gu {
+    font-size: 3.4rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+  .frase-traduccion {
+    font-size: 1.6rem;
+  }
+
+  /* ── BOTÓN DE MÚSICA FLOTANTE ── */
+  #musicToggle {
+    bottom: 32px;
+    right: 32px;
+    width: 56px;
+    height: 56px;
+    font-size: 1.35rem;
+  }
+}

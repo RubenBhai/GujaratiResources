@@ -1,0 +1,259 @@
+/* ==========================================================================
+   TEMA VIDEO INTERACTIVO DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Consola de conversación dividida: Área de interacción a la izquierda y chat a la derecha.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GLOBAL DE APLICACIÓN ULTRA-INMERSIVA ── */
+  body {
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav-bar {
+    max-width: 100%;
+    padding: 15px 40px;
+  }
+
+  /* Área de trabajo expandida */
+  .wrap {
+    max-width: 1360px;
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    gap: 0;
+  }
+
+  .screen {
+    width: 100%;
+    gap: 0;
+  }
+
+  /* ── PANTALLA 1: SELECCIÓN DE AVATAR (SPLIT VIEW) ── */
+  #s-elegir.active {
+    display: grid;
+    grid-template-columns: 0.85fr 1.3fr;
+    column-gap: 60px;
+    align-items: center;
+    text-align: left;
+  }
+
+  #s-elegir .badge { justify-self: start; padding: 10px 24px; font-size: 0.9rem; }
+  #s-elegir h1 { font-size: 2.8rem; text-align: left; margin-top: 10px; }
+  #s-elegir .lead { font-size: 1.15rem; text-align: left; margin: 0; }
+  #s-elegir .lead-destaque { font-size: 1.25rem; margin-top: 10px; }
+
+  /* Rejilla de avatares a la derecha */
+  .avatares-grid {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+    gap: 20px;
+  }
+
+  .avatar-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .avatar-card .foto {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatar-card .nombre {
+    font-size: 1.4rem;
+  }
+
+  /* ── PANTALLA 2: CONVERSACIÓN EN MODO CONSOLA DIVIDIDA ── */
+  #s-conversar.active {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "prog prog"
+      "langs scene"
+      "turno scene"
+      "subs scene"
+      "btn scene";
+    column-gap: 60px;
+    row-gap: 16px;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Barra de progreso superior spanning ambos lados */
+  .progress {
+    grid-area: prog;
+    height: 6px;
+    margin-bottom: 12px;
+  }
+
+  /* Selector de idiomas y herramientas */
+  .lang-row {
+    grid-area: langs;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  /* Panel del turno del estudiante (Izquierda) */
+  .turno-box {
+    grid-area: turno;
+    width: 100%;
+    padding: 24px;
+    border-radius: 20px;
+    gap: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .turno-titulo {
+    font-size: 1.2rem;
+  }
+
+  .guia-box {
+    padding: 16px;
+  }
+
+  .guia-gu {
+    font-size: 1.7rem;
+  }
+
+  .guia-es {
+    font-size: 1rem;
+  }
+
+  .btn-grabar {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+  }
+
+  /* Subtítulos generales (Izquierda) */
+  .subtitulos {
+    grid-area: subs;
+    height: 54px;
+    padding: 12px 20px;
+    border-radius: var(--r-md);
+  }
+
+  .subtitulos .sub-avatar,
+  .subtitulos .es-texto {
+    font-size: 1.05rem;
+  }
+
+  /* Botón de inicio (Izquierda) */
+  #btn-iniciar {
+    grid-area: btn;
+    width: 100%;
+    max-width: 400px;
+    justify-self: center;
+    padding: 16px;
+    font-size: 1.1rem;
+    border-radius: var(--r-full);
+  }
+
+  /* Teatro de la escena del chat (Derecha) */
+  .escena-wrap {
+    grid-area: scene;
+    aspect-ratio: 16 / 9;      /* manda la proporción, no el alto */
+    height: auto;
+    min-height: 0;             /* si se queda en 520px, gana sobre aspect-ratio */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .escena {
+    flex: 1 1 auto;
+    height: 100% !important;
+    min-height: 0;
+    border-radius: 24px;
+    padding: 20px;
+  }
+
+  .bg-escena {
+    border-radius: 24px;
+  }
+
+  /* Burbujas del chat */
+  .burbuja {
+    max-width: 75%;
+    gap: 12px;
+  }
+
+  .burbuja .avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .burbuja .caja {
+    padding: 12px 18px;
+    border-radius: 16px;
+  }
+
+  .burbuja.izq .caja { border-top-left-radius: 4px; }
+  .burbuja.der .caja { border-top-right-radius: 4px; }
+
+  .burbuja .gu-texto {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  /* ── PANTALLA 3: RESULTADOS (SUMMARY VIEW DIVIDIDO) ── */
+  #s-resultado.active {
+    display: grid;
+    grid-template-columns: 1.10fr 0.9fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "card btn1"
+      "card btn2"
+      "card btn3";
+    column-gap: 60px;
+    row-gap: 18px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .resultado-card {
+    grid-area: card;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  }
+
+  .resultado-emoji { font-size: 4.5rem; }
+  .resultado-msg { font-size: 2rem; }
+  .resultado-pct { font-size: 1.25rem; }
+
+  #btn-replay-dialogo { grid-area: btn1; }
+  #s-resultado .btn-play-neutro { grid-area: btn2; }
+  #s-resultado .btn-fin { grid-area: btn3; }
+
+  /* Normalización de controles e interacción */
+  .btn-play,
+  .btn-fin {
+    padding: 16px 24px;
+    font-size: 1.05rem;
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-fin {
+    width: 100%;
+  }
+}

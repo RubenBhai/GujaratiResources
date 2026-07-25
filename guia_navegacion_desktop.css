@@ -1,0 +1,277 @@
+/* ==========================================================================
+   GUÍA DE NAVEGACIÓN RÁPIDA - VERSIÓN DESKTOP OPTIMIZADA (720p / 1440x720+)
+   Diseñado para maximizar el espacio horizontal y dar una experiencia de app nativa.
+   ========================================================================== */
+
+/* Reseteo General y Variables de Diseño */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #F8FAFC; /* Fondo claro, limpio y relajante */
+    color: #1E293B;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "sidebar main"
+        "sidebar footer";
+    height: 100vh;
+    min-height: 720px;
+    overflow: hidden; /* Evita scroll en la ventana global para comportamiento de app */
+}
+
+/* ==========================================================================
+   SIDEBAR (Antiguo Encabezado .guia-header adaptado a formato vertical)
+   ========================================================================== */
+.guia-header {
+    grid-area: sidebar;
+    background: linear-gradient(135deg, #4F46E5 0%, #3730A3 100%); /* Azul índigo profundo y profesional */
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 35px;
+    text-align: left;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
+    height: 100%;
+}
+
+.guia-header h1 {
+    margin: 40px 0 15px 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+.guia-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Botón Volver (Posicionado en la parte superior del sidebar) */
+.btn-volver {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-volver:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateX(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-volver svg {
+    transition: transform 0.25s ease;
+}
+
+.btn-volver:hover svg {
+    transform: translateX(-2px);
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL (Grid de 2x2 para tarjetas anchas y equilibradas)
+   ========================================================================== */
+.guia-container {
+    grid-area: main;
+    max-width: 100%;
+    margin: 0;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    align-content: center;
+    overflow-y: auto; /* Scroll contenido interno solo si la pantalla es muy pequeña */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   TARJETAS DE CATEGORÍAS (Reorganizadas con Grid interno de 2 columnas)
+   ========================================================================== */
+.guia-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+    border-top: none; /* Quitamos borde superior móvil */
+    border-left: 8px solid transparent; /* Elegante acento izquierdo en desktop */
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "icon title"
+        "links links";
+    column-gap: 20px;
+    row-gap: 25px;
+    align-items: center;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    height: 100%;
+}
+
+.guia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06), 0 10px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* Iconos de las Tarjetas */
+.card-icon {
+    grid-area: icon;
+    font-size: 2.2rem;
+    margin: 0;
+    background: #F1F5F9;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.card-icon-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+/* Títulos de las Tarjetas */
+.guia-card h2 {
+    grid-area: title;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1E293B;
+    text-align: left;
+    letter-spacing: -0.01em;
+}
+
+/* Contenedor de Enlaces (Grid dinámico de 2 columnas) */
+.card-links {
+    grid-area: links;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    align-self: end;
+}
+
+/* Botones de Enlace */
+.link-item {
+    background-color: #F1F5F9;
+    color: #475569;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    border: 1px solid transparent;
+}
+
+.link-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   COLORES TEMÁTICOS (Acentos e Interacción)
+   ========================================================================== */
+
+/* Bordes de Acento Lateral */
+.tema-alfabeto { border-left-color: #0D9488; } /* Verde menta oscuro */
+.tema-juegos { border-left-color: #DB2777; }    /* Rosa intenso */
+.tema-practica { border-left-color: #D97706; }  /* Ámbar/Amarillo */
+.tema-pensar { border-left-color: #2563EB; }    /* Azul brillante */
+
+/* Efectos Hover personalizados por Tema */
+.tema-alfabeto .link-item:hover {
+    background-color: #F0FDFA;
+    color: #115E59;
+    border-color: #CCFBF1;
+}
+
+.tema-juegos .link-item:hover {
+    background-color: #FDF2F8;
+    color: #9D174D;
+    border-color: #FCE7F3;
+}
+
+.tema-practica .link-item:hover {
+    background-color: #FEF3C7;
+    color: #92400E;
+    border-color: #FDE68A;
+}
+
+.tema-pensar .link-item:hover {
+    background-color: #EFF6FF;
+    color: #1E40AF;
+    border-color: #DBEAFE;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (Footer en el espacio inferior derecho)
+   ========================================================================== */
+.guia-footer {
+    grid-area: footer;
+    text-align: left;
+    padding: 20px 40px;
+    font-size: 0.85rem;
+    color: #64748B;
+    background-color: #F1F5F9;
+    border-top: 1px solid #E2E8F0;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.guia-footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   PREVENCIÓN DE DESBORDES EN PANTALLAS COMPACTAS
+   ========================================================================== */
+@media (max-height: 750px) {
+    .guia-container {
+        grid-gap: 20px;
+        padding: 25px;
+    }
+    .guia-card {
+        padding: 20px;
+        row-gap: 15px;
+    }
+}
