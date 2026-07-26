@@ -67,7 +67,11 @@
       }
 
       if (necesitaDescarga) {
-        var networkResponse = await fetch(url, { mode: 'cors' });
+        // Se añade la versión (lastModified) a la URL de descarga para que
+        // el navegador NO pueda devolver la copia vieja desde su caché HTTP.
+        // Se guarda en el SW con la URL pelada, que es como se busca luego.
+        var urlDescarga = url + (url.indexOf('?') === -1 ? '?' : '&') + 'v=' + remoteDate;
+        var networkResponse = await fetch(urlDescarga, { mode: 'cors', cache: 'reload' });
         if (networkResponse.ok) {
           await cache.put(url, networkResponse.clone());
         }

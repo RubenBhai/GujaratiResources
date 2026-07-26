@@ -11,7 +11,7 @@
 // nunca encontraría nada (la próxima vez el "?t=" sería otro). Por eso,
 // para guardar/buscar en caché usamos la URL SIN esa parte del query string.
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const CACHE_NAME = 'piensa-en-gujarati-' + CACHE_VERSION;
 
 self.addEventListener('install', function (event) {
