@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Preparando el curso · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:#2C2420;
+    background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.08),transparent 60%);
+    color:#E8D9C0; font-family:'Source Sans 3',sans-serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .card {
+    max-width:400px; width:100%; text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:22px;
+  }
+  .gu-deco { font-family:'Fraunces',serif; font-size:2.6rem; color:#B8863D; }
+  .titulo { font-family:'Fraunces',serif; font-size:1.4rem; font-weight:700; }
+  .sub { color:#C8B99A; font-size:1rem; line-height:1.5; }
+  .progress-wrap { width:100%; }
+  .progress-bar-bg { width:100%; height:8px; background:rgba(255,255,255,0.07); border-radius:4px; overflow:hidden; }
+  .progress-bar-fill { height:100%; width:0%; border-radius:4px;
+    background:linear-gradient(90deg,#B8863D,#A8362A); transition:width 0.3s ease; }
+  .progress-info { display:flex; justify-content:space-between; margin-top:8px; font-size:0.85rem; color:#C8B99A; }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="gu-deco">ગુજરાતી</div>
+    <div>
+      <div class="titulo">Preparando el curso</div>
+      <div class="sub">Solo la primera vez — para que funcione sin internet</div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-info">
+        <span class="loader-estado" id="loader-estado">Cargando...</span>
+        <span id="progress-pct">0%</span>
+      </div>
+    </div>
+  </div>
+
+<script src="main_loader.js"></script>
+
+</body>
+</html>

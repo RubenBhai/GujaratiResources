@@ -1,0 +1,540 @@
+{
+  "motor": "main",
+  "assets": [
+    {
+      "url": "404.html",
+      "lastModified": 1785165642495,
+      "size": 3342
+    },
+    {
+      "url": "aprende.html",
+      "lastModified": 1785125792044,
+      "size": 5162
+    },
+    {
+      "url": "aprende.js",
+      "lastModified": 1785126361528,
+      "size": 20789
+    },
+    {
+      "url": "cantar_jw.html",
+      "lastModified": 1784985293206,
+      "size": 3149
+    },
+    {
+      "url": "cantar_jw.js",
+      "lastModified": 1784985298508,
+      "size": 4381
+    },
+    {
+      "url": "compone.html",
+      "lastModified": 1783889650616,
+      "size": 1835
+    },
+    {
+      "url": "compone.js",
+      "lastModified": 1784646511278,
+      "size": 6909
+    },
+    {
+      "url": "contenido.html",
+      "lastModified": 1784520533945,
+      "size": 10818
+    },
+    {
+      "url": "contenido.js",
+      "lastModified": 1785156682949,
+      "size": 4562
+    },
+    {
+      "url": "contenido_modulo.html",
+      "lastModified": 1784081083402,
+      "size": 1867
+    },
+    {
+      "url": "contenido_modulo.js",
+      "lastModified": 1785157019242,
+      "size": 4243
+    },
+    {
+      "url": "efecto_victoria.js",
+      "lastModified": 1783456881001,
+      "size": 2448
+    },
+    {
+      "url": "especial_a_abierta_vs_cerrada.html",
+      "lastModified": 1784176742628,
+      "size": 6675
+    },
+    {
+      "url": "especial_a_abierta_vs_cerrada.js",
+      "lastModified": 1783871051836,
+      "size": 2546
+    },
+    {
+      "url": "especial_sonido_normal_sonido_nasal.html",
+      "lastModified": 1784642619538,
+      "size": 11374
+    },
+    {
+      "url": "especial_sonido_normal_sonido_nasal.js",
+      "lastModified": 1784642584728,
+      "size": 2546
+    },
+    {
+      "url": "evaluacion_trazos.js",
+      "lastModified": 1783510297151,
+      "size": 7384
+    },
+    {
+      "url": "guia_navegacion.css",
+      "lastModified": 1783871282053,
+      "size": 3719
+    },
+    {
+      "url": "guia_navegacion.html",
+      "lastModified": 1784559777659,
+      "size": 2794
+    },
+    {
+      "url": "guia_navegacion.js",
+      "lastModified": 1783871288732,
+      "size": 3068
+    },
+    {
+      "url": "guia_navegacion_common.css",
+      "lastModified": 1783801697209,
+      "size": 873
+    },
+    {
+      "url": "guia_navegacion_desktop.css",
+      "lastModified": 1784081581456,
+      "size": 7620
+    },
+    {
+      "url": "index.html",
+      "lastModified": 1785120200642,
+      "size": 8424
+    },
+    {
+      "url": "index.js",
+      "lastModified": 1785156846412,
+      "size": 4821
+    },
+    {
+      "url": "juego.html",
+      "lastModified": 1784743277994,
+      "size": 3550
+    },
+    {
+      "url": "juego.js",
+      "lastModified": 1784982486924,
+      "size": 9690
+    },
+    {
+      "url": "leccion_fin.html",
+      "lastModified": 1784081987985,
+      "size": 2115
+    },
+    {
+      "url": "leccion_fin.js",
+      "lastModified": 1783874210401,
+      "size": 3935
+    },
+    {
+      "url": "leccion_intro.html",
+      "lastModified": 1784082061729,
+      "size": 1381
+    },
+    {
+      "url": "leccion_intro.js",
+      "lastModified": 1785156811561,
+      "size": 7038
+    },
+    {
+      "url": "leccion_letra.html",
+      "lastModified": 1784085018984,
+      "size": 1983
+    },
+    {
+      "url": "leccion_letra.js",
+      "lastModified": 1784086694462,
+      "size": 3606
+    },
+    {
+      "url": "leccion_loader.html",
+      "lastModified": 1784395916004,
+      "size": 1479
+    },
+    {
+      "url": "leccion_loader.js",
+      "lastModified": 1785171258845,
+      "size": 6696
+    },
+    {
+      "url": "leccion_notas.html",
+      "lastModified": 1784082245366,
+      "size": 1294
+    },
+    {
+      "url": "leccion_notas.js",
+      "lastModified": 1784667847821,
+      "size": 7335
+    },
+    {
+      "url": "leccion_palabra.html",
+      "lastModified": 1785006008093,
+      "size": 2670
+    },
+    {
+      "url": "leccion_palabra.js",
+      "lastModified": 1785006020577,
+      "size": 5302
+    },
+    {
+      "url": "leccion_palabra_intro.html",
+      "lastModified": 1784082690822,
+      "size": 1748
+    },
+    {
+      "url": "leccion_palabra_intro.js",
+      "lastModified": 1783881313342,
+      "size": 2406
+    },
+    {
+      "url": "leccion_pensarEnGUJ.html",
+      "lastModified": 1784082809175,
+      "size": 1842
+    },
+    {
+      "url": "leccion_pensarEnGUJ.js",
+      "lastModified": 1783885786913,
+      "size": 2258
+    },
+    {
+      "url": "leccion_plana.html",
+      "lastModified": 1784082983564,
+      "size": 2267
+    },
+    {
+      "url": "leccion_plana.js",
+      "lastModified": 1783885994740,
+      "size": 9799
+    },
+    {
+      "url": "leccion_vocal.html",
+      "lastModified": 1784088358926,
+      "size": 4512
+    },
+    {
+      "url": "leccion_vocal.js",
+      "lastModified": 1784520111264,
+      "size": 13988
+    },
+    {
+      "url": "practica.html",
+      "lastModified": 1784083169238,
+      "size": 1829
+    },
+    {
+      "url": "practica.js",
+      "lastModified": 1783888422705,
+      "size": 11576
+    },
+    {
+      "url": "reto.html",
+      "lastModified": 1785123196508,
+      "size": 7773
+    },
+    {
+      "url": "reto.js",
+      "lastModified": 1785123284903,
+      "size": 29956
+    },
+    {
+      "url": "reto_flash.html",
+      "lastModified": 1784523159277,
+      "size": 4164
+    },
+    {
+      "url": "reto_flash.js",
+      "lastModified": 1784984241782,
+      "size": 18908
+    },
+    {
+      "url": "tema-amigable.css",
+      "lastModified": 1782347045637,
+      "size": 10053
+    },
+    {
+      "url": "tema-aprende.css",
+      "lastModified": 1785126150665,
+      "size": 11118
+    },
+    {
+      "url": "tema-aprende_desktop.css",
+      "lastModified": 1785124733173,
+      "size": 6996
+    },
+    {
+      "url": "tema-cantar-jw.css",
+      "lastModified": 1784985303850,
+      "size": 5419
+    },
+    {
+      "url": "tema-cantar-jw_desktop.css",
+      "lastModified": 1784985308423,
+      "size": 2034
+    },
+    {
+      "url": "tema-contenido.css",
+      "lastModified": 1783866493175,
+      "size": 11505
+    },
+    {
+      "url": "tema-contenido_desktop.css",
+      "lastModified": 1783891015365,
+      "size": 4948
+    },
+    {
+      "url": "tema-contenido_modulo.css",
+      "lastModified": 1784741197865,
+      "size": 6732
+    },
+    {
+      "url": "tema-contenido_modulo_desktop.css",
+      "lastModified": 1784081053125,
+      "size": 4363
+    },
+    {
+      "url": "tema-especial_a_abierta_vs_cerrada.css",
+      "lastModified": 1784176547872,
+      "size": 6888
+    },
+    {
+      "url": "tema-especial_a_abierta_vs_cerrada_desktop.css",
+      "lastModified": 1784176567225,
+      "size": 5255
+    },
+    {
+      "url": "tema-especial_sonido_normal_sonido_nasal.css",
+      "lastModified": 1784642626828,
+      "size": 7501
+    },
+    {
+      "url": "tema-especial_sonido_normal_sonido_nasal_desktop.css",
+      "lastModified": 1784642579720,
+      "size": 4327
+    },
+    {
+      "url": "tema-index.css",
+      "lastModified": 1783871608742,
+      "size": 11667
+    },
+    {
+      "url": "tema-index_desktop.css",
+      "lastModified": 1784081713202,
+      "size": 5039
+    },
+    {
+      "url": "tema-juego.css",
+      "lastModified": 1784743443115,
+      "size": 13163
+    },
+    {
+      "url": "tema-juego_desktop.css",
+      "lastModified": 1784743526783,
+      "size": 4264
+    },
+    {
+      "url": "tema-leccion_fin.css",
+      "lastModified": 1783874203688,
+      "size": 7296
+    },
+    {
+      "url": "tema-leccion_fin_desktop.css",
+      "lastModified": 1784082025564,
+      "size": 1963
+    },
+    {
+      "url": "tema-leccion_intro.css",
+      "lastModified": 1784741299657,
+      "size": 7620
+    },
+    {
+      "url": "tema-leccion_intro_desktop.css",
+      "lastModified": 1783880330495,
+      "size": 3662
+    },
+    {
+      "url": "tema-leccion_letra.css",
+      "lastModified": 1784086199390,
+      "size": 6662
+    },
+    {
+      "url": "tema-leccion_letra_desktop.css",
+      "lastModified": 1784089930750,
+      "size": 2373
+    },
+    {
+      "url": "tema-leccion_loader.css",
+      "lastModified": 1784395653748,
+      "size": 2295
+    },
+    {
+      "url": "tema-leccion_palabra.css",
+      "lastModified": 1785006040574,
+      "size": 7809
+    },
+    {
+      "url": "tema-leccion_palabra_desktop.css",
+      "lastModified": 1784082581546,
+      "size": 2286
+    },
+    {
+      "url": "tema-leccion_palabra_intro.css",
+      "lastModified": 1783881305511,
+      "size": 5782
+    },
+    {
+      "url": "tema-leccion_palabra_intro_desktop.css",
+      "lastModified": 1784082713263,
+      "size": 2218
+    },
+    {
+      "url": "tema-leccion_pensarEnGUJ.css",
+      "lastModified": 1783885778383,
+      "size": 4875
+    },
+    {
+      "url": "tema-leccion_pensarEnGUJ_desktop.css",
+      "lastModified": 1784082862009,
+      "size": 2519
+    },
+    {
+      "url": "tema-leccion_plana.css",
+      "lastModified": 1783885987739,
+      "size": 5571
+    },
+    {
+      "url": "tema-leccion_plana_desktop.css",
+      "lastModified": 1783885987739,
+      "size": 5571
+    },
+    {
+      "url": "tema-leccion_vocal.css",
+      "lastModified": 1784089383756,
+      "size": 8053
+    },
+    {
+      "url": "tema-leccion_vocal_desktop.css",
+      "lastModified": 1784089948723,
+      "size": 3685
+    },
+    {
+      "url": "tema-modulo.css",
+      "lastModified": 1783049957474,
+      "size": 6458
+    },
+    {
+      "url": "tema-notas.css",
+      "lastModified": 1784667874016,
+      "size": 5058
+    },
+    {
+      "url": "tema-notas_desktop.css",
+      "lastModified": 1784667442443,
+      "size": 2998
+    },
+    {
+      "url": "tema-practica.css",
+      "lastModified": 1783533489421,
+      "size": 5936
+    },
+    {
+      "url": "tema-practica_desktop.css",
+      "lastModified": 1784083193296,
+      "size": 4165
+    },
+    {
+      "url": "tema-reto-flash.css",
+      "lastModified": 1784688272012,
+      "size": 14154
+    },
+    {
+      "url": "tema-reto-flash_desktop.css",
+      "lastModified": 1784688250178,
+      "size": 4764
+    },
+    {
+      "url": "tema-reto.css",
+      "lastModified": 1785123203422,
+      "size": 14245
+    },
+    {
+      "url": "tema-reto_desktop.css",
+      "lastModified": 1785008233193,
+      "size": 6524
+    },
+    {
+      "url": "tema-video-interactivo.css",
+      "lastModified": 1784558748094,
+      "size": 11472
+    },
+    {
+      "url": "tema-video-interactivo_desktop.css",
+      "lastModified": 1784563284269,
+      "size": 5439
+    },
+    {
+      "url": "tema-video-jw.css",
+      "lastModified": 1784683587457,
+      "size": 4870
+    },
+    {
+      "url": "tema-video-jw_desktop.css",
+      "lastModified": 1784683592096,
+      "size": 2534
+    },
+    {
+      "url": "tema-video.css",
+      "lastModified": 1783719708818,
+      "size": 11339
+    },
+    {
+      "url": "tema-video_desktop.css",
+      "lastModified": 1784560056364,
+      "size": 3896
+    },
+    {
+      "url": "video.html",
+      "lastModified": 1784375720539,
+      "size": 2666
+    },
+    {
+      "url": "video.js",
+      "lastModified": 1784375967949,
+      "size": 22088
+    },
+    {
+      "url": "video_interactivo.html",
+      "lastModified": 1784558710302,
+      "size": 4573
+    },
+    {
+      "url": "video_interactivo.js",
+      "lastModified": 1784562568540,
+      "size": 25890
+    },
+    {
+      "url": "video_jw.html",
+      "lastModified": 1784687976341,
+      "size": 2224
+    },
+    {
+      "url": "video_jw.js",
+      "lastModified": 1784687815499,
+      "size": 3790
+    }
+  ]
+}

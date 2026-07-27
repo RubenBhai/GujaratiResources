@@ -106,10 +106,33 @@
     return siguienteLote();
   }
 
+  /* FASE 2: calcula cuántos bytes FALTAN por descargar (los que no están
+     ya en caché o están desactualizados). Misma lógica de decisión que
+     fetchAsset, para que el tamaño mostrado coincida con lo que se bajará. */
+  async function calcularPendiente(remoteAssets, localManifestAssets){
+    var cache = await caches.open(CACHE_NAME);
+    var bytesPendientes = 0, bytesTotal = 0, cantPendiente = 0;
+    for (var i = 0; i < remoteAssets.length; i++){
+      var a = remoteAssets[i];
+      var tam = a.size || 0;
+      bytesTotal += tam;
+      var enCache = await cache.match(a.url);
+      var necesita = false;
+      if (!enCache) {
+        necesita = true;
+      } else {
+        var local = localManifestAssets.find(function(x){ return x.url === a.url; });
+        if (!local || local.lastModified < a.lastModified) necesita = true;
+      }
+      if (necesita) { bytesPendientes += tam; cantPendiente++; }
+    }
+    return { bytesPendientes: bytesPendientes, bytesTotal: bytesTotal, cantPendiente: cantPendiente };
+  }
+
   function arrancarDescarga(){
     fetch(assetsUrl + '?t=' + Date.now(), { cache: 'no-store' })
       .then(function(r){ if(!r.ok) throw new Error('No se encontró ' + assetsUrl); return r.json(); })
-      .then(function(remoteData){
+      .then(async function(remoteData){
         var remoteAssets = remoteData.assets || [];
         if(remoteAssets.length === 0){ irALeccion(); return; }
 
@@ -119,7 +142,19 @@
           try { localManifestAssets = JSON.parse(localManifestStr).assets || []; } catch(e){}
         }
 
-        estadoEl.textContent = 'Verificando ' + remoteAssets.length + ' recursos...';
+        // FASE 2: ¿cuánto falta por descargar?
+        var pend = await calcularPendiente(remoteAssets, localManifestAssets);
+        var mb   = (pend.bytesPendientes / 1024 / 1024).toFixed(1);
+
+        // Si ya está todo en caché, no descargamos nada: directo a la lección.
+        if (pend.cantPendiente === 0) {
+          estadoEl.textContent = 'Todo listo en tu dispositivo';
+          localStorage.setItem(localManifestKey, JSON.stringify(remoteData));
+          irALeccion();
+          return;
+        }
+
+        estadoEl.textContent = 'Descargando ' + mb + ' MB (' + pend.cantPendiente + ' archivos)...';
         setProgreso(0, remoteAssets.length);
         
         descargarEnLotes(remoteAssets, localManifestAssets, 6, function(cargados, total){

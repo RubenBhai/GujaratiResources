@@ -75,6 +75,7 @@
       btn.innerHTML = '&#128263;';
       btn.classList.add('music-off');
       fadeTo(0);
+      setTimeout(function(){ if(!playing){ music.pause(); music.volume = 0; } }, 600);
       try { localStorage.setItem('musica_pref', 'off'); } catch(e) {}
     } else {
       playing = true;

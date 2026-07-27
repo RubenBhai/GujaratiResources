@@ -154,6 +154,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
         btnMusic.innerHTML = '🔇';
         btnMusic.classList.add('music-off');      // antes: btnMusic.style.color = '...'
         fadeTo(0);
+        setTimeout(function(){ if(!playing){ music.pause(); music.volume = 0; } }, 600);
         try { localStorage.setItem('musica_pref', 'off'); } catch(e) {}
       } else {
         activarMusica();

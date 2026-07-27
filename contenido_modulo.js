@@ -7,8 +7,8 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(function(data){
     document.getElementById('page-title').textContent = data.badge + ' · Piensa en Gujarati';
-    document.getElementById('nav-atras').href = data.atras;
-    document.getElementById('nav-home').href  = data.home;
+    document.getElementById('nav-atras').href = 'contenido.html';
+    document.getElementById('nav-home').href  = 'index.html';
 
     document.getElementById('badge').textContent    = data.badge;
     document.getElementById('titulo').textContent   = data.titulo;
