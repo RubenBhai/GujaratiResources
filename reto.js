@@ -372,59 +372,212 @@ function repetirSesion(){
   else                     montarN5(sesionNum, sesionTotal);
 }
 
-/* ── NIVEL 4 ── */
-var n4Preguntas=[], n4Idx=0, n4Aciertos=0, n4Detalle=[];
+/* ── NIVEL 4 · DICTADO DE ORACIONES ── */
+var n4Sesiones=[], n4Idx=0, n4Aciertos=0, n4Detalle=[];
+var n4Construido=[], n4Actual=null, n4Bloqueado=false;
+var n4FalloEnEsta=false;   /* true si el estudiante ya se equivocó en la oración actual */
+
+/* Junta las palabras de todas las oraciones del nivel para usarlas como distractores */
+function n4BancoGlobal(){
+  var set={};
+  (DATA.nivel4.sesiones||[]).forEach(function(s){
+    (s.oracion_completa||'').split(/\s+/).forEach(function(p){ if(p) set[p]=true; });
+  });
+  return Object.keys(set);
+}
 
 function montarN4(num, total){
-  document.getElementById('n4-badge').textContent = 'Nivel 4 · Sesión '+num+' de '+total;
-  var vid = document.getElementById('n4-video');
-  vid.src = sesionData.video; vid.load();
-  n4Preguntas = sesionData.preguntas || [];
+  document.getElementById('n4-badge').textContent = 'Dictado · Sesión '+num+' de '+total;
+  n4Sesiones = DATA.nivel4.sesiones || [];
   n4Idx=0; n4Aciertos=0; n4Detalle=[];
+  var instr = DATA.nivel4.instruccion || 'Escucha el audio y toca las palabras en el orden correcto.';
+  var elInstr = document.getElementById('n4-instruccion');
+  if(elInstr) elInstr.textContent = instr;
   actualizarTopProgress();
-  mostrarPreguntaN4();
+  n4NuevaOracion();
   goTo('s-n4');
 }
 
-function mostrarPreguntaN4(){
-  if(n4Idx >= n4Preguntas.length){
-    mostrarResultado(Math.round((n4Aciertos/n4Preguntas.length)*100), n4Detalle, 'opciones');
+function n4NuevaOracion(){
+  if(n4Idx >= n4Sesiones.length){
+    var pct = n4Sesiones.length ? Math.round((n4Aciertos/n4Sesiones.length)*100) : 0;
+    mostrarResultado(pct, n4Detalle, 'dictado');
     return;
   }
-  var p = n4Preguntas[n4Idx];
-  document.getElementById('n4-pregunta-num').textContent = 'Pregunta '+(n4Idx+1)+' de '+n4Preguntas.length;
-  document.getElementById('n4-pregunta-gu').textContent  = p.pregunta;
-  document.getElementById('n4-feedback').textContent     = '';
-  document.getElementById('n4-feedback').className       = 'pregunta-feedback';
+  n4Actual     = n4Sesiones[n4Idx];
+  n4Construido = [];
+  n4Bloqueado  = false;
+  n4FalloEnEsta = false;
 
-  var ops  = shuffle(p.opciones.slice());
-  var cont = document.getElementById('n4-opciones');
-  cont.innerHTML = '';
-  ops.forEach(function(op){
-    var btn       = document.createElement('button');
-    btn.className = 'opcion gu';
-    btn.textContent = op;
-    btn.onclick   = function(){ responderN4(op, p.correcta, p.pregunta); };
-    cont.appendChild(btn);
+  document.getElementById('n4-progreso').textContent = 'Oración '+(n4Idx+1)+' de '+n4Sesiones.length;
+  document.getElementById('n4-feedback').textContent = '';
+  document.getElementById('n4-feedback').className   = 'pregunta-feedback';
+  n4RestaurarPlaceholder();           /* borra el español y deja el texto/color original */
+  n4MostrarBotones('comprobar');      /* solo el botón Comprobar visible */
+
+  /* Fichas: palabras de la oración + distractores del banco global, sin repetir */
+  var correctas = n4Actual.oracion_completa.split(/\s+/).filter(Boolean);
+  var banco = n4BancoGlobal();
+  var extra = shuffle(banco.filter(function(p){ return correctas.indexOf(p)===-1; })).slice(0,3);
+  var fichas = shuffle(correctas.concat(extra));
+
+  var bank = document.getElementById('n4-bank');
+  bank.innerHTML='';
+  fichas.forEach(function(gu, idx){
+    var chip = document.createElement('button');
+    chip.className='ficha-dictado gu';
+    chip.textContent=gu;
+    chip.dataset.idx=idx;
+    chip.onclick=function(){ n4Tocar(chip, gu); };
+    bank.appendChild(chip);
+  });
+  n4RenderBuild();
+  setTimeout(n4Reproducir, 400);
+}
+
+function n4Reproducir(){
+  if(!n4Actual || !n4Actual.audio_oracion_completa) return;
+  var btn=document.getElementById('n4-play');
+  if(btn) btn.classList.add('sonando');
+  playerRef.src=n4Actual.audio_oracion_completa;
+  playerRef.play().catch(function(){});
+  playerRef.onended=function(){ playerRef.onended=null; if(btn) btn.classList.remove('sonando'); };
+}
+
+function n4Tocar(chip, gu){
+  if(n4Bloqueado) return;
+  var btn=document.getElementById('n4-play'); if(btn) btn.classList.remove('sonando');
+  playerRef.onended=null;
+  chip.classList.add('usada');
+  n4Construido.push({gu:gu, idx:chip.dataset.idx});
+  n4RenderBuild();
+}
+
+function n4RenderBuild(){
+  var zone=document.getElementById('n4-build');
+  if(zone.classList.contains('con-espanol')) return;   /* no tocar mientras muestra el español */
+  zone.innerHTML='';
+  if(n4Construido.length===0){ zone.classList.add('vacia'); return; }
+  zone.classList.remove('vacia');
+  n4Construido.forEach(function(item,i){
+    var c=document.createElement('button');
+    c.className='ficha-puesta gu';
+    c.textContent=item.gu;
+    c.onclick=function(){ n4Quitar(i); };
+    zone.appendChild(c);
   });
 }
 
-function responderN4(elegida, correcta, pregunta){
-  document.querySelectorAll('#n4-opciones .opcion').forEach(function(b){
-    b.onclick = null;
-    if(b.textContent === correcta)     b.classList.add('ok');
-    else if(b.textContent === elegida) b.classList.add('err');
-    else                               b.style.opacity = '0.4';
-  });
-  var ok = elegida === correcta;
-  var fb = document.getElementById('n4-feedback');
-  fb.textContent = ok ? '✓ ¡Correcto!' : '✗  Era: '+correcta;
-  fb.className   = 'pregunta-feedback '+(ok?'ok':'err');
-  sfx.src = ok ? SND_OK : SND_ERR; sfx.play().catch(function(){});
-  if(ok) n4Aciertos++;
-  n4Detalle.push({gu:pregunta, ok:ok});
+function n4Quitar(i){
+  if(n4Bloqueado) return;
+  var item=n4Construido[i];
+  var chip=document.querySelector('#n4-bank .ficha-dictado[data-idx="'+item.idx+'"]');
+  if(chip) chip.classList.remove('usada');
+  n4Construido.splice(i,1);
+  n4RenderBuild();
+}
+
+function n4Limpiar(){
+  if(n4Bloqueado) return;
+  n4Construido=[];
+  document.querySelectorAll('#n4-bank .ficha-dictado').forEach(function(c){ c.classList.remove('usada'); });
+  n4RenderBuild();
+}
+
+function n4Comprobar(){
+  if(n4Bloqueado || n4Construido.length===0 || !n4Actual) return;
+  var intento=n4Construido.map(function(x){ return x.gu; });
+  var correcto=n4Actual.oracion_completa.split(/\s+/).filter(Boolean);
+  var ok = intento.length===correcto.length && intento.every(function(g,i){ return g===correcto[i]; });
+
+  var fb=document.getElementById('n4-feedback');
+
+  if(ok){
+    n4Bloqueado=true;
+    fb.textContent=''; fb.className='pregunta-feedback';
+    /* El español aparece en el cuadro, en amarillo */
+    n4MostrarEspanol(n4Actual.espanol||'');
+    sfx.src=SND_OK; sfx.play().catch(function(){});
+
+    /* Cuenta como acierto SOLO si no hubo fallo previo en esta oración */
+    if(!n4FalloEnEsta) n4Aciertos++;
+    n4Detalle.push({gu:n4Actual.oracion_completa, ok:!n4FalloEnEsta,
+                    usuario:intento.join(' ')||'—', real:correcto.join(' ')});
+
+    /* Suena la oración completa, y luego avanza (borrando el español antes) */
+    if(n4Actual.audio_oracion_completa){
+      setTimeout(function(){ playerRef.src=n4Actual.audio_oracion_completa; playerRef.play().catch(function(){}); }, 650);
+    }
+    n4Idx++;
+    setTimeout(n4NuevaOracion, 2200);
+  } else {
+    /* Falla: no avanza. Suena error y aparecen Reintentar / Saltar. */
+    n4Bloqueado=true;
+    n4FalloEnEsta=true;
+    fb.textContent='✗ No es lo que dice el audio';
+    fb.className='pregunta-feedback err';
+    sfx.src=SND_ERR; sfx.play().catch(function(){});
+    n4MostrarBotones('reintentar');
+  }
+}
+
+function n4Reintentar(){
+  n4Bloqueado=false;
+  n4Limpiar();                         /* devuelve las fichas al banco */
+  document.getElementById('n4-feedback').textContent='';
+  document.getElementById('n4-feedback').className='pregunta-feedback';
+  n4MostrarBotones('comprobar');
+  setTimeout(n4Reproducir, 300);       /* vuelve a sonar la oración */
+}
+
+function n4Saltar(){
+  /* Cuenta como fallo y pasa a la siguiente */
+  var correcto=n4Actual.oracion_completa.split(/\s+/).filter(Boolean);
+  n4Detalle.push({gu:n4Actual.oracion_completa, ok:false,
+                  usuario:'(saltada)', real:correcto.join(' ')});
   n4Idx++;
-  setTimeout(mostrarPreguntaN4, 1600);
+  n4NuevaOracion();
+}
+
+/* ── Placeholder: mostrar español (amarillo) / restaurar original ──
+   El texto original vive en el CSS como ::before de .vacia.
+   Para mostrar el español, inyectamos un hijo real y ocultamos el ::before
+   con la clase 'con-espanol'; al restaurar, quitamos todo y vuelve el ::before. */
+function n4MostrarEspanol(texto){
+  var zone=document.getElementById('n4-build');
+  zone.innerHTML='';
+  zone.classList.remove('vacia');
+  zone.classList.add('con-espanol');
+  var span=document.createElement('div');
+  span.className='dictado-espanol';
+  span.textContent=texto;
+  zone.appendChild(span);
+}
+
+function n4RestaurarPlaceholder(){
+  var zone=document.getElementById('n4-build');
+  zone.classList.remove('con-espanol');
+  zone.innerHTML='';
+  zone.classList.add('vacia');       /* reaparece el ::before original con su color */
+}
+
+/* ── Mostrar el par de botones correcto según el momento ── */
+function n4MostrarBotones(modo){
+  var comprobar=document.getElementById('n4-comprobar');
+  var limpiar  =document.getElementById('n4-limpiar');
+  var reintentar=document.getElementById('n4-reintentar');
+  var saltar   =document.getElementById('n4-saltar');
+  if(modo==='reintentar'){
+    if(comprobar) comprobar.style.display='none';
+    if(limpiar)   limpiar.style.display='none';
+    if(reintentar) reintentar.style.display='';
+    if(saltar)     saltar.style.display='';
+  } else {
+    if(comprobar) comprobar.style.display='';
+    if(limpiar)   limpiar.style.display='';
+    if(reintentar) reintentar.style.display='none';
+    if(saltar)     saltar.style.display='none';
+  }
 }
 
 /* ── NIVEL 5 ── */

@@ -70,9 +70,7 @@ h2 { font-size: 1.6rem; }
   box-shadow: 0 8px 28px rgba(0,0,0,0.25);
 }
 .learn-gu { font-size: 4.5rem; color: var(--paper); line-height: 1; margin-bottom: 8px; }
-.learn-rom { font-size: 1.5rem; color: var(--saffron); font-weight: 700; margin-bottom: 6px; }
 .learn-sig { font-size: 1.2rem; color: var(--paper); }
-.learn-cat { font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 12px; }
 
 /* PREGUNTA / QUIZ */
 .quiz-prompt {
@@ -120,7 +118,6 @@ h2 { font-size: 1.6rem; }
   box-shadow: 0 4px 14px rgba(168,54,42,0.3); transition: all 0.2s;
 }
 .btn-audio:hover { background: var(--sindoor-deep); transform: scale(1.05); }
-.btn-audio.big { width: 90px; height: 90px; font-size: 2.4rem; }
 
 /* BOTONES */
 .btn-main {
@@ -251,4 +248,21 @@ h2 { font-size: 1.6rem; }
   min-height: 120px;
 }
 
+
+
+
+/* ── Fila de acciones en "Aprende esto": audio pequeño + botón ── */
+.learn-acciones { width:100%; display:flex; align-items:center; gap:12px; }
+.learn-audio-chico { width:56px; height:56px; font-size:1.5rem; flex-shrink:0; }
+.learn-memorice { flex:1; }
+
+/* Fila de audio + botones de fallo (quiz) */
+.quiz-audio-fila { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
+.quiz-audio-chico { width:52px; height:52px; font-size:1.4rem; }
+.btn-mini-fallo {
+  border:none; border-radius:50px; padding:10px 18px; cursor:pointer;
+  font-family:inherit; font-weight:700; font-size:0.9rem; color:white;
+  background:var(--olive); box-shadow:0 3px 10px rgba(95,110,79,0.3);
+}
+.btn-mini-fallo.saltar { background:var(--surface-light); color:var(--ink-soft); }
 

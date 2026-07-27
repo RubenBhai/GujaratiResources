@@ -43,6 +43,10 @@
         <span class="num">3</span>
         <div class="info"><div class="tit">Pronuncia letras y palabras</div><div class="sub">Graba tu voz — Gemini evalúa tu pronunciación</div></div>
       </button>
+      <button class="btn-nivel" id="btn-nivel-4" onclick="iniciarNivel(4)">
+        <span class="num">4</span>
+        <div class="info"><div class="tit">Dictado de Oraciones</div><div class="sub">Escucha la oración y ordénala palabra por palabra</div></div>
+      </button>
       <a class="btn-nivel btn-flash" id="btn-flash-palabras" href="#">
         <span class="num">⚡</span>
         <div class="info"><div class="tit">Reto relámpago de palabras</div><div class="sub">Lee cada palabra en voz alta antes de escucharla</div></div>
@@ -100,16 +104,19 @@
 
   <!-- NIVEL 4 -->
   <div class="screen" id="s-n4">
-    <span class="badge" id="n4-badge">Nivel 4 · Sesión 1 de 5</span>
-    <h2>Mira el video con subtítulos</h2>
-    <div class="video-wrap" id="n4-video-wrap">
-      <video id="n4-video" controls playsinline></video>
+    <span class="badge" id="n4-badge">Dictado · Sesión 1 de 5</span>
+    <h2>Dictado de Oraciones</h2>
+    <div class="dictado-card">
+      <div class="dictado-num" id="n4-progreso"></div>
+      <p class="dictado-instr" id="n4-instruccion"></p>
+      <button type="button" class="btn-escuchar-reto" id="n4-play" onclick="n4Reproducir()">🎧 Escuchar</button>
     </div>
-    <div class="pregunta-card" id="n4-pregunta-card">
-      <div class="pregunta-num" id="n4-pregunta-num"></div>
-      <div class="pregunta-gu gu" id="n4-pregunta-gu"></div>
-    </div>
-    <div class="opciones" id="n4-opciones"></div>
+    <div class="build-dictado vacia" id="n4-build"></div>
+    <div class="bank-dictado" id="n4-bank"></div>
+    <button class="btn-comprobar-reto" id="n4-comprobar" onclick="n4Comprobar()">Comprobar</button>
+    <button class="btn-limpiar-reto" id="n4-limpiar" onclick="n4Limpiar()">🔄 Limpiar</button>
+    <button class="btn-comprobar-reto" id="n4-reintentar" onclick="n4Reintentar()" style="display:none;">🔁 Reintentar</button>
+    <button class="btn-limpiar-reto" id="n4-saltar" onclick="n4Saltar()" style="display:none;">⏭️ Saltar</button>
     <div class="pregunta-feedback" id="n4-feedback"></div>
   </div>
 

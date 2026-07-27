@@ -44,12 +44,12 @@
     <img class="learn-img" id="learn-img" src="" alt="">
     <div class="learn-card">
       <div class="gu learn-gu"  id="learn-gu"></div>
-      <div class="learn-rom"    id="learn-rom"></div>
       <div class="learn-sig"    id="learn-sig"></div>
-      <div class="learn-cat"    id="learn-cat"></div>
     </div>
-    <button class="btn-audio big" id="learn-audio" onclick="reproducirActual()">🔊</button>
-    <button class="btn-main" onclick="trasAprender()">Ya lo memoricé →</button>
+    <div class="learn-acciones">
+      <button class="btn-audio learn-audio-chico" id="learn-audio" onclick="reproducirActual()">🔊</button>
+      <button class="btn-main learn-memorice" onclick="trasAprender()">Ya lo memoricé →</button>
+    </div>
   </div>
 
   <!-- QUIZ -->
@@ -58,7 +58,13 @@
     <div class="quiz-instruction" id="quiz-instruction"></div>
     <div class="quiz-prompt"    id="quiz-prompt"></div>
     <img class="quiz-img"       id="quiz-img" src="" alt="">
-    <button class="btn-audio"   id="quiz-audio" onclick="reproducirActual()">🔊</button>
+
+    <div class="quiz-audio-fila">
+      <button class="btn-audio quiz-audio-chico" id="quiz-audio" onclick="reproducirActual()">🔊</button>
+      <button class="btn-mini-fallo" id="quiz-reintentar" onclick="quizReintentar()" style="display:none;">🔁 Reintentar</button>
+      <button class="btn-mini-fallo saltar" id="quiz-saltar" onclick="quizSaltar()" style="display:none;">⏭️ Saltar</button>
+    </div>
+
     <div class="options"        id="quiz-options"></div>
     <div class="feedback"       id="quiz-feedback"></div>
   </div>

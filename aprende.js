@@ -234,11 +234,10 @@ function actualizarTopProgress(){
 /* ---------- APRENDER ---------- */
 function mostrarAprender(item){
   modoActual = 'aprender';
+
   document.getElementById('learn-gu').textContent  = item.gujarati;
-  document.getElementById('learn-rom').textContent = item.roman;
   document.getElementById('learn-sig').textContent = item.significado;
-  var cat = item.categoria === 'letra' ? 'Letra' : (item.categoria === 'silaba' ? 'Sílaba' : 'Palabra');
-  document.getElementById('learn-cat').textContent = cat;
+
   var img = document.getElementById('learn-img');
   if(img) img.src = item.imagen || '';
   mostrar('screen-aprender');
@@ -265,7 +264,12 @@ function mostrarQuizConFase(item, faseForzada){
   var badgeEl   = document.getElementById('quiz-badge');
   var audioBtn  = document.getElementById('quiz-audio');
   var optionsEl = document.getElementById('quiz-options');
+
   document.getElementById('quiz-feedback').textContent = '';
+  var _r=document.getElementById('quiz-reintentar'), _s=document.getElementById('quiz-saltar');
+  if(_r) _r.style.display='none';
+  if(_s) _s.style.display='none';
+
   optionsEl.innerHTML = '';
   audioBtn.style.display = 'none';
 
@@ -346,7 +350,7 @@ function responder(btn, elegido, correcta, item){
   } else {
     // FALLO: No sumamos uso. La matriz lo volverá a intentar.
     btn.classList.add('wrong');
-    fb.textContent = '✗ Era: ' + correcta;
+    fb.textContent = (typeof correcta === 'string' && correcta.indexOf('/') !== -1) ? '✗' : '✗ Era: ' + correcta;
     fb.className   = 'feedback err';
     sfx.src = SND_ERR; sfx.play().catch(function(){});
 
@@ -363,9 +367,24 @@ function responder(btn, elegido, correcta, item){
     st.fallos++;
     st.proximoRepaso = ahora() + INTERVALOS[1] * 60000;
     guardarProgreso();
-    setTimeout(avanzar, 1600);
+    document.getElementById('quiz-reintentar').style.display = '';
+    document.getElementById('quiz-saltar').style.display = '';
   }
 }
+
+function quizReintentar(){
+  document.getElementById('quiz-reintentar').style.display = 'none';
+  document.getElementById('quiz-saltar').style.display = 'none';
+  var item = ITEMS.find(function(it){ return it.id === combinacionActual.idItem; });
+  mostrarQuizConFase(item, combinacionActual.fase);   // misma combinación, no sumó uso
+}
+
+function quizSaltar(){
+  document.getElementById('quiz-reintentar').style.display = 'none';
+  document.getElementById('quiz-saltar').style.display = 'none';
+  avanzar();   // otra combinación; la fallada volverá porque no sumó uso
+}
+
 
 /* ---------- Audio ---------- */
 function reproducirActual(){
@@ -533,6 +552,7 @@ function reiniciarProgreso(){
   if(confirm('¿Seguro que quieres borrar tu progreso de esta lección y empezar de cero?')){
     progreso = {};
     guardarProgreso();
+    reiniciarMatrizCompleta();   /* también reinicia la matriz de cobertura, o siguienteItem() se queda sin combinaciones disponibles */
     actualizarStats();
   }
 }
