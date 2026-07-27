@@ -18,7 +18,7 @@
       "categoria": "letra",
       "gujarati": "આ",
       "roman": "aa",
-      "significado": "esto",
+      "significado": "esto (algo cerca)",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_aa.mp3",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_aa.mp3",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aa_noinfo.png"
@@ -28,7 +28,7 @@
       "categoria": "letra",
       "gujarati": "એ",
       "roman": "e",
-      "significado": "eso",
+      "significado": "eso (algo lejos)",
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_e.mp3",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_e_noinfo.png"
@@ -142,15 +142,6 @@
       "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3",
       "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ochho.mp3",
       "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ochho_noinfo.png"
-    },
-    {
-      "id": "accion_1",
-      "categoria": "accion",
-      "gujarati": "વાંચો",
-      "roman": "vaancho",
-      "significado": "lee",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_vaancho.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_vaancho.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/accion_leer.gif"    }
+    }
   ]
 }

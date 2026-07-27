@@ -63,6 +63,67 @@
       }
     ]
   },
+  "nivel4": {
+    "titulo": "Dictado de Oraciones",
+    "instruccion": "Escucha el audio y toca las etiquetas que componen la oración.",
+    "sesiones": [
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_maamaa_chhe.mp3",
+        "oracion_completa": "એ મામા છે",
+        "espanol": "ese es el tío materno"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_maamaa_chhe.mp3",
+        "oracion_completa": "આ મામા છે",
+        "espanol": "este es el tío materno"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_kaakaa_chhe.mp3",
+        "oracion_completa": "એ કાકા છે",
+        "espanol": "ese es el tío paterno"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_kaakaa_chhe.mp3",
+        "oracion_completa": "આ કાકા છે",
+        "espanol": "este es el tío paterno"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_moko_chhe.mp3",
+        "oracion_completa": "એ મોકો છે",
+        "espanol": "esa es una oportunidad"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_moko_chhe.mp3",
+        "oracion_completa": "આ મોકો છે",
+        "espanol": "esta es una oportunidad"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_maa_chhe.mp3",
+        "oracion_completa": "એ મા છે",
+        "espanol": "esa es la mamá"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_maa_chhe.mp3",
+        "oracion_completa": "આ મા છે",
+        "espanol": "esta es la mamá"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_kaam_chhe.mp3",
+        "oracion_completa": "એ કામ છે",
+        "espanol": "ese es el trabajo"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_aa_kaam_chhe.mp3",
+        "oracion_completa": "આ કામ છે",
+        "espanol": "este es el trabajo"
+      },
+      {
+        "audio_oracion_completa": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_moko_ochho_chhe.mp3",
+        "oracion_completa": "મોકો ઓછો છે",
+        "espanol": "hay poca oportunidad"
+      }
+    ]
+  },
   "video_jw": true,
-  "cancion_jw": true
+  "cantar_jw": false
 }

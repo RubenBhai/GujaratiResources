@@ -44,7 +44,7 @@
         {
           "tipo": "texto",
           "gu": "છે",
-          "html": "Esta es <strong>la palabra más importante</strong> del gujarati.<br><br><span class=\"gu\">છે</span> es el verbo <strong>\"ser\"</strong> o <strong>\"estar\"</strong>.<br>Significa <strong>\"es / está / son\"</strong>."
+          "html": "Esta es <strong>la palabra más importante</strong> del gujarati.<br><br><span class=\"gu\">છે</span> es una forma del verbo <strong>\"ser\"</strong> o <strong>\"estar\"</strong>.<br>Significa <strong>\"es / está / son\"</strong>."
         }
       ]
     },
