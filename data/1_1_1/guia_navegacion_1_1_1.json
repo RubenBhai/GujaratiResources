@@ -1,10 +1,10 @@
 {
   "leccion": "1.1.1",
   "iconos": {
-    "alfabeto": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_alfabeto.png",
-    "juegos": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_juegos.png",
-    "practica": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_pronunciacion.png",
-    "pensar": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_pensarengujarati.png"
+    "alfabeto": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_alfabeto.jpg",
+    "juegos": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_juegos.jpg",
+    "practica": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_pronunciacion.jpg",
+    "pensar": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/guia_navegacion_pensarengujarati.jpg"
   },
   "botones": {
     "link-consonantes": true,

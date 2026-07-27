@@ -8,17 +8,17 @@
   "planas": [
     {
       "roman": "ka",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_ka.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_ka.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ka.mp3"
     },
     {
       "roman": "ma",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_ma.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_ma.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_ma.mp3"
     },
     {
       "roman": "chha",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_chha.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_chha.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_chha.mp3"
     }
   ]

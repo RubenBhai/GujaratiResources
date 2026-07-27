@@ -27,25 +27,25 @@
     "rahul": {
       "nombre": "રાહુલભાઈ",
       "color": "#5F6E4F",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_rahul.png"
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_rahul.jpg"
     },
     "shriya": {
       "nombre": "શ્રીયાબેન",
       "color": "#A8362A",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_shriya.png"
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_shriya.jpg"
     },
     "ritu": {
       "nombre": "રીતુભાઈ",
       "color": "#B8863D",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_ritu.png"
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_ritu.jpg"
     },
     "sohan": {
       "nombre": "સોહાનભાઈ",
       "color": "#4A6B8A",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_sohan.png"
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatar_sohan.jpg"
     }
   },
-  "imagenAvatarActivo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatarActivo.png",
+  "imagenAvatarActivo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/avatarActivo.jpg",
   "dialogos": [
     {
       "id": 1,
@@ -64,7 +64,7 @@
       "ini": 0.0,
       "fin": 1.74,
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_01.mp3",
-      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1.png"
+      "imagenFondo": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Fondo_1.jpg"
     },
     {
       "id": 2,
@@ -103,7 +103,7 @@
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_03.mp3",
       "coordenada_escena": [
         {
-          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_1.png",
+          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_1.jpg",
           "x": 118,
           "y": 68
         }
@@ -129,7 +129,7 @@
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_04.mp3",
       "coordenada_escena": [
         {
-          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_2.png",
+          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_2.jpg",
           "x": 136,
           "y": 61
         }
@@ -173,7 +173,7 @@
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_06.mp3",
       "coordenada_escena": [
         {
-          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_3.png",
+          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_3.jpg",
           "x": 127,
           "y": 55
         }
@@ -216,7 +216,7 @@
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/dialogo_1_1_1_08.mp3",
       "coordenada_escena": [
         {
-          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_4.png",
+          "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/Dialogo_Cambio_Escena_4.jpg",
           "x": 354,
           "y": 113
         }

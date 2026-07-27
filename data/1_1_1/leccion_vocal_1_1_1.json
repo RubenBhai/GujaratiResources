@@ -14,7 +14,7 @@
       "vocal": "a",
       "gujarati": "અ",
       "badge": "Vocal 1 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_a.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_a.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">a</strong> como en 'a' de '<strong class=\"det-p\">a<span class=\"det-s\">migo</span></strong>' dicho rápido y sin énfasis en la 'a'"
     },
@@ -22,7 +22,7 @@
       "tipo": "plana",
       "vocal": "a",
       "roman": "a",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_a.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_a.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3"
     },
     {
@@ -30,7 +30,7 @@
       "vocal": "aa",
       "gujarati": "આ",
       "badge": "Vocal 2 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">aa</strong> como en la segunda 'a' de '<strong class=\"det-p\">mam<span class=\"det-s\">á</span></strong>'"
     },
@@ -38,7 +38,7 @@
       "tipo": "plana",
       "vocal": "aa",
       "roman": "aa",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_aa.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_aa.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3"
     },
     {
@@ -46,14 +46,14 @@
       "vocal": "aa",
       "matra": "ા",
       "badge": "Matra 3 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_aa.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_aa.jpg",
       "nota_especial": "especial_a_abierta_vs_cerrada.html"
     },
     {
       "tipo": "con_matra",
       "vocal": "aa",
       "matra": "ા",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaa_maa_chhaa.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaa_maa_chhaa.jpg",
       "audios_secuencia": [
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3",
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
@@ -81,7 +81,7 @@
       "vocal": "e",
       "gujarati": "એ",
       "badge": "Vocal 4 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">e</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">e</span>lla</strong>'"
     },
@@ -89,7 +89,7 @@
       "tipo": "plana",
       "vocal": "e",
       "roman": "e",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_e.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_e.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3"
     },
     {
@@ -97,13 +97,13 @@
       "vocal": "e",
       "matra": "ે",
       "badge": "Matra 5 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_e.png"
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_e.jpg"
     },
     {
       "tipo": "con_matra",
       "vocal": "e",
       "matra": "ે",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ke_me_chhe.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ke_me_chhe.jpg",
       "audios_secuencia": [
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3",
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3",
@@ -131,7 +131,7 @@
       "vocal": "o",
       "gujarati": "ઓ",
       "badge": "Vocal 6 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">o</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">o</span>so</strong>'"
     },
@@ -139,7 +139,7 @@
       "tipo": "plana",
       "vocal": "o",
       "roman": "o",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_o.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_o.jpg",
       "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3"
     },
     {
@@ -147,13 +147,13 @@
       "vocal": "o",
       "matra": "ો",
       "badge": "Matra 7 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_o.png"
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_o.jpg"
     },
     {
       "tipo": "con_matra",
       "vocal": "o",
       "matra": "ો",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ko_mo_chho.png",
+      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ko_mo_chho.jpg",
       "audios_secuencia": [
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ko.mp3",
         "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3",
