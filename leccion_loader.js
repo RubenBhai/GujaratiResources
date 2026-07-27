@@ -6,7 +6,7 @@
   var _folder     = _leccionRaw.replace(/\./g, '_');   // "1.1.1" → "1_1_1"
   var _destino    = 'video.html?leccion=' + _leccionRaw + '&next=leccion_intro.html&modo=intro';
   
-  var CACHE_NAME       = 'curso-gujarati-v1';
+  var CACHE_NAME       = 'gujarati-media';   // misma caché que usa el sw.js
   var localManifestKey = 'manifest_' + _folder;
   var assetsUrl        = 'data/' + _folder + '/assets_' + _folder + '_versionado.json';
 
@@ -28,7 +28,10 @@
   var pctEl     = document.getElementById('progress-pct');
   var estadoEl  = document.getElementById('loader-estado');
   var leccionEl = document.getElementById('loader-leccion');
-  var recursoEl = document.getElementById('loader-recurso'); 
+  var recursoEl = document.getElementById('loader-recurso');
+  var eleccionEl = document.getElementById('loader-eleccion');   // pantalla de 3 opciones
+  var tamanoEl   = document.getElementById('elec-tamano');       // texto del tamaño
+  var progresoWrapEl = document.getElementById('progress-wrap'); // barra (se oculta al elegir)
 
   leccionEl.textContent = 'Lección ' + _leccionRaw;
 
@@ -144,9 +147,13 @@
 
         // FASE 2: ¿cuánto falta por descargar?
         var pend = await calcularPendiente(remoteAssets, localManifestAssets);
-        var mb   = (pend.bytesPendientes / 1024 / 1024).toFixed(1);
 
-        // Si ya está todo en caché, no descargamos nada: directo a la lección.
+        // Guardamos lo necesario para que los botones lo usen.
+        _remoteData = remoteData;
+        _remoteAssets = remoteAssets;
+        _localManifestAssets = localManifestAssets;
+
+        // Si ya está todo en caché, no hay nada que elegir: directo a la lección.
         if (pend.cantPendiente === 0) {
           estadoEl.textContent = 'Todo listo en tu dispositivo';
           localStorage.setItem(localManifestKey, JSON.stringify(remoteData));
@@ -154,16 +161,8 @@
           return;
         }
 
-        estadoEl.textContent = 'Descargando ' + mb + ' MB (' + pend.cantPendiente + ' archivos)...';
-        setProgreso(0, remoteAssets.length);
-        
-        descargarEnLotes(remoteAssets, localManifestAssets, 6, function(cargados, total){
-          setProgreso(cargados, total);
-          if(cargados >= total) {
-            localStorage.setItem(localManifestKey, JSON.stringify(remoteData));
-            irALeccion();
-          }
-        });
+        // FASE 3: mostrar la pantalla de elección con el tamaño.
+        mostrarEleccion(pend);
       })
       .catch(function(){
         estadoEl.textContent = '¡Listo!';
@@ -172,4 +171,67 @@
       });
   }
 
+  /* ══════ FASE 3: pantalla de elección y sus acciones ══════ */
+  var _remoteData = null, _remoteAssets = [], _localManifestAssets = [];
+
+  function mb(bytes){ return (bytes / 1024 / 1024).toFixed(1); }
+
+  function mostrarEleccion(pend){
+    if(recursoEl) recursoEl.textContent = '';
+    if(estadoEl)  estadoEl.textContent  = '';
+    // Modo "eligiendo": el CSS oculta logo y bloque de preparando.
+    document.body.classList.add('eligiendo');
+    if(progresoWrapEl) progresoWrapEl.style.display = 'none';
+    // Número de lección en el encabezado de la elección
+    var elecLec = document.getElementById('elec-leccion');
+    if(elecLec) elecLec.textContent = 'Lección ' + _leccionRaw;
+    // Rellenar el tamaño y mostrar la pantalla
+    if(tamanoEl) tamanoEl.textContent = mb(pend.bytesPendientes) + ' MB';
+    if(eleccionEl) eleccionEl.style.display = 'flex';
+  }
+
+  // Botón 1: descargar todo para uso sin internet
+  window.elecDescargar = function(){
+    document.body.classList.remove('eligiendo');
+    if(eleccionEl) eleccionEl.style.display = 'none';
+    if(progresoWrapEl) progresoWrapEl.style.display = '';
+    estadoEl.textContent = 'Descargando...';
+    setProgreso(0, _remoteAssets.length);
+    descargarEnLotes(_remoteAssets, _localManifestAssets, 6, function(cargados, total){
+      setProgreso(cargados, total);
+      if(cargados >= total){
+        localStorage.setItem(localManifestKey, JSON.stringify(_remoteData));
+        irALeccion();
+      }
+    });
+  };
+
+  // Botón 2: solo en línea — no descarga; el SW trae cada recurso al vuelo
+  window.elecSoloEnLinea = function(){
+    document.body.classList.remove('eligiendo');
+    if(eleccionEl) eleccionEl.style.display = 'none';
+    if(progresoWrapEl) progresoWrapEl.style.display = '';
+    estadoEl.textContent = 'Entrando en modo en línea...';
+    setProgreso(1, 1);
+    setTimeout(irALeccion, 300);
+  };
+
+  // Botón 3: liberar espacio — borra de la caché los recursos de ESTA lección
+  window.elecLiberarEspacio = async function(){
+    var aviso = document.getElementById('elec-aviso');
+    if(aviso) aviso.textContent = 'Liberando espacio...';
+    try {
+      var cache = await caches.open(CACHE_NAME);
+      for (var i = 0; i < _remoteAssets.length; i++){
+        await cache.delete(_remoteAssets[i].url);
+      }
+      try { localStorage.removeItem(localManifestKey); } catch(e){}
+    } catch(e){}
+    var pend = await calcularPendiente(_remoteAssets, []);
+    _localManifestAssets = [];
+    // Actualizar el tamaño mostrado y avisar, sin recrear la pantalla
+    if(tamanoEl) tamanoEl.textContent = mb(pend.bytesPendientes) + ' MB';
+    if(aviso) aviso.textContent = '✓ Espacio liberado';
+    setTimeout(function(){ if(aviso) aviso.textContent = ''; }, 2500);
+  };
 })();

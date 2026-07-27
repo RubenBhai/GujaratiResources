@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tema-leccion_loader.css">
+
 </head>
 <body>
 
@@ -23,7 +24,7 @@
     <div class="loader-subtitulo" id="loader-leccion">Lección ...</div>
   </div>
 
-  <div class="progress-wrap">
+  <div class="progress-wrap" id="progress-wrap">
     <div class="progress-bar-bg">
       <div class="progress-bar-fill" id="progress-fill"></div>
     </div>
@@ -33,6 +34,36 @@
     </div>
     <div class="loader-recurso" id="loader-recurso"></div>
     </div>
+  </div>
+
+  <!-- FASE 3: pantalla de elección (oculta hasta que se calcula el tamaño) -->
+  <div class="loader-eleccion" id="loader-eleccion">
+    <div class="elec-encabezado">
+      <div class="elec-cabecera">
+        <img class="elec-logo" src="https://rubenbhai.github.io/GujaratiResources/imagenes/LearnGujarati_SuperInmersivo_Main.jpg" alt="Piensa en Gujarati">
+        <div class="elec-leccion" id="elec-leccion">Lección 1.1.1</div>
+      </div>
+      <div class="elec-titulo">¿Cómo quieres esta lección?</div>
+    </div>
+    <div class="elec-tamano-linea">Ocupa <b id="elec-tamano">— MB</b> en tu dispositivo</div>
+    <div class="elec-aviso" id="elec-aviso"></div>
+    <button type="button" class="elec-btn elec-descargar" onclick="elecDescargar()">
+      <span class="elec-ico">📥</span>
+      <span>Descargar para usar sin internet
+        <span class="elec-sub">Se guarda en tu teléfono, funciona sin datos</span>
+      </span>
+    </button>
+
+    <button type="button" class="elec-btn elec-online" onclick="elecSoloEnLinea()">
+      <span class="elec-ico">🌐</span>
+      <span>Solo en línea
+        <span class="elec-sub">No ocupa espacio, necesita internet</span>
+      </span>
+    </button>
+
+    <button type="button" class="elec-btn elec-liberar" onclick="elecLiberarEspacio()">
+      🗑️ Liberar el espacio de esta lección
+    </button>
   </div>
 
 </div>
