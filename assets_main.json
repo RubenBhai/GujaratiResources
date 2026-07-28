@@ -38,8 +38,8 @@
     },
     {
       "url": "contenido.html",
-      "lastModified": 1784520533945,
-      "size": 10818
+      "lastModified": 1785182608848,
+      "size": 10977
     },
     {
       "url": "contenido.js",
@@ -53,8 +53,8 @@
     },
     {
       "url": "contenido_modulo.js",
-      "lastModified": 1785157019242,
-      "size": 4243
+      "lastModified": 1785193191190,
+      "size": 4171
     },
     {
       "url": "efecto_victoria.js",
@@ -113,8 +113,8 @@
     },
     {
       "url": "index.html",
-      "lastModified": 1785120200642,
-      "size": 8424
+      "lastModified": 1785179779526,
+      "size": 7561
     },
     {
       "url": "index.js",
@@ -148,8 +148,8 @@
     },
     {
       "url": "leccion_intro.js",
-      "lastModified": 1785156811561,
-      "size": 7038
+      "lastModified": 1785211652243,
+      "size": 7056
     },
     {
       "url": "leccion_letra.html",
@@ -163,13 +163,13 @@
     },
     {
       "url": "leccion_loader.html",
-      "lastModified": 1784395916004,
-      "size": 1479
+      "lastModified": 1785192566771,
+      "size": 2587
     },
     {
       "url": "leccion_loader.js",
-      "lastModified": 1785171258845,
-      "size": 6696
+      "lastModified": 1785192798804,
+      "size": 9638
     },
     {
       "url": "leccion_notas.html",
@@ -198,18 +198,18 @@
     },
     {
       "url": "leccion_palabra_intro.js",
-      "lastModified": 1783881313342,
-      "size": 2406
+      "lastModified": 1785212700359,
+      "size": 2425
     },
     {
       "url": "leccion_pensarEnGUJ.html",
-      "lastModified": 1784082809175,
-      "size": 1842
+      "lastModified": 1785210100770,
+      "size": 1932
     },
     {
       "url": "leccion_pensarEnGUJ.js",
-      "lastModified": 1783885786913,
-      "size": 2258
+      "lastModified": 1785210181635,
+      "size": 2355
     },
     {
       "url": "leccion_plana.html",
@@ -218,8 +218,8 @@
     },
     {
       "url": "leccion_plana.js",
-      "lastModified": 1783885994740,
-      "size": 9799
+      "lastModified": 1785194390885,
+      "size": 9994
     },
     {
       "url": "leccion_vocal.html",
@@ -228,8 +228,28 @@
     },
     {
       "url": "leccion_vocal.js",
-      "lastModified": 1784520111264,
-      "size": 13988
+      "lastModified": 1785194296667,
+      "size": 14192
+    },
+    {
+      "url": "main_loader.html",
+      "lastModified": 1785179690888,
+      "size": 2236
+    },
+    {
+      "url": "main_loader.js",
+      "lastModified": 1785179709009,
+      "size": 4445
+    },
+    {
+      "url": "piensa.html",
+      "lastModified": 1785209247884,
+      "size": 2663
+    },
+    {
+      "url": "piensa.js",
+      "lastModified": 1785209238769,
+      "size": 15061
     },
     {
       "url": "practica.html",
@@ -287,9 +307,19 @@
       "size": 2034
     },
     {
+      "url": "tema-compone.css",
+      "lastModified": 1784982047111,
+      "size": 9024
+    },
+    {
+      "url": "tema-compone_desktop.css",
+      "lastModified": 1784982054601,
+      "size": 6702
+    },
+    {
       "url": "tema-contenido.css",
-      "lastModified": 1783866493175,
-      "size": 11505
+      "lastModified": 1785192000997,
+      "size": 11781
     },
     {
       "url": "tema-contenido_desktop.css",
@@ -298,13 +328,13 @@
     },
     {
       "url": "tema-contenido_modulo.css",
-      "lastModified": 1784741197865,
-      "size": 6732
+      "lastModified": 1785193207761,
+      "size": 6615
     },
     {
       "url": "tema-contenido_modulo_desktop.css",
-      "lastModified": 1784081053125,
-      "size": 4363
+      "lastModified": 1785193230271,
+      "size": 4275
     },
     {
       "url": "tema-especial_a_abierta_vs_cerrada.css",
@@ -378,8 +408,8 @@
     },
     {
       "url": "tema-leccion_loader.css",
-      "lastModified": 1784395653748,
-      "size": 2295
+      "lastModified": 1785192580942,
+      "size": 4322
     },
     {
       "url": "tema-leccion_palabra.css",
@@ -403,13 +433,13 @@
     },
     {
       "url": "tema-leccion_pensarEnGUJ.css",
-      "lastModified": 1783885778383,
-      "size": 4875
+      "lastModified": 1785210236124,
+      "size": 4995
     },
     {
       "url": "tema-leccion_pensarEnGUJ_desktop.css",
-      "lastModified": 1784082862009,
-      "size": 2519
+      "lastModified": 1785210307158,
+      "size": 2609
     },
     {
       "url": "tema-leccion_plana.css",
@@ -445,6 +475,11 @@
       "url": "tema-notas_desktop.css",
       "lastModified": 1784667442443,
       "size": 2998
+    },
+    {
+      "url": "tema-piensa.css",
+      "lastModified": 1785209252089,
+      "size": 9822
     },
     {
       "url": "tema-practica.css",
