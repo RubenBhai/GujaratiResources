@@ -9,10 +9,10 @@
 //     para que lo que el usuario bajó para offline no se pierda en cada update.
 //     El control de versión de cada archivo lo hace el loader con "?v=".
 
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const CACHE_ESTRUCTURAL = 'piensa-en-gujarati-' + CACHE_VERSION;
 const CACHE_MEDIOS = 'gujarati-media';   // audios/imágenes descargados, estable
-const CACHE_MOTOR  = 'gujarati-motor';   // páginas/JS/CSS del motor, estable
+
 
 self.addEventListener('install', function (event) {
   self.skipWaiting();
@@ -24,7 +24,7 @@ self.addEventListener('activate', function (event) {
       return Promise.all(
         nombres
           // Borra todo lo que NO sea la estructural actual NI la de medios.
-          .filter(function (n) { return n !== CACHE_ESTRUCTURAL && n !== CACHE_MEDIOS && n !== CACHE_MOTOR; })
+          .filter(function (n) { return n !== CACHE_ESTRUCTURAL && n !== CACHE_MEDIOS; })
           .map(function (n) { return caches.delete(n); })
       );
     })
@@ -66,7 +66,7 @@ self.addEventListener('fetch', function (event) {
   const cacheKey = url.origin + url.pathname;
 
   event.respondWith(
-    fetch(req)
+    fetch(req, { cache: 'no-store' })
       .then(function (respuesta) {
         if (respuesta && respuesta.ok) {
           const clone = respuesta.clone();
