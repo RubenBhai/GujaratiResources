@@ -86,7 +86,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     document.getElementById('nav-anterior').href = data.anterior;
     document.getElementById('nav-home').href     = data.home;
 
-    var empezarUrl = 'leccion_letra.html?leccion=' + _leccionRaw + '&item=1';
+    var empezarUrl = data.empezar || ('leccion_letra.html?leccion=' + _leccionRaw + '&item=1');
     document.getElementById('nav-empezar').href = empezarUrl;
 
     var contenedor = document.getElementById('contenedor-pantallas');

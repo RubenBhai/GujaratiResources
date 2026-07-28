@@ -19,7 +19,7 @@ function mensajeParaPorcentaje(p){
   return '¡Bien! Sigue practicando';
 }
 
-function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfectoVictoria){
+function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfectoVictoria, audioLetra){
   var canvas = document.getElementById('canvas-plana');
   var ctx    = canvas.getContext('2d');
   var dibujando   = false;
@@ -174,7 +174,13 @@ function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfect
         if(miToken !== tokenAnimacionVer) return;
         var proporcion = Math.min(1, (ahora - inicio) / DURACION_MS);
         dibujarHasta(proporcion * longitudTotal);
-        if(proporcion < 1) requestAnimationFrame(frame);
+        if(proporcion < 1){
+          requestAnimationFrame(frame);
+        } else {
+          player.src = audioLetra;
+          player.playbackRate = 1.0;
+          player.play().catch(function(){});
+        }
       }
       requestAnimationFrame(frame);
     };
@@ -207,8 +213,8 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     var trazosUrl = 'data/' + _leccion + '/trazos_' + actual.roman + '.json';
     fetch(trazosUrl + '?t=' + Date.now(), { cache: 'no-store' })
       .then(function(r){ if(!r.ok) throw new Error('sin trazos'); return r.json(); })
-      .then(function(segmentos){ configurarCanvasPlana(img, segmentos, data.sonido_victoria, data.programa_efecto_victoria); })
-      .catch(function(){ configurarCanvasPlana(img, null, data.sonido_victoria, data.programa_efecto_victoria); });
+      .then(function(segmentos){ configurarCanvasPlana(img, segmentos, data.sonido_victoria, data.programa_efecto_victoria, actual.audio); })
+      .catch(function(){ configurarCanvasPlana(img, null, data.sonido_victoria, data.programa_efecto_victoria, actual.audio); });
 
     document.getElementById('nav-home').href    = data.home;
     document.getElementById('nav-palabras').href = data.ir_a_palabras;

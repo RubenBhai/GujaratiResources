@@ -20,6 +20,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     configurarBoton('btn-aprende', data.mostrar_aprende, 'aprende.html?leccion=' + _leccionRaw);
     configurarBoton('btn-compone', data.mostrar_compone, 'compone.html?leccion=' + _leccionRaw);
     configurarBoton('btn-reto',    data.mostrar_reto,    'reto.html?leccion='    + _leccionRaw);
+    configurarBoton('btn-pensar',  data.mostrar_pensar,  'piensa.html?leccion='  + _leccionRaw);
     configurarBoton('btn-dialogo', data.mostrar_dialogo,
       'video.html?leccion=' + _leccionRaw + '&next=video_interactivo.html&modo=desafio');
 

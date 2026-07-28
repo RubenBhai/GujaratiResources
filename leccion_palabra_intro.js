@@ -9,7 +9,8 @@ document.getElementById('nav-mapa').href = 'guia_navegacion.html?leccion=' + _le
 fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(function(data){
-    var empezarUrl = 'leccion_palabra.html?leccion=' + _leccionRaw + '&item=1';
+
+    var empezarUrl = data.empezar || ('leccion_palabra.html?leccion=' + _leccionRaw + '&item=1');
 
     document.getElementById('nav-home').href     = data.home;
     document.getElementById('nav-anterior').href = data.anterior;

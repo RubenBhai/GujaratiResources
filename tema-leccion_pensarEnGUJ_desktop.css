@@ -96,7 +96,7 @@
   /* Botón de Cierre Completo centrado en la base del bloque de acciones */
   #btn-fin-leccion {
     grid-column: 2 / span 2;
-    grid-row: 3;
+    grid-row: 4;
     width: 100%;
     max-width: 400px;
     justify-self: center;
@@ -115,5 +115,11 @@
     justify-content: center;
     border-radius: var(--radio-medio);
     line-height: 1.4;
+  }
+
+  #btn-pensar {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+    align-self: start;
   }
 }

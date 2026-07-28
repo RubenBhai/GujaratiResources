@@ -29,9 +29,9 @@
   var estadoEl  = document.getElementById('loader-estado');
   var leccionEl = document.getElementById('loader-leccion');
   var recursoEl = document.getElementById('loader-recurso');
-  var eleccionEl = document.getElementById('loader-eleccion');   // pantalla de 3 opciones
-  var tamanoEl   = document.getElementById('elec-tamano');       // texto del tamaño
-  var progresoWrapEl = document.getElementById('progress-wrap'); // barra (se oculta al elegir)
+  var zonaEleccion = document.getElementById('zona-eleccion');   // botones
+  var zonaProgreso = document.getElementById('zona-progreso');   // barra
+  var tamanoEl     = document.getElementById('elec-tamano');     // texto del tamaño
 
   leccionEl.textContent = 'Lección ' + _leccionRaw;
 
@@ -87,28 +87,36 @@
 
   /* Descarga en lotes para no saturar conexiones en móvil */
   function descargarEnLotes(assets, localManifestAssets, tamanioLote, onProgreso){
-    var total    = assets.length;
-    var cargados = 0;
-    var idx      = 0;
+    var total       = assets.length;
+    var cargados    = 0;
+    var idx         = 0;
+    var ultimoPintado = 0;   // en cuántos ítems se refrescó por última vez
 
     function siguienteLote(){
       if(idx >= total) return Promise.resolve();
       var lote = assets.slice(idx, idx + tamanioLote);
       idx += tamanioLote;
-      
+
       var promesas = lote.map(function(assetObj) {
         return fetchAsset(assetObj, localManifestAssets);
       });
 
       return Promise.all(promesas).then(function(){
         cargados += lote.length;
-        onProgreso(Math.min(cargados, total), total);
+        // Refrescar solo cada 10 ítems (o al terminar), para no castigar el GUI.
+        if(cargados - ultimoPintado >= 10 || cargados >= total){
+          ultimoPintado = cargados;
+          onProgreso(Math.min(cargados, total), total);
+          // Ceder al navegador para que pinte antes de seguir.
+          return new Promise(function(res){
+            requestAnimationFrame(function(){ setTimeout(res, 0); });
+          }).then(siguienteLote);
+        }
         return siguienteLote();
       });
     }
     return siguienteLote();
   }
-
   /* FASE 2: calcula cuántos bytes FALTAN por descargar (los que no están
      ya en caché o están desactualizados). Misma lógica de decisión que
      fetchAsset, para que el tamaño mostrado coincida con lo que se bajará. */
@@ -133,6 +141,8 @@
   }
 
   function arrancarDescarga(){
+    verZona('progreso');                 // mientras calcula: barra + "Preparando..."
+    if(estadoEl) estadoEl.textContent = 'Preparando...';
     fetch(assetsUrl + '?t=' + Date.now(), { cache: 'no-store' })
       .then(function(r){ if(!r.ok) throw new Error('No se encontró ' + assetsUrl); return r.json(); })
       .then(async function(remoteData){
@@ -176,25 +186,20 @@
 
   function mb(bytes){ return (bytes / 1024 / 1024).toFixed(1); }
 
+  // Alternar la zona central: 'eleccion' (botones) o 'progreso' (barra).
+  function verZona(cual){
+    if(zonaEleccion) zonaEleccion.style.display = (cual === 'eleccion') ? 'flex' : 'none';
+    if(zonaProgreso) zonaProgreso.style.display = (cual === 'progreso') ? 'flex' : 'none';
+  }
+
   function mostrarEleccion(pend){
-    if(recursoEl) recursoEl.textContent = '';
-    if(estadoEl)  estadoEl.textContent  = '';
-    // Modo "eligiendo": el CSS oculta logo y bloque de preparando.
-    document.body.classList.add('eligiendo');
-    if(progresoWrapEl) progresoWrapEl.style.display = 'none';
-    // Número de lección en el encabezado de la elección
-    var elecLec = document.getElementById('elec-leccion');
-    if(elecLec) elecLec.textContent = 'Lección ' + _leccionRaw;
-    // Rellenar el tamaño y mostrar la pantalla
     if(tamanoEl) tamanoEl.textContent = mb(pend.bytesPendientes) + ' MB';
-    if(eleccionEl) eleccionEl.style.display = 'flex';
+    verZona('eleccion');
   }
 
   // Botón 1: descargar todo para uso sin internet
   window.elecDescargar = function(){
-    document.body.classList.remove('eligiendo');
-    if(eleccionEl) eleccionEl.style.display = 'none';
-    if(progresoWrapEl) progresoWrapEl.style.display = '';
+    verZona('progreso');
     estadoEl.textContent = 'Descargando...';
     setProgreso(0, _remoteAssets.length);
     descargarEnLotes(_remoteAssets, _localManifestAssets, 6, function(cargados, total){
@@ -208,9 +213,7 @@
 
   // Botón 2: solo en línea — no descarga; el SW trae cada recurso al vuelo
   window.elecSoloEnLinea = function(){
-    document.body.classList.remove('eligiendo');
-    if(eleccionEl) eleccionEl.style.display = 'none';
-    if(progresoWrapEl) progresoWrapEl.style.display = '';
+    verZona('progreso');
     estadoEl.textContent = 'Entrando en modo en línea...';
     setProgreso(1, 1);
     setTimeout(irALeccion, 300);

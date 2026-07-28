@@ -120,7 +120,6 @@
   .lec-info { flex: 1; }
   .lec-title { font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
   .lec-sub { font-size: 0.95rem; color: var(--ink-soft); margin-top: 3px; line-height: 1.3; }
-  .lec-gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.15rem; color: var(--saffron); margin-top: 2px; }
   .lec-status { font-size: 1.2rem; color: var(--sindoor); }
   .lec-soon { font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
 

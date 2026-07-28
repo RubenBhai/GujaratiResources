@@ -535,4 +535,20 @@ a, button {
 }
 
 /* Estado del botón de música */
-#musicToggle.music-off { color: rgba(234,224,204,0.4); }+
+#musicToggle.music-off { color: rgba(234,224,204,0.4); }
+
+/* ═══ Palabras de la lección 1.1 (tarjeta de contenido) ═══ */
+.palabra-guj {
+  font-family: 'Noto Serif Gujarati', serif;
+  color: #FF8FB3;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.palabra-es {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+
+
+

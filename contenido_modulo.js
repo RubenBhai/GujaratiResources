@@ -7,8 +7,8 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(function(data){
     document.getElementById('page-title').textContent = data.badge + ' · Piensa en Gujarati';
-    document.getElementById('nav-atras').href = 'contenido.html';
-    document.getElementById('nav-home').href  = 'index.html';
+    document.getElementById('nav-atras').href = data.atras;
+    document.getElementById('nav-home').href  = data.home;
 
     document.getElementById('badge').textContent    = data.badge;
     document.getElementById('titulo').textContent   = data.titulo;
@@ -48,7 +48,6 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
         '<div class="lec-info">'  +
           '<div class="lec-title">' + l.titulo   + '</div>' +
           '<div class="lec-sub">'   + l.sub_html  + '</div>' +
-          '<div class="lec-gu">'    + l.gu        + '</div>' +
         '</div>' +
         (esActiva
           ? '<span class="lec-status">▶</span>'
