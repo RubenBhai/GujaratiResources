@@ -1,0 +1,79 @@
+{
+  "leccion": "1.1.1",
+  "titulo": "¡A pensar!",
+  "intro": "Escucha, lee o mira, y responde. Entiende lo que pasa y elige la respuesta correcta.",
+  "actividades": [
+    {
+      "id": "a1",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_e_maamaa_chhe.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Ordena lo que escuchaste",
+          "modo": "ordenar",
+          "respuesta": ["એ", "મામા", "છે"],
+          "distractores": ["આ", "કાકા"]
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "એ મામા છે"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Cámbiala para decir «este es el tío materno»",
+          "modo": "opcion",
+          "opciones_idioma": "gu",
+          "opciones": [
+            { "texto": "આ મામા છે", "correcta": true },
+            { "texto": "એ કાકા છે" },
+            { "texto": "એ મામા છે" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a3",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "એ મામા છે"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa esta oración?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            { "texto": "ese es el tío materno", "correcta": true },
+            { "texto": "esta es la mamá" },
+            { "texto": "ese es el trabajo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Cuál es el tío materno?",
+          "modo": "imagen",
+          "opciones": [
+            { "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa_noinfo.jpg", "correcta": true },
+            { "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa_noinfo.jpg" },
+            { "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maa_noinfo.jpg" },
+            { "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaam_noinfo.jpg" }
+          ]
+        }
+      ]
+    }
+  ]
+}
