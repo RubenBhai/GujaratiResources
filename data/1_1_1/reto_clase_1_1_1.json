@@ -124,6 +124,21 @@
       }
     ]
   },
+  "nivel5": {
+    "titulo": "Dictado backwards",
+    "instruccion": "Escucha cada parte y repítela en voz alta. La frase irá creciendo.",
+    "oraciones": [
+      {
+        "oracion_completa": "કેમ છો શ્રીયાબેન?",
+        "espanol": "¿Cómo está Shriya?",
+        "fragmentos": [
+          { "texto": "શ્રીયાબેન?",           "audio": "audios/clase_1_1/dictado_backwards_01_frag_1.mp3" },
+          { "texto": "છો શ્રીયાબેન?",         "audio": "audios/clase_1_1/dictado_backwards_01_frag_2.mp3" },
+          { "texto": "કેમ છો શ્રીયાબેન?",     "audio": "audios/clase_1_1/dictado_backwards_01_frag_3.mp3" }
+        ]
+      }
+    ]
+  },
   "video_jw": true,
   "cantar_jw": false
 }

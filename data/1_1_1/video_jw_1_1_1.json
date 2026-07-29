@@ -25,11 +25,28 @@
   },
 
   "despues": {
-    "titulo": "Después de ver",
+    "titulo": "Después de ver · toca cada pregunta para ver una pista",
     "preguntas": [
-      "¿Escuchaste <b class=\"gu\">છે</b>? ¿Cuántas veces, más o menos?",
-      "¿Reconociste algún saludo al principio?",
-      "Sin entender las palabras, ¿de qué crees que hablaban?"
+      {
+        "pregunta": "¿Escuchaste <b class=\"gu\">છે</b>? ¿Cuántas veces, más o menos?",
+        "respuesta": "Sí, al menos 4 veces: es la palabra más común del gujarati (\"es / está / hay\").",
+        "duracion": 2
+      },
+      {
+        "pregunta": "¿Reconociste algún saludo al principio?",
+        "respuesta": "Sí, <b class=\"gu\">કેમ છો?</b> — \"¿cómo estás?\", el saludo típico al empezar.",
+        "duracion": 3
+      },
+      {
+        "pregunta": "¿Escuchaste <b class=\"gu\">આ</b> como prononmbre? ¿Cuántas veces, más o menos?",
+        "respuesta": "Sí, Anita la utilizó para presentar a su a amiga que la acompaña.",
+        "duracion": 3
+      },
+      {
+        "pregunta": "Sin entender las palabras, ¿de qué crees que hablaban?",
+        "respuesta": "No hay una única respuesta correcta. Fíjate en el tono y los gestos: parecía una conversación amable de presentación.",
+        "duracion": 4
+      }
     ]
   },
 
