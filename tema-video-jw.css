@@ -61,11 +61,20 @@ h1 { font-family:'Fraunces',serif; font-size:1.7rem; text-align:center; line-hei
   font-size:0.85rem; color:var(--ink-soft); margin-top:12px; }
 .ve-aviso .ext { font-size:0.95rem; }
 
-/* ── PREGUNTAS ── */
+/* ── PREGUNTAS (clic para revelar la respuesta) ── */
 .pregunta { background:var(--surface-light); border-left:4px solid var(--olive);
-  border-radius:12px; padding:14px 16px; margin-top:12px; font-size:1rem; line-height:1.55; }
+  border-radius:12px; padding:14px 16px; margin-top:12px; font-size:1rem; line-height:1.55;
+  cursor:pointer; user-select:none; -webkit-user-select:none;
+  transition:background 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease; }
 .pregunta:first-child { margin-top:0; }
 .pregunta b { color:var(--saffron); }
+.pregunta:hover { border-left-color:var(--saffron); }
+
+/* Estado revelado: borde azafrán + fondo un pelín más claro */
+.pregunta.revelada { background:#4A3C33; border-left-color:var(--saffron);
+  box-shadow:0 4px 16px rgba(184,134,61,0.15); }
+.pregunta .lbl-resp { display:block; font-size:0.72rem; text-transform:uppercase;
+  letter-spacing:0.08em; color:var(--saffron); font-weight:700; margin-bottom:5px; }
 
 /* ── BOTONES ── */
 .btn-row { display:flex; gap:10px; width:100%; }

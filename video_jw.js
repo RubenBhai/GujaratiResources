@@ -23,13 +23,38 @@ function montarChips(lista){
   });
 }
 
+/* Preguntas: al tocar una, revela su respuesta durante 'duracion' segundos
+   (default 2) con el efecto de color, y vuelve sola a la pregunta original.
+   Cada pregunta tiene su propio timer; mientras está revelada, ignora toques. */
 function montarPreguntas(lista){
   var cont = document.getElementById('despues-preguntas');
   cont.innerHTML = '';
-  (lista || []).forEach(function(txt){
+  (lista || []).forEach(function(item){
+    var preguntaHTML  = item.pregunta  || '';
+    var respuestaHTML = item.respuesta || '';
+    var dur = (typeof item.duracion === 'number' && item.duracion > 0) ? item.duracion : 2;
+
     var p = document.createElement('div');
     p.className = 'pregunta';
-    p.innerHTML = txt;
+    p.innerHTML = preguntaHTML;
+    p.setAttribute('role', 'button');
+    p.setAttribute('tabindex', '0');
+
+    function revelar(){
+      if(p.classList.contains('revelada')) return;   // ya mostrando respuesta → ignora
+      p.classList.add('revelada');
+      p.innerHTML = '<span class="lbl-resp">Respuesta</span>' + respuestaHTML;
+      p._timer = setTimeout(function(){
+        p.classList.remove('revelada');
+        p.innerHTML = preguntaHTML;
+      }, dur * 1000);
+    }
+
+    p.addEventListener('click', revelar);
+    p.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); revelar(); }
+    });
+
     cont.appendChild(p);
   });
 }

@@ -67,10 +67,12 @@ function contarIncidencias(texto, elemento){
 /* ── Inicio de nivel ── */
 function datosNivel(n){
   return n===1 ? DATA.nivel1 : n===2 ? DATA.nivel2 :
-         n===3 ? DATA.nivel3 : n===4 ? DATA.nivel4 : DATA.nivel5;
+         n===3 ? DATA.nivel3 : n===4 ? DATA.nivel4 :
+         n===6 ? DATA.nivel6 : DATA.nivel5;
 }
 
 function iniciarNivel(n){
+  if(n===6){ iniciarN6(); return; }   /* Nivel 6: flujo propio, sin sesiones */
   nivelActual = n;
   var d = datosNivel(n);
   sesionTotal = (n===2 && d.sesiones && d.sesiones.length)
@@ -697,6 +699,74 @@ function verificarN5(){
 
 function repetirSesionN5(){ montarN5(sesionNum, sesionTotal); }
 
+/* ══════ NIVEL 6 · DICTADO BACKWARDS (escucha y repite, sin evaluación) ══════ */
+var n6Oraciones = [], n6Oidx = 0, n6Fidx = 0;
+
+function iniciarN6(){
+  nivelActual = 6;
+  var d = DATA.nivel6 || {};
+  n6Oraciones = d.oraciones || [];
+  if(n6Oraciones.length === 0){ history.back(); return; }
+  var instr = document.getElementById('n6-instruccion');
+  if(instr) instr.textContent = d.instruccion || '';
+  n6MostrarFragmento(0, 0);
+  goTo('s-n6');
+}
+
+function n6MostrarFragmento(oidx, fidx){
+  n6Oidx = oidx; n6Fidx = fidx;
+  var frags = n6Oraciones[oidx].fragmentos || [];
+  var frag  = frags[fidx] || {};
+  document.getElementById('n6-badge').textContent    = 'Frase ' + (oidx+1) + ' de ' + n6Oraciones.length;
+  document.getElementById('n6-progreso').textContent = 'Parte ' + (fidx+1) + ' de ' + frags.length;
+  document.getElementById('n6-cierre').style.display        = 'none';
+  document.getElementById('n6-fragmento-wrap').style.display = 'flex';
+  document.getElementById('n6-texto').textContent = frag.texto || '';
+  var esUltimo = (fidx === frags.length - 1);
+  document.getElementById('n6-siguiente').textContent = esUltimo ? 'Ver la frase completa \u2192' : 'Siguiente \u2192';
+  setTimeout(n6Reproducir, 350);
+}
+
+function n6Reproducir(){
+  var frag = (n6Oraciones[n6Oidx].fragmentos || [])[n6Fidx];
+  if(!frag || !frag.audio) return;
+  var btn = document.getElementById('n6-escuchar');
+  if(btn) btn.classList.add('sonando');
+  playerRef.src = frag.audio;
+  playerRef.onended = function(){ playerRef.onended = null; if(btn) btn.classList.remove('sonando'); };
+  playerRef.play().catch(function(){});
+}
+function n6Repetir(){ n6Reproducir(); }
+
+function n6Siguiente(){
+  var frags = n6Oraciones[n6Oidx].fragmentos || [];
+  if(n6Fidx < frags.length - 1) n6MostrarFragmento(n6Oidx, n6Fidx + 1);
+  else n6MostrarCierre();
+}
+
+function n6MostrarCierre(){
+  var oracion = n6Oraciones[n6Oidx];
+  document.getElementById('n6-fragmento-wrap').style.display = 'none';
+  document.getElementById('n6-cierre').style.display = 'flex';
+  document.getElementById('n6-cierre-gu').textContent = oracion.oracion_completa || '';
+  document.getElementById('n6-cierre-es').textContent = oracion.espanol || '';
+  document.getElementById('n6-progreso').textContent = '';
+  var esUltimaOracion = (n6Oidx === n6Oraciones.length - 1);
+  document.getElementById('n6-siguiente-cierre').textContent = esUltimaOracion ? '\u2713 Terminar' : 'Siguiente frase \u2192';
+  setTimeout(n6ReproducirCierre, 300);
+}
+
+function n6ReproducirCierre(){
+  var frags = n6Oraciones[n6Oidx].fragmentos || [];
+  var ultimo = frags[frags.length - 1];
+  if(ultimo && ultimo.audio){ playerRef.src = ultimo.audio; playerRef.play().catch(function(){}); }
+}
+
+function n6SiguienteOracion(){
+  if(n6Oidx < n6Oraciones.length - 1) n6MostrarFragmento(n6Oidx + 1, 0);
+  else history.back();
+}
+
 /* ── Progreso ── */
 function actualizarTopProgress(){
   document.getElementById('top-fill').style.width =
@@ -710,9 +780,10 @@ function verificarBotonesNivel(){
     if(d.sesiones && d.sesiones.length) return true;
     if(d.texto && d.elementos && d.elementos.length) return true;
     if(d.elementos && d.elementos.length) return true;
+    if(d.oraciones && d.oraciones.length) return true;
     return false;
   }
-  [1,2,3,4,5].forEach(function(n){
+  [1,2,3,4,6].forEach(function(n){
     var btn = document.getElementById('btn-nivel-'+n);
     if(!btn) return;
     if(!nivelTieneContenido(datosNivel(n))){

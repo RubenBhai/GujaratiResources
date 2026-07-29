@@ -239,3 +239,10 @@ h2 { font-family:'Fraunces',serif; font-size:1.4rem; text-align:center; }
   from { opacity:0; transform:scale(0.95); }
   to   { opacity:1; transform:scale(1); }
 }
+
+/* ══════ NIVEL 6 · DICTADO BACKWARDS ══════ */
+.n6-texto     { font-family:'Noto Serif Gujarati',serif; font-size:2.4rem; color:var(--paper); line-height:1.5; }
+.n6-cierre-gu { font-family:'Noto Serif Gujarati',serif; font-size:2rem;   color:var(--paper); line-height:1.5; }
+.n6-cierre-es { font-family:'Fraunces',serif; font-size:1.2rem; color:var(--saffron); margin-top:8px; }
+
+

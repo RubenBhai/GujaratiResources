@@ -47,6 +47,10 @@
         <span class="num">4</span>
         <div class="info"><div class="tit">Dictado de Oraciones</div><div class="sub">Escucha la oración y ordénala palabra por palabra</div></div>
       </button>
+      <button class="btn-nivel" id="btn-nivel-6" onclick="iniciarNivel(6)">
+        <span class="num">🗣️</span>
+        <div class="info"><div class="tit">Dictado backwards</div><div class="sub">Escucha por partes y repite en voz alta; la frase crece hasta completarse</div></div>
+      </button>
       <a class="btn-nivel btn-flash" id="btn-flash-palabras" href="#">
         <span class="num">⚡</span>
         <div class="info"><div class="tit">Reto relámpago de palabras</div><div class="sub">Lee cada palabra en voz alta antes de escucharla</div></div>
@@ -136,6 +140,40 @@
       <button class="btn-sec" onclick="repetirSesionN5()">🔄 Repetir</button>
       <button class="btn-main" onclick="verificarN5()">Verificar</button>
     </div>
+  </div>
+
+  <!-- NIVEL 6 · DICTADO BACKWARDS -->
+  <div class="screen" id="s-n6">
+    <span class="badge" id="n6-badge">Frase 1 de 1</span>
+    <h2>Dictado backwards</h2>
+    <p class="lead" id="n6-instruccion"></p>
+
+    <!-- Zona de fragmento: escucha y repite -->
+    <div id="n6-fragmento-wrap" style="width:100%; display:flex; flex-direction:column; align-items:center; gap:18px;">
+      <div class="dictado-card">
+        <div class="dictado-num" id="n6-progreso"></div>
+        <div class="n6-texto gu" id="n6-texto"></div>
+      </div>
+      <div class="audio-row">
+        <button class="btn-escuchar-reto" id="n6-escuchar" onclick="n6Reproducir()">🎧 Escuchar</button>
+        <button class="btn-audio-ref slow" id="n6-repetir" onclick="n6Repetir()">🔁 Repetir</button>
+      </div>
+      <p class="sesion-info">Escucha y repite en voz alta. Cuando estés listo, avanza.</p>
+      <button class="btn-main" id="n6-siguiente" onclick="n6Siguiente()">Siguiente →</button>
+    </div>
+
+    <!-- Zona de cierre: frase completa + español -->
+    <div id="n6-cierre" style="width:100%; display:none; flex-direction:column; align-items:center; gap:16px;">
+      <div class="dictado-card">
+        <div class="dictado-num">Frase completa</div>
+        <div class="n6-cierre-gu gu" id="n6-cierre-gu"></div>
+        <div class="n6-cierre-es" id="n6-cierre-es"></div>
+      </div>
+      <button class="btn-audio-ref" id="n6-cierre-escuchar" onclick="n6ReproducirCierre()">🔊 Escuchar de nuevo</button>
+      <button class="btn-main" id="n6-siguiente-cierre" onclick="n6SiguienteOracion()">Siguiente frase →</button>
+    </div>
+
+    <button class="btn-sec" onclick="goTo('s-inicio')">← Menú de niveles</button>
   </div>
 
   <!-- RESULTADO -->
