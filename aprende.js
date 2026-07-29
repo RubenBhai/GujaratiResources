@@ -20,8 +20,8 @@ navMapa.href = 'guia_navegacion.html?leccion=' + LECCION;
 const _leccion    = LECCION.replace(/\./g, '_');
 const STORAGE_KEY = 'srs_' + LECCION;
 const JSON_URL    = 'data/' + _leccion + '/aprende_clase_' + _leccion + '.json';
-const SND_OK      = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
-const SND_ERR     = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
+const SND_OK      = 'audios/clase_1_1/Clase_1_1_Correcto.mp3';
+const SND_ERR     = 'audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
 // Intervalos SRS en minutos: nivel 0..6
 const INTERVALOS       = [0, 10, 60, 1440, 4320, 10080, 20160]; // 0, 10min, 1h, 1d, 3d, 7d, 14d
@@ -572,7 +572,7 @@ fetch(JSON_URL)
 
 /* ---------- Verificador de versión ---------- */
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){

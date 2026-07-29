@@ -10,8 +10,8 @@ document.getElementById('nav-home').href = 'leccion_intro.html?leccion=' + _lecc
 var _btnFlash = document.getElementById('btn-flash-palabras');
 if(_btnFlash) _btnFlash.href = 'reto_flash.html?palabras=' + _leccionRaw;
 
-const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
-const SND_ERR = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
+const SND_OK  = 'audios/clase_1_1/Clase_1_1_Correcto.mp3';
+const SND_ERR = 'audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
 const playerRef  = document.getElementById('player-ref');
 const playerSelf = document.getElementById('player-self');
@@ -759,7 +759,7 @@ fetch(JSON_URL)
 
 /* ── Verificador de versión ── */
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){

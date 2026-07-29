@@ -264,7 +264,7 @@ function enviarAlTeatroIA(audioBase64, mimeType, fraseObjetivo, lineId){
 
 /* ── Verificador de versión ── */
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){

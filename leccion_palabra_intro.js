@@ -1,4 +1,4 @@
-const BASE        = 'https://rubenbhai.github.io/GujaratiResources';
+const BASE        = '.';
 const _params     = new URLSearchParams(location.search);
 const _leccionRaw = _params.get('leccion') || '1.1.1';
 const _leccion    = _leccionRaw.replace(/\./g, '_');
@@ -38,7 +38,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
 /* ── Verificador de versión ── */
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){

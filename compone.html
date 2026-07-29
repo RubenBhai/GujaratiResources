@@ -22,94 +22,22 @@
 </nav>
 
 <div class="wrap">
+  <span class="badge">Compón oraciones</span>
+  <div class="score-pill">Aciertos: <span id="score">0</span></div>
 
-  <!-- ═══ FASE GUIADA: español → gujarati ═══ -->
-  <div class="screen active" id="fase-guiada">
-    <span class="badge">Compón oraciones</span>
-    <div class="score-pill">Aciertos: <span id="score">0</span></div>
-
-    <div class="target-card">
-      <div class="target-label">Forma esta oración en gujarati</div>
-      <div class="target-es" id="target-es">—</div>
-    </div>
-
-    <div class="build-zone empty" id="build-zone"></div>
-
-    <div class="word-bank" id="word-bank"></div>
-
-    <button class="btn-main" id="btn-check" onclick="comprobar()">Comprobar</button>
-    <button class="btn-sec" onclick="limpiar()">🔄 Limpiar</button>
-
-    <div class="feedback" id="feedback"></div>
+  <div class="target-card">
+    <div class="target-label">Forma esta oración en gujarati</div>
+    <div class="target-es" id="target-es">—</div>
   </div>
 
-  <!-- ═══ FASE DE ESCUCHA: audio → gujarati en orden ═══ -->
-  <div class="screen" id="fase-escucha">
-    <span class="badge">¿Qué escuchaste?</span>
-    <div class="score-pill">Ronda: <span id="esc-ronda">0</span> / <span id="esc-total">0</span></div>
+  <div class="build-zone empty" id="build-zone"></div>
 
-    <div class="target-card">
-      <div class="target-label" id="esc-titulo">Escucha y arma la oración</div>
-      <div class="libre-instruccion" id="esc-instruccion"></div>
-      <button class="btn-escuchar" id="esc-play" onclick="escReproducir()">🎧 Escuchar</button>
-    </div>
+  <div class="word-bank" id="word-bank"></div>
 
-    <div class="build-zone empty" id="esc-build"></div>
+  <button class="btn-main" id="btn-check" onclick="comprobar()">Comprobar</button>
+  <button class="btn-sec" onclick="limpiar()">🔄 Limpiar</button>
 
-    <div class="word-bank" id="esc-bank"></div>
-
-    <button class="btn-main" id="esc-comprobar" onclick="escComprobar()">Comprobar</button>
-    <button class="btn-sec"  id="esc-limpiar"   onclick="escLimpiar()">🔄 Limpiar</button>
-
-    <div class="feedback" id="esc-feedback"></div>
-
-    <div class="frame-hallazgos">
-      <div class="frame-titulo">Oraciones que reconociste</div>
-      <div class="lista-hallazgos" id="esc-lista"></div>
-    </div>
-  </div>
-
-  <!-- ═══ FASE LIBRE: sin pista, el estudiante crea ═══ -->
-  <div class="screen" id="fase-libre">
-    <span class="badge">¡Ahora creas tú!</span>
-    <div class="score-pill">Encontradas: <span id="libre-score">0</span> / <span id="libre-total">0</span></div>
-
-    <div class="target-card">
-      <div class="target-label" id="libre-titulo">¿Cuántas oraciones puedes crear?</div>
-      <div class="libre-instruccion" id="libre-instruccion"></div>
-    </div>
-
-    <div class="build-zone empty" id="libre-build"></div>
-
-    <div class="word-bank" id="libre-bank"></div>
-
-    <button class="btn-main" id="libre-comprobar" onclick="libreComprobar()">Comprobar</button>
-    <button class="btn-sec"  id="libre-limpiar"   onclick="libreLimpiar()">🔄 Limpiar</button>
-
-    <div class="feedback" id="libre-feedback"></div>
-
-    <div class="frame-hallazgos">
-      <div class="frame-titulo">Tus oraciones</div>
-      <div class="lista-hallazgos" id="libre-lista"></div>
-    </div>
-
-    <button class="btn-sec btn-terminar" id="libre-terminar" onclick="terminarFaseLibre()">✓ Terminar</button>
-  </div>
-
-  <!-- ═══ RESULTADO ═══ -->
-  <div class="screen" id="fase-resultado">
-    <div class="resultado-card">
-      <div class="resultado-emoji" id="res-emoji"></div>
-      <div class="resultado-msg"   id="res-msg"></div>
-      <div class="resultado-pct"   id="res-pct"></div>
-      <div class="resultado-dictado" id="res-dictado"></div>
-    </div>
-
-    <div class="resultado-detalle" id="res-detalle"></div>
-
-    <button class="btn-main" id="res-continuar" onclick="history.back()">✓ Continuar</button>
-  </div>
-
+  <div class="feedback" id="feedback"></div>
 </div>
 
 <audio id="player"></audio>

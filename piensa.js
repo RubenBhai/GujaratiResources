@@ -15,8 +15,8 @@ var _navMapa = document.getElementById('nav-mapa');
 if (_navMapa) _navMapa.href = 'guia_navegacion.html?leccion=' + _leccionRaw;
 
 /* ── Sonidos de acierto / error (compartidos con el resto del curso) ── */
-const SND_OK  = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Correcto.mp3';
-const SND_ERR = 'https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
+const SND_OK  = 'audios/clase_1_1/Clase_1_1_Correcto.mp3';
+const SND_ERR = 'audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
 /* ── Elementos ── */
 const player = document.getElementById('player');
@@ -396,7 +396,7 @@ fetch(JSON_URL)
 
 /* ── Verificador de versión ── */
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){

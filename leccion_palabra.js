@@ -1,4 +1,4 @@
-const BASE   = 'https://rubenbhai.github.io/GujaratiResources';
+const BASE   = '.';
 const player = document.getElementById('player');
 let currentSpeed = 1.0;
 let toggle       = 'm';
@@ -88,7 +88,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   });
 
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){

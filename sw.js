@@ -9,7 +9,7 @@
 //     para que lo que el usuario bajó para offline no se pierda en cada update.
 //     El control de versión de cada archivo lo hace el loader con "?v=".
 
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const CACHE_ESTRUCTURAL = 'piensa-en-gujarati-' + CACHE_VERSION;
 const CACHE_MEDIOS = 'gujarati-media';   // audios/imágenes descargados, estable
 
@@ -34,9 +34,14 @@ self.addEventListener('activate', function (event) {
 
 // ¿Es un recurso multimedia de la lección? (audio o imagen del repositorio)
 function esMultimedia(url) {
+  // Mismo origen que sirve la app (portable: piensaengujarati.com o *.github.io),
+  // y bajo una carpeta de medios. Detecta por CARPETA, no por dominio ni extensión,
+  // así cubre .mp3/.jpg/.png y también .mp4 futuros sin enumerar extensiones.
+  if (url.origin !== self.location.origin) return false;
   var p = url.pathname;
-  return url.href.includes('rubenbhai.github.io') &&
-         (p.endsWith('.mp3') || p.endsWith('.png') || p.endsWith('.jpg') || p.endsWith('.jpeg'));
+  return p.indexOf('/audios/')   !== -1 ||
+         p.indexOf('/imagenes/') !== -1 ||
+         p.indexOf('/videos/')   !== -1;
 }
 
 self.addEventListener('fetch', function (event) {

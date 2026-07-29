@@ -3,8 +3,8 @@
   document.body.style.opacity    = '0';
   document.body.style.transition = 'opacity 0.5s ease';
   var ASSETS = [
-    'https://rubenbhai.github.io/GujaratiResources/imagenes/LearnGujarati_SuperInmersivo_Main.jpg',
-    'https://rubenbhai.github.io/GujaratiResources/audios/musica/contenido_musica_ambiente.mp3'
+    'imagenes/LearnGujarati_SuperInmersivo_Main.jpg',
+    'audios/musica/contenido_musica_ambiente.mp3'
   ];
   var cargados = 0, mostrado = false;
   var timeout  = setTimeout(mostrar, 3000);
@@ -118,7 +118,7 @@ calcularProgreso();
 
 /* ── Verificador de versión ── */
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){

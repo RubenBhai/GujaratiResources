@@ -1,6 +1,6 @@
 const player  = document.getElementById('player');
 const sfx     = document.getElementById('sfx');
-const BASE    = 'https://rubenbhai.github.io/GujaratiResources';
+const BASE    = '.';
 const SND_OK  = BASE + '/audios/clase_1_1/Clase_1_1_Correcto.mp3';
 const SND_ERR = BASE + '/audios/clase_1_1/Clase_1_1_Incorrecto.mp3';
 
@@ -234,7 +234,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
 /* ── Verificador de versión ── */
 (function(){
-  var VERSION_URL = 'https://rubenbhai.github.io/GujaratiResources/version.txt';
+  var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.text(); })
     .then(function(serverV){
