@@ -53,8 +53,8 @@
     },
     {
       "url": "contenido.html",
-      "lastModified": 1785286783256,
-      "size": 10880
+      "lastModified": 1785336523775,
+      "size": 11060
     },
     {
       "url": "contenido.js",
@@ -278,13 +278,13 @@
     },
     {
       "url": "reto.html",
-      "lastModified": 1785123196508,
-      "size": 7773
+      "lastModified": 1785353100834,
+      "size": 9796
     },
     {
       "url": "reto.js",
-      "lastModified": 1785286783317,
-      "size": 29818
+      "lastModified": 1785353164358,
+      "size": 32853
     },
     {
       "url": "reto_flash.html",
@@ -523,8 +523,8 @@
     },
     {
       "url": "tema-reto.css",
-      "lastModified": 1785123203422,
-      "size": 14245
+      "lastModified": 1785353122639,
+      "size": 14653
     },
     {
       "url": "tema-reto_desktop.css",
@@ -543,8 +543,8 @@
     },
     {
       "url": "tema-video-jw.css",
-      "lastModified": 1784683587457,
-      "size": 4870
+      "lastModified": 1785350159968,
+      "size": 5464
     },
     {
       "url": "tema-video-jw_desktop.css",
@@ -588,8 +588,8 @@
     },
     {
       "url": "video_jw.js",
-      "lastModified": 1785286783336,
-      "size": 3744
+      "lastModified": 1785350151770,
+      "size": 4801
     }
   ]
 }
