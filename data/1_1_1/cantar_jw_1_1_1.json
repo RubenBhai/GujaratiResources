@@ -1,7 +1,7 @@
 {
   "leccion": "1.1.1",
   "titulo": "Reto — Lección 1.1.1",
-  "sonido_victoria": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/victoria.mp3",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
   "programa_efecto_victoria": "estrellas",
   "nivel1": {
     "titulo": "Reconoce letras y vocales",
@@ -23,22 +23,22 @@
     "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
     "sesiones": [
       {
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_1.mp3",
+        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_1.mp3",
         "elemento": "કેમ છો",
         "respuesta": 2
       },
       {
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_2.mp3",
+        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_2.mp3",
         "elemento": "મામા",
         "respuesta": 2
       },
       {
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_3.mp3",
+        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_3.mp3",
         "elemento": "કામ",
         "respuesta": 1
       },
       {
-        "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/reto_leccion_1_1_1_audio_4.mp3",
+        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_4.mp3",
         "elemento": "કામ",
         "respuesta": 2
       }

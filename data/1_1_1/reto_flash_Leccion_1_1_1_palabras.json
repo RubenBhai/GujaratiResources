@@ -13,57 +13,57 @@
       "letter": "કેમ છો?",
       "answer": "kem chho",
       "significado": "¿cómo estás?",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_chho.mp3"
+      "audio": "audios/clase_1_1/audio_m_kem_chho.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_kem_chho.mp3"
     },
     {
       "letter": "કેમ કે...",
       "answer": "kem ke",
       "significado": "porque...",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3"
+      "audio": "audios/clase_1_1/audio_m_kem_ke.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_kem_ke.mp3"
     },
     {
       "letter": "કેમ?",
       "answer": "kem",
       "significado": "¿cómo? / ¿por qué?",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem.mp3"
+      "audio": "audios/clase_1_1/audio_m_kem.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_kem.mp3"
     },
     {
       "letter": "કામ",
       "answer": "kaam",
       "significado": "trabajo",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaam.mp3"
+      "audio": "audios/clase_1_1/audio_m_kaam.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_kaam.mp3"
     },
     {
       "letter": "મોકો",
       "answer": "moko",
       "significado": "oportunidad",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_moko.mp3"
+      "audio": "audios/clase_1_1/audio_m_moko.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_moko.mp3"
     },
     {
       "letter": "મામા",
       "answer": "maamaa",
       "significado": "tío materno",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maamaa.mp3"
+      "audio": "audios/clase_1_1/audio_m_maamaa.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_maamaa.mp3"
     },
     {
       "letter": "કાકા",
       "answer": "kaakaa",
       "significado": "tío paterno",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaakaa.mp3"
+      "audio": "audios/clase_1_1/audio_m_kaakaa.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_kaakaa.mp3"
     },
     {
       "letter": "ઓછો",
       "answer": "ochho",
       "significado": "poco",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3",
-      "audio_h": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ochho.mp3"
+      "audio": "audios/clase_1_1/audio_m_ochho.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_ochho.mp3"
     }
   ]
 }

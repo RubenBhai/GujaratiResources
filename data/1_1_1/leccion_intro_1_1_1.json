@@ -4,7 +4,7 @@
   "home": "contenido_modulo.html?modulo=1.1",
   "empezar": "leccion_letra.html?leccion=1.1.1&item=1",
   "siguiente_leccion": "Leccion_1_1_2_intro.html",
-  "musica_ambiente": "https://rubenbhai.github.io/GujaratiResources/audios/musica/Leccion_1_1_1_musica_ambiente.mp3",
+  "musica_ambiente": "audios/musica/Leccion_1_1_1_musica_ambiente.mp3",
   "pantallas": [
     {
       "badge": "Tu primera lección",

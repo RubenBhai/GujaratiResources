@@ -9,9 +9,9 @@
       "gujarati": "છ",
       "roman": "chha",
       "significado": "número 6",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chha.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_chha.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chha_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_chha.mp3",
+      "audioH": "audios/clase_1_1/audio_alfa_h_chha.mp3",
+      "imagen": "imagenes/Clase_1_1/img_chha_noinfo.jpg"
     },
     {
       "id": "letra_4",
@@ -19,9 +19,9 @@
       "gujarati": "આ",
       "roman": "aa",
       "significado": "esto (algo cerca)",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_aa.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_aa.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aa_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_alfa_h_aa.mp3",
+      "audioH": "audios/clase_1_1/audio_alfa_h_aa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_aa_noinfo.jpg"
     },
     {
       "id": "letra_5",
@@ -29,9 +29,9 @@
       "gujarati": "એ",
       "roman": "e",
       "significado": "eso (algo lejos)",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_h_e.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_e_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_alfa_m_e.mp3",
+      "audioH": "audios/clase_1_1/audio_alfa_h_e.mp3",
+      "imagen": "imagenes/Clase_1_1/img_e_noinfo.jpg"
     },
     {
       "id": "silaba_4",
@@ -39,9 +39,9 @@
       "gujarati": "મા",
       "roman": "maa",
       "significado": "mamá",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maa.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maa_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_maa.mp3",
+      "audioH": "audios/clase_1_1/audio_h_maa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_maa_noinfo.jpg"
     },
     {
       "id": "silaba_8",
@@ -49,9 +49,9 @@
       "gujarati": "છે",
       "roman": "chhe",
       "significado": "es, está, hay",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_chhe.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_chhe_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_chhe.mp3",
+      "audioH": "audios/clase_1_1/audio_h_chhe.mp3",
+      "imagen": "imagenes/Clase_1_1/img_chhe_noinfo.jpg"
     },
     {
       "id": "palabra_1",
@@ -59,9 +59,9 @@
       "gujarati": "કેમ છો?",
       "roman": "kem chho?",
       "significado": "¿cómo estás?",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_chho.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_chho.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_chho_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_kem_chho.mp3",
+      "audioH": "audios/clase_1_1/audio_h_kem_chho.mp3",
+      "imagen": "imagenes/Clase_1_1/img_kem_chho_noinfo.jpg"
     },
     {
       "id": "palabra_2",
@@ -69,9 +69,9 @@
       "gujarati": "કેમ કે...",
       "roman": "kem ke",
       "significado": "porque...",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem_ke.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem_ke.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_ke_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_kem_ke.mp3",
+      "audioH": "audios/clase_1_1/audio_h_kem_ke.mp3",
+      "imagen": "imagenes/Clase_1_1/img_kem_ke_noinfo.jpg"
     },
     {
       "id": "palabra_3",
@@ -79,9 +79,9 @@
       "gujarati": "કેમ?",
       "roman": "kem",
       "significado": "¿por qué?",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kem.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kem.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kem_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_kem.mp3",
+      "audioH": "audios/clase_1_1/audio_h_kem.mp3",
+      "imagen": "imagenes/Clase_1_1/img_kem_noinfo.jpg"
     },
     {
       "id": "palabra_4",
@@ -89,9 +89,9 @@
       "gujarati": "કામ",
       "roman": "kaam",
       "significado": "trabajo",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaam.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaam.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaam_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_kaam.mp3",
+      "audioH": "audios/clase_1_1/audio_h_kaam.mp3",
+      "imagen": "imagenes/Clase_1_1/img_kaam_noinfo.jpg"
     },
     {
       "id": "palabra_5",
@@ -99,9 +99,9 @@
       "gujarati": "મોકો",
       "roman": "moko",
       "significado": "oportunidad",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_moko.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_moko.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_moko_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_moko.mp3",
+      "audioH": "audios/clase_1_1/audio_h_moko.mp3",
+      "imagen": "imagenes/Clase_1_1/img_moko_noinfo.jpg"
     },
     {
       "id": "palabra_6",
@@ -109,9 +109,9 @@
       "gujarati": "મામા",
       "roman": "maamaa",
       "significado": "tío materno",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maamaa.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_maamaa.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_maamaa_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_maamaa.mp3",
+      "audioH": "audios/clase_1_1/audio_h_maamaa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_maamaa_noinfo.jpg"
     },
     {
       "id": "palabra_7",
@@ -119,9 +119,9 @@
       "gujarati": "કાકા",
       "roman": "kaakaa",
       "significado": "tío paterno",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaakaa.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_kaakaa.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaakaa_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_kaakaa.mp3",
+      "audioH": "audios/clase_1_1/audio_h_kaakaa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_kaakaa_noinfo.jpg"
     },
     {
       "id": "palabra_8",
@@ -129,9 +129,9 @@
       "gujarati": "આમ",
       "roman": "aam",
       "significado": "así, de esa manera",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_aam.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_aam.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_aam_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_aam.mp3",
+      "audioH": "audios/clase_1_1/audio_h_aam.mp3",
+      "imagen": "imagenes/Clase_1_1/img_aam_noinfo.jpg"
     },
     {
       "id": "palabra_9",
@@ -139,9 +139,9 @@
       "gujarati": "ઓછો",
       "roman": "ochho",
       "significado": "poco",
-      "audioM": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ochho.mp3",
-      "audioH": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_h_ochho.mp3",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ochho_noinfo.jpg"
+      "audioM": "audios/clase_1_1/audio_m_ochho.mp3",
+      "audioH": "audios/clase_1_1/audio_h_ochho.mp3",
+      "imagen": "imagenes/Clase_1_1/img_ochho_noinfo.jpg"
     }
   ]
 }

@@ -5,7 +5,7 @@
   "siguiente_final": "leccion_palabra_intro.html?leccion=1.1.1",
   "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.1.1",
   "siguiente_leccion": "Leccion_1_1_2_intro.html",
-  "sonido_victoria": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/victoria.mp3",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
   "programa_efecto_victoria": "estrellas",
   "repaso_final": true,
   "pasos": [
@@ -14,50 +14,50 @@
       "vocal": "a",
       "gujarati": "અ",
       "badge": "Vocal 1 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_a.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3",
+      "imagen": "imagenes/Clase_1_1/img_alfa_a.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_a.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">a</strong> como en 'a' de '<strong class=\"det-p\">a<span class=\"det-s\">migo</span></strong>' dicho rápido y sin énfasis en la 'a'"
     },
     {
       "tipo": "plana",
       "vocal": "a",
       "roman": "a",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_a.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_a.mp3"
+      "imagen": "imagenes/Clase_1_1/img_plana_a.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_a.mp3"
     },
     {
       "tipo": "vocal",
       "vocal": "aa",
       "gujarati": "આ",
       "badge": "Vocal 2 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_aa.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_alfa_aa.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">aa</strong> como en la segunda 'a' de '<strong class=\"det-p\">mam<span class=\"det-s\">á</span></strong>'"
     },
     {
       "tipo": "plana",
       "vocal": "aa",
       "roman": "aa",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_aa.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_aa.mp3"
+      "imagen": "imagenes/Clase_1_1/img_plana_aa.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
     },
     {
       "tipo": "matra",
       "vocal": "aa",
       "matra": "ા",
       "badge": "Matra 3 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_aa.jpg",
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_aa.jpg",
       "nota_especial": "especial_a_abierta_vs_cerrada.html"
     },
     {
       "tipo": "con_matra",
       "vocal": "aa",
       "matra": "ા",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_kaa_maa_chhaa.jpg",
+      "imagen": "imagenes/Clase_1_1/img_kaa_maa_chhaa.jpg",
       "audios_secuencia": [
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_kaa.mp3",
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_maa.mp3",
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhaa.mp3"
+        "audios/clase_1_1/audio_m_kaa.mp3",
+        "audios/clase_1_1/audio_m_maa.mp3",
+        "audios/clase_1_1/audio_m_chhaa.mp3"
       ],
       "texto_boton": "Escucha las consonantes y su matra",
       "reto_flash_json": "Leccion_1_1_1_vo1",
@@ -81,33 +81,33 @@
       "vocal": "e",
       "gujarati": "એ",
       "badge": "Vocal 4 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_e.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3",
+      "imagen": "imagenes/Clase_1_1/img_alfa_e.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_e.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">e</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">e</span>lla</strong>'"
     },
     {
       "tipo": "plana",
       "vocal": "e",
       "roman": "e",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_e.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_e.mp3"
+      "imagen": "imagenes/Clase_1_1/img_plana_e.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_e.mp3"
     },
     {
       "tipo": "matra",
       "vocal": "e",
       "matra": "ે",
       "badge": "Matra 5 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_e.jpg"
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_e.jpg"
     },
     {
       "tipo": "con_matra",
       "vocal": "e",
       "matra": "ે",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ke_me_chhe.jpg",
+      "imagen": "imagenes/Clase_1_1/img_ke_me_chhe.jpg",
       "audios_secuencia": [
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ke.mp3",
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_me.mp3",
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chhe.mp3"
+        "audios/clase_1_1/audio_m_ke.mp3",
+        "audios/clase_1_1/audio_m_me.mp3",
+        "audios/clase_1_1/audio_m_chhe.mp3"
       ],
       "texto_boton": "Escucha las consonantes y su matra",
       "reto_flash_json": "Leccion_1_1_1_vo2",
@@ -131,33 +131,33 @@
       "vocal": "o",
       "gujarati": "ઓ",
       "badge": "Vocal 6 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_o.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3",
+      "imagen": "imagenes/Clase_1_1/img_alfa_o.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_o.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">o</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">o</span>so</strong>'"
     },
     {
       "tipo": "plana",
       "vocal": "o",
       "roman": "o",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_plana_o.jpg",
-      "audio": "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_alfa_m_o.mp3"
+      "imagen": "imagenes/Clase_1_1/img_plana_o.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_o.mp3"
     },
     {
       "tipo": "matra",
       "vocal": "o",
       "matra": "ો",
       "badge": "Matra 7 de 7",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_alfa_matra_o.jpg"
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_o.jpg"
     },
     {
       "tipo": "con_matra",
       "vocal": "o",
       "matra": "ો",
-      "imagen": "https://rubenbhai.github.io/GujaratiResources/imagenes/Clase_1_1/img_ko_mo_chho.jpg",
+      "imagen": "imagenes/Clase_1_1/img_ko_mo_chho.jpg",
       "audios_secuencia": [
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_ko.mp3",
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_mo.mp3",
-        "https://rubenbhai.github.io/GujaratiResources/audios/clase_1_1/audio_m_chho.mp3"
+        "audios/clase_1_1/audio_m_ko.mp3",
+        "audios/clase_1_1/audio_m_mo.mp3",
+        "audios/clase_1_1/audio_m_chho.mp3"
       ],
       "texto_boton": "Escucha las consonantes y su matra",
       "reto_flash_json": "Leccion_1_1_1_vo3",
