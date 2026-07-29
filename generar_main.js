@@ -26,8 +26,12 @@ const EXCLUIR = [
   'recursos.txt'           // listados varios
 ];
 
+// Archivos que SÍ son motor aunque su extensión no esté en EXT_MOTOR.
+const INCLUIR = ['cache_admin.json'];
+
 function esMotor(nombre) {
   if (EXCLUIR.includes(nombre)) return false;
+  if (INCLUIR.includes(nombre)) return true;
   return EXT_MOTOR.some(function (ext) { return nombre.endsWith(ext); });
 }
 

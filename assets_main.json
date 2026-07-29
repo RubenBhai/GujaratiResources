@@ -17,6 +17,21 @@
       "size": 20651
     },
     {
+      "url": "cache_admin.html",
+      "lastModified": 1785333568648,
+      "size": 2198
+    },
+    {
+      "url": "cache_admin.js",
+      "lastModified": 1785333602874,
+      "size": 11474
+    },
+    {
+      "url": "cache_admin.json",
+      "lastModified": 1785333589290,
+      "size": 165
+    },
+    {
       "url": "cantar_jw.html",
       "lastModified": 1784985293206,
       "size": 3149
@@ -295,6 +310,11 @@
       "url": "tema-aprende_desktop.css",
       "lastModified": 1785124733173,
       "size": 6996
+    },
+    {
+      "url": "tema-cache_admin.css",
+      "lastModified": 1785333575416,
+      "size": 7360
     },
     {
       "url": "tema-cantar-jw.css",

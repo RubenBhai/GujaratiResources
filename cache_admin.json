@@ -1,0 +1,9 @@
+{
+  "lecciones": [
+    {
+      "codigo": "1.1.1",
+      "titulo": "Tus primeras palabras",
+      "manifiesto": "data/1_1_1/assets_1_1_1_versionado.json"
+    }
+  ]
+}

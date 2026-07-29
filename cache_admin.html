@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Almacenamiento · Piensa en Gujarati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Noto+Serif+Gujarati:wght@400;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-cache_admin.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="header-brand" href="index.html">
+    <img class="header-logo" src="imagenes/LearnGujarati_SuperInmersivo_Main.jpg" alt="Logo">
+    <div>
+      <div class="header-name">Almacenamiento</div>
+      <div class="header-sub">Gestión de descargas</div>
+    </div>
+  </a>
+  <a class="btn-home" href="#" onclick="history.back(); return false;">← Volver</a>
+</header>
+
+<div class="hero">
+  <h1>Almacenamiento del curso</h1>
+  <p>Aquí ves qué lecciones tienes guardadas en este dispositivo y puedes liberar espacio cuando quieras.</p>
+</div>
+
+<main class="main">
+
+  <!-- Resumen global -->
+  <div class="resumen">
+    <div class="resumen-top">
+      <div><span class="resumen-total" id="total-mb">—</span><span class="u">MB</span></div>
+      <div class="resumen-sub" id="resumen-sub">Calculando…</div>
+    </div>
+    <div class="resumen-acciones">
+      <button class="btn btn-limpiar" id="btn-huerfanos" onclick="depurarHuerfanos()" disabled>🧹 Depurar archivos huérfanos</button>
+      <button class="btn btn-peligro" id="btn-borrar-todo" onclick="borrarTodo()" disabled>🗑️ Borrar todo lo descargado</button>
+    </div>
+  </div>
+
+  <div class="aviso" id="aviso"></div>
+
+  <!-- Lista de lecciones -->
+  <div class="lista" id="lista">
+    <div class="cargando" id="cargando">Leyendo el catálogo de lecciones…</div>
+  </div>
+
+</main>
+
+<script src="cache_admin.js"></script>
+
+</body>
+</html>
