@@ -8,6 +8,7 @@
   "palabras": [
     {
       "gujarati": "કેમ છો?",
+      "backwards": "કેમ છો?",
       "significado": "¿cómo estás?",
       "imagen": "imagenes/Clase_1_1/img_kem_chho.jpg",
       "pronunciacion": "ક-ે-મ + છ-ો → kem + <strong>chho</strong>",
@@ -32,6 +33,7 @@
     },
     {
       "gujarati": "કામ",
+      "dictado": "કામ",
       "significado": "trabajo",
       "imagen": "imagenes/Clase_1_1/img_kaam.jpg",
       "pronunciacion": "ક-ા-મ → kaa-<strong>m</strong>",
@@ -40,6 +42,7 @@
     },
     {
       "gujarati": "મોકો",
+      "dictado": "મોકો",
       "significado": "oportunidad",
       "imagen": "imagenes/Clase_1_1/img_moko.jpg",
       "pronunciacion": "મ-ો-ક-ો → mo-<strong>ko</strong>",
@@ -48,6 +51,7 @@
     },
     {
       "gujarati": "મામા",
+      "dictado": "મામા",
       "significado": "tío materno",
       "imagen": "imagenes/Clase_1_1/img_maamaa.jpg",
       "pronunciacion": "મ-ા-મ-ા → maa-<strong>maa</strong><br>Tío Materno",
@@ -56,6 +60,7 @@
     },
     {
       "gujarati": "કાકા",
+      "dictado": "કાકા",
       "significado": "tío paterno",
       "imagen": "imagenes/Clase_1_1/img_kaakaa.jpg",
       "pronunciacion": "ક + ા + ક + ા → kaa-<strong>kaa</strong><br>Tío Paterno",
@@ -64,6 +69,7 @@
     },
     {
       "gujarati": "ઓછો",
+      "dictado": "ઓછો",
       "significado": "poco",
       "imagen": "imagenes/Clase_1_1/img_ochho.jpg",
       "pronunciacion": "ઓ + છ + ો   → <strong>o+chho</strong> <br>Adjetivo 'poco' ",
