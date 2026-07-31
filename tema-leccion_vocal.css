@@ -74,8 +74,8 @@ a, button { transition:all 0.25s ease; }
 #roman-label { color:var(--saffron); font-size:1.6rem; font-weight:700; }
 
 /* ── TOOLBAR DE BOTONES (reintentar / ver / evaluar) ── */
-.btn-toolbar { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
-.btn-toolbar button { border-radius:var(--radio-full); padding:10px 22px; font-size:0.9rem;
+.btn-toolbar { display:flex; gap:8px; justify-content:center; flex-wrap:nowrap; width:100%; max-width:340px; margin:12px auto 0; }
+.btn-toolbar button { flex:1 1 0; min-width:0; border-radius:var(--radio-full); padding:10px 6px; font-size:0.85rem; white-space:nowrap;
   font-weight:600; cursor:pointer; font-family:inherit; }
 #btn-reintentar { background:var(--surface); color:var(--ink-soft); border:1px solid var(--border); }
 #btn-ver        { background:var(--surface); color:var(--saffron);  border:1px solid var(--saffron); }

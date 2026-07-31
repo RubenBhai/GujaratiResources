@@ -71,14 +71,15 @@ a, button { transition:all 0.25s ease; }
 #canvas-plana { position:absolute; touch-action:none; cursor:crosshair; }
 
 /* ── TOOLBAR DE BOTONES (reintentar / ver / evaluar) ── */
-.btn-toolbar { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.btn-toolbar { display:flex; gap:8px; justify-content:center; flex-wrap:nowrap; width:100%; max-width:340px; margin:0 auto; }
 
 /* Estilos base comunes a los tres botones */
 .btn-toolbar button {
-  border-radius:var(--radio-full);
-  padding:10px 22px;
-  font-size:0.9rem;
-  font-weight:600;
+  flex:1 1 0;
+  min-width:0;
+  padding:10px 6px;
+  font-size:0.85rem;
+  white-space:nowrap;  font-weight:600;
   cursor:pointer;
   font-family:inherit;
 }
