@@ -15,6 +15,8 @@
   --sombra-tarjeta: 0 6px 24px rgba(60, 40, 20, 0.08);
   --radio-grande: 24px;
   --radio-medio: 16px;
+  --audio-btn-bg: #4A5D6E;
+  --audio-btn-hover: #3A4A58;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -189,6 +191,7 @@ h2 {
   max-width: 340px;
 }
 
+/* ── Botones de audio unificados (M y H con el mismo color y distintos de las letras) ── */
 .btn-audio {
   display: flex;
   align-items: center;
@@ -202,16 +205,12 @@ h2 {
   font-size: 0.92rem;
   color: white;
   cursor: pointer;
+  background: var(--audio-btn-bg);
+  box-shadow: 0 4px 14px rgba(74, 93, 110, 0.3);
 }
-.btn-audio:hover  { transform: translateY(-1px); }
+.btn-audio:hover  { background: var(--audio-btn-hover); transform: translateY(-1px); }
 .btn-audio:active { transform: scale(.97); }
 .btn-audio:focus-visible { outline: 3px solid var(--marron-oscuro); outline-offset: 2px; }
-
-.btn-audio.cerrado { background: var(--verde-sabio); box-shadow: 0 4px 14px rgba(107, 143, 113, 0.3); }
-.btn-audio.cerrado:hover { background: #5C7D62; }
-
-.btn-audio.abierto { background: var(--naranja-acento); box-shadow: 0 2px 8px rgba(212, 132, 90, 0.3); }
-.btn-audio.abierto:hover { background: #c77a52; }
 
 .onda { height: 16px; width: auto; flex-shrink: 0; }
 .onda rect { fill: currentColor; opacity: .85; transform-box: fill-box; transform-origin: bottom; }
@@ -235,10 +234,7 @@ h2 {
 
 .pantalla-item[hidden] { display: none; }
 
-
-
-
-/* ── PAR DE CUADRANTES ── */
+/* ── PAR DE CUADRANTES Y RESALTE INDIVIDUAL POR SONIDO ── */
 .par-cuadrantes {
   display: flex;
   width: min(280px, 68vw);
@@ -255,6 +251,7 @@ h2 {
   justify-content: center;
   padding: 24px 16px 16px;
   gap: 10px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cuad-cerrado { background: var(--verde-sabio); }
@@ -265,6 +262,7 @@ h2 {
   font-weight: 700;
   color: white;
   line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease;
 }
 
 .cuad-label {
@@ -272,4 +270,21 @@ h2 {
   font-weight: 700;
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.05em;
+}
+
+/* ── ESTILO VISIBLE Y CLARO PARA LA LETRA ACTIVA (.cuad.activa) ── */
+.cuad.activa .cuad-letra {
+  color: #FFE082 !important; /* Dorado resplandeciente muy evidente */
+  transform: scale(1.18);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.cuad-cerrado.activa {
+  background: #55745A; /* Verde un poco más profundo para realce */
+  box-shadow: inset 0 0 0 3px #FFE082;
+}
+
+.cuad-abierto.activa {
+  background: #B86B45; /* Naranja un poco más profundo para realce */
+  box-shadow: inset 0 0 0 3px #FFE082;
 }

@@ -17,6 +17,9 @@
   document.getElementById('link-aprende').href = 'aprende.html?leccion='  + _lec;
   document.getElementById('link-compone').href = 'compone.html?leccion='  + _lec;
   document.getElementById('link-reto').href    = 'reto.html?leccion='     + _lec;
+  document.getElementById('link-pensar').href  = 'piensa.html?leccion='    + _lec;
+  document.getElementById('link-generar').href = 'generador.html?leccion=' + _lec;
+  document.getElementById('link-lectura').href = 'lectura.html?leccion=' + _lec;
   document.getElementById('link-dialogo').href = 'video.html?leccion='    + _lec
                                                + '&next=video_interactivo.html&modo=desafio';
 
@@ -25,7 +28,7 @@
     'tema-alfabeto': ['link-consonantes', 'link-vocales'],
     'tema-juegos':   ['link-juego-a', 'link-juego-b', 'link-juego-c'],
     'tema-practica': ['link-practica'],
-    'tema-pensar':   ['link-aprende', 'link-compone', 'link-reto', 'link-dialogo']
+    'tema-pensar':   ['link-aprende', 'link-compone', 'link-lectura', 'link-reto', 'link-pensar', 'link-generar', 'link-dialogo']
   };
 
   var JSON_URL = 'data/' + _folder + '/guia_navegacion_' + _folder + '.json';

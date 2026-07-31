@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Lectura Guiada · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-lectura.css">
+<link rel="stylesheet" href="tema-lectura_desktop.css" media="(min-width: 1024px)">
+</head>
+<body>
+
+<div class="wrap">
+  <span class="badge" id="badge">Echo Reading</span>
+  <h1 id="titulo">Práctica de Lectura</h1>
+  <p class="lead" id="intro">Sigue el texto con el dedo y lee en voz baja sincronizado con el audio.</p>
+
+  <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+
+  <div style="display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; width:100%;">
+    <div class="controls" style="width:auto; display:flex; gap:8px;">
+      <button class="btn-play" id="btn-play" onclick="reproducir()">▶</button>
+      <button class="btn-replay" id="btn-pause" onclick="togglePausa()" style="display:none;">⏸</button>
+    </div>
+
+    <div class="lang-row">
+      <button class="lang-btn active" id="lang-esp" onclick="toggleIdioma('esp')" title="Mostrar/ocultar traducción">E</button>
+      <button class="lang-btn active" id="btn-velocidad" onclick="toggleVelocidad()" title="Velocidad de reproducción">1x</button>
+    </div>
+  </div>
+
+  <!-- Lienzo de Lectura (Párrafo fluido) -->
+  <div class="escena-lectura" id="escena-lectura">
+    <p class="parrafo-lectura" id="parrafo-contenedor"></p>
+  </div>
+
+  <!-- Barra de Subtítulos Inferior (Exclusiva para la traducción en español en tiempo real) -->
+  <div class="subtitulos" id="subtitulos">
+    <span class="sub-textos" id="sub-textos">
+      <span class="es-texto" id="sub-es"></span>
+    </span>
+    <span class="sub-mensaje-escucha" id="sub-mensaje-escucha" style="display:none;">🎧 Sigue la lectura en gujarati</span>
+  </div>
+
+  <div class="nav-bottom-row">
+    <button class="nav-btn" id="btn-volver">&larr; Lecci&oacute;n</button>
+    <a class="btn-fin" id="btn-empezar" href="#">Empezar →</a>
+  </div>
+
+</div>
+
+<audio id="audio"></audio>
+
+<script src="lectura.js"></script>
+
+</body>
+</html>

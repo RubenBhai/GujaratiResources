@@ -1,0 +1,176 @@
+/* ==========================================================================
+   TEMA GENERADOR DE ORACIONES · DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Optimización de espacio horizontal distribuyendo el constructor de columnas
+   y el panel de la oración (barra) en pantalla dividida.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+
+  /* ── ESTRUCTURA GLOBAL DE PANTALLA DIVIDIDA ── */
+  body {
+    padding-bottom: 0; /* Resetea el espacio del footer flotante de móvil */
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "nav nav"
+      "wrap barra";
+    background-image: radial-gradient(circle at 75% 30%, rgba(184,134,61,0.12), transparent 70%);
+  }
+
+  /* Barra de Navegación */
+  .nav-bar {
+    grid-area: nav;
+    padding: 15px 40px;
+    max-width: 100%;
+  }
+
+  /* ── COLUMNA IZQUIERDA: CONSTRUCTOR Y OPCIONES ── */
+  .wrap {
+    grid-area: wrap;
+    align-self: start;
+    justify-self: center;
+    width: 100%;
+    max-width: 760px;
+    height: 100%;
+    padding: 30px 40px 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow-y: auto; /* Permite scroll interno suave si hay muchas columnas */
+  }
+
+  .badge {
+    align-self: center;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+/* Cuadrícula en una sola columna vertical: cada bloque ocupa el ancho disponible */
+  .columnas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .col-bloque {
+    padding: 18px 16px 12px;
+    width: 100%;
+  }
+
+  .col-preg {
+    margin-bottom: 12px;
+  }
+
+  /* Mantenemos la fila horizontal deslizable también en desktop */
+  .celdas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 10px;
+  }
+
+  .celda {
+    flex: 0 0 auto; /* Conserva su ancho natural */
+    padding: 12px 18px;
+  }
+
+  /* ── COLUMNA DERECHA: TARJETA DE LA ORACIÓN Y CONTROLES ── */
+  .barra {
+    grid-area: barra;
+    position: static; /* Resetea el fixed de móvil */
+    background: transparent;
+    backdrop-filter: none;
+    border-top: none;
+    border-left: 1px solid var(--border);
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .barra-inner {
+    width: 100%;
+    max-width: 440px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 40px 32px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+  }
+
+  /* Visualización de oraciones en pantalla grande */
+  .oracion-gu {
+    font-size: 2.2rem;
+    line-height: 1.35;
+    min-height: 2.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .oracion-es {
+    font-size: 1.15rem;
+    min-height: 1.5em;
+  }
+
+  .barra-aviso {
+    font-size: 0.9rem;
+  }
+
+  /* Botones distribuidos para clic cómodo en desktop */
+  .barra-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .btn-oir {
+    padding: 18px 24px;
+    font-size: 1.1rem;
+    order: 1; /* El botón principal queda arriba */
+  }
+
+  .btn-limpiar {
+    padding: 14px 24px;
+    font-size: 1rem;
+    order: 2;
+  }
+
+  /* Personalización del scrollbar en la columna izquierda */
+  .wrap::-webkit-scrollbar {
+    width: 6px;
+  }
+  .wrap::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .wrap::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--r-full);
+  }
+  .wrap::-webkit-scrollbar-thumb:hover {
+    background: var(--saffron);
+  }
+}

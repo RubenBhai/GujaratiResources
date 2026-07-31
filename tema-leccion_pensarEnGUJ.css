@@ -161,6 +161,8 @@ h1 {
 #btn-dialogo     { background: linear-gradient(135deg,#4a4a4a,#2a2a2a); box-shadow: 0 4px 16px rgba(74,74,74,0.40);  }
 #btn-fin-leccion { background: linear-gradient(135deg,#D9A441,#B8863D); box-shadow: 0 4px 16px rgba(217,164,65,0.45); }
 #btn-pensar      { background: linear-gradient(135deg,#4A6B8A,#34506E); box-shadow: 0 4px 16px rgba(74,107,138,0.40); }
+#btn-generar     { background: linear-gradient(135deg,#C77D3A,#9E5B22); box-shadow: 0 4px 16px rgba(199,125,58,0.40); }
+#btn-lectura     { background: linear-gradient(135deg,#B8863D,#A8362A); box-shadow: 0 4px 16px rgba(184,134,61,0.40); }
 
 /* ── SPACER ── */
 .spacer-sm { height: 14px; }   /* sustituye div style="height:14px" */
@@ -174,3 +176,4 @@ h1 {
   .wrap { padding: 20px 14px 30px; gap: 18px; }
   h1 { font-size: 2rem; }
 }
+

@@ -69,6 +69,7 @@
   }
 
   /* COLUMNAS DERECHAS: Matriz 2x2 para los Pasos del Curso */
+
   #btn-aprende {
     grid-column: 2;
     grid-row: 1;
@@ -94,9 +95,9 @@
   }
 
   /* Botón de Cierre Completo centrado en la base del bloque de acciones */
-  #btn-fin-leccion {
+   #btn-fin-leccion {
     grid-column: 2 / span 2;
-    grid-row: 4;
+    grid-row: 5;
     width: 100%;
     max-width: 400px;
     justify-self: center;
@@ -106,7 +107,7 @@
   }
 
   /* Ajustes generales de los botones de acción en Desktop */
-  .btn-fin {
+   .btn-fin {
     padding: 24px 20px;
     font-size: 1.1rem;
     height: 100%;
@@ -119,7 +120,20 @@
 
   #btn-pensar {
     grid-column: 2 / span 2;
+    grid-row: 4;
+    align-self: start;
+  }
+
+  #btn-lectura {
+    grid-column: 3;
     grid-row: 3;
     align-self: start;
   }
+
+  #btn-generar {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+  }
+
 }

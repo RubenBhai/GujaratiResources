@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Generador · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-generador.css">
+<link rel="stylesheet" href="tema-generador_desktop.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" href="#" onclick="history.back(); return false;">← Salir</a>
+  <a class="nav-btn home" href="index.html">🏠</a>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
+  <span class="nav-btn nav-phantom">&nbsp;</span>
+</nav>
+
+<div class="wrap">
+  <span class="badge" id="badge-tema">Generador de oraciones</span>
+  <h1 id="titulo">Arma tus propias oraciones</h1>
+  <p class="subtitle" id="subtitulo">Elige una opción de cada columna y descubre cómo se construye una oración en gujarati.</p>
+
+  <div class="selector" id="selector"></div>
+
+  <div class="columnas" id="columnas"></div>
+</div>
+
+<!-- Barra fija: la oración que se va armando -->
+<div class="barra" id="barra">
+  <div class="barra-inner">
+    <div class="oracion-gu gu" id="oracion-gu"></div>
+    <div class="oracion-es" id="oracion-es"></div>
+    <div class="barra-aviso" id="barra-aviso"></div>
+    <div class="barra-botones">
+      <button class="btn-limpiar" id="btn-limpiar" onclick="limpiar()">🔄 Limpiar</button>
+      <button class="btn-oir" id="btn-oir" onclick="reproducirOracion()" disabled>🔊 Escuchar la oración</button>
+    </div>
+  </div>
+</div>
+
+<audio id="player"></audio>
+
+<script src="generador.js"></script>
+
+</body>
+</html>

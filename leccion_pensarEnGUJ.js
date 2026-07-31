@@ -21,6 +21,8 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     configurarBoton('btn-compone', data.mostrar_compone, 'compone.html?leccion=' + _leccionRaw);
     configurarBoton('btn-reto',    data.mostrar_reto,    'reto.html?leccion='    + _leccionRaw);
     configurarBoton('btn-pensar',  data.mostrar_pensar,  'piensa.html?leccion='  + _leccionRaw);
+    configurarBoton('btn-lectura',  data.mostrar_lectura,  'lectura.html?leccion='  + _leccionRaw);
+    configurarBoton('btn-generar', data.mostrar_generar, 'generador.html?leccion=' + _leccionRaw);
     configurarBoton('btn-dialogo', data.mostrar_dialogo,
       'video.html?leccion=' + _leccionRaw + '&next=video_interactivo.html&modo=desafio');
 
