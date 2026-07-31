@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Dictado backwards · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-backwards.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" href="#" onclick="history.back(); return false;">← Volver</a>
+  <a class="nav-btn home" href="index.html">🏠</a>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
+  <span class="nav-btn nav-phantom">&nbsp;</span>
+</nav>
+
+<div class="wrap">
+  <span class="badge" id="badge">Frase 1 de 1</span>
+  <h2>Dictado backwards</h2>
+  <p class="lead" id="instruccion"></p>
+
+  <!-- Zona de fragmento: escucha y repite -->
+  <div class="zona" id="fragmento-wrap">
+    <div class="tarjeta">
+      <div class="tarjeta-num" id="progreso"></div>
+      <div class="frag-texto gu" id="frag-texto"></div>
+    </div>
+    <div class="audio-row">
+      <button class="btn-escuchar" id="btn-escuchar" onclick="reproducir()">🎧 Escuchar</button>
+      <button class="btn-repetir" id="btn-repetir" onclick="repetir()">🔁 Repetir</button>
+    </div>
+    <p class="info-linea">Escucha y repite en voz alta. Cuando estés listo, avanza.</p>
+    <button class="btn-main" id="btn-siguiente" onclick="siguiente()">Siguiente →</button>
+  </div>
+
+  <!-- Zona de cierre: frase completa + español -->
+  <div class="zona" id="cierre" style="display:none;">
+    <div class="tarjeta">
+      <div class="tarjeta-num">Frase completa</div>
+      <div class="cierre-gu gu" id="cierre-gu"></div>
+      <div class="cierre-es" id="cierre-es"></div>
+    </div>
+    <button class="btn-escuchar" id="cierre-escuchar" onclick="reproducirCierre()">🔊 Escuchar de nuevo</button>
+    <button class="btn-main" id="btn-siguiente-cierre" onclick="siguienteOracion()">Siguiente frase →</button>
+  </div>
+
+  <button class="btn-sec" href="#" onclick="history.back(); return false;">← Volver a la palabra</button>
+</div>
+
+<audio id="player"></audio>
+
+<script src="backwards.js"></script>
+
+</body>
+</html>

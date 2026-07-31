@@ -17,6 +17,16 @@
       "size": 20651
     },
     {
+      "url": "backwards.html",
+      "lastModified": 1785526035895,
+      "size": 2501
+    },
+    {
+      "url": "backwards.js",
+      "lastModified": 1785526024540,
+      "size": 5016
+    },
+    {
       "url": "cache_admin.html",
       "lastModified": 1785333568648,
       "size": 2198
@@ -70,6 +80,16 @@
       "url": "contenido_modulo.js",
       "lastModified": 1785286783258,
       "size": 4138
+    },
+    {
+      "url": "dictado.html",
+      "lastModified": 1785529071593,
+      "size": 2227
+    },
+    {
+      "url": "dictado.js",
+      "lastModified": 1785529031827,
+      "size": 8145
     },
     {
       "url": "efecto_victoria.js",
@@ -208,13 +228,13 @@
     },
     {
       "url": "leccion_palabra.html",
-      "lastModified": 1785006008093,
-      "size": 2670
+      "lastModified": 1785528123528,
+      "size": 2897
     },
     {
       "url": "leccion_palabra.js",
-      "lastModified": 1785286783301,
-      "size": 5212
+      "lastModified": 1785528223837,
+      "size": 5963
     },
     {
       "url": "leccion_palabra_intro.html",
@@ -293,8 +313,8 @@
     },
     {
       "url": "practica.js",
-      "lastModified": 1785286783306,
-      "size": 11530
+      "lastModified": 1785502881791,
+      "size": 12103
     },
     {
       "url": "reto.html",
@@ -332,6 +352,16 @@
       "size": 6996
     },
     {
+      "url": "tema-backwards.css",
+      "lastModified": 1785526042863,
+      "size": 4047
+    },
+    {
+      "url": "tema-backwards_desktop.css",
+      "lastModified": 1785526823404,
+      "size": 2194
+    },
+    {
       "url": "tema-cache_admin.css",
       "lastModified": 1785333575416,
       "size": 7360
@@ -348,8 +378,8 @@
     },
     {
       "url": "tema-compone.css",
-      "lastModified": 1784982047111,
-      "size": 9024
+      "lastModified": 1785530560270,
+      "size": 9924
     },
     {
       "url": "tema-compone_desktop.css",
@@ -377,6 +407,16 @@
       "size": 4275
     },
     {
+      "url": "tema-dictado.css",
+      "lastModified": 1785530844537,
+      "size": 6193
+    },
+    {
+      "url": "tema-dictado_desktop.css",
+      "lastModified": 1785528363265,
+      "size": 1664
+    },
+    {
       "url": "tema-especial_a_abierta_vs_cerrada.css",
       "lastModified": 1785472949840,
       "size": 7186
@@ -398,8 +438,8 @@
     },
     {
       "url": "tema-generador.css",
-      "lastModified": 1785465875673,
-      "size": 9497
+      "lastModified": 1785530985791,
+      "size": 9785
     },
     {
       "url": "tema-generador_desktop.css",
@@ -463,7 +503,7 @@
     },
     {
       "url": "tema-leccion_palabra.css",
-      "lastModified": 1785006040574,
+      "lastModified": 1785528588123,
       "size": 7809
     },
     {
@@ -538,13 +578,13 @@
     },
     {
       "url": "tema-piensa.css",
-      "lastModified": 1785209252089,
-      "size": 9822
+      "lastModified": 1785531539252,
+      "size": 10733
     },
     {
       "url": "tema-practica.css",
-      "lastModified": 1783533489421,
-      "size": 5936
+      "lastModified": 1785502982962,
+      "size": 6196
     },
     {
       "url": "tema-practica_desktop.css",
@@ -563,8 +603,8 @@
     },
     {
       "url": "tema-reto.css",
-      "lastModified": 1785353122639,
-      "size": 14653
+      "lastModified": 1785530800761,
+      "size": 15504
     },
     {
       "url": "tema-reto_desktop.css",

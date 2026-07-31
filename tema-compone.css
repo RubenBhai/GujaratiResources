@@ -33,15 +33,46 @@ h2 { font-family:'Fraunces',serif; font-size:1.5rem; text-align:center; }
 .build-zone.empty::before { content:'Toca las palabras de abajo...'; color:var(--ink-soft); font-size:0.95rem; }
 
 /* Sopa de palabras (opciones) */
-.word-bank { width:100%; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+.word-bank {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  background:
+    linear-gradient(to right, var(--bg) 30%, rgba(44,36,32,0)) left center,
+    linear-gradient(to left,  var(--bg) 30%, rgba(44,36,32,0)) right center,
+    linear-gradient(to right, rgba(0,0,0,0.30), rgba(0,0,0,0)) left center,
+    linear-gradient(to left,  rgba(0,0,0,0.30), rgba(0,0,0,0)) right center;
+  background-repeat: no-repeat;
+  background-size: 32px 100%, 32px 100%, 18px 100%, 18px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+.word-bank::-webkit-scrollbar {
+  height: 24px;
+}
+.word-bank::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+  border-radius: 50px;
+}
+.word-bank::-webkit-scrollbar-thumb {
+  background: var(--saffron);
+  border-radius: 50px;
+}
+
 .word-chip { font-family:'Noto Serif Gujarati',serif; font-size:1.8rem; color:var(--paper);
   background:var(--surface); border:2px solid var(--border); border-radius:var(--r-md);
-  padding:14px 22px; cursor:pointer; transition:all 0.2s; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+  padding:14px 22px; cursor:pointer; transition:all 0.2s; box-shadow:0 4px 12px rgba(0,0,0,0.15); white-space: nowrap; }
 .word-chip:hover { border-color:var(--saffron); background:var(--surface-light); transform:translateY(-2px); }
 .word-chip.used { opacity:0.3; pointer-events:none; }
 .chip-built { font-family:'Noto Serif Gujarati',serif; font-size:1.8rem; color:var(--paper);
   background:var(--surface-light); border:2px solid var(--saffron); border-radius:var(--r-md);
-  padding:12px 20px; cursor:pointer; }
+  padding:12px 20px; cursor:pointer; white-space: nowrap; }
 .chip-built:hover { border-color:var(--sindoor); }
 
 /* Botones */

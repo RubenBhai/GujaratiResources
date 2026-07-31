@@ -9,7 +9,7 @@
 //     para que lo que el usuario bajó para offline no se pierda en cada update.
 //     El control de versión de cada archivo lo hace el loader con "?v=".
 
-const CACHE_VERSION = 'v8';
+const CACHE_VERSION = 'v9';
 const CACHE_ESTRUCTURAL = 'piensa-en-gujarati-' + CACHE_VERSION;
 const CACHE_MEDIOS = 'gujarati-media';   // audios/imágenes descargados, estable
 

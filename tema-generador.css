@@ -135,13 +135,14 @@ h1 {
 
 /* Opcional: barra de scroll sutil para el selector */
 .selector::-webkit-scrollbar {
-  height: 8px;
+  height: 12px;
 }
 .selector::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(0,0,0,0.2);
+  border-radius: var(--r-full);
 }
 .selector::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--saffron);
   border-radius: var(--r-full);
 }
 
@@ -270,6 +271,18 @@ h1 {
   background-repeat: no-repeat;
   background-size: 40px 100%, 40px 100%, 22px 100%, 22px 100%;
   background-attachment: local, local, scroll, scroll;
+}
+
+.celdas::-webkit-scrollbar {
+  height: 24px;
+}
+.celdas::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--r-full);
+}
+.celdas::-webkit-scrollbar-thumb {
+  background: var(--saffron);
+  border-radius: var(--r-full);
 }
 
 /* Personalización sutil de la barra de scroll horizontal */

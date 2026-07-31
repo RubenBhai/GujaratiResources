@@ -67,7 +67,7 @@ a, button { transition:all 0.25s ease; }
 .frame-vocab-pron        { font-size:1.3rem; color:var(--paper); line-height:1.6; }
 .frame-vocab-pron strong { color:var(--saffron); }
 
-.btn-play { border:none; width:52px; height:52px; border-radius:50%; background:var(--sindoor);
+.btn-play { border:none; width:40px; height:40px; border-radius:50%; background:var(--sindoor);
   color:var(--paper); cursor:pointer; font-size:1.2rem; display:flex; align-items:center;
   justify-content:center; flex-shrink:0; box-shadow:0 3px 10px rgba(168,54,42,0.3); }
 .btn-play:hover  { background:var(--sindoor-deep); transform:scale(1.08); box-shadow:0 4px 16px rgba(168,54,42,0.5); }

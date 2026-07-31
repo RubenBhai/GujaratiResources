@@ -41,7 +41,19 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     document.getElementById('badge').textContent = 'Vocabulario ' + idx + ' de ' + total;
 
     document.getElementById('nav-home').href     = data.home;
-    document.getElementById('nav-practicar').href = data.practicar;
+
+    var urlPractica = data.practicar + '&palabra=' + encodeURIComponent(actual.gujarati);
+    document.getElementById('nav-practicar').href = urlPractica;
+
+    // Botón 🎤 dictado backwards: solo si esta palabra lo tiene marcado
+    var btnBw = document.getElementById('nav-backwards');
+    if (actual.backwards) {
+      btnBw.href = 'backwards.html?leccion=' + _leccionRaw + '&oracion=' + encodeURIComponent(actual.backwards);
+      btnBw.style.display = '';
+    } else {
+      btnBw.style.display = 'none';
+    }
+
     document.getElementById('nav-anterior').href  = (idx > 1)
       ? ('leccion_palabra.html?leccion=' + _leccionRaw + '&item=' + (idx - 1))
       : data.anterior_primera;
@@ -73,6 +85,14 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
     var btnPlay   = document.getElementById('btn-play');
     btnPlay.onclick = function(){ playVocab(btnPlay, actual.audioH, actual.audioM); };
+
+    var btnDictado = document.getElementById('btn-dictado');
+    if (actual.dictado) {
+      btnDictado.href = 'dictado.html?leccion=' + _leccionRaw + '&dictado=' + encodeURIComponent(actual.dictado);
+      btnDictado.style.display = '';
+    } else {
+      btnDictado.style.display = 'none';
+    }
 
     document.getElementById('btn-siguiente').href   = siguienteUrl;
     document.getElementById('btn-sigleccion').href  = data.siguiente_leccion;

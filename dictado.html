@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Dictado · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-dictado.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-btn" href="#" onclick="history.back(); return false;">← Volver</a>
+  <a class="nav-btn home" href="index.html">🏠</a>
+  <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
+  <span class="nav-btn nav-phantom">&nbsp;</span>
+</nav>
+
+<div class="wrap">
+  <span class="badge" id="badge">Dictado</span>
+  <p class="lead" id="instruccion"></p>
+
+  <!-- Zona del ejercicio -->
+  <div class="zona" id="ejercicio">
+    <button class="btn-escuchar" id="btn-escuchar" onclick="reproducir()">🔊</button>
+    <div class="build-zone vacia" id="build"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="bank" id="bank"></div>
+
+    <button class="btn-main" id="btn-comprobar" onclick="comprobar()">Comprobar</button>
+    <div class="mini-fila" id="mini-fila" style="display:none;">
+      <button class="btn-mini" onclick="reintentar()">🔄 Reintentar</button>
+      <button class="btn-mini saltar" onclick="saltar()">Saltar →</button>
+    </div>
+  </div>
+
+  <!-- Zona de fin -->
+  <div class="zona" id="fin" style="display:none;">
+    <div class="trofeo">🏆</div>
+    <h2>¡Completaste el dictado!</h2>
+    <button class="btn-main" onclick="location.reload()">Practicar de nuevo</button>
+    <button class="btn-sec" onclick="history.back()">← Volver a la palabra</button>
+  </div>
+
+  <button class="btn-sec" id="btn-salir" onclick="history.back()">← Volver a la palabra</button>
+</div>
+
+<audio id="player"></audio>
+<audio id="sfx"></audio>
+
+<script src="dictado.js"></script>
+
+</body>
+</html>

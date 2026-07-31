@@ -4,6 +4,7 @@ const LOGIN_URL   = 'https://rubenbhai.github.io/GujaratiTraining/index.html';
 const params       = new URLSearchParams(window.location.search);
 const modulo       = params.get('modulo');
 const leccion      = params.get('leccion');
+const palabraFiltro = params.get('palabra'); 
 const claveLeccion = `${modulo}-${leccion}`;
 
 const masterPlayer = document.getElementById('master-player');
@@ -86,8 +87,22 @@ function fontSizeParaAncho(el, texto, tamanoMaximoPx){
 }
 
 function construirInterfaz(leccionData){
-  document.getElementById('page-title').innerText    = leccionData.titulo;
-  document.getElementById('page-subtitle').innerText = 'Fuente: ' + leccionData.fuente;
+
+  if (palabraFiltro) {
+    leccionData = Object.assign({}, leccionData, {
+      frases: leccionData.frases.filter(function(f){ return f.gujarati === palabraFiltro; })
+    });
+  }
+
+  if (palabraFiltro) {
+    // Modo "una palabra" (llamado desde leccion_palabra)
+    document.getElementById('page-title').innerText    = 'Palabras de la Lección ' + modulo + '.' + leccion;
+    document.getElementById('page-subtitle').innerText = '';
+  } else {
+    // Modo normal (todo el mazo): título y fuente del JSON, como siempre
+    document.getElementById('page-title').innerText    = leccionData.titulo;
+    document.getElementById('page-subtitle').innerText = 'Fuente: ' + leccionData.fuente;
+  }
 
   const theater = document.getElementById('theater');
   const total   = leccionData.frases.length;

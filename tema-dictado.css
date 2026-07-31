@@ -1,0 +1,94 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#2C2420; --surface:#362C28; --surface-light:#423631; --paper:#E8D9C0;
+  --sindoor:#A8362A; --sindoor-deep:#832920; --saffron:#B8863D; --olive:#5F6E4F;
+  --verde:#4A6B53; --verde-h:#3D5A45; --ink-soft:#C8B99A; --border:rgba(184,134,61,0.15);
+  --correct-text:#7FBF8E; --wrong-text:#FF9999; --r-sm:12px; --r-md:16px; --r-lg:20px; --r-full:50px;
+}
+body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.07),transparent 60%);
+  color:var(--paper); font-family:'Source Sans 3',sans-serif; min-height:100vh; padding-bottom:20px; }
+.gu { font-family:'Noto Serif Gujarati',serif; }
+
+.nav-bar { position:sticky; top:0; z-index:100; background:rgba(44,36,32,0.9); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:12px 20px; gap:8px; }
+.nav-btn { background:var(--surface); color:var(--paper); padding:10px 18px; border-radius:var(--r-full);
+  font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid var(--border); cursor:pointer; font-family:inherit; }
+.nav-btn.home { color:var(--saffron); font-size:1.1rem; }
+.nav-phantom { opacity:0; pointer-events:none; }
+
+.wrap { max-width:480px; margin:0 auto; padding:24px 20px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:18px; }
+.badge { display:inline-block; background:rgba(168,54,42,0.2); color:#EFA69D; padding:8px 20px;
+  border-radius:var(--r-full); font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; }
+h2 { font-family:'Fraunces',serif; font-size:1.5rem; text-align:center; }
+.lead { color:var(--ink-soft); font-size:1rem; line-height:1.5; text-align:center; }
+.dictado-num { font-size:0.85rem; color:var(--ink-soft); }
+
+/* Botón escuchar (grande) */
+.btn-escuchar { background:var(--sindoor); border:none; border-radius:50%; width:72px; height:72px; cursor:pointer;
+  font-size:1.9rem; color:white; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 14px rgba(168,54,42,0.3); transition:all 0.2s; }
+.btn-escuchar:hover { background:var(--sindoor-deep); transform:scale(1.05); }
+.btn-escuchar.sonando { background:var(--olive); animation:latido 1.4s ease-in-out infinite; }
+@keyframes latido { 0%,100%{transform:scale(1);} 50%{transform:scale(1.08);} }
+
+/* Zona donde se arma la oración */
+.build-zone { width:100%; min-height:74px; background:#1E1815; border:2px solid rgba(184,134,61,0.22);
+  border-radius:var(--r-md); padding:14px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center;
+  box-shadow:inset 0 2px 10px rgba(0,0,0,0.45); }
+.build-zone.vacia::before { content:'Toca las palabras en orden…'; color:rgba(200,185,154,0.5); font-size:0.95rem; }
+.build-zone.con-espanol { color:var(--saffron); font-family:'Fraunces',serif; font-size:1.15rem; text-align:center; }
+
+.bank {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  background:
+    linear-gradient(to right, var(--bg) 30%, rgba(44,36,32,0)) left center,
+    linear-gradient(to left,  var(--bg) 30%, rgba(44,36,32,0)) right center,
+    linear-gradient(to right, rgba(0,0,0,0.30), rgba(0,0,0,0)) left center,
+    linear-gradient(to left,  rgba(0,0,0,0.30), rgba(0,0,0,0)) right center;
+  background-repeat: no-repeat;
+  background-size: 32px 100%, 32px 100%, 18px 100%, 18px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+.bank::-webkit-scrollbar { height: 24px; }
+.bank::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 50px; }
+.bank::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 50px; }
+
+.ficha-dictado { font-family:'Noto Serif Gujarati',serif; font-size:1.8rem; color:var(--paper); background:var(--surface);
+  border:2px solid var(--border); border-radius:var(--r-md); padding:12px 20px; cursor:pointer; transition:all 0.2s;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+.ficha-dictado:hover { border-color:var(--saffron); background:var(--surface-light); transform:translateY(-2px); }
+.ficha-dictado.usada { opacity:0.3; pointer-events:none; }
+.ficha-puesta { font-family:'Noto Serif Gujarati',serif; font-size:1.8rem; color:var(--bg); background:var(--saffron);
+  border:2px solid var(--saffron); border-radius:var(--r-md); padding:10px 18px; cursor:pointer; box-shadow:0 3px 10px rgba(184,134,61,0.3); }
+.ficha-puesta:hover { background:var(--sindoor); color:white; border-color:var(--sindoor); }
+
+.feedback { font-size:1.15rem; font-weight:700; min-height:28px; text-align:center; }
+.feedback.err { color:var(--wrong-text); }
+
+.btn-main { width:100%; border:none; padding:16px; border-radius:var(--r-full); cursor:pointer;
+  font-weight:700; font-size:1.05rem; background:var(--verde); color:white; text-align:center; font-family:inherit;
+  box-shadow:0 4px 14px rgba(74,107,83,0.3); }
+.btn-main:hover { background:var(--verde-h); }
+.btn-sec { width:100%; padding:14px; border-radius:var(--r-full); font-weight:600; font-size:1rem;
+  background:var(--surface); border:1px solid var(--border); color:var(--ink-soft); text-align:center;
+  text-decoration:none; display:block; cursor:pointer; font-family:inherit; }
+.btn-sec:hover { background:var(--surface-light); color:var(--saffron); }
+.mini-fila { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; width:100%; }
+.btn-mini { flex:1; background:var(--surface); border:1px solid var(--border); color:var(--ink-soft); border-radius:var(--r-full);
+  padding:12px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:inherit; }
+.btn-mini:hover { background:var(--surface-light); color:var(--saffron); }
+.btn-mini.saltar { border-color:var(--saffron); color:var(--saffron); }
+
+.zona { width:100%; display:flex; flex-direction:column; align-items:center; gap:18px; }
+.trofeo { font-size:3.5rem; }
+.error-carga { text-align:center; color:var(--ink-soft); padding:40px 20px; line-height:1.6; }
