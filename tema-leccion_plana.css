@@ -41,16 +41,12 @@ a, button { transition:all 0.25s ease; }
 
 /* ── WRAP (padding-bottom reducido) ── */
 .wrap { max-width:480px; margin:0 auto; padding:24px 20px 8px;
-  display:flex; flex-direction:column; align-items:center; gap:18px; }
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:18px; }
 
 /* ── INFO-BOX adaptada para la plana ── */
 .info-box { width:100%; background:var(--surface); border-left:5px solid var(--saffron);
-  border-radius:var(--radio-sm); padding:20px 24px; box-shadow:var(--shadow-soft);
-  font-size:1.2rem;     /* sobreescribe 1.05rem del base */
-  color:var(--paper);   /* sobreescribe ink-soft del base */
-  line-height:1.7;
-  text-align:center; }
-.info-box strong { color:var(--paper); font-weight:700; }
+  border-radius:var(--radio-sm); padding:12px 20px; box-shadow:var(--shadow-soft);
+  font-size:1.05rem; color:var(--paper); line-height:1.45; text-align:center; }
 
 /* label con el nombre de la letra en romanización */
 #roman-label { color:var(--saffron); font-size:1.6rem; font-weight:700; }
@@ -90,8 +86,9 @@ a, button { transition:all 0.25s ease; }
                   box-shadow:0 4px 14px rgba(168,54,42,0.3); }
 
 /* div de resultado de evaluación */
-#resultado-evaluacion { text-align:center; font-size:1.15rem; font-weight:700;
-  color:var(--saffron); margin-top:15px; }
+#resultado-evaluacion { text-align:center; font-size:1.05rem; font-weight:700;
+  color:var(--saffron); margin-top:8px; line-height:1.3; min-height:0; }
+#resultado-evaluacion:empty { margin:0; }
 
 /* ── BOTTOM-ACTIONS ── */
 .bottom-actions { width:100%; max-width:340px; margin:0 auto;
