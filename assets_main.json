@@ -78,13 +78,13 @@
     },
     {
       "url": "especial_a_abierta_vs_cerrada.html",
-      "lastModified": 1785286783286,
-      "size": 6491
+      "lastModified": 1785423910580,
+      "size": 6458
     },
     {
       "url": "especial_a_abierta_vs_cerrada.js",
-      "lastModified": 1783871051836,
-      "size": 2546
+      "lastModified": 1785425984869,
+      "size": 4176
     },
     {
       "url": "especial_sonido_normal_sonido_nasal.html",
@@ -102,19 +102,29 @@
       "size": 7384
     },
     {
+      "url": "generador.html",
+      "lastModified": 1785429289418,
+      "size": 2002
+    },
+    {
+      "url": "generador.js",
+      "lastModified": 1785429322061,
+      "size": 8683
+    },
+    {
       "url": "guia_navegacion.css",
       "lastModified": 1783871282053,
       "size": 3719
     },
     {
       "url": "guia_navegacion.html",
-      "lastModified": 1784559777659,
-      "size": 2794
+      "lastModified": 1785381239330,
+      "size": 3035
     },
     {
       "url": "guia_navegacion.js",
-      "lastModified": 1783871288732,
-      "size": 3068
+      "lastModified": 1785381366129,
+      "size": 3362
     },
     {
       "url": "guia_navegacion_common.css",
@@ -218,13 +228,13 @@
     },
     {
       "url": "leccion_pensarEnGUJ.html",
-      "lastModified": 1785210100770,
-      "size": 1932
+      "lastModified": 1785380418509,
+      "size": 2097
     },
     {
       "url": "leccion_pensarEnGUJ.js",
-      "lastModified": 1785286783303,
-      "size": 2309
+      "lastModified": 1785380493625,
+      "size": 2508
     },
     {
       "url": "leccion_plana.html",
@@ -245,6 +255,16 @@
       "url": "leccion_vocal.js",
       "lastModified": 1785286783304,
       "size": 14102
+    },
+    {
+      "url": "lectura.html",
+      "lastModified": 1785380088272,
+      "size": 2568
+    },
+    {
+      "url": "lectura.js",
+      "lastModified": 1785430123185,
+      "size": 11086
     },
     {
       "url": "main_loader.html",
@@ -358,8 +378,8 @@
     },
     {
       "url": "tema-especial_a_abierta_vs_cerrada.css",
-      "lastModified": 1784176547872,
-      "size": 6888
+      "lastModified": 1785426020788,
+      "size": 7550
     },
     {
       "url": "tema-especial_a_abierta_vs_cerrada_desktop.css",
@@ -375,6 +395,16 @@
       "url": "tema-especial_sonido_normal_sonido_nasal_desktop.css",
       "lastModified": 1784642579720,
       "size": 4327
+    },
+    {
+      "url": "tema-generador.css",
+      "lastModified": 1785465875673,
+      "size": 9497
+    },
+    {
+      "url": "tema-generador_desktop.css",
+      "lastModified": 1785427710121,
+      "size": 3918
     },
     {
       "url": "tema-index.css",
@@ -453,13 +483,13 @@
     },
     {
       "url": "tema-leccion_pensarEnGUJ.css",
-      "lastModified": 1785210236124,
-      "size": 4995
+      "lastModified": 1785380556409,
+      "size": 5236
     },
     {
       "url": "tema-leccion_pensarEnGUJ_desktop.css",
-      "lastModified": 1785210307158,
-      "size": 2609
+      "lastModified": 1785381130648,
+      "size": 2777
     },
     {
       "url": "tema-leccion_plana.css",
@@ -480,6 +510,16 @@
       "url": "tema-leccion_vocal_desktop.css",
       "lastModified": 1784089948723,
       "size": 3685
+    },
+    {
+      "url": "tema-lectura.css",
+      "lastModified": 1785415631736,
+      "size": 5688
+    },
+    {
+      "url": "tema-lectura_desktop.css",
+      "lastModified": 1785380186068,
+      "size": 2549
     },
     {
       "url": "tema-modulo.css",
