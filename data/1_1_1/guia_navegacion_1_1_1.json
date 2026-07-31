@@ -14,8 +14,11 @@
     "link-juego-c": true,
     "link-practica": true,
     "link-aprende": true,
+    "link-lectura": true,
     "link-compone": true,
     "link-reto": true,
-    "link-dialogo": true
+    "link-dialogo": true,
+    "link-pensar": true,
+    "link-generar": true
   }
 }

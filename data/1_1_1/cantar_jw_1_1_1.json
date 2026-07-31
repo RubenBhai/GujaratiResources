@@ -1,69 +1,51 @@
 {
   "leccion": "1.1.1",
-  "titulo": "Reto — Lección 1.1.1",
-  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
-  "programa_efecto_victoria": "estrellas",
-  "nivel1": {
-    "titulo": "Reconoce letras y vocales",
-    "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
-    "maxSesiones": 2,
-    "texto": "મામા છે, એ કાકા છે.  કેમ છો મામા? કેમ છો કાકા?",
-    "elementos": [
-      "મા",
-      "છે",
-      "એ",
-      "કેમ",
-      "છો",
-      "કા",
-      "મ"
+  "home": "leccion_intro.html?leccion=1.1.1",
+
+  "badge": "Canta en gujarati",
+  "titulo": "Aprende cantando",
+  "lead": "Cantar fija las palabras como ninguna otra cosa. Elige cómo quieres practicar hoy.",
+
+  "antes": {
+    "titulo": "Escucha estas en la canción",
+    "palabras": [
+      { "gu": "કેમ છો?", "es": "¿cómo estás?" },
+      { "gu": "છે",      "es": "es / está / hay" },
+      { "gu": "આ",       "es": "esto / esta" },
+      { "gu": "એ",       "es": "eso / esa" }
     ]
   },
-  "nivel2": {
-    "titulo": "Reconoce palabras",
-    "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
-    "sesiones": [
-      {
-        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_1.mp3",
-        "elemento": "કેમ છો",
-        "respuesta": 2
-      },
-      {
-        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_2.mp3",
-        "elemento": "મામા",
-        "respuesta": 2
-      },
-      {
-        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_3.mp3",
-        "elemento": "કામ",
-        "respuesta": 1
-      },
-      {
-        "audio": "audios/clase_1_1/reto_leccion_1_1_1_audio_4.mp3",
-        "elemento": "કામ",
-        "respuesta": 2
-      }
+
+  "escuchar": {
+    "titulo": "Escucha y sigue",
+    "descripcion": "Suena la música y la voz del cantante, con la letra en pantalla. Escucha cómo suena cada palabra y síguela con la vista.",
+    "boton": "🎧 Escuchar con voz",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si escuchaste",
+    "url": ""
+  },
+
+  "cantar": {
+    "titulo": "Canta tú",
+    "descripcion": "Suena solo la música, con la letra en pantalla. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
+    "boton": "🎤 Cantar tú",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si cantaste",
+    "url": ""
+  },
+
+  "despues": {
+    "titulo": "Después de cantar",
+    "escuchar": [
+      "¿Reconociste <b class=\"gu\">છે</b> mientras el cantante la decía?",
+      "¿Qué palabra te costó más seguir con la vista?"
+    ],
+    "cantar": [
+      "¿Pudiste leer al ritmo de la música?",
+      "¿Qué palabra sentiste más natural al cantarla?"
     ]
   },
-  "nivel3": {
-    "titulo": "Pronuncia palabras",
-    "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
-    "maxSesiones": 2,
-    "elementos": [
-      {
-        "gujarati": "આ મામા છે"
-      },
-      {
-        "gujarati": "એ કાકા છે"
-      },
-      {
-        "gujarati": "કેમ છો મામા?"
-      },
-      {
-        "gujarati": "કેમ છો કાકા?"
-      }
-    ]
-  },
-  "video_jw": false,
-  "cantar_jw": false,
-  "cancion_jw": false
+
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.1.1",
+  "continuar_caption": "Continuar →"
 }

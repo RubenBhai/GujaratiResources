@@ -1,0 +1,48 @@
+{
+  "leccion": "1.1.1",
+  "lectura": {
+    "titulo": "Práctica de Echo Reading",
+    "subtitulo": "Lectura guiada",
+    "intro": "Sigue el texto en gujarati con el dedo y lee en voz baja sincronizado con el audio. Toca cualquier frase para repetirla.",
+    "audio": "audios/clase_1_1/lectura_1_1_1.mp3",
+    "subtitulo_fin": "¡Excelente lectura!",
+    "intro_fin": "Has completado la lectura guiada. Ahora estás listo para poner a prueba tu pronunciación en la siguiente lección."
+  },
+  "segmentos": [
+    {
+      "id": 1,
+      "gujarati": "રાહુલભાઈ અને શ્રીયાબેન ફ્રેન્ડ છે.",
+      "espanol": "Rajul y Shriyaa son amigos.",
+      "ini": 0.00,
+      "fin": 2.645
+    },
+    {
+      "id": 2,
+      "gujarati": "શ્રીયાબેન સારું છે.",
+      "espanol": "Shriyaa está bien.",
+      "ini": 2.646,
+      "fin": 4.351
+    },
+    {
+      "id": 3,
+      "gujarati": "અને રાહુલભાઈ મજામાં છે.",
+      "espanol": "y Rajul está muy bien.",
+      "ini": 4.352,
+      "fin": 6.485
+    },
+    {
+      "id": 4,
+      "gujarati": "રીતુભાઈ મામા છે.",
+      "espanol": "Ritu es el tío materno.",
+      "ini": 6.486,
+      "fin": 8.021
+    },
+    {
+      "id": 5,
+      "gujarati": "અને સોહાનભાઈ કાકા છે.",
+      "espanol": "y Sojan es el tío paterno.",
+      "ini": 8.022,
+      "fin": 9.557
+    }
+  ]
+}

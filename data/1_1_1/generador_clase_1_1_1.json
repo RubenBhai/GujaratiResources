@@ -1,0 +1,195 @@
+{
+  "leccion": "1.1.1",
+  "titulo": "Arma tus propias oraciones",
+  "subtitulo": "Elige una opción de cada columna y descubre cómo se construye una oración en gujarati.",
+  "generadores": [
+    {
+      "nombre": "Esto y eso",
+      "instruccion": "Elige el qué, el quién y forma la oración. Todas las columnas son obligatorias.",
+      "columnas": [
+        {
+          "pregunta": "¿quién?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            { "gu": "આ", "rom": "aa", "es": "esto/esta", "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3" },
+            { "gu": "એ", "rom": "e",  "es": "eso/esa",  "audio": "audios/clase_1_1/audio_alfa_m_e.mp3" }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 4,
+          "opciones": [
+            { "gu": "કામ",  "rom": "kaam", "es": "el trabajo",      "audio": "audios/clase_1_1/audio_m_kaam.mp3" },
+            { "gu": "મોકો", "rom": "moko", "es": "la oportunidad",  "audio": "audios/clase_1_1/audio_m_moko.mp3" },
+            { "gu": "મામા", "rom": "maamaa", "es": "el tío materno", "audio": "audios/clase_1_1/audio_m_maamaa.mp3" },
+            { "gu": "કાકા", "rom": "kaakaa", "es": "el tío paterno", "audio": "audios/clase_1_1/audio_m_kaakaa.mp3" },
+            { "gu": "મા",   "rom": "maa",    "es": "la mamá",        "audio": "audios/clase_1_1/audio_m_maa.mp3" }
+          ]
+        },
+        {
+          "pregunta": "adjetivo",
+          "pregunta_gu": "કેટલું?",
+          "obligatorio": "NO",
+          "orden": 3,
+          "opciones": [
+            { "gu": "ઓછો", "rom": "ochho", "es": "poco", "audio": "audios/clase_1_1/audio_m_ochho.mp3" }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            { "gu": "છે", "rom": "chhe", "es": "es", "audio": "audios/clase_1_1/audio_m_chhe.mp3" }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Estos y esos",
+      "instruccion": "Elige el qué, el quién y forma la oración. Todas las columnas son obligatorias.",
+      "columnas": [
+        {
+          "pregunta": "¿quién?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            { "gu": "આ", "rom": "aa", "es": "esto/esta", "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3" },
+            { "gu": "એ", "rom": "e",  "es": "eso/esa",  "audio": "audios/clase_1_1/audio_alfa_m_e.mp3" }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 4,
+          "opciones": [
+            { "gu": "કામ",  "rom": "kaam", "es": "el trabajo",      "audio": "audios/clase_1_1/audio_m_kaam.mp3" },
+            { "gu": "મોકો", "rom": "moko", "es": "la oportunidad",  "audio": "audios/clase_1_1/audio_m_moko.mp3" },
+            { "gu": "મામા", "rom": "maamaa", "es": "el tío materno", "audio": "audios/clase_1_1/audio_m_maamaa.mp3" },
+            { "gu": "કાકા", "rom": "kaakaa", "es": "el tío paterno", "audio": "audios/clase_1_1/audio_m_kaakaa.mp3" },
+            { "gu": "મા",   "rom": "maa",    "es": "la mamá",        "audio": "audios/clase_1_1/audio_m_maa.mp3" }
+          ]
+        },
+        {
+          "pregunta": "adjetivo",
+          "pregunta_gu": "કેટલું?",
+          "obligatorio": "NO",
+          "orden": 3,
+          "opciones": [
+            { "gu": "ઓછો", "rom": "ochho", "es": "poco", "audio": "audios/clase_1_1/audio_m_ochho.mp3" }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            { "gu": "છે", "rom": "chhe", "es": "es", "audio": "audios/clase_1_1/audio_m_chhe.mp3" }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Estoss y esoss",
+      "instruccion": "Elige el qué, el quién y forma la oración. Todas las columnas son obligatorias.",
+      "columnas": [
+        {
+          "pregunta": "¿quién?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            { "gu": "આ", "rom": "aa", "es": "esto/esta", "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3" },
+            { "gu": "એ", "rom": "e",  "es": "eso/esa",  "audio": "audios/clase_1_1/audio_alfa_m_e.mp3" }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 4,
+          "opciones": [
+            { "gu": "કામ",  "rom": "kaam", "es": "el trabajo",      "audio": "audios/clase_1_1/audio_m_kaam.mp3" },
+            { "gu": "મોકો", "rom": "moko", "es": "la oportunidad",  "audio": "audios/clase_1_1/audio_m_moko.mp3" },
+            { "gu": "મામા", "rom": "maamaa", "es": "el tío materno", "audio": "audios/clase_1_1/audio_m_maamaa.mp3" },
+            { "gu": "કાકા", "rom": "kaakaa", "es": "el tío paterno", "audio": "audios/clase_1_1/audio_m_kaakaa.mp3" },
+            { "gu": "મા",   "rom": "maa",    "es": "la mamá",        "audio": "audios/clase_1_1/audio_m_maa.mp3" }
+          ]
+        },
+        {
+          "pregunta": "adjetivo",
+          "pregunta_gu": "કેટલું?",
+          "obligatorio": "NO",
+          "orden": 3,
+          "opciones": [
+            { "gu": "ઓછો", "rom": "ochho", "es": "poco", "audio": "audios/clase_1_1/audio_m_ochho.mp3" }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            { "gu": "છે", "rom": "chhe", "es": "es", "audio": "audios/clase_1_1/audio_m_chhe.mp3" }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Estossss y esosss",
+      "instruccion": "Elige el qué, el quién y forma la oración. Todas las columnas son obligatorias.",
+      "columnas": [
+        {
+          "pregunta": "¿quién?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            { "gu": "આ", "rom": "aa", "es": "esto/esta", "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3" },
+            { "gu": "એ", "rom": "e",  "es": "eso/esa",  "audio": "audios/clase_1_1/audio_alfa_m_e.mp3" }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 4,
+          "opciones": [
+            { "gu": "કામ",  "rom": "kaam", "es": "el trabajo",      "audio": "audios/clase_1_1/audio_m_kaam.mp3" },
+            { "gu": "મોકો", "rom": "moko", "es": "la oportunidad",  "audio": "audios/clase_1_1/audio_m_moko.mp3" },
+            { "gu": "મામા", "rom": "maamaa", "es": "el tío materno", "audio": "audios/clase_1_1/audio_m_maamaa.mp3" },
+            { "gu": "કાકા", "rom": "kaakaa", "es": "el tío paterno", "audio": "audios/clase_1_1/audio_m_kaakaa.mp3" },
+            { "gu": "મા",   "rom": "maa",    "es": "la mamá",        "audio": "audios/clase_1_1/audio_m_maa.mp3" }
+          ]
+        },
+        {
+          "pregunta": "adjetivo",
+          "pregunta_gu": "કેટલું?",
+          "obligatorio": "NO",
+          "orden": 3,
+          "opciones": [
+            { "gu": "ઓછો", "rom": "ochho", "es": "poco", "audio": "audios/clase_1_1/audio_m_ochho.mp3" }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            { "gu": "છે", "rom": "chhe", "es": "es", "audio": "audios/clase_1_1/audio_m_chhe.mp3" }
+          ]
+        }
+      ]
+    }
+  ]
+}
