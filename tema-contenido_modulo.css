@@ -39,8 +39,7 @@
     100% { background-position: 20% 15%, 80% 85%; }
   }
 
-  /* ── ESTILOS ESPECÍFICOS PARA ESTA PÁGINA ── */
-
+  /* ── NAVEGACIÓN ── */
   .nav-bar {
     position: sticky;
     top: 0;
@@ -73,6 +72,10 @@
     padding: 6px 14px;
   }
 
+  /* ── LAYOUT (móvil-first: un solo flujo) ──
+     .wrap-letras es un flex vertical.  Las dos columnas usan display:contents
+     para que sus secciones se aplanen en un único orden.  El orden visual lo
+     controla `order` (clases .ord-*), NO el orden del DOM. */
   .wrap-letras {
     max-width: 520px;
     margin: 0 auto;
@@ -82,6 +85,11 @@
     align-items: center;
     gap: 28px;
   }
+  .col { display: contents; }
+  .seccion { width: 100%; }
+
+  /* Orden de flujo global (intro=0, secciones=1..20, botón=100) */
+  .ord-0{order:0}.ord-1{order:1}.ord-2{order:2}.ord-3{order:3}.ord-4{order:4}.ord-5{order:5}.ord-6{order:6}.ord-7{order:7}.ord-8{order:8}.ord-9{order:9}.ord-10{order:10}.ord-11{order:11}.ord-12{order:12}.ord-13{order:13}.ord-14{order:14}.ord-15{order:15}.ord-16{order:16}.ord-17{order:17}.ord-18{order:18}.ord-19{order:19}.ord-20{order:20}.ord-final{order:100}
 
   .intro-header { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
   .modulo-badge { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; background: rgba(168, 54, 42, 0.1); color: var(--sindoor-deep); }
@@ -91,24 +99,26 @@
 
   .seccion-label { width: 100%; font-size: 0.85rem; color: var(--olive); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; text-align: center; margin-top: 12px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px; }
 
-  /* Cuadrícula de Letras */
-  .letras-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; width: 100%; }
-  .letra-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 14px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); transition: transform 0.2s; }
-  .letra-card:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.8); }
-  .letra-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 2rem; color: var(--ink); line-height: 1; }
-  .letra-card .rom { font-size: 0.9rem; color: var(--sindoor); font-weight: 700; }
+  /* ── GRID GENÉRICO DE TARJETAS ──
+     El nº de columnas viene de --cols (clases .cols-*).  La forma de cada
+     tarjeta la deciden los `campos`; los tamaños, la variante `item_clase`. */
+  .grid-seccion { display: grid; grid-template-columns: repeat(var(--cols, 5), 1fr); gap: 10px; width: 100%; }
+  .cols-1{--cols:1}.cols-2{--cols:2}.cols-3{--cols:3}.cols-4{--cols:4}.cols-5{--cols:5}.cols-6{--cols:6}
 
-  /* Cuadrícula de Vocales */
-  .vocales-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; }
-  .vocal-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 14px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); }
-  .vocal-card .gu { font-family: 'Noto Serif Gujarati', serif; font-size: 1.8rem; color: var(--ink); line-height: 1; }
-  .vocal-card .rom { font-size: 0.9rem; color: var(--sindoor); font-weight: 700; }
-  .vocal-card .abrev { font-family: 'Noto Serif Gujarati', serif; font-size: 1.3rem; color: var(--ink-soft); margin-top: -2px; }
+  .grid-card { background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 14px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(42,36,32,0.03); transition: transform 0.2s; }
+  .grid-card:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.8); }
+  .grid-card .gu    { font-family: 'Noto Serif Gujarati', serif; font-size: 2rem; color: var(--ink); line-height: 1; }
+  .grid-card .rom   { font-size: 0.9rem; color: var(--sindoor); font-weight: 700; }
+  .grid-card .abrev { font-family: 'Noto Serif Gujarati', serif; font-size: 1.3rem; color: var(--ink-soft); margin-top: -2px; }
 
+  /* Variante vocal: el signo base es un poco menor que una consonante */
+  .grid-card.vocal .gu { font-size: 1.8rem; }
+
+  /* ── INFO BOX ── */
   .info-box { width: 100%; background: var(--paper-card); border-left: 5px solid var(--saffron); border-radius: 12px; padding: 20px 24px; font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); box-shadow: 0 6px 16px rgba(42,36,32,0.04); }
   .info-box strong { color: var(--ink); font-weight: 700; }
 
-  /* LISTA DE LECCIONES */
+  /* ── LISTA DE LECCIONES ── */
   .lecciones-lista { width: 100%; display: flex; flex-direction: column; gap: 10px; background: rgba(255, 255, 255, 0.4); padding: 10px; border-radius: 16px; border: 1px solid rgba(42,36,32,0.04); }
   .leccion { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: transparent; border-radius: 12px; text-decoration: none; color: inherit; transition: all 0.2s; }
   .leccion:hover { background: rgba(255, 255, 255, 0.6); }
@@ -123,7 +133,7 @@
   .lec-status { font-size: 1.2rem; color: var(--sindoor); }
   .lec-soon { font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
 
-  /* Botón Principal */
+  /* ── BOTÓN PRINCIPAL ── */
   .btn-empezar { display: block; width: 100%; border: none; padding: 18px; border-radius: 50px; font-weight: 600; font-size: 1.05rem; background: var(--sindoor); color: var(--paper); text-align: center; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 12px rgba(168, 54, 42, 0.2); margin-top: 10px; }
   .btn-empezar:hover { background: var(--sindoor-deep); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(168, 54, 42, 0.3); }
 

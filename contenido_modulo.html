@@ -23,24 +23,19 @@
 
 <div class="wrap-letras">
 
-  <div class="intro-header">
-    <span class="modulo-badge" id="badge"></span>
-    <h1 id="titulo"></h1>
-    <p class="subtitle" id="subtitulo"></p>
+  <div class="col col-izq" id="col-izq">
+    <div class="intro-header ord-0">
+      <span class="modulo-badge" id="badge"></span>
+      <h1 id="titulo"></h1>
+      <p class="subtitle" id="subtitulo"></p>
+    </div>
+    <!-- Secciones con "columna":"izq" + botón "Empezar": las inserta el JS -->
   </div>
 
-  <div class="seccion-label" id="label-consonantes"></div>
-  <div class="letras-grid"   id="grid-consonantes"></div>
+  <div class="col col-der" id="col-der">
+    <!-- Secciones con "columna":"der": las inserta el JS -->
+  </div>
 
-  <div class="seccion-label" id="label-vocales"></div>
-  <div class="vocales-grid"  id="grid-vocales"></div>
-
-  <div class="info-box"      id="info-box"></div>
-
-  <div class="seccion-label"   id="label-lecciones"></div>
-  <div class="lecciones-lista" id="lista-lecciones"></div>
-
-  <a class="btn-empezar" id="btn-empezar" href="#">Empezar →</a>
 </div>
 
 <script src="contenido_modulo.js"></script>

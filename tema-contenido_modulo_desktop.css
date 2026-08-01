@@ -1,66 +1,47 @@
 /* ==========================================================================
-   tema-contenido_modulo_desktop.css — Optimizado para Desktop (Min 1440x720)
-   Panel de Control de Módulo: Presentación Fija (Izq) y Catálogo de Estudio (Der).
+   tema-contenido_modulo_desktop.css — Desktop (min 1440x720)
+   Dos columnas REALES: izquierda (contexto + acción) / derecha (catálogo).
+   Ya NO se mapean filas por ID: cada sección declara su columna en el JSON
+   ("columna":"izq"|"der") y el orden vertical lo resuelve `order`.
    ========================================================================= */
 
 @media (min-width: 1440px) and (min-height: 720px) {
 
-  /* ── 1. AJUSTES GENERALES DE NAVEGACIÓN Y ESPACIO ── */
-  .nav-bar {
-    padding: 16px 60px; /* Más aire horizontal en monitores de PC */
-  }
+  .nav-bar { padding: 16px 60px; }
 
-  /* Expandimos el lienzo principal y lo convertimos en una rejilla asimétrica */
+  /* El wrap pasa de flujo vertical a rejilla de 2 columnas.
+     Las columnas se estiran a la misma altura (default stretch) para poder
+     anclar el botón al fondo de la izquierda. */
   .wrap-letras {
     max-width: 1340px;
     margin: 40px auto 0;
     padding: 0 40px 60px;
     display: grid;
-    /* Columna 1 (Información/Acción): 450px | Columna 2 (Letras y Lecciones): Flexible */
     grid-template-columns: 450px 1fr;
     column-gap: 60px;
-    row-gap: 20px;
-    align-items: start;
   }
 
-  /* ── 2. COLUMNA IZQUIERDA: CONTEXTO, NOTAS Y ACCIÓN PRINCIPAL ──
-     Utilizamos un mapeo explícito de celdas por filas para agrupar los elementos
-     izquierdos de forma fluida mientras el lado derecho se expande hacia abajo. */
-  
-  .intro-header {
-    grid-column: 1;
-    grid-row: 1;
-    text-align: left;
-    align-items: flex-start; /* Alineación limpia a la izquierda */
-    gap: 16px;
-  }
+  /* Las columnas dejan de ser display:contents y vuelven a ser contenedores
+     flex que apilan sus secciones (ordenadas por `order`). */
+  .col     { display: flex; flex-direction: column; gap: 20px; }
+  .col-izq { grid-column: 1; }
+  .col-der { grid-column: 2; }
 
-  .intro-header h1 {
-    font-size: 3.2rem; /* Título imponente */
-    text-align: left;
-  }
+  /* ── Columna izquierda ── */
+  .intro-header { text-align: left; align-items: flex-start; gap: 16px; }
+  .intro-header h1 { font-size: 3.2rem; text-align: left; }
+  .subtitle { text-align: left; max-width: 100%; font-size: 1.25rem; }
 
-  .subtitle {
-    text-align: left;
-    max-width: 100%;
-    font-size: 1.25rem;
-  }
-
-  /* La caja de información se acopla en la columna izquierda compartiendo altura con las letras */
   .info-box {
-    grid-column: 1;
-    grid-row: 2 / span 3; /* Se estira elegantemente al lado de las cuadrículas de letras */
     margin-top: 12px;
     padding: 26px 30px;
     font-size: 1.15rem;
     box-shadow: 0 8px 24px rgba(42,36,32,0.06);
   }
 
-  /* Botón para iniciar el módulo completo */
+  /* margin-top:auto ancla el botón al fondo de la columna izquierda */
   .btn-empezar {
-    grid-column: 1;
-    grid-row: 5 / span 2; /* Se posiciona al lado de la lista de lecciones */
-    margin-top: 16px;
+    margin-top: auto;
     padding: 20px;
     font-size: 1.15rem;
     box-shadow: 0 6px 20px rgba(168, 54, 42, 0.25);
@@ -70,96 +51,39 @@
     box-shadow: 0 10px 24px rgba(168, 54, 42, 0.35);
   }
 
-
-  /* ── 3. COLUMNA DERECHA: REPOSITORIO DE CARACTERES Y MAPA DE LECCIONES ── */
-
-  /* Etiquetas divisoras de sección */
+  /* ── Columna derecha ── */
   .seccion-label {
-    grid-column: 2;
-    text-align: left; /* Lectura natural de paneles técnicos */
+    text-align: left;
     font-size: 0.95rem;
     margin-top: 0;
     padding-bottom: 10px;
   }
-  
-  #label-consonantes { grid-row: 1; }
-  #label-vocales     { grid-row: 3; margin-top: 16px; }
-  #label-lecciones   { grid-row: 5; margin-top: 24px; }
 
-  /* Cuadrícula de Consonantes */
-  #grid-consonantes {
-    grid-column: 2;
-    grid-row: 2;
-    gap: 14px; /* Más separación entre tarjetas */
-  }
+  .grid-seccion { gap: 14px; }
 
-  /* Cuadrícula de Vocales */
-  #grid-vocales {
-    grid-column: 2;
-    grid-row: 4;
-    gap: 14px;
-  }
-
-  /* Lista de Lecciones del Módulo */
-  .lecciones-lista {
-    grid-column: 2;
-    grid-row: 6;
-    padding: 16px;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.5);
-  }
-
-
-  /* ── 4. OPTIMIZACIÓN DE TARJETAS LINGÜÍSTICAS Y CONTENIDO ── */
-
-  /* Fichas de Consonantes y Vocales */
-  .letra-card, 
-  .vocal-card {
+  .grid-card {
     padding: 22px 10px;
     border-radius: 14px;
     box-shadow: 0 6px 16px rgba(42,36,32,0.04);
   }
-  .letra-card:hover {
+  .grid-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(42,36,32,0.08);
   }
+  .grid-card .gu       { font-size: 3rem; }
+  .grid-card.vocal .gu { font-size: 2.6rem; }
+  .grid-card .abrev    { font-size: 1.6rem; margin-top: 2px; }
+  .grid-card .rom      { font-size: 1.05rem; margin-top: 4px; }
 
-  /* Escalado tipográfico masivo del Gujarati para pantallas amplias */
-  .letra-card .gu {
-    font-size: 3rem;
+  .lecciones-lista {
+    padding: 16px;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.5);
   }
-  .vocal-card .gu {
-    font-size: 2.6rem;
-  }
-  .vocal-card .abrev {
-    font-size: 1.6rem;
-    margin-top: 2px;
-  }
-  .letra-card .rom, 
-  .vocal-card .rom {
-    font-size: 1.05rem;
-    margin-top: 4px;
-  }
+  .leccion { padding: 18px 24px; border-radius: 14px; }
+  .leccion:hover { transform: translateX(4px); }
 
-  /* Filas de Lecciones */
-  .leccion {
-    padding: 18px 24px;
-    border-radius: 14px;
-  }
-  .leccion:hover {
-    transform: translateX(4px); /* Desplazamiento interactivo cómodo con mouse */
-  }
-  
-  .lec-num {
-    font-size: 1.5rem;
-    min-width: 36px;
-  }
-  .lec-title {
-    font-size: 1.25rem;
-  }
-  .lec-sub {
-    font-size: 1.05rem;
-    margin-top: 4px;
-  }
-  /* Caracteres de ejemplo de la lección */
+  .lec-num   { font-size: 1.5rem; min-width: 36px; }
+  .lec-title { font-size: 1.25rem; }
+  .lec-sub   { font-size: 1.05rem; margin-top: 4px; }
 }
