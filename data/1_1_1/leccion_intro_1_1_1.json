@@ -20,7 +20,7 @@
         },
         {
           "tipo": "tabla",
-          "columnas": ["Letra", "Nombre", "Suena como"],
+          "columnas": ["Letra Gujarati", "Cómo suena", "Ejemplo"],
           "filas": [
             [ {"tipo":"gu","valor":"ક"}, {"tipo":"acento","valor":"ka"}, {"tipo":"texto","valor":"<strong>ka</strong> en <strong>ka</strong>rate"} ],
             [ {"tipo":"gu","valor":"મ"}, {"tipo":"acento","valor":"ma"}, {"tipo":"texto","valor":"<strong>ma</strong> en <strong>ma</strong>má"} ],
@@ -36,22 +36,18 @@
       "titulo": "Vocales y matras",
       "bloques": [
         {
+          "tipo": "info-box",
+          "html": "<p>Cada vocal tiene una matra.<br>La única vocal que no tiene matra es અ 'a'.</p>"
+        },
+        {
           "tipo": "tabla",
-          "columnas": ["Vocal", "Suena como", "Matra"],
+          "columnas": ["Vocal Gujarati", "Cómo suena", "Matra"],
           "filas": [
             [ {"tipo":"gu","valor":"અ"}, {"tipo":"acento","valor":"'a'"}, {"tipo":"matra","valor":"..."} ],
             [ {"tipo":"gu","valor":"આ"}, {"tipo":"acento","valor":"'aa'"}, {"tipo":"matra","valor":"ા"} ],
             [ {"tipo":"gu","valor":"એ"}, {"tipo":"acento","valor":"'e'"}, {"tipo":"matra","valor":"ે"} ],
             [ {"tipo":"gu","valor":"ઓ"}, {"tipo":"acento","valor":"'o'"}, {"tipo":"matra","valor":"ો"} ]
           ]
-        },
-        {
-          "tipo": "info-box",
-          "html": "<p>¿Notaste la diferencia entre <strong>'a'</strong> y <strong>'aa'</strong>? La 'a' es cerrada — como en <em>\"graci<strong>a</strong>s\"</em>. La 'aa' es abierta — como en <em>\"mam<strong>á</strong>\"</em>.</p>"
-        },
-        {
-          "tipo": "info-box",
-          "html": "<p>La matra va pegada a la consonante y cambia su vocal. Por ejemplo, para <strong>ઓ</strong>  su matra es  <strong>ો</strong>.   El pequeño círculo se reemplaza por la consonante.  Si a la consonante <strong>ક</strong> le pego esa matra <strong>ો</strong> queda como <strong>કો</strong>.   En la siguiente página verás cómo funciona.</p>"
         }
       ],
       "boton_principal": { "tipo": "pantalla", "texto": "Siguiente →", "destino": 3 },
@@ -62,18 +58,17 @@
       "titulo": "Las consonantes y sus matras",
       "bloques": [
         {
-          "tipo": "tabla",
-          "columnas": ["Letra", "Suena", "+ matra", "Suena"],
-          "filas": [
-            [ {"tipo":"gu","valor":"ક"}, {"tipo":"texto","valor":"<strong>ka</strong>"}, {"tipo":"gu","valor":"ા → કા"}, {"tipo":"texto","valor":"<strong>kaa</strong>"} ],
-            [ {"tipo":"gu","valor":"મ"}, {"tipo":"texto","valor":"<strong>ma</strong>"}, {"tipo":"gu","valor":"ે → મે"}, {"tipo":"texto","valor":"<strong>me</strong>"} ],
-            [ {"tipo":"gu","valor":"છ"}, {"tipo":"texto","valor":"<strong>chha</strong>"}, {"tipo":"gu","valor":"ો → છો"}, {"tipo":"texto","valor":"<strong>chho</strong>"} ]
-          ]
+          "tipo": "info-box",
+          "html": "<p>Para cobinar una consonante con una vocal, usamos la matra de la vocal. Por ejemplo, para combinar ક  con con આ  sería ક 'ka' +  ા (matra de 'aa') =  કા 'kaa'.  Mira los siguientes ejemplos:</p>"
         },
         {
-          "tipo": "frase-destacada",
-          "gu": "કેમ છો?",
-          "traduccion": "¿Cómo estás?"
+          "tipo": "tabla",
+          "columnas": ["Gujarati", "Sonido", "Matra", "Letra+Matra"],
+          "filas": [
+            [ {"tipo":"gu","valor":"ક"}, {"tipo":"texto","valor":"<strong>ka</strong>"}, {"tipo":"gu","valor":"ા"}, {"tipo":"texto","valor":"<strong>ક + ા  =  કા (kaa)</strong>"} ],
+            [ {"tipo":"gu","valor":"મ"}, {"tipo":"texto","valor":"<strong>ma</strong>"}, {"tipo":"gu","valor":"ે"}, {"tipo":"texto","valor":"<strong>મ + ે  =  મે (me)</strong>"} ],
+            [ {"tipo":"gu","valor":"છ"}, {"tipo":"texto","valor":"<strong>chha</strong>"}, {"tipo":"gu","valor":"ો"}, {"tipo":"texto","valor":"<strong>છ + ો  =  છો (chho)</strong>"} ]
+          ]
         }
       ],
       "boton_principal": { "tipo": "empezar_leccion", "texto": "¡Empezar la lección! →" },
