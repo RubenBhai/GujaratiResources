@@ -1,10 +1,8 @@
 {
   "leccion": "1.1.1",
-  "titulo": "Reto — Lección 1.1.1",
   "sonido_victoria": "audios/clase_1_1/victoria.mp3",
   "programa_efecto_victoria": "estrellas",
   "nivel1": {
-    "titulo": "Reconoce letras y vocales",
     "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
     "maxSesiones": 2,
     "texto": "મામા છે, એ કાકા છે.  કેમ છો મામા? કેમ છો કાકા?",
@@ -19,7 +17,6 @@
     ]
   },
   "nivel2": {
-    "titulo": "Reconoce palabras",
     "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
     "sesiones": [
       {
@@ -45,7 +42,6 @@
     ]
   },
   "nivel3": {
-    "titulo": "Pronuncia palabras",
     "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
     "maxSesiones": 2,
     "elementos": [
@@ -64,7 +60,6 @@
     ]
   },
   "nivel4": {
-    "titulo": "Dictado de Oraciones",
     "instruccion": "Escucha el audio toca las palabras en Gujarati para completar la oración.",
     "sesiones": [
       {
@@ -125,25 +120,42 @@
     ]
   },
   "nivel6": {
-    "titulo": "Dictado backwards",
     "instruccion": "Escucha cada parte y repítela en voz alta. La frase irá creciendo.",
     "oraciones": [
       {
         "oracion_completa": "કેમ છો?",
         "espanol": "¿Cómo está?",
         "fragmentos": [
-          { "texto": "છો?",           "audio": "audios/clase_1_1/dictado_backwards_01_frag_1.mp3" },
-          { "texto": "ેમ છો?",     "audio": "audios/clase_1_1/dictado_backwards_01_frag_2.mp3" },
-          { "texto": "કેમ છો?",     "audio": "audios/clase_1_1/dictado_backwards_01_frag_3.mp3" }
+          {
+            "texto": "છો?",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_1_01_frag_1.mp3"
+          },
+          {
+            "texto": "ેમ છો?",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_1_01_frag_2.mp3"
+          },
+          {
+            "texto": "કેમ છો?",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_1_01_frag_3.mp3"
+          }
         ]
       },
       {
         "oracion_completa": "કેમ છો શ્રીયાબેન?",
         "espanol": "¿Cómo está Shriya?",
         "fragmentos": [
-          { "texto": "શ્રીયાબેન?",           "audio": "audios/clase_1_1/dictado_backwards_02_frag_1.mp3" },
-          { "texto": "છો શ્રીયાબેન?",         "audio": "audios/clase_1_1/dictado_backwards_02_frag_2.mp3" },
-          { "texto": "કેમ છો શ્રીયાબેન?",     "audio": "audios/clase_1_1/dictado_backwards_02_frag_3.mp3" }
+          {
+            "texto": "શ્રીયાબેન?",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_1_02_frag_1.mp3"
+          },
+          {
+            "texto": "છો શ્રીયાબેન?",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_1_02_frag_2.mp3"
+          },
+          {
+            "texto": "કેમ છો શ્રીયાબેન?",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_1_02_frag_3.mp3"
+          }
         ]
       }
     ]

@@ -13,8 +13,16 @@
           "obligatorio": "SI",
           "orden": 1,
           "opciones": [
-            { "gu": "આ", "rom": "aa", "es": "esto/esta", "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3" },
-            { "gu": "એ", "rom": "e",  "es": "eso/esa",  "audio": "audios/clase_1_1/audio_alfa_m_e.mp3" }
+            {
+              "gu": "આ",
+              "es": "esto/esta",
+              "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
+            },
+            {
+              "gu": "એ",
+              "es": "eso/esa",
+              "audio": "audios/clase_1_1/audio_alfa_m_e.mp3"
+            }
           ]
         },
         {
@@ -23,11 +31,31 @@
           "obligatorio": "SI",
           "orden": 4,
           "opciones": [
-            { "gu": "કામ",  "rom": "kaam", "es": "el trabajo",      "audio": "audios/clase_1_1/audio_m_kaam.mp3" },
-            { "gu": "મોકો", "rom": "moko", "es": "la oportunidad",  "audio": "audios/clase_1_1/audio_m_moko.mp3" },
-            { "gu": "મામા", "rom": "maamaa", "es": "el tío materno", "audio": "audios/clase_1_1/audio_m_maamaa.mp3" },
-            { "gu": "કાકા", "rom": "kaakaa", "es": "el tío paterno", "audio": "audios/clase_1_1/audio_m_kaakaa.mp3" },
-            { "gu": "મા",   "rom": "maa",    "es": "la mamá",        "audio": "audios/clase_1_1/audio_m_maa.mp3" }
+            {
+              "gu": "કામ",
+              "es": "el trabajo",
+              "audio": "audios/clase_1_1/audio_m_kaam.mp3"
+            },
+            {
+              "gu": "મોકો",
+              "es": "la oportunidad",
+              "audio": "audios/clase_1_1/audio_m_moko.mp3"
+            },
+            {
+              "gu": "મામા",
+              "es": "el tío materno",
+              "audio": "audios/clase_1_1/audio_m_maamaa.mp3"
+            },
+            {
+              "gu": "કાકા",
+              "es": "el tío paterno",
+              "audio": "audios/clase_1_1/audio_m_kaakaa.mp3"
+            },
+            {
+              "gu": "મા",
+              "es": "la mamá",
+              "audio": "audios/clase_1_1/audio_m_maa.mp3"
+            }
           ]
         },
         {
@@ -36,7 +64,11 @@
           "obligatorio": "NO",
           "orden": 3,
           "opciones": [
-            { "gu": "ઓછો", "rom": "ochho", "es": "poco", "audio": "audios/clase_1_1/audio_m_ochho.mp3" }
+            {
+              "gu": "ઓછો",
+              "es": "poco",
+              "audio": "audios/clase_1_1/audio_m_ochho.mp3"
+            }
           ]
         },
         {
@@ -45,7 +77,11 @@
           "obligatorio": "SI",
           "orden": 2,
           "opciones": [
-            { "gu": "છે", "rom": "chhe", "es": "es", "audio": "audios/clase_1_1/audio_m_chhe.mp3" }
+            {
+              "gu": "છે",
+              "es": "es",
+              "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+            }
           ]
         }
       ]

@@ -1,6 +1,5 @@
 {
   "leccion": "1.1.1",
-  "modo": "repaso",
   "titulo": "Repaso final de lectura",
   "badge": "Repaso final",
   "unidad": "letras",
@@ -28,7 +27,6 @@
       "answer": "a",
       "audio": "audios/clase_1_1/audio_alfa_m_a.mp3"
     },
-
     {
       "letter": "કા",
       "answer": "kaa",
@@ -49,7 +47,6 @@
       "answer": "aa",
       "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
     },
-
     {
       "letter": "કે",
       "answer": "ke",
@@ -70,7 +67,6 @@
       "answer": "e",
       "audio": "audios/clase_1_1/audio_alfa_m_e.mp3"
     },
-
     {
       "letter": "કો",
       "answer": "ko",

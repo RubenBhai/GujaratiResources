@@ -1,7 +1,5 @@
 {
   "leccion": "1.1.1",
-  "titulo": "Compón oraciones — Lección 1.1.1",
-  "instruccion": "Toca las palabras en el orden correcto para formar la oración.",
   "boton_comprobar": "Comprobar",
   "sonido_correcto": "audios/clase_1_1/Clase_1_1_Correcto.mp3",
   "sonido_incorrecto": "audios/clase_1_1/Clase_1_1_Incorrecto.mp3",

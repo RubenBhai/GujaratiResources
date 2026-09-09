@@ -4,16 +4,12 @@
     {
       "letter": "મ",
       "answer": "ma",
-      "audio": "audios/clase_1_1/audio_alfa_m_ma.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_ma.jpg",
-      "desc": "Suena como la <strong>m</strong> de <strong>ma</strong>má"
+      "audio": "audios/clase_1_1/audio_alfa_m_ma.mp3"
     },
     {
       "letter": "ક",
       "answer": "ka",
-      "audio": "audios/clase_1_1/audio_alfa_m_ka.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_ka.jpg",
-      "desc": "Suena como la <strong>k</strong> de <strong>ka</strong>sa"
+      "audio": "audios/clase_1_1/audio_alfa_m_ka.mp3"
     }
   ],
   "extras": []

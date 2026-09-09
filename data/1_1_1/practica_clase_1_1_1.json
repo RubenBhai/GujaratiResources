@@ -6,194 +6,146 @@
       {
         "gujarati": "ક",
         "espanol": "Consonante ka — como la 'k' en kilo",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_alfa_m_ka.mp3",
-        "audioClip2": "audios/clase_1_1/audio_alfa_h_ka.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_ka.jpg"
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_ka.mp3"
       },
       {
         "gujarati": "મ",
         "espanol": "Consonante ma — como la 'm' en mamá",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_alfa_m_ma.mp3",
-        "audioClip2": "audios/clase_1_1/audio_alfa_h_ma.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_ma.jpg"
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_ma.mp3"
       },
       {
         "gujarati": "છ",
         "espanol": "Número 6",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_alfa_m_chha.mp3",
-        "audioClip2": "audios/clase_1_1/audio_alfa_h_chha.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_chha.jpg"
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_chha.mp3"
       },
       {
         "gujarati": "આ",
         "espanol": "esto (algo cerca de tí)",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_alfa_m_aa.mp3",
-        "audioClip2": "audios/clase_1_1/audio_alfa_h_aa.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_aa.jpg"
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_aa.mp3"
       },
       {
         "gujarati": "એ",
         "espanol": "eso (algo un poco lejos de tí)",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_alfa_m_e.mp3",
-        "audioClip2": "audios/clase_1_1/audio_alfa_h_e.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_e.jpg"
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_e.mp3"
       },
       {
         "gujarati": "ઓ",
         "espanol": "Vocal o — como la 'o' en sol",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_alfa_m_o.mp3",
-        "audioClip2": "audios/clase_1_1/audio_alfa_h_o.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_o.jpg"
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_o.mp3"
       },
       {
         "gujarati": "કા",
         "espanol": "sílaba kaa — ka + matra aa",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_kaa.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_kaa.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_kaa.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_kaa.mp3"
       },
       {
         "gujarati": "મા",
         "espanol": "mamá",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_maa.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_maa.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_maa.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_maa.mp3"
       },
       {
         "gujarati": "છા",
         "espanol": "sílaba chhaa — chha + matra aa",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_chhaa.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_chhaa.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_chhaa.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_chhaa.mp3"
       },
       {
         "gujarati": "કે",
         "espanol": "significa 'que'",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_ke.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_ke.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_ke.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_ke.mp3"
       },
       {
         "gujarati": "મે",
         "espanol": "sílaba me — ma + matra e",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_me.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_me.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_me.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_me.mp3"
       },
       {
         "gujarati": "છે",
         "espanol": "es/está/hay",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_chhe.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_chhe.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_chhe.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_chhe.mp3"
       },
       {
         "gujarati": "કો",
         "espanol": "sílaba ko — ka + matra o",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_ko.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_ko.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_ko.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_ko.mp3"
       },
       {
         "gujarati": "મો",
         "espanol": "sílaba mo — ma + matra o",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_mo.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_mo.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_mo.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_mo.mp3"
       },
       {
         "gujarati": "છો",
         "espanol": "sílaba chho — chha + matra o",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_chho.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_chho.mp3",
-        "imagen": "imagenes/Clase_1_1/img_alfa_chho.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_chho.mp3"
       },
       {
         "gujarati": "કેમ છો?",
         "espanol": "¿cómo estás?",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_kem_chho.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_kem_chho.mp3",
-        "imagen": "imagenes/Clase_1_1/img_kem_chho.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_kem_chho.mp3"
       },
       {
         "gujarati": "કેમ કે...",
         "espanol": "porque...",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_kem_ke.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_kem_ke.mp3",
-        "imagen": "imagenes/Clase_1_1/img_kem_ke.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_kem_ke.mp3"
       },
       {
         "gujarati": "કેમ?",
         "espanol": "¿cómo? / ¿por qué?",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_kem.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_kem.mp3",
-        "imagen": "imagenes/Clase_1_1/img_kem.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_kem.mp3"
       },
       {
         "gujarati": "કામ",
         "espanol": "trabajo",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_kaam.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_kaam.mp3",
-        "imagen": "imagenes/Clase_1_1/img_kaam.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_kaam.mp3"
       },
       {
         "gujarati": "મોકો",
         "espanol": "oportunidad",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_moko.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_moko.mp3",
-        "imagen": "imagenes/Clase_1_1/img_moko.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_moko.mp3"
       },
       {
         "gujarati": "મામા",
         "espanol": "tío materno",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_maamaa.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_maamaa.mp3",
-        "imagen": "imagenes/Clase_1_1/img_maamaa.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_maamaa.mp3"
       },
       {
         "gujarati": "કાકા",
         "espanol": "tío paterno",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_kaakaa.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_kaakaa.mp3",
-        "imagen": "imagenes/Clase_1_1/img_kaakaa.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_kaakaa.mp3"
       },
       {
         "gujarati": "ઓછો",
         "espanol": "poco",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_ochho.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_ochho.mp3",
-        "imagen": "imagenes/Clase_1_1/img_ochho.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_ochho.mp3"
       },
       {
         "gujarati": "આમ",
         "espanol": "así, de esa manera",
-        "tipo": "clipIndividual",
         "audioClip": "audios/clase_1_1/audio_m_aam.mp3",
-        "audioClip2": "audios/clase_1_1/audio_h_aam.mp3",
-        "imagen": "imagenes/Clase_1_1/img_aam.jpg"
+        "audioClip2": "audios/clase_1_1/audio_h_aam.mp3"
       }
     ]
   }

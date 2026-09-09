@@ -14,7 +14,6 @@
       "vocal": "a",
       "gujarati": "અ",
       "badge": "Vocal 1 de 7",
-      "imagen": "imagenes/Clase_1_1/img_alfa_a.jpg",
       "audio": "audios/clase_1_1/audio_alfa_m_a.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">a</strong> como en 'a' de '<strong class=\"det-p\">a<span class=\"det-s\">migo</span></strong>' dicho rápido y sin énfasis en la 'a'"
     },
@@ -30,7 +29,6 @@
       "vocal": "aa",
       "gujarati": "આ",
       "badge": "Vocal 2 de 7",
-      "imagen": "imagenes/Clase_1_1/img_alfa_aa.jpg",
       "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">aa</strong> como en la segunda 'a' de '<strong class=\"det-p\">mam<span class=\"det-s\">á</span></strong>'"
     },
@@ -53,7 +51,6 @@
       "tipo": "con_matra",
       "vocal": "aa",
       "matra": "ા",
-      "imagen": "imagenes/Clase_1_1/img_kaa_maa_chhaa.jpg",
       "audios_secuencia": [
         "audios/clase_1_1/audio_m_kaa.mp3",
         "audios/clase_1_1/audio_m_maa.mp3",
@@ -81,7 +78,6 @@
       "vocal": "e",
       "gujarati": "એ",
       "badge": "Vocal 4 de 7",
-      "imagen": "imagenes/Clase_1_1/img_alfa_e.jpg",
       "audio": "audios/clase_1_1/audio_alfa_m_e.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">e</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">e</span>lla</strong>'"
     },
@@ -103,7 +99,6 @@
       "tipo": "con_matra",
       "vocal": "e",
       "matra": "ે",
-      "imagen": "imagenes/Clase_1_1/img_ke_me_chhe.jpg",
       "audios_secuencia": [
         "audios/clase_1_1/audio_m_ke.mp3",
         "audios/clase_1_1/audio_m_me.mp3",
@@ -131,7 +126,6 @@
       "vocal": "o",
       "gujarati": "ઓ",
       "badge": "Vocal 6 de 7",
-      "imagen": "imagenes/Clase_1_1/img_alfa_o.jpg",
       "audio": "audios/clase_1_1/audio_alfa_m_o.mp3",
       "detalle": "Se pronuncia <strong class=\"det-p det-s\">o</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">o</span>so</strong>'"
     },
@@ -153,7 +147,6 @@
       "tipo": "con_matra",
       "vocal": "o",
       "matra": "ો",
-      "imagen": "imagenes/Clase_1_1/img_ko_mo_chho.jpg",
       "audios_secuencia": [
         "audios/clase_1_1/audio_m_ko.mp3",
         "audios/clase_1_1/audio_m_mo.mp3",

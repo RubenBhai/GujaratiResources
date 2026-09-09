@@ -9,6 +9,7 @@
   "botones": {
     "link-consonantes": true,
     "link-vocales": true,
+    "link-palabras": true,
     "link-juego-a": true,
     "link-juego-b": true,
     "link-juego-c": true,

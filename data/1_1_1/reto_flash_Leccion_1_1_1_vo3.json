@@ -4,24 +4,18 @@
     {
       "letter": "ઓ",
       "answer": "o",
-      "audio": "audios/clase_1_1/audio_alfa_m_o.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_o.jpg",
-      "desc": "Vocal <strong>o</strong> — como en s<strong>o</strong>l"
+      "audio": "audios/clase_1_1/audio_alfa_m_o.mp3"
     },
     {
       "letter": "એ",
       "answer": "e",
       "audio": "audios/clase_1_1/audio_alfa_m_e.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_e.jpg",
-      "desc": "Vocal <strong>e</strong> — como en caf<strong>é</strong>",
       "significado": "eso"
     },
     {
       "letter": "આ",
       "answer": "aa",
       "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_aa.jpg",
-      "desc": "Vocal <strong>aa</strong> — \"a\" larga",
       "significado": "esto"
     }
   ],
@@ -29,32 +23,27 @@
     {
       "letter": "છો",
       "answer": "chho",
-      "audio": "audios/clase_1_1/audio_m_chho.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_chho.jpg"
+      "audio": "audios/clase_1_1/audio_m_chho.mp3"
     },
     {
       "letter": "મો",
       "answer": "mo",
-      "audio": "audios/clase_1_1/audio_m_mo.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_mo.jpg"
+      "audio": "audios/clase_1_1/audio_m_mo.mp3"
     },
     {
       "letter": "કા",
       "answer": "kaa",
-      "audio": "audios/clase_1_1/audio_m_kaa.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_kaa.jpg"
+      "audio": "audios/clase_1_1/audio_m_kaa.mp3"
     },
     {
       "letter": "મે",
       "answer": "me",
-      "audio": "audios/clase_1_1/audio_m_me.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_me.jpg"
+      "audio": "audios/clase_1_1/audio_m_me.mp3"
     },
     {
       "letter": "કે",
       "answer": "ke",
-      "audio": "audios/clase_1_1/audio_m_ke.mp3",
-      "img": "imagenes/Clase_1_1/img_alfa_ke.jpg"
+      "audio": "audios/clase_1_1/audio_m_ke.mp3"
     }
   ]
 }

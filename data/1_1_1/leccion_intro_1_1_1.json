@@ -3,7 +3,6 @@
   "anterior": "contenido_modulo.html?modulo=1.1",
   "home": "contenido_modulo.html?modulo=1.1",
   "empezar": "leccion_letra.html?leccion=1.1.1&item=1",
-  "siguiente_leccion": "Leccion_1_1_2_intro.html",
   "musica_ambiente": "audios/musica/Leccion_1_1_1_musica_ambiente.mp3",
   "pantallas": [
     {
@@ -20,16 +19,67 @@
         },
         {
           "tipo": "tabla",
-          "columnas": ["Letra Gujarati", "Cómo suena", "Ejemplo"],
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Ejemplo"
+          ],
           "filas": [
-            [ {"tipo":"gu","valor":"ક"}, {"tipo":"acento","valor":"ka"}, {"tipo":"texto","valor":"<strong>ka</strong> en <strong>ka</strong>rate"} ],
-            [ {"tipo":"gu","valor":"મ"}, {"tipo":"acento","valor":"ma"}, {"tipo":"texto","valor":"<strong>ma</strong> en <strong>ma</strong>má"} ],
-            [ {"tipo":"gu","valor":"છ"}, {"tipo":"acento","valor":"chha"}, {"tipo":"texto","valor":"<strong>cha</strong> en <strong>cha</strong>leco"} ]
+            [
+              {
+                "tipo": "gu",
+                "valor": "ક"
+              },
+              {
+                "tipo": "acento",
+                "valor": "ka"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ka</strong> en <strong>ka</strong>rate"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "મ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "ma"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ma</strong> en <strong>ma</strong>má"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "છ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "chha"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>cha</strong> en <strong>cha</strong>leco"
+              }
+            ]
           ]
         }
       ],
-      "boton_principal": { "tipo": "pantalla", "texto": "Siguiente →", "destino": 2 },
-      "boton_secundario": { "tipo": "href", "texto": "⏭️ Siguiente lección", "destino": "Leccion_1_1_2_intro.html" }
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 2
+      },
+      "boton_secundario": {
+        "tipo": "href",
+        "texto": "⏭️ Siguiente lección",
+        "destino": "Leccion_1_1_2_intro.html"
+      }
     },
     {
       "badge": "Las vocales",
@@ -41,17 +91,81 @@
         },
         {
           "tipo": "tabla",
-          "columnas": ["Vocal Gujarati", "Cómo suena", "Matra"],
+          "columnas": [
+            "Vocal Gujarati",
+            "Cómo suena",
+            "Matra"
+          ],
           "filas": [
-            [ {"tipo":"gu","valor":"અ"}, {"tipo":"acento","valor":"'a'"}, {"tipo":"matra","valor":"..."} ],
-            [ {"tipo":"gu","valor":"આ"}, {"tipo":"acento","valor":"'aa'"}, {"tipo":"matra","valor":"ા"} ],
-            [ {"tipo":"gu","valor":"એ"}, {"tipo":"acento","valor":"'e'"}, {"tipo":"matra","valor":"ે"} ],
-            [ {"tipo":"gu","valor":"ઓ"}, {"tipo":"acento","valor":"'o'"}, {"tipo":"matra","valor":"ો"} ]
+            [
+              {
+                "tipo": "gu",
+                "valor": "અ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'a'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "..."
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "આ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'aa'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ા"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "એ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'e'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ે"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ઓ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'o'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ો"
+              }
+            ]
           ]
         }
       ],
-      "boton_principal": { "tipo": "pantalla", "texto": "Siguiente →", "destino": 3 },
-      "boton_secundario": { "tipo": "pantalla", "texto": "← Anterior", "destino": 1 }
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 3
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 1
+      }
     },
     {
       "badge": "Resumen",
@@ -63,16 +177,79 @@
         },
         {
           "tipo": "tabla",
-          "columnas": ["Gujarati", "Sonido", "Matra", "Letra+Matra"],
+          "columnas": [
+            "Gujarati",
+            "Sonido",
+            "Matra",
+            "Letra+Matra"
+          ],
           "filas": [
-            [ {"tipo":"gu","valor":"ક"}, {"tipo":"texto","valor":"<strong>ka</strong>"}, {"tipo":"gu","valor":"ા"}, {"tipo":"texto","valor":"<strong>ક + ા  =  કા (kaa)</strong>"} ],
-            [ {"tipo":"gu","valor":"મ"}, {"tipo":"texto","valor":"<strong>ma</strong>"}, {"tipo":"gu","valor":"ે"}, {"tipo":"texto","valor":"<strong>મ + ે  =  મે (me)</strong>"} ],
-            [ {"tipo":"gu","valor":"છ"}, {"tipo":"texto","valor":"<strong>chha</strong>"}, {"tipo":"gu","valor":"ો"}, {"tipo":"texto","valor":"<strong>છ + ો  =  છો (chho)</strong>"} ]
+            [
+              {
+                "tipo": "gu",
+                "valor": "ક"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ka</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ા"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ક + ા  =  કા (kaa)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "મ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ma</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ે"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>મ + ે  =  મે (me)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "છ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>chha</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ો"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>છ + ો  =  છો (chho)</strong>"
+              }
+            ]
           ]
         }
       ],
-      "boton_principal": { "tipo": "empezar_leccion", "texto": "¡Empezar la lección! →" },
-      "boton_secundario": { "tipo": "pantalla", "texto": "← Anterior", "destino": 2 }
+      "boton_principal": {
+        "tipo": "empezar_leccion",
+        "texto": "¡Empezar la lección! →"
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 2
+      }
     }
   ]
 }
