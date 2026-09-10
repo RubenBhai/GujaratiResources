@@ -164,9 +164,13 @@
   /* Teatro de la escena del chat (Derecha) */
   .escena-wrap {
     grid-area: scene;
-    aspect-ratio: 16 / 9;      /* manda la proporción, no el alto */
+    /* La proporción la pone video_interactivo.js midiendo la imagen de fondo
+       real (--escena-ratio). 16/9 queda solo como respaldo. */
+    aspect-ratio: var(--escena-ratio, 16 / 9);
+    width: 100%;
     height: auto;
     min-height: 0;             /* si se queda en 520px, gana sobre aspect-ratio */
+    max-height: calc(100vh - 160px);  /* en pantallas bajas recorta un poco antes que desbordar */
     align-self: center;
     display: flex;
     flex-direction: column;

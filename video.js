@@ -159,6 +159,8 @@ function mapearSecuencias(){
 }
 
 function ajustarAltura(numDialogos){
+  // Con la proporcion de la imagen aplicada, el alto lo manda el CSS.
+  if(escena.classList.contains('con-ratio')){ escena.style.height = ''; return; }
   var paddingTotal = 28;
   var gapTotal     = (numDialogos > 1) ? (numDialogos - 1) * 10 : 0;
   var alturaReal   = paddingTotal + gapTotal + (75 * numDialogos);
@@ -237,6 +239,27 @@ function reposicionarSprites(){
   spritesColocados.forEach(posicionarSprite);
 }
 
+/* ─────────────────────────────────────────────────────────────
+   PROPORCION DE LA ESCENA
+   El marco toma la proporcion real de la imagen de fondo, en vez de
+   estar clavado a 16/9 en el CSS de escritorio. Con la proporcion
+   igualada, background-size:cover ya no recorta nada, y coordsAPixeles()
+   sigue funcionando sin cambios (scale sale igual por ancho y por alto).
+   Si no se conoce la imagen, el CSS mantiene su 16/9 de respaldo.
+   ───────────────────────────────────────────────────────────── */
+function aplicarRatioEscena(){
+  var dim = dimensionesImagen[fondoActualUrl];
+  if(!dim || !dim.w || !dim.h){
+    escena.style.removeProperty('--escena-ratio');
+    escena.classList.remove('con-ratio');
+    return;
+  }
+  escena.style.setProperty('--escena-ratio', dim.w + ' / ' + dim.h);
+  escena.classList.add('con-ratio');
+  escena.style.height = '';   // que mande aspect-ratio, no ajustarAltura()
+  reposicionarSprites();
+}
+
 /* Cross-fade de fondo — se mantiene por si se necesita en el futuro */
 var _bgFadeTimer = null;
 function cambiarFondo(url){
@@ -257,6 +280,7 @@ function cambiarFondo(url){
     base.style.backgroundImage = "url('" + url + "')";
     capaB.classList.remove('activa');
   }, 520);
+  aplicarRatioEscena();
 }
 
 function coordsAPixeles(coords){
@@ -581,6 +605,7 @@ fetch('data/' + _leccion + '/dialogo_' + _leccion + '.json')
     btnPlay.disabled     = true;
     btnPlay.textContent  = 'Cargando…';
     precargarImagenes().then(function(){
+      aplicarRatioEscena();   // ya conocemos el tamano natural del fondo
       btnPlay.disabled    = false;
       btnPlay.textContent = textoPlayOriginal;
     });

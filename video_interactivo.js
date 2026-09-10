@@ -110,6 +110,25 @@ function cambiarFondo(url){
     bgEscena.style.backgroundImage = "url('" + url + "')";
     _bgEscenaB.classList.remove('activa');
   }, 520);
+  aplicarRatioEscena();
+}
+
+/* ── PROPORCION DE LA ESCENA ──
+   El marco toma la proporcion real de la imagen de fondo en vez del 16/9
+   clavado en el CSS de escritorio. Igualadas las proporciones,
+   background-size:cover deja de recortar y coordsAPixeles() no cambia. */
+var _escenaWrap = document.querySelector('.escena-wrap');
+function aplicarRatioEscena(){
+  if(!_escenaWrap) return;
+  var dim = dimensionesImagen[fondoActualUrl];
+  if(!dim || !dim.w || !dim.h){
+    _escenaWrap.style.removeProperty('--escena-ratio');
+    _escenaWrap.classList.remove('con-ratio');
+    return;
+  }
+  _escenaWrap.style.setProperty('--escena-ratio', dim.w + ' / ' + dim.h);
+  _escenaWrap.classList.add('con-ratio');
+  reposicionarSprites();
 }
 
 // ── Motor de coordenadas ──
@@ -337,7 +356,7 @@ function construirEscena(){
   } else {
     bgEscena.style.backgroundImage = 'none';
   }
-
+  aplicarRatioEscena();
 }
 
 // ── Conversación ──

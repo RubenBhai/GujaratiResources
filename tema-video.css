@@ -50,6 +50,9 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
 /* Escenario tipo chat */
 .escena { 
   width:100%; background:var(--surface);
+  /* Proporcion real de la imagen de fondo, puesta por video.js.
+     Sin imagen conocida => auto, y manda el height de ajustarAltura(). */
+  aspect-ratio: var(--escena-ratio, auto);
   border:1px solid var(--border); border-radius:var(--r-lg); 
   padding:14px 12px; 
   display:flex; flex-direction:column; 

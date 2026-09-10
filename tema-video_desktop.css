@@ -125,10 +125,15 @@
   .escena {
     grid-column: 2;
     grid-row: 2 / span 6;
-    aspect-ratio: 16 / 9;      /* manda la proporción, no el alto */
+    /* La proporción la pone video.js midiendo la imagen de fondo real
+       (--escena-ratio). 16/9 queda solo como respaldo si no hay imagen. */
+    aspect-ratio: var(--escena-ratio, 16 / 9);
+    width: 100%;
     height: auto !important;   /* !important sigue anulando el height inline de ajustarAltura() */
     min-height: 0;             /* si se queda en 520px, gana sobre aspect-ratio y vuelve a recortar */
+    max-height: calc(100vh - 140px);  /* en pantallas bajas recorta un poco antes que desbordar */
     align-self: center;
+    justify-self: center;
     padding: 24px;
     border-radius: 24px;
     border: 2px solid var(--border);

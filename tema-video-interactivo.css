@@ -34,7 +34,12 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
 
 /* Escena y Contenedores */
 .escena-wrap { position:relative; width:100%; border-radius:var(--r-lg); overflow:hidden;
-  box-shadow:0 8px 28px rgba(0,0,0,0.25); }
+  box-shadow:0 8px 28px rgba(0,0,0,0.25);
+  /* Proporcion real de la imagen de fondo, puesta por video_interactivo.js */
+  aspect-ratio: var(--escena-ratio, auto); }
+
+/* Con proporcion conocida, el chat ocupa todo el marco en vez de 260px fijos */
+.escena-wrap.con-ratio .escena { height:100%; }
 .bg-escena { position:absolute; inset:0; background-size:cover; background-position:center;
   opacity:1.00; z-index:0; }
 
