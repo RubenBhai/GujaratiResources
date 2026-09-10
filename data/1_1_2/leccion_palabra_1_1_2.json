@@ -1,0 +1,132 @@
+{
+  "leccion": "1.1.2",
+  "home": "leccion_intro.html?leccion=1.1.2",
+  "anterior_primera": "leccion_palabra_intro.html?leccion=1.1.2",
+  "practicar": "practica.html?modulo=1.1&leccion=2",
+  "siguiente_leccion": "Leccion_1_1_3_intro.html",
+  "siguiente_final": "juego.html?leccion=1.1.2",
+  "palabras": [
+    {
+      "gujarati": "આરામ",
+      "dictado": "આરામ",
+      "significado": "descanso",
+      "imagen": "imagenes/Clase_1_1/img_aaraam.jpg",
+      "pronunciacion": "આ-ર-ા-મ → aa-<strong>raam</strong>",
+      "audioH": "audios/clase_1_1/audio_h_aaram.mp3",
+      "audioM": "audios/clase_1_1/audio_m_aaram.mp3"
+    },
+    {
+      "gujarati": "અહેસાસ",
+      "dictado": "અહેસાસ",
+      "significado": "sensación / sentimiento",
+      "imagen": "imagenes/Clase_1_1/img_ahesaas.jpg",
+      "pronunciacion": "અ-હ-ે-સ-ા-સ → a-he-<strong>saas</strong>",
+      "audioH": "audios/clase_1_1/audio_h_ahesaas.mp3",
+      "audioM": "audios/clase_1_1/audio_m_ahesaas.mp3"
+    },
+    {
+      "gujarati": "અમારું",
+      "dictado": "અમારું",
+      "significado": "nuestro",
+      "imagen": "imagenes/Clase_1_1/img_amaaru(m)_chhe.jpg",
+      "pronunciacion": "અ-મ-ા-ર-ું → a-maa-<strong>ruⁿ</strong><br>Posesivo neutro",
+      "audioH": "audios/clase_1_1/audio_h_amaaru(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_amaaru(m).mp3"
+    },
+    {
+      "gujarati": "છોકરો",
+      "dictado": "છોકરો",
+      "significado": "niño",
+      "imagen": "imagenes/Clase_1_1/img_chokro.jpg",
+      "pronunciacion": "છ-ો-ક-ર-ો → cho-<strong>kro</strong>",
+      "audioH": "audios/clase_1_1/audio_h_chokro.mp3",
+      "audioM": "audios/clase_1_1/audio_m_chokro.mp3"
+    },
+    {
+      "gujarati": "હુકમ",
+      "dictado": "હુકમ",
+      "significado": "mandato",
+      "imagen": "imagenes/Clase_1_1/img_hukam.jpg",
+      "pronunciacion": "હ-ુ-ક-મ → hu-<strong>kam</strong>",
+      "audioH": "audios/clase_1_1/audio_h_hukam.mp3",
+      "audioM": "audios/clase_1_1/audio_m_hukam.mp3"
+    },
+    {
+      "gujarati": "મારું",
+      "dictado": "મારું",
+      "significado": "mío",
+      "imagen": "imagenes/Clase_1_1/img_maaru(m).jpg",
+      "pronunciacion": "મ-ા-ર-ું → maa-<strong>ruⁿ</strong><br>Posesivo neutro",
+      "audioH": "audios/clase_1_1/audio_h_maaru(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_maaru(m).mp3"
+    },
+    {
+      "gujarati": "મહાન",
+      "significado": "grande / majestuoso",
+      "imagen": "imagenes/Clase_1_1/img_mahaan.jpg",
+      "pronunciacion": "મ-હ-ા-ન → ma-<strong>haan</strong>",
+      "audioH": "audios/clase_1_1/audio_h_mahaan.mp3",
+      "audioM": "audios/clase_1_1/audio_m_mahaan.mp3"
+    },
+    {
+      "gujarati": "સારું છે",
+      "dictado": "સારું છે",
+      "significado": "está bien",
+      "imagen": "imagenes/Clase_1_1/img_saaru(m)_chhe.jpg",
+      "pronunciacion": "સ-ા-ર-ું   છે→ saa-<strong>ruⁿ</strong> chhe",
+      "audioH": "audios/clase_1_1/audio_h_saaru(m)_chhe.mp3",
+      "audioM": "audios/clase_1_1/audio_m_saaru(m)_chhe.mp3"
+    },
+    {
+      "gujarati": "સહારો",
+      "dictado": "સહારો",
+      "significado": "apoyo",
+      "imagen": "imagenes/Clase_1_1/img_sahaaro.jpg",
+      "pronunciacion": "સ-હ-ા-ર-ો → sa-haa-<strong>ro</strong>",
+      "audioH": "audios/clase_1_1/audio_h_sahaaro.mp3",
+      "audioM": "audios/clase_1_1/audio_m_sahaaro.mp3"
+    },
+    {
+      "gujarati": "સરસ",
+      "significado": "excelente",
+      "imagen": "imagenes/Clase_1_1/img_saras.jpg",
+      "pronunciacion": "સ-ર-સ → <strong>saras</strong>",
+      "audioH": "audios/clase_1_1/audio_h_saras.mp3",
+      "audioM": "audios/clase_1_1/audio_m_saras.mp3"
+    },
+    {
+      "gujarati": "સરકાર",
+      "dictado": "સરકાર",
+      "significado": "gobierno",
+      "imagen": "imagenes/Clase_1_1/img_sarkaar.jpg",
+      "pronunciacion": "સ-ર-ક-ા-ર → sar-<strong>kaar</strong>",
+      "audioH": "audios/clase_1_1/audio_h_sarkaar.mp3",
+      "audioM": "audios/clase_1_1/audio_m_sarkaar.mp3"
+    },
+    {
+      "gujarati": "ઉમર",
+      "dictado": "ઉમર",
+      "significado": "edad",
+      "imagen": "imagenes/Clase_1_1/img_umar.jpg",
+      "pronunciacion": "ઉ-મ-ર → <strong>umar</strong>",
+      "audioH": "audios/clase_1_1/audio_h_umar.mp3",
+      "audioM": "audios/clase_1_1/audio_m_umar.mp3"
+    },
+    {
+      "gujarati": "હું",
+      "significado": "yo",
+      "imagen": "imagenes/Clase_1_1/img_hu(m).jpg",
+      "pronunciacion": "હ-ું → <strong>huⁿ</strong><br>Pronombre 'yo'",
+      "audioH": "audios/clase_1_1/audio_h_hu(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_hu(m).mp3"
+    },
+    {
+      "gujarati": "છું",
+      "significado": "soy / estoy",
+      "imagen": "imagenes/Clase_1_1/img_chhu(m).jpg",
+      "pronunciacion": "છ-ું → <strong>chhuⁿ</strong><br>Forma del verbo 'ser/estar' para 'yo'",
+      "audioH": "audios/clase_1_1/audio_h_chhu(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_chhu(m).mp3"
+    }
+  ]
+}

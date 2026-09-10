@@ -1,0 +1,162 @@
+{
+  "leccion": "1.1.2",
+  "home": "leccion_intro.html?leccion=1.1.2",
+  "salir": "juego.html?leccion=1.1.2",
+  "fin": "leccion_pensarEnGUJ.html?leccion=1.1.2",
+  "intro": {
+    "titulo": "Algunas cosas curiosas del idioma",
+    "texto": "Antes de terminar, vamos a entender <strong>cómo funcionan</strong> algunas de las palabras que aprendiste. Son detalles que te ayudarán a leer con sentido."
+  },
+  "notas": [
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "gu": "ં",
+          "html": "El signo <span class=\"gu\">ં</span> es el <strong>sonido nasal</strong>.<br>Se llama <em>anusvar</em> y hace que el aire salga también por la nariz. Lo escribimos con una 'n' pequeñita arriba: <span class=\"gu\">હુ</span> (<strong>hu</strong>) se convierte en <span class=\"gu\">હું</span> (<strong>hu<sup class=\"nas\">n</sup></strong>, <strong>yo</strong>)."
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "gu": "હું",
+          "html": "La palabra <span class=\"gu\">હું</span> ('huⁿ') significa <strong>\"yo\"</strong>.<br>Se usa cuando hablas de ti mismo."
+        }
+      ]
+    },
+    {
+      "destacado": true,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "gu": "હું છું",
+          "html": "Una de las frases más útiles del gujarati.<br><br><span class=\"gu\">છું</span> es la forma del verbo <strong>\"ser / estar\"</strong> que va con <span class=\"gu\">હું</span> ('yo').<br>Juntas, <span class=\"gu\">હું છું</span> significan <strong>\"yo soy / yo estoy\"</strong>.<br><br>Lo que va en medio es quien eres."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હું  રુબેન છું",
+          "literal": "yo Rubén soy",
+          "significado": "Yo soy Rubén"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "1",
+        "2",
+        "6"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Los <strong>posesivos</strong> cambian según el género y el número de lo que poseen.<br><span class=\"gu\">મારો</span> = <strong>mío</strong> (masculino singular)."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મારો છોકરો",
+          "literal": "mi niño",
+          "significado": "mi niño"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મારો સરકાર",
+          "literal": "mi gobierno",
+          "significado": "mi gobierno"
+        },
+        {
+          "tipo": "texto",
+          "html": "<span class=\"gu\">અમારો</span> = <strong>nuestro</strong> (masculino singular)."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "અમારો સહારો",
+          "literal": "nuestro apoyo",
+          "significado": "nuestro apoyo"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "7",
+        "4"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Cuando lo que se posee es <strong>plural masculino</strong>, el posesivo termina en <span class=\"gu\">-આ</span>:<br><span class=\"gu\">મારા</span> = mío, <span class=\"gu\">અમારા</span> = nuestro."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "અમારા છોકરા",
+          "literal": "nuestros niños",
+          "significado": "nuestros niños"
+        },
+        {
+          "tipo": "texto",
+          "html": "Cuando es <strong>neutro</strong>, termina en <span class=\"gu\">-ું</span>:<br><span class=\"gu\">મારું</span> = mío, <span class=\"gu\">અમારું</span> = nuestro."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મારું અહેસાસ",
+          "literal": "mi sentimiento",
+          "significado": "mi sentimiento"
+        },
+        {
+          "tipo": "correspondencia",
+          "titulo": "Fíjate en el orden en Gujarati y Español",
+          "gujarati": [
+            {
+              "texto": "આ",
+              "color": 1
+            },
+            {
+              "texto": "મારો",
+              "color": 2
+            },
+            {
+              "texto": "છોકરો",
+              "color": 3
+            },
+            {
+              "texto": "છે",
+              "color": 4
+            }
+          ],
+          "espanol": [
+            {
+              "texto": "este",
+              "color": 1
+            },
+            {
+              "texto": "es",
+              "color": 4
+            },
+            {
+              "texto": "mi",
+              "color": 2
+            },
+            {
+              "texto": "niño",
+              "color": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fin_pantalla": {
+    "titulo": "Ya entiendes cómo se arman las frases",
+    "texto": "Con esto puedes leer y entender oraciones completas en gujarati. ¡Vamos a crear algunas oraciones!",
+    "boton_extra": {
+      "habilitado": true,
+      "caption": "🎉Vamos a crear oraciones🥳",
+      "pagina": "compone.html"
+    }
+  }
+}

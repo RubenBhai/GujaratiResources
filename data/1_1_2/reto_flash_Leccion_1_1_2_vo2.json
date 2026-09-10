@@ -1,0 +1,52 @@
+{
+  "leccion": "1.1.2",
+  "letters": [
+    {
+      "letter": "ઉ",
+      "answer": "u",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3"
+    },
+    {
+      "letter": "સ",
+      "answer": "sa",
+      "audio": "audios/clase_1_1/audio_alfa_m_sa.mp3"
+    },
+    {
+      "letter": "હ",
+      "answer": "ha",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "હું",
+      "answer": "huⁿ",
+      "audio": "audios/clase_1_1/audio_m_hu(m).mp3",
+      "significado": "yo"
+    },
+    {
+      "letter": "છું",
+      "answer": "chhuⁿ",
+      "audio": "audios/clase_1_1/audio_m_chhu(m).mp3",
+      "significado": "soy, estoy"
+    },
+    {
+      "letter": "માં",
+      "answer": "maaⁿ",
+      "audio": "audios/clase_1_1/audio_m_maa(m).mp3",
+      "significado": "en"
+    },
+    {
+      "letter": "મારું",
+      "answer": "maaruⁿ",
+      "audio": "audios/clase_1_1/audio_m_maaru(m).mp3",
+      "significado": "mío"
+    },
+    {
+      "letter": "અમારું",
+      "answer": "amaaruⁿ",
+      "audio": "audios/clase_1_1/audio_m_amaaru(m).mp3",
+      "significado": "nuestro"
+    }
+  ]
+}

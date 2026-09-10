@@ -1,0 +1,227 @@
+{
+  "leccion": "1.1.2",
+  "anterior": "contenido_modulo.html?modulo=1.1",
+  "home": "contenido_modulo.html?modulo=1.1",
+  "empezar": "leccion_letra.html?leccion=1.1.2&item=1",
+  "musica_ambiente": "audios/musica/Leccion_1_1_2_musica_ambiente.mp3",
+  "pantallas": [
+    {
+      "badge": "Lección 2",
+      "titulo": "¡Seguimos!",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p style=\"text-align: center;\"><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">સારું છે</span> - <span style=\"color:var(--rojo-ladrillo);font-size:1.5rem;font-weight:600\">saaruⁿ chhe</span> - <span style=\"color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">está bien</span></p>"
+        },
+        {
+          "tipo": "info-box",
+          "html": "<p>En esta lección aprenderás <strong>3 consonantes</strong>, <strong>1 vocal</strong> nueva y el <strong>signo nasal</strong> <span class=\"gu\">ં</span>, que añade un sonido nasal a la sílaba.</p><br><p>Recuerda que cada consonante ya trae una <strong>\"a\"</strong> incluida. Por ejemplo, <span class=\"gu\">સ</span> es la consonante <strong>s</strong> y se pronuncia <strong>'sa'</strong>.</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Ejemplo"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "સ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "sa"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>sa</strong> en <strong>sa</strong>la"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ર"
+              },
+              {
+                "tipo": "acento",
+                "valor": "ra"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ra</strong> en ca<strong>ra</strong> (suave)"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "હ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "ha"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>h</strong> aspirada, como la 'h' inglesa de <strong>h</strong>ello"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 2
+      },
+      "boton_secundario": {
+        "tipo": "href",
+        "texto": "⏭️ Siguiente lección",
+        "destino": "Leccion_1_1_3_intro.html"
+      }
+    },
+    {
+      "badge": "La vocal y el signo nasal",
+      "titulo": "Vocal ઉ y el sonido nasal",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>La vocal <span class=\"gu\">ઉ</span> ('u') tiene su matra <span class=\"gu\">ુ</span>.<br>El signo nasal <span class=\"gu\">ં</span> (el <em>anusvar</em>) se coloca encima y hace que el aire salga también por la nariz. Lo escribimos con una 'n' pequeñita arriba: <span class=\"gu\">હું</span> = <strong>hu<sup class=\"nas\">n</sup></strong> ('yo').</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ઉ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'u'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ુ"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ં"
+              },
+              {
+                "tipo": "acento",
+                "valor": "nasal 'ⁿ'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ં"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 3
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 1
+      }
+    },
+    {
+      "badge": "Resumen",
+      "titulo": "Las consonantes y sus matras",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>Para combinar una consonante con una vocal, usamos la matra de la vocal. Por ejemplo, para combinar <span class=\"gu\">સ</span> con <span class=\"gu\">ુ</span> sería <span class=\"gu\">સ</span> 'sa' + <span class=\"gu\">ુ</span> (matra de 'u') = <span class=\"gu\">સુ</span> 'su'. Mira los siguientes ejemplos:</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Gujarati",
+            "Sonido",
+            "Matra",
+            "Letra+Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "સ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>sa</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ુ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>સ + ુ  =  સુ (su)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ર"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ra</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ો"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ર + ો  =  રો (ro)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "હ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ha</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ા"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>હ + ા  =  હા (haa)</strong>"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "empezar_leccion",
+        "texto": "¡Empezar la lección! →"
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 2
+      }
+    }
+  ]
+}

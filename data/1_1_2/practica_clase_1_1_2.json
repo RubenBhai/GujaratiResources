@@ -1,0 +1,194 @@
+{
+  "1.1-2": {
+    "titulo": "Lección 1.1.2 — Consonantes, vocal, sílabas y vocabulario",
+    "fuente": "Sesión 1.1 — Alfabeto",
+    "frases": [
+      {
+        "gujarati": "સ",
+        "espanol": "Consonante sa — como la 's' en sapo",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_sa.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_sa.mp3"
+      },
+      {
+        "gujarati": "ર",
+        "espanol": "Consonante ra — 'r' suave, como en cara",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_ra.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_ra.mp3"
+      },
+      {
+        "gujarati": "હ",
+        "espanol": "Consonante ha — 'h' aspirada",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_ha.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_ha.mp3"
+      },
+      {
+        "gujarati": "ઉ",
+        "espanol": "Vocal u — como en uva",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_u.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_u.mp3"
+      },
+      {
+        "gujarati": "સા",
+        "espanol": "sílaba saa — sa + matra aa",
+        "audioClip": "audios/clase_1_1/audio_m_saa.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_saa.mp3"
+      },
+      {
+        "gujarati": "સુ",
+        "espanol": "sílaba su — sa + matra u",
+        "audioClip": "audios/clase_1_1/audio_m_su.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_su.mp3"
+      },
+      {
+        "gujarati": "રા",
+        "espanol": "sílaba raa — ra + matra aa",
+        "audioClip": "audios/clase_1_1/audio_m_raa.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_raa.mp3"
+      },
+      {
+        "gujarati": "રો",
+        "espanol": "sílaba ro — ra + matra o",
+        "audioClip": "audios/clase_1_1/audio_m_ro.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_ro.mp3"
+      },
+      {
+        "gujarati": "રુ",
+        "espanol": "sílaba ru — ra + matra u",
+        "audioClip": "audios/clase_1_1/audio_m_ru.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_ru.mp3"
+      },
+      {
+        "gujarati": "હા",
+        "espanol": "sílaba haa — ha + matra aa",
+        "audioClip": "audios/clase_1_1/audio_m_haa.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_haa.mp3"
+      },
+      {
+        "gujarati": "હુ",
+        "espanol": "sílaba hu — ha + matra u",
+        "audioClip": "audios/clase_1_1/audio_m_hu.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_hu.mp3"
+      },
+      {
+        "gujarati": "હો",
+        "espanol": "sílaba ho — ha + matra o",
+        "audioClip": "audios/clase_1_1/audio_m_ho.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_ho.mp3"
+      },
+      {
+        "gujarati": "કુ",
+        "espanol": "sílaba ku — ka + matra u",
+        "audioClip": "audios/clase_1_1/audio_m_ku.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_ku.mp3"
+      },
+      {
+        "gujarati": "મુ",
+        "espanol": "sílaba mu — ma + matra u",
+        "audioClip": "audios/clase_1_1/audio_m_mu.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_mu.mp3"
+      },
+      {
+        "gujarati": "છુ",
+        "espanol": "sílaba chhu — chha + matra u",
+        "audioClip": "audios/clase_1_1/audio_m_chhu.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_chhu.mp3"
+      },
+      {
+        "gujarati": "આરામ",
+        "espanol": "descanso",
+        "audioClip": "audios/clase_1_1/audio_m_aaram.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_aaram.mp3"
+      },
+      {
+        "gujarati": "અહેસાસ",
+        "espanol": "sensación / sentimiento",
+        "audioClip": "audios/clase_1_1/audio_m_ahesaas.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_ahesaas.mp3"
+      },
+      {
+        "gujarati": "અમારું",
+        "espanol": "nuestro",
+        "audioClip": "audios/clase_1_1/audio_m_amaaru(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_amaaru(m).mp3"
+      },
+      {
+        "gujarati": "છોકરો",
+        "espanol": "niño",
+        "audioClip": "audios/clase_1_1/audio_m_chokro.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_chokro.mp3"
+      },
+      {
+        "gujarati": "હુકમ",
+        "espanol": "mandato",
+        "audioClip": "audios/clase_1_1/audio_m_hukam.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_hukam.mp3"
+      },
+      {
+        "gujarati": "મારું",
+        "espanol": "mío",
+        "audioClip": "audios/clase_1_1/audio_m_maaru(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_maaru(m).mp3"
+      },
+      {
+        "gujarati": "મહાન",
+        "espanol": "grande / majestuoso",
+        "audioClip": "audios/clase_1_1/audio_m_mahaan.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_mahaan.mp3"
+      },
+      {
+        "gujarati": "સારું",
+        "espanol": "bueno",
+        "audioClip": "audios/clase_1_1/audio_m_saaru(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_saaru(m).mp3"
+      },
+      {
+        "gujarati": "સહારો",
+        "espanol": "apoyo",
+        "audioClip": "audios/clase_1_1/audio_m_sahaaro.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_sahaaro.mp3"
+      },
+      {
+        "gujarati": "સરસ",
+        "espanol": "excelente",
+        "audioClip": "audios/clase_1_1/audio_m_saras.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_saras.mp3"
+      },
+      {
+        "gujarati": "સરકાર",
+        "espanol": "gobierno",
+        "audioClip": "audios/clase_1_1/audio_m_sarkaar.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_sarkaar.mp3"
+      },
+      {
+        "gujarati": "ઉમર",
+        "espanol": "edad",
+        "audioClip": "audios/clase_1_1/audio_m_umar.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_umar.mp3"
+      },
+      {
+        "gujarati": "હું",
+        "espanol": "yo",
+        "audioClip": "audios/clase_1_1/audio_m_hu(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_hu(m).mp3"
+      },
+      {
+        "gujarati": "છું",
+        "espanol": "soy / estoy",
+        "audioClip": "audios/clase_1_1/audio_m_chhu(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_chhu(m).mp3"
+      },
+      {
+        "gujarati": "હું છું",
+        "espanol": "yo soy",
+        "audioClip": "audios/clase_1_1/audio_m_hu(m)_chhu(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_hu(m)_chhu(m).mp3"
+      },
+      {
+        "gujarati": "સારું છે",
+        "espanol": "está bien",
+        "audioClip": "audios/clase_1_1/audio_m_saaru(m)_chhe.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_saaru(m)_chhe.mp3"
+      }
+    ]
+  }
+}

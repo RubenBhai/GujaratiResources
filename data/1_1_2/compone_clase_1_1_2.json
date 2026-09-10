@@ -1,0 +1,167 @@
+{
+  "leccion": "1.1.2",
+  "boton_comprobar": "Comprobar",
+  "sonido_correcto": "audios/clase_1_1/Clase_1_1_Correcto.mp3",
+  "sonido_incorrecto": "audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
+  "banco_palabras": [
+    {
+      "gujarati": "આ",
+      "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
+    },
+    {
+      "gujarati": "એ",
+      "audio": "audios/clase_1_1/audio_alfa_m_e.mp3"
+    },
+    {
+      "gujarati": "મારો",
+      "audio": "audios/clase_1_1/audio_m_maaro.mp3"
+    },
+    {
+      "gujarati": "મારું",
+      "audio": "audios/clase_1_1/audio_m_maaru(m).mp3"
+    },
+    {
+      "gujarati": "અમારો",
+      "audio": "audios/clase_1_1/audio_m_amaaro.mp3"
+    },
+    {
+      "gujarati": "અમારા",
+      "audio": "audios/clase_1_1/audio_m_amaaraa.mp3"
+    },
+    {
+      "gujarati": "છોકરો",
+      "audio": "audios/clase_1_1/audio_m_chokro.mp3"
+    },
+    {
+      "gujarati": "છોકરા",
+      "audio": "audios/clase_1_1/audio_m_chokraa.mp3"
+    },
+    {
+      "gujarati": "સહારો",
+      "audio": "audios/clase_1_1/audio_m_sahaaro.mp3"
+    },
+    {
+      "gujarati": "સરકાર",
+      "audio": "audios/clase_1_1/audio_m_sarkaar.mp3"
+    },
+    {
+      "gujarati": "અહેસાસ",
+      "audio": "audios/clase_1_1/audio_m_ahesaas.mp3"
+    },
+    {
+      "gujarati": "મહાન",
+      "audio": "audios/clase_1_1/audio_m_mahaan.mp3"
+    },
+    {
+      "gujarati": "સારું",
+      "audio": "audios/clase_1_1/audio_m_saaru(m).mp3"
+    },
+    {
+      "gujarati": "હું",
+      "audio": "audios/clase_1_1/audio_m_hu(m).mp3"
+    },
+    {
+      "gujarati": "છું",
+      "audio": "audios/clase_1_1/audio_m_chhu(m).mp3"
+    },
+    {
+      "gujarati": "છે",
+      "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+    }
+  ],
+  "oraciones": [
+    {
+      "id": "1",
+      "palabras": [
+        "આ",
+        "મારો",
+        "છોકરો",
+        "છે"
+      ],
+      "espanol": "este es mi niño"
+    },
+    {
+      "id": "2",
+      "palabras": [
+        "એ",
+        "મારો",
+        "છોકરો",
+        "છે"
+      ],
+      "espanol": "ese es mi niño"
+    },
+    {
+      "id": "3",
+      "palabras": [
+        "આ",
+        "અમારો",
+        "સહારો",
+        "છે"
+      ],
+      "espanol": "este es nuestro apoyo"
+    },
+    {
+      "id": "4",
+      "palabras": [
+        "મારું",
+        "અહેસાસ",
+        "છે"
+      ],
+      "espanol": "es mi sentimiento"
+    },
+    {
+      "id": "5",
+      "palabras": [
+        "અમારો",
+        "સરકાર",
+        "મહાન",
+        "છે"
+      ],
+      "espanol": "nuestro gobierno es grande"
+    },
+    {
+      "id": "6",
+      "palabras": [
+        "મારો",
+        "સરકાર",
+        "છે"
+      ],
+      "espanol": "es mi gobierno"
+    },
+    {
+      "id": "7",
+      "palabras": [
+        "અમારા",
+        "છોકરા",
+        "છે"
+      ],
+      "espanol": "son nuestros niños"
+    },
+    {
+      "id": "8",
+      "palabras": [
+        "સારું",
+        "છે"
+      ],
+      "espanol": "está bien"
+    },
+    {
+      "id": "9",
+      "palabras": [
+        "હું",
+        "છું"
+      ],
+      "espanol": "yo soy / yo estoy"
+    },
+    {
+      "id": "10",
+      "palabras": [
+        "એ",
+        "અમારો",
+        "સહારો",
+        "છે"
+      ],
+      "espanol": "ese es nuestro apoyo"
+    }
+  ]
+}

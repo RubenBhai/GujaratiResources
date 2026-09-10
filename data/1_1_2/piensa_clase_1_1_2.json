@@ -1,0 +1,80 @@
+{
+  "leccion": "1.1.2",
+  "titulo": "¡A pensar!",
+  "intro": "Escucha, lee o mira, y responde. Entiende lo que pasa y elige la respuesta correcta.",
+  "actividades": [
+    {
+      "id": "a1",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_saaru(m)_chhe.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Ordena lo que escuchaste",
+          "modo": "ordenar",
+          "respuesta": ["સારું", "છે"],
+          "distractores": ["મારો", "હું"]
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "મારો છોકરો છે"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Cámbiala para decir «es nuestro niño»",
+          "modo": "opcion",
+          "opciones_idioma": "gu",
+          "opciones": [
+            { "texto": "અમારો છોકરો છે", "correcta": true },
+            { "texto": "મારો સહારો છે" },
+            { "texto": "એ છોકરો છે" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a3",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "અમારો સરકાર મહાન છે"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa esta oración?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            { "texto": "nuestro gobierno es grande", "correcta": true },
+            { "texto": "mi niño es bueno" },
+            { "texto": "ese es nuestro apoyo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_chokro.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Cuál es el niño?",
+          "modo": "imagen",
+          "opciones": [
+            { "imagen": "imagenes/Clase_1_1/img_chokro_noinfo.jpg", "correcta": true },
+            { "imagen": "imagenes/Clase_1_1/img_sarkaar_noinfo.jpg" },
+            { "imagen": "imagenes/Clase_1_1/img_umar_noinfo.jpg" },
+            { "imagen": "imagenes/Clase_1_1/img_mahaan_noinfo.jpg" },
+            { "imagen": "imagenes/Clase_1_1/img_chhu(m)_noinfo.jpg" }
+          ]
+        }
+      ]
+    }
+  ]
+}

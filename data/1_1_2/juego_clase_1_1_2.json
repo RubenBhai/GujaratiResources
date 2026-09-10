@@ -1,0 +1,186 @@
+{
+  "leccion": "1.1.2",
+  "letters": [
+    {
+      "letter": "સ",
+      "answer": "sa",
+      "audio": "audios/clase_1_1/audio_alfa_m_sa.mp3"
+    },
+    {
+      "letter": "ર",
+      "answer": "ra",
+      "audio": "audios/clase_1_1/audio_alfa_m_ra.mp3"
+    },
+    {
+      "letter": "હ",
+      "answer": "ha",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3"
+    },
+    {
+      "letter": "ઉ",
+      "answer": "u",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "સા",
+      "answer": "saa",
+      "audio": "audios/clase_1_1/audio_m_saa.mp3"
+    },
+    {
+      "letter": "સે",
+      "answer": "se",
+      "audio": "audios/clase_1_1/audio_m_se.mp3"
+    },
+    {
+      "letter": "સો",
+      "answer": "so",
+      "audio": "audios/clase_1_1/audio_m_so.mp3"
+    },
+    {
+      "letter": "સુ",
+      "answer": "su",
+      "audio": "audios/clase_1_1/audio_m_su.mp3"
+    },
+    {
+      "letter": "રા",
+      "answer": "raa",
+      "audio": "audios/clase_1_1/audio_m_raa.mp3"
+    },
+    {
+      "letter": "રે",
+      "answer": "re",
+      "audio": "audios/clase_1_1/audio_m_re.mp3"
+    },
+    {
+      "letter": "રો",
+      "answer": "ro",
+      "audio": "audios/clase_1_1/audio_m_ro.mp3"
+    },
+    {
+      "letter": "રુ",
+      "answer": "ru",
+      "audio": "audios/clase_1_1/audio_m_ru.mp3"
+    },
+    {
+      "letter": "હા",
+      "answer": "haa",
+      "audio": "audios/clase_1_1/audio_m_haa.mp3"
+    },
+    {
+      "letter": "હે",
+      "answer": "he",
+      "audio": "audios/clase_1_1/audio_m_he.mp3"
+    },
+    {
+      "letter": "હો",
+      "answer": "ho",
+      "audio": "audios/clase_1_1/audio_m_ho.mp3"
+    },
+    {
+      "letter": "હુ",
+      "answer": "hu",
+      "audio": "audios/clase_1_1/audio_m_hu.mp3"
+    },
+    {
+      "letter": "કુ",
+      "answer": "ku",
+      "audio": "audios/clase_1_1/audio_m_ku.mp3"
+    },
+    {
+      "letter": "મુ",
+      "answer": "mu",
+      "audio": "audios/clase_1_1/audio_m_mu.mp3"
+    },
+    {
+      "letter": "છુ",
+      "answer": "chhu",
+      "audio": "audios/clase_1_1/audio_m_chhu.mp3"
+    },
+    {
+      "letter": "આરામ",
+      "answer": "aaraam",
+      "audio": "audios/clase_1_1/audio_m_aaram.mp3",
+      "significado": "descanso"
+    },
+    {
+      "letter": "છોકરો",
+      "answer": "chokro",
+      "audio": "audios/clase_1_1/audio_m_chokro.mp3",
+      "significado": "niño"
+    },
+    {
+      "letter": "હુકમ",
+      "answer": "hukam",
+      "audio": "audios/clase_1_1/audio_m_hukam.mp3",
+      "significado": "mandato"
+    },
+    {
+      "letter": "મારું",
+      "answer": "maaruⁿ",
+      "audio": "audios/clase_1_1/audio_m_maaru(m).mp3",
+      "significado": "mío"
+    },
+    {
+      "letter": "અમારું",
+      "answer": "amaaruⁿ",
+      "audio": "audios/clase_1_1/audio_m_amaaru(m).mp3",
+      "significado": "nuestro"
+    },
+    {
+      "letter": "સારું",
+      "answer": "saaruⁿ",
+      "audio": "audios/clase_1_1/audio_m_saaru(m).mp3",
+      "significado": "bueno"
+    },
+    {
+      "letter": "સહારો",
+      "answer": "sahaaro",
+      "audio": "audios/clase_1_1/audio_m_sahaaro.mp3",
+      "significado": "apoyo"
+    },
+    {
+      "letter": "સરસ",
+      "answer": "saras",
+      "audio": "audios/clase_1_1/audio_m_saras.mp3",
+      "significado": "excelente"
+    },
+    {
+      "letter": "સરકાર",
+      "answer": "sarkaar",
+      "audio": "audios/clase_1_1/audio_m_sarkaar.mp3",
+      "significado": "gobierno"
+    },
+    {
+      "letter": "ઉમર",
+      "answer": "umar",
+      "audio": "audios/clase_1_1/audio_m_umar.mp3",
+      "significado": "edad"
+    },
+    {
+      "letter": "મહાન",
+      "answer": "mahaan",
+      "audio": "audios/clase_1_1/audio_m_mahaan.mp3",
+      "significado": "grande / majestuoso"
+    },
+    {
+      "letter": "અહેસાસ",
+      "answer": "ahesaas",
+      "audio": "audios/clase_1_1/audio_m_ahesaas.mp3",
+      "significado": "sensación / sentimiento"
+    },
+    {
+      "letter": "હું",
+      "answer": "huⁿ",
+      "audio": "audios/clase_1_1/audio_m_hu(m).mp3",
+      "significado": "yo"
+    },
+    {
+      "letter": "છું",
+      "answer": "chhuⁿ",
+      "audio": "audios/clase_1_1/audio_m_chhu(m).mp3",
+      "significado": "soy / estoy"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "leccion": "1.1.2",
+  "iconos": {
+    "alfabeto": "imagenes/Clase_1_1/guia_navegacion_alfabeto.jpg",
+    "juegos": "imagenes/Clase_1_1/guia_navegacion_juegos.jpg",
+    "practica": "imagenes/Clase_1_1/guia_navegacion_pronunciacion.jpg",
+    "pensar": "imagenes/Clase_1_1/guia_navegacion_pensarengujarati.jpg"
+  },
+  "botones": {
+    "link-consonantes": true,
+    "link-vocales": true,
+    "link-palabras": true,
+    "link-juego-a": true,
+    "link-juego-b": true,
+    "link-juego-c": true,
+    "link-practica": true,
+    "link-aprende": true,
+    "link-lectura": true,
+    "link-compone": true,
+    "link-reto": true,
+    "link-dialogo": true,
+    "link-pensar": true,
+    "link-generar": true
+  }
+}

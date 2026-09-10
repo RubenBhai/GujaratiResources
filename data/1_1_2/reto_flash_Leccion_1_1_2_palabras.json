@@ -1,0 +1,110 @@
+{
+  "leccion": "1.1.2",
+  "titulo": "Reto relámpago de palabras",
+  "badge": "Palabras",
+  "unidad": "palabras",
+  "estilo": "palabras",
+  "columnas": 2,
+  "espera_ms": 2500,
+  "vueltas": 3,
+  "letters": [
+    {
+      "letter": "આરામ",
+      "answer": "aaraam",
+      "significado": "descanso",
+      "audio": "audios/clase_1_1/audio_m_aaram.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_aaram.mp3"
+    },
+    {
+      "letter": "અહેસાસ",
+      "answer": "ahesaas",
+      "significado": "sensación / sentimiento",
+      "audio": "audios/clase_1_1/audio_m_ahesaas.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_ahesaas.mp3"
+    },
+    {
+      "letter": "અમારું",
+      "answer": "amaaruⁿ",
+      "significado": "nuestro",
+      "audio": "audios/clase_1_1/audio_m_amaaru(m).mp3",
+      "audio_h": "audios/clase_1_1/audio_h_amaaru(m).mp3"
+    },
+    {
+      "letter": "છોકરો",
+      "answer": "chokro",
+      "significado": "niño",
+      "audio": "audios/clase_1_1/audio_m_chokro.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_chokro.mp3"
+    },
+    {
+      "letter": "હુકમ",
+      "answer": "hukam",
+      "significado": "mandato",
+      "audio": "audios/clase_1_1/audio_m_hukam.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_hukam.mp3"
+    },
+    {
+      "letter": "મારું",
+      "answer": "maaruⁿ",
+      "significado": "mío",
+      "audio": "audios/clase_1_1/audio_m_maaru(m).mp3",
+      "audio_h": "audios/clase_1_1/audio_h_maaru(m).mp3"
+    },
+    {
+      "letter": "મહાન",
+      "answer": "mahaan",
+      "significado": "grande / majestuoso",
+      "audio": "audios/clase_1_1/audio_m_mahaan.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_mahaan.mp3"
+    },
+    {
+      "letter": "સારું",
+      "answer": "saaruⁿ",
+      "significado": "bueno",
+      "audio": "audios/clase_1_1/audio_m_saaru(m).mp3",
+      "audio_h": "audios/clase_1_1/audio_h_saaru(m).mp3"
+    },
+    {
+      "letter": "સહારો",
+      "answer": "sahaaro",
+      "significado": "apoyo",
+      "audio": "audios/clase_1_1/audio_m_sahaaro.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_sahaaro.mp3"
+    },
+    {
+      "letter": "સરસ",
+      "answer": "saras",
+      "significado": "excelente",
+      "audio": "audios/clase_1_1/audio_m_saras.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_saras.mp3"
+    },
+    {
+      "letter": "સરકાર",
+      "answer": "sarkaar",
+      "significado": "gobierno",
+      "audio": "audios/clase_1_1/audio_m_sarkaar.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_sarkaar.mp3"
+    },
+    {
+      "letter": "ઉમર",
+      "answer": "umar",
+      "significado": "edad",
+      "audio": "audios/clase_1_1/audio_m_umar.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_umar.mp3"
+    },
+    {
+      "letter": "હું",
+      "answer": "huⁿ",
+      "significado": "yo",
+      "audio": "audios/clase_1_1/audio_m_hu(m).mp3",
+      "audio_h": "audios/clase_1_1/audio_h_hu(m).mp3"
+    },
+    {
+      "letter": "છું",
+      "answer": "chhuⁿ",
+      "significado": "soy / estoy",
+      "audio": "audios/clase_1_1/audio_m_chhu(m).mp3",
+      "audio_h": "audios/clase_1_1/audio_h_chhu(m).mp3"
+    }
+  ]
+}

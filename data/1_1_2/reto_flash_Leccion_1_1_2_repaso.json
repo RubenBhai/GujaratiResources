@@ -1,0 +1,92 @@
+{
+  "leccion": "1.1.2",
+  "titulo": "Repaso final de lectura",
+  "badge": "Repaso final",
+  "unidad": "letras",
+  "columnas": 4,
+  "espera_ms": 1500,
+  "vueltas": 2,
+  "letters": [
+    {
+      "letter": "સ",
+      "answer": "sa",
+      "audio": "audios/clase_1_1/audio_alfa_m_sa.mp3"
+    },
+    {
+      "letter": "ર",
+      "answer": "ra",
+      "audio": "audios/clase_1_1/audio_alfa_m_ra.mp3"
+    },
+    {
+      "letter": "હ",
+      "answer": "ha",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3"
+    },
+    {
+      "letter": "ઉ",
+      "answer": "u",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3"
+    },
+    {
+      "letter": "સા",
+      "answer": "saa",
+      "audio": "audios/clase_1_1/audio_m_saa.mp3"
+    },
+    {
+      "letter": "રા",
+      "answer": "raa",
+      "audio": "audios/clase_1_1/audio_m_raa.mp3"
+    },
+    {
+      "letter": "હા",
+      "answer": "haa",
+      "audio": "audios/clase_1_1/audio_m_haa.mp3"
+    },
+    {
+      "letter": "કા",
+      "answer": "kaa",
+      "audio": "audios/clase_1_1/audio_m_kaa.mp3"
+    },
+    {
+      "letter": "સુ",
+      "answer": "su",
+      "audio": "audios/clase_1_1/audio_m_su.mp3"
+    },
+    {
+      "letter": "રુ",
+      "answer": "ru",
+      "audio": "audios/clase_1_1/audio_m_ru.mp3"
+    },
+    {
+      "letter": "હુ",
+      "answer": "hu",
+      "audio": "audios/clase_1_1/audio_m_hu.mp3"
+    },
+    {
+      "letter": "કુ",
+      "answer": "ku",
+      "audio": "audios/clase_1_1/audio_m_ku.mp3"
+    },
+    {
+      "letter": "સો",
+      "answer": "so",
+      "audio": "audios/clase_1_1/audio_m_so.mp3"
+    },
+    {
+      "letter": "રો",
+      "answer": "ro",
+      "audio": "audios/clase_1_1/audio_m_ro.mp3"
+    },
+    {
+      "letter": "હો",
+      "answer": "ho",
+      "audio": "audios/clase_1_1/audio_m_ho.mp3"
+    },
+    {
+      "letter": "મુ",
+      "answer": "mu",
+      "audio": "audios/clase_1_1/audio_m_mu.mp3"
+    }
+  ],
+  "extras": []
+}

@@ -1,0 +1,67 @@
+{
+  "leccion": "1.1.2",
+  "titulo": "Arma tus propias oraciones",
+  "subtitulo": "Elige una opción de cada columna y descubre cómo se dice de quién es algo en gujarati.",
+  "generadores": [
+    {
+      "nombre": "¿De quién es?",
+      "instruccion": "Elige el posesivo y el objeto para formar la oración. Todas las columnas son obligatorias.",
+      "columnas": [
+        {
+          "pregunta": "¿de quién?",
+          "pregunta_gu": "કોનું?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "મારો",
+              "es": "mío",
+              "audio": "audios/clase_1_1/audio_m_maaro.mp3"
+            },
+            {
+              "gu": "અમારો",
+              "es": "nuestro",
+              "audio": "audios/clase_1_1/audio_m_amaaro.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "છોકરો",
+              "es": "el niño",
+              "audio": "audios/clase_1_1/audio_m_chokro.mp3"
+            },
+            {
+              "gu": "સહારો",
+              "es": "el apoyo",
+              "audio": "audios/clase_1_1/audio_m_sahaaro.mp3"
+            },
+            {
+              "gu": "સરકાર",
+              "es": "el gobierno",
+              "audio": "audios/clase_1_1/audio_m_sarkaar.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "છે",
+              "es": "es",
+              "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

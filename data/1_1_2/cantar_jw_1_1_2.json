@@ -1,0 +1,51 @@
+{
+  "leccion": "1.1.2",
+  "home": "leccion_intro.html?leccion=1.1.2",
+
+  "badge": "Canta en gujarati",
+  "titulo": "Aprende cantando",
+  "lead": "Cantar fija las palabras como ninguna otra cosa. Elige cómo quieres practicar hoy.",
+
+  "antes": {
+    "titulo": "Escucha estas en la canción",
+    "palabras": [
+      { "gu": "સારું છે", "es": "está bien" },
+      { "gu": "હું",       "es": "yo" },
+      { "gu": "મારું",     "es": "mío" },
+      { "gu": "સરસ",       "es": "excelente" }
+    ]
+  },
+
+  "escuchar": {
+    "titulo": "Escucha y sigue",
+    "descripcion": "Suena la música y la voz del cantante, con la letra en pantalla. Escucha cómo suena cada palabra y síguela con la vista.",
+    "boton": "🎧 Escuchar con voz",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si escuchaste",
+    "url": ""
+  },
+
+  "cantar": {
+    "titulo": "Canta tú",
+    "descripcion": "Suena solo la música, con la letra en pantalla. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
+    "boton": "🎤 Cantar tú",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si cantaste",
+    "url": ""
+  },
+
+  "despues": {
+    "titulo": "Después de cantar",
+    "escuchar": [
+      "¿Reconociste <b class=\"gu\">સારું છે</b> mientras el cantante la decía?",
+      "¿Qué palabra te costó más seguir con la vista?"
+    ],
+    "cantar": [
+      "¿Pudiste leer al ritmo de la música?",
+      "¿Qué palabra sentiste más natural al cantarla?"
+    ]
+  },
+
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.1.2",
+  "continuar_caption": "Continuar →"
+}

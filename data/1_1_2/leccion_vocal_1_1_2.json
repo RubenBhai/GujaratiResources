@@ -1,0 +1,94 @@
+{
+  "leccion": "1.1.2",
+  "home": "leccion_intro.html?leccion=1.1.2",
+  "anterior_primera": "leccion_letra.html?leccion=1.1.2&item=3",
+  "siguiente_final": "leccion_palabra_intro.html?leccion=1.1.2",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.1.2",
+  "siguiente_leccion": "Leccion_1_1_3_intro.html",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "repaso_final": true,
+  "pasos": [
+    {
+      "tipo": "vocal",
+      "vocal": "u",
+      "gujarati": "ઉ",
+      "badge": "Vocal 1 de 3",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">u</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">u</span>va</strong>'"
+    },
+    {
+      "tipo": "plana",
+      "vocal": "u",
+      "roman": "u",
+      "imagen": "imagenes/Clase_1_1/img_plana_u.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3"
+    },
+    {
+      "tipo": "matra",
+      "vocal": "u",
+      "matra": "ુ",
+      "badge": "Matra 2 de 3",
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_u.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "u",
+      "matra": "ુ",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_ku.mp3",
+        "audios/clase_1_1/audio_m_mu.mp3",
+        "audios/clase_1_1/audio_m_chhu.mp3"
+      ],
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_1_2_vo1",
+      "ecuaciones": [
+        {
+          "partes": "ક + ુ",
+          "resultado": "કુ"
+        },
+        {
+          "partes": "મ + ુ",
+          "resultado": "મુ"
+        },
+        {
+          "partes": "છ + ુ",
+          "resultado": "છુ"
+        }
+      ]
+    },
+    {
+      "tipo": "matra",
+      "vocal": "nasal",
+      "matra": "ં",
+      "badge": "Signo nasal 3 de 3",
+      "nota_especial": "especial_sonido_normal_sonido_nasal.html"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "nasal",
+      "matra": "ં",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_hu(m).mp3",
+        "audios/clase_1_1/audio_m_chhu(m).mp3",
+        "audios/clase_1_1/audio_m_maa(m).mp3"
+      ],
+      "texto_boton": "Escucha cómo el signo nasal cambia el sonido",
+      "reto_flash_json": "Leccion_1_1_2_vo2",
+      "ecuaciones": [
+        {
+          "partes": "હુ + ં",
+          "resultado": "હું"
+        },
+        {
+          "partes": "છુ + ં",
+          "resultado": "છું"
+        },
+        {
+          "partes": "મા + ં",
+          "resultado": "માં"
+        }
+      ]
+    }
+  ]
+}

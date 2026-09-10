@@ -1,0 +1,29 @@
+{
+  "leccion": "1.1.2",
+  "home": "leccion_intro.html?leccion=1.1.2",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.1.2",
+  "siguiente_leccion": "Leccion_1_1_3_intro.html",
+  "letras": [
+    {
+      "consonante": "સ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">sa</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">sa</span>po</strong>'",
+      "audio": "audios/clase_1_1/audio_alfa_m_sa.mp3",
+      "reto_flash_json": "Leccion_1_1_2_c1",
+      "plana": "leccion_plana.html?leccion=1.1.2&item=1"
+    },
+    {
+      "consonante": "ર",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ra</strong> como la 'r' suave de '<strong class=\"det-p\">ca<span class=\"det-s\">ra</span></strong>' (un solo toque, no la 'rr' fuerte)",
+      "audio": "audios/clase_1_1/audio_alfa_m_ra.mp3",
+      "reto_flash_json": "Leccion_1_1_2_c2",
+      "plana": "leccion_plana.html?leccion=1.1.2&item=2"
+    },
+    {
+      "consonante": "હ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ha</strong> con una 'h' aspirada, como la <strong class=\"det-p\"><span class=\"det-s\">h</span></strong> inglesa de '<strong class=\"det-p\"><span class=\"det-s\">h</span>ello</strong>'. En español suena como una 'j' muy suave",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3",
+      "reto_flash_json": "Leccion_1_1_2_c3",
+      "plana": "leccion_plana.html?leccion=1.1.2&item=3"
+    }
+  ]
+}

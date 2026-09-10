@@ -1,0 +1,25 @@
+{
+  "leccion": "1.1.2",
+  "home": "leccion_intro.html?leccion=1.1.2",
+  "empezar": "leccion_palabra.html?leccion=1.1.2&item=1",
+  "anterior": "leccion_vocal.html?leccion=1.1.2&item=6",
+  "frase_ejemplo": "સારું છે",
+  "palabras": [
+    { "gujarati": "આરામ", "se_dice": "aa-raam", "significa": "descanso" },
+    { "gujarati": "અહેસાસ", "se_dice": "a-he-saas", "significa": "sensación / sentimiento" },
+    { "gujarati": "અમારું", "se_dice": "a-maa-ruⁿ", "significa": "nuestro" },
+    { "gujarati": "છોકરો", "se_dice": "cho-kro", "significa": "niño" },
+    { "gujarati": "હુકમ", "se_dice": "hu-kam", "significa": "mandato" },
+    { "gujarati": "મારું", "se_dice": "maa-ruⁿ", "significa": "mío" },
+    { "gujarati": "મહાન", "se_dice": "ma-haan", "significa": "grande / majestuoso" },
+    { "gujarati": "સારું", "se_dice": "saa-ruⁿ", "significa": "bueno" },
+    { "gujarati": "સહારો", "se_dice": "sa-haa-ro", "significa": "apoyo" },
+    { "gujarati": "સરસ", "se_dice": "saras", "significa": "excelente" },
+    { "gujarati": "સરકાર", "se_dice": "sar-kaar", "significa": "gobierno" },
+    { "gujarati": "ઉમર", "se_dice": "umar", "significa": "edad" },
+    { "gujarati": "હું", "se_dice": "huⁿ", "significa": "yo" },
+    { "gujarati": "છું", "se_dice": "chhuⁿ", "significa": "soy / estoy" },
+    { "gujarati": "માં", "se_dice": "maaⁿ", "significa": "en" },
+    { "gujarati": "મેં", "se_dice": "meⁿ", "significa": "yo (en pasado)" }
+  ]
+}

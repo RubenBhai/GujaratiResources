@@ -1,0 +1,101 @@
+{
+  "leccion": "1.1.2",
+  "items": [
+    {
+      "id": "palabra_1",
+      "categoria": "palabra",
+      "gujarati": "આરામ",
+      "significado": "descanso",
+      "audioM": "audios/clase_1_1/audio_m_aaram.mp3",
+      "imagen": "imagenes/Clase_1_1/img_aaraam_noinfo.jpg"
+    },
+    {
+      "id": "palabra_2",
+      "categoria": "palabra",
+      "gujarati": "છોકરો",
+      "significado": "niño",
+      "audioM": "audios/clase_1_1/audio_m_chokro.mp3",
+      "imagen": "imagenes/Clase_1_1/img_chokro_noinfo.jpg"
+    },
+    {
+      "id": "palabra_3",
+      "categoria": "palabra",
+      "gujarati": "હુકમ",
+      "significado": "mandato",
+      "audioM": "audios/clase_1_1/audio_m_hukam.mp3",
+      "imagen": "imagenes/Clase_1_1/img_hukam_noinfo.jpg"
+    },
+    {
+      "id": "palabra_4",
+      "categoria": "palabra",
+      "gujarati": "મારું",
+      "significado": "mío",
+      "audioM": "audios/clase_1_1/audio_m_maaru(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_maaru(m)_noinfo.jpg"
+    },
+    {
+      "id": "palabra_5",
+      "categoria": "palabra",
+      "gujarati": "અમારું",
+      "significado": "nuestro",
+      "audioM": "audios/clase_1_1/audio_m_amaaru(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_amaaru(m)_chhe_noinfo.jpg"
+    },
+    {
+      "id": "palabra_6",
+      "categoria": "palabra",
+      "gujarati": "સારું",
+      "significado": "bueno",
+      "audioM": "audios/clase_1_1/audio_m_saaru(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_saaru(m)_chhe_noinfo.jpg"
+    },
+    {
+      "id": "palabra_7",
+      "categoria": "palabra",
+      "gujarati": "સરકાર",
+      "significado": "gobierno",
+      "audioM": "audios/clase_1_1/audio_m_sarkaar.mp3",
+      "imagen": "imagenes/Clase_1_1/img_sarkaar_noinfo.jpg"
+    },
+    {
+      "id": "palabra_8",
+      "categoria": "palabra",
+      "gujarati": "ઉમર",
+      "significado": "edad",
+      "audioM": "audios/clase_1_1/audio_m_umar.mp3",
+      "imagen": "imagenes/Clase_1_1/img_umar_noinfo.jpg"
+    },
+    {
+      "id": "palabra_9",
+      "categoria": "palabra",
+      "gujarati": "હું",
+      "significado": "yo",
+      "audioM": "audios/clase_1_1/audio_m_hu(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_hu(m)_noinfo.jpg"
+    },
+    {
+      "id": "palabra_10",
+      "categoria": "palabra",
+      "gujarati": "સહારો",
+      "significado": "apoyo",
+      "audioM": "audios/clase_1_1/audio_m_sahaaro.mp3",
+      "imagen": "imagenes/Clase_1_1/img_sahaaro_noinfo.jpg"
+    },
+    {
+      "id": "palabra_11",
+      "categoria": "palabra",
+      "gujarati": "સરસ",
+      "significado": "excelente",
+      "audioM": "audios/clase_1_1/audio_m_saras.mp3",
+      "imagen": "imagenes/Clase_1_1/img_saras_noinfo.jpg"
+    },
+    {
+      "id": "palabra_12",
+      "categoria": "palabra",
+      "gujarati": "છું",
+      "significado": "soy / estoy",
+      "audioM": "audios/clase_1_1/audio_m_chhu(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_chhu(m)_noinfo.jpg"
+    }
+  ]
+}

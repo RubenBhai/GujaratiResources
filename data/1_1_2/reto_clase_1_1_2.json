@@ -1,0 +1,129 @@
+{
+  "leccion": "1.1.2",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "nivel1": {
+    "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
+    "maxSesiones": 2,
+    "texto": "હું સરસ છું. મારો છોકરો છે. અમારો સહારો છે. સારું છે.",
+    "elementos": [
+      "સ",
+      "ર",
+      "હ",
+      "હું",
+      "છે",
+      "મારો"
+    ]
+  },
+  "nivel2": {
+    "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
+    "sesiones": [
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_2_audio_1.mp3",
+        "elemento": "છે",
+        "respuesta": 3
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_2_audio_2.mp3",
+        "elemento": "હું",
+        "respuesta": 1
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_2_audio_3.mp3",
+        "elemento": "સરસ",
+        "respuesta": 1
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_2_audio_4.mp3",
+        "elemento": "સહારો",
+        "respuesta": 1
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_2_audio_5.mp3",
+        "elemento": "સરકાર",
+        "respuesta": 1
+      }
+    ]
+  },
+  "nivel3": {
+    "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
+    "maxSesiones": 2,
+    "elementos": [
+      {
+        "gujarati": "આ મારો છોકરો છે"
+      },
+      {
+        "gujarati": "અમારો સરકાર મહાન છે"
+      },
+      {
+        "gujarati": "હું સુરતમાં રહું છું"
+      },
+      {
+        "gujarati": "સારું છે"
+      }
+    ]
+  },
+  "nivel4": {
+    "instruccion": "Escucha el audio y toca las palabras en Gujarati para completar la oración.",
+    "sesiones": [
+      {
+        "audio_oracion_completa": "audios/clase_1_1/audio_m_saaru(m)_chhe.mp3",
+        "oracion_completa": "સારું છે",
+        "espanol": "está bien"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/audio_m_hu(m)_chhu(m).mp3",
+        "oracion_completa": "હું છું",
+        "espanol": "yo soy"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/audio_m_hu(m)_ma(m)_rahu(m)_chhu(m).mp3",
+        "oracion_completa": "હું સુરતમાં રહું છું",
+        "espanol": "yo vivo en Surat"
+      }
+    ]
+  },
+  "nivel6": {
+    "instruccion": "Escucha cada parte y repítela en voz alta. La frase irá creciendo.",
+    "oraciones": [
+      {
+        "oracion_completa": "હું સુરતમાં રહું છું",
+        "espanol": "Yo vivo en Surat",
+        "fragmentos": [
+          {
+            "texto": "રહું છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_2_01_frag_1.mp3"
+          },
+          {
+            "texto": "સુરતમાં રહું છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_2_01_frag_2.mp3"
+          },
+          {
+            "texto": "હું સુરતમાં રહું છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_2_01_frag_3.mp3"
+          }
+        ]
+      },
+      {
+        "oracion_completa": "અમારો સરકાર મહાન છે",
+        "espanol": "Nuestro gobierno es grande",
+        "fragmentos": [
+          {
+            "texto": "મહાન છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_2_02_frag_1.mp3"
+          },
+          {
+            "texto": "સરકાર મહાન છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_2_02_frag_2.mp3"
+          },
+          {
+            "texto": "અમારો સરકાર મહાન છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_2_02_frag_3.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "video_jw": true,
+  "cantar_jw": false
+}

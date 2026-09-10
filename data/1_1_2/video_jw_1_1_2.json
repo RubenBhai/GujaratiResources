@@ -1,0 +1,59 @@
+{
+  "leccion": "1.1.2",
+  "home": "leccion_intro.html?leccion=1.1.2",
+  "badge": "Escucha gujarati real",
+  "titulo": "Un video en gujarati de verdad",
+  "lead": "No entenderás todo, y no hace falta. Escucha y caza las palabras que ya conoces.",
+  "antes": {
+    "titulo": "Antes de ver · escucha estas",
+    "palabras": [
+      {
+        "gu": "સરસ",
+        "es": "excelente / qué bien"
+      },
+      {
+        "gu": "હું",
+        "es": "yo"
+      },
+      {
+        "gu": "છે",
+        "es": "es / está"
+      }
+    ]
+  },
+  "video": {
+    "kicker": "Video",
+    "titulo": "Primera visita — Mateo 16:16",
+    "descripcion": "Dos personas se conocen en la calle y hablan un momento. Dura poco más de un minuto. El video está en el sitio oficial; cuando termines, vuelve aquí para las preguntas.",
+    "boton": "▶ Ver el video en JW.ORG",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/વીડિયો/#gu/mediaitems/VODSampleConversations/pub-mwbv_202003_1_VIDEO"
+  },
+  "despues": {
+    "titulo": "Después de ver · toca cada pregunta para ver una pista",
+    "preguntas": [
+      {
+        "pregunta": "¿Escuchaste <b class=\"gu\">સરસ</b>? Suena tres veces.",
+        "respuesta": "Sí: al elogiar el nombre («સરસ નામ છે», qué bonito nombre), al hablar del tiempo («સરસ છે», está bueno) y una tercera vez más adelante.",
+        "duracion": 3
+      },
+      {
+        "pregunta": "¿Reconociste <b class=\"gu\">હું</b> («yo»)?",
+        "respuesta": "Sí, en cuanto se presenta: <span class=\"gu\">હું જયંતી</span> — «yo, Jayanti». Es el mismo patrón de <span class=\"gu\">હું રુબેન છું</span>.",
+        "duracion": 3
+      },
+      {
+        "pregunta": "Oirás <b class=\"gu\">તમારું</b>. ¿Te suena parecida a alguna que ya sabes?",
+        "respuesta": "Se parece a <span class=\"gu\">મારું</span> («mío»), pero con <span class=\"gu\">ત</span> delante significa «tuyo». Aquí pregunta <span class=\"gu\">તમારું નામ?</span> — «¿tu nombre?».",
+        "duracion": 3
+      },
+      {
+        "pregunta": "Sin entender las palabras, ¿de qué crees que hablaban al principio?",
+        "respuesta": "No hay una única respuesta correcta. Se presentan, se dicen sus nombres y comentan el tiempo que hace — igual que en cualquier idioma.",
+        "duracion": 4
+      }
+    ]
+  },
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.1.2",
+  "continuar_caption": "Continuar →"
+}

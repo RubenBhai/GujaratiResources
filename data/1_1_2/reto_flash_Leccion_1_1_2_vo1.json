@@ -1,0 +1,47 @@
+{
+  "leccion": "1.1.2",
+  "letters": [
+    {
+      "letter": "ઉ",
+      "answer": "u",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3"
+    },
+    {
+      "letter": "હ",
+      "answer": "ha",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3"
+    },
+    {
+      "letter": "ર",
+      "answer": "ra",
+      "audio": "audios/clase_1_1/audio_alfa_m_ra.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "કુ",
+      "answer": "ku",
+      "audio": "audios/clase_1_1/audio_m_ku.mp3"
+    },
+    {
+      "letter": "મુ",
+      "answer": "mu",
+      "audio": "audios/clase_1_1/audio_m_mu.mp3"
+    },
+    {
+      "letter": "છુ",
+      "answer": "chhu",
+      "audio": "audios/clase_1_1/audio_m_chhu.mp3"
+    },
+    {
+      "letter": "રુ",
+      "answer": "ru",
+      "audio": "audios/clase_1_1/audio_m_ru.mp3"
+    },
+    {
+      "letter": "સુ",
+      "answer": "su",
+      "audio": "audios/clase_1_1/audio_m_su.mp3"
+    }
+  ]
+}

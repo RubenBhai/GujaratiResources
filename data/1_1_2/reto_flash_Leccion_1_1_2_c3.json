@@ -1,0 +1,21 @@
+{
+  "leccion": "1.1.2",
+  "letters": [
+    {
+      "letter": "હ",
+      "answer": "ha",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3"
+    },
+    {
+      "letter": "સ",
+      "answer": "sa",
+      "audio": "audios/clase_1_1/audio_alfa_m_sa.mp3"
+    },
+    {
+      "letter": "ર",
+      "answer": "ra",
+      "audio": "audios/clase_1_1/audio_alfa_m_ra.mp3"
+    }
+  ],
+  "extras": []
+}
