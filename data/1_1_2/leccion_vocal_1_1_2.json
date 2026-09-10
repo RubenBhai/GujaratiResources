@@ -62,7 +62,8 @@
       "vocal": "nasal",
       "matra": "ં",
       "badge": "Signo nasal 3 de 3",
-      "nota_especial": "especial_sonido_normal_sonido_nasal.html"
+      "nota_especial": "especial_sonido_normal_sonido_nasal.html",
+      "imagen": "imagenes/Clase_1_1/img_alfa_(m).jpg"
     },
     {
       "tipo": "con_matra",

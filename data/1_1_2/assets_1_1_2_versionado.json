@@ -4,802 +4,807 @@
   "assets": [
     {
       "url": "audios/clase_1_1/Clase_1_1_Correcto.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 71647
     },
     {
       "url": "audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 70741
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_aa-m.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_aa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_ha.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_kaa-m.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_kaa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_ra.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_sa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_h_u.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_aa-m.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_aa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 28301
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_e.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_ha.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_kaa-m.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_kaa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 26486
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_ra.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_sa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_alfa_m_u.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_h_aaram.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 112940
     },
     {
       "url": "audios/clase_1_1/audio_h_ahesaas.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_h_amaaru(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 105414
     },
     {
       "url": "audios/clase_1_1/audio_h_chhu(m).mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_h_chhu.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 82834
     },
     {
       "url": "audios/clase_1_1/audio_h_chokro.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_h_haa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/audio_h_ho.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_h_hu(m).mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_h_hu(m)_chhu(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 74081
     },
     {
       "url": "audios/clase_1_1/audio_h_hu.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_h_hukam.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 127992
     },
     {
       "url": "audios/clase_1_1/audio_h_ku.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_h_maaru(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 82834
     },
     {
       "url": "audios/clase_1_1/audio_h_mahaan.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_h_mu.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_h_raa.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_h_ro.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_h_ru.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_h_saa.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 82834
     },
     {
       "url": "audios/clase_1_1/audio_h_saaru(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_h_saaru(m)_chhe.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 112940
     },
     {
       "url": "audios/clase_1_1/audio_h_sahaaro.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_h_saras.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_h_sarkaar.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_h_su.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 82834
     },
     {
       "url": "audios/clase_1_1/audio_h_umar.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/audio_m_aaram.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_m_ahesaas.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 112940
     },
     {
       "url": "audios/clase_1_1/audio_m_amaaraa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_m_amaaro.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_m_amaaru(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 112940
     },
     {
       "url": "audios/clase_1_1/audio_m_chhe.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 82834
     },
     {
       "url": "audios/clase_1_1/audio_m_chhu(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_m_chhu.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 52728
     },
     {
       "url": "audios/clase_1_1/audio_m_chokraa.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 82834
     },
     {
       "url": "audios/clase_1_1/audio_m_chokro.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_m_haa.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/audio_m_he.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 52728
     },
     {
       "url": "audios/clase_1_1/audio_m_ho.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/audio_m_hu(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 30661
     },
     {
       "url": "audios/clase_1_1/audio_m_hu(m)_chhu(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 79091
     },
     {
       "url": "audios/clase_1_1/audio_m_hu(m)_ma(m)_rahu(m)_chhu(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 278520
     },
     {
       "url": "audios/clase_1_1/audio_m_hu.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_m_hukam.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 127992
     },
     {
       "url": "audios/clase_1_1/audio_m_kaa.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 105414
     },
     {
       "url": "audios/clase_1_1/audio_m_ku.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 52728
     },
     {
       "url": "audios/clase_1_1/audio_m_maa(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_m_maaro.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_m_maaru(m).mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_m_mahaan.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_m_mu.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 12452
     },
     {
       "url": "audios/clase_1_1/audio_m_raa.mp3",
-      "lastModified": 1789013397000,
+      "lastModified": 1789042800000,
       "size": 82834
     },
     {
       "url": "audios/clase_1_1/audio_m_re.mp3",
-      "lastModified": 1789013398000,
+      "lastModified": 1789042800000,
       "size": 105414
     },
     {
       "url": "audios/clase_1_1/audio_m_ro.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/audio_m_ru.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_m_saa.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 97888
     },
     {
       "url": "audios/clase_1_1/audio_m_saaru(m).mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 67782
     },
     {
       "url": "audios/clase_1_1/audio_m_saaru(m)_chhe.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_m_sahaaro.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_m_saras.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/audio_m_sarkaar.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 127992
     },
     {
       "url": "audios/clase_1_1/audio_m_se.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/audio_m_so.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 52728
     },
     {
       "url": "audios/clase_1_1/audio_m_su.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 75308
     },
     {
       "url": "audios/clase_1_1/audio_m_umar.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 60256
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_01.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 127992
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_02.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 158098
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_03.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 233362
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_04.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 203256
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_05.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 40681
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_06.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 165624
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_07.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 180678
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_08.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 158098
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_09.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 143046
     },
     {
       "url": "audios/clase_1_1/dialogo_1_1_2_10.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 173152
     },
     {
       "url": "audios/clase_1_1/dictado_backwards_1_1_2_01_frag_1.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 105414
     },
     {
       "url": "audios/clase_1_1/dictado_backwards_1_1_2_01_frag_2.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 120466
     },
     {
       "url": "audios/clase_1_1/dictado_backwards_1_1_2_01_frag_3.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 143046
     },
     {
       "url": "audios/clase_1_1/dictado_backwards_1_1_2_02_frag_1.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 90360
     },
     {
       "url": "audios/clase_1_1/dictado_backwards_1_1_2_02_frag_2.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 120466
     },
     {
       "url": "audios/clase_1_1/dictado_backwards_1_1_2_02_frag_3.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 158098
     },
     {
       "url": "audios/clase_1_1/lectura_1_1_2.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 157938
     },
     {
       "url": "audios/clase_1_1/reto_leccion_1_1_2_audio_1.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 193972
     },
     {
       "url": "audios/clase_1_1/reto_leccion_1_1_2_audio_2.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 134687
     },
     {
       "url": "audios/clase_1_1/reto_leccion_1_1_2_audio_3.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 82917
     },
     {
       "url": "audios/clase_1_1/reto_leccion_1_1_2_audio_4.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 233362
     },
     {
       "url": "audios/clase_1_1/reto_leccion_1_1_2_audio_5.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 188204
     },
     {
       "url": "audios/clase_1_1/victoria.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 121676
     },
     {
       "url": "audios/musica/Leccion_1_1_2_musica_ambiente.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 4090148
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_10.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 151276
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_2.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 12753
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_3.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 97511
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_4.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 143963
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_5.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 81481
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_6.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 148115
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_7.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 153379
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_8.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 97362
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Cambio_Escena_9.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 118222
     },
     {
       "url": "imagenes/Clase_1_1/D2_Dialogo_Fondo_1.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 241599
     },
     {
       "url": "imagenes/Clase_1_1/avatarActivo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 971
     },
     {
       "url": "imagenes/Clase_1_1/avatar_manisha.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 39277
     },
     {
       "url": "imagenes/Clase_1_1/avatar_rohan.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 35720
     },
     {
       "url": "imagenes/Clase_1_1/avatar_vina.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 25718
     },
     {
       "url": "imagenes/Clase_1_1/guia_navegacion_alfabeto.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 4381
     },
     {
       "url": "imagenes/Clase_1_1/guia_navegacion_juegos.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 7346
     },
     {
       "url": "imagenes/Clase_1_1/guia_navegacion_pensarengujarati.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 6691
     },
     {
       "url": "imagenes/Clase_1_1/guia_navegacion_pronunciacion.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 7525
     },
     {
       "url": "imagenes/Clase_1_1/img_aaraam.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 218469
     },
     {
       "url": "imagenes/Clase_1_1/img_aaraam_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 174257
     },
     {
       "url": "imagenes/Clase_1_1/img_ahesaas.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 176644
     },
     {
       "url": "imagenes/Clase_1_1/img_alfa_matra_u.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 80902
     },
     {
+      "url": "imagenes/Clase_1_1/img_alfa_(m).jpg",
+      "lastModified": 1789042800000,
+      "size": 160984
+    },
+    {
       "url": "imagenes/Clase_1_1/img_amaaru(m)_chhe.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 138237
     },
     {
       "url": "imagenes/Clase_1_1/img_amaaru(m)_chhe_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 108116
     },
     {
       "url": "imagenes/Clase_1_1/img_chokro.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 150909
     },
     {
       "url": "imagenes/Clase_1_1/img_chokro_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 123451
     },
     {
       "url": "imagenes/Clase_1_1/img_hu(m).jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 101002
     },
     {
       "url": "imagenes/Clase_1_1/img_hu(m)_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 76664
     },
     {
       "url": "imagenes/Clase_1_1/img_hukam.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 279003
     },
     {
       "url": "imagenes/Clase_1_1/img_hukam_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 265282
     },
     {
       "url": "imagenes/Clase_1_1/img_maaru(m).jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 175281
     },
     {
       "url": "imagenes/Clase_1_1/img_maaru(m)_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 139654
     },
     {
       "url": "imagenes/Clase_1_1/img_mahaan.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 162084
     },
     {
       "url": "imagenes/Clase_1_1/img_mahaan_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 110666
     },
     {
       "url": "imagenes/Clase_1_1/img_plana_ha.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 109465
     },
     {
       "url": "imagenes/Clase_1_1/img_plana_ra.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 116538
     },
     {
       "url": "imagenes/Clase_1_1/img_plana_sa.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 117280
     },
     {
       "url": "imagenes/Clase_1_1/img_plana_u.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 92738
     },
     {
       "url": "imagenes/Clase_1_1/img_saaru(m)_chhe.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 190880
     },
     {
       "url": "imagenes/Clase_1_1/img_saaru(m)_chhe_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 157715
     },
     {
       "url": "imagenes/Clase_1_1/img_sahaaro.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 183182
     },
     {
       "url": "imagenes/Clase_1_1/img_sahaaro_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 142949
     },
     {
       "url": "imagenes/Clase_1_1/img_saras.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 150616
     },
     {
       "url": "imagenes/Clase_1_1/img_saras_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 119883
     },
     {
       "url": "imagenes/Clase_1_1/img_sarkaar.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 211862
     },
     {
       "url": "imagenes/Clase_1_1/img_sarkaar_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 178763
     },
     {
       "url": "imagenes/Clase_1_1/img_umar.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 177966
     },
     {
       "url": "imagenes/Clase_1_1/img_umar_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 153732
     },
     {
       "url": "imagenes/Clase_1_1/img_chhu(m).jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 232336
     },
     {
       "url": "imagenes/Clase_1_1/img_chhu(m)_noinfo.jpg",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 221694
     },
     {
       "url": "videos/clase_1_1/leccion_1_1_2_video.mp3",
-      "lastModified": 1789013454000,
+      "lastModified": 1789042800000,
       "size": 699982
     },
     {
@@ -884,8 +889,8 @@
     },
     {
       "url": "data/1_1_2/leccion_vocal_1_1_2.json",
-      "lastModified": 1788954479000,
-      "size": 2628
+      "lastModified": 1789042853939,
+      "size": 2683
     },
     {
       "url": "data/1_1_2/lectura_1_1_2.json",
@@ -964,8 +969,8 @@
     },
     {
       "url": "data/1_1_2/video_jw_1_1_2.json",
-      "lastModified": 1788919138000,
-      "size": 1986
+      "lastModified": 1789014439383,
+      "size": 2627
     }
   ]
 }
