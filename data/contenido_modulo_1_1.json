@@ -27,7 +27,8 @@
           "numero": 2,
           "titulo": "સારું છે — estoy bien",
           "sub_html": "consonantes: <strong>સ ર હ</strong><br>vocal independiente: <strong>ઉ</strong><br>vocal abreviada (matra): <strong>ુ</strong><br>sonido nasal: <strong>ં</strong>",
-          "estado": "proxima"
+          "estado": "activa",
+          "codigo_leccion": "1.1.2"
         },
         {
           "numero": 3,
