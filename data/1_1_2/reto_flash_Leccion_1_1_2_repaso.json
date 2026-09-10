@@ -86,6 +86,26 @@
       "letter": "મુ",
       "answer": "mu",
       "audio": "audios/clase_1_1/audio_m_mu.mp3"
+    },
+    {
+      "letter": "હું",
+      "answer": "huⁿ",
+      "audio": "audios/clase_1_1/audio_m_hu(m).mp3"
+    },
+    {
+      "letter": "છું",
+      "answer": "chhuⁿ",
+      "audio": "audios/clase_1_1/audio_m_chhu(m).mp3"
+    },
+    {
+      "letter": "માં",
+      "answer": "maaⁿ",
+      "audio": "audios/clase_1_1/audio_m_maa(m).mp3"
+    },
+    {
+      "letter": "કાં",
+      "answer": "kaaⁿ",
+      "audio": "audios/clase_1_1/audio_alfa_m_kaa-m.mp3"
     }
   ],
   "extras": []
