@@ -38,8 +38,8 @@
     },
     {
       "url": "cache_admin.json",
-      "lastModified": 1785333589290,
-      "size": 165
+      "lastModified": 1789011397343,
+      "size": 314
     },
     {
       "url": "cantar_jw.html",
@@ -63,8 +63,8 @@
     },
     {
       "url": "contenido.html",
-      "lastModified": 1785336523775,
-      "size": 11060
+      "lastModified": 1785808823184,
+      "size": 11405
     },
     {
       "url": "contenido.js",
@@ -73,13 +73,13 @@
     },
     {
       "url": "contenido_modulo.html",
-      "lastModified": 1785558878822,
-      "size": 1662
+      "lastModified": 1785721082452,
+      "size": 1586
     },
     {
       "url": "contenido_modulo.js",
-      "lastModified": 1785558862325,
-      "size": 7078
+      "lastModified": 1785721148108,
+      "size": 6919
     },
     {
       "url": "dictado.html",
@@ -122,6 +122,131 @@
       "size": 7384
     },
     {
+      "url": "frases.html",
+      "lastModified": 1785802715034,
+      "size": 1177
+    },
+    {
+      "url": "frases.js",
+      "lastModified": 1785724956773,
+      "size": 4274
+    },
+    {
+      "url": "frases_backwards.html",
+      "lastModified": 1785782739521,
+      "size": 1938
+    },
+    {
+      "url": "frases_backwards.js",
+      "lastModified": 1785782746728,
+      "size": 4307
+    },
+    {
+      "url": "frases_base.js",
+      "lastModified": 1785783122283,
+      "size": 3698
+    },
+    {
+      "url": "frases_chips.js",
+      "lastModified": 1785759505556,
+      "size": 3139
+    },
+    {
+      "url": "frases_compone.html",
+      "lastModified": 1785759492487,
+      "size": 1751
+    },
+    {
+      "url": "frases_compone.js",
+      "lastModified": 1785759499083,
+      "size": 3731
+    },
+    {
+      "url": "frases_dictado.html",
+      "lastModified": 1785759767067,
+      "size": 2136
+    },
+    {
+      "url": "frases_dictado.js",
+      "lastModified": 1785759772819,
+      "size": 4852
+    },
+    {
+      "url": "frases_flex.html",
+      "lastModified": 1785844680586,
+      "size": 2035
+    },
+    {
+      "url": "frases_flex.js",
+      "lastModified": 1785844687114,
+      "size": 6224
+    },
+    {
+      "url": "frases_gemini.js",
+      "lastModified": 1785788378472,
+      "size": 2992
+    },
+    {
+      "url": "frases_hub.html",
+      "lastModified": 1785802728030,
+      "size": 1172
+    },
+    {
+      "url": "frases_hub.js",
+      "lastModified": 1785841222564,
+      "size": 2840
+    },
+    {
+      "url": "frases_karaoke.html",
+      "lastModified": 1785783108476,
+      "size": 1841
+    },
+    {
+      "url": "frases_karaoke.js",
+      "lastModified": 1785783115061,
+      "size": 4380
+    },
+    {
+      "url": "frases_menu.js",
+      "lastModified": 1785802722588,
+      "size": 1782
+    },
+    {
+      "url": "frases_presenta.html",
+      "lastModified": 1785759084446,
+      "size": 1038
+    },
+    {
+      "url": "frases_presenta.js",
+      "lastModified": 1785759116168,
+      "size": 4198
+    },
+    {
+      "url": "frases_pronuncia.html",
+      "lastModified": 1785788361669,
+      "size": 1342
+    },
+    {
+      "url": "frases_pronuncia.js",
+      "lastModified": 1785788372411,
+      "size": 5563
+    },
+    {
+      "url": "frases_reto.html",
+      "lastModified": 1785785806591,
+      "size": 4956
+    },
+    {
+      "url": "frases_reto.js",
+      "lastModified": 1785785813467,
+      "size": 8767
+    },
+    {
+      "url": "frases_srs.js",
+      "lastModified": 1785785820271,
+      "size": 2578
+    },
+    {
       "url": "generador.html",
       "lastModified": 1785429289418,
       "size": 2002
@@ -138,13 +263,13 @@
     },
     {
       "url": "guia_navegacion.html",
-      "lastModified": 1785381239330,
-      "size": 3035
+      "lastModified": 1785722661425,
+      "size": 3108
     },
     {
       "url": "guia_navegacion.js",
-      "lastModified": 1785381366129,
-      "size": 3362
+      "lastModified": 1785722636508,
+      "size": 3379
     },
     {
       "url": "guia_navegacion_common.css",
@@ -233,8 +358,18 @@
     },
     {
       "url": "leccion_palabra.js",
-      "lastModified": 1785528223837,
-      "size": 5963
+      "lastModified": 1785602616762,
+      "size": 5994
+    },
+    {
+      "url": "leccion_palabra_fin.html",
+      "lastModified": 1785701248572,
+      "size": 2177
+    },
+    {
+      "url": "leccion_palabra_fin.js",
+      "lastModified": 1785602553977,
+      "size": 2391
     },
     {
       "url": "leccion_palabra_intro.html",
@@ -248,12 +383,12 @@
     },
     {
       "url": "leccion_pensarEnGUJ.html",
-      "lastModified": 1785380418509,
+      "lastModified": 1785722723363,
       "size": 2097
     },
     {
       "url": "leccion_pensarEnGUJ.js",
-      "lastModified": 1785380493625,
+      "lastModified": 1785722703752,
       "size": 2508
     },
     {
@@ -388,8 +523,8 @@
     },
     {
       "url": "tema-contenido.css",
-      "lastModified": 1785192000997,
-      "size": 11781
+      "lastModified": 1785808775352,
+      "size": 12648
     },
     {
       "url": "tema-contenido_desktop.css",
@@ -435,6 +570,11 @@
       "url": "tema-especial_sonido_normal_sonido_nasal_desktop.css",
       "lastModified": 1784642579720,
       "size": 4327
+    },
+    {
+      "url": "tema-frases.css",
+      "lastModified": 1785844696480,
+      "size": 27098
     },
     {
       "url": "tema-generador.css",
@@ -512,6 +652,16 @@
       "size": 2286
     },
     {
+      "url": "tema-leccion_palabra_fin.css",
+      "lastModified": 1785701263998,
+      "size": 1908
+    },
+    {
+      "url": "tema-leccion_palabra_fin_desktop.css",
+      "lastModified": 1785604626054,
+      "size": 1796
+    },
+    {
       "url": "tema-leccion_palabra_intro.css",
       "lastModified": 1783881305511,
       "size": 5782
@@ -523,12 +673,12 @@
     },
     {
       "url": "tema-leccion_pensarEnGUJ.css",
-      "lastModified": 1785380556409,
-      "size": 5236
+      "lastModified": 1785722743682,
+      "size": 5238
     },
     {
       "url": "tema-leccion_pensarEnGUJ_desktop.css",
-      "lastModified": 1785381130648,
+      "lastModified": 1785722755319,
       "size": 2777
     },
     {
@@ -613,13 +763,13 @@
     },
     {
       "url": "tema-video-interactivo.css",
-      "lastModified": 1784558748094,
-      "size": 11472
+      "lastModified": 1788972048006,
+      "size": 11724
     },
     {
       "url": "tema-video-interactivo_desktop.css",
-      "lastModified": 1784563284269,
-      "size": 5439
+      "lastModified": 1788971543046,
+      "size": 5675
     },
     {
       "url": "tema-video-jw.css",
@@ -633,13 +783,13 @@
     },
     {
       "url": "tema-video.css",
-      "lastModified": 1783719708818,
-      "size": 11339
+      "lastModified": 1788972044658,
+      "size": 11522
     },
     {
       "url": "tema-video_desktop.css",
-      "lastModified": 1784560056364,
-      "size": 3896
+      "lastModified": 1788971541376,
+      "size": 4163
     },
     {
       "url": "video.html",
@@ -648,8 +798,8 @@
     },
     {
       "url": "video.js",
-      "lastModified": 1784375967949,
-      "size": 22088
+      "lastModified": 1788972101113,
+      "size": 23522
     },
     {
       "url": "video_interactivo.html",
@@ -658,8 +808,8 @@
     },
     {
       "url": "video_interactivo.js",
-      "lastModified": 1785286783336,
-      "size": 25798
+      "lastModified": 1788972116889,
+      "size": 26556
     },
     {
       "url": "video_jw.html",
