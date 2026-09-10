@@ -33,8 +33,9 @@
         {
           "numero": 3,
           "titulo": "નમસ્તે — hola (para hindúes)",
-          "sub_html": "consonantes: <strong>ન ત</strong><br>conjuntiva:  <strong>સ્ + ત = સ્ત</strong> (se combinan)",
-          "estado": "proxima"
+          "sub_html": "consonantes: <strong>ન ત</strong><br>vocales independientes: <strong>ઇ ઈ</strong><br>vocales abreviadas (matras): <strong>િ ી</strong><br>conjuntiva: <strong>સ્ + ત = સ્ત</strong> (se combinan)",
+          "estado": "proxima",
+          "codigo_leccion": "1.1.3"
         }
       ]
     }
