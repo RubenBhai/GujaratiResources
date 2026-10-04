@@ -305,20 +305,44 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
   .wrap { padding: 0; max-width: 100%; height: 100vh; }
   
   .escena {
-    position: fixed; 
-    top: 0; left: 0; 
-    width: 100vw; 
-    height: 100vh !important; 
-    border-radius: 0; 
-    border: none; 
-    padding: 20px 5%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* El alto manda y el ancho lo pone la proporcion real de la imagen
+       (--escena-ratio, que escribe video.js). Asi el marco tiene la misma
+       forma que la foto: no se recorta nada y no se deforma. */
+    height: 100vh !important;
+    width: auto !important;
+    max-width: 100vw;
+    aspect-ratio: var(--escena-ratio, 16 / 9);
+    border-radius: 0;
+    border: none;
+    padding: 20px 4%;
     z-index: 10;
-    align-items: flex-end; 
-    justify-content: space-between; 
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
   }
-  
-  .bg-escena { border-radius: 0; opacity: 0.4; }
-  .bg-escena.bg-capa-b.activa { opacity: 0.4; }
+
+  /* Sin transparencia: la imagen se ve entera y a todo color. */
+  .bg-escena { border-radius: 0; opacity: 1; }
+  .bg-escena.bg-capa-b.activa { opacity: 1; }
+
+  /* Velo oscuro solo en la parte baja, donde van las burbujas, para que el
+     texto se lea sin apagar la foto. Encima del fondo (z-index 0) y debajo
+     de las burbujas (z-index 1). */
+  .escena::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+      rgba(44,36,32,0.80) 0%,
+      rgba(44,36,32,0.38) 45%,
+      rgba(44,36,32,0.05) 75%);
+    z-index: 0;
+    pointer-events: none;
+  }
   
   .burbuja { 
     max-width: 50%; 
