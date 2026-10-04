@@ -325,24 +325,9 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     overflow: hidden;
   }
 
-  /* Sin transparencia: la imagen se ve entera y a todo color. */
+  /* Sin transparencia ni velos: la imagen se ve entera y a todo color. */
   .bg-escena { border-radius: 0; opacity: 1; }
   .bg-escena.bg-capa-b.activa { opacity: 1; }
-
-  /* Velo oscuro solo en la parte baja, donde van las burbujas, para que el
-     texto se lea sin apagar la foto. Encima del fondo (z-index 0) y debajo
-     de las burbujas (z-index 1). */
-  .escena::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top,
-      rgba(44,36,32,0.80) 0%,
-      rgba(44,36,32,0.38) 45%,
-      rgba(44,36,32,0.05) 75%);
-    z-index: 0;
-    pointer-events: none;
-  }
   
   .burbuja { 
     max-width: 50%; 
