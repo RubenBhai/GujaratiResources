@@ -9,6 +9,11 @@
       "codigo": "1.1.2",
       "titulo": "Tus primeras palabras 2do",
       "manifiesto": "data/1_1_2/assets_1_1_2_versionado.json"
+    },
+    {
+      "codigo": "1.1.3",
+      "titulo": "Tus primeras palabras 3ro",
+      "manifiesto": "data/1_1_3/assets_1_1_3_versionado.json"
     }
   ]
 }
