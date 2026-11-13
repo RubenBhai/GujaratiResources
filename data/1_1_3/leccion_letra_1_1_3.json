@@ -1,0 +1,30 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.1.3",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.1",
+  "letras": [
+    {
+      "consonante": "ન",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">na</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">na</span>da</strong>'",
+      "audio": "audios/clase_1_1/audio_alfa_m_na.mp3",
+      "reto_flash_json": "Leccion_1_1_3_c1",
+      "plana": "leccion_plana.html?leccion=1.1.3&item=1"
+    },
+    {
+      "consonante": "ત",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ta</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">ta</span>za</strong>', con la punta de la lengua tocando los dientes de arriba y sin soltar aire",
+      "audio": "audios/clase_1_1/audio_alfa_m_ta.mp3",
+      "reto_flash_json": "Leccion_1_1_3_c2",
+      "plana": "leccion_plana.html?leccion=1.1.3&item=2"
+    },
+    {
+      "consonante": "શ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">sha</strong>, con la 'sh' que usamos para pedir silencio: '<strong class=\"det-p\"><span class=\"det-s\">sh</span></strong>'. No es la 's' de <span class=\"gu\">સ</span>: la lengua va más atrás",
+      "audio": "audios/clase_1_1/audio_alfa_m_sha.mp3",
+      "reto_flash_json": "Leccion_1_1_3_c3",
+      "plana": "leccion_plana.html?leccion=1.1.3&item=3",
+      "nota_especial": "especial_s_vs_sh.html"
+    }
+  ]
+}

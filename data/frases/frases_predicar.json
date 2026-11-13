@@ -1,0 +1,72 @@
+{
+  "categoria": "Frases para predicar",
+  "descripcion": "Frases básicas para iniciar y sostener una conversación al predicar.",
+  "frases": [
+    {
+      "id": "pred-01",
+      "gu": "આજે અમે તમને એક સરસ ઈશ્વરનો સાંદેશો લઈ આવીએ છીએ",
+      "rom": "…",
+      "es": "Hoy nosotros traemos a usted un hermoso mensaje de Dios",
+      "audio": "audio/frases/predicar/pred-01.mp3",
+      "leccion_sugerida": "1.2.1",
+      "bloques": [
+        { "id": "1", "orden": "1",  "gu": "આજે",             "rom": "…", "es": "hoy",             "audio": "audio/frases/predicar/pred-01-b1.mp3" },
+        { "id": "2", "orden": "2",  "gu": "અમે",             "rom": "…", "es": "nosotros",        "audio": "audio/frases/predicar/pred-01-b2.mp3" },
+        { "id": "3", "orden": "7",  "gu": "તમને",            "rom": "…", "es": "a usted",         "audio": "audio/frases/predicar/pred-01-b3.mp3" },
+        { "id": "4", "orden": "4",  "gu": "એક",              "rom": "…", "es": "un",              "audio": "audio/frases/predicar/pred-01-b4.mp3" },
+        { "id": "5", "orden": "5",  "gu": "સરસ",             "rom": "…", "es": "excelente",         "audio": "audio/frases/predicar/pred-01-b5.mp3" },
+        { "id": "6", "orden": "6",  "gu": "ઈશ્વરનો સાંદેશો",  "rom": "…", "es": "mensaje de Dios", "audio": "audio/frases/predicar/pred-01-b6.mp3", "img": "img/frases/predicar/mensaje_dios.jpg" },
+        { "id": "7", "orden": "3",  "gu": "લઈ આવીએ છીએ",     "rom": "…", "es": "traemos",         "audio": "audio/frases/predicar/pred-01-b7.mp3", "img": "img/frases/predicar/traer.jpg" }
+      ],
+      "sustituciones": [
+        { "id": "3", "s_id": "1", "gu": "તને",             "rom": "…", "es": "a ti",         "audio": "audio/frases/predicar/pred-01-b2-s1.mp3" },
+        { "id": "3", "s_id": "2", "gu": "તમારા પતિને",             "rom": "…", "es": "a su esposo",         "audio": "audio/frases/predicar/pred-01-b2-s2.mp3" },
+        { "id": "3", "s_id": "3", "gu": "તમારી પત્નીને",             "rom": "…", "es": "a su esposa",         "audio": "audio/frases/predicar/pred-01-b2-s3.mp3" },
+        { "id": "6", "s_id": "1", "gu": "સમાચાર",  "rom": "…", "es": "noticias", "audio": "audio/frases/predicar/pred-01-b6-s1.mp3", "img": "img/frases/predicar/noticias.jpg" },
+        { "id": "6", "s_id": "2", "gu": "ખુશખબર",  "rom": "…", "es": "buenas noticias", "audio": "audio/frases/predicar/pred-01-b6-s2.mp3", "img": "img/frases/predicar/buenas_noticias.jpg" }
+      ]
+    },
+    {
+      "id": "pred-02",
+      "gu": "મારું નામ રુૂબેન છે.",
+      "rom": "…",
+      "es": "Me llamo Rubén.",
+      "audio": "audio/frases/predicar/pred-02.mp3",
+      "leccion_sugerida": "1.1.2",
+      "bloques": [
+        { "id": "1", "orden": "1",  "gu": "મારું નામ", "rom": "…", "es": "mi nombre", "audio": "audio/frases/predicar/pred-02-b1.mp3" },
+        { "id": "2", "orden": "2",  "gu": "રુૂબેન છે",  "rom": "…", "es": "es Rubén",  "audio": "audio/frases/predicar/pred-02-b2.mp3" }
+      ]
+    },
+    {
+      "id": "pred-03",
+      "gu": "તમારું નામ શું છે?",
+      "rom": "…",
+      "es": "¿Cuál es su nombre?",
+      "audio": "audio/frases/predicar/pred-03.mp3",
+      "leccion_sugerida": "1.1.3",
+      "bloques": [
+        { "id": "1", "orden": "2",  "gu": "તમારું નામ  શું છે?", "rom": "…", "es": "su nombre?", "audio": "audio/frases/predicar/pred-03-b1.mp3" },
+        { "id": "2", "orden": "1",  "gu": "શું છે?",  "rom": "…", "es": "¿cuál es",  "audio": "audio/frases/predicar/pred-03-b2.mp3" }
+      ]
+    },
+    {
+      "id": "pred-04",
+      "gu": "તમને મળીને આનંદ થયો",
+      "rom": "…",
+      "es": "Fue un placer conocerlo",
+      "audio": "audio/frases/predicar/pred-04.mp3",
+      "leccion_sugerida": "1.2.1",
+      "bloques": [
+        { "id": "1", "orden": "2",  "gu": "તમને મળીને", "rom": "…", "es": "conocerlo", "audio": "audio/frases/predicar/pred-04-b1.mp3" },
+        { "id": "2", "orden": "1",  "gu": "આનંદ થયો",  "rom": "…", "es": "fue un placer",  "audio": "audio/frases/predicar/pred-04-b2.mp3" }
+      ],
+      "sustituciones": [
+        { "id": "1", "s_id": "1", "orden": "2", "gu": "તને  મળીને",             "rom": "…", "es": "concerte",         "audio": "audio/frases/predicar/pred-04-b1-s1.mp3" },
+        { "id": "1", "s_id": "2", "orden": "2", "gu": "તમારા પતિને  મળીને",             "rom": "…", "es": "concocer a su esposo",         "audio": "audio/frases/predicar/pred-04-b1-s2.mp3" },
+        { "id": "1", "s_id": "3", "orden": "2", "gu": "તમારી પત્નીને  મળીને",             "rom": "…", "es": "concocer a su esposa",         "audio": "audio/frases/predicar/pred-04-b1-s3.mp3" },
+        { "id": "2", "s_id": "2", "orden": "1", "gu": "ખુશી થઈ",  "rom": "…", "es": "fue un gusto", "audio": "audio/frases/predicar/pred-04-b2-s1.mp3", "img": "img/frases/predicar/buenas_noticias.jpg" }
+      ]
+    }
+  ]
+}

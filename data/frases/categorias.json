@@ -1,0 +1,12 @@
+{
+  "titulo": "Curso de frases",
+  "descripcion": "Aprende frases para conversar en gujarati, sin pasar por el curso completo.",
+  "categorias": [
+    {
+      "set": "predicar",
+      "nombre": "Frases para predicar",
+      "descripcion": "Para iniciar y sostener una conversación al predicar.",
+      "icono": "📖"
+    }
+  ]
+}

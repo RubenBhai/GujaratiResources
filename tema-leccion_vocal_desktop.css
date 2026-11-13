@@ -8,8 +8,9 @@
   /* ── ESTRUCTURA GLOBAL DE PANTALLA DIVIDIDA ── */
   body {
     padding-bottom: 0;
-    height: 100vh;
-    overflow: hidden;
+    /* min-height (no height+overflow:hidden): en pantallas bajas (1024x600, 1280x650)
+       el contenido que no cabe debe poder alcanzarse con scroll */
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     grid-template-rows: auto 1fr;
@@ -129,10 +130,16 @@
 
   /* Ajuste responsivo de imágenes internas */
   #img-320, 
-  #img-380, 
-  #img-plana {
+  #img-380 {
     max-height: 380px !important;
     padding: 20px;
+    object-fit: contain;
+  }
+  /* Sin padding: el canvas de trazos y evaluarSegmentos() usan el tamaño de la imagen
+     como caja del dibujo; con padding la guía "Ver" y la evaluación quedaban desplazadas */
+  #img-plana {
+    max-height: 380px !important;
+    padding: 0;
     object-fit: contain;
   }
 

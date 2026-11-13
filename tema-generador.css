@@ -29,7 +29,7 @@ body {
   color: var(--paper); 
   font-family: 'Source Sans 3', sans-serif; 
   min-height: 100vh; 
-  padding-bottom: 150px; 
+  padding-bottom: 230px; /* > alto de la .barra fija (~180-200px) para que no tape la última columna */
 }
 
 .gu { 
@@ -459,4 +459,15 @@ h1 {
   color: var(--ink-soft); 
   padding: 40px 20px; 
   line-height: 1.6; 
+}
+
+/* Móvil en horizontal: la barra fija ocupaba casi la mitad de la pantalla (182 de 390px).
+   Se compacta en dos columnas (oración | botones) en vez de apilar todo. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .barra { padding: 8px 16px 10px; }
+  .barra-inner { max-width: 760px; display: grid; grid-template-columns: 1fr auto; column-gap: 14px; row-gap: 2px; align-items: center; }
+  .barra-inner > .oracion-gu, .barra-inner > .oracion-es, .barra-inner > .barra-aviso { grid-column: 1; }
+  .barra-botones { grid-column: 2; grid-row: 1 / span 3; }
+  .oracion-gu { font-size: 1.35rem; }
+  body { padding-bottom: 120px; }
 }

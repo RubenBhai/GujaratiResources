@@ -1,0 +1,133 @@
+{
+  "leccion": "1.1.3",
+  "items": [
+    {
+      "id": "palabra_1",
+      "categoria": "palabra",
+      "gujarati": "નમસ્તે",
+      "significado": "hola (saludo)",
+      "audioM": "audios/clase_1_1/audio_m_namaste.mp3",
+      "imagen": "imagenes/Clase_1_1/img_namaste_noinfo.jpg"
+    },
+    {
+      "id": "palabra_2",
+      "categoria": "palabra",
+      "gujarati": "શું",
+      "significado": "¿qué?",
+      "audioM": "audios/clase_1_1/audio_m_shu(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_shu(m)_noinfo.jpg"
+    },
+    {
+      "id": "palabra_3",
+      "categoria": "palabra",
+      "gujarati": "નામ",
+      "significado": "nombre",
+      "audioM": "audios/clase_1_1/audio_m_naam.mp3",
+      "imagen": "imagenes/Clase_1_1/img_naam_noinfo.jpg"
+    },
+    {
+      "id": "palabra_4",
+      "categoria": "palabra",
+      "gujarati": "રસ્તો",
+      "significado": "camino",
+      "audioM": "audios/clase_1_1/audio_m_rasto.mp3",
+      "imagen": "imagenes/Clase_1_1/img_rasto_noinfo.jpg"
+    },
+    {
+      "id": "palabra_5",
+      "categoria": "palabra",
+      "gujarati": "શહેર",
+      "significado": "ciudad",
+      "audioM": "audios/clase_1_1/audio_m_shaher.mp3",
+      "imagen": "imagenes/Clase_1_1/img_shaher_noinfo.jpg"
+    },
+    {
+      "id": "palabra_6",
+      "categoria": "palabra",
+      "gujarati": "મશીન",
+      "significado": "máquina",
+      "audioM": "audios/clase_1_1/audio_m_mashiin.mp3",
+      "imagen": "imagenes/Clase_1_1/img_mashiin_noinfo.jpg"
+    },
+    {
+      "id": "palabra_7",
+      "categoria": "palabra",
+      "gujarati": "નાક",
+      "significado": "nariz",
+      "audioM": "audios/clase_1_1/audio_m_naak.mp3",
+      "imagen": "imagenes/Clase_1_1/img_naak_noinfo.jpg"
+    },
+    {
+      "id": "palabra_8",
+      "categoria": "palabra",
+      "gujarati": "કાન",
+      "significado": "oreja",
+      "audioM": "audios/clase_1_1/audio_m_kaan.mp3",
+      "imagen": "imagenes/Clase_1_1/img_kaan_noinfo.jpg"
+    },
+    {
+      "id": "palabra_9",
+      "categoria": "palabra",
+      "gujarati": "રાત",
+      "significado": "noche",
+      "audioM": "audios/clase_1_1/audio_m_raat.mp3",
+      "imagen": "imagenes/Clase_1_1/img_raat_noinfo.jpg"
+    },
+    {
+      "id": "palabra_10",
+      "categoria": "palabra",
+      "gujarati": "સોનું",
+      "significado": "oro",
+      "audioM": "audios/clase_1_1/audio_m_sonu(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_sonu(m)_noinfo.jpg"
+    },
+    {
+      "id": "palabra_11",
+      "categoria": "palabra",
+      "gujarati": "માતા",
+      "significado": "madre",
+      "audioM": "audios/clase_1_1/audio_m_maataa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_maataa_noinfo.jpg"
+    },
+    {
+      "id": "palabra_12",
+      "categoria": "palabra",
+      "gujarati": "છોકરી",
+      "significado": "niña / hija",
+      "audioM": "audios/clase_1_1/audio_m_chokrii.mp3",
+      "imagen": "imagenes/Clase_1_1/img_chokrii_noinfo.jpg"
+    },
+    {
+      "id": "palabra_13",
+      "categoria": "palabra",
+      "gujarati": "નોકરી",
+      "significado": "empleo, trabajo",
+      "audioM": "audios/clase_1_1/audio_m_nokrii.mp3",
+      "imagen": "imagenes/Clase_1_1/img_nokrii_noinfo.jpg"
+    },
+    {
+      "id": "palabra_14",
+      "categoria": "palabra",
+      "gujarati": "શરીર",
+      "significado": "cuerpo",
+      "audioM": "audios/clase_1_1/audio_m_shariir.mp3",
+      "imagen": "imagenes/Clase_1_1/img_shariir_noinfo.jpg"
+    },
+    {
+      "id": "palabra_15",
+      "categoria": "palabra",
+      "gujarati": "શાંતિ",
+      "significado": "paz",
+      "audioM": "audios/clase_1_1/audio_m_shaa(m)ti.mp3",
+      "imagen": "imagenes/Clase_1_1/img_shaa(m)ti_noinfo.jpg"
+    },
+    {
+      "id": "palabra_16",
+      "categoria": "palabra",
+      "gujarati": "મન",
+      "significado": "mente",
+      "audioM": "audios/clase_1_1/audio_m_man.mp3",
+      "imagen": "imagenes/Clase_1_1/img_man_noinfo.jpg"
+    }
+  ]
+}

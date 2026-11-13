@@ -166,8 +166,22 @@
   #btn-verificar-n3 { grid-area: btn; max-width: 380px; align-self: start; }
   #n3-lista { grid-area: list; height: auto; max-height: 65vh; overflow-y: auto; padding-right: 8px; }
 
-  /* ── NIVELES 4 Y 5: INTEGRACIÓN DE VIDEO MULTIMEDIA (CINEMATIC VIEW) ── */
-  #s-n4.active,
+  /* ── NIVEL 4 (dictado, sin video): columna centrada como en móvil.
+     Antes compartía la rejilla de video y repartía los botones entre columnas. ── */
+  #s-n4.active { display: flex; max-width: 720px; margin: 0 auto; gap: 16px; }
+  #s-n4.active h2 { text-align: center; }
+
+  /* ── NIVEL 6 (dictado backwards): misma columna centrada que N4.
+     Sin esta regla heredaba gap:0 y botones al ancho completo del .wrap. ── */
+  #s-n6.active { display: flex; max-width: 720px; margin: 0 auto; gap: 16px; }
+  #s-n6.active h2 { text-align: center; }
+
+  /* Botón "← Menú de niveles" añadido a N1–N5: en las rejillas va bajo los botones de la izquierda */
+  #s-n1 > .btn-sec, #s-n2 > .btn-sec { grid-column: 1; grid-row: 7; max-width: 400px; justify-self: start; }
+  #s-n3 > .btn-sec { grid-column: 1; grid-row: 5; max-width: 380px; justify-self: start; }
+  #s-n5 > .btn-sec { grid-column: 2; }
+
+  /* ── NIVEL 5: INTEGRACIÓN DE VIDEO MULTIMEDIA (CINEMATIC VIEW) ── */
   #s-n5.active {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;

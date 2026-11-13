@@ -20,8 +20,8 @@ function ejecutarEfectoVictoria() {
   var sello = document.createElement('div');
   sello.textContent = '¡APROBADO!';
   sello.style.cssText =
-    'font-family:"Fraunces",serif; font-size:2.6rem; font-weight:700; letter-spacing:2px; ' +
-    'color:#A8362A; border:6px solid #A8362A; border-radius:14px; padding:14px 34px; ' +
+    'font-family:"Fraunces",serif; font-size:clamp(1.6rem, 9vw, 2.6rem); font-weight:700; letter-spacing:2px; ' +
+    'color:#A8362A; border:6px solid #A8362A; border-radius:14px; padding:12px clamp(14px, 5vw, 34px); ' +
     'box-shadow:0 0 0 3px rgba(168,54,42,0.15); text-transform:uppercase; ' +
     'animation:efvSelloGolpe 0.7s cubic-bezier(.2,1.2,.3,1) forwards;';
   overlay.appendChild(sello);

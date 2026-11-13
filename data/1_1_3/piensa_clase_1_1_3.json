@@ -1,0 +1,136 @@
+{
+  "leccion": "1.1.3",
+  "titulo": "¡A pensar!",
+  "intro": "Escucha, lee o mira, y responde. Entiende lo que pasa y elige la respuesta correcta.",
+  "actividades": [
+    {
+      "id": "a1",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "આ તમારો છોકરો છે?"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa esta pregunta?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "¿este es su hijo?",
+              "correcta": true
+            },
+            {
+              "texto": "¿esta es su hija?"
+            },
+            {
+              "texto": "¿cómo se llama su hijo?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "મારો છોકરો"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Cámbiala para decir «mi hija»",
+          "modo": "opcion",
+          "opciones_idioma": "gu",
+          "opciones": [
+            {
+              "texto": "મારી છોકરી",
+              "correcta": true
+            },
+            {
+              "texto": "મારો છોકરી"
+            },
+            {
+              "texto": "મારું છોકરી"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a3",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "રોહન"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Rohan es un niño. ¿Cómo se dice «su edad»?",
+          "modo": "opcion",
+          "opciones_idioma": "gu",
+          "opciones": [
+            {
+              "texto": "તેની ઉંમર",
+              "correcta": true
+            },
+            {
+              "texto": "તેનો ઉંમર"
+            },
+            {
+              "texto": "તેનું ઉંમર"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_naak.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Cuál es?",
+          "modo": "imagen",
+          "opciones": [
+            {
+              "imagen": "imagenes/Clase_1_1/img_naak_noinfo.jpg",
+              "correcta": true
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_kaan_noinfo.jpg"
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_raat_noinfo.jpg"
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_shaher_noinfo.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a5",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_aa_maarii_chokrii_chhe.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Ordena lo que escuchaste",
+          "modo": "ordenar",
+          "respuesta": [
+            "આ",
+            "મારી",
+            "છોકરી",
+            "છે"
+          ],
+          "distractores": [
+            "મારો",
+            "છોકરો"
+          ]
+        }
+      ]
+    }
+  ]
+}

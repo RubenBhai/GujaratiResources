@@ -35,6 +35,7 @@ let actActual    = null;
 let aciertos      = 0;
 let totalPregs    = 0;
 let falloEnEsta   = false;
+let resuelta      = false;   /* evita que un doble toque avance dos veces */
 
 let avanceActual  = function(){};   /* qué hacer cuando se resuelve la pregunta actual */
 
@@ -108,7 +109,7 @@ function montarEstimuloAudio(est){
   zEstimulo.innerHTML =
     '<span class="estimulo-label">Escucha</span>' +
     '<div class="estimulo-audio">' +
-      '<button class="btn-audio" id="est-audio-btn">🔊</button>' +
+      '<button class="btn-audio" id="est-audio-btn" aria-label="Escuchar">🔊</button>' +
     '</div>';
   var btn = document.getElementById('est-audio-btn');
   btn.onclick = function(){ reproducirAudio(est.audio, btn); };
@@ -220,6 +221,7 @@ function limpiarZonaPregunta(){
 function mostrarPregunta(preg, avanceFn){
   avanceActual = avanceFn || function(){};
   falloEnEsta  = false;
+  resuelta     = false;
   totalPregs++;
   limpiarZonaPregunta();
   elEnunciado.textContent = preg.enunciado || '';
@@ -231,6 +233,8 @@ function mostrarPregunta(preg, avanceFn){
 
 /* ── Resolución compartida ── */
 function acierto(traduccionGu){
+  if(resuelta) return;
+  resuelta = true;
   if(!falloEnEsta) aciertos++;
   elFeedback.className   = 'feedback ok';
   elFeedback.innerHTML   = traduccionGu
@@ -276,6 +280,7 @@ function widgetOrdenar(preg){
 }
 
 function ordenarTocar(chip, gu){
+  if(resuelta) return;
   chip.classList.add('used');
   construido.push({ gu: gu, idx: chip.dataset.idx });
   ordenarRender();
@@ -297,6 +302,7 @@ function ordenarRender(){
 }
 
 function ordenarQuitar(i){
+  if(resuelta) return;
   var item = construido[i];
   var chip = document.querySelector('#word-bank .word-chip[data-idx="' + item.idx + '"]');
   if(chip) chip.classList.remove('used');
@@ -305,13 +311,14 @@ function ordenarQuitar(i){
 }
 
 function ordenarLimpiar(){
+  if(resuelta) return;   /* el setTimeout del fallo no debe borrar una oración ya acertada */
   construido = [];
   document.querySelectorAll('#word-bank .word-chip').forEach(function(c){ c.classList.remove('used'); });
   ordenarRender();
 }
 
 function ordenarComprobar(preg){
-  if(construido.length === 0) return;
+  if(resuelta || construido.length === 0) return;
   var intento  = construido.map(function(x){ return x.gu; });
   var correcto = preg.respuesta || [];
   var ok = intento.length === correcto.length && intento.every(function(g, i){ return g === correcto[i]; });
@@ -324,9 +331,10 @@ function widgetImagen(preg){
   var opciones = shuffle((preg.opciones || []).slice());
   var cont = document.createElement('div');
   cont.className = 'options';
-  opciones.forEach(function(op){
+  opciones.forEach(function(op, i){
     var btn = document.createElement('button');
     btn.className = 'opt-btn';
+    btn.setAttribute('aria-label', 'Opción ' + (i + 1));   /* alt vacío a propósito: no revelar la respuesta */
     btn.innerHTML = '<img class="opt-img" src="' + (op.imagen || '') + '" alt="">';
     btn.onclick   = function(){ opcionElegir(btn, !!op.correcta); };
     cont.appendChild(btn);
@@ -398,9 +406,10 @@ fetch(JSON_URL)
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

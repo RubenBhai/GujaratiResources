@@ -315,6 +315,7 @@ function posicionarResaltado(coords){
 }
 
 function posicionarBurbuja(burbujaEl, coords){
+  burbujaEl._coords = coords || null;   // para recolocarla al rotar/redimensionar en pausa
   if(!coords){
     burbujaEl.style.position = '';
     burbujaEl.style.left     = '';
@@ -398,7 +399,13 @@ function reproducir(){
 
   audio.src         = DATA.audio;
   audio.currentTime = 0;
-  audio.play().catch(function(){ alert('No se pudo reproducir el audio.'); });
+  audio.play().catch(function(){
+    // Si no arranca (404, sin red, iOS), no dejar ▶ deshabilitado para siempre
+    cancelAnimationFrame(rafId);
+    document.getElementById('btn-play').disabled = false;
+    document.getElementById('btn-pause').style.display = 'none';
+    alert('No se pudo reproducir el audio.');
+  });
 
   document.getElementById('btn-play').disabled = true;
   var btnP          = document.getElementById('btn-pause');
@@ -411,7 +418,7 @@ function reproducir(){
 function togglePausa(){
   var btnP = document.getElementById('btn-pause');
   if(audio.paused){
-    audio.play();
+    audio.play().catch(function(){ btnP.textContent = '▶'; cancelAnimationFrame(rafId); });
     btnP.textContent = '⏸';
     seguir();
   } else {
@@ -517,7 +524,11 @@ audio.addEventListener('ended', function(){
 var _resizeTimer = null;
 function _onResize(){
   if(_resizeTimer) clearTimeout(_resizeTimer);
-  _resizeTimer = setTimeout(reposicionarSprites, 80);
+  _resizeTimer = setTimeout(function(){
+    reposicionarSprites();
+    // Las burbujas con Burbuja_Posicion van en píxeles: el RAF no corre en pausa
+    burbujas.forEach(function(b){ if(b._coords && b.classList.contains('visible')) posicionarBurbuja(b, b._coords); });
+  }, 80);
 }
 window.addEventListener('resize', _onResize);
 window.addEventListener('orientationchange', _onResize);

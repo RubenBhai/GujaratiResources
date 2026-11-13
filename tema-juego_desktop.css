@@ -39,13 +39,6 @@
     gap: 0; /* Manejado por los márgenes internos del grid */
   }
 
-  .badge-row { grid-area: badge; justify-content: flex-start; }
-  #screen-a h2 { grid-area: title; text-align: left; font-size: 2.2rem; }
-  #screen-a .subtitle { grid-area: sub; text-align: left; max-width: 100%; }
-  #screen-a .repaso-card { grid-area: card; max-width: 440px; justify-self: center; }
-  .nav-row-320 { grid-area: nav; max-width: 100%; }
-  #screen-a .btn-sec-320 { grid-area: sec; max-width: 100%; }
-
 
   /* ── FASE B: LECTURA (Split Layout con Enfoque Visual) ── */
   #screen-b .wrap {

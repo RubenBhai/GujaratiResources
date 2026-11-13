@@ -15,7 +15,6 @@
   --naranja-acento: #D4845A;
   --naranja-claro:  #F0C8A0;
   --verde-sabio:    #6B8F71;
-  --rojo-ladrillo:  #A0524F;
   --borde-tarjeta:  #E0D3C0;
   --sombra-suave:   0 4px 20px rgba(60, 40, 20, 0.06);
   --sombra-tarjeta: 0 6px 24px rgba(60, 40, 20, 0.08);
@@ -41,6 +40,7 @@ body {
     radial-gradient(ellipse at bottom right, rgba(160, 82, 79, 0.05),  transparent 60%);
   animation: fondoVivo 8s ease-in-out infinite alternate;
   min-height: 100vh;
+  min-height: 100dvh;   /* iOS: 100vh incluye la barra del navegador; 100vh queda de respaldo */
 }
 
 @keyframes fondoVivo {
@@ -196,7 +196,8 @@ h1 {
 .table-wrap td strong        { color: var(--naranja-acento); }
 .table-wrap tr:last-child td { border-bottom: none; }
 
-.gu-cell {
+/* Prefijo .table-wrap td: sin él, `.table-wrap td` (más específica) pisaba tamaño y color */
+.table-wrap td.gu-cell {
   font-family: 'Noto Serif Gujarati', serif;
   font-size: 2.3rem;
   color: var(--marron-oscuro);
@@ -204,10 +205,10 @@ h1 {
 }
 
 /* Tipos de celda de las tablas de intro (sustituyen el <style> inline del HTML) */
-.celda-gu     { font-size: 2.6rem; text-align: center; }
-.celda-acento { text-align: center; font-size: 1.4rem; color: var(--naranja-acento); font-weight: 600; }
-.celda-texto  { text-align: center; font-size: 1.2rem; }
-.celda-matra  { font-size: 2.2rem; text-align: center; color: var(--verde-sabio); }
+.table-wrap td.celda-gu     { font-size: 2.6rem; text-align: center; }
+.table-wrap td.celda-acento { text-align: center; font-size: 1.4rem; color: var(--naranja-acento); font-weight: 600; }
+.table-wrap td.celda-texto  { text-align: center; font-size: 1.2rem; }
+.table-wrap td.celda-matra  { font-size: 2.2rem; text-align: center; color: var(--verde-sabio); }
 
 /* ── BOTONES DE PANTALLA (btn-action) ── */
 .btn-action {
@@ -276,8 +277,20 @@ h1 {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 480px) {
-  body { animation: none; padding-bottom: 30px; }
+  /* padding-bottom: deja sitio al botón flotante de música para que no tape el botón principal */
+  body { animation: none; padding-bottom: 84px; }
+  .nav-bar { margin: 10px 10px 0; padding: 6px; gap: 2px; }
+  .nav-btn { padding: 10px 10px; letter-spacing: 0; min-width: 44px; justify-content: center; }
+  /* Tabla de 4 columnas ("Resumen"): que quepa a 360-390px; a 320px, scroll interno en vez de recorte */
+  .table-wrap { overflow-x: auto; }
+  .table-wrap th { padding: 10px 8px; letter-spacing: 0.03em; }
+  .table-wrap td { padding: 12px 8px; }
   .wrap { padding: 20px 14px 30px; gap: 18px; }
   h1 { font-size: 2rem; }
   #musicToggle { bottom: 18px; right: 14px; }
+}
+
+/* Pantallas muy estrechas (320px): un poco menos de padding para que quepan los 4 botones */
+@media (max-width: 340px) {
+  .nav-btn { padding: 10px 6px; }
 }

@@ -1,51 +1,57 @@
 {
   "leccion": "1.1.2",
   "home": "leccion_intro.html?leccion=1.1.2",
-
   "badge": "Canta en gujarati",
   "titulo": "Aprende cantando",
-  "lead": "Cantar fija las palabras como ninguna otra cosa. Elige cómo quieres practicar hoy.",
-
+  "lead": "Canto 163: કિરણ તારું અડ્યું આંખને — «Tu rayo tocó mis ojos». No entenderás toda la letra, y no hace falta: busca las palabras que ya conoces.",
   "antes": {
-    "titulo": "Escucha estas en la canción",
+    "titulo": "Busca estas en la letra",
     "palabras": [
-      { "gu": "સારું છે", "es": "está bien" },
-      { "gu": "હું",       "es": "yo" },
-      { "gu": "મારું",     "es": "mío" },
-      { "gu": "સરસ",       "es": "excelente" }
+      {
+        "gu": "હું",
+        "es": "yo"
+      },
+      {
+        "gu": "છું",
+        "es": "soy / estoy"
+      },
+      {
+        "gu": "મારું",
+        "es": "mío"
+      },
+      {
+        "gu": "અહેસાસ",
+        "es": "sensación"
+      }
     ]
   },
-
   "escuchar": {
-    "titulo": "Escucha y sigue",
-    "descripcion": "Suena la música y la voz del cantante, con la letra en pantalla. Escucha cómo suena cada palabra y síguela con la vista.",
-    "boton": "🎧 Escuchar con voz",
+    "titulo": "Primero, lee con la música",
+    "descripcion": "Suena la música con la letra en pantalla. Esta vez no cantes: sigue la letra con la vista y busca las palabras de la lección.",
+    "boton": "📖 Leer con la música",
     "aviso": "Se abre en jw.org, en otra pestaña",
-    "etiqueta": "Si escuchaste",
-    "url": ""
+    "etiqueta": "Si leíste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૬૩-કિરણ-તારું-અડ્યું-આંખને/?media=sjjm"
   },
-
   "cantar": {
-    "titulo": "Canta tú",
-    "descripcion": "Suena solo la música, con la letra en pantalla. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
-    "boton": "🎤 Cantar tú",
+    "titulo": "Ahora, canta tú",
+    "descripcion": "La misma música y la misma letra. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
+    "boton": "🎤 Cantar",
     "aviso": "Se abre en jw.org, en otra pestaña",
     "etiqueta": "Si cantaste",
-    "url": ""
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૬૩-કિરણ-તારું-અડ્યું-આંખને/?media=sjjm"
   },
-
   "despues": {
     "titulo": "Después de cantar",
     "escuchar": [
-      "¿Reconociste <b class=\"gu\">સારું છે</b> mientras el cantante la decía?",
-      "¿Qué palabra te costó más seguir con la vista?"
+      "¿Encontraste <b class=\"gu\">અહેસાસ</b> en el coro? Es una de las palabras de esta lección.",
+      "En la primera estrofa está <b class=\"gu\">હું તારી સાથે છું</b>: «estoy contigo». ¿La viste?"
     ],
     "cantar": [
       "¿Pudiste leer al ritmo de la música?",
-      "¿Qué palabra sentiste más natural al cantarla?"
+      "¿Cuántas veces cantaste <b class=\"gu\">હું</b>?"
     ]
   },
-
   "continuar": "leccion_pensarEnGUJ.html?leccion=1.1.2",
   "continuar_caption": "Continuar →"
 }

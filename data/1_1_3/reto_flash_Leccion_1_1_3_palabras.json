@@ -1,0 +1,124 @@
+{
+  "leccion": "1.1.3",
+  "titulo": "Reto relámpago de palabras",
+  "badge": "Palabras",
+  "unidad": "palabras",
+  "estilo": "palabras",
+  "columnas": 2,
+  "espera_ms": 2500,
+  "vueltas": 3,
+  "letters": [
+    {
+      "letter": "નમસ્તે",
+      "answer": "namaste",
+      "significado": "hola (saludo)",
+      "audio": "audios/clase_1_1/audio_m_namaste.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_namaste.mp3"
+    },
+    {
+      "letter": "શું",
+      "answer": "shuⁿ",
+      "significado": "¿qué?",
+      "audio": "audios/clase_1_1/audio_m_shu(m).mp3",
+      "audio_h": "audios/clase_1_1/audio_h_shu(m).mp3"
+    },
+    {
+      "letter": "નામ",
+      "answer": "naam",
+      "significado": "nombre",
+      "audio": "audios/clase_1_1/audio_m_naam.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_naam.mp3"
+    },
+    {
+      "letter": "રસ્તો",
+      "answer": "rasto",
+      "significado": "camino",
+      "audio": "audios/clase_1_1/audio_m_rasto.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_rasto.mp3"
+    },
+    {
+      "letter": "શહેર",
+      "answer": "shaher",
+      "significado": "ciudad",
+      "audio": "audios/clase_1_1/audio_m_shaher.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_shaher.mp3"
+    },
+    {
+      "letter": "મશીન",
+      "answer": "mashiin",
+      "significado": "máquina",
+      "audio": "audios/clase_1_1/audio_m_mashiin.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_mashiin.mp3"
+    },
+    {
+      "letter": "નાક",
+      "answer": "naak",
+      "significado": "nariz",
+      "audio": "audios/clase_1_1/audio_m_naak.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_naak.mp3"
+    },
+    {
+      "letter": "કાન",
+      "answer": "kaan",
+      "significado": "oreja",
+      "audio": "audios/clase_1_1/audio_m_kaan.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_kaan.mp3"
+    },
+    {
+      "letter": "રાત",
+      "answer": "raat",
+      "significado": "noche",
+      "audio": "audios/clase_1_1/audio_m_raat.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_raat.mp3"
+    },
+    {
+      "letter": "સોનું",
+      "answer": "sonuⁿ",
+      "significado": "oro",
+      "audio": "audios/clase_1_1/audio_m_sonu(m).mp3",
+      "audio_h": "audios/clase_1_1/audio_h_sonu(m).mp3"
+    },
+    {
+      "letter": "માતા",
+      "answer": "maataa",
+      "significado": "madre",
+      "audio": "audios/clase_1_1/audio_m_maataa.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_maataa.mp3"
+    },
+    {
+      "letter": "છોકરી",
+      "answer": "chokrii",
+      "significado": "niña / hija",
+      "audio": "audios/clase_1_1/audio_m_chokrii.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_chokrii.mp3"
+    },
+    {
+      "letter": "નોકરી",
+      "answer": "nokrii",
+      "significado": "empleo, trabajo",
+      "audio": "audios/clase_1_1/audio_m_nokrii.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_nokrii.mp3"
+    },
+    {
+      "letter": "શરીર",
+      "answer": "shariir",
+      "significado": "cuerpo",
+      "audio": "audios/clase_1_1/audio_m_shariir.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_shariir.mp3"
+    },
+    {
+      "letter": "શાંતિ",
+      "answer": "shaaⁿti",
+      "significado": "paz",
+      "audio": "audios/clase_1_1/audio_m_shaa(m)ti.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_shaa(m)ti.mp3"
+    },
+    {
+      "letter": "મન",
+      "answer": "man",
+      "significado": "mente",
+      "audio": "audios/clase_1_1/audio_m_man.mp3",
+      "audio_h": "audios/clase_1_1/audio_h_man.mp3"
+    }
+  ]
+}

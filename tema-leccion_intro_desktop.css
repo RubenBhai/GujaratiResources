@@ -114,16 +114,19 @@
   }
 
   /* Maximización de caracteres Gujarati para lectura clara desde el monitor */
-  .gu-cell {
+  .table-wrap td.gu-cell {
     font-size: 3rem;
   }
-  .celda-gu {
+  .table-wrap td.celda-gu {
     font-size: 3.6rem;
   }
-  .celda-acento {
+  .table-wrap td.celda-acento {
     font-size: 1.6rem;
   }
-  .celda-matra {
+  .table-wrap td.celda-texto {
+    font-size: 1.3rem;
+  }
+  .table-wrap td.celda-matra {
     font-size: 2.8rem;
   }
 

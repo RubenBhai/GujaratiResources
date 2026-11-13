@@ -1,0 +1,89 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "empezar": "leccion_palabra.html?leccion=1.1.3&item=1",
+  "anterior": "leccion_vocal.html?leccion=1.1.3&item=10",
+  "frase_ejemplo": "નમસ્તે",
+  "palabras": [
+    {
+      "gujarati": "નમસ્તે",
+      "se_dice": "na-mas-te",
+      "significa": "hola (saludo)"
+    },
+    {
+      "gujarati": "શું",
+      "se_dice": "shuⁿ",
+      "significa": "¿qué?"
+    },
+    {
+      "gujarati": "નામ",
+      "se_dice": "naam",
+      "significa": "nombre"
+    },
+    {
+      "gujarati": "રસ્તો",
+      "se_dice": "ras-to",
+      "significa": "camino"
+    },
+    {
+      "gujarati": "શહેર",
+      "se_dice": "sha-her",
+      "significa": "ciudad"
+    },
+    {
+      "gujarati": "મશીન",
+      "se_dice": "ma-shiin",
+      "significa": "máquina"
+    },
+    {
+      "gujarati": "નાક",
+      "se_dice": "naak",
+      "significa": "nariz"
+    },
+    {
+      "gujarati": "કાન",
+      "se_dice": "kaan",
+      "significa": "oreja"
+    },
+    {
+      "gujarati": "રાત",
+      "se_dice": "raat",
+      "significa": "noche"
+    },
+    {
+      "gujarati": "સોનું",
+      "se_dice": "so-nuⁿ",
+      "significa": "oro"
+    },
+    {
+      "gujarati": "માતા",
+      "se_dice": "maa-taa",
+      "significa": "madre"
+    },
+    {
+      "gujarati": "છોકરી",
+      "se_dice": "cho-krii",
+      "significa": "niña / hija"
+    },
+    {
+      "gujarati": "નોકરી",
+      "se_dice": "no-krii",
+      "significa": "empleo, trabajo"
+    },
+    {
+      "gujarati": "શરીર",
+      "se_dice": "sha-riir",
+      "significa": "cuerpo"
+    },
+    {
+      "gujarati": "શાંતિ",
+      "se_dice": "shaaⁿ-ti",
+      "significa": "paz"
+    },
+    {
+      "gujarati": "મન",
+      "se_dice": "man",
+      "significa": "mente"
+    }
+  ]
+}

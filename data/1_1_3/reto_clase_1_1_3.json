@@ -1,0 +1,129 @@
+{
+  "leccion": "1.1.3",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "nivel1": {
+    "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
+    "maxSesiones": 2,
+    "texto": "નમસ્તે. મારું નામ રોશની છે. મારી ઉંમર સાત છે. રોહન નાનો છે. તેની ઉંમર છ છે.",
+    "elementos": [
+      "ન",
+      "ત",
+      "શ",
+      "ી",
+      "મારી",
+      "છે"
+    ]
+  },
+  "nivel2": {
+    "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
+    "sesiones": [
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_3_audio_1.mp3",
+        "elemento": "મારી",
+        "respuesta": 3
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_3_audio_2.mp3",
+        "elemento": "તે",
+        "respuesta": 1
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_3_audio_3.mp3",
+        "elemento": "નમસ્તે",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_3_audio_4.mp3",
+        "elemento": "રસ્તો",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_1_3_audio_5.mp3",
+        "elemento": "છે",
+        "respuesta": 3
+      }
+    ]
+  },
+  "nivel3": {
+    "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
+    "maxSesiones": 2,
+    "elementos": [
+      {
+        "gujarati": "નમસ્તે"
+      },
+      {
+        "gujarati": "તમારું નામ શું છે?"
+      },
+      {
+        "gujarati": "મારી ઉંમર સાત છે"
+      },
+      {
+        "gujarati": "આ મારી છોકરી છે"
+      }
+    ]
+  },
+  "nivel4": {
+    "instruccion": "Escucha el audio y toca las palabras en Gujarati para completar la oración.",
+    "sesiones": [
+      {
+        "audio_oracion_completa": "audios/clase_1_1/audio_m_aa_maaro_chokro_chhe.mp3",
+        "oracion_completa": "આ મારો છોકરો છે",
+        "espanol": "este es mi hijo"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/audio_m_taarii_u(m)mar_shu(m)_chhe.mp3",
+        "oracion_completa": "તારી ઉંમર શું છે?",
+        "espanol": "¿qué edad tienes?"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/audio_m_tenu(m)_naam_rohan_chhe.mp3",
+        "oracion_completa": "તેનું નામ રોહન છે",
+        "espanol": "se llama Rohan"
+      }
+    ]
+  },
+  "nivel6": {
+    "instruccion": "Escucha cada parte y repítela en voz alta. La frase irá creciendo.",
+    "oraciones": [
+      {
+        "oracion_completa": "તેનું નામ રોહન છે",
+        "espanol": "Se llama Rohan",
+        "fragmentos": [
+          {
+            "texto": "રોહન છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_3_01_frag_1.mp3"
+          },
+          {
+            "texto": "નામ રોહન છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_3_01_frag_2.mp3"
+          },
+          {
+            "texto": "તેનું નામ રોહન છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_3_01_frag_3.mp3"
+          }
+        ]
+      },
+      {
+        "oracion_completa": "મારી ઉંમર સાત છે",
+        "espanol": "Tengo siete años",
+        "fragmentos": [
+          {
+            "texto": "સાત છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_3_02_frag_1.mp3"
+          },
+          {
+            "texto": "ઉંમર સાત છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_3_02_frag_2.mp3"
+          },
+          {
+            "texto": "મારી ઉંમર સાત છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_1_3_02_frag_3.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "video_jw": true,
+  "cantar_jw": true
+}

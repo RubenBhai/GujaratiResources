@@ -2,9 +2,10 @@
 (function(){
   document.body.style.opacity    = '0';
   document.body.style.transition = 'opacity 0.5s ease';
+  // Solo la imagen: la música es preload="none" y por defecto está apagada;
+  // precargarla bajaba el mp3 entero (varios MB) en cada visita.
   var ASSETS = [
-    'imagenes/LearnGujarati_SuperInmersivo_Main.jpg',
-    'audios/musica/Index_musica_ambiente.mp3'
+    'imagenes/LearnGujarati_SuperInmersivo_Main.jpg'
   ];
   var cargados = 0, mostrado = false;
   var timeout  = setTimeout(mostrar, 3000);
@@ -64,7 +65,14 @@
         clearInterval(fadeTimer);
         if(target === 0) music.pause();
       } else {
+        var antes = music.volume;
         music.volume += diff * 0.1;
+        // iOS: volume es de solo lectura (siempre 1); si no cambia, se corta
+        // el fundido para no dejar el intervalo corriendo para siempre.
+        if(music.volume === antes){
+          clearInterval(fadeTimer);
+          if(target === 0) music.pause();
+        }
       }
     }, 50);
   }
@@ -117,9 +125,10 @@
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){
@@ -134,7 +143,7 @@
 
 /* ── Service Worker (PWA) ── */
 if('serviceWorker' in navigator){
-  window.addEventListener('load', function(){
-    navigator.serviceWorker.register('sw.js').catch(function(){});
-  });
+  // Se registra de inmediato (no en 'load'): si el alumno toca "Comenzar"
+  // antes de que termine de cargar la página, el SW quedaba sin registrar.
+  navigator.serviceWorker.register('sw.js').catch(function(){});
 }

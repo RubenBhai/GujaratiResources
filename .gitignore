@@ -1,0 +1,25 @@
+# Nunca subir (Claude, 13-nov-2026)
+recursos/
+backups/
+borrame/
+_claude/
+chats/
+Refranes/
+diccionarios/
+generador de clases/
+proyecto dialogos/
+recursos de gujarati*/
+Subir_a_GitHub_*/
+**/work/
+**/_por_revisar/
+**/_respaldo*/
+*.py
+*.ps1
+*.zip
+*.docx
+*.pdf
+*.jfif
+*saram*
+*sarvam*
+*redencial*
+.env

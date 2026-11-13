@@ -10,10 +10,17 @@ const JSON_URL    = 'data/' + _leccion + '/leccion_vocal_' + _leccion + '.json';
 document.getElementById('nav-mapa').href = 'guia_navegacion.html?leccion=' + _leccionRaw;
 
 function playSimple(url, btn, labelHtml){
+  function restaurar(){ btn.classList.remove('playing'); btn.innerHTML = labelHtml; }
   btn.classList.add('playing');
   btn.textContent = '▶ Reproduciendo...';
-  player.src = url; player.playbackRate = 1.0; player.play();
-  player.onended = function(){ btn.classList.remove('playing'); btn.innerHTML = labelHtml; };
+  player.src = url; player.playbackRate = 1.0;
+  player.onended = restaurar;
+  player.onerror = restaurar;              // si el audio no carga, el botón no se queda "Reproduciendo..."
+  player.play().catch(function(e){
+    // AbortError = otra pulsación cambió el audio: el nuevo ya está sonando, no restaurar
+    if(e && e.name === 'AbortError') return;
+    restaurar();
+  });
 }
 
 function mensajeParaPorcentaje(p){
@@ -89,7 +96,9 @@ function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfect
   var btnVer            = document.getElementById('btn-ver');
   var etiquetaResultado = document.getElementById('resultado-evaluacion');
 
+  var tokenAnimacionVer = 0;
   document.getElementById('btn-reintentar').onclick = function(){
+    tokenAnimacionVer++;                   // cancela una animación "Ver" en curso
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     trazos = []; yaEvaluado = false;
     etiquetaResultado.style.display = 'none';
@@ -124,7 +133,6 @@ function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfect
     };
 
     btnVer.style.display = '';
-    var tokenAnimacionVer = 0;
     btnVer.onclick = function(){
       document.getElementById('btn-reintentar').click();
       var seg     = evaluarSegmentos();
@@ -186,6 +194,15 @@ function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfect
 
   if(img.complete && img.naturalWidth) ajustarCanvas();
   else img.addEventListener('load', ajustarCanvas);
+
+  // Al girar el teléfono o redimensionar, la imagen cambia de tamaño: el canvas debe seguirla
+  window.addEventListener('resize', function(){
+    if(img.clientWidth && Math.round(parseFloat(canvas.style.width)) !== img.clientWidth){
+      ajustarCanvas();                     // reasignar width/height ya resetea la escala y borra el canvas
+      trazos = []; yaEvaluado = false;
+      etiquetaResultado.style.display = 'none';
+    }
+  });
 }
 
 /* ── Carga del JSON ── */
@@ -253,7 +270,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     /* ── con_matra ── */
     } else if(actual.tipo === 'con_matra'){
       document.getElementById('page-title').textContent = 'Consonantes con matra ' + actual.matra + ' · Piensa en Gujarati';
-      document.getElementById('badge').textContent = 'Las 3 consonantes con esta matra';
+      document.getElementById('badge').textContent = actual.badge || 'Las 3 consonantes con esta matra';
 
       var eqs = actual.ecuaciones || [];
       eqs.forEach(function(eq, i){
@@ -263,8 +280,21 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
           '<div class="eq-partes gu">' + eq.partes + '</div>' +
           '<div class="eq-resultado gu">' + eq.resultado + '</div>';
       });
-      document.getElementById('frame-conmatra').style.display = '';
-      document.getElementById('frame-conmatra').onclick = function(){ window.location.href = siguienteUrl; };
+      var frameEq = document.getElementById('frame-conmatra');
+      frameEq.style.display = '';
+      frameEq.onclick = function(){ window.location.href = siguienteUrl; };
+      // Palabras largas (p.ej. નમસ્તે): si alguna no cabe en su celda, pasar a la versión compacta.
+      // Se mide otra vez al cargar la fuente gujarati, que cambia los anchos.
+      function ajustarEcuaciones(){
+        if(frameEq.classList.contains('eq-compacta')) return;
+        var desborda = frameEq.scrollWidth > frameEq.clientWidth + 1;
+        frameEq.querySelectorAll('.eq-celda').forEach(function(el){
+          if(el.scrollWidth > el.clientWidth + 1) desborda = true;
+        });
+        if(desborda) frameEq.classList.add('eq-compacta');
+      }
+      ajustarEcuaciones();
+      if(document.fonts && document.fonts.ready) document.fonts.ready.then(ajustarEcuaciones);
 
 
       var textoBase = '&#128266; ' + actual.texto_boton;
@@ -277,13 +307,27 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
           btnSec.innerHTML = textoBase;
           return;
         }
+        var miSeq = seqToken;
         player.src = actual.audios_secuencia[seqIdx];
-        player.playbackRate = 1.0; player.play();
-        player.onended = function(){ seqIdx++; setTimeout(reproducirSiguiente, 350); };
+        player.playbackRate = 1.0;
+        player.onended = function(){
+          seqIdx++;
+          setTimeout(function(){ if(miSeq === seqToken) reproducirSiguiente(); }, 350);
+        };
+        // Si un audio no carga, se corta la secuencia y se restaura el botón
+        // (solo si sigue siendo la secuencia vigente: un AbortError de una pulsación anterior no cuenta)
+        var fallo = function(){
+          if(miSeq !== seqToken) return;
+          seqIdx = actual.audios_secuencia.length; reproducirSiguiente();
+        };
+        player.onerror = fallo;
+        player.play().catch(function(e){ if(!(e && e.name === 'AbortError')) fallo(); });
       }
+      var seqToken = 0;                    // evita saltos si se pulsa otra vez a mitad de secuencia
       btnSec.onclick = function(){
         btnSec.classList.add('playing');
         btnSec.textContent = '▶ Reproduciendo...';
+        seqToken++;
         seqIdx = 0; reproducirSiguiente();
       };
 
@@ -329,9 +373,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

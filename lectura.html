@@ -22,12 +22,12 @@
 
   <div style="display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; width:100%;">
     <div class="controls" style="width:auto; display:flex; gap:8px;">
-      <button class="btn-play" id="btn-play" onclick="reproducir()">▶</button>
-      <button class="btn-replay" id="btn-pause" onclick="togglePausa()" style="display:none;">⏸</button>
+      <button class="btn-play" id="btn-play" onclick="reproducir()" aria-label="Reproducir la lectura">▶</button>
+      <button class="btn-replay" id="btn-pause" onclick="togglePausa()" aria-label="Pausar o continuar" style="display:none;">⏸</button>
     </div>
 
     <div class="lang-row">
-      <button class="lang-btn active" id="lang-esp" onclick="toggleIdioma('esp')" title="Mostrar/ocultar traducción">E</button>
+      <button class="lang-btn active" id="lang-esp" onclick="toggleIdioma('esp')" title="Mostrar/ocultar traducción" aria-label="Mostrar u ocultar la traducción">E</button>
       <button class="lang-btn active" id="btn-velocidad" onclick="toggleVelocidad()" title="Velocidad de reproducción">1x</button>
     </div>
   </div>

@@ -23,11 +23,33 @@ const EXCLUIR = [
   'convertir_rutas.js',    // utilidad de escritorio
   'generar_manifiesto.js', // utilidad de escritorio
   'generar_main.js',       // este mismo script
-  'recursos.txt'           // listados varios
+  'preparar_subida.js',   // ← añadir
+  'depurar_json.js',      // ← añadir
+  'arreglar_alfa.js',     // ← añadir
+  'huerfanos.js',         // ← añadir
+  'recursos.txt',          // listados varios
+  'tema-modulo.css',       // sin uso: ningún HTML lo enlaza (versión vieja de tema-contenido_modulo.css)
+  'tema-amigable.css'      // sin uso: ningún HTML lo enlaza
 ];
 
 // Archivos que SÍ son motor aunque su extensión no esté en EXT_MOTOR.
 const INCLUIR = ['cache_admin.json'];
+
+// Fuera de la raíz (o sin extensión de motor) pero necesarios sin internet:
+// JSON de módulos y del curso de frases, efectos de victoria (data/*.js).
+// version.txt NO va: solo sirve en línea y el sw.js no lo cachea (una copia
+// vieja en caché provocaba recargas de más sin conexión).
+const CARPETAS_EXTRA = [
+  ['data',        ['.json', '.js']],
+  ['data/frases', ['.json']]
+];
+const ARCHIVOS_EXTRA = [];
+
+// Imágenes de la app (iconos PWA del manifest.json, apple-touch-icon y logo).
+// Se incluyen SIEMPRE, aunque no estén en esta carpeta (la copia de código no
+// trae imágenes): en el disco del autor y en GitHub sí existen.
+const ICONOS = ['icon-512.png', 'icon-512-maskable.png', 'apple-touch-icon.png',
+                'imagenes/icon-192.png', 'imagenes/LearnGujarati_SuperInmersivo_Main.jpg'];
 
 function esMotor(nombre) {
   if (EXCLUIR.includes(nombre)) return false;
@@ -36,6 +58,18 @@ function esMotor(nombre) {
 }
 
 const archivos = fs.readdirSync('.').filter(esMotor).sort();
+
+CARPETAS_EXTRA.forEach(function (par) {
+  if (!fs.existsSync(par[0])) return;
+  fs.readdirSync(par[0])
+    .filter(function (n) { return par[1].some(function (e) { return n.endsWith(e); }); })
+    .sort()
+    .forEach(function (n) { archivos.push(par[0] + '/' + n); });
+});
+ARCHIVOS_EXTRA.forEach(function (f) {
+  if (fs.existsSync(f)) archivos.push(f);
+  else console.log('AVISO: no encuentro ' + f + ' (no se incluye)');
+});
 
 const assets = [];
 let totalBytes = 0;
@@ -48,6 +82,29 @@ archivos.forEach(function (nombre) {
     size: stat.size
   });
   totalBytes += stat.size;
+});
+
+// Iconos: si no están aquí, se conserva la entrada que ya tuviera
+// assets_main.json. Nunca se inventa una entrada: un archivo que no existe
+// en el servidor nunca se cachea y dejaría al loader "pendiente" en cada
+// arranque (barra de "Preparando el curso..." en cada entrada).
+let previo = [];
+try { previo = JSON.parse(fs.readFileSync('assets_main.json', 'utf8')).assets || []; } catch (e) {}
+ICONOS.forEach(function (f) {
+  if (fs.existsSync(f)) {
+    const st = fs.statSync(f);
+    assets.push({ url: f, lastModified: st.mtime.getTime(), size: st.size });
+    totalBytes += st.size;
+  } else {
+    const ya = previo.find(function (a) { return a.url === f && a.size > 0; });
+    if (ya) {
+      assets.push(ya);
+      totalBytes += ya.size;
+      console.log('AVISO: ' + f + ' no está en esta carpeta; se conserva la entrada previa.');
+    } else {
+      console.log('AVISO: ' + f + ' no está aquí ni en assets_main.json previo: NO se incluye (genera desde el disco con las imágenes).');
+    }
+  }
 });
 
 const salida = { motor: 'main', assets: assets };

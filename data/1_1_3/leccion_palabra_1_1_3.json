@@ -1,0 +1,154 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "anterior_primera": "leccion_palabra_intro.html?leccion=1.1.3",
+  "practicar": "practica.html?modulo=1.1&leccion=3",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.1",
+  "siguiente_final": "juego.html?leccion=1.1.3",
+  "palabras": [
+    {
+      "gujarati": "નમસ્તે",
+      "dictado": "નમસ્તે",
+      "significado": "hola (saludo)",
+      "imagen": "imagenes/Clase_1_1/img_namaste.jpg",
+      "pronunciacion": "ન-મ-સ્ત-ે → na-mas-<strong>te</strong>",
+      "audioH": "audios/clase_1_1/audio_h_namaste.mp3",
+      "audioM": "audios/clase_1_1/audio_m_namaste.mp3"
+    },
+    {
+      "gujarati": "શું",
+      "dictado": "શું",
+      "significado": "¿qué?",
+      "imagen": "imagenes/Clase_1_1/img_shu(m).jpg",
+      "pronunciacion": "શ-ું → <strong>shu<sup class=\"nas\">n</sup></strong><br>La palabra para preguntar «qué»",
+      "audioH": "audios/clase_1_1/audio_h_shu(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_shu(m).mp3"
+    },
+    {
+      "gujarati": "નામ",
+      "dictado": "નામ",
+      "significado": "nombre",
+      "imagen": "imagenes/Clase_1_1/img_naam.jpg",
+      "pronunciacion": "ન-ા-મ → <strong>naam</strong>",
+      "audioH": "audios/clase_1_1/audio_h_naam.mp3",
+      "audioM": "audios/clase_1_1/audio_m_naam.mp3"
+    },
+    {
+      "gujarati": "રસ્તો",
+      "dictado": "રસ્તો",
+      "significado": "camino",
+      "imagen": "imagenes/Clase_1_1/img_rasto.jpg",
+      "pronunciacion": "ર-સ્ત-ો → ras-<strong>to</strong><br>Lleva la conjuntiva સ્ત",
+      "audioH": "audios/clase_1_1/audio_h_rasto.mp3",
+      "audioM": "audios/clase_1_1/audio_m_rasto.mp3"
+    },
+    {
+      "gujarati": "શહેર",
+      "dictado": "શહેર",
+      "significado": "ciudad",
+      "imagen": "imagenes/Clase_1_1/img_shaher.jpg",
+      "pronunciacion": "શ-હ-ે-ર → sha-<strong>her</strong>",
+      "audioH": "audios/clase_1_1/audio_h_shaher.mp3",
+      "audioM": "audios/clase_1_1/audio_m_shaher.mp3"
+    },
+    {
+      "gujarati": "મશીન",
+      "dictado": "મશીન",
+      "significado": "máquina",
+      "imagen": "imagenes/Clase_1_1/img_mashiin.jpg",
+      "pronunciacion": "મ-શ-ી-ન → ma-<strong>shiin</strong>",
+      "audioH": "audios/clase_1_1/audio_h_mashiin.mp3",
+      "audioM": "audios/clase_1_1/audio_m_mashiin.mp3"
+    },
+    {
+      "gujarati": "નાક",
+      "dictado": "નાક",
+      "significado": "nariz",
+      "imagen": "imagenes/Clase_1_1/img_naak.jpg",
+      "pronunciacion": "ન-ા-ક → <strong>naak</strong>",
+      "audioH": "audios/clase_1_1/audio_h_naak.mp3",
+      "audioM": "audios/clase_1_1/audio_m_naak.mp3"
+    },
+    {
+      "gujarati": "કાન",
+      "dictado": "કાન",
+      "significado": "oreja",
+      "imagen": "imagenes/Clase_1_1/img_kaan.jpg",
+      "pronunciacion": "ક-ા-ન → <strong>kaan</strong><br>No la confundas con કામ (trabajo)",
+      "audioH": "audios/clase_1_1/audio_h_kaan.mp3",
+      "audioM": "audios/clase_1_1/audio_m_kaan.mp3"
+    },
+    {
+      "gujarati": "રાત",
+      "dictado": "રાત",
+      "significado": "noche",
+      "imagen": "imagenes/Clase_1_1/img_raat.jpg",
+      "pronunciacion": "ર-ા-ત → <strong>raat</strong>",
+      "audioH": "audios/clase_1_1/audio_h_raat.mp3",
+      "audioM": "audios/clase_1_1/audio_m_raat.mp3"
+    },
+    {
+      "gujarati": "સોનું",
+      "dictado": "સોનું",
+      "significado": "oro",
+      "imagen": "imagenes/Clase_1_1/img_sonu(m).jpg",
+      "pronunciacion": "સ-ો-ન-ું → so-<strong>nu<sup class=\"nas\">n</sup></strong>",
+      "audioH": "audios/clase_1_1/audio_h_sonu(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_sonu(m).mp3"
+    },
+    {
+      "gujarati": "માતા",
+      "dictado": "માતા",
+      "significado": "madre",
+      "imagen": "imagenes/Clase_1_1/img_maataa.jpg",
+      "pronunciacion": "મ-ા-ત-ા → maa-<strong>taa</strong>",
+      "audioH": "audios/clase_1_1/audio_h_maataa.mp3",
+      "audioM": "audios/clase_1_1/audio_m_maataa.mp3"
+    },
+    {
+      "gujarati": "છોકરી",
+      "dictado": "છોકરી",
+      "significado": "niña / hija",
+      "imagen": "imagenes/Clase_1_1/img_chokrii.jpg",
+      "pronunciacion": "છ-ો-ક-ર-ી → cho-<strong>krii</strong><br>Femenino de છોકરો",
+      "audioH": "audios/clase_1_1/audio_h_chokrii.mp3",
+      "audioM": "audios/clase_1_1/audio_m_chokrii.mp3"
+    },
+    {
+      "gujarati": "નોકરી",
+      "dictado": "નોકરી",
+      "significado": "empleo, trabajo",
+      "imagen": "imagenes/Clase_1_1/img_nokrii.jpg",
+      "pronunciacion": "ન-ો-ક-ર-ી → no-<strong>krii</strong>",
+      "audioH": "audios/clase_1_1/audio_h_nokrii.mp3",
+      "audioM": "audios/clase_1_1/audio_m_nokrii.mp3"
+    },
+    {
+      "gujarati": "શરીર",
+      "dictado": "શરીર",
+      "significado": "cuerpo",
+      "imagen": "imagenes/Clase_1_1/img_shariir.jpg",
+      "pronunciacion": "શ-ર-ી-ર → sha-<strong>riir</strong>",
+      "audioH": "audios/clase_1_1/audio_h_shariir.mp3",
+      "audioM": "audios/clase_1_1/audio_m_shariir.mp3"
+    },
+    {
+      "gujarati": "શાંતિ",
+      "dictado": "શાંતિ",
+      "significado": "paz",
+      "imagen": "imagenes/Clase_1_1/img_shaa(m)ti.jpg",
+      "pronunciacion": "શ-ા-ં-ત-િ → <strong>shaa<sup class=\"nas\">n</sup></strong>-ti",
+      "audioH": "audios/clase_1_1/audio_h_shaa(m)ti.mp3",
+      "audioM": "audios/clase_1_1/audio_m_shaa(m)ti.mp3"
+    },
+    {
+      "gujarati": "મન",
+      "dictado": "મન",
+      "significado": "mente",
+      "imagen": "imagenes/Clase_1_1/img_man.jpg",
+      "pronunciacion": "મ-ન → <strong>man</strong>",
+      "audioH": "audios/clase_1_1/audio_h_man.mp3",
+      "audioM": "audios/clase_1_1/audio_m_man.mp3"
+    }
+  ]
+}

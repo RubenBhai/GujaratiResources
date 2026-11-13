@@ -75,7 +75,12 @@
       if(audioActual && !esElMismo){ detenerAudio(audioActual); }
       if(esElMismo && !audio.paused){ detenerAudio(audioActual); audioActual = null; return; }
 
-      audio.play();
+      var pr = audio.play();
+      // Si no suena (archivo ausente, sin red, iOS), no dejar el botón en ⏸
+      if(pr && pr.catch) pr.catch(function(e){
+        if(e && e.name === 'AbortError') return;   // lo detuvo otro toque
+        if(audioActual && audioActual.audio === audio){ detenerAudio(audioActual); audioActual = null; }
+      });
       boton.classList.add('is-playing');
       boton.querySelector('.btn-audio-icono').textContent = '⏸';
       

@@ -26,6 +26,7 @@ let SESIONES = [], sIdx = 0;
 let construido = [], actual = null, bloqueado = false, falloEnEsta = false;
 
 function shuffle(a){ return a.slice().sort(function(){ return Math.random() - 0.5; }); }
+function sinPuntuacion(s){ return s.replace(/[?!.,¿¡]/g, ''); }
 
 /* Banco LOCAL: palabras solo de las oraciones filtradas (no de todo el nivel4) */
 function bancoLocal(){
@@ -51,7 +52,9 @@ function nuevaOracion(){
   /* Fichas: palabras de la oración + hasta 3 distractores del banco local */
   var correctas = actual.oracion_completa.split(/\s+/).filter(Boolean);
   var banco = bancoLocal();
-  var extra = shuffle(banco.filter(function(p){ return correctas.indexOf(p) === -1; })).slice(0, 3);
+  /* excluir distractores que solo difieren en puntuación ("છે" vs "છે?"): se oyen igual */
+  var _base = correctas.map(sinPuntuacion);
+  var extra = shuffle(banco.filter(function(p){ return _base.indexOf(sinPuntuacion(p)) === -1; })).slice(0, 3);
   var fichas = shuffle(correctas.concat(extra));
 
   var bank = document.getElementById('bank');
@@ -183,9 +186,17 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     var n4 = data.nivel4 || {};
     var sesiones = n4.sesiones || [];
 
-    /* Si viene ?dictado=X, quedarse con las oraciones que CONTIENEN X */
+    /* Si viene ?dictado=X, quedarse con las oraciones que CONTIENEN X.
+       Red de seguridad: si ninguna oración contiene X, se practican todas las
+       oraciones del nivel con un aviso, en vez de dejar al alumno sin ejercicio. */
+    var sinCoincidencias = false;
     if (_dictadoFiltro){
-      sesiones = sesiones.filter(function(s){ return (s.oracion_completa || '').indexOf(_dictadoFiltro) !== -1; });
+      var filtradas = sesiones.filter(function(s){ return (s.oracion_completa || '').indexOf(_dictadoFiltro) !== -1; });
+      if (filtradas.length) sesiones = filtradas;
+      else if (sesiones.length){
+        sinCoincidencias = true;
+        console.warn('dictado: ninguna oración de nivel4 contiene «' + _dictadoFiltro + '»; se usan todas.');
+      }
     }
     SESIONES = sesiones;
 
@@ -198,6 +209,19 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
     var instr = document.getElementById('instruccion');
     if (instr) instr.textContent = n4.instruccion || 'Escucha el audio y toca las palabras en gujarati para completar la oración.';
+    if (sinCoincidencias && instr){
+      var aviso = document.createElement('p');
+      aviso.className = 'aviso-dictado';
+      aviso.setAttribute('role', 'status');
+      /* la palabra va en un span .gu para que use la fuente gujarati (textContent: viene de la URL) */
+      var palGu = document.createElement('span');
+      palGu.className = 'gu';
+      palGu.textContent = _dictadoFiltro;
+      aviso.appendChild(document.createTextNode('Todavía no hay oraciones con «'));
+      aviso.appendChild(palGu);
+      aviso.appendChild(document.createTextNode('». ¡Practica con las oraciones de la lección!'));
+      instr.parentNode.insertBefore(aviso, instr);
+    }
     nuevaOracion();
   })
   .catch(function(){
@@ -209,9 +233,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if (localV === null){

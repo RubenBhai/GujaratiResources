@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Adapta la frase · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-frases.css">
+</head>
+<body>
+
+<nav class="barra">
+  <a class="barra-btn" href="frases_hub.html" onclick="Frases.volver('frases_hub.html' + location.search); return false;">← Frases</a>
+  <a class="barra-btn" href="contenido.html" aria-label="Inicio">🏠</a>
+</nav>
+
+<main class="escena">
+  <div class="eyebrow"><span class="punto"></span><span id="cat">Frases</span> · Adapta la frase</div>
+  <p class="instruccion">Toca las piezas con <span class="mark-inline">⇄</span> para cambiarlas y ver cómo queda la frase.</p>
+
+  <div class="flex-frase" id="flex-frase"></div>
+  <div class="flex-traduccion" id="flex-trad"></div>
+
+  <div class="flex-acciones">
+    <button class="btn-chip-main" id="btn-mi-version">▶ Escuchar mi versión</button>
+    <button class="btn-chip-sec"  id="btn-original">🔊 Frase original</button>
+  </div>
+
+  <div class="nav-frases">
+    <button class="nav-frase-btn" id="btn-ant">← Anterior</button>
+    <span class="nav-contador" id="contador"></span>
+    <button class="nav-frase-btn" id="btn-sig">Siguiente →</button>
+  </div>
+</main>
+
+<div class="flex-overlay oculto" id="flex-overlay">
+  <div class="flex-panel">
+    <div class="flex-panel-titulo">Elige una opción</div>
+    <div class="flex-opciones" id="flex-opciones"></div>
+    <button class="btn-chip-sec" id="flex-cerrar">Cerrar</button>
+  </div>
+</div>
+
+<script src="frases_base.js"></script>
+<script src="frases_flex.js"></script>
+</body>
+</html>

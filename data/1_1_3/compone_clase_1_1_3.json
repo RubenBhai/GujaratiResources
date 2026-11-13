@@ -1,0 +1,226 @@
+{
+  "leccion": "1.1.3",
+  "boton_comprobar": "Comprobar",
+  "sonido_correcto": "audios/clase_1_1/Clase_1_1_Correcto.mp3",
+  "sonido_incorrecto": "audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
+  "banco_palabras": [
+    {
+      "gujarati": "આ",
+      "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
+    },
+    {
+      "gujarati": "છે",
+      "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+    },
+    {
+      "gujarati": "મારો",
+      "audio": "audios/clase_1_1/audio_m_maaro.mp3"
+    },
+    {
+      "gujarati": "મારી",
+      "audio": "audios/clase_1_1/audio_m_maarii.mp3"
+    },
+    {
+      "gujarati": "મારું",
+      "audio": "audios/clase_1_1/audio_m_maaru(m).mp3"
+    },
+    {
+      "gujarati": "તમારો",
+      "audio": "audios/clase_1_1/audio_m_tamaaro.mp3"
+    },
+    {
+      "gujarati": "તમારી",
+      "audio": "audios/clase_1_1/audio_m_tamaarii.mp3"
+    },
+    {
+      "gujarati": "તારો",
+      "audio": "audios/clase_1_1/audio_m_taaro.mp3"
+    },
+    {
+      "gujarati": "તેની",
+      "audio": "audios/clase_1_1/audio_m_tenii.mp3"
+    },
+    {
+      "gujarati": "તેનું",
+      "audio": "audios/clase_1_1/audio_m_tenu(m).mp3"
+    },
+    {
+      "gujarati": "અમારું",
+      "audio": "audios/clase_1_1/audio_m_amaaru(m).mp3"
+    },
+    {
+      "gujarati": "છોકરો",
+      "audio": "audios/clase_1_1/audio_m_chokro.mp3"
+    },
+    {
+      "gujarati": "છોકરી",
+      "audio": "audios/clase_1_1/audio_m_chokrii.mp3"
+    },
+    {
+      "gujarati": "ઉંમર",
+      "audio": "audios/clase_1_1/audio_m_u(m)mar.mp3"
+    },
+    {
+      "gujarati": "છ",
+      "audio": "audios/clase_1_1/audio_alfa_m_chha.mp3"
+    },
+    {
+      "gujarati": "સાત",
+      "audio": "audios/clase_1_1/audio_m_saat.mp3"
+    },
+    {
+      "gujarati": "નામ",
+      "audio": "audios/clase_1_1/audio_m_naam.mp3"
+    },
+    {
+      "gujarati": "રોહન",
+      "audio": "audios/clase_1_1/audio_m_rohan.mp3"
+    },
+    {
+      "gujarati": "રોશની",
+      "audio": "audios/clase_1_1/audio_m_roshnii.mp3"
+    },
+    {
+      "gujarati": "માતા",
+      "audio": "audios/clase_1_1/audio_m_maataa.mp3"
+    },
+    {
+      "gujarati": "સારી",
+      "audio": "audios/clase_1_1/audio_m_saarii.mp3"
+    },
+    {
+      "gujarati": "નાની",
+      "audio": "audios/clase_1_1/audio_m_naanii.mp3"
+    },
+    {
+      "gujarati": "નાનો",
+      "audio": "audios/clase_1_1/audio_m_naano.mp3"
+    },
+    {
+      "gujarati": "શહેર",
+      "audio": "audios/clase_1_1/audio_m_shaher.mp3"
+    }
+  ],
+  "oraciones": [
+    {
+      "id": "1",
+      "palabras": [
+        "આ",
+        "મારો",
+        "છોકરો",
+        "છે"
+      ],
+      "espanol": "este es mi hijo"
+    },
+    {
+      "id": "2",
+      "palabras": [
+        "આ",
+        "મારી",
+        "છોકરી",
+        "છે"
+      ],
+      "espanol": "esta es mi hija"
+    },
+    {
+      "id": "3",
+      "palabras": [
+        "આ",
+        "તમારો",
+        "છોકરો",
+        "છે"
+      ],
+      "espanol": "este es su hijo (de usted)"
+    },
+    {
+      "id": "4",
+      "palabras": [
+        "આ",
+        "તમારી",
+        "છોકરી",
+        "છે"
+      ],
+      "espanol": "esta es su hija (de usted)"
+    },
+    {
+      "id": "5",
+      "palabras": [
+        "મારી",
+        "ઉંમર",
+        "સાત",
+        "છે"
+      ],
+      "espanol": "tengo siete años"
+    },
+    {
+      "id": "6",
+      "palabras": [
+        "તેની",
+        "ઉંમર",
+        "છ",
+        "છે"
+      ],
+      "espanol": "tiene seis años (su edad es seis)"
+    },
+    {
+      "id": "7",
+      "palabras": [
+        "તેનું",
+        "નામ",
+        "રોહન",
+        "છે"
+      ],
+      "espanol": "se llama Rohan"
+    },
+    {
+      "id": "8",
+      "palabras": [
+        "મારું",
+        "નામ",
+        "રોશની",
+        "છે"
+      ],
+      "espanol": "me llamo Roshni"
+    },
+    {
+      "id": "9",
+      "palabras": [
+        "મારી",
+        "માતા",
+        "સારી",
+        "છે"
+      ],
+      "espanol": "mi madre es buena"
+    },
+    {
+      "id": "10",
+      "palabras": [
+        "તેની",
+        "છોકરી",
+        "નાની",
+        "છે"
+      ],
+      "espanol": "su hija es pequeña"
+    },
+    {
+      "id": "11",
+      "palabras": [
+        "આ",
+        "અમારું",
+        "શહેર",
+        "છે"
+      ],
+      "espanol": "esta es nuestra ciudad"
+    },
+    {
+      "id": "12",
+      "palabras": [
+        "તારો",
+        "છોકરો",
+        "નાનો",
+        "છે"
+      ],
+      "espanol": "tu hijo es pequeño"
+    }
+  ]
+}

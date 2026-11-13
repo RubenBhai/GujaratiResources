@@ -18,13 +18,14 @@
   --ink-soft:     #C8B99A;
   --border:       rgba(184, 134, 61, 0.15);
   --radio-sm:     12px;
+  --radio-md:     16px;      /* la usa tema-leccion_vocal_desktop.css */
   --radio-lg:     20px;
   --radio-full:   50px;
   --shadow-soft:  0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.07),transparent 60%);
-  color:var(--paper); font-family:'Source Sans 3',sans-serif; min-height:100vh; padding-bottom:24px; }
+  color:var(--paper); font-family:'Source Sans 3',sans-serif; min-height:100vh; min-height:100dvh; padding-bottom:24px; }
 .gu { font-family:'Noto Serif Gujarati',serif; }
 a, button { transition:all 0.25s ease; }
 
@@ -33,7 +34,8 @@ a, button { transition:all 0.25s ease; }
   border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between;
   padding:12px 20px; gap:8px; }
 .nav-btn { background:var(--surface); color:var(--paper); padding:8px 18px; border-radius:var(--radio-full);
-  font-size:0.9rem; font-weight:600; text-decoration:none; }
+  font-size:0.9rem; font-weight:600; text-decoration:none;
+  min-height:44px; display:inline-flex; align-items:center; justify-content:center; text-align:center; }  /* zona táctil mínima */
 .nav-btn:hover:not(.disabled) { background:var(--surface-light); color:var(--saffron); transform:translateY(-1px); }
 .nav-btn.home { color:var(--saffron); font-size:1.1rem; padding:6px 14px; }
 .nav-btn.disabled { opacity:0.3; pointer-events:none; background:transparent; }
@@ -167,7 +169,8 @@ a, button { transition:all 0.25s ease; }
   display: flex;
   flex-direction: row;
   width: fit-content;
-  max-width: 440px;
+  max-width: min(440px, 100%);   /* nunca más ancho que la pantalla (conjuntiva: નમસ્તે, રસ્તો) */
+  min-width: min(315px, 100%);   /* conserva el ancho mínimo de antes (3 × 105px) */
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
@@ -187,6 +190,11 @@ a, button { transition:all 0.25s ease; }
 }
 
 .eq-celda:first-child { border-left: none; }
+
+/* Versión compacta: leccion_vocal.js la activa solo si alguna palabra no cabe en su celda
+   (p.ej. નમસ્તે, રસ્તો en la conjuntiva). Celdas al ancho de su contenido y letra algo menor. */
+.frame-ecuaciones.eq-compacta .eq-celda      { flex: 1 1 auto; min-width: 0; padding: 18px 8px; }
+.frame-ecuaciones.eq-compacta .eq-resultado  { font-size: clamp(2rem, 11vw, 3.5rem); }
 
 .eq-partes   { font-size: 1.2rem;  color: #6B2A00; text-align: center; line-height: 1.5; }
 .eq-resultado{ font-size: 3.5rem; font-weight: 700; color: #6B2A00;

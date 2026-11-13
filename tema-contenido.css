@@ -549,6 +549,30 @@ a, button {
   font-weight: 600;
 }
 
+/* ═══ Atajo: Curso de frases (independiente de las lecciones) ═══ */
+.tarjeta-frases{
+  display:flex; align-items:center; gap:18px;
+  background: rgba(17, 26, 44, 0.6);
+  border:1px solid var(--border-gold);
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-tarjeta);
+  padding:22px 26px; text-decoration:none;
+  transition:all .3s ease;
+}
+.tarjeta-frases:hover{
+  border-color: var(--gold);
+  box-shadow: var(--sombra-tarjeta), 0 0 30px rgba(212,175,55,0.12);
+  transform: translateY(-2px);
+}
+.tf-icono{ font-size:2rem; flex-shrink:0; }
+.tf-info{ flex:1; }
+.tf-titulo{ font-family:'Fraunces',serif; font-weight:700; font-size:1.25rem; color:var(--paper-warm); }
+.tf-sub{ font-size:0.95rem; color:rgba(234,224,204,0.6); margin-top:3px; line-height:1.4; }
+.tf-flecha{ color:var(--gold); font-size:1.4rem; flex-shrink:0; }
 
 
 
+
+
+/* Área táctil mínima de 44px (pauta de accesibilidad móvil) */
+.btn-home { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; }

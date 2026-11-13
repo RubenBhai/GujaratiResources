@@ -15,7 +15,7 @@ function mensajeParaPorcentaje(p){
   if(p === 100) return '¡Magnífico!';
   if(p >= 85)   return '¡Bravo!';
   if(p >= 71)   return '¡Muy bien!';
-  if(p >= 61)   return '¡Buen intento';
+  if(p >= 61)   return '¡Buen intento!';
   return '¡Bien! Sigue practicando';
 }
 
@@ -90,7 +90,9 @@ function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfect
   var btnVer            = document.getElementById('btn-ver');
   var etiquetaResultado = document.getElementById('resultado-evaluacion');
 
+  var tokenAnimacionVer = 0;
   document.getElementById('btn-reintentar').onclick = function(){
+    tokenAnimacionVer++;                   // cancela una animación "Ver" en curso
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     trazos     = [];
     yaEvaluado = false;
@@ -126,7 +128,6 @@ function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfect
     };
 
     btnVer.style.display = '';
-    var tokenAnimacionVer = 0;
     btnVer.onclick = function(){
       document.getElementById('btn-reintentar').click();
       var segmentosEscalados = evaluarSegmentos();
@@ -191,6 +192,15 @@ function configurarCanvasPlana(img, segmentosJSON, sonidoVictoria, programaEfect
 
   if(img.complete && img.naturalWidth) ajustarCanvas();
   else img.addEventListener('load', ajustarCanvas);
+
+  // Al girar el teléfono o redimensionar, la imagen cambia de tamaño: el canvas debe seguirla
+  window.addEventListener('resize', function(){
+    if(img.clientWidth && Math.round(parseFloat(canvas.style.width)) !== img.clientWidth){
+      ajustarCanvas();                     // reasignar width/height ya resetea la escala y borra el canvas
+      trazos = []; yaEvaluado = false;
+      etiquetaResultado.style.display = 'none';
+    }
+  });
 }
 
 /* ── Carga del JSON ── */
@@ -228,13 +238,20 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     var btnEscuchar = document.getElementById('btn-escuchar');
     btnEscuchar.innerHTML = '🎵 Escucha';
     btnEscuchar.onclick = function(){
-      btnEscuchar.classList.add('playing');
-      btnEscuchar.textContent = '▶ Reproduciendo...';
-      player.src = actual.audio; player.playbackRate = 1.0; player.play();
-      player.onended = function(){
+      function restaurar(){
         btnEscuchar.classList.remove('playing');
         btnEscuchar.innerHTML = '🎵 Escucha';
-      };
+      }
+      btnEscuchar.classList.add('playing');
+      btnEscuchar.textContent = '▶ Reproduciendo...';
+      player.src = actual.audio; player.playbackRate = 1.0;
+      player.onended = restaurar;
+      player.onerror = restaurar;          // si el audio no carga, el botón no se queda "Reproduciendo..."
+      player.play().catch(function(e){
+        // AbortError = otra pulsación cambió el audio: el nuevo ya está sonando, no restaurar
+        if(e && e.name === 'AbortError') return;
+        restaurar();
+      });
     };
   })
   .catch(function(){
@@ -246,9 +263,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

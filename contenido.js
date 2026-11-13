@@ -2,9 +2,10 @@
 (function(){
   document.body.style.opacity    = '0';
   document.body.style.transition = 'opacity 0.5s ease';
+  // Solo la imagen: la música es preload="none" y por defecto está apagada;
+  // precargarla bajaba el mp3 entero (varios MB) en cada visita.
   var ASSETS = [
-    'imagenes/LearnGujarati_SuperInmersivo_Main.jpg',
-    'audios/musica/contenido_musica_ambiente.mp3'
+    'imagenes/LearnGujarati_SuperInmersivo_Main.jpg'
   ];
   var cargados = 0, mostrado = false;
   var timeout  = setTimeout(mostrar, 3000);
@@ -76,7 +77,14 @@ calcularProgreso();
         clearInterval(fadeTimer);
         if(target === 0) music.pause();
       } else {
+        var antes = music.volume;
         music.volume += diff * 0.1;
+        // iOS: volume es de solo lectura (siempre 1); si no cambia, se corta
+        // el fundido para no dejar el intervalo corriendo para siempre.
+        if(music.volume === antes){
+          clearInterval(fadeTimer);
+          if(target === 0) music.pause();
+        }
       }
     }, 50);
   }
@@ -114,15 +122,25 @@ calcularProgreso();
     document.addEventListener('click', resume);
     document.addEventListener('touchstart', resume);
   }
+
+  // Pausar al pasar a segundo plano; reanudar al volver (igual que index.js)
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden){
+      if(!music.paused) music.pause();
+    } else if(playing && music.paused){
+      music.play().then(function(){ fadeTo(TARGET_VOL); }).catch(function(){});
+    }
+  });
 })();
 
 /* ── Verificador de versión ── */
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

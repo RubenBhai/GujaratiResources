@@ -38,6 +38,7 @@ body {
     radial-gradient(ellipse at bottom right, rgba(160, 82, 79, 0.05),  transparent 60%);
   animation: fondoVivo 8s ease-in-out infinite alternate;
   min-height: 100vh;
+  min-height: 100dvh;   /* iOS: 100vh incluye la barra del navegador; 100vh queda de respaldo */
 }
 
 @keyframes fondoVivo {
@@ -187,9 +188,10 @@ h1 {
 }
 .table-wrap tr:last-child td { border-bottom: none; }
 
-.gu-cell   { font-family: 'Noto Serif Gujarati', serif; font-size: 2.3rem; color: var(--marron-oscuro); font-weight: 700; }
-.pron-cell { color: var(--naranja-acento); font-weight: 600; font-size: 1.05rem; }
-.mean-cell { color: var(--marron-texto); font-size: 1.05rem; }
+/* Prefijo .table-wrap td: sin él, `.table-wrap td` (más específica) pisaba tamaño y color */
+.table-wrap td.gu-cell   { font-family: 'Noto Serif Gujarati', serif; font-size: 2.3rem; color: var(--marron-oscuro); font-weight: 700; }
+.table-wrap td.pron-cell { color: var(--naranja-acento); font-weight: 600; font-size: 1.05rem; }
+.table-wrap td.mean-cell { color: var(--marron-texto); font-size: 1.05rem; }
 
 /* ── BOTÓN PRINCIPAL ── */
 .btn-empezar {
@@ -217,5 +219,17 @@ h1 {
 @media (max-width: 480px) {
   body { animation: none; padding-bottom: 30px; }
   .wrap { padding: 20px 14px 30px; gap: 18px; }
+  /* Barra: los 4 botones no caben a <=390px con el padding de escritorio */
+  .nav-bar { margin: 10px 10px 0; padding: 6px; gap: 2px; }
+  .nav-btn { padding: 10px 10px; letter-spacing: 0; min-width: 44px; justify-content: center; }
+  .table-wrap { overflow-x: auto; }     /* a 320px: scroll interno en vez de recorte */
+  .table-wrap th { padding: 10px 8px; }
+  .table-wrap td { padding: 12px 8px; }
   h1 { font-size: 2rem; }
+}
+
+/* Pantallas muy estrechas (320px): letra gujarati y botones algo más compactos para que quepan */
+@media (max-width: 340px) {
+  .table-wrap td.gu-cell { font-size: 1.8rem; }
+  .nav-btn { padding: 10px 6px; }
 }

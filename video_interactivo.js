@@ -1,10 +1,3 @@
-// ── Bloquear rotación en portrait ──
-try {
-  if (screen.orientation && screen.orientation.lock) {
-    screen.orientation.lock('portrait').catch(function() {});
-  }
-} catch (e) {}
-
 // ── Constantes y parámetros ──
 const BACKEND_URL = 'https://gujaratitraining-production.up.railway.app';
 const SND_OK      = 'audios/clase_1_1/Clase_1_1_Correcto.mp3';
@@ -40,6 +33,7 @@ let mediaRecorder = null;
 let audioChunks   = [];
 let audioBlobsEstudiante = {};
 let grabando      = false;
+let pidiendoMic   = false;   // evita abrir dos micrófonos con un doble toque
 let guiaEsVisible = true;
 let guiaGuVisible = true;
 
@@ -285,6 +279,9 @@ function montarAvatares(){
     var card = document.createElement('div');
     card.className = 'avatar-card';
     card.onclick   = function(){ elegirAvatar(key); };
+    card.setAttribute('role', 'button');
+    card.tabIndex  = 0;
+    card.onkeydown = function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); elegirAvatar(key); } };
     card.innerHTML =
       '<div class="foto" style="background-image:url(\'' + av.imagen + '\'); background-color:' + av.color + ';"></div>' +
       '<div class="nombre gu" style="color:' + av.color + ';">' + av.nombre + '</div>';
@@ -307,6 +304,7 @@ function construirEscena(){
   idxActual        = 0;
   notasEstudiante  = [];
   audioBlobsEstudiante = {};
+  document.getElementById('progress-fill').style.width = '0%';
 
   var claveAIndice = {};
   var subAv = document.getElementById('sub-avatar');
@@ -360,8 +358,44 @@ function construirEscena(){
 }
 
 // ── Conversación ──
+
+/* iOS Safari: un <audio> solo puede sonar si su PRIMER play() ocurre dentro
+   de un toque del usuario. 'sfx' siempre se toca más tarde (tras el fetch) y
+   'audio' también, si el primer turno es del alumno. Se "desbloquean" aquí,
+   en el toque de Comenzar, con un play() silenciado + pause(). */
+function desbloquearAudios(){
+  var lista = [sfx];
+  if(DIALOGOS[0] && DIALOGOS[0].avatar === avatarElegido) lista.push(audio);
+  lista.forEach(function(a){
+    try {
+      if(!a.getAttribute('src')) a.src = SND_OK;
+      a.muted = true;
+      var q = a.play();
+      if(q && q.then) q.then(function(){ a.pause(); a.muted = false; }, function(){ a.muted = false; });
+      else { a.pause(); a.muted = false; }
+    } catch(e){ a.muted = false; }
+  });
+}
+
+/* El botón de Comenzar se reutiliza para "Continuar" (si el navegador bloquea
+   el audio) y para "Detener" la repetición del diálogo. */
+function usarBotonIniciar(texto, accion){
+  var b = document.getElementById('btn-iniciar');
+  b.textContent   = texto;
+  b.style.display = 'block';
+  b.disabled      = false;
+  b.onclick       = accion;
+}
+function restaurarBotonIniciar(){
+  var b = document.getElementById('btn-iniciar');
+  b.style.display = 'none';
+  b.textContent   = '▶ Comenzar';
+  b.onclick       = iniciarConversacion;
+}
+
 function iniciarConversacion(){
   document.getElementById('btn-iniciar').style.display = 'none';
+  desbloquearAudios();
   runToken++;
   idxActual = 0;
   avanzar();
@@ -443,12 +477,21 @@ function avanzar(){
     setTimeout(avanzar, 400);
   }
 
-  audio.addEventListener('error', function(){ console.log('🔴 AUDIO ERROR'); }, { once: true });
   audio.onended = continuar;
   audio.onerror = continuar;
   audio.src     = d.audio;
   var p = audio.play();
-  if(p && p.catch) p.catch(function(){});
+  if(p && p.catch) p.catch(function(err){
+    // Navegador bloqueó el audio (iOS fuera de un toque): sin esto 'ended'
+    // nunca llega y la conversación se congela. Pedimos un toque para seguir.
+    if(!err || err.name !== 'NotAllowedError') return;
+    if(miToken !== runToken || idxActual !== miPaso) return;
+    usarBotonIniciar('▶ Continuar', function(){
+      restaurarBotonIniciar();
+      var q = audio.play();
+      if(q && q.catch) q.catch(continuar);
+    });
+  });
 }
 
 function mostrarTurnoEstudiante(d){
@@ -477,29 +520,49 @@ function mostrarTurnoEstudiante(d){
 function toggleGuiaES(){
   guiaEsVisible = !guiaEsVisible;
   document.getElementById('guia-es').classList.toggle('oculta', !guiaEsVisible);
-  document.getElementById('btn-guia-es').classList.toggle('active', guiaEsVisible);
+  document.getElementById('btn-guia-es').classList.toggle('activo', guiaEsVisible);
 }
 
 function toggleGuiaGUJ(){
   guiaGuVisible = !guiaGuVisible;
   document.getElementById('guia-gu').classList.toggle('oculta', !guiaGuVisible);
-  document.getElementById('btn-guia-gu').classList.toggle('active', guiaGuVisible);
+  document.getElementById('btn-guia-gu').classList.toggle('activo', guiaGuVisible);
 }
 
 function toggleGrabacion(){
   var btn = document.getElementById('btn-grabar');
   if(grabando){
-    mediaRecorder.stop();
     grabando = false;
     btn.innerHTML = '🎙 Grabar mi voz';
     btn.classList.remove('recording');
+    if(mediaRecorder && mediaRecorder.state === 'recording'){
+      btn.disabled = true;        // evita un segundo toque antes de que onstop → enviarTurno lo reactive
+      mediaRecorder.stop();
+    }
+    /* si el sistema ya cortó el micrófono (llamada, cambio de app) el recorder está
+       inactivo y onstop ya corrió: no se deshabilita, para no dejar el botón muerto */
     return;
   }
+  if(pidiendoMic) return;
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.MediaRecorder){
+    alert('Este navegador no permite grabar audio.');
+    ofrecerSaltarTurno();
+    return;
+  }
+  pidiendoMic = true;
   navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
-    mediaRecorder  = new MediaRecorder(stream);
+    pidiendoMic = false;
+    try { mediaRecorder = new MediaRecorder(stream); }
+    catch(e){ stream.getTracks().forEach(function(t){ t.stop(); }); throw e; }   // no dejar el micrófono abierto
+    document.getElementById('estado-turno').textContent = '';
     audioChunks    = [];
     mediaRecorder.ondataavailable = function(e){ if(e.data && e.data.size > 0) audioChunks.push(e.data); };
     mediaRecorder.onstop = function(){
+      /* también llega aquí si el sistema cortó el micrófono (llamada, cambio de app):
+         se deja el botón coherente para que el siguiente toque no sea un toque muerto */
+      grabando = false;
+      btn.innerHTML = '🎙 Grabar mi voz';
+      btn.classList.remove('recording');
       var blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
       enviarTurno(blob);
       stream.getTracks().forEach(function(t){ t.stop(); });
@@ -508,7 +571,28 @@ function toggleGrabacion(){
     grabando       = true;
     btn.innerHTML  = '🛑 Detener';
     btn.classList.add('recording');
-  }).catch(function(){ alert('Verifica los permisos de tu micrófono.'); });
+  }).catch(function(){
+    pidiendoMic = false;
+    alert('Verifica los permisos de tu micrófono.');
+    ofrecerSaltarTurno();
+  });
+}
+
+/* Si no se puede grabar o evaluar (backend caído, sin permiso de micrófono),
+   el alumno puede seguir la conversación en vez de quedarse atascado. */
+function ofrecerSaltarTurno(){
+  var est = document.getElementById('estado-turno');
+  if(est.querySelector('.btn-saltar')) return;
+  var saltar = document.createElement('button');
+  saltar.className   = 'btn-guia btn-saltar';
+  saltar.textContent = 'Saltar este turno →';
+  saltar.onclick = function(){
+    if(grabando || pidiendoMic) return;
+    document.getElementById('turno-box').style.display = 'none';
+    if(idxActual === pasoActual){ idxActual++; avanzar(); }
+  };
+  est.appendChild(document.createElement('br'));
+  est.appendChild(saltar);
 }
 
 function enviarTurno(blob){
@@ -522,12 +606,16 @@ function enviarTurno(blob){
   reader.onloadend = function(){
     var base64   = reader.result.split(',')[1];
     var mimeType = blob.type || 'audio/webm';
+    /* Tope de 30 s: con el servidor colgado el alumno quedaba en "Procesando..." sin
+       botón ni "Saltar". Al abortar entra el catch, que rehabilita Grabar y ofrece Saltar. */
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var tmr  = ctrl ? setTimeout(function(){ ctrl.abort(); }, 30000) : null;
     fetch(BACKEND_URL + '/api/evaluar-audio', {
-      method: 'POST',
+      method: 'POST', signal: ctrl ? ctrl.signal : undefined,
       headers: { 'Content-Type':'application/json', 'x-access-token': sessionStorage.getItem('accessToken') || '' },
       body: JSON.stringify({ audioBase64: base64, mimeType: mimeType, fraseObjetivo: d.gujarati })
     })
-    .then(function(r){ if(!r.ok) throw new Error('err'); return r.json(); })
+    .then(function(r){ clearTimeout(tmr); if(!r.ok) throw new Error('err'); return r.json(); })
     .then(function(data){
       notasEstudiante.push(data.nota);
       var transcrito = data.transcripcion || d.gujarati;
@@ -548,6 +636,7 @@ function enviarTurno(blob){
     .catch(function(){
       document.getElementById('estado-turno').textContent = '⚠️ No se pudo procesar. Intenta de nuevo.';
       document.getElementById('btn-grabar').disabled = false;
+      ofrecerSaltarTurno();
     });
   };
 }
@@ -618,7 +707,8 @@ function reproducirDialogo(){
   audioBlobsEstudiante     = blobsGuardados;
 
   document.getElementById('turno-box').style.display   = 'none';
-  document.getElementById('btn-iniciar').style.display = 'none';
+  // El botón original queda en la pantalla de resultado (oculta): ofrecer Detener aquí
+  usarBotonIniciar('⏹ Detener', detenerReplay);
   goTo('s-conversar');
   siguienteReplay();
 }
@@ -626,6 +716,7 @@ function reproducirDialogo(){
 function detenerReplay(){
   replayActivo = false;
   detenerAudio();
+  restaurarBotonIniciar();
   document.getElementById('btn-replay-dialogo').textContent = '▶ Ver el diálogo completo';
   document.getElementById('btn-replay-dialogo').onclick     = reproducirDialogo;
 
@@ -684,6 +775,9 @@ fetch('data/' + _leccion + '/dialogo_' + _leccion + '.json')
     btnIniciar.disabled     = true;
     btnIniciar.textContent  = 'Cargando…';
     precargarImagenes().then(function(){
+      // Si el alumno eligió personaje antes de que cargara el fondo, la
+      // proporción no se pudo aplicar entonces: aplicarla ahora.
+      aplicarRatioEscena(); reposicionarTodo();
       btnIniciar.disabled    = false;
       btnIniciar.textContent = textoIniciarOriginal;
     });
@@ -715,9 +809,10 @@ window.addEventListener('resize', function(){
 (function() {
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

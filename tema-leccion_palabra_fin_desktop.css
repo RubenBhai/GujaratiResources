@@ -1,0 +1,89 @@
+/* ==========================================================================
+   TEMA VOCABULARIO FIN DESKTOP OPTIMIZADO (720p / 1440x720+)
+   Diseño centrado con proporciones cómodas para pantallas de escritorio.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  
+  /* ── ESTRUCTURA GLOBAL DE LA APP EN ESCRITORIO ── */
+  body {
+    padding-bottom: 0;
+    /* min-height (no height+overflow:hidden): en pantallas bajas (1024x600, 1280x650)
+       el contenido que no cabe debe poder alcanzarse con scroll */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav-bar {
+    max-width: 100%;
+    padding: 15px 40px;
+  }
+
+  /* Contenedor centralizado con mayor holgura */
+  .wrap-fin {
+    max-width: 620px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .badge {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* ── TARJETA DE CONCLUSIÓN ── */
+  .fin-card {
+    padding: 48px 40px;
+    border-radius: 24px;
+    gap: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .fin-emoji {
+    font-size: 4.5rem;
+    margin-bottom: -6px;
+  }
+
+  .fin-title {
+    font-size: 2.3rem;
+  }
+
+  .fin-desc {
+    font-size: 1.15rem;
+    max-width: 460px;
+    line-height: 1.65;
+  }
+
+  /* ── BOTONES DE ACCIÓN ── */
+  .fin-actions {
+    max-width: 440px;
+    width: 100%;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .btn-main,
+  .btn-sec {
+    padding: 18px 24px;
+    font-size: 1.05rem;
+    border-radius: var(--radio-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Efecto hover más marcado en escritorio para el botón principal */
+  .btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(74, 107, 83, 0.45);
+  }
+
+  .btn-sec:hover {
+    transform: translateY(-2px);
+  }
+}

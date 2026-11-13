@@ -265,3 +265,65 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
 .btn-play-oro   { background:var(--saffron) !important; color:#2C2420 !important; }
 .btn-play-neutro{ background:var(--surface) !important; border:1px solid var(--border) !important; color:var(--ink-soft) !important; }
 
+
+/* =========================================================
+   HORIZONTAL EN MÓVIL (mismo criterio que tema-video.css)
+   La escena a la izquierda, con su proporción real (--escena-ratio)
+   y todo el alto visible; controles y turno del alumno a la derecha,
+   para que quepa sin scroll. Excluye escritorio (≥1024px).
+========================================================= */
+@media (orientation: landscape) and (max-height: 600px) and (max-width: 1023px) {
+  body { padding-bottom: 0; }
+
+  /* 🏠 flotando arriba a la derecha en vez de una barra completa */
+  .nav-bar { position: fixed; top: 6px; right: 8px; left: auto; padding: 0;
+    background: none; border: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav-bar .nav-phantom { display: none; }
+  .nav-btn { padding: 8px 12px; }
+
+  .wrap { max-width: 100%; padding: 8px 12px; gap: 10px; }
+
+  /* Elegir personaje: las tarjetas en una fila */
+  #s-elegir { gap: 10px; }
+  .avatares-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); max-width: 760px; }
+  .avatar-card { padding: 10px; }
+  .avatar-card .foto { width: 64px; height: 64px; }
+
+  /* Conversación: escena | panel */
+  #s-conversar.active {
+    display: grid;
+    grid-template-columns: auto minmax(220px, 1fr);
+    grid-auto-rows: min-content;
+    column-gap: 12px; row-gap: 8px;
+    align-items: start;
+  }
+  #s-conversar .progress { grid-column: 1 / -1; }
+  .escena-wrap {
+    grid-column: 1; grid-row: 2 / span 5;
+    height: auto;
+    /* El ancho sale del alto disponible × proporción de la imagen */
+    width: min(60vw, calc((100vh - 40px) * var(--escena-ratio, 16 / 9)));
+    width: min(60vw, calc((100dvh - 40px) * var(--escena-ratio, 16 / 9)));
+    aspect-ratio: var(--escena-ratio, 16 / 9);
+  }
+  .escena { height: 100%; }
+  .lang-row { grid-column: 2; justify-content: flex-start; flex-wrap: wrap; gap: 4px; margin: 0; padding-right: 50px; }
+  .lang-btn { height: 36px; padding: 4px 9px; }
+  .subtitulos, .turno-box, #btn-iniciar { grid-column: 2; }
+  .subtitulos { margin-top: 0; }
+  .turno-box { padding: 8px; gap: 6px; }
+  .turno-titulo { font-size: 0.95rem; }
+  .guia-box { padding: 6px; }
+  .guia-gu { font-size: 1.1rem; }
+  .fila-ayuda { gap: 6px; }
+  .btn-guia { padding: 6px 10px; font-size: 0.8rem; }
+  .btn-grabar { padding: 9px 18px; }
+  #btn-iniciar { justify-self: center; padding: 10px 24px; }
+
+  /* Resultado: tarjeta | botones */
+  #s-resultado.active { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; row-gap: 10px; align-items: center;
+    margin-top: 44px; }   /* deja sitio al 🏠 flotante */
+  .resultado-card { grid-row: 1 / span 3; padding: 16px; }
+  .resultado-emoji { font-size: 2.4rem; margin-bottom: 4px; }
+  #s-resultado .btn-play, #s-resultado .btn-fin { grid-column: 2; padding: 12px; }
+}

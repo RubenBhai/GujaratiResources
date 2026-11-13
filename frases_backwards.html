@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Backwards · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-frases.css">
+</head>
+<body>
+
+<nav class="barra">
+  <a class="barra-btn" href="frases_hub.html" onclick="Frases.volver('frases_hub.html' + location.search); return false;">← Frases</a>
+  <a class="barra-btn" href="contenido.html" aria-label="Inicio">🏠</a>
+</nav>
+
+<main class="escena">
+
+  <div class="eyebrow"><span class="punto"></span><span id="cat">Frases</span> · Backwards</div>
+  <p class="instruccion">Escucha cada parte y repítela en voz alta. La frase irá creciendo desde el final.</p>
+
+  <div class="bw-badge"    id="badge"></div>
+  <div class="bw-progreso" id="progreso"></div>
+
+  <div class="fragmento-wrap" id="fragmento-wrap">
+    <div class="frag-texto gu" lang="gu" id="frag-texto"></div>
+    <div class="bw-acciones">
+      <button class="btn-chip-sec"  id="btn-escuchar">🔊 Escuchar</button>
+      <button class="btn-chip-main" id="btn-siguiente">Siguiente →</button>
+    </div>
+  </div>
+
+  <div class="cierre oculto" id="cierre">
+    <div class="cierre-label">Frase completa</div>
+    <div class="cierre-gu gu" lang="gu" id="cierre-gu"></div>
+    <div class="cierre-rom"   id="cierre-rom"></div>
+    <div class="cierre-es"    id="cierre-es"></div>
+    <button class="btn-chip-main" id="btn-cierre">Siguiente frase →</button>
+  </div>
+
+</main>
+
+<script src="frases_base.js"></script>
+<script src="frases_backwards.js"></script>
+</body>
+</html>

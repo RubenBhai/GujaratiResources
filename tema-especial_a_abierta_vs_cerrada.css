@@ -51,6 +51,15 @@ a, button { transition: all 0.25s ease; }
 
 /* ── Nav ── */
 .nav-bar {
+  position: sticky;
+  top: 12px;
+  z-index: 100;
+  margin: 12px 10px 0;
+  background: rgba(255, 250, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--marron-suave);
+  border-radius: 60px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -60,9 +69,16 @@ a, button { transition: all 0.25s ease; }
 }
 
 .nav-btn {
+  border: none;
+  background: transparent;
+  color: var(--marron-oscuro);
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
   flex: 1 1 0;
   min-width: 0;
-  padding: 10px 8px;
+  padding: 10px 4px;
   font-size: 0.85rem;
   white-space: nowrap;
   overflow: hidden;
@@ -224,19 +240,20 @@ h2 {
 /* ── PAR DE CUADRANTES Y RESALTE INDIVIDUAL POR SONIDO ── */
 .par-cuadrantes {
   display: flex;
-  width: min(280px, 68vw);
+  width: min(320px, 88vw);   /* antes 68vw: en ≤390px la letra derecha se recortaba */
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--sombra-tarjeta);
 }
 
 .cuad {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;              /* que no se salga del par por el ancho del glifo */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px 16px;
+  padding: 24px 10px 16px;
   gap: 10px;
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -245,7 +262,7 @@ h2 {
 .cuad-abierto { background: var(--naranja-acento); }
 
 .cuad-letra {
-  font-size: 5rem;
+  font-size: clamp(3.2rem, 16vw, 5rem);
   font-weight: 700;
   color: white;
   line-height: 1;

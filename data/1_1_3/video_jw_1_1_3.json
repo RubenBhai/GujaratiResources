@@ -1,0 +1,59 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "badge": "Escucha gujarati real",
+  "titulo": "Un video en gujarati de verdad",
+  "lead": "No entenderás todo, y no hace falta. Escucha y caza las palabras que ya conoces.",
+  "antes": {
+    "titulo": "Antes de ver · escucha estas",
+    "palabras": [
+      {
+        "gu": "નામ",
+        "es": "nombre"
+      },
+      {
+        "gu": "શું",
+        "es": "qué"
+      },
+      {
+        "gu": "મારી",
+        "es": "mi (femenino)"
+      }
+    ]
+  },
+  "video": {
+    "kicker": "Video",
+    "titulo": "Primera visita — Salmo 83:18",
+    "descripcion": "Una pareja conversa con una vecina en la puerta de su casa. El video está en el sitio oficial; cuando termines, vuelve aquí para las preguntas.",
+    "boton": "▶ Ver el video en JW.ORG",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/વીડિયો/#gu/mediaitems/VODSampleConversations/pub-mwbv_202001_1_VIDEO"
+  },
+  "despues": {
+    "titulo": "Después de ver · toca cada pregunta para ver una pista",
+    "preguntas": [
+      {
+        "pregunta": "¿Cuántas veces oíste <b class=\"gu\">નામ</b>?",
+        "respuesta": "Muchas: suena ocho veces. Toda la conversación gira alrededor de un nombre.",
+        "duracion": 3
+      },
+      {
+        "pregunta": "¿Reconociste <b class=\"gu\">શું</b> («qué»)?",
+        "respuesta": "Sí, en las preguntas. Por ejemplo: <span class=\"gu\">શું તેમનું કોઈ નામ છે?</span> — «¿tiene algún nombre?».",
+        "duracion": 4
+      },
+      {
+        "pregunta": "Al final se presentan. ¿Oíste <b class=\"gu\">મારું નામ … છે</b>?",
+        "respuesta": "Sí: <span class=\"gu\">મારું નામ રોનક છે</span> — «me llamo Ronak». Igual que en el diálogo de la lección.",
+        "duracion": 4
+      },
+      {
+        "pregunta": "Ronak presenta a su esposa. ¿Por qué dice <b class=\"gu\">મારી</b> y no <b class=\"gu\">મારો</b>?",
+        "respuesta": "Porque <span class=\"gu\">પત્ની</span> (esposa) es femenino: <span class=\"gu\">આ મારી પત્ની રીવા છે</span>. Es la misma regla que <span class=\"gu\">મારી છોકરી</span>.",
+        "duracion": 5
+      }
+    ]
+  },
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.1.3",
+  "continuar_caption": "Continuar →"
+}

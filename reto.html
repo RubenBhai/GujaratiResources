@@ -17,7 +17,7 @@
 
 <nav class="nav-bar">
   <a class="nav-btn" href="#" onclick="history.back(); return false;">← Salir</a>
-  <a class="nav-btn home" id="nav-home" href="index.html">🏠</a>
+  <a class="nav-btn home" id="nav-home" href="index.html" aria-label="Inicio">🏠</a>
   <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
   <span class="nav-btn nav-phantom">&nbsp;</span>
 </nav>
@@ -29,7 +29,7 @@
   <div class="screen active" id="s-inicio">
     <span class="badge">Reto</span>
     <h1>¿Cuánto aprendiste?</h1>
-    <p class="lead">Pon a prueba lo que sabes. Tres niveles de reto — ¡a ver hasta dónde llegas!</p>
+    <p class="lead">Pon a prueba lo que sabes. Varios niveles de reto — ¡a ver hasta dónde llegas!</p>
     <div class="nivel-btns">
       <button class="btn-nivel" id="btn-nivel-1" onclick="iniciarNivel(1)">
         <span class="num">1</span>
@@ -77,6 +77,7 @@
       <button class="btn-sec" onclick="resetConteos('n1')">🔄 Reiniciar</button>
       <button class="btn-main" onclick="verificar(1)">Verificar</button>
     </div>
+    <button class="btn-sec" onclick="goTo('s-inicio')">← Menú de niveles</button>
   </div>
 
   <!-- NIVEL 2 -->
@@ -95,6 +96,7 @@
       <button class="btn-sec" onclick="resetConteos('n2')">🔄 Reiniciar</button>
       <button class="btn-main" onclick="verificar(2)">Verificar</button>
     </div>
+    <button class="btn-sec" onclick="goTo('s-inicio')">← Menú de niveles</button>
   </div>
 
   <!-- NIVEL 3 -->
@@ -104,6 +106,7 @@
     <p class="lead" id="n3-instruccion"></p>
     <div class="pronuncia-lista" id="n3-lista"></div>
     <button class="btn-main" id="btn-verificar-n3" onclick="verificarN3()">Verificar</button>
+    <button class="btn-sec" onclick="goTo('s-inicio')">← Menú de niveles</button>
   </div>
 
   <!-- NIVEL 4 -->
@@ -122,6 +125,7 @@
     <button class="btn-comprobar-reto" id="n4-reintentar" onclick="n4Reintentar()" style="display:none;">🔁 Reintentar</button>
     <button class="btn-limpiar-reto" id="n4-saltar" onclick="n4Saltar()" style="display:none;">⏭️ Saltar</button>
     <div class="pregunta-feedback" id="n4-feedback"></div>
+    <button class="btn-sec" onclick="goTo('s-inicio')">← Menú de niveles</button>
   </div>
 
   <!-- NIVEL 5 -->
@@ -140,6 +144,7 @@
       <button class="btn-sec" onclick="repetirSesionN5()">🔄 Repetir</button>
       <button class="btn-main" onclick="verificarN5()">Verificar</button>
     </div>
+    <button class="btn-sec" onclick="goTo('s-inicio')">← Menú de niveles</button>
   </div>
 
   <!-- NIVEL 6 · DICTADO BACKWARDS -->

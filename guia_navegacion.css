@@ -146,9 +146,16 @@ body {
 
 /* Responsivo para móviles */
 @media (max-width: 600px) {
+    /* Deja sitio al botón "Atrás" (absoluto, top:20px) para que no tape el título */
+    .guia-header { padding-top: 76px; }
     .guia-header h1 { font-size: 1.7rem; }
     .guia-container { margin: 20px auto; gap: 15px; }
 }
 
 /* Imagen de ícono personalizado inyectada por JS */
 .card-icon-img { width:56px; height:56px; object-fit:contain; }
+
+/* Área táctil mínima de 44px (pauta de accesibilidad móvil) */
+.btn-volver { min-height: 44px; box-sizing: border-box; }
+.link-item  { min-height: 44px; box-sizing: border-box;
+              display: flex; align-items: center; justify-content: center; }

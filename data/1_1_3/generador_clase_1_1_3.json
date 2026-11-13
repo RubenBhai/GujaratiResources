@@ -1,0 +1,197 @@
+{
+  "leccion": "1.1.3",
+  "titulo": "Arma tus propias oraciones",
+  "subtitulo": "Elige una opción de cada columna. Fíjate en que el posesivo cambia según la palabra que lo sigue.",
+  "generadores": [
+    {
+      "nombre": "Masculino (-ો)",
+      "instruccion": "Con palabras masculinas el posesivo termina en ો.",
+      "columnas": [
+        {
+          "pregunta": "¿de quién?",
+          "pregunta_gu": "કોનું?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "મારો",
+              "es": "mi",
+              "audio": "audios/clase_1_1/audio_m_maaro.mp3"
+            },
+            {
+              "gu": "તમારો",
+              "es": "su (de usted)",
+              "audio": "audios/clase_1_1/audio_m_tamaaro.mp3"
+            },
+            {
+              "gu": "તારો",
+              "es": "tu",
+              "audio": "audios/clase_1_1/audio_m_taaro.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "છોકરો",
+              "es": "hijo / niño",
+              "audio": "audios/clase_1_1/audio_m_chokro.mp3"
+            },
+            {
+              "gu": "રસ્તો",
+              "es": "camino",
+              "audio": "audios/clase_1_1/audio_m_rasto.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "છે",
+              "es": "es",
+              "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Femenino (-ી)",
+      "instruccion": "Con palabras femeninas el posesivo termina en ી.",
+      "columnas": [
+        {
+          "pregunta": "¿de quién?",
+          "pregunta_gu": "કોનું?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "મારી",
+              "es": "mi",
+              "audio": "audios/clase_1_1/audio_m_maarii.mp3"
+            },
+            {
+              "gu": "તમારી",
+              "es": "su (de usted)",
+              "audio": "audios/clase_1_1/audio_m_tamaarii.mp3"
+            },
+            {
+              "gu": "તેની",
+              "es": "su (de él/ella)",
+              "audio": "audios/clase_1_1/audio_m_tenii.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "છોકરી",
+              "es": "hija / niña",
+              "audio": "audios/clase_1_1/audio_m_chokrii.mp3"
+            },
+            {
+              "gu": "માતા",
+              "es": "madre",
+              "audio": "audios/clase_1_1/audio_m_maataa.mp3"
+            },
+            {
+              "gu": "નોકરી",
+              "es": "empleo",
+              "audio": "audios/clase_1_1/audio_m_nokrii.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "છે",
+              "es": "es",
+              "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Neutro (-ું)",
+      "instruccion": "Con palabras neutras el posesivo termina en ું.",
+      "columnas": [
+        {
+          "pregunta": "¿de quién?",
+          "pregunta_gu": "કોનું?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "મારું",
+              "es": "mi",
+              "audio": "audios/clase_1_1/audio_m_maaru(m).mp3"
+            },
+            {
+              "gu": "તમારું",
+              "es": "su (de usted)",
+              "audio": "audios/clase_1_1/audio_m_tamaaru(m).mp3"
+            },
+            {
+              "gu": "તેનું",
+              "es": "su (de él/ella)",
+              "audio": "audios/clase_1_1/audio_m_tenu(m).mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "નામ",
+              "es": "nombre",
+              "audio": "audios/clase_1_1/audio_m_naam.mp3"
+            },
+            {
+              "gu": "શહેર",
+              "es": "ciudad",
+              "audio": "audios/clase_1_1/audio_m_shaher.mp3"
+            },
+            {
+              "gu": "મન",
+              "es": "mente",
+              "audio": "audios/clase_1_1/audio_m_man.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે?",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "છે",
+              "es": "es",
+              "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

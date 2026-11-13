@@ -26,7 +26,8 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     document.getElementById('nav-mapa').href    = 'guia_navegacion.html?leccion=' + _leccionRaw;
 
     // Efecto victoria (definido en efecto_victoria.js)
-    revisarVictoria(100, data.sonido_victoria, data.programa_efecto_victoria, _leccion);
+    // Sin sonido: #triunfo ya suena arriba; con data.sonido_victoria se solapaban dos audios de victoria
+    revisarVictoria(100, null, data.programa_efecto_victoria, _leccion);
 
     // Subtitle: usa clase .gu-inline en lugar de style= inline
     var r = data.resumen;
@@ -58,6 +59,12 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
     // Próxima lección
     var prox = data.proxima_leccion;
+    document.getElementById('btn-siguiente-leccion').href = 'leccion_intro.html?leccion=' + prox.codigo;
+    // Próxima lección aún sin letras (p.ej. 1.1.4 en preparación): no mostrar "Aprenderás 0 letras nuevas"
+    if(!prox.letras || !prox.letras.length){
+      document.querySelector('.proxima-box').style.display = 'none';
+      return;
+    }
     document.getElementById('proxima-texto').textContent = 'Aprenderás ' + prox.cantidad_letras + ' letras nuevas:';
     var proxLetrasCont = document.getElementById('proxima-letras');
     prox.letras.forEach(function(l){
@@ -66,7 +73,6 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
       span.textContent = l;
       proxLetrasCont.appendChild(span);
     });
-    document.getElementById('btn-siguiente-leccion').href = 'leccion_intro.html?leccion=' + prox.codigo;
   })
   .catch(function(){
     document.body.innerHTML =
@@ -77,9 +83,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

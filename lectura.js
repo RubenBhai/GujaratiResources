@@ -38,6 +38,12 @@ function construirParrafo() {
     span.onclick = function() {
       reproducirFragmento(seg);
     };
+    // Accesible con teclado / lector de pantalla
+    span.setAttribute('role', 'button');
+    span.tabIndex = 0;
+    span.onkeydown = function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reproducirFragmento(seg); }
+    };
 
     // ── Al pasar el mouse por encima: mostrar la traducción en la barra inferior ──
     span.onmouseenter = function() {
@@ -70,20 +76,23 @@ function construirParrafo() {
 function reproducirFragmento(seg) {
   if (!audio.src || audio.src === '' || audio.src === window.location.href) {
     audio.src = DATA.lectura.audio;
-    audio.addEventListener('loadedmetadata', function onLoaded() {
-      audio.removeEventListener('loadedmetadata', onLoaded);
-      iniciarReproduccionFragmento(seg);
-    });
-  } else {
-    iniciarReproduccionFragmento(seg);
   }
+  if (audio.readyState >= 1) { iniciarReproduccionFragmento(seg); return; }
+  // iOS: play() debe llamarse DENTRO del toque (y sin metadatos iOS no carga nada).
+  // Arrancamos ya y saltamos al inicio de la frase en cuanto haya metadatos.
+  audio.addEventListener('loadedmetadata', function() { audio.currentTime = seg.ini; }, { once: true });
+  iniciarReproduccionFragmento({ ini: 0, fin: seg.fin });
 }
 
 function iniciarReproduccionFragmento(seg) {
   fragmentoObjetivoFin = seg.fin;
   audio.currentTime    = seg.ini;
   
-  audio.play().catch(function() {});
+  audio.play().catch(function(e) {
+    // AbortError = otro toque interrumpió esta reproducción: no tocar la nueva
+    if (e && e.name === 'AbortError') return;
+    detenerFragmento();
+  });
 
   document.getElementById('btn-play').disabled = false;
   var btnP          = document.getElementById('btn-pause');
@@ -126,6 +135,9 @@ function toggleIdioma(cual) {
 function toggleVelocidad() {
   idxVelocidad = (idxVelocidad + 1) % VELOCIDADES.length;
   var val = VELOCIDADES[idxVelocidad];
+  // Al asignar src, el navegador repone playbackRate = defaultPlaybackRate:
+  // fijamos ambos para que 0.75x elegido antes de ▶ se respete.
+  audio.defaultPlaybackRate = val;
   audio.playbackRate = val;
   document.getElementById('btn-velocidad').textContent = val + 'x';
 }
@@ -158,7 +170,12 @@ function reproducir() {
   }
 
   audio.currentTime = 0;
-  audio.play().catch(function() {});
+  audio.play().catch(function() {
+    // Si no arranca (404, sin red, iOS), no dejar ▶ deshabilitado para siempre
+    cancelAnimationFrame(rafId);
+    document.getElementById('btn-play').disabled = false;
+    document.getElementById('btn-pause').style.display = 'none';
+  });
 
   document.getElementById('btn-play').disabled = true;
   var btnP          = document.getElementById('btn-pause');
@@ -171,7 +188,7 @@ function reproducir() {
 function togglePausa() {
   var btnP = document.getElementById('btn-pause');
   if (audio.paused) {
-    audio.play();
+    audio.play().catch(function() { btnP.textContent = '▶'; cancelAnimationFrame(rafId); });
     btnP.textContent = '⏸';
     seguirLectura();
   } else {
@@ -335,9 +352,10 @@ if (_btnVolver) {
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if (localV === null){

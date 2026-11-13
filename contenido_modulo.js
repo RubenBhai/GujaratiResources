@@ -19,8 +19,11 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(construir)
   .catch(function(){
-    document.body.innerHTML =
+    // Solo se reemplaza el contenido: la barra (Atrás / casita) sigue visible.
+    document.querySelector('.wrap-letras').innerHTML =
       '<p class="error-carga">No se pudo cargar el contenido. Revisa tu conexión.</p>';
+    document.getElementById('nav-atras').href = 'contenido.html';
+    document.getElementById('nav-home').href  = 'contenido.html';
   });
 
 function construir(data){
@@ -36,6 +39,7 @@ function construir(data){
   var colDer = document.getElementById('col-der');
   var secciones = data.secciones || [];
   var leccionActiva = null;
+  var activaHecha   = false;
 
   /* ── Render por secciones ── */
   secciones.forEach(function(sec, i){
@@ -50,14 +54,20 @@ function construir(data){
     el.classList.add('ord-' + (i + 1));
     (sec.columna === 'izq' ? colIzq : colDer).appendChild(el);
 
-    // La lección activa (si existe) alimenta el botón principal
+    // La lección activa (si existe) alimenta el botón principal: la PRIMERA
+    // activa que el alumno no ha completado (o la primera activa si ya las hizo
+    // todas). leccion_fin.js guarda 'leccion_1_1_1' = 'completada'.
     if(sec.tipo === 'lista_lecciones'){
-      (sec.items || []).forEach(function(l){ if(l.estado === 'activa') leccionActiva = l; });
+      (sec.items || []).forEach(function(l){
+        if(l.estado !== 'activa') return;
+        var hecha = false;
+        try { hecha = localStorage.getItem('leccion_' + String(l.codigo_leccion).replace(/\./g, '_')) === 'completada'; } catch(e){}
+        if(!leccionActiva || (activaHecha && !hecha)){ leccionActiva = l; activaHecha = hecha; }
+      });
     }
   });
 
-  /* ── Botón principal + enlace al mapa ── */
-  var navMapa = document.getElementById('nav-mapa');
+  /* ── Botón principal ── */
   if(leccionActiva){
     var btn = document.createElement('a');
     btn.className   = 'btn-empezar sec-izq ord-final';
@@ -65,9 +75,6 @@ function construir(data){
     btn.href        = 'leccion_loader.html?leccion=' + leccionActiva.codigo_leccion;
     btn.textContent = 'Empezar con la Lección ' + leccionActiva.numero + ' →';
     colIzq.appendChild(btn);
-    if(navMapa) navMapa.href = 'guia_navegacion.html?leccion=' + leccionActiva.codigo_leccion;
-  } else {
-    if(navMapa) navMapa.classList.add('nav-oculto');
   }
 }
 
@@ -168,9 +175,10 @@ function etiqueta(txt, n){
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

@@ -6,6 +6,7 @@
   /* ── Links de navegación ── */
   document.getElementById('link-consonantes').href = 'leccion_letra.html?leccion=' + _lec;
   document.getElementById('link-vocales').href     = 'leccion_vocal.html?leccion='  + _lec;
+  document.getElementById('link-palabras').href    = 'leccion_palabra_intro.html?leccion=' + _lec;
 
   document.getElementById('link-juego-a').href = 'juego.html?leccion=' + _lec;
   document.getElementById('link-juego-b').href = 'juego.html?leccion=' + _lec + '&fase=b';
@@ -25,7 +26,7 @@
 
   /* ── Visibilidad controlada por JSON ── */
   var SECCIONES = {
-    'tema-alfabeto': ['link-consonantes', 'link-vocales'],
+    'tema-alfabeto': ['link-consonantes', 'link-vocales', 'link-palabras'],
     'tema-juegos':   ['link-juego-a', 'link-juego-b', 'link-juego-c'],
     'tema-practica': ['link-practica'],
     'tema-pensar':   ['link-aprende', 'link-compone', 'link-lectura', 'link-reto', 'link-pensar', 'link-generar', 'link-dialogo']

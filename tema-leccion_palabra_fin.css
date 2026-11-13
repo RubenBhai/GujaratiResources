@@ -1,0 +1,86 @@
+/* =========================================================
+   tema-leccion_palabra_fin.css — Conclusión de vocabulario
+   ========================================================= */
+
+.wrap-fin {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.fin-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radio-lg);
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Aura cálida pulsante de fondo */
+.fin-card::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, var(--saffron), var(--olive), var(--sindoor));
+  z-index: -1;
+  border-radius: 22px;
+  opacity: 0.45;
+  filter: blur(10px);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.fin-emoji {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: -4px;
+}
+
+.fin-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.85rem;
+  color: var(--paper);
+  font-weight: 700;
+}
+
+.fin-desc {
+  color: var(--paper); /* Cambiado de --ink-soft a --paper para máximo contraste */
+  font-size: 1.05rem;
+  font-weight: 500;    /* Un punto más de grosor para mejorar la legibilidad */
+  line-height: 1.6;
+  max-width: 380px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Sombra sutil que despega el texto del fondo */
+}
+
+.fin-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Destacar el botón de Reto Flash con tono cálido saffron en hover */
+.btn-repaso {
+  border-color: rgba(184, 134, 61, 0.4);
+  font-weight: 700;
+  color: var(--paper);
+}
+
+.btn-repaso:hover {
+  background: var(--saffron);
+  color: #1a1410;
+  border-color: var(--saffron);
+}
+

@@ -1,0 +1,143 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "anterior_primera": "leccion_letra.html?leccion=1.1.3&item=3",
+  "siguiente_final": "leccion_palabra_intro.html?leccion=1.1.3",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.1.3",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.1",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "repaso_final": true,
+  "pasos": [
+    {
+      "tipo": "vocal",
+      "vocal": "i",
+      "gujarati": "ઇ",
+      "badge": "Vocal 1 de 5",
+      "audio": "audios/clase_1_1/audio_alfa_m_i.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">i</strong> corta, como en '<strong class=\"det-p\"><span class=\"det-s\">i</span>sla</strong>'"
+    },
+    {
+      "tipo": "plana",
+      "vocal": "i",
+      "roman": "i",
+      "imagen": "imagenes/Clase_1_1/img_plana_i.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_i.mp3"
+    },
+    {
+      "tipo": "matra",
+      "vocal": "i",
+      "matra": "િ",
+      "badge": "Matra 2 de 5",
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_i.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "i",
+      "matra": "િ",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_ni.mp3",
+        "audios/clase_1_1/audio_m_ti.mp3",
+        "audios/clase_1_1/audio_m_shi.mp3"
+      ],
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_1_3_vo1",
+      "ecuaciones": [
+        {
+          "partes": "ન + િ",
+          "resultado": "નિ"
+        },
+        {
+          "partes": "ત + િ",
+          "resultado": "તિ"
+        },
+        {
+          "partes": "શ + િ",
+          "resultado": "શિ"
+        }
+      ]
+    },
+    {
+      "tipo": "vocal",
+      "vocal": "ii",
+      "gujarati": "ઈ",
+      "badge": "Vocal 3 de 5",
+      "audio": "audios/clase_1_1/audio_alfa_m_ii.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ii</strong>, una 'i' <strong>larga</strong>, como si alargaras la de 's<span class=\"det-s\">í</span>'"
+    },
+    {
+      "tipo": "plana",
+      "vocal": "ii",
+      "roman": "ii",
+      "imagen": "imagenes/Clase_1_1/img_plana_ii.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_ii.mp3"
+    },
+    {
+      "tipo": "matra",
+      "vocal": "ii",
+      "matra": "ી",
+      "badge": "Matra 4 de 5",
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_ii.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "ii",
+      "matra": "ી",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_nii.mp3",
+        "audios/clase_1_1/audio_m_tii.mp3",
+        "audios/clase_1_1/audio_m_shii.mp3"
+      ],
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_1_3_vo2",
+      "ecuaciones": [
+        {
+          "partes": "ન + ી",
+          "resultado": "ની"
+        },
+        {
+          "partes": "ત + ી",
+          "resultado": "તી"
+        },
+        {
+          "partes": "શ + ી",
+          "resultado": "શી"
+        }
+      ]
+    },
+    {
+      "tipo": "matra",
+      "vocal": "conjuntiva",
+      "matra": "સ્ત",
+      "badge": "Conjuntiva 5 de 5",
+      "imagen": "imagenes/Clase_1_1/img_alfa_conjuntiva_st.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "conjuntiva",
+      "matra": "સ્ત",
+      "badge": "Palabras con la conjuntiva સ્ત",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_sta.mp3",
+        "audios/clase_1_1/audio_m_namaste.mp3",
+        "audios/clase_1_1/audio_m_rasto.mp3"
+      ],
+      "texto_boton": "Escucha cómo se pegan સ y ત",
+      "reto_flash_json": "Leccion_1_1_3_vo3",
+      "ecuaciones": [
+        {
+          "partes": "સ + ્ + ત",
+          "resultado": "સ્ત"
+        },
+        {
+          "partes": "ન + મ + સ્તે",
+          "resultado": "નમસ્તે"
+        },
+        {
+          "partes": "ર + સ્તો",
+          "resultado": "રસ્તો"
+        }
+      ]
+    }
+  ]
+}

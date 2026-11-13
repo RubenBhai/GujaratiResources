@@ -30,6 +30,7 @@ body {
   color: var(--paper);
   font-family: 'Source Sans 3', sans-serif;
   min-height: 100vh;
+  min-height: 100dvh;        /* iOS: 100vh incluye la barra del navegador; 100vh queda de respaldo */
   padding-bottom: 24px;
 }
 
@@ -60,6 +61,11 @@ a, button { transition: all 0.25s ease; }
   font-weight: 600;
   text-decoration: none;
   transition: all 0.25s ease;
+  min-height: 44px;          /* zona táctil mínima */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .nav-btn:hover:not(.disabled) {
@@ -247,6 +253,11 @@ a, button { transition: all 0.25s ease; }
 /* btn-practicar: fondo sindoor en lugar del verde base */
 .btn-sindoor       { flex:1; margin-top:0; background:var(--sindoor); box-shadow:0 4px 14px rgba(168,54,42,0.3); }
 .btn-sindoor:hover { background:var(--sindoor-deep); box-shadow:0 6px 20px rgba(168,54,42,0.4); }
+
+/* btn-nota-especial: btn-fin en sindoor (mismas clases que en leccion_vocal) */
+.btn-fin-sindoor       { background:var(--sindoor); box-shadow:0 4px 14px rgba(168,54,42,0.3); }
+.btn-fin-sindoor:hover { background:var(--sindoor-deep); box-shadow:0 6px 20px rgba(168,54,42,0.4); }
+.btn-mt0               { margin-top:0; }
 
 /* btn-sec con playing state (para el botón de audio) */
 .btn-sec.playing   { background:var(--sindoor); color:var(--paper); }

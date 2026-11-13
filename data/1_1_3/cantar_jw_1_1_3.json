@@ -1,0 +1,57 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "badge": "Canta en gujarati",
+  "titulo": "Aprende cantando",
+  "lead": "Canto 156: યહોવા મારી સાથે — «Jehová está conmigo». Es sencillo y muy repetitivo: ideal para cantar leyendo.",
+  "antes": {
+    "titulo": "Busca estas en la letra",
+    "palabras": [
+      {
+        "gu": "મારો",
+        "es": "mi (masculino)"
+      },
+      {
+        "gu": "મારી",
+        "es": "mi (femenino)"
+      },
+      {
+        "gu": "તું",
+        "es": "tú"
+      },
+      {
+        "gu": "તે",
+        "es": "él / ella"
+      }
+    ]
+  },
+  "escuchar": {
+    "titulo": "Primero, lee con la música",
+    "descripcion": "Suena la música con la letra en pantalla. Esta vez no cantes: sigue la letra con la vista y busca las palabras de la lección.",
+    "boton": "📖 Leer con la música",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si leíste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૫૬-યહોવા-મારી-સાથે/?content=video"
+  },
+  "cantar": {
+    "titulo": "Ahora, canta tú",
+    "descripcion": "La misma música y la misma letra. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
+    "boton": "🎤 Cantar",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si cantaste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૫૬-યહોવા-મારી-સાથે/?content=video"
+  },
+  "despues": {
+    "titulo": "Después de cantar",
+    "escuchar": [
+      "En el coro está <b class=\"gu\">યહોવા મારો આધાર</b>: <b class=\"gu\">આધાર</b> (apoyo) es masculino, por eso <b class=\"gu\">મારો</b>.",
+      "Y en la última estrofa, <b class=\"gu\">એવી શ્રદ્ધા મારી</b>: <b class=\"gu\">શ્રદ્ધા</b> (fe) es femenino, por eso <b class=\"gu\">મારી</b>."
+    ],
+    "cantar": [
+      "¿Pudiste leer el coro al ritmo de la música?",
+      "¿Cuántas veces cantaste <b class=\"gu\">તું</b>?"
+    ]
+  },
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.1.3",
+  "continuar_caption": "Continuar →"
+}

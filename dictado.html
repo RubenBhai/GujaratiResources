@@ -14,7 +14,7 @@
 
 <nav class="nav-bar">
   <a class="nav-btn" href="#" onclick="history.back(); return false;">← Volver</a>
-  <a class="nav-btn home" href="index.html">🏠</a>
+  <a class="nav-btn home" href="index.html" aria-label="Inicio">🏠</a>
   <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
   <span class="nav-btn nav-phantom">&nbsp;</span>
 </nav>
@@ -25,7 +25,7 @@
 
   <!-- Zona del ejercicio -->
   <div class="zona" id="ejercicio">
-    <button class="btn-escuchar" id="btn-escuchar" onclick="reproducir()">🔊</button>
+    <button class="btn-escuchar" id="btn-escuchar" onclick="reproducir()" aria-label="Escuchar">🔊</button>
     <div class="build-zone vacia" id="build"></div>
     <div class="feedback" id="feedback"></div>
     <div class="bank" id="bank"></div>

@@ -1,0 +1,25 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.1.3",
+  "siguiente_palabras": "leccion_vocal.html?leccion=1.1.3&item=1",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "planas": [
+    {
+      "roman": "na",
+      "imagen": "imagenes/Clase_1_1/img_plana_na.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_na.mp3"
+    },
+    {
+      "roman": "ta",
+      "imagen": "imagenes/Clase_1_1/img_plana_ta.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_ta.mp3"
+    },
+    {
+      "roman": "sha",
+      "imagen": "imagenes/Clase_1_1/img_plana_sha.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_sha.mp3"
+    }
+  ]
+}

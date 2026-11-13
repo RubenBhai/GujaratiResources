@@ -23,6 +23,7 @@ let actual        = null;
 let colaOraciones = [];
 let construido    = [];
 let score         = 0;
+let bloqueado     = false;   /* true mientras se muestra el acierto: evita doble toque en Comprobar */
 
 function shuffle(a){ return a.slice().sort(function(){ return Math.random() - 0.5; }); }
 
@@ -75,6 +76,7 @@ function nuevaRonda(){
     return;
   }
   construido = [];
+  bloqueado  = false;
   document.getElementById('feedback').textContent  = '';
   document.getElementById('feedback').className    = 'feedback';
   document.getElementById('target-es').textContent = actual.espanol;
@@ -95,6 +97,7 @@ function nuevaRonda(){
 }
 
 function tocarPalabra(chip, gu){
+  if(bloqueado) return;
   chip.classList.add('used');
   construido.push({ gu: gu, chipIdx: chip.dataset.idx });
   reproducir(gu);
@@ -116,6 +119,7 @@ function renderBuild(){
 }
 
 function quitarPalabra(i){
+  if(bloqueado) return;
   var item = construido[i];
   var chip = document.querySelector('.word-chip[data-idx="' + item.chipIdx + '"]');
   if(chip) chip.classList.remove('used');
@@ -124,6 +128,7 @@ function quitarPalabra(i){
 }
 
 function limpiar(){
+  if(bloqueado) return;
   construido = [];
   document.querySelectorAll('.word-chip').forEach(function(c){ c.classList.remove('used'); });
   document.getElementById('feedback').textContent = '';
@@ -132,7 +137,7 @@ function limpiar(){
 }
 
 function comprobar(){
-  if(construido.length === 0) return;
+  if(bloqueado || construido.length === 0) return;
   var intento  = construido.map(function(x){ return x.gu; });
   var correcto = actual.palabras;
   var fb       = document.getElementById('feedback');
@@ -141,6 +146,7 @@ function comprobar(){
               intento.every(function(g, i){ return g === correcto[i]; });
 
   if(igual){
+    bloqueado = true;
     fb.innerHTML  = '✓ ¡Correcto! <span class="traduccion gu">' + correcto.join(' ') + '</span>';
     fb.className  = 'feedback ok';
     sfx.src = SND_OK; sfx.play().catch(function(){});
@@ -184,9 +190,10 @@ fetch(JSON_URL)
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

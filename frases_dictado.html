@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Dictado · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-frases.css">
+</head>
+<body>
+
+<nav class="barra">
+  <a class="barra-btn" href="frases_hub.html" onclick="Frases.volver('frases_hub.html' + location.search); return false;">← Frases</a>
+  <a class="barra-btn" href="contenido.html" aria-label="Inicio">🏠</a>
+</nav>
+
+<main class="escena">
+
+  <div class="eyebrow"><span class="punto"></span><span id="cat">Frases</span> · Dictado</div>
+  <p class="instruccion" id="instruccion">Escucha y ordena las piezas para formar la frase.</p>
+
+  <button class="btn-escuchar" id="btn-escuchar"><span class="ico">🔊</span> Escuchar</button>
+
+  <div class="construccion vacia" id="construccion"></div>
+  <div class="banco" id="banco"></div>
+
+  <div class="acciones-chips" id="acciones-comprobar">
+    <button class="btn-chip-sec" id="btn-limpiar">Limpiar</button>
+    <button class="btn-chip-main" id="btn-comprobar">Comprobar</button>
+  </div>
+  <div class="acciones-chips oculto" id="acciones-fallo">
+    <button class="btn-chip-sec" id="btn-saltar">⏭️ Saltar</button>
+    <button class="btn-chip-main" id="btn-reintentar">🔁 Reintentar</button>
+  </div>
+
+  <div class="revelacion oculto" id="revelacion">
+    <div class="rev-gu gu" lang="gu" id="rev-gu"></div>
+    <div class="rev-rom" id="rev-rom"></div>
+    <div class="rev-es" id="rev-es"></div>
+  </div>
+
+  <div class="feedback" id="feedback"></div>
+  <div class="marcador">Aciertos: <span id="score">0</span></div>
+
+</main>
+
+<script src="frases_base.js"></script>
+<script src="frases_chips.js"></script>
+<script src="frases_dictado.js"></script>
+</body>
+</html>

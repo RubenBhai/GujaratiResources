@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title id="page-title">Reto de memoria · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-frases.css">
+</head>
+<body>
+
+<nav class="barra">
+  <a class="barra-btn" href="frases_hub.html" onclick="Frases.volver('frases_hub.html' + location.search); return false;">← Frases</a>
+  <a class="barra-btn" href="contenido.html" aria-label="Inicio">🏠</a>
+</nav>
+
+<div class="progreso-top"><div class="progreso-top-fill" id="prog-fill"></div></div>
+
+<main class="escena">
+
+  <!-- INICIO -->
+  <section class="screen" id="screen-inicio">
+    <div class="eyebrow"><span class="punto"></span><span id="cat">Frases</span> · Reto de memoria</div>
+    <h1 class="reto-titulo">Repaso espaciado</h1>
+    <p class="reto-sub">Aprende las frases y repítelas hasta dominarlas. Lo que te cueste volverá más seguido.</p>
+    <div class="reto-stats">
+      <div class="stat"><span class="stat-num" id="st-nuevas">0</span><span class="stat-lbl">por aprender</span></div>
+      <div class="stat"><span class="stat-num" id="st-repasar">0</span><span class="stat-lbl">para repasar</span></div>
+      <div class="stat"><span class="stat-num" id="st-dom">0</span><span class="stat-lbl">dominadas</span></div>
+    </div>
+    <button class="btn-chip-main btn-grande" id="btn-empezar">Empezar</button>
+    <button class="btn-texto" id="btn-reiniciar">Reiniciar progreso</button>
+  </section>
+
+  <!-- CONOCER -->
+  <section class="screen oculto" id="screen-conocer">
+    <div class="reto-fase-badge">Conócela</div>
+    <div class="frase">
+      <div class="frase-gu" lang="gu" id="con-gu"></div>
+      <div class="frase-rom" id="con-rom"></div>
+      <div class="frase-es"  id="con-es"></div>
+      <button class="btn-audio" id="con-audio"><span class="ico">▶</span> Escuchar la frase</button>
+    </div>
+    <div class="divisor">Pieza por pieza</div>
+    <div class="bloques" id="con-bloques"></div>
+    <button class="btn-chip-main btn-grande" id="con-sig">La memoricé →</button>
+  </section>
+
+  <!-- ENTENDER (quiz) -->
+  <section class="screen oculto" id="screen-entender">
+    <div class="reto-fase-badge">¿Qué significa?</div>
+    <div class="quiz-prompt">
+      <div class="quiz-gu gu" lang="gu" id="q-gu"></div>
+      <button class="btn-audio btn-audio-chico" id="q-audio"><span class="ico">▶</span> Oír</button>
+    </div>
+    <div class="quiz-opciones" id="q-opciones"></div>
+    <div class="feedback" id="q-feedback"></div>
+    <div class="acciones-chips oculto" id="q-acciones">
+      <button class="btn-chip-sec"  id="q-saltar">⏭️ Saltar</button>
+      <button class="btn-chip-main" id="q-reintentar">🔁 Reintentar</button>
+    </div>
+  </section>
+
+  <!-- DECIR (acción) -->
+  <section class="screen oculto" id="screen-decir">
+    <div class="reto-fase-badge">Dila en voz alta</div>
+    <p class="decir-instru" id="decir-instru">Escucha… y dila completa en voz alta.</p>
+    <button class="btn-escuchar" id="decir-audio"><span class="ico">🔊</span> Escuchar</button>
+    <div class="cronometro"><div class="cronometro-fill" id="crono-fill"></div></div>
+    <div class="revelacion oculto" id="decir-rev">
+      <div class="rev-gu gu" lang="gu" id="decir-gu"></div>
+      <div class="rev-rom"   id="decir-rom"></div>
+      <div class="rev-es"    id="decir-es"></div>
+    </div>
+    <div class="autoeval oculto" id="autoeval">
+      <p class="autoeval-preg">¿Pudiste decirla?</p>
+      <div class="autoeval-btns">
+        <button class="autoeval-btn ae-si"   data-r="si">¡La dije!</button>
+        <button class="autoeval-btn ae-casi" data-r="casi">Casi</button>
+        <button class="autoeval-btn ae-no"   data-r="no">No pude</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUMEN -->
+  <section class="screen oculto" id="screen-fin">
+    <div class="fin-emoji">🎉</div>
+    <h1 class="reto-titulo" id="fin-titulo">¡Sesión completa!</h1>
+    <div class="reto-stats">
+      <div class="stat"><span class="stat-num" id="fin-vistas">0</span><span class="stat-lbl">frases repasadas</span></div>
+      <div class="stat"><span class="stat-num" id="fin-aciertos">0</span><span class="stat-lbl">aciertos</span></div>
+      <div class="stat"><span class="stat-num" id="fin-dom">0</span><span class="stat-lbl">dominadas</span></div>
+    </div>
+    <button class="btn-chip-main btn-grande" id="fin-volver">Volver</button>
+  </section>
+
+</main>
+
+<script src="frases_base.js"></script>
+<script src="frases_srs.js"></script>
+<script src="frases_reto.js"></script>
+</body>
+</html>

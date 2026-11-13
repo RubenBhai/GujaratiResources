@@ -1,0 +1,218 @@
+{
+  "leccion": "1.1.3",
+  "letters": [
+    {
+      "letter": "ન",
+      "answer": "na",
+      "audio": "audios/clase_1_1/audio_alfa_m_na.mp3"
+    },
+    {
+      "letter": "ત",
+      "answer": "ta",
+      "audio": "audios/clase_1_1/audio_alfa_m_ta.mp3"
+    },
+    {
+      "letter": "શ",
+      "answer": "sha",
+      "audio": "audios/clase_1_1/audio_alfa_m_sha.mp3"
+    },
+    {
+      "letter": "ઇ",
+      "answer": "i",
+      "audio": "audios/clase_1_1/audio_alfa_m_i.mp3"
+    },
+    {
+      "letter": "ઈ",
+      "answer": "ii",
+      "audio": "audios/clase_1_1/audio_alfa_m_ii.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "નિ",
+      "answer": "ni",
+      "audio": "audios/clase_1_1/audio_m_ni.mp3"
+    },
+    {
+      "letter": "તિ",
+      "answer": "ti",
+      "audio": "audios/clase_1_1/audio_m_ti.mp3"
+    },
+    {
+      "letter": "શિ",
+      "answer": "shi",
+      "audio": "audios/clase_1_1/audio_m_shi.mp3"
+    },
+    {
+      "letter": "ની",
+      "answer": "nii",
+      "audio": "audios/clase_1_1/audio_m_nii.mp3"
+    },
+    {
+      "letter": "તી",
+      "answer": "tii",
+      "audio": "audios/clase_1_1/audio_m_tii.mp3"
+    },
+    {
+      "letter": "શી",
+      "answer": "shii",
+      "audio": "audios/clase_1_1/audio_m_shii.mp3"
+    },
+    {
+      "letter": "ના",
+      "answer": "naa",
+      "audio": "audios/clase_1_1/audio_m_naa.mp3"
+    },
+    {
+      "letter": "તા",
+      "answer": "taa",
+      "audio": "audios/clase_1_1/audio_m_taa.mp3"
+    },
+    {
+      "letter": "શા",
+      "answer": "shaa",
+      "audio": "audios/clase_1_1/audio_m_shaa.mp3"
+    },
+    {
+      "letter": "નો",
+      "answer": "no",
+      "audio": "audios/clase_1_1/audio_m_no.mp3"
+    },
+    {
+      "letter": "તો",
+      "answer": "to",
+      "audio": "audios/clase_1_1/audio_m_to.mp3"
+    },
+    {
+      "letter": "શો",
+      "answer": "sho",
+      "audio": "audios/clase_1_1/audio_m_sho.mp3"
+    },
+    {
+      "letter": "કિ",
+      "answer": "ki",
+      "audio": "audios/clase_1_1/audio_m_ki.mp3"
+    },
+    {
+      "letter": "મિ",
+      "answer": "mi",
+      "audio": "audios/clase_1_1/audio_m_mi.mp3"
+    },
+    {
+      "letter": "સિ",
+      "answer": "si",
+      "audio": "audios/clase_1_1/audio_m_si.mp3"
+    },
+    {
+      "letter": "કી",
+      "answer": "kii",
+      "audio": "audios/clase_1_1/audio_m_kii.mp3"
+    },
+    {
+      "letter": "મી",
+      "answer": "mii",
+      "audio": "audios/clase_1_1/audio_m_mii.mp3"
+    },
+    {
+      "letter": "સી",
+      "answer": "sii",
+      "audio": "audios/clase_1_1/audio_m_sii.mp3"
+    },
+    {
+      "letter": "નમસ્તે",
+      "answer": "namaste",
+      "audio": "audios/clase_1_1/audio_m_namaste.mp3",
+      "significado": "hola (saludo)"
+    },
+    {
+      "letter": "શું",
+      "answer": "shuⁿ",
+      "audio": "audios/clase_1_1/audio_m_shu(m).mp3",
+      "significado": "¿qué?"
+    },
+    {
+      "letter": "નામ",
+      "answer": "naam",
+      "audio": "audios/clase_1_1/audio_m_naam.mp3",
+      "significado": "nombre"
+    },
+    {
+      "letter": "રસ્તો",
+      "answer": "rasto",
+      "audio": "audios/clase_1_1/audio_m_rasto.mp3",
+      "significado": "camino"
+    },
+    {
+      "letter": "શહેર",
+      "answer": "shaher",
+      "audio": "audios/clase_1_1/audio_m_shaher.mp3",
+      "significado": "ciudad"
+    },
+    {
+      "letter": "મશીન",
+      "answer": "mashiin",
+      "audio": "audios/clase_1_1/audio_m_mashiin.mp3",
+      "significado": "máquina"
+    },
+    {
+      "letter": "નાક",
+      "answer": "naak",
+      "audio": "audios/clase_1_1/audio_m_naak.mp3",
+      "significado": "nariz"
+    },
+    {
+      "letter": "કાન",
+      "answer": "kaan",
+      "audio": "audios/clase_1_1/audio_m_kaan.mp3",
+      "significado": "oreja"
+    },
+    {
+      "letter": "રાત",
+      "answer": "raat",
+      "audio": "audios/clase_1_1/audio_m_raat.mp3",
+      "significado": "noche"
+    },
+    {
+      "letter": "સોનું",
+      "answer": "sonuⁿ",
+      "audio": "audios/clase_1_1/audio_m_sonu(m).mp3",
+      "significado": "oro"
+    },
+    {
+      "letter": "માતા",
+      "answer": "maataa",
+      "audio": "audios/clase_1_1/audio_m_maataa.mp3",
+      "significado": "madre"
+    },
+    {
+      "letter": "છોકરી",
+      "answer": "chokrii",
+      "audio": "audios/clase_1_1/audio_m_chokrii.mp3",
+      "significado": "niña / hija"
+    },
+    {
+      "letter": "નોકરી",
+      "answer": "nokrii",
+      "audio": "audios/clase_1_1/audio_m_nokrii.mp3",
+      "significado": "empleo, trabajo"
+    },
+    {
+      "letter": "શરીર",
+      "answer": "shariir",
+      "audio": "audios/clase_1_1/audio_m_shariir.mp3",
+      "significado": "cuerpo"
+    },
+    {
+      "letter": "શાંતિ",
+      "answer": "shaaⁿti",
+      "audio": "audios/clase_1_1/audio_m_shaa(m)ti.mp3",
+      "significado": "paz"
+    },
+    {
+      "letter": "મન",
+      "answer": "man",
+      "audio": "audios/clase_1_1/audio_m_man.mp3",
+      "significado": "mente"
+    }
+  ]
+}

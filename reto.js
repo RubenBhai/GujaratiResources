@@ -37,7 +37,52 @@ let recordingId  = null;
 /* ── Utilidades ── */
 function shuffle(a){ return a.slice().sort(function(){ return Math.random()-0.5; }); }
 
+/* Botón "Grabar" del ítem que estaba grabando (N3: índice numérico, N5: 'n5-i') */
+function botonGrabarDe(id){
+  if(id === null || id === undefined) return null;
+  return (typeof id === 'string' && id.indexOf('n5-') === 0)
+    ? document.getElementById('btn-g5-' + id.slice(3))
+    : document.getElementById('btn-g-' + id);
+}
+function restaurarBotonGrabar(id){
+  var b = botonGrabarDe(id);
+  if(b){ b.innerHTML = '🎙 Grabar'; b.classList.remove('recording'); }
+}
+
+/* Si quedó una grabación en curso (p. ej. Verificar o Menú mientras se grababa),
+   se detiene SIN evaluar y se cierra el micrófono; si no, el mic seguía abierto
+   y la nota de la frase vieja caía en el ítem de la sesión siguiente. */
+function detenerGrabacionActiva(){
+  if(mediaRecorder && mediaRecorder.state === 'recording'){
+    var rec = mediaRecorder;
+    rec.onstop = function(){ rec.stream.getTracks().forEach(function(t){ t.stop(); }); };
+    rec.stop();
+  }
+  restaurarBotonGrabar(recordingId);
+  recordingId = null;
+}
+
+/* Al volver al menú de niveles se corta el audio/vídeo del nivel y se invalidan
+   sus temporizadores pendientes: si no, el audio seguía sonando en el menú y el
+   dictado (N4) podía saltar solo a la pantalla de resultado segundos después. */
+var salidaToken = 0;
+function luego(fn, ms){
+  var t = salidaToken;
+  setTimeout(function(){ if(t === salidaToken) fn(); }, ms);
+}
+
 function goTo(id){
+  if(id !== 's-n3' && id !== 's-n5') detenerGrabacionActiva();   // resultado, menú, otros niveles
+  if(id === 's-inicio'){
+    salidaToken++;
+    playerRef.onended = null;
+    playerRef.pause();
+    document.querySelectorAll('.sonando').forEach(function(b){ b.classList.remove('sonando'); });
+  }
+  if(id !== 's-n5'){
+    var vid5 = document.getElementById('n5-video');
+    if(vid5 && !vid5.paused) vid5.pause();
+  }
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
@@ -72,6 +117,7 @@ function datosNivel(n){
 }
 
 function iniciarNivel(n){
+  if(!DATA) return;                       /* JSON aún cargando: evitar TypeError */
   if(n===6){ iniciarN6(); return; }   /* Nivel 6: flujo propio, sin sesiones */
   nivelActual = n;
   var d = datosNivel(n);
@@ -84,7 +130,7 @@ function iniciarNivel(n){
 
 function elegirSesion(){
   sesionNum++;
-  if(sesionNum > sesionTotal){ history.back(); return; }
+  if(sesionNum > sesionTotal){ goTo('s-inicio'); return; }
   if(nivelActual===2 && DATA.nivel2.sesiones && DATA.nivel2.sesiones.length){
     sesionData = DATA.nivel2.sesiones[sesionNum-1] || DATA.nivel2.sesiones[0];
   }
@@ -204,7 +250,7 @@ function verificarRondaN2(){
   if(n2RondaIdx < n2Rondas.length){
     var t = document.getElementById('n2-texto');
     if(t){ t.textContent = el+(ok ? '  ✓' : '  ✗ ('+real+')'); t.style.display = ''; }
-    setTimeout(function(){
+    luego(function(){
       if(t) t.style.display = 'none';
       montarRondaN2();
     }, 1200);
@@ -224,6 +270,7 @@ function montarN3(num, total){
 
   var lista = document.getElementById('n3-lista');
   lista.innerHTML = '';
+  detenerGrabacionActiva();
   audioChunks     = {};
   n3Elementos     = shuffle(d.elementos).slice(0, 3);
 
@@ -256,13 +303,18 @@ function montarN3(num, total){
 function toggleGrabacion(i, fraseObjetivo){
   var btn = document.getElementById('btn-g-'+i);
   if(recordingId === i){
-    mediaRecorder.stop(); recordingId = null;
+    /* si el permiso de micrófono se negó, mediaRecorder es null o no está grabando */
+    if(mediaRecorder && mediaRecorder.state === 'recording') mediaRecorder.stop();
+    recordingId = null;
     btn.innerHTML = '🎙 Grabar'; btn.classList.remove('recording');
     return;
   }
   if(mediaRecorder && mediaRecorder.state === 'recording') mediaRecorder.stop();
+  restaurarBotonGrabar(recordingId);   /* el ítem anterior ya no graba: que no quede en "Detener" */
   recordingId = i;
   navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+    /* el permiso llegó tarde y el alumno ya salió o tocó otro ítem: cerrar el micrófono */
+    if(recordingId !== i){ stream.getTracks().forEach(function(t){ t.stop(); }); return; }
     mediaRecorder = new MediaRecorder(stream);
     audioChunks[i] = [];
     mediaRecorder.ondataavailable = function(e){ if(e.data && e.data.size>0) audioChunks[i].push(e.data); };
@@ -273,7 +325,7 @@ function toggleGrabacion(i, fraseObjetivo){
     };
     mediaRecorder.start();
     btn.innerHTML = '🛑 Detener'; btn.classList.add('recording');
-  }).catch(function(){ alert('Verifica los permisos de tu micrófono.'); });
+  }).catch(function(){ if(recordingId === i) recordingId = null; alert('Verifica los permisos de tu micrófono.'); });
 }
 
 function convertirYEnviar(blob, i, fraseObjetivo){
@@ -289,12 +341,15 @@ function enviarAGemini(audioBase64, mimeType, fraseObjetivo, i){
   var panel   = document.getElementById('eval-'+i);
   if(spinner) spinner.style.display = 'block';
   if(panel)   panel.style.display   = 'none';
+  /* Tope de 30 s: sin él, con el servidor colgado el spinner no terminaba nunca */
+  var ctrl = window.AbortController ? new AbortController() : null;
+  var tmr  = ctrl ? setTimeout(function(){ ctrl.abort(); }, 30000) : null;
   fetch(BACKEND_URL+'/api/evaluar-audio',{
-    method:'POST',
+    method:'POST', signal: ctrl ? ctrl.signal : undefined,
     headers:{'Content-Type':'application/json','x-access-token':sessionStorage.getItem('accessToken')||''},
     body: JSON.stringify({audioBase64:audioBase64, mimeType:mimeType, fraseObjetivo:fraseObjetivo})
   })
-  .then(function(r){ if(!r.ok) throw new Error('Error servidor'); return r.json(); })
+  .then(function(r){ clearTimeout(tmr); if(!r.ok) throw new Error('Error servidor'); return r.json(); })
   .then(function(data){
     document.getElementById('nota-'+i).innerHTML    = '⭐ Nota: '+data.nota+'/10';
     document.getElementById('trans-'+i).innerHTML   = 'Gemini entendió: "'+data.transcripcion+'"';
@@ -315,7 +370,11 @@ function verificarN3(){
   var notas=[], detalle=[], todos=true;
   n3Elementos.forEach(function(el, i){
     var notaEl = document.getElementById('nota-'+i);
-    if(!notaEl || !notaEl.textContent.includes('/10')){ todos=false; return; }
+    if(!notaEl || !notaEl.textContent.includes('/10')){
+      /* Servidor caído en este ítem: cuenta 0 y deja verificar (antes el nivel quedaba sin salida) */
+      if(notaEl && notaEl.textContent.indexOf('No se pudo') !== -1){ notas.push(0); detalle.push({gu:el.gujarati,nota:0,ok:false}); return; }
+      todos=false; return;
+    }
     var match = notaEl.textContent.match(/(\d+(?:\.\d+)?)\/10/);
     if(match){ var n=parseFloat(match[1]); notas.push(n); detalle.push({gu:el.gujarati,nota:n,ok:n>=7}); }
   });
@@ -339,6 +398,10 @@ function mostrarResultado(pct, detalle, modo){
       val = '⭐ '+d.nota+'/10'; estado = d.ok?'df-ok':'df-err';
     } else if(modo === 'opciones'){
       val = d.ok?'✓ Correcto':'✗ Incorrecto'; estado = d.ok?'df-ok':'df-err';
+    } else if(modo === 'dictado'){
+      /* antes mostraba "✗ oración / oración" idénticas para una oración acertada tras reintentar */
+      val = d.ok ? '✓ A la primera' : (d.usuario === '(saltada)' ? '✗ Saltada' : '✗ Con reintento');
+      estado = d.ok?'df-ok':'df-err';
     } else {
       val = (d.ok?'✓ ':'✗ ')+d.usuario+' / '+d.real; estado = d.ok?'df-ok':'df-err';
     }
@@ -348,7 +411,8 @@ function mostrarResultado(pct, detalle, modo){
 
   var haySiguiente = sesionNum < sesionTotal;
   var btnSig       = document.getElementById('btn-siguiente-sesion');
-  btnSig.style.display = haySiguiente ? 'block' : 'none';
+  /* al fallar se ofrece reintentar también en la última sesión (antes solo quedaba "Menú de niveles") */
+  btnSig.style.display = (haySiguiente || pct < 81) ? 'block' : 'none';
   if(pct < 81){
     btnSig.textContent = '🔄 Intentar de nuevo';
     btnSig.onclick     = repetirSesion;
@@ -378,6 +442,8 @@ function repetirSesion(){
 var n4Sesiones=[], n4Idx=0, n4Aciertos=0, n4Detalle=[];
 var n4Construido=[], n4Actual=null, n4Bloqueado=false;
 var n4FalloEnEsta=false;   /* true si el estudiante ya se equivocó en la oración actual */
+
+function sinPuntuacion(s){ return s.replace(/[?!.,¿¡]/g, ''); }
 
 /* Junta las palabras de todas las oraciones del nivel para usarlas como distractores */
 function n4BancoGlobal(){
@@ -420,7 +486,9 @@ function n4NuevaOracion(){
   /* Fichas: palabras de la oración + distractores del banco global, sin repetir */
   var correctas = n4Actual.oracion_completa.split(/\s+/).filter(Boolean);
   var banco = n4BancoGlobal();
-  var extra = shuffle(banco.filter(function(p){ return correctas.indexOf(p)===-1; })).slice(0,3);
+  /* excluir distractores que solo difieren en puntuación ("છે" vs "છે?"): se oyen igual */
+  var _base = correctas.map(sinPuntuacion);
+  var extra = shuffle(banco.filter(function(p){ return _base.indexOf(sinPuntuacion(p))===-1; })).slice(0,3);
   var fichas = shuffle(correctas.concat(extra));
 
   var bank = document.getElementById('n4-bank');
@@ -434,7 +502,7 @@ function n4NuevaOracion(){
     bank.appendChild(chip);
   });
   n4RenderBuild();
-  setTimeout(n4Reproducir, 400);
+  luego(n4Reproducir, 400);
 }
 
 function n4Reproducir(){
@@ -508,10 +576,10 @@ function n4Comprobar(){
 
     /* Suena la oración completa, y luego avanza (borrando el español antes) */
     if(n4Actual.audio_oracion_completa){
-      setTimeout(function(){ playerRef.src=n4Actual.audio_oracion_completa; playerRef.play().catch(function(){}); }, 650);
+      luego(function(){ playerRef.src=n4Actual.audio_oracion_completa; playerRef.play().catch(function(){}); }, 650);
     }
     n4Idx++;
-    setTimeout(n4NuevaOracion, 2200);
+    luego(n4NuevaOracion, 2200);
   } else {
     /* Falla: no avanza. Suena error y aparecen Reintentar / Saltar. */
     n4Bloqueado=true;
@@ -529,7 +597,7 @@ function n4Reintentar(){
   document.getElementById('n4-feedback').textContent='';
   document.getElementById('n4-feedback').className='pregunta-feedback';
   n4MostrarBotones('comprobar');
-  setTimeout(n4Reproducir, 300);       /* vuelve a sonar la oración */
+  luego(n4Reproducir, 300);       /* vuelve a sonar la oración */
 }
 
 function n4Saltar(){
@@ -590,6 +658,7 @@ function montarN5(num, total){
   var vid = document.getElementById('n5-video');
   vid.src = sesionData.video; vid.load();
   n5Preguntas  = sesionData.preguntas || [];
+  detenerGrabacionActiva();
   audioChunks  = {};
   recordingId  = null;
   actualizarTopProgress();
@@ -631,13 +700,16 @@ function toggleGrabacionN5(i){
   var pregunta  = n5Preguntas[i] ? n5Preguntas[i].pregunta  : '';
   var btn = document.getElementById('btn-g5-'+i);
   if(recordingId === 'n5-'+i){
-    mediaRecorder.stop(); recordingId=null;
+    if(mediaRecorder && mediaRecorder.state === 'recording') mediaRecorder.stop();
+    recordingId=null;
     btn.innerHTML='🎙 Grabar'; btn.classList.remove('recording');
     return;
   }
   if(mediaRecorder && mediaRecorder.state==='recording') mediaRecorder.stop();
+  restaurarBotonGrabar(recordingId);   /* el ítem anterior ya no graba */
   recordingId='n5-'+i;
   navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+    if(recordingId !== 'n5-'+i){ stream.getTracks().forEach(function(t){t.stop();}); return; }   /* permiso tardío: ya no toca grabar */
     mediaRecorder=new MediaRecorder(stream);
     audioChunks[i]=[];
     mediaRecorder.ondataavailable=function(e){ if(e.data&&e.data.size>0) audioChunks[i].push(e.data); };
@@ -648,7 +720,7 @@ function toggleGrabacionN5(i){
     };
     mediaRecorder.start();
     btn.innerHTML='🛑 Detener'; btn.classList.add('recording');
-  }).catch(function(){alert('Verifica los permisos de tu micrófono.');});
+  }).catch(function(){ if(recordingId === 'n5-'+i) recordingId=null; alert('Verifica los permisos de tu micrófono.');});
 }
 
 function convertirYEnviarN5(blob,i,correcta,pregunta){
@@ -664,12 +736,14 @@ function enviarAGeminiN5(audioBase64,mimeType,correcta,pregunta,i){
   var panel=document.getElementById('eval5-'+i);
   if(spinner) spinner.style.display='block';
   if(panel)   panel.style.display='none';
+  var ctrl = window.AbortController ? new AbortController() : null;   /* tope de 30 s, como en N3 */
+  var tmr  = ctrl ? setTimeout(function(){ ctrl.abort(); }, 30000) : null;
   fetch(BACKEND_URL+'/api/evaluar-audio',{
-    method:'POST',
+    method:'POST', signal: ctrl ? ctrl.signal : undefined,
     headers:{'Content-Type':'application/json','x-access-token':sessionStorage.getItem('accessToken')||''},
     body:JSON.stringify({audioBase64,mimeType,fraseObjetivo:correcta,pregunta})
   })
-  .then(function(r){if(!r.ok)throw new Error('Error');return r.json();})
+  .then(function(r){clearTimeout(tmr);if(!r.ok)throw new Error('Error');return r.json();})
   .then(function(data){
     document.getElementById('nota5-'+i).innerHTML   ='⭐ Nota: '+data.nota+'/10';
     document.getElementById('trans5-'+i).innerHTML  ='Gemini entendió: "'+data.transcripcion+'"';
@@ -689,7 +763,10 @@ function verificarN5(){
   var notas=[],detalle=[],todos=true;
   n5Preguntas.forEach(function(p,i){
     var notaEl=document.getElementById('nota5-'+i);
-    if(!notaEl||!notaEl.textContent.includes('/10')){todos=false;return;}
+    if(!notaEl||!notaEl.textContent.includes('/10')){
+      if(notaEl && notaEl.textContent.indexOf('No se pudo') !== -1){ notas.push(0); detalle.push({gu:p.pregunta,nota:0,ok:false}); return; }  /* servidor caído: cuenta 0 */
+      todos=false;return;
+    }
     var match=notaEl.textContent.match(/(\d+(?:\.\d+)?)\/10/);
     if(match){var n=parseFloat(match[1]);notas.push(n);detalle.push({gu:p.pregunta,nota:n,ok:n>=7});}
   });
@@ -706,7 +783,7 @@ function iniciarN6(){
   nivelActual = 6;
   var d = DATA.nivel6 || {};
   n6Oraciones = d.oraciones || [];
-  if(n6Oraciones.length === 0){ history.back(); return; }
+  if(n6Oraciones.length === 0){ goTo('s-inicio'); return; }
   var instr = document.getElementById('n6-instruccion');
   if(instr) instr.textContent = d.instruccion || '';
   n6MostrarFragmento(0, 0);
@@ -724,7 +801,7 @@ function n6MostrarFragmento(oidx, fidx){
   document.getElementById('n6-texto').textContent = frag.texto || '';
   var esUltimo = (fidx === frags.length - 1);
   document.getElementById('n6-siguiente').textContent = esUltimo ? 'Ver la frase completa \u2192' : 'Siguiente \u2192';
-  setTimeout(n6Reproducir, 350);
+  luego(n6Reproducir, 350);
 }
 
 function n6Reproducir(){
@@ -753,7 +830,7 @@ function n6MostrarCierre(){
   document.getElementById('n6-progreso').textContent = '';
   var esUltimaOracion = (n6Oidx === n6Oraciones.length - 1);
   document.getElementById('n6-siguiente-cierre').textContent = esUltimaOracion ? '\u2713 Terminar' : 'Siguiente frase \u2192';
-  setTimeout(n6ReproducirCierre, 300);
+  luego(n6ReproducirCierre, 300);
 }
 
 function n6ReproducirCierre(){
@@ -764,7 +841,7 @@ function n6ReproducirCierre(){
 
 function n6SiguienteOracion(){
   if(n6Oidx < n6Oraciones.length - 1) n6MostrarFragmento(n6Oidx + 1, 0);
-  else history.back();
+  else goTo('s-inicio');   /* "Terminar" vuelve al menú de niveles, como el resto de niveles */
 }
 
 /* ── Progreso ── */
@@ -832,9 +909,10 @@ fetch(JSON_URL)
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

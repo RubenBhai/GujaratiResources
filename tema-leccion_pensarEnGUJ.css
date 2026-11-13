@@ -34,6 +34,7 @@ body {
     radial-gradient(ellipse at bottom right, rgba(160, 82, 79, 0.05),  transparent 60%);
   animation: fondoVivo 8s ease-in-out infinite alternate;
   min-height: 100vh;
+  min-height: 100dvh;   /* iOS: 100vh incluye la barra del navegador; 100vh queda de respaldo */
 }
 
 @keyframes fondoVivo {
@@ -173,7 +174,14 @@ h1 {
 /* ── RESPONSIVE ── */
 @media (max-width: 480px) {
   body { animation: none; padding-bottom: 30px; }
+  /* Barra: los 4 botones no caben a <=390px con el padding de escritorio */
+  .nav-bar { margin: 10px 10px 0; padding: 6px; gap: 2px; }
+  .nav-btn { padding: 10px 10px; letter-spacing: 0; min-width: 44px; justify-content: center; }
   .wrap { padding: 20px 14px 30px; gap: 18px; }
   h1 { font-size: 2rem; }
 }
 
+/* Pantallas muy estrechas (320px): un poco menos de padding para que quepan los 4 botones */
+@media (max-width: 340px) {
+  .nav-btn { padding: 10px 6px; }
+}

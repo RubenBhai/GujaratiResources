@@ -33,10 +33,17 @@ function revisarVictoria(porcentaje, sonidoUrl, nombrePrograma, leccionFolder) {
   }
 
   var url = 'data/' + nombrePrograma + '.js';
+  // Si este mismo efecto ya se cargó en la página, reutilizarlo en vez de
+  // insertar (y descargar) otro <script> en cada victoria.
+  if (revisarVictoria._cargado === nombrePrograma && typeof ejecutarEfectoVictoria === 'function') {
+    ejecutarEfectoVictoria();
+    return;
+  }
   var script = document.createElement('script');
   script.src = url + '?t=' + Date.now(); // evita caché vieja, mismo patrón que el resto del sitio
   script.onload = function() {
     if (typeof ejecutarEfectoVictoria === 'function') {
+      revisarVictoria._cargado = nombrePrograma;
       ejecutarEfectoVictoria();
     } else {
       console.warn('efecto_victoria: ' + url + ' cargó pero no definió ejecutarEfectoVictoria()');

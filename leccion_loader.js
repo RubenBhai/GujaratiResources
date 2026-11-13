@@ -10,6 +10,9 @@
   var localManifestKey = 'manifest_' + _folder;
   var assetsUrl        = 'data/' + _folder + '/assets_' + _folder + '_versionado.json';
 
+  // Registrar el SW también aquí: sin él, lo descargado no se sirve sin conexión.
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+
   // 2. Mostrar logo primero
   var _logo = document.querySelector('.loader-logo');
   if(_logo){
@@ -64,7 +67,8 @@
         necesitaDescarga = true;
       } else {
         var localAsset = localManifestAssets.find(function(a) { return a.url === url; });
-        if (!localAsset || localAsset.lastModified < remoteDate) {
+        // "!==": lastModified puede ser una fecha o una huella del contenido.
+        if (!localAsset || localAsset.lastModified !== remoteDate) {
           necesitaDescarga = true;
         }
       }
@@ -75,9 +79,8 @@
         // Se guarda en el SW con la URL pelada, que es como se busca luego.
         var urlDescarga = url + (url.indexOf('?') === -1 ? '?' : '&') + 'v=' + remoteDate;
         var networkResponse = await fetch(urlDescarga, { mode: 'cors', cache: 'reload' });
-        if (networkResponse.ok) {
-          await cache.put(url, networkResponse.clone());
-        }
+        if (!networkResponse.ok) return false;   // 404/500: NO cuenta como descargado
+        await cache.put(url, networkResponse.clone());   // puede lanzar QuotaExceededError
       }
       return true;
     } catch(error) {
@@ -91,6 +94,7 @@
     var cargados    = 0;
     var idx         = 0;
     var ultimoPintado = 0;   // en cuántos ítems se refrescó por última vez
+    var fallidas      = [];  // urls que no se pudieron guardar (red, 404 o sin espacio)
 
     function siguienteLote(){
       if(idx >= total) return Promise.resolve();
@@ -101,12 +105,13 @@
         return fetchAsset(assetObj, localManifestAssets);
       });
 
-      return Promise.all(promesas).then(function(){
+      return Promise.all(promesas).then(function(res){
+        res.forEach(function(ok, k){ if(!ok) fallidas.push(lote[k].url); });
         cargados += lote.length;
         // Refrescar solo cada 10 ítems (o al terminar), para no castigar el GUI.
         if(cargados - ultimoPintado >= 10 || cargados >= total){
           ultimoPintado = cargados;
-          onProgreso(Math.min(cargados, total), total);
+          onProgreso(Math.min(cargados, total), total, fallidas);
           // Ceder al navegador para que pinte antes de seguir.
           return new Promise(function(res){
             requestAnimationFrame(function(){ setTimeout(res, 0); });
@@ -133,7 +138,7 @@
         necesita = true;
       } else {
         var local = localManifestAssets.find(function(x){ return x.url === a.url; });
-        if (!local || local.lastModified < a.lastModified) necesita = true;
+        if (!local || local.lastModified !== a.lastModified) necesita = true;
       }
       if (necesita) { bytesPendientes += tam; cantPendiente++; }
     }
@@ -146,7 +151,9 @@
     fetch(assetsUrl + '?t=' + Date.now(), { cache: 'no-store' })
       .then(function(r){ if(!r.ok) throw new Error('No se encontró ' + assetsUrl); return r.json(); })
       .then(async function(remoteData){
-        var remoteAssets = remoteData.assets || [];
+        // Las entradas marcadas noEncontrado no existen en el servidor: si se
+        // intentaran, la lección nunca quedaría "descargada".
+        var remoteAssets = (remoteData.assets || []).filter(function(a){ return !a.noEncontrado; });
         if(remoteAssets.length === 0){ irALeccion(); return; }
 
         var localManifestStr = localStorage.getItem(localManifestKey);
@@ -166,7 +173,7 @@
         // Si ya está todo en caché, no hay nada que elegir: directo a la lección.
         if (pend.cantPendiente === 0) {
           estadoEl.textContent = 'Todo listo en tu dispositivo';
-          localStorage.setItem(localManifestKey, JSON.stringify(remoteData));
+          try { localStorage.setItem(localManifestKey, JSON.stringify(remoteData)); } catch(e){}   // si falla, igual se entra
           irALeccion();
           return;
         }
@@ -202,11 +209,27 @@
     verZona('progreso');
     estadoEl.textContent = 'Descargando...';
     setProgreso(0, _remoteAssets.length);
-    descargarEnLotes(_remoteAssets, _localManifestAssets, 6, function(cargados, total){
+    // Pedir almacenamiento persistente para que el navegador no desaloje la
+    // lección cuando el teléfono ande corto de espacio.
+    try { if(navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch(e){}
+    descargarEnLotes(_remoteAssets, _localManifestAssets, 6, function(cargados, total, fallidas){
       setProgreso(cargados, total);
       if(cargados >= total){
-        localStorage.setItem(localManifestKey, JSON.stringify(_remoteData));
-        irALeccion();
+        if(fallidas.length === 0){
+          try { localStorage.setItem(localManifestKey, JSON.stringify(_remoteData)); } catch(e){}   // si falla, igual se entra
+          irALeccion();
+          return;
+        }
+        // Algo falló: se marca "al día" solo lo que sí se guardó (lo fallido se
+        // reintenta al volver a tocar "Descargar") y se avisa al alumno.
+        var ok = _remoteAssets.filter(function(a){ return fallidas.indexOf(a.url) === -1; });
+        try { localStorage.setItem(localManifestKey, JSON.stringify({ leccion: _remoteData.leccion, assets: ok })); } catch(e){}
+        _localManifestAssets = ok;
+        calcularPendiente(_remoteAssets, ok).then(function(p){
+          mostrarEleccion(p);
+          var aviso = document.getElementById('elec-aviso');
+          if(aviso) aviso.textContent = 'Faltaron ' + fallidas.length + ' archivos (sin conexión o sin espacio). Toca "Descargar" otra vez para completarla.';
+        });
       }
     });
   };
@@ -225,8 +248,17 @@
     if(aviso) aviso.textContent = 'Liberando espacio...';
     try {
       var cache = await caches.open(CACHE_NAME);
+      // No borrar archivos que también usa OTRA lección descargada
+      // (p. ej. Correcto/Incorrecto.mp3, iconos de la guía).
+      var deOtras = new Set();
+      for (var k = 0; k < localStorage.length; k++){
+        var clave = localStorage.key(k);
+        if (clave && clave.indexOf('manifest_') === 0 && clave !== localManifestKey && clave !== 'manifest_motor'){
+          try { (JSON.parse(localStorage.getItem(clave)).assets || []).forEach(function(a){ deOtras.add(a.url); }); } catch(e){}
+        }
+      }
       for (var i = 0; i < _remoteAssets.length; i++){
-        await cache.delete(_remoteAssets[i].url);
+        if (!deOtras.has(_remoteAssets[i].url)) await cache.delete(_remoteAssets[i].url);
       }
       try { localStorage.removeItem(localManifestKey); } catch(e){}
     } catch(e){}

@@ -20,12 +20,18 @@ function setSpeed(s){
 function playVocab(btn, urlH, urlM){
   var useH = toggle === 'h';
   toggle   = useH ? 'm' : 'h';
+  function restaurar(){ btn.classList.remove('playing'); btn.textContent = '▶'; }
   btn.classList.add('playing');
   btn.textContent    = useH ? '♬♂' : '♬♀';
   player.src         = useH ? urlH : urlM;
   player.playbackRate = currentSpeed;
-  player.play();
-  player.onended = function(){ btn.classList.remove('playing'); btn.textContent = '▶'; };
+  player.onended = restaurar;
+  player.onerror = restaurar;              // si el audio no carga, el botón no se queda en ♬
+  player.play().catch(function(e){
+    // AbortError = otra pulsación cambió el audio: el nuevo ya está sonando, no restaurar
+    if(e && e.name === 'AbortError') return;
+    restaurar();
+  });
 }
 
 fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
@@ -60,7 +66,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
     var siguienteUrl = (idx < total)
       ? ('leccion_palabra.html?leccion=' + _leccionRaw + '&item=' + (idx + 1))
-      : data.siguiente_final;
+      : ('leccion_palabra_fin.html?leccion=' + _leccionRaw);
 
     var btnPracticarPron = document.getElementById('btn-practicar-pronunciacion');
     if(idx === total){
@@ -110,9 +116,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

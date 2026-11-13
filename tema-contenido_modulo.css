@@ -71,6 +71,9 @@
     font-size: 1.1rem;
     padding: 6px 14px;
   }
+  /* Área táctil mínima de 44px (pauta de accesibilidad móvil) */
+  .nav-btn { display: inline-flex; align-items: center; justify-content: center;
+             min-height: 44px; box-sizing: border-box; }
 
   /* ── LAYOUT (móvil-first: un solo flujo) ──
      .wrap-letras es un flex vertical.  Las dos columnas usan display:contents
@@ -131,7 +134,8 @@
   .lec-title { font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
   .lec-sub { font-size: 0.95rem; color: var(--ink-soft); margin-top: 3px; line-height: 1.3; }
   .lec-status { font-size: 1.2rem; color: var(--sindoor); }
-  .lec-soon { font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+  /* max-width: "MUY PRONTO" pasa a dos líneas y deja ancho al texto de la lección */
+  .lec-soon { flex-shrink: 0; max-width: 5.5em; text-align: right; font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
 
   /* ── BOTÓN PRINCIPAL ── */
   .btn-empezar { display: block; width: 100%; border: none; padding: 18px; border-radius: 50px; font-weight: 600; font-size: 1.05rem; background: var(--sindoor); color: var(--paper); text-align: center; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 12px rgba(168, 54, 42, 0.2); margin-top: 10px; }

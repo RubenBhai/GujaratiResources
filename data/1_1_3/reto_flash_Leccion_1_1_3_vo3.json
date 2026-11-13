@@ -1,0 +1,58 @@
+{
+  "leccion": "1.1.3",
+  "letters": [
+    {
+      "letter": "ત",
+      "answer": "ta",
+      "audio": "audios/clase_1_1/audio_alfa_m_ta.mp3"
+    },
+    {
+      "letter": "ન",
+      "answer": "na",
+      "audio": "audios/clase_1_1/audio_alfa_m_na.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "સ્ત",
+      "answer": "sta",
+      "audio": "audios/clase_1_1/audio_m_sta.mp3"
+    },
+    {
+      "letter": "નમસ્તે",
+      "answer": "namaste",
+      "audio": "audios/clase_1_1/audio_m_namaste.mp3",
+      "significado": "hola"
+    },
+    {
+      "letter": "રસ્તો",
+      "answer": "rasto",
+      "audio": "audios/clase_1_1/audio_m_rasto.mp3",
+      "significado": "camino"
+    },
+    {
+      "letter": "રસ્તા",
+      "answer": "rastaa",
+      "audio": "audios/clase_1_1/audio_m_rastaa.mp3",
+      "significado": "caminos"
+    },
+    {
+      "letter": "મસ્ત",
+      "answer": "mast",
+      "audio": "audios/clase_1_1/audio_m_mast.mp3",
+      "significado": "genial"
+    },
+    {
+      "letter": "શિસ્ત",
+      "answer": "shist",
+      "audio": "audios/clase_1_1/audio_m_shist.mp3",
+      "significado": "disciplina"
+    },
+    {
+      "letter": "સ્તુતિ",
+      "answer": "stuti",
+      "audio": "audios/clase_1_1/audio_m_stuti.mp3",
+      "significado": "alabanza"
+    }
+  ]
+}

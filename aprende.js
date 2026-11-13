@@ -99,8 +99,12 @@ function actualizarStats(){
     var proximos   = pendientesFuturos.map(function(it){ return estadoItem(it.id).proximoRepaso; });
     var minProximo = Math.min.apply(null, proximos);
     var minutos    = Math.round((minProximo - Date.now()) / 60000);
-    var tiempoMsg  = minutos < 60 ? 'en ' + minutos + ' min' : 'en ' + Math.round(minutos / 60) + 'h';
+    var tiempoMsg  = minutos < 60 ? 'en ' + Math.max(1, minutos) + ' min'
+                   : minutos < 1440 ? 'en ' + Math.round(minutos / 60) + ' h'
+                   : 'en ' + Math.round(minutos / 1440) + (Math.round(minutos / 1440) === 1 ? ' día' : ' días');
     btnEmpezar.textContent = '¡Al día! Próximo repaso ' + tiempoMsg + ' →';
+  } else if(nuevos === 0 && repasos === 0 && dominados > 0){
+    btnEmpezar.textContent = '¡Todo dominado! →';   // nada pendiente: Empezar muestra "Estás al día"
   }
 }
 
@@ -111,8 +115,8 @@ function inicializarOImportarMatriz() {
   try {
     var guardado = localStorage.getItem(MATRIZ_KEY);
     if (guardado) {
-      vectorCombinaciones = JSON.parse(guardado);
-      return;
+      var v = JSON.parse(guardado);
+      if (Array.isArray(v)) { vectorCombinaciones = v; return; }   // si está dañada, se reconstruye abajo
     }
   } catch(e) {}
 
@@ -145,72 +149,125 @@ function guardarMatriz() {
 }
 
 function reiniciarMatrizCompleta() {
-  localStorage.removeItem(MATRIZ_KEY);
+  try { localStorage.removeItem(MATRIZ_KEY); } catch(e) {}
   inicializarOImportarMatriz();
 }
 
 function shuffle(a){ return a.slice().sort(function(){ return Math.random() - 0.5; }); }
 
+/* Fases de la matriz para un ítem (igual que en inicializarOImportarMatriz) */
+function fasesDe(item){
+  return (item.categoria === 'accion') ? ['accion'] : ['aprender', 'reconocer', 'recordar', 'escuchar'];
+}
+
+/* ── Sincronizar la matriz guardada con el JSON actual, SIN perder los usos ──
+   - Quita entradas de ítems que ya no existen (huérfanas): antes, al quedar
+     solo ellas, siguienteItem()↔avanzar() se llamaban sin fin (RangeError) y
+     la sesión se congelaba para siempre.
+   - Añade las combinaciones de ítems nuevos del JSON. */
+function sincronizarMatriz(){
+  var cambio = false;
+  var filtrada = vectorCombinaciones.filter(function(c){
+    return ITEMS.some(function(it){ return it.id === c.idItem; });
+  });
+  if(filtrada.length !== vectorCombinaciones.length){ vectorCombinaciones = filtrada; cambio = true; }
+  ITEMS.forEach(function(item){
+    if(vectorCombinaciones.some(function(c){ return c.idItem === item.id; })) return;
+    fasesDe(item).forEach(function(fase){ vectorCombinaciones.push({ idItem:item.id, fase:fase, usos:0 }); });
+    cambio = true;
+  });
+  if(cambio) guardarMatriz();
+}
+
+/* ── Qué combinaciones toca practicar AHORA según el SRS ──
+   Antes la matriz ignoraba nivel/proximoRepaso: cada sesión recorría las 56
+   combinaciones, podía preguntar un ítem antes de enseñarlo y 12 de 14 ítems
+   quedaban "dominados" en dos minutos. Ahora:
+   - ítem nuevo (nivel -1): solo su tarjeta "Aprende esto" (o la acción);
+   - ítem en curso: sus quizzes pendientes, solo si ya venció proximoRepaso;
+   - ítem dominado: no vuelve. */
+function combinacionesDisponibles(){
+  return vectorCombinaciones.filter(function(c){
+    if(c.usos !== 0) return false;
+    if(!ITEMS.some(function(it){ return it.id === c.idItem; })) return false;   // huérfana (por si acaso)
+    var st = estadoItem(c.idItem);
+    if(st.nivel === -1) return c.fase === 'aprender' || c.fase === 'accion';
+    return st.nivel < NIVEL_DOMINADO && st.proximoRepaso <= ahora();
+  });
+}
+
+/* ── Reabrir combinaciones de ítems que vencieron ──
+   Un ítem cuyo repaso ya toca pero que tiene todas sus combinaciones usadas no
+   tendría nada que practicar: se le vuelven a poner en 0 (nueva vuelta). También
+   se reabre la tarjeta "Aprende esto" si el ítem figura como nuevo (nivel -1).
+   El progreso SRS (srs_<lección>) no se toca. */
+function reabrirCombinacionesVencidas(){
+  var cambio = false;
+  ITEMS.forEach(function(it){
+    var st   = estadoItem(it.id);
+    var mias = vectorCombinaciones.filter(function(c){ return c.idItem === it.id; });
+    if(!mias.length) return;
+    if(st.nivel === -1){
+      mias.forEach(function(c){ if((c.fase === 'aprender' || c.fase === 'accion') && c.usos !== 0){ c.usos = 0; cambio = true; } });
+      return;
+    }
+    if(st.nivel >= NIVEL_DOMINADO || st.proximoRepaso > ahora()) return;
+    var quizzes = mias.filter(function(c){ return c.fase !== 'aprender'; });
+    if(quizzes.length && !quizzes.some(function(c){ return c.usos === 0; })){
+      quizzes.forEach(function(c){ c.usos = 0; });
+      cambio = true;
+    }
+  });
+  if(cambio) guardarMatriz();
+}
+
+var sesionCombosHechos = 0;   // combinaciones completadas en esta sesión (para la barra superior)
+var SEPARACION = 3;           // pantallas de otras palabras antes de volver a la misma
+var recientes  = [];          // últimas palabras mostradas en esta sesión
 
 function siguienteItem(){
-  // 1. Verificamos si aún quedan combinaciones con usos en 0
-  var disponibles = vectorCombinaciones.filter(function(el) { return el.usos === 0; });
+  // 1. ¿Queda algo que toque practicar ahora? Si no, se termina la sesión
+  //    (con 0 ítems si el alumno ya está al día: nunca queda sin salida).
+  var disponibles = combinacionesDisponibles();
   if (disponibles.length === 0) {
-    irAFin(); // Terminamos si ya usamos todo
+    irAFin();
     return;
   }
 
   actualizarTopProgress();
 
-  // 2. Generador aleatorio con un máximo de 10 intentos
-  var index = -1;
-  var intentos = 0;
-  var maxIntentos = 10;
+  // 2. Una al azar entre las disponibles, sin repetir palabra demasiado pronto:
+  //    si una palabra salió en las últimas SEPARACION pantallas (p. ej. acaba de
+  //    verse su tarjeta), se prefiere otra, para que el quiz obligue a recordar
+  //    y no a copiar de la memoria inmediata. Si no hay otra, se usa igual.
+  var lejanas = disponibles.filter(function(c){ return recientes.indexOf(c.idItem) === -1; });
+  var pool = lejanas.length ? lejanas : disponibles;
+  combinacionActual = pool[Math.floor(Math.random() * pool.length)];
+  recientes.push(combinacionActual.idItem);
+  if(recientes.length > SEPARACION) recientes.shift();
+  var item = ITEMS.find(function(it) { return it.id === combinacionActual.idItem; });
+  if (!item) { combinacionActual.usos = 1; guardarMatriz(); siguienteItem(); return; } // no debería pasar; se marca y se sigue
 
-  while (intentos < maxIntentos) {
-    var randomIndex = Math.floor(Math.random() * vectorCombinaciones.length);
-    if (vectorCombinaciones[randomIndex].usos === 0) {
-      index = randomIndex;
-      break; // ¡Encontramos uno!
-    }
-    intentos++;
-  }
-
-  // 3. Respaldo secuencial: Si falló 10 veces, buscamos el primero disponible desde el inicio
-  if (index === -1) {
-    for (var i = 0; i < vectorCombinaciones.length; i++) {
-      if (vectorCombinaciones[i].usos === 0) {
-        index = i;
-        break;
-      }
-    }
-  }
-
-  // 4. Ejecutamos la fase con el elemento seleccionado
-  if (index !== -1) {
-    
-    combinacionActual = vectorCombinaciones[index];
-    var item = ITEMS.find(function(it) { return it.id === combinacionActual.idItem; });
-    
-    if (!item) { avanzar(); return; } // Si hay error, saltamos al siguiente
-
-    // Enrutador de Fases
-    if (combinacionActual.fase === 'aprender') {
-      mostrarAprender(item);
-    } else if (combinacionActual.fase === 'accion') {
-      mostrarAccion(item);
-    } else {
-      // Para las fases 'reconocer', 'recordar' o 'escuchar'
-      mostrarQuizConFase(item, combinacionActual.fase);
-    }
+  // 3. Enrutador de Fases
+  if (combinacionActual.fase === 'aprender') {
+    mostrarAprender(item);
+  } else if (combinacionActual.fase === 'accion') {
+    mostrarAccion(item);
+  } else {
+    // Para las fases 'reconocer', 'recordar' o 'escuchar'
+    mostrarQuizConFase(item, combinacionActual.fase);
   }
 }
 
 /* ---------- Flujo principal ---------- */
 function empezarSesion(){
-  inicializarOImportarMatriz(); // Arrancamos tu matriz
-  sesionPracticados = 0;
-  sesionAciertos    = 0;
+  inicializarOImportarMatriz(); // Arrancamos tu matriz (la guardada, si existe)
+  sincronizarMatriz();          // huérfanas fuera, ítems nuevos dentro; conserva los usos
+  reabrirCombinacionesVencidas();
+  sesionPracticados  = 0;
+  sesionAciertos     = 0;
+  sesionCombosHechos = 0;
+  recientes          = [];
   siguienteItem();
 }
 
@@ -223,17 +280,18 @@ function avanzar(){
 
 function actualizarTopProgress(){
   if (!vectorCombinaciones || vectorCombinaciones.length === 0) return;
-  var total = vectorCombinaciones.length;
-  // Contamos cuántos siguen en 0
-  var disponibles = vectorCombinaciones.filter(function(el) { return el.usos === 0; }).length;
-  var usados = total - disponibles;
-  var pct = Math.round((usados / total) * 100);
+  // Progreso de ESTA sesión: hechas / (hechas + las que toca practicar ahora)
+  var pendientes = combinacionesDisponibles().length;
+  var total = sesionCombosHechos + pendientes;
+  var pct = total > 0 ? Math.round((sesionCombosHechos / total) * 100) : 0;
   document.getElementById('top-fill').style.width = pct + '%';
 }
 
 /* ---------- APRENDER ---------- */
+var _aprenderDesde = 0;   // cuándo se mostró la tarjeta actual (contra el doble toque)
 function mostrarAprender(item){
   modoActual = 'aprender';
+  _aprenderDesde = Date.now();
 
   document.getElementById('learn-gu').textContent  = item.gujarati;
   document.getElementById('learn-sig').textContent = item.significado;
@@ -245,8 +303,13 @@ function mostrarAprender(item){
 }
 
 function trasAprender(){
+  // Doble toque en "Ya lo memoricé": el segundo caía sobre la tarjeta SIGUIENTE
+  // (mismo botón) y la daba por aprendida sin que el alumno la viera.
+  if(!combinacionActual || combinacionActual.fase !== 'aprender') return;
+  if(Date.now() - _aprenderDesde < 500) return;
   // 1. Registramos el éxito en la matriz
   combinacionActual.usos++;
+  sesionCombosHechos++;
   guardarMatriz();
   
   // 2. Lógica normal
@@ -305,9 +368,10 @@ function mostrarQuizConFase(item, faseForzada){
     setTimeout(reproducirActual, 350);
   }
 
-  opciones.forEach(function(val){
+  opciones.forEach(function(val, i){
     var btn       = document.createElement('button');
     btn.className = 'opt-btn' + (modoActual === 'reconocer' ? ' opt-img-wrap' : '');
+    if(modoActual === 'reconocer') btn.setAttribute('aria-label', 'Opción ' + (i + 1));   /* alt vacío a propósito */
     btn.innerHTML = render(val);
     btn.onclick   = function(){ responder(btn, val, correcta, item); };
     optionsEl.appendChild(btn);
@@ -335,6 +399,7 @@ function responder(btn, elegido, correcta, item){
   if(elegido === correcta){
     // ¡ÉXITO! Marcamos la combinación como usada para que no se repita
     combinacionActual.usos++;
+    sesionCombosHechos++;
     guardarMatriz();
 
     btn.classList.add('correct');
@@ -365,7 +430,7 @@ function responder(btn, elegido, correcta, item){
 
     st.nivel        = 0;
     st.fallos++;
-    st.proximoRepaso = ahora() + INTERVALOS[1] * 60000;
+    st.proximoRepaso = ahora();   // vence ya: lo fallado vuelve en esta misma sesión
     guardarProgreso();
     document.getElementById('quiz-reintentar').style.display = '';
     document.getElementById('quiz-saltar').style.display = '';
@@ -515,6 +580,7 @@ function responderAccion(valoracion, item){
   if(valoracion === 'bien'){
     // ¡ÉXITO! Marcamos la combinación como usada
     combinacionActual.usos++;
+    sesionCombosHechos++;
     guardarMatriz();
 
     st.nivel         = Math.min(st.nivel + 1, INTERVALOS.length - 1);
@@ -527,7 +593,7 @@ function responderAccion(valoracion, item){
     // FALLO: No sumamos uso.
     st.nivel         = 0;
     st.fallos++;
-    st.proximoRepaso = ahora() + INTERVALOS[1] * 60000;
+    st.proximoRepaso = ahora();   // vence ya: vuelve en esta misma sesión
     
     fb.textContent   = valoracion === 'casi' ? '👍 ¡Sigue así!' : '🔄 ¡La próxima!';
     fb.className     = 'feedback';
@@ -540,6 +606,8 @@ function responderAccion(valoracion, item){
 
 /* ---------- FIN ---------- */
 function irAFin(){
+  var h2 = document.querySelector('#screen-fin h2');
+  if(h2) h2.textContent = (sesionCombosHechos === 0 && sesionPracticados === 0) ? '¡Estás al día!' : '¡Sesión completada!';
   document.getElementById('top-fill').style.width           = '100%';
   document.getElementById('fin-practicados').textContent    = sesionPracticados;
   document.getElementById('fin-aciertos').textContent       = sesionAciertos;
@@ -574,9 +642,10 @@ fetch(JSON_URL)
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

@@ -10,13 +10,20 @@ const JSON_URL    = 'data/' + _leccion + '/leccion_letra_' + _leccion + '.json';
 document.getElementById('nav-mapa').href = 'guia_navegacion.html?leccion=' + _leccionRaw;
 
 function playAudio(url, btn){
-  btn.classList.add('playing');
-  btn.textContent = '▶ Reproduciendo...';
-  player.src = url; player.playbackRate = 1.0; player.play();
-  player.onended = function(){
+  function restaurar(){
     btn.classList.remove('playing');
     btn.innerHTML = '&#128266; Escuchar';
-  };
+  }
+  btn.classList.add('playing');
+  btn.textContent = '▶ Reproduciendo...';
+  player.src = url; player.playbackRate = 1.0;
+  player.onended = restaurar;
+  player.onerror = restaurar;              // si el audio no carga, el botón no se queda "Reproduciendo..."
+  player.play().catch(function(e){
+    // AbortError = otra pulsación cambió el audio: el nuevo ya está sonando, no restaurar
+    if(e && e.name === 'AbortError') return;
+    restaurar();
+  });
 }
 
 fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
@@ -32,7 +39,8 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
     document.getElementById('q1-letra').textContent   = actual.consonante;
     document.getElementById('q2-detalle').innerHTML = '<p>' + (actual.detalle || '') + '</p>';
-    document.getElementById('frame-cuadrantes').onclick = function(){ window.location.href = siguienteUrl; };
+    // La tarjeta lleva al mismo sitio que "Siguiente" (la plana), para no saltarse planas ni vocales
+    document.getElementById('frame-cuadrantes').onclick = function(){ window.location.href = actual.plana || siguienteUrl; };
 
     document.getElementById('nav-home').href    = data.home;
     document.getElementById('nav-palabras').href = data.ir_a_palabras;
@@ -54,6 +62,14 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     document.getElementById('btn-siguiente').href       = actual.plana;
     document.getElementById('btn-siguiente-leccion').href = data.siguiente_leccion;
 
+    var btnNota = document.getElementById('btn-nota-especial');
+    if(actual.nota_especial){
+      btnNota.href = actual.nota_especial;
+      btnNota.style.display = '';
+    } else {
+      btnNota.style.display = 'none';
+    }
+
     var btnEscuchar = document.getElementById('btn-escuchar');
     btnEscuchar.onclick = function(){ playAudio(actual.audio, btnEscuchar); };
 
@@ -71,9 +87,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

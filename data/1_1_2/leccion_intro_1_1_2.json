@@ -78,7 +78,7 @@
       "boton_secundario": {
         "tipo": "href",
         "texto": "⏭️ Siguiente lección",
-        "destino": "Leccion_1_1_3_intro.html"
+        "destino": "leccion_intro.html?leccion=1.1.3"
       }
     },
     {

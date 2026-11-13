@@ -80,7 +80,12 @@ function crearBoton(btnData, claseCss, empezarUrl){
 
 /* ── Carga del JSON ── */
 fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
-  .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
+  .then(function(r){
+    // 404 = la lección aún no existe (p.ej. 1.1.4); se distingue de un fallo de red
+    if(r.status === 404){ var e = new Error('no-disponible'); e.noDisponible = true; throw e; }
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
   .then(function(data){
     document.getElementById('page-title').textContent = 'Lección ' + data.leccion + ' · Piensa en Gujarati';
     document.getElementById('nav-anterior').href = data.anterior;
@@ -135,7 +140,12 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
           clearInterval(fadeTimer);
           if(target === 0) music.pause();
         } else {
+          var antes = music.volume;
           music.volume += diff * 0.1;
+          if(music.volume === antes){        // iOS: volume es de solo lectura (siempre 1); sin esto el intervalo no termina nunca
+            clearInterval(fadeTimer);
+            if(target === 0) music.pause();
+          }
         }
       }, 50);
     }
@@ -173,7 +183,16 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
       document.addEventListener('touchstart', resume);
     }
   })
-  .catch(function(){
+  .catch(function(err){
+    if(err && err.noDisponible){
+      // Se vuelve al mapa del curso (no al módulo: el módulo nuevo, p.ej. 1.2, puede no existir todavía)
+      document.body.innerHTML =
+        '<div class="wrap">' +
+          '<p class="error-carga">Esta lección todavía no está disponible.</p>' +
+          '<a class="btn-action btn-words" href="contenido.html">← Volver al curso</a>' +
+        '</div>';
+      return;
+    }
     document.body.innerHTML =
       '<p class="error-carga">No se pudo cargar el contenido. Revisa tu conexión.</p>';
   });
@@ -182,9 +201,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

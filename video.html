@@ -22,14 +22,14 @@
 
   <div style="display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; width:100%;">
     <div class="controls" style="width:auto; display:flex; gap:8px;">
-      <button class="btn-play" id="btn-play" onclick="reproducir()">▶</button>
-      <button class="btn-replay" id="btn-pause" onclick="togglePausa()" style="display:none;">⏸</button>
+      <button class="btn-play" id="btn-play" onclick="reproducir()" aria-label="Reproducir el diálogo">▶</button>
+      <button class="btn-replay" id="btn-pause" onclick="togglePausa()" aria-label="Pausar o continuar" style="display:none;">⏸</button>
     </div>
 
     <div class="lang-row">
-      <button class="lang-btn active" id="lang-esp" onclick="toggleIdioma('esp')">E</button>
-      <button class="lang-btn active" id="lang-guj" onclick="toggleIdioma('guj')">ગ</button>
-      <button class="lang-btn active" id="toggle-burbujas" onclick="toggleBurbujasTexto()" title="Mostrar/ocultar las burbujas de diálogo">💬</button>
+      <button class="lang-btn active" id="lang-esp" onclick="toggleIdioma('esp')" aria-label="Mostrar u ocultar el español">E</button>
+      <button class="lang-btn active" id="lang-guj" onclick="toggleIdioma('guj')" aria-label="Mostrar u ocultar el gujarati">ગ</button>
+      <button class="lang-btn active" id="toggle-burbujas" onclick="toggleBurbujasTexto()" title="Mostrar/ocultar las burbujas de diálogo" aria-label="Mostrar u ocultar las burbujas de diálogo">💬</button>
     </div>
   </div>
 
@@ -45,8 +45,8 @@
 
   <div class="nav-bottom-row">
     <button class="nav-btn" id="btn-volver">&larr; Lecci&oacute;n</button>
-    <button class="lang-btn" id="toggle-avatar-icono" onclick="toggleAvatarIcono()" title="Mostrar/ocultar ícono de avatar">👤</button>
-    <button class="lang-btn" id="toggle-marcador" onclick="toggleMarcadorActivo()" title="Mostrar/ocultar marcador de quien habla">🎯</button>
+    <button class="lang-btn" id="toggle-avatar-icono" onclick="toggleAvatarIcono()" title="Mostrar/ocultar ícono de avatar" aria-label="Mostrar u ocultar el ícono de avatar">👤</button>
+    <button class="lang-btn" id="toggle-marcador" onclick="toggleMarcadorActivo()" title="Mostrar/ocultar marcador de quien habla" aria-label="Mostrar u ocultar el marcador de quien habla">🎯</button>
     <a class="btn-fin" id="btn-empezar" href="#">Empezar →</a>
   </div>
 

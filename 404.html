@@ -72,6 +72,15 @@ h1 {
 
 <script>
   (function(){
+    // GitHub Pages sirve esta página para CUALQUIER ruta inexistente, también
+    // dentro de subcarpetas (data/..., audios/...). Los enlaces relativos
+    // apuntarían a esa subcarpeta: se calcula la raíz del sitio.
+    var raiz = location.pathname
+      .replace(/\/(audios|imagenes|videos|data)\/.*$/, '/')
+      .replace(/[^\/]*$/, '');
+    var inicio = document.querySelector('.btn-secundario');
+    if (inicio) inicio.href = raiz + 'contenido.html';
+
     var btn = document.getElementById('btn-volver');
     btn.addEventListener('click', function(){
       // Si hay historial de navegación, vuelve atrás.
@@ -79,7 +88,7 @@ h1 {
         history.back();
       } else {
         // Llegó directo (enlace externo, sin historial): al inicio.
-        window.location.href = 'contenido.html';
+        window.location.href = raiz + 'contenido.html';
       }
     });
   })();

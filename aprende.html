@@ -16,7 +16,7 @@
 
 <nav class="nav-bar">
   <a class="nav-btn" href="#" onclick="history.back(); return false;">← Salir</a>
-  <a class="nav-btn home" href="index.html">🏠</a>
+  <a class="nav-btn home" href="index.html" aria-label="Inicio">🏠</a>
   <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
   <span class="nav-btn nav-phantom">&nbsp;</span>
 </nav>
@@ -47,7 +47,7 @@
       <div class="learn-sig"    id="learn-sig"></div>
     </div>
     <div class="learn-acciones">
-      <button class="btn-audio learn-audio-chico" id="learn-audio" onclick="reproducirActual()">🔊</button>
+      <button class="btn-audio learn-audio-chico" id="learn-audio" onclick="reproducirActual()" aria-label="Escuchar">🔊</button>
       <button class="btn-main learn-memorice" onclick="trasAprender()">Ya lo memoricé →</button>
     </div>
   </div>
@@ -60,7 +60,7 @@
     <img class="quiz-img"       id="quiz-img" src="" alt="">
 
     <div class="quiz-audio-fila">
-      <button class="btn-audio quiz-audio-chico" id="quiz-audio" onclick="reproducirActual()">🔊</button>
+      <button class="btn-audio quiz-audio-chico" id="quiz-audio" onclick="reproducirActual()" aria-label="Escuchar">🔊</button>
       <button class="btn-mini-fallo" id="quiz-reintentar" onclick="quizReintentar()" style="display:none;">🔁 Reintentar</button>
       <button class="btn-mini-fallo saltar" id="quiz-saltar" onclick="quizSaltar()" style="display:none;">⏭️ Saltar</button>
     </div>

@@ -1,0 +1,157 @@
+{
+  "leccion": "1.1.3",
+  "home": "leccion_intro.html?leccion=1.1.3",
+  "salir": "juego.html?leccion=1.1.3",
+  "fin": "leccion_pensarEnGUJ.html?leccion=1.1.3",
+  "intro": {
+    "titulo": "Algunas cosas curiosas del idioma",
+    "texto": "Antes de terminar, vamos a entender <strong>cómo funcionan</strong> las palabras del diálogo. Son pocas reglas, y todas se parecen."
+  },
+  "notas": [
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Los <strong>pronombres personales</strong>:<br><span class=\"gu\">હું</span> = yo · <span class=\"gu\">તું</span> = tú · <span class=\"gu\">તમે</span> = usted / ustedes<br><span class=\"gu\">તે</span> = él / ella · <span class=\"gu\">અમે</span> = nosotros · <span class=\"gu\">તેઓ</span> = ellos"
+        }
+      ]
+    },
+    {
+      "destacado": true,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "gu": "તું · તમે",
+          "html": "Hay dos maneras de decir «tú». <span class=\"gu\">તું</span> es de confianza: para niños, familia y amigos. <span class=\"gu\">તમે</span> es respetuosa: para adultos y desconocidos, y también es el plural.<br>En el diálogo, Manisha le dice <span class=\"gu\">તમે</span> a Vina, pero <span class=\"gu\">તું</span> a los niños."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તમે કેમ છો?",
+          "literal": "usted cómo está",
+          "significado": "¿cómo está usted?"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તારી ઉંમર શું છે?",
+          "literal": "tu edad qué es",
+          "significado": "¿qué edad tienes?"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "1",
+        "2"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "El <strong>posesivo cambia</strong> según la palabra que lo sigue: <span class=\"gu\">મારો</span> con masculinos (-ો), <span class=\"gu\">મારી</span> con femeninos (-ી) y <span class=\"gu\">મારું</span> con neutros (-ું)."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મારો છોકરો",
+          "literal": "mi niño",
+          "significado": "mi hijo"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મારી છોકરી",
+          "literal": "mi niña",
+          "significado": "mi hija"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મારું નામ",
+          "literal": "mi nombre",
+          "significado": "mi nombre"
+        }
+      ]
+    },
+    {
+      "destacado": true,
+      "practica_flash": [
+        "6"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "gu": "તેની ઉંમર",
+          "html": "Aquí está la trampa. El posesivo concuerda con <strong>lo que se posee</strong>, no con quién lo posee.<br>Rohan es un niño, pero <span class=\"gu\">ઉંમર</span> es femenino, así que se dice <span class=\"gu\">તેની ઉંમર</span>, con -ી."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તેની ઉંમર છ છે",
+          "literal": "su edad seis es",
+          "significado": "tiene seis años"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Todos los posesivos siguen el mismo patrón:<br><span class=\"gu\">મારો</span> · <span class=\"gu\">મારી</span> · <span class=\"gu\">મારું</span><br><span class=\"gu\">અમારો</span> · <span class=\"gu\">અમારી</span> · <span class=\"gu\">અમારું</span><br><span class=\"gu\">તમારો</span> · <span class=\"gu\">તમારી</span> · <span class=\"gu\">તમારું</span><br><span class=\"gu\">તેનો</span> · <span class=\"gu\">તેની</span> · <span class=\"gu\">તેનું</span>"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Para decir «de» con cualquier sustantivo se añade <span class=\"gu\">નો</span>, <span class=\"gu\">ની</span>, <span class=\"gu\">નું</span> o <span class=\"gu\">ના</span>, con <strong>las mismas terminaciones</strong> que los posesivos."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "રોહનની ઉંમર",
+          "literal": "Rohan-de edad",
+          "significado": "la edad de Rohan"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "શહેરનો રસ્તો",
+          "literal": "ciudad-de camino",
+          "significado": "el camino de la ciudad"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "10",
+        "12"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Los <strong>adjetivos</strong> también concuerdan, y otra vez con las mismas terminaciones: <span class=\"gu\">નાનો</span> / <span class=\"gu\">નાની</span> / <span class=\"gu\">નાનું</span>."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "નાનો છોકરો",
+          "literal": "pequeño niño",
+          "significado": "el niño pequeño"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "નાની છોકરી",
+          "literal": "pequeña niña",
+          "significado": "la niña pequeña"
+        }
+      ]
+    }
+  ],
+  "fin_pantalla": {
+    "titulo": "Ya entiendes cómo se arman las frases",
+    "texto": "Con esto puedes presentar a tu familia en gujarati. ¡Vamos a crear algunas oraciones!",
+    "boton_extra": {
+      "habilitado": true,
+      "caption": "🎉Vamos a crear oraciones🥳",
+      "pagina": "compone.html"
+    }
+  }
+}

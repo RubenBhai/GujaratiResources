@@ -1,0 +1,518 @@
+:root{
+  /* ── Paleta "Diálogo" — fresca, cálido-humana, propia del curso de frases ── */
+  --fondo:        #EAEFEE;   /* blanco-humo con toque verde: fresco, no crema */
+  --superficie:   #FFFFFF;
+  --superficie-2: #F4F8F6;
+  --tinta:        #1E2B29;   /* verde-pizarra muy oscuro */
+  --tinta-suave:  #566662;
+  --primario:     #0E7C74;   /* teal profundo: la "voz" / la acción */
+  --primario-osc: #0A5D57;
+  --calido:       #E4A02C;   /* ámbar miel: SOLO para la pieza activa/destacada */
+  --calido-osc:   #C6851A;
+  --linea:        #D6DEDB;
+  --sombra:       0 6px 20px rgba(20,40,36,0.08);
+  --radio:        16px;
+  --radio-sm:     12px;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:var(--fondo);
+  color:var(--tinta);
+  font-family:'Source Sans 3',sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.oculto{ display:none !important; }
+
+/* ── Barra superior ── */
+.barra{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px;
+  background:rgba(234,239,238,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--linea);
+}
+.barra-btn{
+  font-family:'Source Sans 3',sans-serif;
+  font-weight:600; font-size:0.95rem;
+  color:var(--primario);
+  background:var(--superficie);
+  padding:8px 16px; border-radius:50px;
+  text-decoration:none;
+  box-shadow:var(--sombra);
+  display:inline-flex; align-items:center; min-height:44px;   /* objetivo táctil ≥ 44px */
+  transition:transform .15s;
+}
+.barra-btn:hover{ transform:translateY(-1px); }
+
+/* ── Escena (una frase por pantalla) ── */
+.escena{ max-width:640px; margin:0 auto; padding:28px 20px 48px; }
+
+.eyebrow{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:600; font-size:0.8rem;
+  letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--primario);
+  display:flex; align-items:center; gap:8px;
+  flex-wrap:wrap; row-gap:0;   /* a 320px " · Modo" pasa a la línea siguiente en vez de partirse en columna */
+  margin-bottom:18px;
+}
+.eyebrow .punto{ width:6px; height:6px; border-radius:50%; background:var(--calido); }
+
+/* Frase completa */
+.frase{
+  background:var(--superficie);
+  border-radius:var(--radio);
+  box-shadow:var(--sombra);
+  padding:30px 26px;
+  text-align:center;
+}
+.frase-gu{
+  font-family:'Noto Serif Gujarati',serif;
+  font-size:clamp(1.8rem,6vw,2.6rem);
+  font-weight:700; line-height:1.45;
+  color:var(--tinta);
+}
+.frase-rom{ color:var(--primario); font-weight:600; font-size:1.05rem; margin-top:10px; }
+.frase-es{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.15rem; color:var(--tinta-suave); margin-top:6px;
+}
+
+.btn-audio{
+  margin-top:22px;
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:1rem;
+  color:#fff; background:var(--primario);
+  border:none; padding:13px 26px; border-radius:50px; cursor:pointer;
+  box-shadow:0 6px 16px rgba(14,124,116,0.28);
+  transition:transform .15s, background .15s;
+}
+.btn-audio:hover{ background:var(--primario-osc); transform:translateY(-2px); }
+.btn-audio:active{ transform:translateY(0); }
+.btn-audio .ico{ font-size:0.85rem; }
+
+/* Divisor + hint (signature: la frase se arma de piezas) */
+.divisor{
+  display:flex; align-items:center; gap:14px;
+  margin:34px 4px 8px;
+  color:var(--tinta-suave);
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:600; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase;
+}
+.divisor::before, .divisor::after{ content:""; flex:1; height:1px; background:var(--linea); }
+.hint{ text-align:center; color:var(--tinta-suave); font-size:0.85rem; margin:0 0 20px; }
+
+/* ── SIGNATURE: piezas numeradas en secuencia ── */
+.bloques{ display:flex; flex-wrap:wrap; align-items:stretch; gap:12px; }
+.bloque{
+  position:relative;
+  flex:1 1 auto; min-width:104px;
+  background:var(--superficie);
+  border:1.5px solid var(--linea);
+  border-radius:var(--radio-sm);
+  padding:16px 12px 12px;
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+  cursor:pointer; text-align:center;
+  transition:transform .15s, border-color .15s, box-shadow .15s;
+  animation:aparece .4s ease backwards;
+}
+.bloque:hover{ border-color:var(--primario); transform:translateY(-3px); box-shadow:var(--sombra); }
+.bloque:active{ transform:translateY(-1px) scale(0.99); }
+.bloque.suena{ border-color:var(--calido); box-shadow:0 0 0 3px rgba(228,160,44,0.28); }
+
+/* número de orden — codifica el orden real de la oración */
+.bloque-num{
+  position:absolute; top:-11px; left:-9px;
+  width:24px; height:24px; border-radius:50%;
+  background:var(--calido); color:#fff;
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:0.8rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 2px 6px rgba(198,133,26,0.4);
+}
+.bloque-img{
+  width:100%; max-width:120px; aspect-ratio:1; object-fit:cover;
+  border-radius:8px; margin-bottom:4px; background:var(--superficie-2);
+}
+.bloque-gu{ font-family:'Noto Serif Gujarati',serif; font-size:1.4rem; font-weight:600; color:var(--tinta); line-height:1.3; }
+.bloque-rom{ font-size:0.8rem; color:var(--primario); font-weight:600; }
+.bloque-es{ font-size:0.8rem; color:var(--tinta-suave); }
+
+/* stagger de aparición (sin estilos inline: por posición) */
+.bloque:nth-child(1){animation-delay:0s}.bloque:nth-child(2){animation-delay:.05s}.bloque:nth-child(3){animation-delay:.10s}.bloque:nth-child(4){animation-delay:.15s}.bloque:nth-child(5){animation-delay:.20s}.bloque:nth-child(6){animation-delay:.25s}.bloque:nth-child(7){animation-delay:.30s}.bloque:nth-child(8){animation-delay:.35s}.bloque:nth-child(9){animation-delay:.40s}.bloque:nth-child(10){animation-delay:.45s}.bloque:nth-child(11){animation-delay:.50s}.bloque:nth-child(12){animation-delay:.55s}
+
+@keyframes aparece{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+
+/* ── Navegación entre frases ── */
+.nav-frases{ display:flex; align-items:center; justify-content:space-between; margin-top:40px; gap:12px; }
+.nav-frase-btn{
+  font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:0.95rem;
+  color:var(--tinta); background:var(--superficie);
+  border:1.5px solid var(--linea); border-radius:50px;
+  padding:12px 22px; cursor:pointer; white-space:nowrap; min-height:44px;
+  transition:transform .15s, border-color .15s;
+}
+.nav-frase-btn:hover:not([disabled]){ border-color:var(--primario); transform:translateY(-2px); }
+.nav-frase-btn[disabled]{ opacity:0.4; cursor:default; }
+.nav-contador{ font-family:'Bricolage Grotesque',sans-serif; font-weight:600; color:var(--tinta-suave); font-size:0.9rem; white-space:nowrap; }
+/* Pantallas de 320px: que "← Anterior · 1 / 4 · Siguiente →" quepa en una línea */
+@media (max-width:360px){ .nav-frase-btn{ padding:10px 12px; font-size:0.85rem; } }
+
+.error-carga{ text-align:center; color:var(--tinta-suave); padding:60px 20px; }
+
+@media (prefers-reduced-motion:reduce){
+  .bloque{ animation:none; }
+  *{ transition:none !important; }
+}
+
+/* ── Desktop ── */
+@media (min-width:1024px){
+  .escena{ max-width:760px; padding:44px 24px 60px; }
+  .frase{ padding:42px 40px; }
+  .frase-gu{ font-size:2.8rem; }
+  .bloque{ min-width:124px; padding:20px 14px 14px; }
+  .bloque-gu{ font-size:1.6rem; }
+}
+
+/* ============================================================
+   COMPONENTE: chips ordenables + MODO COMPONER
+   (compartido por Componer y Dictado)
+   ============================================================ */
+.gu{ font-family:'Noto Serif Gujarati', serif; }
+
+/* Pista (el español de la frase a reconstruir) */
+.pista{
+  background:var(--superficie); border-radius:var(--radio); box-shadow:var(--sombra);
+  padding:22px 24px; text-align:center; margin-bottom:22px;
+}
+.pista-label{
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.75rem;
+  letter-spacing:0.08em; text-transform:uppercase; color:var(--primario); margin:0 0 8px;
+}
+.pista-es{ font-family:'Bricolage Grotesque',sans-serif; font-size:1.3rem; color:var(--tinta); margin:0 0 14px; line-height:1.35; }
+.btn-audio-chico{ margin:0; padding:9px 20px; font-size:0.9rem; box-shadow:0 4px 12px rgba(14,124,116,0.22); min-height:44px; }
+
+/* Zona de construcción */
+.construccion{
+  min-height:64px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center;
+  background:var(--superficie-2); border-radius:var(--radio-sm);
+  border:2px solid transparent; padding:14px; margin-bottom:16px;
+}
+.construccion.vacia{ border:2px dashed var(--linea); }
+
+/* Banco de piezas disponibles */
+.banco{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:20px; min-height:48px; }
+
+/* Chip del banco */
+.chip{
+  font-family:'Noto Serif Gujarati',serif; font-size:1.35rem; font-weight:600; color:var(--tinta);
+  background:var(--superficie); border:1.5px solid var(--linea); border-radius:var(--radio-sm);
+  padding:10px 16px; cursor:pointer; transition:transform .12s, border-color .12s, box-shadow .12s;
+}
+.chip:hover{ border-color:var(--primario); transform:translateY(-2px); box-shadow:var(--sombra); }
+.chip.used{ opacity:0.3; pointer-events:none; }
+
+/* Chip ya puesto en la construcción (tocar para devolver) */
+.chip-puesto{
+  font-family:'Noto Serif Gujarati',serif; font-size:1.35rem; font-weight:600; color:var(--primario-osc);
+  background:rgba(14,124,116,0.10); border:1.5px solid var(--primario); border-radius:var(--radio-sm);
+  padding:10px 16px; cursor:pointer; transition:transform .12s;
+}
+.chip-puesto:hover{ transform:translateY(-2px); }
+
+/* Acciones */
+.acciones-chips{ display:flex; gap:12px; justify-content:center; margin-bottom:14px; }
+.btn-chip-main{
+  font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:1rem; color:#fff; background:var(--primario);
+  border:none; border-radius:50px; padding:12px 30px; cursor:pointer; min-height:44px;
+  box-shadow:0 6px 16px rgba(14,124,116,0.28); transition:transform .15s, background .15s;
+}
+.btn-chip-main:hover{ background:var(--primario-osc); transform:translateY(-2px); }
+.btn-chip-sec{
+  font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:1rem; color:var(--tinta);
+  background:var(--superficie); border:1.5px solid var(--linea); border-radius:50px; padding:12px 26px; cursor:pointer; min-height:44px;
+  transition:transform .15s, border-color .15s;
+}
+.btn-chip-sec:hover{ border-color:var(--primario); transform:translateY(-2px); }
+
+/* Feedback y marcador */
+.feedback{ text-align:center; min-height:24px; font-weight:600; font-family:'Bricolage Grotesque',sans-serif; margin-bottom:10px; }
+.feedback.ok{ color:var(--primario); }
+.feedback.err{ color:#C0453A; }
+.marcador{ text-align:center; color:var(--tinta-suave); font-size:0.9rem; }
+.marcador span{ color:var(--calido-osc); font-weight:700; }
+
+@media (min-width:1024px){
+  .pista{ padding:28px 32px; }
+  .pista-es{ font-size:1.5rem; }
+  .chip, .chip-puesto{ font-size:1.55rem; padding:12px 20px; }
+}
+
+/* ============================================================
+   MODO DICTADO (reusa los chips; añade audio central y revelación)
+   ============================================================ */
+.instruccion{ text-align:center; color:var(--tinta-suave); font-size:1rem; margin:0 0 22px; }
+
+.btn-escuchar{
+  display:flex; align-items:center; gap:12px; margin:0 auto 24px;
+  font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:1.1rem; color:#fff; background:var(--primario);
+  border:none; border-radius:50px; padding:16px 34px; cursor:pointer;
+  box-shadow:0 8px 22px rgba(14,124,116,0.30); transition:transform .15s, background .15s;
+}
+.btn-escuchar:hover{ background:var(--primario-osc); transform:translateY(-2px); }
+.btn-escuchar:active{ transform:translateY(0); }
+.btn-escuchar .ico{ font-size:1.2rem; }
+
+/* Revelación de la frase al acertar */
+.revelacion{
+  background:var(--superficie); border:1.5px solid var(--primario); border-radius:var(--radio);
+  box-shadow:var(--sombra); padding:22px 24px; text-align:center; margin:6px 0 14px;
+  animation:aparece .35s ease;
+}
+.rev-gu{ font-family:'Noto Serif Gujarati',serif; font-size:1.7rem; font-weight:700; color:var(--tinta); line-height:1.4; }
+.rev-rom{ color:var(--primario); font-weight:600; font-size:1rem; margin-top:6px; }
+.rev-es{ font-family:'Bricolage Grotesque',sans-serif; color:var(--tinta-suave); font-size:1.05rem; margin-top:4px; }
+
+@media (min-width:1024px){
+  .btn-escuchar{ font-size:1.2rem; padding:18px 40px; }
+  .rev-gu{ font-size:2rem; }
+}
+
+/* ============================================================
+   MODO BACKWARDS (buildup hacia atrás; sin chips)
+   ============================================================ */
+.bw-badge{
+  text-align:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:600;
+  font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--primario); margin-bottom:4px;
+}
+.bw-progreso{ text-align:center; color:var(--tinta-suave); font-size:0.85rem; margin-bottom:20px; }
+
+.fragmento-wrap{ display:flex; flex-direction:column; align-items:center; gap:24px; }
+.frag-texto{
+  font-family:'Noto Serif Gujarati',serif; font-weight:700; color:var(--tinta);
+  font-size:clamp(1.9rem,7vw,2.8rem); line-height:1.5; text-align:center;
+  background:var(--superficie); border-radius:var(--radio); box-shadow:var(--sombra);
+  padding:30px 26px; width:100%; box-sizing:border-box;
+  animation:aparece .35s ease;
+}
+.bw-acciones{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+/* Cierre: la frase completa */
+.cierre{
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  background:var(--superficie); border:1.5px solid var(--primario); border-radius:var(--radio);
+  box-shadow:var(--sombra); padding:28px 26px; text-align:center; animation:aparece .35s ease;
+}
+.cierre-label{
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.75rem;
+  letter-spacing:0.08em; text-transform:uppercase; color:var(--primario); margin-bottom:6px;
+}
+.cierre-gu{ font-family:'Noto Serif Gujarati',serif; font-size:1.9rem; font-weight:700; color:var(--tinta); line-height:1.45; }
+.cierre-rom{ color:var(--primario); font-weight:600; font-size:1.05rem; margin-top:6px; }
+.cierre-es{ font-family:'Bricolage Grotesque',sans-serif; color:var(--tinta-suave); font-size:1.1rem; margin-top:4px; margin-bottom:16px; }
+
+@media (min-width:1024px){
+  .frag-texto{ font-size:2.9rem; padding:40px; }
+  .cierre-gu{ font-size:2.2rem; }
+}
+
+/* ============================================================
+   MODO KARAOKE / LECTURA GUIADA
+   ============================================================ */
+.karaoke-frase{
+  display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:flex-end;
+  background:var(--superficie); border-radius:var(--radio); box-shadow:var(--sombra);
+  padding:28px 22px; margin-bottom:14px;
+}
+.kbloque{
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  background:transparent; border:2px solid transparent; border-radius:10px;
+  padding:8px 12px; cursor:pointer; font-family:inherit;
+  transition:background .15s, border-color .15s, transform .12s;
+}
+.kbloque:hover{ border-color:var(--linea); transform:translateY(-2px); }
+.kgu{ font-family:'Noto Serif Gujarati',serif; font-size:1.7rem; font-weight:700; color:var(--tinta); line-height:1.3; }
+.krom{ font-size:0.78rem; color:var(--primario); font-weight:600; }
+.kbloque.activo{ background:rgba(228,160,44,0.18); border-color:var(--calido); }
+.kbloque.activo .kgu{ color:var(--calido-osc); }
+
+.karaoke-trad{
+  text-align:center; min-height:28px; font-family:'Bricolage Grotesque',sans-serif;
+  color:var(--tinta-suave); font-size:1.1rem; margin-bottom:22px;
+}
+.invisible{ visibility:hidden; }
+
+.karaoke-controles{ display:flex; flex-direction:column; align-items:center; gap:16px; margin-bottom:28px; }
+.k-toggles{ display:flex; gap:10px; }
+.k-toggle{
+  font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:0.9rem; color:var(--tinta-suave);
+  background:var(--superficie); border:1.5px solid var(--linea); border-radius:50px; padding:8px 18px; cursor:pointer;
+  min-height:44px;   /* objetivo táctil */
+  transition:all .15s;
+}
+.k-toggle:hover{ border-color:var(--primario); }
+.k-toggle.activo{ background:var(--primario); color:#fff; border-color:var(--primario); }
+
+@media (min-width:1024px){
+  .kgu{ font-size:2rem; }
+  .karaoke-frase{ padding:36px 30px; }
+}
+
+/* ============================================================
+   MODO RETO DE MEMORIA (SRS): pantallas conocer / entender / decir
+   ============================================================ */
+.progreso-top{ position:sticky; top:0; z-index:60; height:5px; background:var(--superficie-2); }   /* z-index > .barra (50): si no, al hacer scroll queda tapada */
+.progreso-top-fill{ height:100%; width:0; background:var(--primario); transition:width .4s ease; }
+
+.reto-titulo{ font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(1.7rem,5vw,2.2rem); font-weight:700; color:var(--tinta); text-align:center; margin:8px 0 6px; }
+.reto-sub{ text-align:center; color:var(--tinta-suave); font-size:1.05rem; margin:0 auto 24px; max-width:420px; }
+
+.reto-stats{ display:flex; gap:12px; justify-content:center; margin-bottom:26px; }
+.stat{ background:var(--superficie); border-radius:var(--radio-sm); box-shadow:var(--sombra); padding:16px 18px; text-align:center; min-width:92px; }
+.stat-num{ display:block; font-family:'Bricolage Grotesque',sans-serif; font-size:1.9rem; font-weight:700; color:var(--primario); line-height:1; }
+.stat-lbl{ display:block; font-size:0.78rem; color:var(--tinta-suave); margin-top:6px; }
+
+.btn-grande{ display:block; width:100%; max-width:340px; margin:0 auto 12px; padding:16px; font-size:1.1rem; }
+.btn-texto{ display:block; margin:0 auto; background:none; border:none; color:var(--tinta-suave); font-family:'Source Sans 3',sans-serif; font-size:0.9rem; text-decoration:underline; cursor:pointer; padding:12px 16px; min-height:44px; }
+#screen-conocer .btn-grande{ margin-top:28px; }   /* separa "La memoricé" de las piezas */
+.btn-texto:hover{ color:var(--primario); }
+
+.reto-fase-badge{ text-align:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--primario); margin-bottom:18px; }
+
+/* Quiz */
+.quiz-prompt{ background:var(--superficie); border-radius:var(--radio); box-shadow:var(--sombra); padding:26px; text-align:center; margin-bottom:18px; }
+.quiz-gu{ font-family:'Noto Serif Gujarati',serif; font-size:clamp(1.7rem,5.5vw,2.4rem); font-weight:700; color:var(--tinta); line-height:1.4; margin-bottom:12px; }
+.quiz-opciones{ display:flex; flex-direction:column; gap:10px; margin-bottom:14px; }
+.opt-btn{ font-family:'Bricolage Grotesque',sans-serif; font-size:1.05rem; color:var(--tinta); background:var(--superficie); border:1.5px solid var(--linea); border-radius:var(--radio-sm); padding:15px 18px; cursor:pointer; text-align:center; transition:transform .12s, border-color .12s; }
+.opt-btn:hover:not(:disabled){ border-color:var(--primario); transform:translateY(-2px); }
+.opt-btn:disabled{ cursor:default; }
+.opt-btn.correct{ background:rgba(14,124,116,0.12); border-color:var(--primario); color:var(--primario-osc); }
+.opt-btn.wrong{ background:rgba(192,69,58,0.10); border-color:#C0453A; color:#C0453A; }
+
+/* Decir */
+.decir-instru{ text-align:center; color:var(--tinta-suave); font-size:1rem; margin:0 0 20px; }
+.cronometro{ height:8px; background:var(--superficie-2); border-radius:50px; overflow:hidden; margin:0 auto 22px; max-width:340px; }
+.cronometro-fill{ height:100%; width:0; background:var(--calido); border-radius:50px; }
+.cronometro-fill.corriendo{ animation:cronoLlenar 5s linear forwards; }
+@keyframes cronoLlenar{ from{ width:0; } to{ width:100%; } }
+
+.autoeval{ margin-top:8px; }
+.autoeval-preg{ text-align:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; color:var(--tinta); margin:0 0 14px; }
+.autoeval-btns{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.autoeval-btn{ font-family:'Source Sans 3',sans-serif; font-weight:600; font-size:0.95rem; border:1.5px solid transparent; border-radius:50px; padding:12px 22px; cursor:pointer; transition:transform .12s; }
+.autoeval-btn:hover{ transform:translateY(-2px); }
+.ae-si{ background:rgba(14,124,116,0.12); color:var(--primario-osc); border-color:var(--primario); }
+.ae-casi{ background:rgba(228,160,44,0.15); color:var(--calido-osc); border-color:var(--calido); }
+.ae-no{ background:rgba(192,69,58,0.10); color:#C0453A; border-color:#C0453A; }
+
+/* Resumen */
+.fin-emoji{ font-size:3.4rem; text-align:center; line-height:1; margin:6px 0 8px; }
+
+@media (min-width:1024px){
+  .quiz-gu{ font-size:2.4rem; }
+  .stat{ min-width:110px; padding:20px 22px; }
+  .stat-num{ font-size:2.1rem; }
+}
+
+/* ============================================================
+   MODO PRONUNCIACIÓN (grabar + evaluación Gemini)
+   ============================================================ */
+.pron-speeds{ display:flex; gap:8px; justify-content:center; margin:18px 0; }
+.spd{ font-size:0.85rem; padding:8px 14px; }
+
+.pron-acciones{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:18px; }
+.btn-chip-main.grabando{ background:#C0453A; box-shadow:0 6px 16px rgba(192,69,58,0.30); }
+
+.pron-spinner{ text-align:center; color:var(--primario); font-weight:600; font-family:'Bricolage Grotesque',sans-serif; margin-bottom:16px; min-height:22px; }
+
+.pron-eval{
+  background:var(--superficie); border-radius:var(--radio); box-shadow:var(--sombra);
+  border-left:5px solid var(--primario); padding:20px 22px; margin-bottom:22px;
+}
+.eval-nota{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.2rem; margin:0 0 8px; }
+.eval-nota.nota-alta{ color:var(--calido-osc); }
+.eval-nota.nota-baja{ color:#C0453A; }
+.eval-trans{ color:var(--tinta); font-size:0.98rem; margin:0 0 6px; }
+.eval-consejo{ color:var(--tinta-suave); font-size:0.98rem; margin:0; }
+
+/* ============================================================
+   NAVEGACIÓN: menú de categorías + hub de modos
+   ============================================================ */
+.menu-header{ text-align:center; margin-bottom:26px; }
+.menu-titulo{ font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(1.8rem,5vw,2.4rem); font-weight:700; color:var(--tinta); margin:8px 0 6px; }
+.menu-desc{ color:var(--tinta-suave); font-size:1.05rem; margin:0 auto; max-width:440px; }
+
+.cat-lista{ display:flex; flex-direction:column; gap:12px; }
+.cat-card{ display:flex; align-items:center; gap:16px; background:var(--superficie); border-radius:var(--radio); box-shadow:var(--sombra); padding:20px 22px; text-decoration:none; border:1.5px solid transparent; transition:transform .15s, border-color .15s, box-shadow .15s; }
+.cat-card:hover{ transform:translateY(-3px); border-color:var(--primario); box-shadow:0 12px 26px rgba(20,40,36,0.12); }
+.cat-icono{ font-size:2rem; flex-shrink:0; }
+.cat-info{ flex:1; display:flex; flex-direction:column; gap:3px; }
+.cat-nombre{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.15rem; color:var(--tinta); }
+.cat-desc{ color:var(--tinta-suave); font-size:0.9rem; line-height:1.4; }
+.cat-flecha{ color:var(--primario); font-size:1.3rem; flex-shrink:0; }
+
+.hub-titulo{ font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(1.5rem,4.5vw,2rem); font-weight:700; color:var(--tinta); text-align:center; margin:6px 0 26px; }
+.grupo-label{ font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--primario); margin:22px 0 12px; }
+.grupo-label:first-child{ margin-top:0; }
+.modo-grupo{ display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin-bottom:6px; }
+.modo-card{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; background:var(--superficie); border-radius:var(--radio-sm); box-shadow:var(--sombra); padding:18px; text-decoration:none; border:1.5px solid transparent; transition:transform .15s, border-color .15s, box-shadow .15s; }
+.modo-card:hover{ transform:translateY(-3px); border-color:var(--primario); box-shadow:0 12px 26px rgba(20,40,36,0.12); }
+.modo-icono{ font-size:1.7rem; }
+.modo-nombre{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.05rem; color:var(--tinta); }
+.modo-desc{ color:var(--tinta-suave); font-size:0.85rem; line-height:1.35; }
+
+@media (min-width:1024px){ .modo-grupo{ grid-template-columns:repeat(3,1fr); } }
+
+/* ============================================================
+   MODO ADAPTA LA FRASE (sustituciones)
+   ============================================================ */
+.mark-inline{ color:var(--calido-osc); font-weight:700; }
+
+.flex-frase{
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:flex-start;
+  background:var(--superficie); border-radius:var(--radio); box-shadow:var(--sombra);
+  padding:28px 22px; margin-bottom:20px;
+}
+.flex-bloque{
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+  background:transparent; border:2px solid transparent; border-radius:10px;
+  padding:10px 12px; font-family:inherit; cursor:default;
+}
+.flex-bloque.inter{ border:2px dashed var(--calido); cursor:pointer; transition:background .15s, transform .12s; }
+.flex-bloque.inter:hover{ background:rgba(228,160,44,0.10); transform:translateY(-2px); }
+.fb-linea{ display:flex; align-items:center; gap:5px; }
+.fb-gu{ font-family:'Noto Serif Gujarati',serif; font-size:1.6rem; font-weight:700; color:var(--tinta); line-height:1.3; }
+.fb-mark{ color:var(--calido-osc); font-size:0.9rem; font-weight:700; }
+.fb-es{ font-size:0.78rem; color:var(--tinta-suave); }
+
+.flex-acciones{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:22px; }
+
+/* Overlay selector de variantes */
+.flex-overlay{ position:fixed; inset:0; z-index:100; background:rgba(20,40,36,0.55); backdrop-filter:blur(3px); display:flex; align-items:center; justify-content:center; padding:20px; }
+.flex-panel{ background:var(--superficie); border-radius:var(--radio); box-shadow:0 14px 34px rgba(20,40,36,0.22); padding:24px; max-width:440px; width:100%; max-height:80vh; overflow-y:auto; text-align:center; }
+.flex-panel-titulo{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.05rem; color:var(--tinta); margin-bottom:16px; }
+.flex-opciones{ display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+.flex-op{ display:flex; align-items:center; gap:14px; background:var(--superficie-2); border:1.5px solid var(--linea); border-radius:var(--radio-sm); padding:12px 14px; cursor:pointer; text-align:left; transition:border-color .12s, transform .12s; }
+.flex-op:hover{ border-color:var(--primario); transform:translateY(-2px); }
+.flex-op.sel{ border-color:var(--calido); background:rgba(228,160,44,0.12); }
+.flex-op-img{ width:44px; height:44px; object-fit:cover; border-radius:8px; flex-shrink:0; }
+.flex-op-gu{ font-family:'Noto Serif Gujarati',serif; font-size:1.4rem; font-weight:700; color:var(--tinta); }
+.flex-op-es{ font-size:0.82rem; color:var(--tinta-suave); display:block; }
+.flex-op-tag{ margin-left:auto; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--primario); font-weight:700; }
+
+@media (min-width:1024px){ .fb-gu{ font-size:1.8rem; } }
+
+/* Traducción natural completa del modo Adapta la frase (armada por 'orden') */
+.flex-traduccion{ text-align:center; font-family:'Bricolage Grotesque',sans-serif; font-size:1.15rem; color:var(--tinta-suave); line-height:1.4; min-height:24px; margin:-4px 0 22px; }
+
+/* Aviso "Todo al día. Próximo repaso en…" bajo las estadísticas del reto */
+.reto-aviso{ margin-bottom:14px; font-size:0.95rem; color:var(--primario); }
+.reto-aviso:empty{ display:none; }
+/* "Empezar" deshabilitado (nada que repasar): que se note que no responde */
+.btn-chip-main[disabled]{ opacity:0.45; cursor:default; box-shadow:none; }
+.btn-chip-main[disabled]:hover{ background:var(--primario); transform:none; }

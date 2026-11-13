@@ -1,0 +1,251 @@
+{
+  "leccion": "1.1.3",
+  "video": {
+    "titulo": "Escucha esta conversación",
+    "subtitulo": "Antes de empezar",
+    "intro": "Manisha se encuentra con Vina y sus hijos. Al terminar la lección podrás leer y entender toda la conversación.",
+    "audio": "videos/clase_1_1/leccion_1_1_3_video.mp3",
+    "altoPorDialogo": 175,
+    "subtitulo_fin": "Al terminar la lección",
+    "intro_fin": "Es el momento de probar tus conocimientos. ¿Cuántas palabras o frases puedes reconocer?",
+    "subtitulo_desafio": "El desafío final",
+    "titulo_desafio": "¿Te animas a conversar?",
+    "intro_desafio": "Ya escuchaste el diálogo muchas veces. Ahora te toca a ti: elige un personaje y participa en la conversación.",
+    "secuencias": [
+      {
+        "dialogos": [
+          1,
+          2
+        ]
+      },
+      {
+        "dialogos": [
+          3,
+          4
+        ]
+      },
+      {
+        "dialogos": [
+          5,
+          6
+        ]
+      },
+      {
+        "dialogos": [
+          7,
+          8
+        ]
+      },
+      {
+        "dialogos": [
+          9,
+          10
+        ]
+      },
+      {
+        "dialogos": [
+          11,
+          12,
+          13
+        ]
+      }
+    ]
+  },
+  "video_interactivo": {
+    "titulo": "Practica la conversación",
+    "subtitulo": "Tu turno de hablar",
+    "intro": "Escoge un personaje. Cuando llegue su turno, te tocará hablar a ti en gujarati. ¡Vamos a practicar!"
+  },
+  "avatares": {
+    "vina": {
+      "nombre": "વીણા",
+      "color": "#5F6E4F",
+      "imagen": "imagenes/Clase_1_1/avatar_vina.jpg"
+    },
+    "manisha": {
+      "nombre": "મનિષાબેન",
+      "color": "#A8362A",
+      "imagen": "imagenes/Clase_1_1/avatar_manisha.jpg"
+    },
+    "rohan": {
+      "nombre": "રોહન",
+      "color": "#4A6B8A",
+      "imagen": "imagenes/Clase_1_1/avatar_rohan.jpg"
+    },
+    "roshni": {
+      "nombre": "રોશની",
+      "color": "#8A5A8C",
+      "imagen": "imagenes/Clase_1_1/avatar_roshni.jpg"
+    }
+  },
+  "imagenAvatarActivo": "imagenes/Clase_1_1/avatarActivo.jpg",
+  "dialogos": [
+    {
+      "id": 1,
+      "avatar": "manisha",
+      "lado": "centro",
+      "gujarati": "નમસ્તે, વીણા. તમે કેમ છો?",
+      "espanol": "Hola, Vina. ¿Cómo está?",
+      "ini": 0.3,
+      "fin": 2.48,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_01.mp3",
+      "imagenFondo": "imagenes/Clase_1_1/D3_Dialogo_Fondo_1.jpg"
+    },
+    {
+      "id": 2,
+      "avatar": "vina",
+      "lado": "der",
+      "gujarati": "નમસ્તે. હું સારી છું.",
+      "espanol": "Hola. Estoy bien.",
+      "ini": 2.98,
+      "fin": 4.8,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_02.mp3"
+    },
+    {
+      "id": 3,
+      "avatar": "manisha",
+      "lado": "centro",
+      "gujarati": "આ તમારો છોકરો છે?",
+      "espanol": "¿Este es su hijo?",
+      "ini": 5.3,
+      "fin": 6.9,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_03.mp3"
+    },
+    {
+      "id": 4,
+      "avatar": "vina",
+      "lado": "der",
+      "gujarati": "હા, આ મારો છોકરો છે. તેનું નામ રોહન છે.",
+      "espanol": "Sí, es mi hijo. Se llama Rohan.",
+      "ini": 7.4,
+      "fin": 10.15,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_04.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_4.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "avatar": "manisha",
+      "lado": "centro",
+      "gujarati": "અને આ તમારી છોકરી છે?",
+      "espanol": "¿Y esta es su hija?",
+      "ini": 10.65,
+      "fin": 12.61,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_05.mp3"
+    },
+    {
+      "id": 6,
+      "avatar": "vina",
+      "lado": "der",
+      "gujarati": "હા, આ મારી છોકરી છે. તેનું નામ રોશની છે.",
+      "espanol": "Sí, es mi hija. Se llama Roshni.",
+      "ini": 13.11,
+      "fin": 16.68,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_06.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_6.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "avatar": "manisha",
+      "lado": "centro",
+      "gujarati": "નમસ્તે, રોશની! તારી ઉંમર શું છે?",
+      "espanol": "¡Hola, Roshni! ¿Qué edad tienes?",
+      "ini": 17.18,
+      "fin": 20.17,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_07.mp3"
+    },
+    {
+      "id": 8,
+      "avatar": "roshni",
+      "lado": "izq",
+      "gujarati": "મારી ઉંમર સાત છે.",
+      "espanol": "Tengo siete años.",
+      "ini": 20.67,
+      "fin": 22.75,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_08.mp3"
+    },
+    {
+      "id": 9,
+      "avatar": "manisha",
+      "lado": "centro",
+      "gujarati": "અને રોહન, તારી ઉંમર શું છે?",
+      "espanol": "¿Y tú, Rohan, qué edad tienes?",
+      "ini": 23.25,
+      "fin": 25.41,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_09.mp3"
+    },
+    {
+      "id": 10,
+      "avatar": "roshni",
+      "lado": "izq",
+      "gujarati": "તેની ઉંમર છ છે!",
+      "espanol": "¡Tiene seis años!",
+      "ini": 25.91,
+      "fin": 27.83,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_10.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_10.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "avatar": "rohan",
+      "lado": "izq",
+      "gujarati": "મા, હું શું કરું?",
+      "espanol": "Mamá, ¿qué hago?",
+      "ini": 28.33,
+      "fin": 30.33,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_11.mp3"
+    },
+    {
+      "id": 12,
+      "avatar": "vina",
+      "lado": "der",
+      "gujarati": "રાત છે. આરામ કરો!",
+      "espanol": "Es de noche. ¡A descansar!",
+      "ini": 30.83,
+      "fin": 32.75,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_12.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_12.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "avatar": "roshni",
+      "lado": "izq",
+      "gujarati": "અમારી રાત મસ્ત છે!",
+      "espanol": "¡Nuestra noche es genial!",
+      "ini": 33.25,
+      "fin": 35.01,
+      "audio": "audios/clase_1_1/dialogo_1_1_3_13.mp3"
+    }
+  ]
+}

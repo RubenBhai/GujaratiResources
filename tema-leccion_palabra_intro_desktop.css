@@ -8,8 +8,9 @@
   /* ── ESTRUCTURA DE PANTALLA COMPLETA ── */
   body {
     padding-bottom: 0;
-    height: 100vh;
-    overflow: hidden;
+    /* min-height (no height+overflow:hidden): en pantallas bajas (1024x600, 1280x650)
+       el contenido que no cabe debe poder alcanzarse con scroll */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

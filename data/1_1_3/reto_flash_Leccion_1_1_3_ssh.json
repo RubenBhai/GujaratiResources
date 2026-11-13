@@ -1,0 +1,119 @@
+{
+  "leccion": "1.1.3",
+  "letters": [
+    {
+      "letter": "સ",
+      "answer": "sa",
+      "audio": "audios/clase_1_1/audio_alfa_m_sa.mp3"
+    },
+    {
+      "letter": "શ",
+      "answer": "sha",
+      "audio": "audios/clase_1_1/audio_alfa_m_sha.mp3"
+    },
+    {
+      "letter": "સા",
+      "answer": "saa",
+      "audio": "audios/clase_1_1/audio_m_saa.mp3"
+    },
+    {
+      "letter": "શા",
+      "answer": "shaa",
+      "audio": "audios/clase_1_1/audio_m_shaa.mp3"
+    },
+    {
+      "letter": "સો",
+      "answer": "so",
+      "audio": "audios/clase_1_1/audio_m_so.mp3"
+    },
+    {
+      "letter": "શો",
+      "answer": "sho",
+      "audio": "audios/clase_1_1/audio_m_sho.mp3"
+    },
+    {
+      "letter": "સી",
+      "answer": "sii",
+      "audio": "audios/clase_1_1/audio_m_sii.mp3"
+    },
+    {
+      "letter": "શી",
+      "answer": "shii",
+      "audio": "audios/clase_1_1/audio_m_shii.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "નસો",
+      "answer": "naso",
+      "audio": "audios/clase_1_1/audio_m_naso.mp3",
+      "significado": "venas"
+    },
+    {
+      "letter": "નશો",
+      "answer": "nasho",
+      "audio": "audios/clase_1_1/audio_m_nasho.mp3",
+      "significado": "embriaguez"
+    },
+    {
+      "letter": "સરસ",
+      "answer": "saras",
+      "audio": "audios/clase_1_1/audio_m_saras.mp3",
+      "significado": "excelente"
+    },
+    {
+      "letter": "શરમ",
+      "answer": "sharam",
+      "audio": "audios/clase_1_1/audio_m_sharam.mp3",
+      "significado": "vergüenza"
+    },
+    {
+      "letter": "સહારો",
+      "answer": "sahaaro",
+      "audio": "audios/clase_1_1/audio_m_sahaaro.mp3",
+      "significado": "apoyo"
+    },
+    {
+      "letter": "શહેર",
+      "answer": "shaher",
+      "audio": "audios/clase_1_1/audio_m_shaher.mp3",
+      "significado": "ciudad"
+    },
+    {
+      "letter": "સરકાર",
+      "answer": "sarkaar",
+      "audio": "audios/clase_1_1/audio_m_sarkaar.mp3",
+      "significado": "gobierno"
+    },
+    {
+      "letter": "શરીર",
+      "answer": "shariir",
+      "audio": "audios/clase_1_1/audio_m_shariir.mp3",
+      "significado": "cuerpo"
+    },
+    {
+      "letter": "સોનું",
+      "answer": "sonuⁿ",
+      "audio": "audios/clase_1_1/audio_m_sonu(m).mp3",
+      "significado": "oro"
+    },
+    {
+      "letter": "શોક",
+      "answer": "shok",
+      "audio": "audios/clase_1_1/audio_m_shok.mp3",
+      "significado": "duelo"
+    },
+    {
+      "letter": "શાસન",
+      "answer": "shaasan",
+      "audio": "audios/clase_1_1/audio_m_shaasan.mp3",
+      "significado": "gobierno"
+    },
+    {
+      "letter": "શાસક",
+      "answer": "shaasak",
+      "audio": "audios/clase_1_1/audio_m_shaasak.mp3",
+      "significado": "gobernante"
+    }
+  ]
+}

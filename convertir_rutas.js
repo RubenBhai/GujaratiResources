@@ -11,12 +11,12 @@
         ->  const BASE = '.';
       (porque luego se usa como BASE + '/audios/...')
 
-   NO toca sw.js en su condición url.href.includes('rubenbhai...'),
-   porque eso es lógica de dominio, no una ruta. Ese archivo se
-   excluye por completo para evitar romper el cacheo.
+   sw.js se excluye por completo (no debe tener rutas de dominio).
+   Los assets_*_versionado.json también: su "_generadoDesde" es
+   informativo (indica contra qué servidor se generó) y no es una ruta.
 
-   USO:  node convertir_rutas.js          (aplica)
-         node convertir_rutas.js --dry     (solo muestra)
+   USO:  node convertir_rutas.js            (simulación: solo muestra)
+         node convertir_rutas.js --aplicar  (escribe los cambios)
    ============================================================ */
 
 const fs = require('fs');
@@ -31,7 +31,8 @@ const EXTENSIONES = ['.js', '.html', '.json', '.css'];
 // de cacheo, no una ruta. Convertirla rompería el service worker.
 const EXCLUIR = ['convertir_rutas.js', 'generar_manifiesto.js', 'sw.js'];
 
-const modoPrueba = process.argv.includes('--dry');
+// Por defecto SIMULA, como el resto de herramientas; --dry se acepta igual.
+const modoPrueba = !process.argv.includes('--aplicar');
 
 let totalArchivos = 0, totalReemplazos = 0;
 const detalle = [];
@@ -42,7 +43,8 @@ function procesarCarpeta(carpeta) {
     if (e.isDirectory()) {
       if (e.name === 'node_modules' || e.name.startsWith('.')) continue;
       procesarCarpeta(ruta);
-    } else if (EXTENSIONES.includes(path.extname(e.name)) && !EXCLUIR.includes(e.name)) {
+    } else if (EXTENSIONES.includes(path.extname(e.name)) && !EXCLUIR.includes(e.name)
+               && !e.name.endsWith('_versionado.json')) {
       procesarArchivo(ruta);
     }
   }
@@ -87,6 +89,6 @@ detalle.forEach(d => console.log(`  ${d.reemplazos.toString().padStart(3)}  ${d.
 console.log('\n' + '='.repeat(48));
 console.log(`  Archivos afectados: ${totalArchivos}`);
 console.log(`  Reemplazos totales: ${totalReemplazos}`);
-console.log(`  (sw.js excluido a propósito — no tocar su condición)`);
+console.log(`  (sw.js y *_versionado.json excluidos a propósito)`);
 console.log('='.repeat(48));
-if (modoPrueba) console.log('\nEjecuta sin --dry para aplicar.');
+if (modoPrueba) console.log('\nPara aplicar:  node convertir_rutas.js --aplicar');

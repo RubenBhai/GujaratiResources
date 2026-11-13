@@ -1,0 +1,241 @@
+{
+  "leccion": "1.1.3",
+  "anterior": "contenido_modulo.html?modulo=1.1",
+  "home": "contenido_modulo.html?modulo=1.1",
+  "empezar": "leccion_letra.html?leccion=1.1.3&item=1",
+  "musica_ambiente": "audios/musica/Leccion_1_1_3_musica_ambiente.mp3",
+  "pantallas": [
+    {
+      "badge": "Lección 3",
+      "titulo": "¡Hola en gujarati!",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p style=\"text-align: center;\"><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">નમસ્તે</span> - <span style=\"color:var(--rojo-ladrillo);font-size:1.5rem;font-weight:600\">namaste</span> - <span style=\"color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">hola</span></p>"
+        },
+        {
+          "tipo": "info-box",
+          "html": "<p>En esta lección aprenderás <strong>3 consonantes</strong>, <strong>2 vocales</strong> nuevas con sus matras y tu <strong>primera conjuntiva</strong>: dos consonantes que se escriben pegadas.</p><br><p>Con ellas ya podrás leer una conversación entera: saludar, preguntar el nombre y decir de quién es cada cosa.</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Ejemplo"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ન"
+              },
+              {
+                "tipo": "acento",
+                "valor": "na"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>na</strong> en <strong>na</strong>da"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ત"
+              },
+              {
+                "tipo": "acento",
+                "valor": "ta"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ta</strong> en <strong>ta</strong>za (la lengua toca los dientes)"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "શ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "sha"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>sh</strong> como en «<strong>sh</strong>, silencio»"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 2
+      },
+      "boton_secundario": {
+        "tipo": "href",
+        "texto": "⏭️ Siguiente lección",
+        "destino": "leccion_intro.html?leccion=1.2.1"
+      }
+    },
+    {
+      "badge": "Las vocales y la conjuntiva",
+      "titulo": "Vocales ઇ ઈ y la conjuntiva સ્ત",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>El gujarati tiene <strong>dos íes</strong>: <span class=\"gu\">ઇ</span> es corta (<strong>i</strong>) y <span class=\"gu\">ઈ</span> es larga (<strong>ii</strong>). Cada una tiene su matra: <span class=\"gu\">િ</span> se escribe <strong>antes</strong> de la consonante aunque suena después, y <span class=\"gu\">ી</span> se escribe después.</p><br><p>Y cuando dos consonantes van seguidas sin vocal en medio, se <strong>pegan</strong>: <span class=\"gu\">સ</span> + <span class=\"gu\">ત</span> = <span class=\"gu\">સ્ત</span> (<strong>st</strong>), como en <span class=\"gu\">નમસ્તે</span>.</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ઇ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'i' corta"
+              },
+              {
+                "tipo": "matra",
+                "valor": "િ"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ઈ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'ii' larga"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ી"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "સ્ત"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'st'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "્"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 3
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 1
+      }
+    },
+    {
+      "badge": "Resumen",
+      "titulo": "Las consonantes y sus matras",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>Fíjate en la matra <span class=\"gu\">િ</span>: aunque la <strong>i</strong> suena después de la consonante, se escribe <strong>delante</strong>. <span class=\"gu\">ન</span> + <span class=\"gu\">િ</span> = <span class=\"gu\">નિ</span> (<strong>ni</strong>). Mira los ejemplos:</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Gujarati",
+            "Sonido",
+            "Matra",
+            "Letra+Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ન"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>na</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "િ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ન + િ  =  નિ (ni)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ત"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ta</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ી"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ત + ી  =  તી (tii)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "શ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>sha</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ા"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>શ + ા  =  શા (shaa)</strong>"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "empezar_leccion",
+        "texto": "¡Empezar la lección! →"
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 2
+      }
+    }
+  ]
+}

@@ -67,6 +67,7 @@ function fontSizeParaAncho(el, texto, tamanoMaximoPx){
   _medidorSpan.textContent    = texto;
   var anchoMedido      = _medidorSpan.scrollWidth;
   var altoMedido       = _medidorSpan.scrollHeight;
+  _medidorSpan.textContent = '';   /* vaciar: con frases largas el span (nowrap, 100px) ensanchaba la página en móvil */
   var anchoDisponible  = el.clientWidth  - 5;
   var altoDisponible   = el.clientHeight - 5;
   var tamanoPorAncho   = anchoMedido > 0 ? (anchoDisponible / anchoMedido) * TAMANO_PRUEBA : TAMANO_PRUEBA;
@@ -77,6 +78,10 @@ function fontSizeParaAncho(el, texto, tamanoMaximoPx){
 }
 
 function goTo(id){
+  /* Cancelar timers pendientes de la fase que se abandona: si no, el audio de B
+     (o de una ronda vieja de C) suena encima de la pantalla nueva */
+  if(bTimer){ clearTimeout(bTimer); bTimer = null; }
+  if(cTimer){ clearTimeout(cTimer); cTimer = null; }
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
@@ -129,7 +134,7 @@ function bReveal(item){
   document.getElementById('b-card').classList.add('reveal');
   var ans = document.getElementById('b-answer');
   ans.textContent = item.answer; ans.classList.add('visible');
-  player.src = audiosB[bIdx]; player.playbackRate = 1.0; player.play();
+  player.src = audiosB[bIdx]; player.playbackRate = 1.0; player.play().catch(function(){});   /* sin gesto previo el navegador puede bloquearlo */
 }
 
 function bPrev(){
@@ -148,6 +153,7 @@ function bNext(){
 let C_ROUNDS = 20;  /* se recalcula al cargar el JSON */
 var cQueue = [], cIdx = 0, cScore = 0;
 var cCurrentItem = null, cLayout = [], cLocked = false;
+var cTimer = null, cFallo = false;   /* cFallo: hubo error en la ronda actual → no suma */
 var imagenesC = [], audiosC = [];
 
 function initC(){
@@ -164,6 +170,7 @@ function initC(){
 function cShowRound(){
   if(cIdx >= C_ROUNDS){ goTo('screen-fin'); return; }
   cLocked      = false;
+  cFallo       = false;
   cCurrentItem = cQueue[cIdx];
   var pool = shuffle(LetrasYFrases.filter(function(l){ return l.letter !== cCurrentItem.letter; })).slice(0,3);
   pool.push(cCurrentItem);
@@ -176,8 +183,12 @@ function cShowRound(){
     btn.innerHTML  = htmlConSignificado(pool[i], 1.2);
   }
   document.getElementById('c-prompt').innerHTML = '&nbsp;';
-  setTimeout(function(){ player.src = audiosC[cIdx]; player.play().catch(function(){}); }, 300);
+  var rondaIdx = cIdx;   /* si la ronda ya cambió (acierto rápido) o se salió de C (← Volver), no reproducir */
+  setTimeout(function(){ if(rondaIdx !== cIdx || cLocked || !enFaseC()) return; player.src = audiosC[cIdx]; player.play().catch(function(){}); }, 300);
 }
+
+/* true mientras la pantalla del pareo sigue activa (los timers de C no deben sonar en otra pantalla) */
+function enFaseC(){ return document.getElementById('screen-c').classList.contains('active'); }
 
 function matchReplay(){ player.src = audiosC[cIdx]; player.play().catch(function(){}); }
 
@@ -189,24 +200,27 @@ function matchTap(btnIdx){
   if(correct){
     cLocked = true;
     btn.classList.add('correct');
-    cScore++;
+    if(!cFallo) cScore++;   /* solo cuenta si acertó a la primera */
     document.getElementById('c-score').textContent = cScore;
     document.getElementById('c-prompt').innerHTML  = '\u2714 \u00a1Correcto! &mdash; <strong>' + cCurrentItem.answer + '</strong>';
     sfx.src = SND_OK; sfx.play().catch(function(){});
     cIdx++;
-    setTimeout(function(){ cShowRound(); }, 1200);
+    cTimer = setTimeout(function(){ cTimer = null; cShowRound(); }, 1200);
   } else {
     btn.classList.add('wrong');
+    cFallo = true;
     document.getElementById('c-prompt').innerHTML = '\u2716 \u00a1Int\u00e9ntalo de nuevo!';
     sfx.src = SND_ERR; sfx.play().catch(function(){});
+    var rondaIdx = cIdx;
     setTimeout(function(){
       btn.classList.remove('wrong');
+      if(rondaIdx !== cIdx || !enFaseC()) return;   /* ya pasó de ronda o salió de C: no sonar en otra pantalla */
       player.src = audiosC[cIdx]; player.play().catch(function(){});
     }, 1000);
   }
 }
 
-function reiniciar(){ aIdx = 0; goTo('screen-b'); repasoShow(); }
+function reiniciar(){ goTo('screen-b'); }
 
 /* ===== ARRANQUE ===== */
 fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
@@ -236,9 +250,10 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

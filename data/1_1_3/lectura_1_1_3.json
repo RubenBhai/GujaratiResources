@@ -1,0 +1,48 @@
+{
+  "leccion": "1.1.3",
+  "lectura": {
+    "titulo": "Práctica de Echo Reading",
+    "subtitulo": "Lectura guiada",
+    "intro": "Sigue el texto en gujarati con el dedo y lee en voz baja sincronizado con el audio. Toca cualquier frase para repetirla.",
+    "audio": "audios/clase_1_1/lectura_1_1_3.mp3",
+    "subtitulo_fin": "¡Excelente lectura!",
+    "intro_fin": "Has completado la lectura guiada. Ahora estás listo para poner a prueba tu pronunciación."
+  },
+  "segmentos": [
+    {
+      "id": 1,
+      "gujarati": "આ રોશની છે.",
+      "espanol": "Esta es Roshni.",
+      "ini": 0.3,
+      "fin": 1.26
+    },
+    {
+      "id": 2,
+      "gujarati": "તેની ઉંમર સાત છે.",
+      "espanol": "Tiene siete años.",
+      "ini": 1.96,
+      "fin": 3.24
+    },
+    {
+      "id": 3,
+      "gujarati": "આ રોહન છે. તે નાનો છે.",
+      "espanol": "Este es Rohan. Es pequeño.",
+      "ini": 3.94,
+      "fin": 6.42
+    },
+    {
+      "id": 4,
+      "gujarati": "તેની ઉંમર છ છે.",
+      "espanol": "Tiene seis años.",
+      "ini": 7.12,
+      "fin": 8.56
+    },
+    {
+      "id": 5,
+      "gujarati": "રાત છે. તેમની માતા કહે છે: આરામ કરો!",
+      "espanol": "Es de noche. Su madre dice: ¡a descansar!",
+      "ini": 9.26,
+      "fin": 12.94
+    }
+  ]
+}

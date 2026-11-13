@@ -45,15 +45,42 @@ function mostrarAviso(txt, tipo){
 }
 
 /* ── Estado de una lección: cuántos de sus assets están en caché y cuánto pesan ── */
-async function estadoLeccion(cache, assets){
-  var presentes = 0, bytesPresentes = 0, bytesTotal = 0;
+// `contadas` (Set opcional): urls ya sumadas por otra lección, para que el
+// total global no cuente dos veces los archivos compartidos.
+// `ajenas` (Set opcional): urls que pertenecen a OTRA lección descargada. Se
+// pasa cuando ESTA lección no tiene manifiesto local (fue borrada o nunca se
+// bajó): sus archivos compartidos que sigan en caché son de la otra lección,
+// no cuentan como "presentes" aquí (si no, una lección borrada quedaba como
+// "Parcial · 13 de 178" con un Borrar que no hacía nada).
+async function estadoLeccion(cache, assets, contadas, ajenas){
+  var presentes = 0, bytesPresentes = 0, bytesTotal = 0, bytesNuevos = 0;
   for (var i = 0; i < assets.length; i++){
     var a = assets[i];
     bytesTotal += a.size || 0;
-    var hit = await cache.match(abs(a.url));
-    if (hit){ presentes++; bytesPresentes += a.size || 0; }
+    var u = abs(a.url);
+    if (ajenas && ajenas.has(u)) continue;
+    var hit = await cache.match(u);
+    if (hit){
+      presentes++; bytesPresentes += a.size || 0;
+      if (contadas && !contadas.has(u)){ contadas.add(u); bytesNuevos += a.size || 0; }
+    }
   }
-  return { presentes: presentes, total: assets.length, bytesPresentes: bytesPresentes, bytesTotal: bytesTotal };
+  return { presentes: presentes, total: assets.length, bytesPresentes: bytesPresentes, bytesTotal: bytesTotal, bytesNuevos: bytesNuevos };
+}
+
+/* URLs (absolutas) de las OTRAS lecciones que el alumno tiene descargadas
+   (con manifiesto local). Al borrar una lección no se tocan: son archivos
+   compartidos (Correcto/Incorrecto.mp3, iconos de la guía...). */
+function urlsDeOtras(codigo){
+  var s = new Set();
+  for (var c in MANIFIESTOS){
+    if (c === codigo || !MANIFIESTOS[c]) continue;
+    var descargada = false;
+    try { descargada = !!localStorage.getItem('manifest_' + folderDe(c)); } catch(e){}
+    if (!descargada) continue;
+    MANIFIESTOS[c].forEach(function(a){ s.add(abs(a.url)); });
+  }
+  return s;
 }
 
 /* ── Pintar una tarjeta de lección ── */
@@ -110,6 +137,7 @@ async function refrescar(){
   lista.innerHTML = '';
 
   var totalBytes = 0, lecDescargadas = 0, algoBorrable = false;
+  var contadas = new Set();
 
   for (var i = 0; i < LECCIONES.length; i++){
     var lec = LECCIONES[i];
@@ -118,8 +146,10 @@ async function refrescar(){
       lista.appendChild(tarjetaLeccion(lec, null, true));
       continue;
     }
-    var est = await estadoLeccion(cache, assets);
-    totalBytes += est.bytesPresentes;
+    var tieneManifiesto = false;
+    try { tieneManifiesto = !!localStorage.getItem('manifest_' + folderDe(lec.codigo)); } catch(e){}
+    var est = await estadoLeccion(cache, assets, contadas, tieneManifiesto ? null : urlsDeOtras(lec.codigo));
+    totalBytes += est.bytesNuevos;
     if (est.presentes > 0){ lecDescargadas++; algoBorrable = true; }
     lista.appendChild(tarjetaLeccion(lec, est, false));
   }
@@ -144,7 +174,11 @@ window.borrarLeccion = async function(codigo){
   try {
     var cache  = await caches.open(CACHE_NAME);
     var assets = MANIFIESTOS[codigo] || [];
-    for (var i = 0; i < assets.length; i++){ await cache.delete(abs(assets[i].url)); }
+    var compartidas = urlsDeOtras(codigo);
+    for (var i = 0; i < assets.length; i++){
+      var u = abs(assets[i].url);
+      if (!compartidas.has(u)) await cache.delete(u);
+    }
     try { localStorage.removeItem('manifest_' + folderDe(codigo)); } catch(e){}
     await refrescar();
     mostrarAviso('✓ Lección ' + codigo + ' borrada', 'ok');
@@ -274,9 +308,10 @@ window.depurarHuerfanos = async function(){
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if (localV === null){

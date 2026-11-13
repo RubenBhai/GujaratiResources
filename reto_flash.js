@@ -73,6 +73,8 @@ function indicesAleatorios(cantidad){
 }
 
 function goTo(id){
+  /* Al salir de la fase C (← Volver) cancelar la ronda pendiente para que no suene en otra pantalla */
+  if(id !== 'screen-c' && typeof cTimer !== 'undefined' && cTimer){ clearTimeout(cTimer); cTimer=null; }
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
@@ -165,6 +167,7 @@ function terminarFaseB(){
 
 /* ── FASE C ── */
 var cIdx=0, cScore=0, cCurrentItem=null, cLayout=[], cLocked=false, audiosC=[];
+var cTimer=null, cFallo=false;   /* cFallo: hubo error en la ronda actual → no suma */
 
 function initC(){
   var idx    = indicesAleatorios(C_ROUNDS);
@@ -180,6 +183,7 @@ function initC(){
 function cShowRound(){
   if(cIdx>=C_ROUNDS){ mostrarResultadoFinal(); return; }
   cLocked=false;
+  cFallo=false;
   cCurrentItem = window._cQueue[cIdx];
 
   var numBotones   = Math.min(4, LetrasYFrases.length);
@@ -199,7 +203,8 @@ function cShowRound(){
     cont.appendChild(btn);
   }
   document.getElementById('c-prompt').innerHTML='&nbsp;';
-  setTimeout(function(){ player.src=audiosC[cIdx]; player.play().catch(function(){}); }, 300);
+  var rondaIdx = cIdx;   /* si la ronda ya cambió (acierto rápido) o se salió de C (← Volver), no reproducir */
+  setTimeout(function(){ if(rondaIdx!==cIdx || cLocked || !document.getElementById('screen-c').classList.contains('active')) return; player.src=audiosC[cIdx]; player.play().catch(function(){}); }, 300);
 }
 
 function matchReplay(){ player.src=audiosC[cIdx]; player.play().catch(function(){}); }
@@ -212,17 +217,23 @@ function matchTap(btnIdx){
   if(correct){
     cLocked=true;
     btn.classList.add('correct');
-    cScore++;
+    if(!cFallo) cScore++;   /* solo cuenta si acertó a la primera */
     document.getElementById('c-score').textContent = cScore;
     document.getElementById('c-prompt').innerHTML  = '✔ ¡Correcto! — <strong>'+cCurrentItem.answer+'</strong>';
     sfx.src=SND_OK; sfx.play().catch(function(){});
     cIdx++;
-    setTimeout(cShowRound, 1200);
+    cTimer = setTimeout(function(){ cTimer=null; cShowRound(); }, 1200);
   } else {
     btn.classList.add('wrong');
+    cFallo=true;
     document.getElementById('c-prompt').innerHTML='✖ ¡Inténtalo de nuevo!';
     sfx.src=SND_ERR; sfx.play().catch(function(){});
-    setTimeout(function(){ btn.classList.remove('wrong'); player.src=audiosC[cIdx]; player.play().catch(function(){}); }, 1000);
+    var rondaIdx = cIdx;
+    setTimeout(function(){
+      btn.classList.remove('wrong');
+      if(rondaIdx!==cIdx || !document.getElementById('screen-c').classList.contains('active')) return;   /* ya pasó de ronda o salió de C */
+      player.src=audiosC[cIdx]; player.play().catch(function(){});
+    }, 1000);
   }
 }
 
@@ -438,13 +449,10 @@ function fuenteAudio(item, esHombre){
   return item.audio.slice(0, c + 1) + item.audio.slice(c + 1).replace('_m_', '_h_');
 }
 
-/* A) Alterna en cada ronda: mujer, hombre, mujer, hombre... */
-function esVozHombre(){ return rIdx % 2 === 1; }
-
-/* B) Alterna por vuelta completa: 1ª vuelta mujer, 2ª hombre, 3ª mujer */
-function esVozHombre(){ return Math.floor(rIdx / contarReales()) % 2 === 1; }
-
-/* C) Al azar en cada ronda */
+/* Voz de cada ronda: al azar (opción C, la que ya estaba vigente).
+   Alternativas que existían como declaraciones duplicadas (ganaba siempre la última):
+     A) alternar por ronda:  return rIdx % 2 === 1;
+     B) alternar por vuelta: return Math.floor(rIdx / contarReales()) % 2 === 1; */
 function esVozHombre(){ return Math.random() < 0.5; }
 
 function limpiarCeldas(){
@@ -474,35 +482,14 @@ function reiniciarRepaso(){
   rSiguiente();
 }
 
-/* Traduce leccion_palabra_*.json a la forma que entiende el motor */
-var R_MIN_CARACT = 3;   /* solo palabras de más de 2 caracteres */
-
-function largoGu(s){
-  return (s || '').replace(/[\s?.!,\u2026]/g, '').length;
-}
-
-function adaptarPalabras(data){
-  var src = data.palabras || [], out = [];
-  for(var i = 0; i < src.length; i++){
-    if(largoGu(src[i].gujarati) < R_MIN_CARACT) continue;
-    out.push({
-      letter:  src[i].gujarati,
-      answer:  src[i].significado || '',
-      audio:   src[i].audioM || src[i].audioH || '',
-      audio_h: src[i].audioH || src[i].audioM || ''
-    });
-  }
-  return { letters: out, extras: [] };
-}
-
-
 /* ── Verificador de versión ── */
 (function(){
   var VERSION_URL='version.txt';
   fetch(VERSION_URL+'?t='+Date.now(), { cache:'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV=serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV=null;
       try { localV=localStorage.getItem('appVersion'); } catch(e){}
       if(localV===null){ try { localStorage.setItem('appVersion',serverV); } catch(e){} }

@@ -1,0 +1,52 @@
+{
+  "leccion": "1.1.3",
+  "letters": [
+    {
+      "letter": "ઈ",
+      "answer": "ii",
+      "audio": "audios/clase_1_1/audio_alfa_m_ii.mp3"
+    },
+    {
+      "letter": "શ",
+      "answer": "sha",
+      "audio": "audios/clase_1_1/audio_alfa_m_sha.mp3"
+    },
+    {
+      "letter": "ન",
+      "answer": "na",
+      "audio": "audios/clase_1_1/audio_alfa_m_na.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "ની",
+      "answer": "nii",
+      "audio": "audios/clase_1_1/audio_m_nii.mp3"
+    },
+    {
+      "letter": "તી",
+      "answer": "tii",
+      "audio": "audios/clase_1_1/audio_m_tii.mp3"
+    },
+    {
+      "letter": "શી",
+      "answer": "shii",
+      "audio": "audios/clase_1_1/audio_m_shii.mp3"
+    },
+    {
+      "letter": "કી",
+      "answer": "kii",
+      "audio": "audios/clase_1_1/audio_m_kii.mp3"
+    },
+    {
+      "letter": "મી",
+      "answer": "mii",
+      "audio": "audios/clase_1_1/audio_m_mii.mp3"
+    },
+    {
+      "letter": "સી",
+      "answer": "sii",
+      "audio": "audios/clase_1_1/audio_m_sii.mp3"
+    }
+  ]
+}

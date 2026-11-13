@@ -77,6 +77,7 @@ function fontSizeParaAncho(el, texto, tamanoMaximoPx){
   _medidorSpan.textContent    = texto;
   var anchoMedido     = _medidorSpan.scrollWidth;
   var altoMedido      = _medidorSpan.scrollHeight;
+  _medidorSpan.textContent = '';   /* vaciar: con frases largas el span (nowrap, 100px) ensanchaba la página en móvil */
   var anchoDisponible = el.clientWidth  - 5;
   var altoDisponible  = el.clientHeight - 5;
   var tamanoPorAncho  = anchoMedido > 0 ? (anchoDisponible / anchoMedido) * TAMANO_PRUEBA : TAMANO_PRUEBA;
@@ -114,6 +115,11 @@ function construirInterfaz(leccionData){
     div.id        = lineId;
 
     var gu        = frase.gujarati.replace(/'/g, "\\'");
+    // Una tarjeta puede traer solo voz de mujer (audioClip) o solo de hombre (audioClip2),
+    // p. ej. "હું સારી છું" (lo dice una mujer) / "હું સારો છું" (lo dice un hombre).
+    var btnMujer  = frase.audioClip
+      ? `<button class="btn btn-listen" onclick="playMaster('${frase.audioClip}','${lineId}',null,null)">&#9792; Mujer</button>`
+      : '';
     var btnHombre = frase.audioClip2
       ? `<button class="btn btn-listen" onclick="playMaster('${frase.audioClip2}','${lineId}',null,null)">&#9794; Hombre</button>`
       : '';
@@ -129,7 +135,7 @@ function construirInterfaz(leccionData){
       `<div class="gujarati-frame"><div class="gujarati-text">${frase.gujarati}</div></div>`
       + `<div class="spanish-text">${frase.espanol}</div>`
       + `<div class="action-bar">`
-      + `<button class="btn btn-listen" onclick="playMaster('${frase.audioClip}','${lineId}',null,null)">&#9792; Mujer</button>`
+      + btnMujer
       + btnHombre
       + `<button class="btn btn-record" id="rec-${lineId}" onclick="toggleRecord('${lineId}','${gu}')">&#127899; Practicar</button>`
       + `<button class="btn btn-play-self" id="play-${lineId}" onclick="playRecorded('${lineId}')" disabled>&#127911; Escucharme</button>`
@@ -178,11 +184,13 @@ function irAlFinal(){ history.back(); }
 
 function playMaster(archivoUrl, lineId, inicio, fin){
   masterPlayer.src = archivoUrl;
-  masterPlayer.load();
+  masterPlayer.playbackRate = currentSpeed;
+  /* iOS Safari: play() debe llamarse dentro del toque; desde onloadedmetadata
+     (asíncrono) se rechaza y no suena nada */
+  masterPlayer.play().catch(e => console.log('Interacción requerida'));
   masterPlayer.onloadedmetadata = function(){
     if(inicio !== null) masterPlayer.currentTime = inicio;
     masterPlayer.playbackRate = currentSpeed;
-    masterPlayer.play().catch(e => console.log('Interacción requerida'));
   };
   masterPlayer.ontimeupdate = (fin !== null)
     ? function(){ if(masterPlayer.currentTime >= fin) masterPlayer.pause(); }
@@ -281,9 +289,10 @@ function enviarAlTeatroIA(audioBase64, mimeType, fraseObjetivo, lineId){
 (function(){
   var VERSION_URL = 'version.txt';
   fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.text(); })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(serverV){
       serverV = serverV.trim();
+      if(!serverV || serverV.length > 20) return;   // respuesta rara (p.ej. una página 404): no recargar
       var localV = null;
       try { localV = localStorage.getItem('appVersion'); } catch(e) {}
       if(localV === null){

@@ -261,19 +261,20 @@ h2 {
 /* ── PAR DE CUADRANTES ── */
 .par-cuadrantes {
   display: flex;
-  width: min(280px, 68vw);
+  width: min(320px, 88vw);   /* antes 68vw: en ≤390px la letra derecha se recortaba */
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--sombra-tarjeta);
 }
 
 .cuad {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;              /* que no se salga del par por el ancho del glifo */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px 16px;
+  padding: 24px 10px 16px;
   gap: 10px;
 }
 
@@ -281,7 +282,7 @@ h2 {
 .cuad-nasal  { background: var(--naranja-acento); }
 
 .cuad-letra {
-  font-size: 5rem;
+  font-size: clamp(3.2rem, 16vw, 5rem);
   font-weight: 700;
   color: white;
   line-height: 1;

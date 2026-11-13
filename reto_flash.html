@@ -16,7 +16,7 @@
 
 <nav class="nav-bar">
   <a class="nav-btn" href="#" onclick="history.back(); return false;">← Salir</a>
-  <a class="nav-btn home" id="nav-home" href="index.html">🏠</a>
+  <a class="nav-btn home" id="nav-home" href="index.html" aria-label="Inicio">🏠</a>
   <a class="nav-btn" id="nav-mapa" href="#" title="Mapa del Curso">🧭</a>
   <span class="nav-btn nav-phantom">&nbsp;</span>
 </nav>
@@ -59,7 +59,7 @@
     <p class="match-prompt" id="c-prompt">&nbsp;</p>
     <div class="btn-row">
       <button class="btn-main btn-flex" id="btn-c-replay" onclick="matchReplay()">▶ Repetir</button>
-      <button class="btn-main btn-flex btn-volver-c" onclick="goTo('screen-b')">← Volver</button>
+      <button class="btn-main btn-flex btn-volver-c" onclick="player.pause(); iniciarFaseB()">← Volver</button>
     </div>
   </div>
 

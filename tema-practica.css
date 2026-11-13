@@ -25,7 +25,7 @@
   .top-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 0; flex-wrap: nowrap; }
   .top-bar .badge { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .top-bar .btn-footer { flex: 0 0 auto; padding: 9px 14px; font-size: 0.8rem; white-space: nowrap; }
-  .top-bar #nav-guia { flex: 0 0 auto; }
+  .top-bar #nav-guia { flex: 0 0 auto; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 
   header { text-align: center; padding: 0 0 18px; border-bottom: 1px solid var(--border); margin-bottom: 22px; }
   .badge {
@@ -101,6 +101,7 @@
   .btn {
     border: none;
     padding: 9px 16px;
+    min-height: 44px;   /* objetivo táctil mínimo en móvil */
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
@@ -169,6 +170,7 @@
     background: #2e2419;
     color: var(--ink-soft);
     padding: 6px 16px;
+    min-height: 40px;
     border-radius: 50px;
     cursor: pointer;
     font-size: 0.82rem;

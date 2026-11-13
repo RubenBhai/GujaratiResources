@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Las dos eses: સ y શ — Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Reutiliza el tema de la lección especial del sonido nasal: mismo diseño, mismas clases -->
+<link rel="stylesheet" href="tema-especial_sonido_normal_sonido_nasal.css">
+<link rel="stylesheet" href="tema-especial_sonido_normal_sonido_nasal_desktop.css" media="(min-width: 1440px) and (min-height: 720px)">
+<link rel="stylesheet" href="guia_navegacion_common.css">
+<style>
+  /* Las pantallas 3 y 4 muestran palabras, no sílabas: letra más pequeña para que quepan */
+  .cuad-letra.palabra { font-size: clamp(2rem, 11vw, 3.4rem); white-space: nowrap; }
+  .btn-practicar { text-decoration: none; margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <button type="button" class="nav-btn" id="nav-anterior">← Anterior</button>
+  <button type="button" class="nav-btn home" id="nav-leccion">🏠Regresar</button>
+  <button type="button" class="nav-btn" id="nav-siguiente">Siguiente →</button>
+</nav>
+
+<!-- Pantalla 1: introducción -->
+<div class="wrap pantalla-item" data-n="1">
+  <span class="badge">Un sonido que el español no separa</span>
+  <h1>En español hay <span class="hl-normal">una</span> ese.<br>En gujarati hay <span class="hl-nasal">dos</span>.</h1>
+  <p class="subtitle"><span class="gu" lang="gu">સ</span> es la <strong>s</strong> de siempre. <span class="gu" lang="gu">શ</span> es la <strong>sh</strong> que usamos para pedir silencio. Para un oído gujarati son tan distintas como para ti la <strong>s</strong> y la <strong>ch</strong>: cambian una palabra por otra. Vale la pena entrenar el oído desde ahora — escuchando, no solo leyendo.</p>
+</div>
+
+<!-- Pantalla 2: સા / શા -->
+<div class="wrap pantalla-item" data-n="2" hidden>
+  <span class="badge">Paso 1 · el sonido, aislado</span>
+  <h2>La misma sílaba, con la lengua en otro sitio</h2>
+  <div class="info-box"><span class="gu" lang="gu">સા</span> se dice <strong>saa</strong>: la punta de la lengua va justo detrás de los dientes de arriba, como en «<strong>sa</strong>la». En <span class="gu" lang="gu">શા</span> — <strong>shaa</strong> — la lengua se va un poco <strong>hacia atrás</strong> y los labios se redondean, como cuando dices «<strong>sh</strong>, silencio». Pon la mano delante de la boca: con <span class="gu" lang="gu">શ</span> el aire sale más ancho y más suave.</div>
+
+  <div class="par-cuadrantes">
+    <div class="cuad cuad-normal">
+      <div class="cuad-letra gu">સા</div>
+      <div class="cuad-label">saa — delante</div>
+    </div>
+    <div class="cuad cuad-nasal">
+      <div class="cuad-letra gu">શા</div>
+      <div class="cuad-label">shaa — atrás</div>
+    </div>
+  </div>
+
+  <div class="audio-bloque">
+
+    <div class="rep-grupo">
+      <div class="rep-titulo"><span class="gu" lang="gu">સા</span> delante</div>
+      <div class="reproductores">
+        <button type="button" class="btn-audio normal" data-audio="audio-saa-m" aria-label="Escuchar saa, voz M">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz M</span>
+        </button>
+        <button type="button" class="btn-audio normal" data-audio="audio-saa-h" aria-label="Escuchar saa, voz H">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz H</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="rep-grupo">
+      <div class="rep-titulo"><span class="gu" lang="gu">શા</span> atrás</div>
+      <div class="reproductores">
+        <button type="button" class="btn-audio nasal" data-audio="audio-shaa-m" aria-label="Escuchar shaa, voz M">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz M</span>
+        </button>
+        <button type="button" class="btn-audio nasal" data-audio="audio-shaa-h" aria-label="Escuchar shaa, voz H">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz H</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <audio id="audio-saa-m" preload="none" src="audios/clase_1_1/audio_m_saa.mp3"></audio>
+  <audio id="audio-saa-h" preload="none" src="audios/clase_1_1/audio_h_saa.mp3"></audio>
+  <audio id="audio-shaa-m" preload="none" src="audios/clase_1_1/audio_m_shaa.mp3"></audio>
+  <audio id="audio-shaa-h" preload="none" src="audios/clase_1_1/audio_h_shaa.mp3"></audio>
+</div>
+
+<!-- Pantalla 3: નસો / નશો -->
+<div class="wrap pantalla-item" data-n="3" hidden>
+  <p class="puente">Parece un detalle, pero cambia el significado. Escucha:</p>
+
+  <span class="badge">Paso 2 · una letra, otra palabra</span>
+  <div class="info-box"><span class="gu" lang="gu">નસો</span> — <strong>naso</strong> — son las <strong>venas</strong>. <span class="gu" lang="gu">નશો</span> — <strong>nasho</strong> — es la <strong>embriaguez</strong>. Todo lo demás es idéntico: solo cambia la ese. Si las confundes, dices otra cosa.</div>
+
+  <div class="par-cuadrantes">
+    <div class="cuad cuad-normal">
+      <div class="cuad-letra gu palabra">નસો</div>
+      <div class="cuad-label">naso — venas</div>
+    </div>
+    <div class="cuad cuad-nasal">
+      <div class="cuad-letra gu palabra">નશો</div>
+      <div class="cuad-label">nasho — embriaguez</div>
+    </div>
+  </div>
+
+  <div class="audio-bloque">
+
+    <div class="rep-grupo">
+      <div class="rep-titulo"><span class="gu" lang="gu">નસો</span> venas</div>
+      <div class="reproductores">
+        <button type="button" class="btn-audio normal" data-audio="audio-naso-m" aria-label="Escuchar naso, voz M">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz M</span>
+        </button>
+        <button type="button" class="btn-audio normal" data-audio="audio-naso-h" aria-label="Escuchar naso, voz H">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz H</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="rep-grupo">
+      <div class="rep-titulo"><span class="gu" lang="gu">નશો</span> embriaguez</div>
+      <div class="reproductores">
+        <button type="button" class="btn-audio nasal" data-audio="audio-nasho-m" aria-label="Escuchar nasho, voz M">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz M</span>
+        </button>
+        <button type="button" class="btn-audio nasal" data-audio="audio-nasho-h" aria-label="Escuchar nasho, voz H">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz H</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <audio id="audio-naso-m" preload="none" src="audios/clase_1_1/audio_m_naso.mp3"></audio>
+  <audio id="audio-naso-h" preload="none" src="audios/clase_1_1/audio_h_naso.mp3"></audio>
+  <audio id="audio-nasho-m" preload="none" src="audios/clase_1_1/audio_m_nasho.mp3"></audio>
+  <audio id="audio-nasho-h" preload="none" src="audios/clase_1_1/audio_h_nasho.mp3"></audio>
+</div>
+
+<!-- Pantalla 4: શાસન / શાસક + cierre -->
+<div class="wrap pantalla-item" data-n="4" hidden>
+  <p class="puente">Y a veces las dos van en la misma palabra:</p>
+
+  <span class="badge">Paso 3 · las dos juntas</span>
+  <div class="info-box">En <span class="gu" lang="gu">શાસન</span> (<strong>shaasan</strong>, gobierno) y <span class="gu" lang="gu">શાસક</span> (<strong>shaasak</strong>, gobernante) la palabra empieza con <span class="gu" lang="gu">શ</span> — la lengua atrás — y sigue con <span class="gu" lang="gu">સ</span> — la lengua delante. Escúchalas despacio y nota cómo la lengua viaja de atrás hacia delante.</div>
+
+  <div class="par-cuadrantes">
+    <div class="cuad cuad-normal">
+      <div class="cuad-letra gu palabra">શાસન</div>
+      <div class="cuad-label">shaa-san — gobierno</div>
+    </div>
+    <div class="cuad cuad-nasal">
+      <div class="cuad-letra gu palabra">શાસક</div>
+      <div class="cuad-label">shaa-sak — gobernante</div>
+    </div>
+  </div>
+
+  <div class="audio-bloque">
+
+    <div class="rep-grupo">
+      <div class="rep-titulo"><span class="gu" lang="gu">શાસન</span> gobierno</div>
+      <div class="reproductores">
+        <button type="button" class="btn-audio normal" data-audio="audio-shaasan-m" aria-label="Escuchar shaasan, voz M">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz M</span>
+        </button>
+        <button type="button" class="btn-audio normal" data-audio="audio-shaasan-h" aria-label="Escuchar shaasan, voz H">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz H</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="rep-grupo">
+      <div class="rep-titulo"><span class="gu" lang="gu">શાસક</span> gobernante</div>
+      <div class="reproductores">
+        <button type="button" class="btn-audio nasal" data-audio="audio-shaasak-m" aria-label="Escuchar shaasak, voz M">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz M</span>
+        </button>
+        <button type="button" class="btn-audio nasal" data-audio="audio-shaasak-h" aria-label="Escuchar shaasak, voz H">
+          <svg class="onda" viewBox="0 0 40 16" aria-hidden="true">
+            <rect x="2"  y="4" width="4" height="8"  rx="2"></rect>
+            <rect x="10" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="18" y="5" width="4" height="6"  rx="2"></rect>
+            <rect x="26" y="1" width="4" height="14" rx="2"></rect>
+            <rect x="34" y="4" width="4" height="8"  rx="2"></rect>
+          </svg>
+          <span class="btn-audio-icono">▶</span><span>Voz H</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <audio id="audio-shaasan-m" preload="none" src="audios/clase_1_1/audio_m_shaasan.mp3"></audio>
+  <audio id="audio-shaasan-h" preload="none" src="audios/clase_1_1/audio_h_shaasan.mp3"></audio>
+  <audio id="audio-shaasak-m" preload="none" src="audios/clase_1_1/audio_m_shaasak.mp3"></audio>
+  <audio id="audio-shaasak-h" preload="none" src="audios/clase_1_1/audio_h_shaasak.mp3"></audio>
+
+  <div class="cierre">
+    <p>Al principio las dos te van a sonar casi iguales, y es normal: en español nunca te ha hecho falta separarlas.</p>
+    <p>Un truco para oírlas: si los labios se redondean, es <span class="gu" lang="gu">શ</span>. Si la lengua se queda pegada a los dientes, es <span class="gu" lang="gu">સ</span>.</p>
+    <p class="logro">Ahora ponte a prueba: escucha y elige cuál es cuál. 🎧</p>
+    <div class="reproductores">
+      <a class="btn-audio normal btn-practicar" href="reto_flash.html?json=Leccion_1_1_3_ssh"><span>🎤 A practicar</span></a>
+    </div>
+  </div>
+</div>
+
+<script src="especial_s_vs_sh.js"></script>
+
+</body>
+</html>

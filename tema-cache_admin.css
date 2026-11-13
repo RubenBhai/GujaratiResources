@@ -134,3 +134,7 @@ body {
   .btn-borrar-lec { width: 100%; }
   .resumen-acciones .btn { flex: 1; justify-content: center; }
 }
+
+/* Área táctil mínima de 44px (pauta de accesibilidad móvil) */
+.btn-home { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; }
+.btn-borrar-lec { min-height: 44px; box-sizing: border-box; }
