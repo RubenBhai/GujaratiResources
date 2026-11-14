@@ -121,6 +121,8 @@ function aplicarRatioEscena(){
     return;
   }
   _escenaWrap.style.setProperty('--escena-ratio', dim.w + ' / ' + dim.h);
+  if(window._horizontalLlenar) _escenaWrap.style.setProperty('--escena-ratio-h', '16 / 9');
+  else _escenaWrap.style.removeProperty('--escena-ratio-h');
   _escenaWrap.classList.add('con-ratio');
   reposicionarSprites();
 }
@@ -204,6 +206,27 @@ function posicionarBurbuja(burbujaEl, coords){
   burbujaEl.style.position = 'absolute';
   burbujaEl.style.left     = punto.x + 'px';
   burbujaEl.style.top      = punto.y + 'px';
+
+  // Burbujas "arriba" (cola hacia abajo) y "abajo" (cola hacia arriba), 14-nov-2026:
+  // x = centro de la burbuja; la burbuja no se sale de la escena y la cola apunta
+  // a coords.cola (x del que habla, en coordenadas del fondo).
+  if(burbujaEl.classList.contains('arriba') || burbujaEl.classList.contains('abajo')){
+    var cont  = burbujaEl.offsetParent;
+    burbujaEl.style.left = '0px';                 // medir con todo el ancho disponible
+    var w     = burbujaEl.offsetWidth, h = burbujaEl.offsetHeight;
+    var left  = punto.x - w / 2, top = punto.y;
+    if(cont){
+      left = Math.max(6, Math.min(left, cont.clientWidth  - w - 6));
+      top  = Math.max(6, Math.min(top,  cont.clientHeight - h - 6));
+    }
+    burbujaEl.style.left = left + 'px';
+    burbujaEl.style.top  = top  + 'px';
+    var pCola = coordsAPixeles({ x: (coords.cola !== undefined ? coords.cola : coords.x), y: coords.y });
+    var caja  = burbujaEl.querySelector('.caja');
+    var cx    = (pCola ? pCola.x : punto.x) - left - (caja ? caja.offsetLeft : 0) - 9;
+    var maxC  = (caja ? caja.offsetWidth : w) - 30;
+    burbujaEl.style.setProperty('--cola-x', Math.max(12, Math.min(cx, maxC)) + 'px');
+  }
 }
 
 // ── Toggles ──
@@ -760,6 +783,7 @@ fetch('data/' + _leccion + '/dialogo_' + _leccion + '.json')
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(function(json){
     var vi       = json.video_interactivo || {};
+    window._horizontalLlenar = !!(json.video && json.video.horizontal === 'llenar');   // celular de lado: llenar a 16:9
     DATA         = json;
     DIALOGOS     = json.dialogos  || [];
     AVATARES     = json.avatares  || {};

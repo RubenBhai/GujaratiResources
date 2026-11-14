@@ -304,7 +304,7 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
     /* El ancho sale del alto disponible × proporción de la imagen */
     width: min(60vw, calc((100vh - 40px) * var(--escena-ratio, 16 / 9)));
     width: min(60vw, calc((100dvh - 40px) * var(--escena-ratio, 16 / 9)));
-    aspect-ratio: var(--escena-ratio, 16 / 9);
+    aspect-ratio: var(--escena-ratio-h, var(--escena-ratio, 16 / 9));   /* --escena-ratio-h: opción "horizontal": "llenar" */
   }
   .escena { height: 100%; }
   .lang-row { grid-column: 2; justify-content: flex-start; flex-wrap: wrap; gap: 4px; margin: 0; padding-right: 50px; }
@@ -326,4 +326,19 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
   .resultado-card { grid-row: 1 / span 3; padding: 16px; }
   .resultado-emoji { font-size: 2.4rem; margin-bottom: 4px; }
   #s-resultado .btn-play, #s-resultado .btn-fin { grid-column: 2; padding: 12px; }
+}
+
+/* ── Burbujas "arriba" (cola hacia abajo) y "abajo" (cola hacia arriba) — 14-nov-2026 ──
+   La posición la calcula posicionarBurbuja(): centrada en x, dentro de la escena,
+   y con la cola (--cola-x) apuntando a quien habla. */
+.burbuja.arriba, .burbuja.abajo { flex-direction: row; align-self: center; }
+.burbuja.arriba .caja::after {
+  left: var(--cola-x, 18px); right: auto; top: auto; bottom: -13px;
+  border-left: 9px solid transparent; border-right: 9px solid transparent;
+  border-top: 14px solid var(--color-burbuja, var(--olive)); border-bottom: none;
+}
+.burbuja.abajo .caja::after {
+  left: var(--cola-x, 18px); right: auto; top: -13px; bottom: auto;
+  border-left: 9px solid transparent; border-right: 9px solid transparent;
+  border-bottom: 14px solid var(--color-burbuja, var(--olive)); border-top: none;
 }

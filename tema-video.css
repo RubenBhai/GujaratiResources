@@ -327,7 +327,7 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     height: 100dvh !important;   /* iOS: 100vh incluye la barra de Safari; dvh es el alto visible */
     width: auto !important;
     max-width: 100vw;
-    aspect-ratio: var(--escena-ratio, 16 / 9);
+    aspect-ratio: var(--escena-ratio-h, var(--escena-ratio, 16 / 9));   /* --escena-ratio-h: opción "horizontal": "llenar" */
     border-radius: 0;
     border: none;
     padding: 20px 4%;
@@ -375,4 +375,19 @@ h1 { font-family:'Fraunces',serif; font-size:1.6rem; text-align:center; line-hei
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     display: flex !important; 
   }
+}
+
+/* ── Burbujas "arriba" (cola hacia abajo) y "abajo" (cola hacia arriba) — 14-nov-2026 ──
+   La posición la calcula posicionarBurbuja(): centrada en x, dentro de la escena,
+   y con la cola (--cola-x) apuntando a quien habla. */
+.burbuja.arriba, .burbuja.abajo { flex-direction: row; align-self: center; }
+.burbuja.arriba .caja::after {
+  left: var(--cola-x, 18px); right: auto; top: auto; bottom: -13px;
+  border-left: 9px solid transparent; border-right: 9px solid transparent;
+  border-top: 14px solid var(--color-burbuja, var(--olive)); border-bottom: none;
+}
+.burbuja.abajo .caja::after {
+  left: var(--cola-x, 18px); right: auto; top: -13px; bottom: auto;
+  border-left: 9px solid transparent; border-right: 9px solid transparent;
+  border-bottom: 14px solid var(--color-burbuja, var(--olive)); border-top: none;
 }
