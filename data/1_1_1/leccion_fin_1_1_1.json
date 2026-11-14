@@ -8,20 +8,78 @@
     "palabras": 8,
     "frase_ejemplo": "કેમ છો?"
   },
-  "letras_aprendidas": ["ક", "મ", "છ", "આ", "એ", "ઓ"],
+  "letras_aprendidas": [
+    "ક",
+    "મ",
+    "છ",
+    "આ",
+    "એ",
+    "ઓ"
+  ],
   "palabras_aprendidas": [
-    { "gujarati": "કેમ છો?", "se_dice": "kem chho?", "significa": "¿cómo estás?" },
-    { "gujarati": "કેમ કે", "se_dice": "kem ke", "significa": "porque" },
-    { "gujarati": "કેમ", "se_dice": "kem", "significa": "¿cómo? / ¿por qué?" },
-    { "gujarati": "કામ", "se_dice": "kaam", "significa": "trabajo" },
-    { "gujarati": "મોકો", "se_dice": "mo-ko", "significa": "oportunidad" },
-    { "gujarati": "મામા", "se_dice": "maa-maa", "significa": "tío materno" },
-    { "gujarati": "કાકા", "se_dice": "kaa-kaa", "significa": "tío paterno" },
-    { "gujarati": "ઓછો", "se_dice": "o-chho", "significa": "poco" }
+    {
+      "gujarati": "કેમ છો?",
+      "se_dice": "kem chho?",
+      "significa": "¿cómo estás?"
+    },
+    {
+      "gujarati": "કેમ કે",
+      "se_dice": "kem ke",
+      "significa": "porque"
+    },
+    {
+      "gujarati": "કેમ",
+      "se_dice": "kem",
+      "significa": "¿cómo? / ¿por qué?"
+    },
+    {
+      "gujarati": "કામ",
+      "se_dice": "kaam",
+      "significa": "trabajo"
+    },
+    {
+      "gujarati": "મોકો",
+      "se_dice": "mo-ko",
+      "significa": "oportunidad"
+    },
+    {
+      "gujarati": "મામા",
+      "se_dice": "maa-maa",
+      "significa": "tío materno"
+    },
+    {
+      "gujarati": "કાકા",
+      "se_dice": "kaa-kaa",
+      "significa": "tío paterno"
+    },
+    {
+      "gujarati": "ઓછો",
+      "se_dice": "o-chho",
+      "significa": "poco"
+    }
   ],
   "proxima_leccion": {
     "cantidad_letras": 4,
-    "letras": ["સ", "ર", "હ", "ઉ", "ુ", "ું"],
+    "letras": [
+      "સ",
+      "ર",
+      "હ",
+      "ઉ",
+      "ુ",
+      "ું"
+    ],
     "codigo": "1.1.2"
+  },
+  "kahevat": {
+    "numero": 73,
+    "gujarati": "હસે તેનું ઘર વસે",
+    "se_dice": "ha-se te-nuⁿ ghar va-se",
+    "literal": "El que ríe, su hogar prospera",
+    "significa": "La alegría atrae la abundancia y el bienestar",
+    "equivalente": "Casa donde se ríe, casa que progresa",
+    "cuando": "Al saludar con alegría, o al elogiar un hogar alegre",
+    "conocidas": "કમછઅઆએઓાેો",
+    "audio_m": "audios/clase_1_1/kahevat_1_1_1_m.mp3",
+    "audio_h": "audios/clase_1_1/kahevat_1_1_1_h.mp3"
   }
 }

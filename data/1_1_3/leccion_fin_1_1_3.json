@@ -104,5 +104,17 @@
     "cantidad_letras": 0,
     "letras": [],
     "codigo": "1.2.1"
+  },
+  "kahevat": {
+    "numero": 21,
+    "gujarati": "વડ જેવા ટેટા ને બાપ જેવા બેટા",
+    "se_dice": "vad je-vaa te-taa ne baap je-vaa be-taa",
+    "literal": "Como el baniano, sus frutos; como el padre, sus hijos",
+    "significa": "Los hijos heredan el carácter del padre",
+    "equivalente": "De tal palo, tal astilla",
+    "cuando": "Con cariño, al ver que un niño se parece a su papá, como Rohan en el diálogo",
+    "conocidas": "કમછઅઆએઓાેોસરહઉુંનતશઇઈિી",
+    "audio_m": "audios/clase_1_1/kahevat_1_1_3_m.mp3",
+    "audio_h": "audios/clase_1_1/kahevat_1_1_3_h.mp3"
   }
 }

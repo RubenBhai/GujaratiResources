@@ -7,6 +7,62 @@ const JSON_URL    = 'data/' + _leccion + '/leccion_fin_' + _leccion + '.json';
 
 document.getElementById('nav-mapa').href = 'guia_navegacion.html?leccion=' + _leccionRaw;
 
+/* ── Kahevat (refrán) de la lección ──
+   data.kahevat = { gujarati, se_dice, literal, significa, equivalente, cuando,
+                    audio_m, audio_h, conocidas }   ("conocidas": letras vistas hasta esta lección) */
+function separarGrafemas(texto){
+  if(window.Intl && Intl.Segmenter){
+    return Array.from(new Intl.Segmenter('gu', { granularity: 'grapheme' }).segment(texto), function(s){ return s.segment; });
+  }
+  var res = [];                                     // respaldo: une matras y signos a la letra anterior
+  Array.from(texto).forEach(function(ch){
+    if(/[\u0A81-\u0A83\u0ABC\u0ABE-\u0ACD]/.test(ch) && res.length) res[res.length - 1] += ch;
+    else res.push(ch);
+  });
+  return res;
+}
+function mostrarKahevat(k){
+  var caja = document.getElementById('kahevat-box');
+  if(!k || !k.gujarati){ return; }
+  var conocidas = k.conocidas || '';
+  var cont = document.getElementById('kahevat-gu');
+  var total = 0, sabe = 0;
+  separarGrafemas(k.gujarati).forEach(function(g){
+    var span = document.createElement('span');
+    span.textContent = g;
+    if(/[\u0A80-\u0AFF]/.test(g)){
+      total++;
+      var ok = Array.from(g).every(function(ch){ return conocidas.indexOf(ch) !== -1; });
+      if(ok){ sabe++; }
+      span.className = ok ? 'kv-conocida' : 'kv-nueva';
+    }
+    cont.appendChild(span);
+  });
+  document.getElementById('kahevat-dice').textContent = k.se_dice || '';
+  document.getElementById('kahevat-gu-simple').textContent = k.gujarati;   // misma frase en letra de imprenta, por si la serif confunde
+  var filas = [['Literalmente', k.literal], ['Significa', k.significa], ['En español decimos', k.equivalente], ['Cuándo usarlo', k.cuando]];
+  var dl = document.getElementById('kahevat-sig');
+  filas.forEach(function(f){
+    if(!f[1]) return;
+    var dt = document.createElement('dt'); dt.textContent = f[0];
+    var dd = document.createElement('dd'); dd.textContent = f[1];
+    dl.appendChild(dt); dl.appendChild(dd);
+  });
+  document.getElementById('kahevat-pista').textContent = sabe
+    ? 'Las letras en color ya las sabes leer: ' + sabe + ' de ' + total + '.'
+    : 'Todavía no conoces estas letras: escúchalo y repítelo. ¡En pocas lecciones lo leerás tú solo!';
+  var player = document.getElementById('player');
+  [['kahevat-m', k.audio_m], ['kahevat-h', k.audio_h]].forEach(function(b){
+    var btn = document.getElementById(b[0]);
+    if(!b[1]){ btn.style.display = 'none'; return; }
+    btn.onclick = function(){
+      player.src = b[1]; player.playbackRate = 1.0;
+      player.play().catch(function(){});
+    };
+  });
+  caja.hidden = false;
+}
+
 fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(function(data){
@@ -56,6 +112,9 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
         '<td class="mean-cell">' + p.significa + '</td>';
       tabla.appendChild(tr);
     });
+
+    // Kahevat de la lección (antes de 'Próxima lección', que puede salir antes con return)
+    mostrarKahevat(data.kahevat);
 
     // Próxima lección
     var prox = data.proxima_leccion;

@@ -111,5 +111,17 @@
       "ી"
     ],
     "codigo": "1.1.3"
+  },
+  "kahevat": {
+    "numero": 45,
+    "gujarati": "ધીરજનાં ફળ મીઠાં",
+    "se_dice": "dhii-raj-naaⁿ phal mii-thaaⁿ",
+    "literal": "El fruto de la paciencia es dulce",
+    "significa": "La paciencia trae recompensas hermosas",
+    "equivalente": "Todo llega para quien sabe esperar",
+    "cuando": "Para animar cuando el progreso es lento… ¡como al aprender gujarati!",
+    "conocidas": "કમછઅઆએઓાેોસરહઉું",
+    "audio_m": "audios/clase_1_1/kahevat_1_1_2_m.mp3",
+    "audio_h": "audios/clase_1_1/kahevat_1_1_2_h.mp3"
   }
 }

@@ -323,3 +323,89 @@ h1 {
 @media (max-width: 340px) {
   .nav-btn { padding: 10px 6px; }
 }
+
+/* ── KAHEVAT (refrán de la lección) ── */
+.kahevat-box {
+  width: 100%;
+  background: linear-gradient(180deg, #FFFDF8 0%, #FFF6EA 100%);
+  border: 1px solid var(--naranja-claro);
+  border-radius: var(--radio-grande);
+  padding: 26px 22px 22px;
+  text-align: center;
+  box-shadow: var(--sombra-tarjeta);
+}
+.kahevat-box[hidden] { display: none; }
+.kahevat-label {
+  font-size: 0.8rem;
+  color: #A4562E;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: inline-block;
+  background: rgba(212, 132, 90, 0.16);
+  padding: 6px 16px;
+  border-radius: 30px;
+}
+.kahevat-gu {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 2.1rem;
+  line-height: 1.45;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+.kahevat-gu .kv-conocida { color: var(--naranja-acento); }
+.kahevat-gu .kv-nueva    { color: var(--marron-oscuro); opacity: 0.55; }
+.kahevat-dice {
+  font-style: italic;
+  color: #8A7A69;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+.kahevat-gu-simple {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--marron-texto);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px dashed var(--marron-suave);
+  border-radius: 12px;
+  display: inline-block;
+  padding: 4px 14px;
+  margin: -4px 0 16px;
+}
+.kahevat-audio { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.kahevat-btn {
+  font: inherit;
+  font-weight: 600;
+  border: 1px solid var(--naranja-acento);
+  background: white;
+  color: var(--marron-oscuro);
+  border-radius: 50px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+.kahevat-btn:hover { background: var(--naranja-claro); }
+.kahevat-sig {
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 14px;
+  margin: 0 auto 12px;
+  max-width: 440px;
+}
+.kahevat-sig dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rojo-ladrillo);
+  font-weight: 700;
+  padding-top: 3px;
+}
+.kahevat-sig dd { margin: 0; color: var(--marron-texto); }
+.kahevat-pista { font-size: 0.9rem; color: #8A7A69; }
+@media (max-width: 420px) {
+  .kahevat-gu { font-size: 1.75rem; }
+  .kahevat-sig { grid-template-columns: 1fr; gap: 2px; }
+  .kahevat-sig dd { margin-bottom: 8px; }
+}
