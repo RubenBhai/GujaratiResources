@@ -12,10 +12,32 @@
     "titulo_desafio": "¿Te animas a conversar?",
     "intro_desafio": "Ya escuchaste el diálogo muchas veces. Ahora te toca a ti: vas a elegir un personaje y participar en la conversación. ¡Tú puedes!",
     "secuencias": [
-      { "dialogos": [1,2]},
-      { "dialogos": [3,4,5]},
-      { "dialogos": [6,7]},
-      { "dialogos": [8,9,10]}
+      {
+        "dialogos": [
+          1,
+          2
+        ]
+      },
+      {
+        "dialogos": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dialogos": [
+          6,
+          7
+        ]
+      },
+      {
+        "dialogos": [
+          8,
+          9,
+          10
+        ]
+      }
     ]
   },
   "video_interactivo": {
@@ -151,7 +173,7 @@
         "y": 360
       },
       "ini": 9.569,
-      "fin": 10.821,
+      "fin": 10.377,
       "audio": "audios/clase_1_1/dialogo_1_1_2_05.mp3",
       "coordenada_escena": [
         {
