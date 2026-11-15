@@ -261,6 +261,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
       var btnNota = document.getElementById('btn-nota-especial');
       if(actual.nota_especial){
         btnNota.href = actual.nota_especial;
+        if(actual.nota_especial_texto) btnNota.textContent = actual.nota_especial_texto;   /* rótulo opcional */
         btnNota.style.display = '';
       } else {
         btnNota.style.display = 'none';
