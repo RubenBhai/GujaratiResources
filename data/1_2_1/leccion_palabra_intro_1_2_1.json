@@ -1,0 +1,84 @@
+{
+  "leccion": "1.2.1",
+  "home": "leccion_intro.html?leccion=1.2.1",
+  "empezar": "leccion_palabra.html?leccion=1.2.1&item=1",
+  "anterior": "leccion_vocal.html?leccion=1.2.1&item=6",
+  "frase_ejemplo": "આ મારા પતિ છે.",
+  "palabras": [
+    {
+      "gujarati": "પાણી",
+      "se_dice": "paa-ṇii",
+      "significa": "agua"
+    },
+    {
+      "gujarati": "રાણી",
+      "se_dice": "raa-ṇii",
+      "significa": "reina"
+    },
+    {
+      "gujarati": "પરિવાર",
+      "se_dice": "pa-ri-vaar",
+      "significa": "familia"
+    },
+    {
+      "gujarati": "પતિ",
+      "se_dice": "pa-ti",
+      "significa": "esposo"
+    },
+    {
+      "gujarati": "પુસ્તક",
+      "se_dice": "pus-tak",
+      "significa": "libro"
+    },
+    {
+      "gujarati": "પવન",
+      "se_dice": "pa-van",
+      "significa": "viento"
+    },
+    {
+      "gujarati": "વાત",
+      "se_dice": "vaat",
+      "significa": "conversación, asunto"
+    },
+    {
+      "gujarati": "વિશ્વ",
+      "se_dice": "vish-va",
+      "significa": "mundo"
+    },
+    {
+      "gujarati": "વિશ્વાસ",
+      "se_dice": "vish-vaas",
+      "significa": "confianza, fe"
+    },
+    {
+      "gujarati": "શ્વાસ",
+      "se_dice": "shvaas",
+      "significa": "respiración"
+    },
+    {
+      "gujarati": "ઊન",
+      "se_dice": "uun",
+      "significa": "lana"
+    },
+    {
+      "gujarati": "પૂરી",
+      "se_dice": "puu-rii",
+      "significa": "puri (pan frito)"
+    },
+    {
+      "gujarati": "સૂપ",
+      "se_dice": "suup",
+      "significa": "sopa"
+    },
+    {
+      "gujarati": "વેપારી",
+      "se_dice": "ve-paa-rii",
+      "significa": "comerciante"
+    },
+    {
+      "gujarati": "નવું",
+      "se_dice": "na-vuⁿ",
+      "significa": "nuevo"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "leccion": "1.2.1",
+  "home": "leccion_intro.html?leccion=1.2.1",
+  "anterior_primera": "leccion_letra.html?leccion=1.2.1&item=3",
+  "siguiente_final": "leccion_palabra_intro.html?leccion=1.2.1",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.2.1",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.2",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "repaso_final": true,
+  "pasos": [
+    {
+      "tipo": "vocal",
+      "vocal": "uu",
+      "gujarati": "ઊ",
+      "badge": "Vocal 1 de 4",
+      "audio": "audios/clase_1_1/audio_alfa_m_uu.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">uu</strong>, una 'u' <strong>larga</strong>, como si alargaras la de 't<span class=\"det-s\">ú</span>'. Su pareja corta es <span class=\"gu\">ઉ</span> (u)"
+    },
+    {
+      "tipo": "plana",
+      "vocal": "uu",
+      "roman": "uu",
+      "imagen": "imagenes/Clase_1_1/img_plana_uu.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_uu.mp3"
+    },
+    {
+      "tipo": "matra",
+      "vocal": "uu",
+      "matra": "ૂ",
+      "badge": "Matra 2 de 4",
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_uu.jpg",
+      "nota_especial": "reto_flash.html?json=Leccion_1_2_1_contraste"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "uu",
+      "matra": "ૂ",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_nnuu.mp3",
+        "audios/clase_1_1/audio_m_puu.mp3",
+        "audios/clase_1_1/audio_m_vuu.mp3"
+      ],
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_2_1_vo1",
+      "ecuaciones": [
+        {
+          "partes": "ણ + ૂ",
+          "resultado": "ણૂ"
+        },
+        {
+          "partes": "પ + ૂ",
+          "resultado": "પૂ"
+        },
+        {
+          "partes": "વ + ૂ",
+          "resultado": "વૂ"
+        }
+      ]
+    },
+    {
+      "tipo": "matra",
+      "vocal": "conjuntiva",
+      "matra": "શ્વ",
+      "badge": "Conjuntiva 3 de 4",
+      "imagen": "imagenes/Clase_1_1/img_alfa_conjuntiva_shva.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "conjuntiva",
+      "matra": "શ્વ",
+      "badge": "Palabras con la conjuntiva શ્વ",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_alfa_m_shva.mp3",
+        "audios/clase_1_1/audio_m_vishva.mp3",
+        "audios/clase_1_1/audio_m_shvaas.mp3"
+      ],
+      "texto_boton": "Escucha cómo se pegan શ y વ",
+      "reto_flash_json": "Leccion_1_2_1_vo2",
+      "ecuaciones": [
+        {
+          "partes": "શ + ્ + વ",
+          "resultado": "શ્વ"
+        },
+        {
+          "partes": "વિ + શ્વ",
+          "resultado": "વિશ્વ"
+        },
+        {
+          "partes": "શ્વ + ા + સ",
+          "resultado": "શ્વાસ"
+        }
+      ]
+    }
+  ]
+}

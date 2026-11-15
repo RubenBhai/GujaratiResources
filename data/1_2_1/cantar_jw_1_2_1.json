@@ -1,0 +1,57 @@
+{
+  "leccion": "1.2.1",
+  "home": "leccion_intro.html?leccion=1.2.1",
+  "badge": "Canta en gujarati",
+  "titulo": "Aprende cantando",
+  "lead": "Canto 153: યહોવા તું હિંમત આપ — «Jehová, dame valor». Con lo que ya sabes puedes leer más de la mitad de sus palabras.",
+  "antes": {
+    "titulo": "Busca estas en la letra",
+    "palabras": [
+      {
+        "gu": "આપ",
+        "es": "da (del verbo dar)"
+      },
+      {
+        "gu": "પણ",
+        "es": "también, pero"
+      },
+      {
+        "gu": "કોણ",
+        "es": "¿quién?"
+      },
+      {
+        "gu": "માણસ",
+        "es": "persona"
+      }
+    ]
+  },
+  "escuchar": {
+    "titulo": "Primero, lee con la música",
+    "descripcion": "Suena la música con la letra en pantalla. Esta vez no cantes: sigue la letra con la vista y busca las palabras de la lección.",
+    "boton": "📖 Leer con la música",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si leíste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૫૩-યહોવા-તું-હિંમત-આપ/?content=video"
+  },
+  "cantar": {
+    "titulo": "Ahora, canta tú",
+    "descripcion": "La misma música y la misma letra. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
+    "boton": "🎤 Cantar",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si cantaste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૫૩-યહોવા-તું-હિંમત-આપ/?content=video"
+  },
+  "despues": {
+    "titulo": "Después de cantar",
+    "escuchar": [
+      "En el título está <b class=\"gu\">હિંમત</b>, que quiere decir «valor», y <b class=\"gu\">આપ</b>, que aquí es «da». ¡Es una oración!",
+      "Ojo: <b class=\"gu\">આપ</b> también puede ser «usted», la forma más respetuosa de todas. El contexto dice cuál es."
+    ],
+    "cantar": [
+      "¿Encontraste <b class=\"gu\">કોણ</b> y <b class=\"gu\">માણસ</b>?",
+      "¿Cuántas veces cantaste <b class=\"gu\">પણ</b>?"
+    ]
+  },
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.2.1",
+  "continuar_caption": "Continuar →"
+}

@@ -1,0 +1,117 @@
+{
+  "leccion": "1.2.1",
+  "titulo": "Reto relámpago de palabras",
+  "badge": "Palabras",
+  "unidad": "palabras",
+  "estilo": "palabras",
+  "columnas": 2,
+  "espera_ms": 2500,
+  "vueltas": 3,
+  "letters": [
+    {
+      "letter": "પાણી",
+      "answer": "paaṇii",
+      "audio": "audios/clase_1_1/audio_m_paanii.mp3",
+      "significado": "agua",
+      "audio_h": "audios/clase_1_1/audio_h_paanii.mp3"
+    },
+    {
+      "letter": "રાણી",
+      "answer": "raaṇii",
+      "audio": "audios/clase_1_1/audio_m_raanii.mp3",
+      "significado": "reina",
+      "audio_h": "audios/clase_1_1/audio_h_raanii.mp3"
+    },
+    {
+      "letter": "પરિવાર",
+      "answer": "parivaar",
+      "audio": "audios/clase_1_1/audio_m_parivaar.mp3",
+      "significado": "familia",
+      "audio_h": "audios/clase_1_1/audio_h_parivaar.mp3"
+    },
+    {
+      "letter": "પતિ",
+      "answer": "pati",
+      "audio": "audios/clase_1_1/audio_m_pati.mp3",
+      "significado": "esposo",
+      "audio_h": "audios/clase_1_1/audio_h_pati.mp3"
+    },
+    {
+      "letter": "પુસ્તક",
+      "answer": "pustak",
+      "audio": "audios/clase_1_1/audio_m_pustak.mp3",
+      "significado": "libro",
+      "audio_h": "audios/clase_1_1/audio_h_pustak.mp3"
+    },
+    {
+      "letter": "પવન",
+      "answer": "pavan",
+      "audio": "audios/clase_1_1/audio_m_pavan.mp3",
+      "significado": "viento",
+      "audio_h": "audios/clase_1_1/audio_h_pavan.mp3"
+    },
+    {
+      "letter": "વાત",
+      "answer": "vaat",
+      "audio": "audios/clase_1_1/audio_m_vaat.mp3",
+      "significado": "conversación, asunto",
+      "audio_h": "audios/clase_1_1/audio_h_vaat.mp3"
+    },
+    {
+      "letter": "વિશ્વ",
+      "answer": "vishva",
+      "audio": "audios/clase_1_1/audio_m_vishva.mp3",
+      "significado": "mundo",
+      "audio_h": "audios/clase_1_1/audio_h_vishva.mp3"
+    },
+    {
+      "letter": "વિશ્વાસ",
+      "answer": "vishvaas",
+      "audio": "audios/clase_1_1/audio_m_vishvaas.mp3",
+      "significado": "confianza, fe",
+      "audio_h": "audios/clase_1_1/audio_h_vishvaas.mp3"
+    },
+    {
+      "letter": "શ્વાસ",
+      "answer": "shvaas",
+      "audio": "audios/clase_1_1/audio_m_shvaas.mp3",
+      "significado": "respiración",
+      "audio_h": "audios/clase_1_1/audio_h_shvaas.mp3"
+    },
+    {
+      "letter": "ઊન",
+      "answer": "uun",
+      "audio": "audios/clase_1_1/audio_m_uun.mp3",
+      "significado": "lana",
+      "audio_h": "audios/clase_1_1/audio_h_uun.mp3"
+    },
+    {
+      "letter": "પૂરી",
+      "answer": "puurii",
+      "audio": "audios/clase_1_1/audio_m_puurii.mp3",
+      "significado": "puri (pan frito)",
+      "audio_h": "audios/clase_1_1/audio_h_puurii.mp3"
+    },
+    {
+      "letter": "સૂપ",
+      "answer": "suup",
+      "audio": "audios/clase_1_1/audio_m_suup.mp3",
+      "significado": "sopa",
+      "audio_h": "audios/clase_1_1/audio_h_suup.mp3"
+    },
+    {
+      "letter": "વેપારી",
+      "answer": "vepaarii",
+      "audio": "audios/clase_1_1/audio_m_vepaarii.mp3",
+      "significado": "comerciante",
+      "audio_h": "audios/clase_1_1/audio_h_vepaarii.mp3"
+    },
+    {
+      "letter": "નવું",
+      "answer": "navuⁿ",
+      "audio": "audios/clase_1_1/audio_m_navu(m).mp3",
+      "significado": "nuevo",
+      "audio_h": "audios/clase_1_1/audio_h_navu(m).mp3"
+    }
+  ]
+}

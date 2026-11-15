@@ -38,6 +38,11 @@ body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgb
   /* Proporcion real de la imagen de fondo, puesta por video_interactivo.js */
   aspect-ratio: var(--escena-ratio, auto); }
 
+/* Opción "vertical": "4:3" (fondo 16:9): con el celular vertical se ve solo el centro 4:3 */
+@media (orientation: portrait) {
+  .escena-wrap { aspect-ratio: var(--escena-ratio-v, var(--escena-ratio, auto)); }
+}
+
 /* Con proporcion conocida, el chat ocupa todo el marco en vez de 260px fijos */
 .escena-wrap.con-ratio .escena { height:100%; }
 .bg-escena { position:absolute; inset:0; background-size:cover; background-position:center;

@@ -123,6 +123,8 @@ function aplicarRatioEscena(){
   _escenaWrap.style.setProperty('--escena-ratio', dim.w + ' / ' + dim.h);
   if(window._horizontalLlenar) _escenaWrap.style.setProperty('--escena-ratio-h', '16 / 9');
   else _escenaWrap.style.removeProperty('--escena-ratio-h');
+  if(window._verticalRatio) _escenaWrap.style.setProperty('--escena-ratio-v', window._verticalRatio);
+  else _escenaWrap.style.removeProperty('--escena-ratio-v');
   _escenaWrap.classList.add('con-ratio');
   reposicionarSprites();
 }
@@ -783,6 +785,7 @@ fetch('data/' + _leccion + '/dialogo_' + _leccion + '.json')
   .then(function(r){ if(!r.ok) throw new Error('404'); return r.json(); })
   .then(function(json){
     var vi       = json.video_interactivo || {};
+    window._verticalRatio = (json.video && json.video.vertical === '4:3') ? '4 / 3' : null;   // fondo 16:9: vertical ve el centro 4:3
     window._horizontalLlenar = !!(json.video && json.video.horizontal === 'llenar');   // celular de lado: llenar a 16:9
     DATA         = json;
     DIALOGOS     = json.dialogos  || [];

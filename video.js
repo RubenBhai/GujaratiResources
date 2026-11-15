@@ -257,6 +257,8 @@ function aplicarRatioEscena(){
   escena.style.setProperty('--escena-ratio', dim.w + ' / ' + dim.h);
   if(DATA.horizontalLlenar) escena.style.setProperty('--escena-ratio-h', '16 / 9');
   else escena.style.removeProperty('--escena-ratio-h');
+  if(DATA.verticalRatio) escena.style.setProperty('--escena-ratio-v', DATA.verticalRatio);
+  else escena.style.removeProperty('--escena-ratio-v');
   escena.classList.add('con-ratio');
   escena.style.height = '';   // que mande aspect-ratio, no ajustarAltura()
   reposicionarSprites();
@@ -605,6 +607,7 @@ fetch('data/' + _leccion + '/dialogo_' + _leccion + '.json')
     DATA             = json;
     DATA.audio             = v.audio             || null;
     DATA.altoPorDialogo    = v.altoPorDialogo    || null;
+    DATA.verticalRatio     = (v.vertical === '4:3') ? '4 / 3' : null;   // fondo 16:9: celular vertical ve solo el centro 4:3
     DATA.horizontalLlenar  = (v.horizontal === 'llenar');   // celular de lado: llenar la pantalla a 16:9 recortando un poco arriba y abajo
     DATA.subtitulo_fin     = v.subtitulo_fin     || null;
     DATA.intro_fin         = v.intro_fin         || null;

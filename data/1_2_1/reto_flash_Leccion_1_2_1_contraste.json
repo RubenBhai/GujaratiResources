@@ -1,0 +1,99 @@
+{
+  "leccion": "1.2.1",
+  "titulo": "Contraste: ન/ણ, પ/મ y ઉ/ઊ",
+  "badge": "Contraste",
+  "letters": [
+    {
+      "letter": "ન",
+      "answer": "na",
+      "audio": "audios/clase_1_1/audio_alfa_m_na.mp3"
+    },
+    {
+      "letter": "ણ",
+      "answer": "ṇa",
+      "audio": "audios/clase_1_1/audio_alfa_m_nna.mp3"
+    },
+    {
+      "letter": "પ",
+      "answer": "pa",
+      "audio": "audios/clase_1_1/audio_alfa_m_pa.mp3"
+    },
+    {
+      "letter": "મ",
+      "answer": "ma",
+      "audio": "audios/clase_1_1/audio_alfa_m_ma.mp3"
+    },
+    {
+      "letter": "ઉ",
+      "answer": "u",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3"
+    },
+    {
+      "letter": "ઊ",
+      "answer": "uu",
+      "audio": "audios/clase_1_1/audio_alfa_m_uu.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "ના",
+      "answer": "naa",
+      "audio": "audios/clase_1_1/audio_m_naa.mp3"
+    },
+    {
+      "letter": "ણા",
+      "answer": "ṇaa",
+      "audio": "audios/clase_1_1/audio_m_nnaa.mp3"
+    },
+    {
+      "letter": "ની",
+      "answer": "nii",
+      "audio": "audios/clase_1_1/audio_m_nii.mp3"
+    },
+    {
+      "letter": "ણી",
+      "answer": "ṇii",
+      "audio": "audios/clase_1_1/audio_m_nnii.mp3"
+    },
+    {
+      "letter": "નો",
+      "answer": "no",
+      "audio": "audios/clase_1_1/audio_m_no.mp3"
+    },
+    {
+      "letter": "ણો",
+      "answer": "ṇo",
+      "audio": "audios/clase_1_1/audio_m_nno.mp3"
+    },
+    {
+      "letter": "પા",
+      "answer": "paa",
+      "audio": "audios/clase_1_1/audio_m_paa.mp3"
+    },
+    {
+      "letter": "મા",
+      "answer": "maa",
+      "audio": "audios/clase_1_1/audio_alfa_m_maa.mp3"
+    },
+    {
+      "letter": "પી",
+      "answer": "pii",
+      "audio": "audios/clase_1_1/audio_m_pii.mp3"
+    },
+    {
+      "letter": "મી",
+      "answer": "mii",
+      "audio": "audios/clase_1_1/audio_m_mii.mp3"
+    },
+    {
+      "letter": "પો",
+      "answer": "po",
+      "audio": "audios/clase_1_1/audio_m_po.mp3"
+    },
+    {
+      "letter": "મો",
+      "answer": "mo",
+      "audio": "audios/clase_1_1/audio_m_mo.mp3"
+    }
+  ]
+}

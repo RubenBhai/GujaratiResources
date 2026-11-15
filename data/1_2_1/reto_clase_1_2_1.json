@@ -1,0 +1,133 @@
+{
+  "leccion": "1.2.1",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "nivel1": {
+    "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
+    "maxSesiones": 2,
+    "texto": "આ વીણા છે. પરેશ વીણાના પતિ છે. પરેશ સુરતમાં નોકરી કરે છે. વીણા પાણી અને પૂરી આપે છે. પૂરી સરસ છે.",
+    "elementos": [
+      "ણ",
+      "પ",
+      "વ",
+      "ૂ",
+      "પતિ",
+      "છે"
+    ]
+  },
+  "nivel2": {
+    "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
+    "sesiones": [
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_1_audio_1.mp3",
+        "elemento": "પાણી",
+        "respuesta": 3
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_1_audio_2.mp3",
+        "elemento": "વાત",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_1_audio_3.mp3",
+        "elemento": "પણ",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_1_audio_4.mp3",
+        "elemento": "પુસ્તક",
+        "respuesta": 1
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_1_audio_5.mp3",
+        "elemento": "હું",
+        "respuesta": 3
+      }
+    ]
+  },
+  "nivel3": {
+    "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
+    "maxSesiones": 2,
+    "elementos": [
+      {
+        "gujarati": "આ મારા પતિ છે"
+      },
+      {
+        "gujarati": "તમે શું કામ કરો છો?"
+      },
+      {
+        "gujarati": "હું સુરતમાં નોકરી કરું છું"
+      },
+      {
+        "gujarati": "પછી વાત કરીશું"
+      }
+    ]
+  },
+  "nivel4": {
+    "instruccion": "Escucha el audio y toca las palabras en Gujarati para completar la oración.",
+    "sesiones": [
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_1_03.mp3",
+        "oracion_completa": "નમસ્તે. મારું નામ પરેશ.",
+        "espanol": "hola, me llamo Paresh"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_1_05.mp3",
+        "oracion_completa": "તમે શું કામ કરો છો?",
+        "espanol": "¿en qué trabaja usted?"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_1_06.mp3",
+        "oracion_completa": "હું સુરતમાં સરકારી નોકરી કરું છું.",
+        "espanol": "tengo un empleo en el gobierno, en Surat"
+      }
+    ]
+  },
+  "nivel6": {
+    "instruccion": "Escucha cada parte y repítela en voz alta. La frase irá creciendo.",
+    "oraciones": [
+      {
+        "oracion_completa": "હું સુરતમાં નોકરી કરું છું",
+        "espanol": "Tengo un empleo en Surat",
+        "fragmentos": [
+          {
+            "texto": "કરું છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_1_01_frag_1.mp3"
+          },
+          {
+            "texto": "નોકરી કરું છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_1_01_frag_2.mp3"
+          },
+          {
+            "texto": "સુરતમાં નોકરી કરું છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_1_01_frag_3.mp3"
+          },
+          {
+            "texto": "હું સુરતમાં નોકરી કરું છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_1_01_frag_4.mp3"
+          }
+        ]
+      },
+      {
+        "oracion_completa": "આ મારા પતિ છે",
+        "espanol": "Este es mi esposo",
+        "fragmentos": [
+          {
+            "texto": "પતિ છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_1_02_frag_1.mp3"
+          },
+          {
+            "texto": "મારા પતિ છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_1_02_frag_2.mp3"
+          },
+          {
+            "texto": "આ મારા પતિ છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_1_02_frag_3.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "video_jw": false,
+  "cantar_jw": true
+}

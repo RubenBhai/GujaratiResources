@@ -1,0 +1,112 @@
+{
+  "leccion": "1.2.1",
+  "titulo": "Repaso final de lectura",
+  "badge": "Repaso final",
+  "unidad": "letras",
+  "columnas": 4,
+  "espera_ms": 1500,
+  "vueltas": 2,
+  "letters": [
+    {
+      "letter": "ણ",
+      "answer": "ṇa",
+      "audio": "audios/clase_1_1/audio_alfa_m_nna.mp3"
+    },
+    {
+      "letter": "પ",
+      "answer": "pa",
+      "audio": "audios/clase_1_1/audio_alfa_m_pa.mp3"
+    },
+    {
+      "letter": "વ",
+      "answer": "va",
+      "audio": "audios/clase_1_1/audio_alfa_m_va.mp3"
+    },
+    {
+      "letter": "ઊ",
+      "answer": "uu",
+      "audio": "audios/clase_1_1/audio_alfa_m_uu.mp3"
+    },
+    {
+      "letter": "ણૂ",
+      "answer": "ṇuu",
+      "audio": "audios/clase_1_1/audio_m_nnuu.mp3"
+    },
+    {
+      "letter": "પૂ",
+      "answer": "puu",
+      "audio": "audios/clase_1_1/audio_m_puu.mp3"
+    },
+    {
+      "letter": "વૂ",
+      "answer": "vuu",
+      "audio": "audios/clase_1_1/audio_m_vuu.mp3"
+    },
+    {
+      "letter": "શ્વ",
+      "answer": "shva",
+      "audio": "audios/clase_1_1/audio_alfa_m_shva.mp3"
+    },
+    {
+      "letter": "ન",
+      "answer": "na",
+      "audio": "audios/clase_1_1/audio_alfa_m_na.mp3"
+    },
+    {
+      "letter": "ત",
+      "answer": "ta",
+      "audio": "audios/clase_1_1/audio_alfa_m_ta.mp3"
+    },
+    {
+      "letter": "શ",
+      "answer": "sha",
+      "audio": "audios/clase_1_1/audio_alfa_m_sha.mp3"
+    },
+    {
+      "letter": "ઈ",
+      "answer": "ii",
+      "audio": "audios/clase_1_1/audio_alfa_m_ii.mp3"
+    },
+    {
+      "letter": "ક",
+      "answer": "ka",
+      "audio": "audios/clase_1_1/audio_alfa_m_ka.mp3"
+    },
+    {
+      "letter": "મ",
+      "answer": "ma",
+      "audio": "audios/clase_1_1/audio_alfa_m_ma.mp3"
+    },
+    {
+      "letter": "સ",
+      "answer": "sa",
+      "audio": "audios/clase_1_1/audio_alfa_m_sa.mp3"
+    },
+    {
+      "letter": "ર",
+      "answer": "ra",
+      "audio": "audios/clase_1_1/audio_alfa_m_ra.mp3"
+    },
+    {
+      "letter": "હ",
+      "answer": "ha",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3"
+    },
+    {
+      "letter": "ઉ",
+      "answer": "u",
+      "audio": "audios/clase_1_1/audio_alfa_m_u.mp3"
+    },
+    {
+      "letter": "ની",
+      "answer": "nii",
+      "audio": "audios/clase_1_1/audio_m_nii.mp3"
+    },
+    {
+      "letter": "તી",
+      "answer": "tii",
+      "audio": "audios/clase_1_1/audio_m_tii.mp3"
+    }
+  ],
+  "extras": []
+}

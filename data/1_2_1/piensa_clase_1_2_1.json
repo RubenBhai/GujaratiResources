@@ -1,0 +1,238 @@
+{
+  "leccion": "1.2.1",
+  "titulo": "¡A pensar!",
+  "intro": "Escucha, lee o mira, y responde. Entiende lo que pasa y elige la respuesta correcta.",
+  "actividades": [
+    {
+      "id": "a1",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "આ મારા પતિ છે."
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "este es mi esposo",
+              "correcta": true
+            },
+            {
+              "texto": "esta es mi hija"
+            },
+            {
+              "texto": "mi esposo también"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "તમે શું કામ કરો છો?"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué te preguntan?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "¿en qué trabaja usted?",
+              "correcta": true
+            },
+            {
+              "texto": "¿cómo está usted?"
+            },
+            {
+              "texto": "¿dónde vive usted?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a3",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "મારા પતિ પણ!"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué quiere decir પણ aquí?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "también",
+              "correcta": true
+            },
+            {
+              "texto": "pero"
+            },
+            {
+              "texto": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_paanii.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué es?",
+          "modo": "imagen",
+          "opciones": [
+            {
+              "imagen": "imagenes/Clase_1_1/img_paanii_noinfo.jpg",
+              "correcta": true
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_suup_noinfo.jpg"
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_puurii_noinfo.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a5",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_vishva.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué es?",
+          "modo": "imagen",
+          "opciones": [
+            {
+              "imagen": "imagenes/Clase_1_1/img_vishva_noinfo.jpg",
+              "correcta": true
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_pavan_noinfo.jpg"
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_uun_noinfo.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a6",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "ના, હમણાં તો નહીં."
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué dice Vina?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "ahora no",
+              "correcta": true
+            },
+            {
+              "texto": "sí, ahora mismo"
+            },
+            {
+              "texto": "nunca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a7",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/dialogo_1_2_1_06.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Ordena lo que escuchaste",
+          "modo": "ordenar",
+          "respuesta": [
+            "હું",
+            "સુરતમાં",
+            "સરકારી",
+            "નોકરી",
+            "કરું",
+            "છું"
+          ],
+          "distractores": [
+            "કરે",
+            "છે"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a8",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "મને કોઈ પણ કામ આપો."
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué pide?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "cualquier trabajo",
+              "correcta": true
+            },
+            {
+              "texto": "ningún trabajo"
+            },
+            {
+              "texto": "también agua"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a9",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "હું કોઈ પણ કામ કરું છું."
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "hago cualquier trabajo",
+              "correcta": true
+            },
+            {
+              "texto": "no tengo trabajo"
+            },
+            {
+              "texto": "también trabajo"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

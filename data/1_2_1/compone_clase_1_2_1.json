@@ -1,0 +1,198 @@
+{
+  "leccion": "1.2.1",
+  "boton_comprobar": "Comprobar",
+  "sonido_correcto": "audios/clase_1_1/Clase_1_1_Correcto.mp3",
+  "sonido_incorrecto": "audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
+  "banco_palabras": [
+    {
+      "gujarati": "આ",
+      "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
+    },
+    {
+      "gujarati": "મારા",
+      "audio": "audios/clase_1_1/audio_m_maaraa.mp3"
+    },
+    {
+      "gujarati": "મારું",
+      "audio": "audios/clase_1_1/audio_m_maaru(m).mp3"
+    },
+    {
+      "gujarati": "પતિ",
+      "audio": "audios/clase_1_1/audio_m_pati.mp3"
+    },
+    {
+      "gujarati": "છે",
+      "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+    },
+    {
+      "gujarati": "નામ",
+      "audio": "audios/clase_1_1/audio_m_naam.mp3"
+    },
+    {
+      "gujarati": "પરેશ",
+      "audio": "audios/clase_1_1/audio_m_paresh.mp3"
+    },
+    {
+      "gujarati": "હું",
+      "audio": "audios/clase_1_1/audio_m_hu(m).mp3"
+    },
+    {
+      "gujarati": "નોકરી",
+      "audio": "audios/clase_1_1/audio_m_nokrii.mp3"
+    },
+    {
+      "gujarati": "કરું",
+      "audio": "audios/clase_1_1/audio_m_karu(m).mp3"
+    },
+    {
+      "gujarati": "છું",
+      "audio": "audios/clase_1_1/audio_m_chhu(m).mp3"
+    },
+    {
+      "gujarati": "તમે",
+      "audio": "audios/clase_1_1/audio_m_tame.mp3"
+    },
+    {
+      "gujarati": "શું",
+      "audio": "audios/clase_1_1/audio_m_shu(m).mp3"
+    },
+    {
+      "gujarati": "કામ",
+      "audio": "audios/clase_1_1/audio_m_kaam.mp3"
+    },
+    {
+      "gujarati": "કરો",
+      "audio": "audios/clase_1_1/audio_m_karo.mp3"
+    },
+    {
+      "gujarati": "છો",
+      "audio": "audios/clase_1_1/audio_m_chho.mp3"
+    },
+    {
+      "gujarati": "પણ",
+      "audio": "audios/clase_1_1/audio_m_pan.mp3"
+    },
+    {
+      "gujarati": "પછી",
+      "audio": "audios/clase_1_1/audio_m_pachhii.mp3"
+    },
+    {
+      "gujarati": "વાત",
+      "audio": "audios/clase_1_1/audio_m_vaat.mp3"
+    },
+    {
+      "gujarati": "કરીશું",
+      "audio": "audios/clase_1_1/audio_m_kariishu(m).mp3"
+    },
+    {
+      "gujarati": "પાણી",
+      "audio": "audios/clase_1_1/audio_m_paanii.mp3"
+    },
+    {
+      "gujarati": "વેપારી",
+      "audio": "audios/clase_1_1/audio_m_vepaarii.mp3"
+    },
+    {
+      "gujarati": "સુરતમાં",
+      "audio": "audios/clase_1_1/audio_m_suratmaa(m).mp3"
+    },
+    {
+      "gujarati": "કોઈ",
+      "audio": "audios/clase_1_1/audio_m_koii.mp3"
+    },
+    {
+      "gujarati": "સારી",
+      "audio": "audios/clase_1_1/audio_m_saarii.mp3"
+    }
+  ],
+  "oraciones": [
+    {
+      "id": "1",
+      "palabras": [
+        "આ",
+        "મારા",
+        "પતિ",
+        "છે"
+      ],
+      "espanol": "este es mi esposo"
+    },
+    {
+      "id": "2",
+      "palabras": [
+        "મારું",
+        "નામ",
+        "પરેશ",
+        "છે"
+      ],
+      "espanol": "me llamo Paresh"
+    },
+    {
+      "id": "3",
+      "palabras": [
+        "હું",
+        "નોકરી",
+        "કરું",
+        "છું"
+      ],
+      "espanol": "tengo un empleo"
+    },
+    {
+      "id": "4",
+      "palabras": [
+        "તમે",
+        "શું",
+        "કામ",
+        "કરો",
+        "છો"
+      ],
+      "espanol": "¿en qué trabaja usted?"
+    },
+    {
+      "id": "5",
+      "palabras": [
+        "મારા",
+        "પતિ",
+        "પણ"
+      ],
+      "espanol": "mi esposo también"
+    },
+    {
+      "id": "6",
+      "palabras": [
+        "પછી",
+        "વાત",
+        "કરીશું"
+      ],
+      "espanol": "hablamos después"
+    },
+    {
+      "id": "7",
+      "palabras": [
+        "આ",
+        "પાણી",
+        "છે"
+      ],
+      "espanol": "esto es agua"
+    },
+    {
+      "id": "8",
+      "palabras": [
+        "વેપારી",
+        "સુરતમાં",
+        "છે"
+      ],
+      "espanol": "el comerciante está en Surat"
+    },
+    {
+      "id": "9",
+      "palabras": [
+        "કોઈ",
+        "પણ",
+        "નોકરી",
+        "સારી",
+        "છે"
+      ],
+      "espanol": "cualquier trabajo es bueno"
+    }
+  ]
+}

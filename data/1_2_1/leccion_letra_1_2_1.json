@@ -1,0 +1,29 @@
+{
+  "leccion": "1.2.1",
+  "home": "leccion_intro.html?leccion=1.2.1",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.2.1",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.2",
+  "letras": [
+    {
+      "consonante": "ણ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ṇa</strong>: una «n» con la punta de la lengua <strong>doblada hacia atrás</strong>, tocando el paladar. Suena parecido a la «rn» del inglés <em>corn</em>. Nunca va al principio de una palabra: <span class=\"gu\">પાણી</span> (paa<strong>ṇ</strong>ii)",
+      "audio": "audios/clase_1_1/audio_alfa_m_nna.mp3",
+      "reto_flash_json": "Leccion_1_2_1_c1",
+      "plana": "leccion_plana.html?leccion=1.2.1&item=1"
+    },
+    {
+      "consonante": "પ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">pa</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">pa</span>pá</strong>'. Cuidado: se parece a <span class=\"gu\">મ</span> (ma), pero <span class=\"gu\">પ</span> está abierta por abajo",
+      "audio": "audios/clase_1_1/audio_alfa_m_pa.mp3",
+      "reto_flash_json": "Leccion_1_2_1_c2",
+      "plana": "leccion_plana.html?leccion=1.2.1&item=2"
+    },
+    {
+      "consonante": "વ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">va</strong>: suena entre la «v» y la «u». Al principio de la palabra suena más a «v»: <span class=\"gu\">વાત</span> (vaat). En medio, a veces suena casi «u»",
+      "audio": "audios/clase_1_1/audio_alfa_m_va.mp3",
+      "reto_flash_json": "Leccion_1_2_1_c3",
+      "plana": "leccion_plana.html?leccion=1.2.1&item=3"
+    }
+  ]
+}

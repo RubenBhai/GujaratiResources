@@ -1,0 +1,21 @@
+{
+  "leccion": "1.2.1",
+  "letters": [
+    {
+      "letter": "વ",
+      "answer": "va",
+      "audio": "audios/clase_1_1/audio_alfa_m_va.mp3"
+    },
+    {
+      "letter": "પ",
+      "answer": "pa",
+      "audio": "audios/clase_1_1/audio_alfa_m_pa.mp3"
+    },
+    {
+      "letter": "ણ",
+      "answer": "ṇa",
+      "audio": "audios/clase_1_1/audio_alfa_m_nna.mp3"
+    }
+  ],
+  "extras": []
+}

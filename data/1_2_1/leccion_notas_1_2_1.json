@@ -1,0 +1,159 @@
+{
+  "leccion": "1.2.1",
+  "home": "leccion_intro.html?leccion=1.2.1",
+  "salir": "juego.html?leccion=1.2.1",
+  "fin": "leccion_pensarEnGUJ.html?leccion=1.2.1",
+  "intro": {
+    "titulo": "Algunas cosas curiosas del idioma",
+    "texto": "Antes de terminar, vamos a entender <strong>cómo funcionan</strong> las palabras nuevas del diálogo."
+  },
+  "notas": [
+    {
+      "destacado": true,
+      "practica_flash": [
+        "1"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Con personas a las que se respeta (el esposo, el padre, los mayores), el posesivo va en plural: <span class=\"gu\">મારા</span>, no <span class=\"gu\">મારો</span>.",
+          "gu": "મારા"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આ મારા પતિ છે",
+          "literal": "este mi esposo es",
+          "significado": "este es mi esposo"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આ મારો છોકરો છે",
+          "literal": "este mi niño es",
+          "significado": "este es mi hijo (sin forma de respeto)"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "3",
+        "4"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "El verbo <strong>«hacer»</strong> (<span class=\"gu\">કર-</span>) cambia según quién lo hace, y lo acompaña «ser/estar» (<span class=\"gu\">છું</span>, <span class=\"gu\">છો</span>, <span class=\"gu\">છે</span>)."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હું નોકરી કરું છું",
+          "literal": "yo empleo hago estoy",
+          "significado": "yo tengo un empleo (trabajo)"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તમે શું કામ કરો છો?",
+          "literal": "usted qué trabajo hace está",
+          "significado": "¿en qué trabaja usted?"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "પરેશ નોકરી કરે છે",
+          "literal": "Paresh empleo hace está",
+          "significado": "Paresh tiene un empleo"
+        }
+      ]
+    },
+    {
+      "destacado": true,
+      "practica_flash": [
+        "5",
+        "8",
+        "9"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "<span class=\"gu\">-માં</span> (en) se pega al final de la palabra: <span class=\"gu\">સુરતમાં</span> = en Surat.<br><span class=\"gu\">પણ</span> quiere decir «también», y a veces «pero».",
+          "gu": "પણ"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મારા પતિ પણ",
+          "literal": "mi esposo también",
+          "significado": "mi esposo también"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હમણાં નહીં, પણ પછી",
+          "literal": "ahora no, pero después",
+          "significado": "ahora no, pero después"
+        },
+        {
+          "tipo": "texto",
+          "html": "Con <span class=\"gu\">કોઈ</span> forma <span class=\"gu\">કોઈ પણ</span> = cualquier(a)."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "કોઈ પણ નોકરી",
+          "literal": "cualquier empleo",
+          "significado": "cualquier trabajo"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હું કોઈ પણ કામ કરું છું",
+          "literal": "yo cualquier trabajo hago estoy",
+          "significado": "hago cualquier trabajo"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મને કોઈ પણ કામ આપો",
+          "literal": "a mí cualquier trabajo dé",
+          "significado": "deme cualquier trabajo"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Frases de cortesía del diálogo:"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આવો!",
+          "literal": "vengan",
+          "significado": "¡pase! / ¡pasen!"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આવો ને!",
+          "literal": "vengan pues",
+          "significado": "¡pasen, pues! (ને lo hace más cálido, como «anda»)"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "શું વાત છે!",
+          "literal": "qué asunto es",
+          "significado": "¡no me digas! / ¡qué coincidencia!"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હા, સારું",
+          "literal": "sí, bien",
+          "significado": "sí, está bien"
+        }
+      ]
+    }
+  ],
+  "fin_pantalla": {
+    "titulo": "Ya entiendes las frases del diálogo",
+    "texto": "Con esto puedes presentar a tu esposo y hablar del trabajo en gujarati. ¡Vamos a crear algunas oraciones!",
+    "boton_extra": {
+      "habilitado": true,
+      "caption": "🎉Vamos a crear oraciones🥳",
+      "pagina": "compone.html"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "leccion": "1.2.1",
+  "titulo": "Arma tus propias oraciones",
+  "subtitulo": "Elige una opción de cada columna. Todas las combinaciones son correctas.",
+  "generadores": [
+    {
+      "nombre": "Presentar a alguien",
+      "instruccion": "Con el esposo se usa મારા, la forma de respeto.",
+      "columnas": [
+        {
+          "pregunta": "esto",
+          "pregunta_gu": "આ",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "આ",
+              "es": "este / esta",
+              "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿quién?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "મારા પતિ",
+              "es": "mi esposo",
+              "audio": "audios/clase_1_1/audio_m_maaraa_pati.mp3"
+            },
+            {
+              "gu": "મારો છોકરો",
+              "es": "mi hijo",
+              "audio": "audios/clase_1_1/audio_m_maaro_chokro.mp3"
+            },
+            {
+              "gu": "મારી છોકરી",
+              "es": "mi hija",
+              "audio": "audios/clase_1_1/audio_m_maarii_chokrii.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "es",
+          "pregunta_gu": "છે",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "છે",
+              "es": "es",
+              "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "¿Quién trabaja dónde?",
+      "instruccion": "Con él, ella o una persona se usa કરે છે.",
+      "columnas": [
+        {
+          "pregunta": "¿quién?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "પરેશ",
+              "es": "Paresh",
+              "audio": "audios/clase_1_1/audio_m_paresh.mp3"
+            },
+            {
+              "gu": "વીણા",
+              "es": "Vina",
+              "audio": "audios/clase_1_1/audio_m_viinaa.mp3"
+            },
+            {
+              "gu": "મારા પતિ",
+              "es": "mi esposo",
+              "audio": "audios/clase_1_1/audio_m_maaraa_pati.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿dónde?",
+          "pregunta_gu": "-માં",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "સુરતમાં",
+              "es": "en Surat",
+              "audio": "audios/clase_1_1/audio_m_suratmaa(m).mp3"
+            },
+            {
+              "gu": "શહેરમાં",
+              "es": "en la ciudad",
+              "audio": "audios/clase_1_1/audio_m_shahermaa(m).mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "empleo",
+          "pregunta_gu": "નોકરી",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "નોકરી",
+              "es": "empleo",
+              "audio": "audios/clase_1_1/audio_m_nokrii.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "hace",
+          "pregunta_gu": "કરે છે",
+          "obligatorio": "SI",
+          "orden": 4,
+          "opciones": [
+            {
+              "gu": "કરે છે",
+              "es": "hace (tiene)",
+              "audio": "audios/clase_1_1/audio_m_kare_chhe.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

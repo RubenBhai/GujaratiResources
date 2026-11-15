@@ -1,0 +1,145 @@
+{
+  "leccion": "1.2.1",
+  "home": "leccion_intro.html?leccion=1.2.1",
+  "anterior_primera": "leccion_palabra_intro.html?leccion=1.2.1",
+  "practicar": "practica.html?modulo=1.2&leccion=1",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.2",
+  "siguiente_final": "juego.html?leccion=1.2.1",
+  "palabras": [
+    {
+      "gujarati": "પાણી",
+      "dictado": "પાણી",
+      "significado": "agua",
+      "imagen": "imagenes/Clase_1_1/img_paanii.jpg",
+      "pronunciacion": "પ-ા-ણ-ી → paa-<strong>ṇii</strong><br>Lleva la nueva ણ",
+      "audioH": "audios/clase_1_1/audio_h_paanii.mp3",
+      "audioM": "audios/clase_1_1/audio_m_paanii.mp3"
+    },
+    {
+      "gujarati": "રાણી",
+      "dictado": "રાણી",
+      "significado": "reina",
+      "imagen": "imagenes/Clase_1_1/img_raanii.jpg",
+      "pronunciacion": "ર-ા-ણ-ી → raa-<strong>ṇii</strong>",
+      "audioH": "audios/clase_1_1/audio_h_raanii.mp3",
+      "audioM": "audios/clase_1_1/audio_m_raanii.mp3"
+    },
+    {
+      "gujarati": "પરિવાર",
+      "dictado": "પરિવાર",
+      "significado": "familia",
+      "imagen": "imagenes/Clase_1_1/img_parivaar.jpg",
+      "pronunciacion": "પ-ર-િ-વ-ા-ર → pa-ri-<strong>vaar</strong>",
+      "audioH": "audios/clase_1_1/audio_h_parivaar.mp3",
+      "audioM": "audios/clase_1_1/audio_m_parivaar.mp3"
+    },
+    {
+      "gujarati": "પતિ",
+      "dictado": "પતિ",
+      "significado": "esposo",
+      "imagen": "imagenes/Clase_1_1/img_pati.jpg",
+      "pronunciacion": "પ-ત-િ → <strong>pa</strong>-ti<br>Como en el diálogo: આ મારા પતિ છે",
+      "audioH": "audios/clase_1_1/audio_h_pati.mp3",
+      "audioM": "audios/clase_1_1/audio_m_pati.mp3"
+    },
+    {
+      "gujarati": "પુસ્તક",
+      "dictado": "પુસ્તક",
+      "significado": "libro",
+      "imagen": "imagenes/Clase_1_1/img_pustak.jpg",
+      "pronunciacion": "પ-ુ-સ્ત-ક → pus-<strong>tak</strong><br>Lleva la conjuntiva સ્ત de la lección anterior",
+      "audioH": "audios/clase_1_1/audio_h_pustak.mp3",
+      "audioM": "audios/clase_1_1/audio_m_pustak.mp3"
+    },
+    {
+      "gujarati": "પવન",
+      "dictado": "પવન",
+      "significado": "viento",
+      "imagen": "imagenes/Clase_1_1/img_pavan.jpg",
+      "pronunciacion": "પ-વ-ન → pa-<strong>van</strong>",
+      "audioH": "audios/clase_1_1/audio_h_pavan.mp3",
+      "audioM": "audios/clase_1_1/audio_m_pavan.mp3"
+    },
+    {
+      "gujarati": "વાત",
+      "dictado": "વાત",
+      "significado": "conversación, asunto",
+      "imagen": "imagenes/Clase_1_1/img_vaat.jpg",
+      "pronunciacion": "વ-ા-ત → <strong>vaat</strong><br>શું વાત છે! = ¡qué coincidencia!",
+      "audioH": "audios/clase_1_1/audio_h_vaat.mp3",
+      "audioM": "audios/clase_1_1/audio_m_vaat.mp3"
+    },
+    {
+      "gujarati": "વિશ્વ",
+      "dictado": "વિશ્વ",
+      "significado": "mundo",
+      "imagen": "imagenes/Clase_1_1/img_vishva.jpg",
+      "pronunciacion": "વ-િ-શ્વ → <strong>vish</strong>-va<br>Lleva la conjuntiva શ્વ",
+      "audioH": "audios/clase_1_1/audio_h_vishva.mp3",
+      "audioM": "audios/clase_1_1/audio_m_vishva.mp3"
+    },
+    {
+      "gujarati": "વિશ્વાસ",
+      "dictado": "વિશ્વાસ",
+      "significado": "confianza, fe",
+      "imagen": "imagenes/Clase_1_1/img_vishvaas.jpg",
+      "pronunciacion": "વ-િ-શ્વ-ા-સ → vish-<strong>vaas</strong>",
+      "audioH": "audios/clase_1_1/audio_h_vishvaas.mp3",
+      "audioM": "audios/clase_1_1/audio_m_vishvaas.mp3"
+    },
+    {
+      "gujarati": "શ્વાસ",
+      "dictado": "શ્વાસ",
+      "significado": "respiración",
+      "imagen": "imagenes/Clase_1_1/img_shvaas.jpg",
+      "pronunciacion": "શ્વ-ા-સ → <strong>shvaas</strong>",
+      "audioH": "audios/clase_1_1/audio_h_shvaas.mp3",
+      "audioM": "audios/clase_1_1/audio_m_shvaas.mp3"
+    },
+    {
+      "gujarati": "ઊન",
+      "dictado": "ઊન",
+      "significado": "lana",
+      "imagen": "imagenes/Clase_1_1/img_uun.jpg",
+      "pronunciacion": "ઊ-ન → <strong>uun</strong><br>Empieza con la vocal larga ઊ",
+      "audioH": "audios/clase_1_1/audio_h_uun.mp3",
+      "audioM": "audios/clase_1_1/audio_m_uun.mp3"
+    },
+    {
+      "gujarati": "પૂરી",
+      "dictado": "પૂરી",
+      "significado": "puri (pan frito)",
+      "imagen": "imagenes/Clase_1_1/img_puurii.jpg",
+      "pronunciacion": "પ-ૂ-ર-ી → puu-<strong>rii</strong><br>Lleva la matra ૂ",
+      "audioH": "audios/clase_1_1/audio_h_puurii.mp3",
+      "audioM": "audios/clase_1_1/audio_m_puurii.mp3"
+    },
+    {
+      "gujarati": "સૂપ",
+      "dictado": "સૂપ",
+      "significado": "sopa",
+      "imagen": "imagenes/Clase_1_1/img_suup.jpg",
+      "pronunciacion": "સ-ૂ-પ → <strong>suup</strong>",
+      "audioH": "audios/clase_1_1/audio_h_suup.mp3",
+      "audioM": "audios/clase_1_1/audio_m_suup.mp3"
+    },
+    {
+      "gujarati": "વેપારી",
+      "dictado": "વેપારી",
+      "significado": "comerciante",
+      "imagen": "imagenes/Clase_1_1/img_vepaarii.jpg",
+      "pronunciacion": "વ-ે-પ-ા-ર-ી → ve-paa-<strong>rii</strong>",
+      "audioH": "audios/clase_1_1/audio_h_vepaarii.mp3",
+      "audioM": "audios/clase_1_1/audio_m_vepaarii.mp3"
+    },
+    {
+      "gujarati": "નવું",
+      "dictado": "નવું",
+      "significado": "nuevo",
+      "imagen": "imagenes/Clase_1_1/img_navu(m).jpg",
+      "pronunciacion": "ન-વ-ું → na-<strong>vu<sup class=\"nas\">n</sup></strong><br>Termina en ું, como સારું",
+      "audioH": "audios/clase_1_1/audio_h_navu(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_navu(m).mp3"
+    }
+  ]
+}

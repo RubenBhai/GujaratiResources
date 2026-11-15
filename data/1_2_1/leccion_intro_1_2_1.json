@@ -1,0 +1,227 @@
+{
+  "leccion": "1.2.1",
+  "anterior": "contenido_modulo.html?modulo=1.2",
+  "home": "contenido_modulo.html?modulo=1.2",
+  "empezar": "leccion_letra.html?leccion=1.2.1&item=1",
+  "musica_ambiente": "audios/musica/Leccion_1_1_3_musica_ambiente.mp3",
+  "pantallas": [
+    {
+      "badge": "Lección 1 · Módulo 2",
+      "titulo": "Presentar a la familia",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p style=\"text-align: center;\"><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">આ મારા પતિ છે.</span><br><span style=\"color:var(--rojo-ladrillo);font-size:1.2rem;font-weight:600\">aa maa-raa pa-ti chhe</span> - <span style=\"color:var(--sindoor-azul);font-size:1.2rem;font-weight:600\">este es mi esposo</span></p>"
+        },
+        {
+          "tipo": "info-box",
+          "html": "<p>En esta lección aprenderás <strong>3 consonantes</strong>, la vocal larga <strong>ઊ</strong> con su matra y la conjuntiva <strong>શ્વ</strong>.</p><br><p>Con ellas podrás leer una visita en la puerta de Manisha: presentar a tu esposo, decir en qué trabajas y despedirte con cortesía.</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Ejemplo"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ણ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "ṇa"
+              },
+              {
+                "tipo": "texto",
+                "valor": "una <strong>n</strong> con la lengua doblada hacia atrás, como en <span class=\"gu\">પાણી</span>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "પ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "pa"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>pa</strong> en <strong>pa</strong>pá"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "વ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "va"
+              },
+              {
+                "tipo": "texto",
+                "valor": "entre <strong>v</strong> y <strong>u</strong>, como en <span class=\"gu\">વાત</span>"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 2
+      },
+      "boton_secundario": {
+        "tipo": "href",
+        "texto": "⏭️ Siguiente lección",
+        "destino": "leccion_intro.html?leccion=1.2.2"
+      }
+    },
+    {
+      "badge": "La vocal y la conjuntiva",
+      "titulo": "La vocal ઊ y la conjuntiva શ્વ",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>Así como hay dos íes, hay <strong>dos úes</strong>: <span class=\"gu\">ઉ</span> es corta (<strong>u</strong>) y <span class=\"gu\">ઊ</span> es larga (<strong>uu</strong>). Su matra <span class=\"gu\">ૂ</span> se escribe <strong>debajo</strong> de la consonante: <span class=\"gu\">પ</span> + <span class=\"gu\">ૂ</span> = <span class=\"gu\">પૂ</span> (puu).</p><br><p>Y una conjuntiva nueva: <span class=\"gu\">શ</span> + <span class=\"gu\">વ</span> = <span class=\"gu\">શ્વ</span> (<strong>shv</strong>), como en <span class=\"gu\">વિશ્વ</span> (mundo).</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ઊ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'uu' larga"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ૂ"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "શ્વ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'shv'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "્"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 3
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 1
+      }
+    },
+    {
+      "badge": "Resumen",
+      "titulo": "Las consonantes y sus matras",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>Fíjate en la matra <span class=\"gu\">ૂ</span>: va <strong>debajo</strong> de la consonante. Mira cómo se combina con las letras nuevas:</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Gujarati",
+            "Sonido",
+            "Matra",
+            "Letra+Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ણ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ṇa</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ી"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ણ + ી  =  ણી (ṇii)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "પ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>pa</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ૂ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>પ + ૂ  =  પૂ (puu)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "વ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>va</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ા"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>વ + ા  =  વા (vaa)</strong>"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "empezar_leccion",
+        "texto": "¡Empezar la lección! →"
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 2
+      }
+    }
+  ]
+}

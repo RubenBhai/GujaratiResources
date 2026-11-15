@@ -1,0 +1,113 @@
+{
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "leccion": "1.2.1",
+  "resumen": {
+    "consonantes": 3,
+    "vocales": 1,
+    "palabras": 15,
+    "frase_ejemplo": "આ મારા પતિ છે."
+  },
+  "letras_aprendidas": [
+    "ણ",
+    "પ",
+    "વ",
+    "ઊ",
+    "ૂ",
+    "શ્વ"
+  ],
+  "palabras_aprendidas": [
+    {
+      "gujarati": "પાણી",
+      "se_dice": "paa-ṇii",
+      "significa": "agua"
+    },
+    {
+      "gujarati": "રાણી",
+      "se_dice": "raa-ṇii",
+      "significa": "reina"
+    },
+    {
+      "gujarati": "પરિવાર",
+      "se_dice": "pa-ri-vaar",
+      "significa": "familia"
+    },
+    {
+      "gujarati": "પતિ",
+      "se_dice": "pa-ti",
+      "significa": "esposo"
+    },
+    {
+      "gujarati": "પુસ્તક",
+      "se_dice": "pus-tak",
+      "significa": "libro"
+    },
+    {
+      "gujarati": "પવન",
+      "se_dice": "pa-van",
+      "significa": "viento"
+    },
+    {
+      "gujarati": "વાત",
+      "se_dice": "vaat",
+      "significa": "conversación, asunto"
+    },
+    {
+      "gujarati": "વિશ્વ",
+      "se_dice": "vish-va",
+      "significa": "mundo"
+    },
+    {
+      "gujarati": "વિશ્વાસ",
+      "se_dice": "vish-vaas",
+      "significa": "confianza, fe"
+    },
+    {
+      "gujarati": "શ્વાસ",
+      "se_dice": "shvaas",
+      "significa": "respiración"
+    },
+    {
+      "gujarati": "ઊન",
+      "se_dice": "uun",
+      "significa": "lana"
+    },
+    {
+      "gujarati": "પૂરી",
+      "se_dice": "puu-rii",
+      "significa": "puri (pan frito)"
+    },
+    {
+      "gujarati": "સૂપ",
+      "se_dice": "suup",
+      "significa": "sopa"
+    },
+    {
+      "gujarati": "વેપારી",
+      "se_dice": "ve-paa-rii",
+      "significa": "comerciante"
+    },
+    {
+      "gujarati": "નવું",
+      "se_dice": "na-vuⁿ",
+      "significa": "nuevo"
+    }
+  ],
+  "proxima_leccion": {
+    "cantidad_letras": 0,
+    "letras": [],
+    "codigo": "1.2.2"
+  },
+  "kahevat": {
+    "numero": 79,
+    "gujarati": "ના મામા કરતાં કાણો મામો સારો",
+    "se_dice": "naa maa-maa kar-taaⁿ kaa-ṇo maa-mo saa-ro",
+    "literal": "Mejor un tío tuerto que no tener tío",
+    "significa": "Algo imperfecto es mejor que nada",
+    "equivalente": "Más vale algo que nada",
+    "cuando": "Cuando alguien acepta lo que hay aunque no sea perfecto: «no es lo ideal, pero algo es algo»",
+    "conocidas": "કમછઅઆએઓાેોસરહઉુંનતશઇઈિીણપવઊૂ",
+    "audio_m": "audios/clase_1_1/kahevat_1_2_1_m.mp3",
+    "audio_h": "audios/clase_1_1/kahevat_1_2_1_h.mp3"
+  }
+}

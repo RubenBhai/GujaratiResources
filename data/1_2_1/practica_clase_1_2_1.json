@@ -1,0 +1,182 @@
+{
+  "1.2-1": {
+    "titulo": "Lección 1.2.1 — Consonantes, vocal, conjuntiva y frases del diálogo",
+    "fuente": "Sesión 1.2",
+    "frases": [
+      {
+        "gujarati": "ણ",
+        "espanol": "Consonante ṇa",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_nna.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_nna.mp3"
+      },
+      {
+        "gujarati": "પ",
+        "espanol": "Consonante pa",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_pa.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_pa.mp3"
+      },
+      {
+        "gujarati": "વ",
+        "espanol": "Consonante va",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_va.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_va.mp3"
+      },
+      {
+        "gujarati": "ઊ",
+        "espanol": "Vocal uu — larga",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_uu.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_uu.mp3"
+      },
+      {
+        "gujarati": "ણૂ",
+        "espanol": "sílaba ṇuu",
+        "audioClip": "audios/clase_1_1/audio_m_nnuu.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_nnuu.mp3"
+      },
+      {
+        "gujarati": "પૂ",
+        "espanol": "sílaba puu",
+        "audioClip": "audios/clase_1_1/audio_m_puu.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_puu.mp3"
+      },
+      {
+        "gujarati": "વૂ",
+        "espanol": "sílaba vuu",
+        "audioClip": "audios/clase_1_1/audio_m_vuu.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_vuu.mp3"
+      },
+      {
+        "gujarati": "શ્વ",
+        "espanol": "conjuntiva shv — શ + વ",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_shva.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_shva.mp3"
+      },
+      {
+        "gujarati": "પાણી",
+        "espanol": "agua",
+        "audioClip": "audios/clase_1_1/audio_m_paanii.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_paanii.mp3"
+      },
+      {
+        "gujarati": "રાણી",
+        "espanol": "reina",
+        "audioClip": "audios/clase_1_1/audio_m_raanii.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_raanii.mp3"
+      },
+      {
+        "gujarati": "પરિવાર",
+        "espanol": "familia",
+        "audioClip": "audios/clase_1_1/audio_m_parivaar.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_parivaar.mp3"
+      },
+      {
+        "gujarati": "પતિ",
+        "espanol": "esposo",
+        "audioClip": "audios/clase_1_1/audio_m_pati.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_pati.mp3"
+      },
+      {
+        "gujarati": "પુસ્તક",
+        "espanol": "libro",
+        "audioClip": "audios/clase_1_1/audio_m_pustak.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_pustak.mp3"
+      },
+      {
+        "gujarati": "પવન",
+        "espanol": "viento",
+        "audioClip": "audios/clase_1_1/audio_m_pavan.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_pavan.mp3"
+      },
+      {
+        "gujarati": "વાત",
+        "espanol": "conversación, asunto",
+        "audioClip": "audios/clase_1_1/audio_m_vaat.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_vaat.mp3"
+      },
+      {
+        "gujarati": "વિશ્વ",
+        "espanol": "mundo",
+        "audioClip": "audios/clase_1_1/audio_m_vishva.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_vishva.mp3"
+      },
+      {
+        "gujarati": "વિશ્વાસ",
+        "espanol": "confianza, fe",
+        "audioClip": "audios/clase_1_1/audio_m_vishvaas.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_vishvaas.mp3"
+      },
+      {
+        "gujarati": "શ્વાસ",
+        "espanol": "respiración",
+        "audioClip": "audios/clase_1_1/audio_m_shvaas.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_shvaas.mp3"
+      },
+      {
+        "gujarati": "ઊન",
+        "espanol": "lana",
+        "audioClip": "audios/clase_1_1/audio_m_uun.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_uun.mp3"
+      },
+      {
+        "gujarati": "પૂરી",
+        "espanol": "puri (pan frito)",
+        "audioClip": "audios/clase_1_1/audio_m_puurii.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_puurii.mp3"
+      },
+      {
+        "gujarati": "સૂપ",
+        "espanol": "sopa",
+        "audioClip": "audios/clase_1_1/audio_m_suup.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_suup.mp3"
+      },
+      {
+        "gujarati": "વેપારી",
+        "espanol": "comerciante",
+        "audioClip": "audios/clase_1_1/audio_m_vepaarii.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_vepaarii.mp3"
+      },
+      {
+        "gujarati": "નવું",
+        "espanol": "nuevo",
+        "audioClip": "audios/clase_1_1/audio_m_navu(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_navu(m).mp3"
+      },
+      {
+        "gujarati": "આવો, આવો!",
+        "espanol": "¡pase! / ¡pasen!",
+        "audioClip": "audios/clase_1_1/audio_m_aavo_aavo.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_aavo_aavo.mp3"
+      },
+      {
+        "gujarati": "આ મારા પતિ છે",
+        "espanol": "este es mi esposo",
+        "audioClip": "audios/clase_1_1/audio_m_aa_maaraa_pati_chhe.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_aa_maaraa_pati_chhe.mp3"
+      },
+      {
+        "gujarati": "મારું નામ પરેશ",
+        "espanol": "me llamo Paresh",
+        "audioClip": "audios/clase_1_1/audio_m_maaru(m)_naam_paresh.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_maaru(m)_naam_paresh.mp3"
+      },
+      {
+        "gujarati": "તમે શું કામ કરો છો?",
+        "espanol": "¿en qué trabaja usted?",
+        "audioClip": "audios/clase_1_1/audio_m_tame_shu(m)_kaam_karo_chho.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_tame_shu(m)_kaam_karo_chho.mp3"
+      },
+      {
+        "gujarati": "હું સુરતમાં સરકારી નોકરી કરું છું",
+        "espanol": "tengo un empleo en el gobierno, en Surat",
+        "audioClip": "audios/clase_1_1/audio_m_hu(m)_suratmaa(m)_sarkaarii_nokrii_karu(m)_chhu(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_hu(m)_suratmaa(m)_sarkaarii_nokrii_karu(m)_chhu(m).mp3"
+      },
+      {
+        "gujarati": "પછી વાત કરીશું",
+        "espanol": "hablamos después",
+        "audioClip": "audios/clase_1_1/audio_m_pachhii_vaat_kariishu(m).mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_pachhii_vaat_kariishu(m).mp3"
+      }
+    ]
+  }
+}

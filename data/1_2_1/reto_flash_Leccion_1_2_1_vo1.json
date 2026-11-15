@@ -1,0 +1,60 @@
+{
+  "leccion": "1.2.1",
+  "letters": [
+    {
+      "letter": "ઊ",
+      "answer": "uu",
+      "audio": "audios/clase_1_1/audio_alfa_m_uu.mp3"
+    },
+    {
+      "letter": "ણ",
+      "answer": "ṇa",
+      "audio": "audios/clase_1_1/audio_alfa_m_nna.mp3"
+    },
+    {
+      "letter": "પ",
+      "answer": "pa",
+      "audio": "audios/clase_1_1/audio_alfa_m_pa.mp3"
+    },
+    {
+      "letter": "વ",
+      "answer": "va",
+      "audio": "audios/clase_1_1/audio_alfa_m_va.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "ણૂ",
+      "answer": "ṇuu",
+      "audio": "audios/clase_1_1/audio_m_nnuu.mp3"
+    },
+    {
+      "letter": "પૂ",
+      "answer": "puu",
+      "audio": "audios/clase_1_1/audio_m_puu.mp3"
+    },
+    {
+      "letter": "વૂ",
+      "answer": "vuu",
+      "audio": "audios/clase_1_1/audio_m_vuu.mp3"
+    },
+    {
+      "letter": "ઊન",
+      "answer": "uun",
+      "audio": "audios/clase_1_1/audio_m_uun.mp3",
+      "significado": "lana"
+    },
+    {
+      "letter": "પૂરી",
+      "answer": "puurii",
+      "audio": "audios/clase_1_1/audio_m_puurii.mp3",
+      "significado": "puri (pan frito)"
+    },
+    {
+      "letter": "સૂપ",
+      "answer": "suup",
+      "audio": "audios/clase_1_1/audio_m_suup.mp3",
+      "significado": "sopa"
+    }
+  ]
+}

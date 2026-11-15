@@ -1,0 +1,43 @@
+{
+  "modulo": "1.2",
+  "atras": "contenido.html",
+  "home": "contenido.html",
+  "badge": "Más letras nuevas",
+  "titulo": "Lo que vas a aprender",
+  "subtitulo_html": "<span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">આવો!</span> - aavo! - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">¡Pase!</span><br><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">આ મારા પતિ છે</span> - aa maaraa pati chhe - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">Este es mi esposo</span><br><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">શું વાત છે!</span> - shu<sup>n</sup> vaat chhe! - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">¡Qué coincidencia!</span>",
+  "secciones": [
+    {
+      "tipo": "info_box",
+      "columna": "izq",
+      "html": "<strong>📖 Más letras, más conversación</strong><br>Cada lección te presenta <strong>letras nuevas</strong> y enseguida las usas en un <strong>diálogo de la vida diaria</strong>: presentar a la familia, hablar del trabajo…"
+    },
+    {
+      "tipo": "lista_lecciones",
+      "columna": "der",
+      "label": "Las {n} lecciones",
+      "items": [
+        {
+          "numero": 1,
+          "titulo": "આ મારા પતિ છે - este es mi esposo",
+          "sub_html": "consonantes: <strong>ણ પ વ</strong><br>vocal independiente: <strong>ઊ</strong><br>vocal abreviada (matra): <strong>ૂ</strong><br>conjuntiva: <strong>શ + વ = શ્વ</strong> (se combinan)",
+          "estado": "activa",
+          "codigo_leccion": "1.2.1"
+        },
+        {
+          "numero": 2,
+          "titulo": "Muy pronto",
+          "sub_html": "consonantes: <strong>જ થ ય</strong><br>vocal independiente: <strong>ઐ</strong><br>vocal abreviada (matra): <strong>ૈ</strong>",
+          "estado": "proxima",
+          "codigo_leccion": "1.2.2"
+        },
+        {
+          "numero": 3,
+          "titulo": "Muy pronto",
+          "sub_html": "consonantes: <strong>દ બ લ</strong><br>vocal independiente: <strong>ઔ</strong><br>vocal abreviada (matra): <strong>ૌ</strong>",
+          "estado": "proxima",
+          "codigo_leccion": "1.2.3"
+        }
+      ]
+    }
+  ]
+}

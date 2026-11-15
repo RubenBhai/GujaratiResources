@@ -1,0 +1,125 @@
+{
+  "leccion": "1.2.1",
+  "items": [
+    {
+      "id": "palabra_1",
+      "categoria": "palabra",
+      "gujarati": "પાણી",
+      "significado": "agua",
+      "audioM": "audios/clase_1_1/audio_m_paanii.mp3",
+      "imagen": "imagenes/Clase_1_1/img_paanii_noinfo.jpg"
+    },
+    {
+      "id": "palabra_2",
+      "categoria": "palabra",
+      "gujarati": "રાણી",
+      "significado": "reina",
+      "audioM": "audios/clase_1_1/audio_m_raanii.mp3",
+      "imagen": "imagenes/Clase_1_1/img_raanii_noinfo.jpg"
+    },
+    {
+      "id": "palabra_3",
+      "categoria": "palabra",
+      "gujarati": "પરિવાર",
+      "significado": "familia",
+      "audioM": "audios/clase_1_1/audio_m_parivaar.mp3",
+      "imagen": "imagenes/Clase_1_1/img_parivaar_noinfo.jpg"
+    },
+    {
+      "id": "palabra_4",
+      "categoria": "palabra",
+      "gujarati": "પતિ",
+      "significado": "esposo",
+      "audioM": "audios/clase_1_1/audio_m_pati.mp3",
+      "imagen": "imagenes/Clase_1_1/img_pati_noinfo.jpg"
+    },
+    {
+      "id": "palabra_5",
+      "categoria": "palabra",
+      "gujarati": "પુસ્તક",
+      "significado": "libro",
+      "audioM": "audios/clase_1_1/audio_m_pustak.mp3",
+      "imagen": "imagenes/Clase_1_1/img_pustak_noinfo.jpg"
+    },
+    {
+      "id": "palabra_6",
+      "categoria": "palabra",
+      "gujarati": "પવન",
+      "significado": "viento",
+      "audioM": "audios/clase_1_1/audio_m_pavan.mp3",
+      "imagen": "imagenes/Clase_1_1/img_pavan_noinfo.jpg"
+    },
+    {
+      "id": "palabra_7",
+      "categoria": "palabra",
+      "gujarati": "વાત",
+      "significado": "conversación, asunto",
+      "audioM": "audios/clase_1_1/audio_m_vaat.mp3",
+      "imagen": "imagenes/Clase_1_1/img_vaat_noinfo.jpg"
+    },
+    {
+      "id": "palabra_8",
+      "categoria": "palabra",
+      "gujarati": "વિશ્વ",
+      "significado": "mundo",
+      "audioM": "audios/clase_1_1/audio_m_vishva.mp3",
+      "imagen": "imagenes/Clase_1_1/img_vishva_noinfo.jpg"
+    },
+    {
+      "id": "palabra_9",
+      "categoria": "palabra",
+      "gujarati": "વિશ્વાસ",
+      "significado": "confianza, fe",
+      "audioM": "audios/clase_1_1/audio_m_vishvaas.mp3",
+      "imagen": "imagenes/Clase_1_1/img_vishvaas_noinfo.jpg"
+    },
+    {
+      "id": "palabra_10",
+      "categoria": "palabra",
+      "gujarati": "શ્વાસ",
+      "significado": "respiración",
+      "audioM": "audios/clase_1_1/audio_m_shvaas.mp3",
+      "imagen": "imagenes/Clase_1_1/img_shvaas_noinfo.jpg"
+    },
+    {
+      "id": "palabra_11",
+      "categoria": "palabra",
+      "gujarati": "ઊન",
+      "significado": "lana",
+      "audioM": "audios/clase_1_1/audio_m_uun.mp3",
+      "imagen": "imagenes/Clase_1_1/img_uun_noinfo.jpg"
+    },
+    {
+      "id": "palabra_12",
+      "categoria": "palabra",
+      "gujarati": "પૂરી",
+      "significado": "puri (pan frito)",
+      "audioM": "audios/clase_1_1/audio_m_puurii.mp3",
+      "imagen": "imagenes/Clase_1_1/img_puurii_noinfo.jpg"
+    },
+    {
+      "id": "palabra_13",
+      "categoria": "palabra",
+      "gujarati": "સૂપ",
+      "significado": "sopa",
+      "audioM": "audios/clase_1_1/audio_m_suup.mp3",
+      "imagen": "imagenes/Clase_1_1/img_suup_noinfo.jpg"
+    },
+    {
+      "id": "palabra_14",
+      "categoria": "palabra",
+      "gujarati": "વેપારી",
+      "significado": "comerciante",
+      "audioM": "audios/clase_1_1/audio_m_vepaarii.mp3",
+      "imagen": "imagenes/Clase_1_1/img_vepaarii_noinfo.jpg"
+    },
+    {
+      "id": "palabra_15",
+      "categoria": "palabra",
+      "gujarati": "નવું",
+      "significado": "nuevo",
+      "audioM": "audios/clase_1_1/audio_m_navu(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_navu(m)_noinfo.jpg"
+    }
+  ]
+}

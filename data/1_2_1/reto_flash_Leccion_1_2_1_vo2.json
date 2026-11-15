@@ -1,0 +1,40 @@
+{
+  "leccion": "1.2.1",
+  "letters": [
+    {
+      "letter": "શ",
+      "answer": "sha",
+      "audio": "audios/clase_1_1/audio_alfa_m_sha.mp3"
+    },
+    {
+      "letter": "વ",
+      "answer": "va",
+      "audio": "audios/clase_1_1/audio_alfa_m_va.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "શ્વ",
+      "answer": "shva",
+      "audio": "audios/clase_1_1/audio_alfa_m_shva.mp3"
+    },
+    {
+      "letter": "વિશ્વ",
+      "answer": "vishva",
+      "audio": "audios/clase_1_1/audio_m_vishva.mp3",
+      "significado": "mundo"
+    },
+    {
+      "letter": "શ્વાસ",
+      "answer": "shvaas",
+      "audio": "audios/clase_1_1/audio_m_shvaas.mp3",
+      "significado": "respiración"
+    },
+    {
+      "letter": "વિશ્વાસ",
+      "answer": "vishvaas",
+      "audio": "audios/clase_1_1/audio_m_vishvaas.mp3",
+      "significado": "confianza, fe"
+    }
+  ]
+}
