@@ -94,7 +94,7 @@
       "ini": 0.3,
       "fin": 2.48,
       "audio": "audios/clase_1_1/dialogo_1_1_3_01.mp3",
-      "imagenFondo": "imagenes/Clase_1_1/D3_Dialogo_Fondo_1.jpg",
+      "imagenFondo": "imagenes/Clase_1_1/D3_Dialogo_Fondo_1_m.jpg",
       "Burbuja_Posicion": {
         "x": 420,
         "y": 22,
@@ -133,6 +133,15 @@
       "ini": 5.3,
       "fin": 6.9,
       "audio": "audios/clase_1_1/dialogo_1_1_3_03.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_3_m.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ],
       "Burbuja_Posicion": {
         "x": 420,
         "y": 22,
@@ -154,7 +163,7 @@
       "audio": "audios/clase_1_1/dialogo_1_1_3_04.mp3",
       "coordenada_escena": [
         {
-          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_4.jpg",
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_4_m.jpg",
           "x": 0,
           "y": 0,
           "ancho": 1024,
@@ -180,6 +189,15 @@
       "ini": 10.65,
       "fin": 12.61,
       "audio": "audios/clase_1_1/dialogo_1_1_3_05.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_5_m.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ],
       "Burbuja_Posicion": {
         "x": 420,
         "y": 22,
@@ -265,6 +283,15 @@
       "ini": 23.25,
       "fin": 25.41,
       "audio": "audios/clase_1_1/dialogo_1_1_3_09.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_9_m.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ],
       "Burbuja_Posicion": {
         "x": 420,
         "y": 22,
@@ -312,6 +339,15 @@
       "ini": 28.33,
       "fin": 30.167,
       "audio": "audios/clase_1_1/dialogo_1_1_3_11.mp3",
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_11_m.jpg",
+          "x": 0,
+          "y": 0,
+          "ancho": 1024,
+          "alto": 765
+        }
+      ],
       "Burbuja_Posicion": {
         "x": 705,
         "y": 590,
@@ -333,7 +369,7 @@
       "audio": "audios/clase_1_1/dialogo_1_1_3_12.mp3",
       "coordenada_escena": [
         {
-          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_12.jpg",
+          "imagen": "imagenes/Clase_1_1/D3_Dialogo_Cambio_Escena_12_m.jpg",
           "x": 0,
           "y": 0,
           "ancho": 1024,
