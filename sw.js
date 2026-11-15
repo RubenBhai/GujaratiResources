@@ -11,7 +11,7 @@
 //  3. MOTOR (gujarati-motor): el motor completo que baja main_loader.js.
 //     Tampoco se borra al versionar: main_loader lo mantiene al día.
 
-const CACHE_VERSION = 'v16';
+const CACHE_VERSION = 'v17';
 const CACHE_ESTRUCTURAL = 'piensa-en-gujarati-' + CACHE_VERSION;
 const CACHE_MEDIOS = 'gujarati-media';   // audios/imágenes descargados, estable
 const CACHE_MOTOR  = 'gujarati-motor';   // motor completo (main_loader.js), estable

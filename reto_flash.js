@@ -96,8 +96,12 @@ function montarIntro(){
     return;
   }
   var n = LetrasYFrases.length;
-  document.getElementById('intro-desc').textContent =
-    n + (n===1 ? ' símbolo para practicar.' : ' símbolos para practicar.');
+  var cuenta = n + (n===1 ? ' símbolo para practicar.' : ' símbolos para practicar.');
+  /* Opcional en el JSON: "titulo", "badge" e "intro" (p. ej. el reto de contraste).
+     Si no vienen, la pantalla queda como siempre. */
+  if(REPASO_CFG.titulo) document.querySelector('#s-intro h1').textContent = REPASO_CFG.titulo;
+  if(REPASO_CFG.badge)  document.querySelector('#s-intro .badge').textContent = REPASO_CFG.badge;
+  document.getElementById('intro-desc').textContent = REPASO_CFG.intro ? (REPASO_CFG.intro + ' ' + cuenta) : cuenta;
 }
 
 function iniciarFaseB(){ goTo('screen-b'); initB(); }
@@ -429,7 +433,7 @@ if(!JSON_URL){
       if(data.espera_ms) R_ESPERA_MS = data.espera_ms;
       if(data.vueltas)   R_VUELTAS   = data.vueltas;
       R_ESTILO = data.estilo || '';
-      REPASO_CFG = { titulo: data.titulo, badge: data.badge, unidad: data.unidad };
+      REPASO_CFG = { titulo: data.titulo, badge: data.badge, unidad: data.unidad, intro: data.intro };
 
       montarIntro();
     })
