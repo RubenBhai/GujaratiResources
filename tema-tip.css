@@ -1,0 +1,74 @@
+/* Tip de La Atalaya · Piensa en Gujarati (Claude, 16-nov-2026). Misma paleta que las Tarjetas rápidas. */
+*, *::before, *::after { box-sizing:border-box; }
+:root { --bg:#2C2420; --surface:#362C28; --light:#423631; --paper:#E8D9C0; --saffron:#B8863D; --ink:#C8B99A;
+  --border:rgba(184,134,61,.22); --verde:#9FC7A9; --ambar:#F2B84B; --gu:#E9C98B; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); background-image:radial-gradient(ellipse at top,rgba(184,134,61,.08),transparent 60%);
+  color:var(--paper); font:16px/1.5 'Source Sans 3',sans-serif; padding-bottom:40px; }
+a { color:var(--gu); }
+.gu { font-family:'Noto Serif Gujarati',serif; color:var(--gu); }
+[hidden] { display:none !important; }
+.nav-bar { position:sticky; top:0; z-index:100; background:rgba(44,36,32,.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between; padding:12px 20px; }
+.nav-btn { background:var(--surface); color:var(--paper); padding:10px 18px; border-radius:50px; font-size:.9rem; font-weight:600; text-decoration:none;
+  border:1px solid var(--border); min-height:44px; display:inline-flex; align-items:center; }
+.nav-btn.home { color:var(--saffron); font-size:1.1rem; }
+.wrap { max-width:720px; margin:0 auto; padding:16px; }
+.cabecera { text-align:center; padding:6px 0; }
+.badge { display:inline-block; background:rgba(184,134,61,.18); color:var(--saffron); padding:6px 16px; border-radius:50px; font-weight:700; font-size:.85rem; }
+h1 { font-family:'Noto Serif Gujarati',serif; font-size:1.6rem; margin:.4em 0 .1em; }
+h2 { font-family:Fraunces,serif; font-size:1.2rem; margin:0 0 .5em; color:#FDF9F1; }
+.es { color:var(--ink); font-size:.95rem; }
+.lead { color:var(--ink); font-size:.95rem; margin:.4em auto; max-width:520px; }
+.peq { font-size:.85rem; color:var(--ink); }
+.niveles-caja { text-align:center; margin:8px 0; }
+.niveles-caja .peq { margin:.2em 0; }
+.niveles { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin:6px 0; }
+.niveles button { background:var(--surface); color:var(--ink); border:1px solid var(--border); border-radius:50px; padding:8px 16px; font-weight:600; cursor:pointer; min-height:40px; }
+.niveles button.on { background:var(--saffron); color:#2C2420; }
+.leyenda { font-size:.85rem; color:var(--ink); }
+.cargando { text-align:center; color:var(--ink); padding:30px 0; }
+.bloque { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px; margin:14px 0; }
+.trucos li { margin:.4em 0; }
+.digitos { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; text-align:center; }
+.digitos span { background:var(--light); border-radius:8px; padding:6px; display:flex; flex-direction:column; }
+.digitos b { font-size:1.5rem; color:var(--gu); }
+table.preg { border-collapse:collapse; width:100%; }
+.preg td { border-top:1px solid var(--border); padding:7px 6px; vertical-align:top; font-size:.95rem; }
+.preg .g { font-size:1.25rem; white-space:nowrap; }
+.fotos { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:8px; }
+.ft { background:var(--light); border:1px solid var(--ambar); border-radius:10px; padding:10px; text-align:center; display:flex; flex-direction:column; }
+.ft .gu { font-size:1.5rem; color:var(--ambar); font-weight:600; }
+.ft.ya { border-color:var(--verde); }
+.pnum { color:var(--saffron); font-weight:700; letter-spacing:.04em; font-size:.9rem; }
+.q .gu { font-size:1.25rem; }
+.nivelv, .nivela { border-radius:12px; padding:10px 12px; margin-top:10px; }
+.nivelv { background:rgba(74,107,83,.25); border-left:4px solid var(--verde); }
+.nivela { background:rgba(242,184,75,.12); border-left:4px solid var(--ambar); }
+.nivelv p, .nivela p { margin:.4em 0; }
+.cita { background:rgba(0,0,0,.18); border-radius:8px; padding:8px 10px; }
+.cita .gu { font-size:1.15rem; }
+.nivela .gu { font-size:1.3rem; font-weight:600; }
+.w { color:#8f8374; } .w.si { color:var(--verde); font-weight:600; } .w.d { color:var(--paper); }
+.foto, .w.foto { color:var(--ambar); font-weight:600; }
+ul.rep li { margin:.5em 0; }
+.canc h2 { font-family:'Noto Serif Gujarati',serif; font-size:1.5rem; margin:.2em 0; }
+.canc ol li, .canc ul li { margin:.3em 0; }
+a.btn { display:inline-block; background:linear-gradient(135deg,var(--saffron),#9C6F2E); color:#2C2420; border-radius:50px; padding:10px 18px; font-weight:700; text-decoration:none; }
+.segmento { display:inline-flex; background:var(--light); border:1px solid var(--border); border-radius:50px; padding:3px; margin:4px 0 8px; }
+.seg-btn { background:none; border:0; color:var(--ink); padding:8px 14px; border-radius:50px; font-weight:600; cursor:pointer; min-height:38px; }
+.seg-btn.activo { background:var(--saffron); color:#2C2420; }
+.conv { background:var(--light); border-radius:10px; padding:8px 12px; margin:8px 0; display:grid; grid-template-columns:40px 1fr; gap:4px 8px; align-items:center; }
+.conv p { margin:.2em 0; } .conv .gu { font-size:1.2rem; }
+.play { width:36px; height:36px; border-radius:50%; border:0; background:var(--saffron); color:#2C2420; font-size:.85rem; cursor:pointer; }
+.play.sonando { background:var(--verde); }
+.titulo-es { font-family:Fraunces,serif; color:#FDF9F1; }
+.semanas { list-style:none; padding:0; margin:14px 0; display:flex; flex-direction:column; gap:10px; }
+a.semana { display:flex; flex-direction:column; gap:3px; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:14px 16px; text-decoration:none; color:var(--paper); box-shadow:0 8px 28px rgba(0,0,0,.25); }
+a.semana:hover, a.semana:focus-visible { border-color:var(--saffron); outline:none; }
+.sem-fecha { color:var(--saffron); font-weight:700; font-size:.9rem; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.nueva { background:var(--verde); color:#2C2420; border-radius:50px; padding:1px 10px; font-size:.75rem; }
+.sem-gu { font-size:1.2rem; }
+.sem-es { color:var(--ink); font-size:.9rem; }
+.fuente { text-align:center; color:var(--ink); font-size:.8rem; opacity:.8; margin-top:18px; }
+@media (min-width:1024px) { .wrap { max-width:780px; } h1 { font-size:1.9rem; } }

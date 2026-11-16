@@ -63,8 +63,8 @@
     },
     {
       "url": "contenido.html",
-      "lastModified": 1794801000189,
-      "size": 12580
+      "lastModified": 1794854333590,
+      "size": 12959
     },
     {
       "url": "contenido.js",
@@ -318,8 +318,8 @@
     },
     {
       "url": "leccion_fin.html",
-      "lastModified": 1794630220611,
-      "size": 2806
+      "lastModified": 1794854333594,
+      "size": 2915
     },
     {
       "url": "leccion_fin.js",
@@ -807,6 +807,11 @@
       "size": 9177
     },
     {
+      "url": "tema-tip.css",
+      "lastModified": 1794854333587,
+      "size": 6174
+    },
+    {
       "url": "tema-video-interactivo.css",
       "lastModified": 1794716652606,
       "size": 15663
@@ -835,6 +840,16 @@
       "url": "tema-video_desktop.css",
       "lastModified": 1794604187646,
       "size": 4332
+    },
+    {
+      "url": "tip.html",
+      "lastModified": 1794854333588,
+      "size": 2339
+    },
+    {
+      "url": "tip.js",
+      "lastModified": 1794854333589,
+      "size": 4356
     },
     {
       "url": "video.html",

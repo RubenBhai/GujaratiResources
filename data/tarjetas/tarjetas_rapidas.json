@@ -1,7 +1,7 @@
 {
  "titulo": "Tarjetas rápidas",
- "subtitulo": "Para la predicación: lo que digo y lo que me pueden decir.",
- "fuente": "Frases tomadas de los videos de predicación de jw.org y de JW Language.",
+ "subtitulo": "Para la predicación y la reunión: lo que digo y lo que me pueden decir.",
+ "fuente": "Frases tomadas de los videos de predicación de jw.org y de JW Language. La tarjeta 12 es de la vida diaria en Panamá.",
  "momentos": [
   {
    "id": "M1",
@@ -447,6 +447,98 @@
      "gu": "ફરી મળીશું.",
      "es": "Nos vemos.",
      "audio": "tr_m11_r4"
+    }
+   ]
+  },
+  {
+   "id": "M12",
+   "titulo": "En la reunión: charla con los hermanos",
+   "digo": [
+    {
+     "gu": "કેમ છો? બધું બરાબર?",
+     "es": "¿Cómo está? ¿Todo bien?",
+     "audio": "tr_m12_d1"
+    },
+    {
+     "gu": "અઠવાડિયું કેવું રહ્યું?",
+     "es": "¿Qué tal la semana?",
+     "audio": "tr_m12_d2"
+    },
+    {
+     "gu": "કામ કેવું ચાલે છે?",
+     "es": "¿Cómo va el trabajo?",
+     "audio": "tr_m12_d3"
+    },
+    {
+     "gu": "ઘરે બધા મજામાં?",
+     "es": "¿Todos bien en casa?",
+     "audio": "tr_m12_d4"
+    },
+    {
+     "gu": "આજકાલ બહુ વરસાદ પડે છે, હે ને?",
+     "es": "Llueve mucho estos días, ¿verdad?",
+     "audio": "tr_m12_d5"
+    },
+    {
+     "gu": "આજે ટ્રાફિક તો ભયંકર હતો!",
+     "es": "¡Hoy el tráfico estaba horrible!",
+     "audio": "tr_m12_d6"
+    },
+    {
+     "gu": "આ અઠવાડિયે પ્રચારમાં ગયા હતા?",
+     "es": "¿Salió a predicar esta semana?",
+     "audio": "tr_m12_d7"
+    },
+    {
+     "gu": "સભા પછી મળીએ.",
+     "es": "Nos vemos después de la reunión.",
+     "audio": "tr_m12_d8"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "યહોવાની કૃપાથી બધું બરાબર છે.",
+     "es": "Gracias a Jehová, todo bien.",
+     "audio": "tr_m12_r1"
+    },
+    {
+     "gu": "સારું રહ્યું, પણ થોડી થાકી ગઈ છું.",
+     "es": "Bien, pero estoy un poco cansada.",
+     "audio": "tr_m12_r2",
+     "gu_h": "સારું રહ્યું, પણ થોડો થાકી ગયો છું.",
+     "es_h": "Bien, pero estoy un poco cansado."
+    },
+    {
+     "gu": "કામ તો બહુ છે!",
+     "es": "¡Hay muchísimo trabajo!",
+     "audio": "tr_m12_r3"
+    },
+    {
+     "gu": "હા, બધા મજામાં છે.",
+     "es": "Sí, todos bien.",
+     "audio": "tr_m12_r4"
+    },
+    {
+     "gu": "હા, રોજ બપોરે વરસાદ!",
+     "es": "Sí, ¡lluvia todas las tardes!",
+     "audio": "tr_m12_r5"
+    },
+    {
+     "gu": "મને અહીં આવતાં એક કલાક લાગ્યો!",
+     "es": "¡Tardé una hora en llegar!",
+     "audio": "tr_m12_r6"
+    },
+    {
+     "gu": "હા, શનિવારે ગઈ હતી.",
+     "es": "Sí, fui el sábado.",
+     "audio": "tr_m12_r7",
+     "gu_h": "હા, શનિવારે ગયો હતો.",
+     "es_h": "Sí, fui el sábado."
+    },
+    {
+     "gu": "સારું, પછી મળીએ.",
+     "es": "Vale, nos vemos luego.",
+     "audio": "tr_m12_r8"
     }
    ]
   }
