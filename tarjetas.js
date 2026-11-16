@@ -148,13 +148,40 @@
       this.setAttribute('aria-pressed', sinEs); this.textContent = sinEs ? '👁️ Mostrar español' : '🙈 Ocultar español';
       if (!$('vista-tarjeta').hidden) pintarTarjeta();
     };
-    // iPhone/iPad: window.print() no hace nada en la app instalada (y falla a menudo en Safari).
-    // Ahí se abre el PDF, que se imprime o se comparte desde el visor de iOS.
+    // iPhone/iPad: window.print() no hace nada en la app instalada, y abrir el PDF deja al usuario
+    // atrapado (sin botón para volver). Por eso:
+    //  1) se abre el menú «Compartir» de iOS con el PDF (Imprimir, Guardar en Archivos, WhatsApp…), sin salir de la página;
+    //  2) si no se puede, el PDF se ve dentro de la página con un botón «← Volver a las tarjetas».
     var esIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var pdfArchivo = null;
+    if (esIOS && navigator.canShare && window.File) {
+      // Se descarga antes del toque: iOS solo deja compartir si se hace justo al tocar, sin esperas.
+      fetch(PDF).then(function (r) { return r.ok ? r.blob() : null; }).then(function (b) {
+        if (!b) return;
+        var f = new File([b], 'Tarjetas_Rapidas_Piensa_en_Gujarati.pdf', { type: 'application/pdf' });
+        try { if (navigator.canShare({ files: [f] })) pdfArchivo = f; } catch (e) {}
+      }).catch(function () {});
+    }
+    function verPDF() {
+      var v = $('visor-pdf');
+      if (!v) {
+        v = document.createElement('div'); v.id = 'visor-pdf';
+        v.innerHTML = '<div class="visor-barra"><button class="btn-main" id="visor-volver">← Volver a las tarjetas</button></div>' +
+          '<iframe title="Tarjetas rápidas en PDF"></iframe>';
+        document.body.appendChild(v);
+        $('visor-volver').onclick = function () { v.hidden = true; document.body.classList.remove('con-visor'); };
+      }
+      v.querySelector('iframe').src = PDF; v.hidden = false; document.body.classList.add('con-visor');
+    }
     $('btn-imprimir').onclick = function () {
-      // En otra pestaña: en la app instalada de iOS así sale con «Listo» para volver, y no te deja atrapado en el PDF.
-      if (esIOS) { var w = window.open(PDF, '_blank'); if (!w) location.href = PDF; return; }
-      try { window.print(); } catch (e) { location.href = PDF; }
+      if (esIOS) {
+        if (pdfArchivo) {
+          navigator.share({ files: [pdfArchivo], title: 'Tarjetas rápidas' })
+            .catch(function (e) { if (!e || e.name !== 'AbortError') verPDF(); });
+        } else verPDF();
+        return;
+      }
+      try { window.print(); } catch (e) { verPDF(); }
     };
     $('btn-descargar').onclick = descargar; revisarDescarga();
     [].forEach.call(document.querySelectorAll('.cara-btn'), function (b) { b.onclick = function () { parar(); cara = b.dataset.cara; pintarTarjeta(); }; });
