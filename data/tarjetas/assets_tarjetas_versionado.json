@@ -1,0 +1,721 @@
+{
+  "leccion": "tarjetas",
+  "_generadoDesde": "https://piensaengujarati.com/",
+  "assets": [
+    {
+      "url": "audios/tarjetas/tr_m01_d1_h.mp3",
+      "lastModified": 206144253770481,
+      "size": 11825
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_d1_m.mp3",
+      "lastModified": 160456944725346,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_d2_h.mp3",
+      "lastModified": 2640485285124,
+      "size": 20132
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_d2_m.mp3",
+      "lastModified": 260477899389173,
+      "size": 18878
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r1_h.mp3",
+      "lastModified": 163986383549697,
+      "size": 4929
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r1_m.mp3",
+      "lastModified": 174103360283395,
+      "size": 4929
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r2_h.mp3",
+      "lastModified": 52941212507323,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r2_m.mp3",
+      "lastModified": 201718042264182,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r3_h.mp3",
+      "lastModified": 33068463132398,
+      "size": 14019
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r3_m.mp3",
+      "lastModified": 164187836065438,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r4_h.mp3",
+      "lastModified": 280662017459713,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m01_r4_m.mp3",
+      "lastModified": 145138075646835,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_d1_h.mp3",
+      "lastModified": 198845081975977,
+      "size": 24207
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_d1_m.mp3",
+      "lastModified": 230059226592331,
+      "size": 19348
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_d2_h.mp3",
+      "lastModified": 273800835893635,
+      "size": 19035
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_d2_m.mp3",
+      "lastModified": 33912011537168,
+      "size": 15430
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_d3_h.mp3",
+      "lastModified": 266504396562427,
+      "size": 11825
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_d3_m.mp3",
+      "lastModified": 91464142340294,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r1_h.mp3",
+      "lastModified": 91006035994199,
+      "size": 4929
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r1_m.mp3",
+      "lastModified": 28200727196443,
+      "size": 4929
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r2_h.mp3",
+      "lastModified": 119282373614421,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r2_m.mp3",
+      "lastModified": 24311902584183,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r3_h.mp3",
+      "lastModified": 88218042952405,
+      "size": 14960
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r3_m.mp3",
+      "lastModified": 146235926561308,
+      "size": 18408
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r4_h.mp3",
+      "lastModified": 27540138248493,
+      "size": 17938
+    },
+    {
+      "url": "audios/tarjetas/tr_m02_r4_m.mp3",
+      "lastModified": 260650883239143,
+      "size": 18408
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_d1_h.mp3",
+      "lastModified": 278919027811290,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_d1_m.mp3",
+      "lastModified": 157959440321543,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_d2_h.mp3",
+      "lastModified": 92739913855336,
+      "size": 11825
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_d2_m.mp3",
+      "lastModified": 229502315696997,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_d3_h.mp3",
+      "lastModified": 77458684001227,
+      "size": 10415
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_d3_m.mp3",
+      "lastModified": 165952701480074,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_r1_h.mp3",
+      "lastModified": 180944782052748,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_r1_m.mp3",
+      "lastModified": 257693675507896,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_r2_h.mp3",
+      "lastModified": 97725248885917,
+      "size": 4459
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_r2_m.mp3",
+      "lastModified": 90507758703633,
+      "size": 5869
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_r3_h.mp3",
+      "lastModified": 110830940288983,
+      "size": 10728
+    },
+    {
+      "url": "audios/tarjetas/tr_m03_r3_m.mp3",
+      "lastModified": 80543617758854,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_d1_h.mp3",
+      "lastModified": 185682143147260,
+      "size": 12922
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_d1_m.mp3",
+      "lastModified": 245032697458379,
+      "size": 13549
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_d2_h.mp3",
+      "lastModified": 14643610092262,
+      "size": 11355
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_d2_m.mp3",
+      "lastModified": 69558601494339,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_d3_h.mp3",
+      "lastModified": 122482412307260,
+      "size": 13392
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_d3_m.mp3",
+      "lastModified": 85306964962416,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_r1_h.mp3",
+      "lastModified": 194623709542652,
+      "size": 3518
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_r1_m.mp3",
+      "lastModified": 207923633625,
+      "size": 3048
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_r2_h.mp3",
+      "lastModified": 259297741556219,
+      "size": 4929
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_r2_m.mp3",
+      "lastModified": 220664359782319,
+      "size": 6339
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_r3_h.mp3",
+      "lastModified": 230184217230262,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m04_r3_m.mp3",
+      "lastModified": 189040971399148,
+      "size": 14019
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_d1_h.mp3",
+      "lastModified": 73343814207627,
+      "size": 18095
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_d1_m.mp3",
+      "lastModified": 113878201220808,
+      "size": 15900
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_d2_h.mp3",
+      "lastModified": 138647381417077,
+      "size": 31887
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_d2_m.mp3",
+      "lastModified": 225947091018705,
+      "size": 26088
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r1_h.mp3",
+      "lastModified": 190008946677426,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r1_m.mp3",
+      "lastModified": 14537177708618,
+      "size": 10728
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r2_h.mp3",
+      "lastModified": 95253523063016,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r2_m.mp3",
+      "lastModified": 251958415576907,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r3_h.mp3",
+      "lastModified": 33099896030659,
+      "size": 24677
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r3_m.mp3",
+      "lastModified": 277582883299318,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r4_h.mp3",
+      "lastModified": 195796021795602,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m05_r4_m.mp3",
+      "lastModified": 275100669544009,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_d1_h.mp3",
+      "lastModified": 66842889004540,
+      "size": 15900
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_d1_m.mp3",
+      "lastModified": 253592859228509,
+      "size": 13079
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_d2_h.mp3",
+      "lastModified": 103802060813302,
+      "size": 28752
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_d2_m.mp3",
+      "lastModified": 69873021186829,
+      "size": 20759
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r1_h.mp3",
+      "lastModified": 215513780387254,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r1_m.mp3",
+      "lastModified": 47995523179062,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r2_h.mp3",
+      "lastModified": 205615816264524,
+      "size": 11198
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r2_m.mp3",
+      "lastModified": 266674142874012,
+      "size": 7280
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r3_h.mp3",
+      "lastModified": 679968045343,
+      "size": 13549
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r3_m.mp3",
+      "lastModified": 128749277203680,
+      "size": 18408
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r4_h.mp3",
+      "lastModified": 64135894816498,
+      "size": 16997
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r4_m.mp3",
+      "lastModified": 182352066978728,
+      "size": 17468
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r5_h.mp3",
+      "lastModified": 153049940895260,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r5_m.mp3",
+      "lastModified": 115244582263207,
+      "size": 10728
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r6_h.mp3",
+      "lastModified": 71166007001110,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m06_r6_m.mp3",
+      "lastModified": 40310348578500,
+      "size": 13079
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_d1_h.mp3",
+      "lastModified": 122833721422703,
+      "size": 19505
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_d1_m.mp3",
+      "lastModified": 68857245753244,
+      "size": 16527
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_d2_h.mp3",
+      "lastModified": 236489582890209,
+      "size": 11355
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_d2_m.mp3",
+      "lastModified": 47674803027595,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r1_h.mp3",
+      "lastModified": 113985369065857,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r1_m.mp3",
+      "lastModified": 260067142088457,
+      "size": 10728
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r2_h.mp3",
+      "lastModified": 47962870749335,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r2_m.mp3",
+      "lastModified": 117969477818111,
+      "size": 10258
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r3_h.mp3",
+      "lastModified": 2935210242882,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r3_m.mp3",
+      "lastModified": 251566522890985,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r4_h.mp3",
+      "lastModified": 1794801110240,
+      "noEncontrado": true
+    },
+    {
+      "url": "audios/tarjetas/tr_m07_r4_m.mp3",
+      "lastModified": 80792281243449,
+      "size": 14019
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_d1_h.mp3",
+      "lastModified": 34304724826380,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_d1_m.mp3",
+      "lastModified": 156445391096500,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_d2_h.mp3",
+      "lastModified": 227320148118126,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_d2_m.mp3",
+      "lastModified": 37415204366618,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_d3_h.mp3",
+      "lastModified": 9100109533192,
+      "size": 20132
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_d3_m.mp3",
+      "lastModified": 91019231347909,
+      "size": 12609
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r1_h.mp3",
+      "lastModified": 185212545508084,
+      "size": 11198
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r1_m.mp3",
+      "lastModified": 31281331612889,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r2_h.mp3",
+      "lastModified": 234679968853560,
+      "size": 14960
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r2_m.mp3",
+      "lastModified": 244198852342121,
+      "size": 14019
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r3_h.mp3",
+      "lastModified": 114708597479572,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r3_m.mp3",
+      "lastModified": 258923095582783,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r4_h.mp3",
+      "lastModified": 54528747351137,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m08_r4_m.mp3",
+      "lastModified": 241166858940784,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_d1_h.mp3",
+      "lastModified": 163073746038805,
+      "size": 21543
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_d1_m.mp3",
+      "lastModified": 121183445339565,
+      "size": 16997
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_d2_h.mp3",
+      "lastModified": 126913062879001,
+      "size": 16527
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_d2_m.mp3",
+      "lastModified": 54630928991165,
+      "size": 14490
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_d3_h.mp3",
+      "lastModified": 199491942977419,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_d3_m.mp3",
+      "lastModified": 160291976976194,
+      "size": 7750
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r1_h.mp3",
+      "lastModified": 7140944977157,
+      "size": 7280
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r1_m.mp3",
+      "lastModified": 231113567625417,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r2_h.mp3",
+      "lastModified": 47389668140173,
+      "size": 16527
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r2_m.mp3",
+      "lastModified": 123783910089199,
+      "size": 14490
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r3_h.mp3",
+      "lastModified": 52696748623224,
+      "size": 6339
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r3_m.mp3",
+      "lastModified": 69830690083557,
+      "size": 7280
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r4_h.mp3",
+      "lastModified": 92455553172512,
+      "size": 4929
+    },
+    {
+      "url": "audios/tarjetas/tr_m09_r4_m.mp3",
+      "lastModified": 126919849843127,
+      "size": 5869
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_d1_h.mp3",
+      "lastModified": 37003670914858,
+      "size": 13863
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_d1_m.mp3",
+      "lastModified": 109586416482494,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_d2_h.mp3",
+      "lastModified": 69770144332836,
+      "size": 15430
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_d2_m.mp3",
+      "lastModified": 20780789445413,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r1_h.mp3",
+      "lastModified": 162981944124390,
+      "size": 14960
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r1_m.mp3",
+      "lastModified": 94207727176402,
+      "size": 12609
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r2_h.mp3",
+      "lastModified": 5898863419172,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r2_m.mp3",
+      "lastModified": 260538173907429,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r3_h.mp3",
+      "lastModified": 74157665964532,
+      "size": 16997
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r3_m.mp3",
+      "lastModified": 226016881834807,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r4_h.mp3",
+      "lastModified": 14490447508241,
+      "size": 26088
+    },
+    {
+      "url": "audios/tarjetas/tr_m10_r4_m.mp3",
+      "lastModified": 155492691856326,
+      "size": 22640
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_d1_h.mp3",
+      "lastModified": 219843381089471,
+      "size": 20602
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_d1_m.mp3",
+      "lastModified": 30548038663252,
+      "size": 14960
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_d2_h.mp3",
+      "lastModified": 233786118723002,
+      "size": 8847
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_d2_m.mp3",
+      "lastModified": 70406996866031,
+      "size": 7280
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r1_h.mp3",
+      "lastModified": 208541728686741,
+      "size": 4459
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r1_m.mp3",
+      "lastModified": 52526426942482,
+      "size": 3988
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r2_h.mp3",
+      "lastModified": 52509141448856,
+      "size": 3048
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r2_m.mp3",
+      "lastModified": 190883274918875,
+      "size": 3518
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r3_h.mp3",
+      "lastModified": 87337110743130,
+      "size": 14019
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r3_m.mp3",
+      "lastModified": 182235086480488,
+      "size": 10728
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r4_h.mp3",
+      "lastModified": 252009370808520,
+      "size": 5869
+    },
+    {
+      "url": "audios/tarjetas/tr_m11_r4_m.mp3",
+      "lastModified": 162417550065139,
+      "size": 5869
+    },
+    {
+      "url": "data/tarjetas/tarjetas_rapidas.json",
+      "lastModified": 1794801000185,
+      "size": 12342
+    }
+  ]
+}
