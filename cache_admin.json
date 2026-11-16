@@ -19,6 +19,11 @@
       "codigo": "1.2.1",
       "titulo": "Más letras nuevas 1ro",
       "manifiesto": "data/1_2_1/assets_1_2_1_versionado.json"
+    },
+    {
+      "codigo": "tarjetas",
+      "titulo": "Tarjetas rápidas",
+      "manifiesto": "data/tarjetas/assets_tarjetas_versionado.json"
     }
   ]
 }

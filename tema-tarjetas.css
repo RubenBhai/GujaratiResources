@@ -1,0 +1,124 @@
+/* Tarjetas rápidas · Piensa en Gujarati (Claude, 16-nov-2026)
+   Misma paleta cálida que las lecciones (reto flash, juego). */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --bg:#2C2420; --surface:#362C28; --surface-light:#423631; --paper:#E8D9C0;
+  --sindoor:#A8362A; --sindoor-deep:#832920; --saffron:#B8863D; --saffron-light:#D9AE62;
+  --verde:#4A6B53; --ink-soft:#C8B99A; --border:rgba(184,134,61,0.22);
+  --azul-gu:#E9C98B; --amo:#9FC7A9;
+  --r-sm:12px; --r-md:16px; --r-lg:20px; --r-full:50px;
+  --shadow-card: 0 8px 28px rgba(0,0,0,0.25);
+}
+html { -webkit-text-size-adjust:100%; }
+body { background:var(--bg); background-image:radial-gradient(ellipse at top,rgba(184,134,61,0.08),transparent 60%);
+  color:var(--paper); font-family:'Source Sans 3',sans-serif; min-height:100vh; padding-bottom:40px; line-height:1.45; }
+button { font-family:inherit; }
+.gu { font-family:'Noto Serif Gujarati',serif; }
+[hidden] { display:none !important; }
+
+/* NAV (igual que las lecciones) */
+.nav-bar { position:sticky; top:0; z-index:100; background:rgba(44,36,32,0.92); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:12px 20px; }
+.nav-btn { background:var(--surface); color:var(--paper); padding:10px 18px; border-radius:var(--r-full);
+  font-size:0.9rem; font-weight:600; text-decoration:none; border:1px solid var(--border); cursor:pointer; min-height:44px; display:inline-flex; align-items:center; }
+.nav-btn.home { color:var(--saffron); font-size:1.1rem; }
+
+.wrap { max-width:640px; margin:0 auto; padding:18px 16px; display:flex; flex-direction:column; gap:18px; }
+
+/* CABECERA */
+.cabecera { text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px; }
+.badge { display:inline-block; background:rgba(184,134,61,0.18); color:var(--saffron);
+  padding:7px 18px; border-radius:var(--r-full); font-size:0.82rem; font-weight:700; letter-spacing:.03em; }
+h1 { font-family:'Fraunces',serif; font-size:2rem; font-weight:700; color:#FDF9F1; }
+.lead { color:var(--ink-soft); font-size:1rem; max-width:480px; }
+
+/* En una tarjeta, la cabecera se encoge para que la tarjeta quepa en pantalla */
+.en-tarjeta .cabecera .lead, .en-tarjeta .cabecera .badge, .en-tarjeta #btn-imprimir, .en-tarjeta #btn-descargar { display:none; }
+.en-tarjeta h1 { font-size:1.3rem; }
+.en-tarjeta .wrap { gap:12px; }
+
+/* CONTROLES */
+.controles { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.segmento { display:inline-flex; background:var(--surface); border:1px solid var(--border); border-radius:var(--r-full); padding:3px; }
+.seg-btn { background:none; border:0; color:var(--ink-soft); padding:9px 16px; border-radius:var(--r-full); font-size:.95rem; font-weight:600; cursor:pointer; min-height:40px; }
+.seg-btn.activo { background:var(--saffron); color:#2C2420; }
+.ctl-btn { background:var(--surface); color:var(--paper); border:1px solid var(--border); border-radius:var(--r-full);
+  padding:9px 16px; font-size:.95rem; font-weight:600; cursor:pointer; min-height:44px; }
+.ctl-btn.listo { border-color:var(--verde); color:#9FC7A9; }
+.ctl-btn:disabled { opacity:.7; }
+.ctl-btn[aria-pressed="true"] { border-color:var(--saffron); color:var(--saffron-light); }
+
+/* LISTA DE MOMENTOS */
+.momentos { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px; }
+.momento { display:flex; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-md); padding:14px 16px; text-align:left; color:var(--paper); cursor:pointer; box-shadow:var(--shadow-card);
+  transition:transform .15s, border-color .15s; min-height:64px; }
+.momento:hover, .momento:focus-visible { border-color:var(--saffron); transform:translateY(-2px); outline:none; }
+.momento-num { flex-shrink:0; width:38px; height:38px; border-radius:50%; background:rgba(184,134,61,0.18); color:var(--saffron);
+  display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.95rem; }
+.momento-tit { display:block; font-weight:600; font-size:1.02rem; line-height:1.3; }
+.momento-sub { display:block; color:var(--ink-soft); font-size:.85rem; margin-top:2px; }
+
+/* TARJETA */
+.tarjeta { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); box-shadow:var(--shadow-card); overflow:hidden; }
+.tarjeta-cab { display:flex; align-items:center; gap:8px; padding:14px 12px 10px; }
+.tarjeta-tit { flex:1; text-align:center; }
+.tarjeta-num { color:var(--saffron); font-weight:700; font-size:.85rem; letter-spacing:.05em; }
+.tarjeta-tit h2 { font-family:'Fraunces',serif; font-size:1.35rem; color:#FDF9F1; line-height:1.25; }
+.flecha { flex-shrink:0; width:44px; height:44px; border-radius:50%; border:1px solid var(--border); background:var(--surface-light);
+  color:var(--paper); font-size:1.6rem; line-height:1; cursor:pointer; }
+.flecha:disabled { opacity:.3; cursor:default; }
+.caras { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.cara-btn { background:none; border:0; color:var(--ink-soft); padding:12px 8px; font-size:.95rem; font-weight:600; cursor:pointer; min-height:48px; border-bottom:3px solid transparent; }
+.cara-btn.activa { color:var(--paper); border-bottom-color:var(--saffron); background:rgba(184,134,61,0.08); }
+.cara-btn[data-cara="dicen"].activa { border-bottom-color:var(--amo); }
+
+.frases { list-style:none; padding:8px 10px; display:flex; flex-direction:column; gap:6px; }
+.frase { display:flex; gap:12px; align-items:flex-start; width:100%; background:none; border:1px solid transparent; border-radius:var(--r-sm);
+  padding:12px 10px; text-align:left; color:var(--paper); cursor:pointer; }
+.frase:hover, .frase:focus-visible { background:var(--surface-light); border-color:var(--border); outline:none; }
+.frase.sonando { background:rgba(184,134,61,0.14); border-color:var(--saffron); }
+.frase-play { flex-shrink:0; width:36px; height:36px; border-radius:50%; background:var(--saffron); color:#2C2420;
+  display:flex; align-items:center; justify-content:center; font-size:.85rem; margin-top:2px; }
+.dicen .frase-play { background:var(--amo); }
+.frase-gu { font-family:'Noto Serif Gujarati',serif; font-size:1.3rem; font-weight:600; color:var(--azul-gu); line-height:1.45; display:block; }
+.dicen .frase-gu { color:var(--amo); }
+.frase-es { color:var(--ink-soft); font-size:.95rem; display:block; margin-top:2px; }
+.sin-es .frase-es { visibility:hidden; }
+.sin-es .frase:active .frase-es, .sin-es .frase.sonando .frase-es { visibility:visible; }
+
+.tarjeta-pie { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; padding:10px 14px 16px; }
+.btn-main { background:linear-gradient(135deg,var(--saffron),#9C6F2E); color:#2C2420; border:0; border-radius:var(--r-full);
+  padding:12px 24px; font-size:1rem; font-weight:700; cursor:pointer; min-height:46px; }
+.btn-sec { background:none; color:var(--paper); border:1px solid var(--border); border-radius:var(--r-full); padding:12px 20px; font-size:.95rem; font-weight:600; cursor:pointer; min-height:46px; }
+.aviso { text-align:center; color:var(--ink-soft); font-size:.85rem; padding:0 14px 10px; }
+
+.fuente { text-align:center; color:var(--ink-soft); font-size:.8rem; opacity:.8; }
+
+/* IMPRESIÓN: una tarjeta por momento, caras lado a lado, en tinta oscura */
+.solo-print { display:none; }
+@media print {
+  @page { size:A4; margin:12mm; }
+  body { background:#fff; color:#222; padding:0; }
+  .no-print, .nav-bar, .controles { display:none !important; }
+  .solo-print { display:block; }
+  .wrap { max-width:none; padding:0; gap:6mm; }
+  .cabecera h1 { color:#222; font-size:20pt; }
+  .badge { background:none; color:#7a5a20; border:1px solid #c9a96a; }
+  .lead, .fuente { color:#555; }
+  .imp-tarjeta { border:1.2px dashed #999; border-radius:4mm; padding:4mm 5mm; margin:0 0 5mm; break-inside:avoid; }
+  .imp-tarjeta h3 { font-family:'Fraunces',serif; font-size:13pt; margin-bottom:2mm; color:#222; }
+  .imp-tarjeta h3 span { color:#9a7430; margin-right:2mm; }
+  .imp-caras { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .imp-cara h4 { font-size:8.5pt; text-transform:uppercase; letter-spacing:.06em; color:#777; margin-bottom:1.5mm; }
+  .imp-cara ul { list-style:none; }
+  .imp-cara li { margin-bottom:1.6mm; }
+  .imp-cara .gu { font-size:11.5pt; font-weight:600; color:#1d3f6e; display:block; line-height:1.35; }
+  .imp-cara.dicen .gu { color:#5b3d10; }
+  .imp-cara .es { font-size:8.5pt; color:#555; display:block; }
+}
+
+@media (min-width:1024px) {
+  .wrap { max-width:760px; }
+  h1 { font-size:2.4rem; }
+}

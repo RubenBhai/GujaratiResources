@@ -1,0 +1,454 @@
+{
+ "titulo": "Tarjetas rápidas",
+ "subtitulo": "Para la predicación: lo que digo y lo que me pueden decir.",
+ "fuente": "Frases tomadas de los videos de predicación de jw.org y de JW Language.",
+ "momentos": [
+  {
+   "id": "M1",
+   "titulo": "Saludar y presentarse",
+   "digo": [
+    {
+     "gu": "નમસ્તે, કેમ છો?",
+     "es": "Hola, ¿cómo está?",
+     "audio": "tr_m01_d1"
+    },
+    {
+     "gu": "મારું નામ પ્રીતિ છે. તમારું નામ જાણી શકું?",
+     "es": "Me llamo Priti. ¿Puedo saber su nombre?",
+     "audio": "tr_m01_d2",
+     "gu_h": "મારું નામ ટોની છે. તમારું નામ જાણી શકું?",
+     "es_h": "Me llamo Tony. ¿Puedo saber su nombre?"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "મજામાં.",
+     "es": "Bien.",
+     "audio": "tr_m01_r1"
+    },
+    {
+     "gu": "હા, કોણ? બોલો.",
+     "es": "Sí, ¿quién es? Dígame.",
+     "audio": "tr_m01_r2"
+    },
+    {
+     "gu": "તમે કોણ? ઓળખાણ ના પડી.",
+     "es": "¿Quién es usted? No la reconozco.",
+     "audio": "tr_m01_r3"
+    },
+    {
+     "gu": "મારું નામ લતા છે.",
+     "es": "Me llamo Lata.",
+     "audio": "tr_m01_r4",
+     "gu_h": "મારું નામ પરેશ.",
+     "es_h": "Me llamo Paresh."
+    }
+   ]
+  },
+  {
+   "id": "M2",
+   "titulo": "Abrir con una pregunta",
+   "digo": [
+    {
+     "gu": "આજે ઘણા લોકોને પોતાના ભવિષ્યની ચિંતા હોય છે.",
+     "es": "Hoy muchas personas se preocupan por su futuro.",
+     "audio": "tr_m02_d1"
+    },
+    {
+     "gu": "ભવિષ્ય વિશે તમે શું વિચારો છો?",
+     "es": "¿Qué piensa usted del futuro?",
+     "audio": "tr_m02_d2"
+    },
+    {
+     "gu": "તમને શું લાગે છે?",
+     "es": "¿Qué le parece?",
+     "audio": "tr_m02_d3"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "ખબર નહીં.",
+     "es": "No sé.",
+     "audio": "tr_m02_r1"
+    },
+    {
+     "gu": "મને લાગે છે કે…",
+     "es": "Me parece que…",
+     "audio": "tr_m02_r2"
+    },
+    {
+     "gu": "લાગે છે દુનિયા પહેલા કરતાં વધારે બગડી ગઈ છે.",
+     "es": "Parece que el mundo está peor que antes.",
+     "audio": "tr_m02_r3"
+    },
+    {
+     "gu": "એવું થાય તો સારું, પણ લાગતું નથી એવું થશે.",
+     "es": "Ojalá, pero no creo que pase.",
+     "audio": "tr_m02_r4"
+    }
+   ]
+  },
+  {
+   "id": "M3",
+   "titulo": "Escuchar y darle la razón",
+   "digo": [
+    {
+     "gu": "તમે બરાબર કહ્યું.",
+     "es": "Tiene razón.",
+     "audio": "tr_m03_d1"
+    },
+    {
+     "gu": "ઘણાને એવું લાગે છે.",
+     "es": "Mucha gente piensa así.",
+     "audio": "tr_m03_d2"
+    },
+    {
+     "gu": "હું સમજી શકું છું.",
+     "es": "Lo entiendo.",
+     "audio": "tr_m03_d3"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "હા, એ તો છે.",
+     "es": "Sí, eso es verdad.",
+     "audio": "tr_m03_r1"
+    },
+    {
+     "gu": "સાચી વાત.",
+     "es": "Es cierto.",
+     "audio": "tr_m03_r2"
+    },
+    {
+     "gu": "હા, સાચે.",
+     "es": "Sí, de veras.",
+     "audio": "tr_m03_r3"
+    }
+   ]
+  },
+  {
+   "id": "M4",
+   "titulo": "Leer un texto",
+   "digo": [
+    {
+     "gu": "જુઓ, ઈસુએ શું કહ્યું.",
+     "es": "Mire lo que dijo Jesús.",
+     "audio": "tr_m04_d1"
+    },
+    {
+     "gu": "તમે એ કલમ વાંચશો?",
+     "es": "¿Leería usted ese versículo?",
+     "audio": "tr_m04_d2"
+    },
+    {
+     "gu": "અહીંયા લખ્યું છે…",
+     "es": "Aquí dice…",
+     "audio": "tr_m04_d3"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "હા.",
+     "es": "Sí.",
+     "audio": "tr_m04_r1"
+    },
+    {
+     "gu": "મોટેથી?",
+     "es": "¿En voz alta?",
+     "audio": "tr_m04_r2"
+    },
+    {
+     "gu": "અહીં તો લખ્યું છે કે…",
+     "es": "Pues aquí dice que…",
+     "audio": "tr_m04_r3"
+    }
+   ]
+  },
+  {
+   "id": "M5",
+   "titulo": "Preguntar qué le pareció",
+   "digo": [
+    {
+     "gu": "એ જાણીને તમને કેવું લાગે છે?",
+     "es": "¿Cómo se siente al saber eso?",
+     "audio": "tr_m05_d1"
+    },
+    {
+     "gu": "અહીં જણાવ્યા પ્રમાણે, ભવિષ્યમાં કેવી બાબતો નહી હોય?",
+     "es": "Según lo que dice aquí, ¿qué cosas no habrá en el futuro?",
+     "audio": "tr_m05_d2"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "આવું મેં પહેલીવાર સાંભળ્યું.",
+     "es": "Es la primera vez que oigo esto.",
+     "audio": "tr_m05_r1"
+    },
+    {
+     "gu": "હવે મને સમજાયું.",
+     "es": "Ahora lo entiendo.",
+     "audio": "tr_m05_r2"
+    },
+    {
+     "gu": "હા, મને તો બહુ ગમ્યું.",
+     "es": "Sí, me gustó mucho.",
+     "audio": "tr_m05_r3"
+    },
+    {
+     "gu": "મને આવી નહતી ખબર.",
+     "es": "No lo sabía.",
+     "audio": "tr_m05_r4"
+    }
+   ]
+  },
+  {
+   "id": "M6",
+   "titulo": "Dudas y objeciones",
+   "digo": [
+    {
+     "gu": "તમારી મૂંઝવણ હું સમજી શકું છું.",
+     "es": "Entiendo su confusión.",
+     "audio": "tr_m06_d1"
+    },
+    {
+     "gu": "એ જાણીને સારું લાગ્યું કે તમે એક ધાર્મિક વ્યક્તિ…",
+     "es": "Me alegra saber que es usted una persona religiosa…",
+     "audio": "tr_m06_d2"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "પણ આવું તો ના બને.",
+     "es": "Pero eso no puede ser.",
+     "audio": "tr_m06_r1"
+    },
+    {
+     "gu": "એ તો શક્ય જ નથી.",
+     "es": "Eso es imposible.",
+     "audio": "tr_m06_r2"
+    },
+    {
+     "gu": "તકલીફો તો રહેવાની છે ભાઈ, એમાં શું નવું છે?",
+     "es": "Los problemas siempre van a estar, ¿qué hay de nuevo?",
+     "audio": "tr_m06_r3"
+    },
+    {
+     "gu": "મને તો લાગતું, એમાં તો ધર્મની વાતો છે.",
+     "es": "Yo creía que eso era cosa de religión.",
+     "audio": "tr_m06_r4"
+    },
+    {
+     "gu": "હું મારો ધર્મ નહીં બદલું.",
+     "es": "No voy a cambiar de religión.",
+     "audio": "tr_m06_r5"
+    },
+    {
+     "gu": "ભગવાન વિશેની તો વાત જ ના કરશો.",
+     "es": "De Dios ni me hable.",
+     "audio": "tr_m06_r6"
+    }
+   ]
+  },
+  {
+   "id": "M7",
+   "titulo": "«No tengo tiempo» / «no me interesa»",
+   "digo": [
+    {
+     "gu": "તમે બીઝી છો એટલે બહુ સમય નહીં લઉં.",
+     "es": "Como está ocupado, no le quito mucho tiempo.",
+     "audio": "tr_m07_d1"
+    },
+    {
+     "gu": "હું સમજી શકું છું.",
+     "es": "Lo entiendo.",
+     "audio": "tr_m07_d2"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "મને એટલોય રસ નથી.",
+     "es": "No me interesa tanto.",
+     "audio": "tr_m07_r1"
+    },
+    {
+     "gu": "ના, મારે નથી જાણવું.",
+     "es": "No, no quiero saber.",
+     "audio": "tr_m07_r2"
+    },
+    {
+     "gu": "મારી પાસે બહુ કામ છે.",
+     "es": "Tengo mucho trabajo.",
+     "audio": "tr_m07_r3"
+    },
+    {
+     "gu": "અને આમેય મારે મોડું થાય છે.",
+     "es": "Y además se me hace tarde.",
+     "audio": "tr_m07_r4"
+    }
+   ]
+  },
+  {
+   "id": "M8",
+   "titulo": "Dejar una publicación o invitar",
+   "digo": [
+    {
+     "gu": "આ તમારા માટે છે.",
+     "es": "Esto es para usted.",
+     "audio": "tr_m08_d1"
+    },
+    {
+     "gu": "તમે જરૂર આવજો.",
+     "es": "Venga sin falta.",
+     "audio": "tr_m08_d2"
+    },
+    {
+     "gu": "શું તમને આ મેગેઝીન વાંચવું ગમશે?",
+     "es": "¿Le gustaría leer esta revista?",
+     "audio": "tr_m08_d3"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "હા, મને ગમશે.",
+     "es": "Sí, me gustaría.",
+     "audio": "tr_m08_r1"
+    },
+    {
+     "gu": "હું રાખું છું ચોપડી અને વાંચીશ.",
+     "es": "Me quedo el libro y lo leeré.",
+     "audio": "tr_m08_r2"
+    },
+    {
+     "gu": "ઘરમાં વાત કરીશ.",
+     "es": "Lo hablaré en casa.",
+     "audio": "tr_m08_r3"
+    },
+    {
+     "gu": "શક્ય હશે તો આવીશ.",
+     "es": "Si puedo, iré.",
+     "audio": "tr_m08_r4"
+    }
+   ]
+  },
+  {
+   "id": "M9",
+   "titulo": "Quedar para volver",
+   "digo": [
+    {
+     "gu": "શું આપણે એના વિશે બીજી વાર વાત કરી શકીએ?",
+     "es": "¿Podemos hablar de eso otro día?",
+     "audio": "tr_m09_d1"
+    },
+    {
+     "gu": "શું કાલે તમે આ સમયે ઘરે હશો?",
+     "es": "¿Estará mañana en casa a esta hora?",
+     "audio": "tr_m09_d2"
+    },
+    {
+     "gu": "તમારો નંબર આપશો?",
+     "es": "¿Me da su número?",
+     "audio": "tr_m09_d3"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "હા, હું ઘરે જ હોઈશ.",
+     "es": "Sí, estaré en casa.",
+     "audio": "tr_m09_r1"
+    },
+    {
+     "gu": "હા, ચોક્કસ મને ફાવશે આ ટાઈમ.",
+     "es": "Sí, claro, esa hora me va bien.",
+     "audio": "tr_m09_r2"
+    },
+    {
+     "gu": "આ લો મારો નંબર.",
+     "es": "Tome mi número.",
+     "audio": "tr_m09_r3"
+    },
+    {
+     "gu": "હું રાહ જોઈશ.",
+     "es": "Lo espero.",
+     "audio": "tr_m09_r4"
+    }
+   ]
+  },
+  {
+   "id": "M10",
+   "titulo": "Charla de la vida diaria (en persona o por teléfono)",
+   "digo": [
+    {
+     "gu": "આજે કામ પર કેવું રહ્યું?",
+     "es": "¿Qué tal el trabajo hoy?",
+     "audio": "tr_m10_d1"
+    },
+    {
+     "gu": "ઘરમાં બધા કેમ છે?",
+     "es": "¿Cómo están todos en casa?",
+     "audio": "tr_m10_d2"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "આખું અઠવાડિયું બહુ જ બીઝી ગયું.",
+     "es": "Toda la semana estuve muy ocupada.",
+     "audio": "tr_m10_r1"
+    },
+    {
+     "gu": "આરામ કરવાનોય સમય ના મળ્યો.",
+     "es": "No tuve tiempo ni para descansar.",
+     "audio": "tr_m10_r2"
+    },
+    {
+     "gu": "કંઈકને કંઈક ચિંતા તો હોય જ.",
+     "es": "Siempre hay alguna preocupación.",
+     "audio": "tr_m10_r3"
+    },
+    {
+     "gu": "પહેલા અમારા ગામમાં બધા લોકો કેવું હળીમળીને રહેતા હતા.",
+     "es": "Antes en mi pueblo todos vivían tan unidos.",
+     "audio": "tr_m10_r4"
+    }
+   ]
+  },
+  {
+   "id": "M11",
+   "titulo": "Despedirse",
+   "digo": [
+    {
+     "gu": "તમારી સાથે વાત કરીને બહુ સારું લાગ્યું.",
+     "es": "Me gustó mucho hablar con usted.",
+     "audio": "tr_m11_d1"
+    },
+    {
+     "gu": "તબિયત સાચવજો.",
+     "es": "Cuídese.",
+     "audio": "tr_m11_d2"
+    }
+   ],
+   "dicen": [
+    {
+     "gu": "આવજો.",
+     "es": "Adiós.",
+     "audio": "tr_m11_r1"
+    },
+    {
+     "gu": "બાય.",
+     "es": "Adiós.",
+     "audio": "tr_m11_r2"
+    },
+    {
+     "gu": "તમે પણ તબિયત સાચવજો.",
+     "es": "Usted también cuídese.",
+     "audio": "tr_m11_r3"
+    },
+    {
+     "gu": "ફરી મળીશું.",
+     "es": "Nos vemos.",
+     "audio": "tr_m11_r4"
+    }
+   ]
+  }
+ ]
+}

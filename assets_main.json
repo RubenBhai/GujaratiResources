@@ -38,8 +38,8 @@
     },
     {
       "url": "cache_admin.json",
-      "lastModified": 1794716585818,
-      "size": 601
+      "lastModified": 1794801000188,
+      "size": 747
     },
     {
       "url": "cantar_jw.html",
@@ -63,8 +63,8 @@
     },
     {
       "url": "contenido.html",
-      "lastModified": 1794716585816,
-      "size": 12112
+      "lastModified": 1794801000189,
+      "size": 12580
     },
     {
       "url": "contenido.js",
@@ -497,6 +497,16 @@
       "size": 7448
     },
     {
+      "url": "tarjetas.html",
+      "lastModified": 1794801000186,
+      "size": 3150
+    },
+    {
+      "url": "tarjetas.js",
+      "lastModified": 1794801000187,
+      "size": 9454
+    },
+    {
       "url": "tema-amigable_2.css",
       "lastModified": 1794604187604,
       "size": 13311
@@ -790,6 +800,11 @@
       "url": "tema-reto_desktop.css",
       "lastModified": 1794605400308,
       "size": 7419
+    },
+    {
+      "url": "tema-tarjetas.css",
+      "lastModified": 1794801000188,
+      "size": 8705
     },
     {
       "url": "tema-video-interactivo.css",

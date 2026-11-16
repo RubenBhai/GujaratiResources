@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Tarjetas rápidas · Piensa en Gujarati</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Serif+Gujarati:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tema-tarjetas.css">
+<link rel="stylesheet" href="guia_navegacion_common.css">
+</head>
+<body>
+
+<nav class="nav-bar no-print">
+  <a class="nav-btn" href="contenido.html">← Salir</a>
+  <a class="nav-btn home" id="nav-home" href="index.html" aria-label="Inicio">🏠</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="cabecera">
+    <span class="badge">Para la predicación</span>
+    <h1>Tarjetas rápidas</h1>
+    <p class="lead no-print">Lo que digo y lo que me pueden decir, en cada momento de una visita. Toca una frase para oírla.</p>
+    <p class="lead solo-print">Lo que digo y lo que me pueden decir, en cada momento de una visita. Con audio en <b>piensaengujarati.com</b> → Tarjetas rápidas.</p>
+  </header>
+
+  <div class="controles no-print">
+    <div class="segmento" role="group" aria-label="Voz">
+      <button class="seg-btn" data-voz="m">👩 Mujer</button>
+      <button class="seg-btn" data-voz="h">👨 Hombre</button>
+    </div>
+    <button class="ctl-btn" id="btn-es" aria-pressed="false">🙈 Ocultar español</button>
+    <button class="ctl-btn" id="btn-imprimir">🖨️ Imprimir</button>
+    <button class="ctl-btn" id="btn-descargar">⬇️ Guardar para usar sin internet</button>
+  </div>
+
+  <!-- LISTA DE MOMENTOS -->
+  <section id="vista-lista" class="no-print">
+    <div class="momentos" id="momentos"></div>
+  </section>
+
+  <!-- UNA TARJETA -->
+  <section id="vista-tarjeta" class="no-print" hidden>
+    <div class="tarjeta">
+      <div class="tarjeta-cab">
+        <button class="flecha" id="btn-ant" aria-label="Momento anterior">‹</button>
+        <div class="tarjeta-tit">
+          <span class="tarjeta-num" id="t-num"></span>
+          <h2 id="t-titulo"></h2>
+        </div>
+        <button class="flecha" id="btn-sig" aria-label="Momento siguiente">›</button>
+      </div>
+      <div class="caras" role="tablist">
+        <button class="cara-btn activa" data-cara="digo" role="tab">🗣️ Lo que digo</button>
+        <button class="cara-btn" data-cara="dicen" role="tab">👂 Lo que me pueden decir</button>
+      </div>
+      <ul class="frases" id="frases"></ul>
+      <div class="tarjeta-pie">
+        <button class="btn-main" id="btn-todas">▶ Escuchar todas</button>
+        <button class="btn-sec" id="btn-volver">Ver todos los momentos</button>
+      </div>
+    </div>
+  </section>
+
+  <p class="fuente" id="fuente"></p>
+
+  <!-- VERSIÓN PARA IMPRIMIR (solo se ve al imprimir) -->
+  <section id="vista-impresion" class="solo-print"></section>
+
+</div>
+
+<script src="tarjetas.js"></script>
+</body>
+</html>
