@@ -1,6 +1,7 @@
 /* Tarjetas rápidas · Piensa en Gujarati (Claude, 16-nov-2026)
    Datos: data/tarjetas/tarjetas_rapidas.json · Audio: audios/tarjetas/<audio>_<m|h>.mp3 */
 (function () {
+  var PDF = 'data/tarjetas/Tarjetas_Rapidas_Piensa_en_Gujarati.pdf';
   var DATOS = null, actual = 0, cara = 'digo', voz = 'm', sinEs = false;
   var audio = new Audio(), cola = [], filaSonando = null;
   var $ = function (id) { return document.getElementById(id); };
@@ -147,7 +148,14 @@
       this.setAttribute('aria-pressed', sinEs); this.textContent = sinEs ? '👁️ Mostrar español' : '🙈 Ocultar español';
       if (!$('vista-tarjeta').hidden) pintarTarjeta();
     };
-    $('btn-imprimir').onclick = function () { window.print(); };
+    // iPhone/iPad: window.print() no hace nada en la app instalada (y falla a menudo en Safari).
+    // Ahí se abre el PDF, que se imprime o se comparte desde el visor de iOS.
+    var esIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    $('btn-imprimir').onclick = function () {
+      // En otra pestaña: en la app instalada de iOS así sale con «Listo» para volver, y no te deja atrapado en el PDF.
+      if (esIOS) { var w = window.open(PDF, '_blank'); if (!w) location.href = PDF; return; }
+      try { window.print(); } catch (e) { location.href = PDF; }
+    };
     $('btn-descargar').onclick = descargar; revisarDescarga();
     [].forEach.call(document.querySelectorAll('.cara-btn'), function (b) { b.onclick = function () { parar(); cara = b.dataset.cara; pintarTarjeta(); }; });
     $('btn-ant').onclick = function () { if (actual > 0) abrir(actual - 1); };
