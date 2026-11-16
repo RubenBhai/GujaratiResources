@@ -99,8 +99,8 @@
     },
     {
       "url": "audios/tarjetas/tr_m02_r1_m.mp3",
-      "lastModified": 28200727196443,
-      "size": 4929
+      "lastModified": 1794854431823,
+      "noEncontrado": true
     },
     {
       "url": "audios/tarjetas/tr_m02_r2_h.mp3",
@@ -713,9 +713,169 @@
       "size": 5869
     },
     {
+      "url": "audios/tarjetas/tr_m12_d1_h.mp3",
+      "lastModified": 70513089200634,
+      "size": 12922
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d1_m.mp3",
+      "lastModified": 213019123125683,
+      "size": 11198
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d2_h.mp3",
+      "lastModified": 79542255107256,
+      "size": 13392
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d2_m.mp3",
+      "lastModified": 192137622330893,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d3_h.mp3",
+      "lastModified": 215856988166906,
+      "size": 10415
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d3_m.mp3",
+      "lastModified": 253857667620074,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d4_h.mp3",
+      "lastModified": 46387179456182,
+      "size": 10885
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d4_m.mp3",
+      "lastModified": 182531903900915,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d5_h.mp3",
+      "lastModified": 261092393468081,
+      "size": 17468
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d5_m.mp3",
+      "lastModified": 60829942444998,
+      "size": 13079
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d6_h.mp3",
+      "lastModified": 165389825717462,
+      "size": 18565
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d6_m.mp3",
+      "lastModified": 234437919080627,
+      "size": 13079
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d7_h.mp3",
+      "lastModified": 92150019743618,
+      "size": 16527
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d7_m.mp3",
+      "lastModified": 184314580935472,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d8_h.mp3",
+      "lastModified": 145619711157726,
+      "size": 10885
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_d8_m.mp3",
+      "lastModified": 165426356218582,
+      "size": 7280
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r1_h.mp3",
+      "lastModified": 131175317259619,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r1_m.mp3",
+      "lastModified": 111998733582000,
+      "size": 17468
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r2_h.mp3",
+      "lastModified": 186531213681272,
+      "size": 18408
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r2_m.mp3",
+      "lastModified": 41547295310743,
+      "size": 17468
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r3_h.mp3",
+      "lastModified": 2775834223852,
+      "size": 7280
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r3_m.mp3",
+      "lastModified": 236227680310646,
+      "size": 8220
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r4_h.mp3",
+      "lastModified": 171138282354344,
+      "size": 10258
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r4_m.mp3",
+      "lastModified": 161367690115195,
+      "size": 9317
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r5_h.mp3",
+      "lastModified": 250829647899154,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r5_m.mp3",
+      "lastModified": 98079130480035,
+      "size": 12139
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r6_h.mp3",
+      "lastModified": 67628514238658,
+      "size": 11668
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r6_m.mp3",
+      "lastModified": 269556610873609,
+      "size": 13079
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r7_h.mp3",
+      "lastModified": 126142560662092,
+      "size": 12609
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r7_m.mp3",
+      "lastModified": 18785997400947,
+      "size": 9788
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r8_h.mp3",
+      "lastModified": 200002823097314,
+      "size": 10728
+    },
+    {
+      "url": "audios/tarjetas/tr_m12_r8_m.mp3",
+      "lastModified": 137701892880173,
+      "size": 9788
+    },
+    {
       "url": "data/tarjetas/tarjetas_rapidas.json",
-      "lastModified": 1794801000185,
-      "size": 12342
+      "lastModified": 1794854333593,
+      "size": 15214
     }
   ]
 }
