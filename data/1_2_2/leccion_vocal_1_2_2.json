@@ -1,0 +1,95 @@
+{
+  "leccion": "1.2.2",
+  "home": "leccion_intro.html?leccion=1.2.2",
+  "anterior_primera": "leccion_letra.html?leccion=1.2.2&item=3",
+  "siguiente_final": "leccion_palabra_intro.html?leccion=1.2.2",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.2.2",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.3",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "repaso_final": true,
+  "pasos": [
+    {
+      "tipo": "vocal",
+      "vocal": "ai",
+      "gujarati": "ઐ",
+      "badge": "Vocal 1 de 4",
+      "audio": "audios/clase_1_1/audio_alfa_m_ai.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ai</strong>, como en '<span class=\"det-s\">ai</span>re'. Es la hermana de <span class=\"gu\">એ</span> (e): <span class=\"gu\">એ</span> lleva una rayita arriba y <span class=\"gu\">ઐ</span> lleva dos"
+    },
+    {
+      "tipo": "plana",
+      "vocal": "ai",
+      "roman": "ai",
+      "imagen": "imagenes/Clase_1_1/img_plana_ai.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_ai.mp3"
+    },
+    {
+      "tipo": "matra",
+      "vocal": "ai",
+      "matra": "ૈ",
+      "badge": "Matra 2 de 4",
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_ai.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "ai",
+      "matra": "ૈ",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_pai.mp3",
+        "audios/clase_1_1/audio_m_tai.mp3",
+        "audios/clase_1_1/audio_m_hai.mp3"
+      ],
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_2_2_vo1",
+      "ecuaciones": [
+        {
+          "partes": "પ + ૈ",
+          "resultado": "પૈ"
+        },
+        {
+          "partes": "ત + ૈ",
+          "resultado": "તૈ"
+        },
+        {
+          "partes": "હ + ૈ",
+          "resultado": "હૈ"
+        }
+      ]
+    },
+    {
+      "tipo": "matra",
+      "vocal": "conjuntiva",
+      "matra": "પ્ર",
+      "badge": "Conjuntiva 3 de 4",
+      "imagen": "imagenes/Clase_1_1/img_alfa_conjuntiva_pra.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "conjuntiva",
+      "matra": "પ્ર",
+      "badge": "Palabras con la conjuntiva પ્ર",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_alfa_m_pra.mp3",
+        "audios/clase_1_1/audio_m_prem.mp3",
+        "audios/clase_1_1/audio_m_prakaash.mp3"
+      ],
+      "texto_boton": "Escucha cómo se pegan પ y ર",
+      "reto_flash_json": "Leccion_1_2_2_vo2",
+      "ecuaciones": [
+        {
+          "partes": "પ + ્ + ર",
+          "resultado": "પ્ર"
+        },
+        {
+          "partes": "પ્ર + ે + મ",
+          "resultado": "પ્રેમ"
+        },
+        {
+          "partes": "પ્ર + કા + શ",
+          "resultado": "પ્રકાશ"
+        }
+      ]
+    }
+  ]
+}

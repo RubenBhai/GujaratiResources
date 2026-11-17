@@ -1,0 +1,99 @@
+{
+  "leccion": "1.2.2",
+  "titulo": "Contraste: થ/ય, એ/ઐ y ે/ૈ",
+  "badge": "Contraste",
+  "letters": [
+    {
+      "letter": "થ",
+      "answer": "tha",
+      "audio": "audios/clase_1_1/audio_alfa_m_tha.mp3"
+    },
+    {
+      "letter": "ય",
+      "answer": "ya",
+      "audio": "audios/clase_1_1/audio_alfa_m_ya.mp3"
+    },
+    {
+      "letter": "એ",
+      "answer": "e",
+      "audio": "audios/clase_1_1/audio_alfa_m_e.mp3"
+    },
+    {
+      "letter": "ઐ",
+      "answer": "ai",
+      "audio": "audios/clase_1_1/audio_alfa_m_ai.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "થા",
+      "answer": "thaa",
+      "audio": "audios/clase_1_1/audio_m_thaa.mp3"
+    },
+    {
+      "letter": "યા",
+      "answer": "yaa",
+      "audio": "audios/clase_1_1/audio_m_yaa.mp3"
+    },
+    {
+      "letter": "થુ",
+      "answer": "thu",
+      "audio": "audios/clase_1_1/audio_m_thu.mp3"
+    },
+    {
+      "letter": "યુ",
+      "answer": "yu",
+      "audio": "audios/clase_1_1/audio_m_yu.mp3"
+    },
+    {
+      "letter": "થે",
+      "answer": "the",
+      "audio": "audios/clase_1_1/audio_m_the.mp3"
+    },
+    {
+      "letter": "યે",
+      "answer": "ye",
+      "audio": "audios/clase_1_1/audio_m_ye.mp3"
+    },
+    {
+      "letter": "થો",
+      "answer": "tho",
+      "audio": "audios/clase_1_1/audio_m_tho.mp3"
+    },
+    {
+      "letter": "યો",
+      "answer": "yo",
+      "audio": "audios/clase_1_1/audio_m_yo.mp3"
+    },
+    {
+      "letter": "પે",
+      "answer": "pe",
+      "audio": "audios/clase_1_1/audio_m_pe.mp3"
+    },
+    {
+      "letter": "પૈ",
+      "answer": "pai",
+      "audio": "audios/clase_1_1/audio_m_pai.mp3"
+    },
+    {
+      "letter": "તે",
+      "answer": "te",
+      "audio": "audios/clase_1_1/audio_m_te.mp3"
+    },
+    {
+      "letter": "તૈ",
+      "answer": "tai",
+      "audio": "audios/clase_1_1/audio_m_tai.mp3"
+    },
+    {
+      "letter": "હે",
+      "answer": "he",
+      "audio": "audios/clase_1_1/audio_m_he.mp3"
+    },
+    {
+      "letter": "હૈ",
+      "answer": "hai",
+      "audio": "audios/clase_1_1/audio_m_hai.mp3"
+    }
+  ]
+}

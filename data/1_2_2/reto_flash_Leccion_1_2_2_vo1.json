@@ -1,0 +1,65 @@
+{
+  "leccion": "1.2.2",
+  "letters": [
+    {
+      "letter": "ઐ",
+      "answer": "ai",
+      "audio": "audios/clase_1_1/audio_alfa_m_ai.mp3"
+    },
+    {
+      "letter": "એ",
+      "answer": "e",
+      "audio": "audios/clase_1_1/audio_alfa_m_e.mp3"
+    },
+    {
+      "letter": "જ",
+      "answer": "ja",
+      "audio": "audios/clase_1_1/audio_alfa_m_ja.mp3"
+    },
+    {
+      "letter": "થ",
+      "answer": "tha",
+      "audio": "audios/clase_1_1/audio_alfa_m_tha.mp3"
+    },
+    {
+      "letter": "ય",
+      "answer": "ya",
+      "audio": "audios/clase_1_1/audio_alfa_m_ya.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "પૈ",
+      "answer": "pai",
+      "audio": "audios/clase_1_1/audio_m_pai.mp3"
+    },
+    {
+      "letter": "તૈ",
+      "answer": "tai",
+      "audio": "audios/clase_1_1/audio_m_tai.mp3"
+    },
+    {
+      "letter": "હૈ",
+      "answer": "hai",
+      "audio": "audios/clase_1_1/audio_m_hai.mp3"
+    },
+    {
+      "letter": "પૈસા",
+      "answer": "paisaa",
+      "audio": "audios/clase_1_1/audio_m_paisaa.mp3",
+      "significado": "dinero"
+    },
+    {
+      "letter": "હૈયું",
+      "answer": "haiyuⁿ",
+      "audio": "audios/clase_1_1/audio_m_haiyu(m).mp3",
+      "significado": "corazón"
+    },
+    {
+      "letter": "ઐતિહાસિક",
+      "answer": "aitihaasik",
+      "audio": "audios/clase_1_1/audio_m_aitihaasik.mp3",
+      "significado": "histórico"
+    }
+  ]
+}

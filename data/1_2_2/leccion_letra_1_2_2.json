@@ -1,0 +1,29 @@
+{
+  "leccion": "1.2.2",
+  "home": "leccion_intro.html?leccion=1.2.2",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.2.2",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.3",
+  "letras": [
+    {
+      "consonante": "જ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ja</strong>: como la «j» del inglés <em>jeans</em>, o una «y» fuerte («¡ya!»). <strong>No</strong> es la jota española: <span class=\"gu\">જમીન</span> (ja-miin)",
+      "audio": "audios/clase_1_1/audio_alfa_m_ja.mp3",
+      "reto_flash_json": "Leccion_1_2_2_c1",
+      "plana": "leccion_plana.html?leccion=1.2.2&item=1"
+    },
+    {
+      "consonante": "થ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">tha</strong>: una «t» con un <strong>soplo de aire</strong> al salir. Es la pareja de <span class=\"gu\">ત</span> (ta): <span class=\"gu\">હાથ</span> (haath). Cuidado: se parece a <span class=\"gu\">ય</span>, míralas juntas en el juego de contraste",
+      "audio": "audios/clase_1_1/audio_alfa_m_tha.mp3",
+      "reto_flash_json": "Leccion_1_2_2_c2",
+      "plana": "leccion_plana.html?leccion=1.2.2&item=2"
+    },
+    {
+      "consonante": "ય",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ya</strong> como en '<strong class=\"det-p\"><span class=\"det-s\">ya</span></strong>' o 'yo-yo': <span class=\"gu\">યહોવા</span> (ya-ho-vaa)",
+      "audio": "audios/clase_1_1/audio_alfa_m_ya.mp3",
+      "reto_flash_json": "Leccion_1_2_2_c3",
+      "plana": "leccion_plana.html?leccion=1.2.2&item=3"
+    }
+  ]
+}

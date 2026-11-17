@@ -1,0 +1,145 @@
+{
+  "leccion": "1.2.2",
+  "home": "leccion_intro.html?leccion=1.2.2",
+  "anterior_primera": "leccion_palabra_intro.html?leccion=1.2.2",
+  "practicar": "practica.html?modulo=1.2&leccion=2",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.3",
+  "siguiente_final": "juego.html?leccion=1.2.2",
+  "palabras": [
+    {
+      "gujarati": "યહોવા",
+      "dictado": "યહોવા",
+      "significado": "Jehová",
+      "imagen": "imagenes/Clase_1_1/img_yahovaa.jpg",
+      "pronunciacion": "ય-હ-ો-વ-ા → ya-<strong>ho</strong>-vaa<br>Empieza con la nueva ય",
+      "audioH": "audios/clase_1_1/audio_h_yahovaa.mp3",
+      "audioM": "audios/clase_1_1/audio_m_yahovaa.mp3"
+    },
+    {
+      "gujarati": "જીવન",
+      "dictado": "જીવન",
+      "significado": "vida",
+      "imagen": "imagenes/Clase_1_1/img_jiivan.jpg",
+      "pronunciacion": "જ-ી-વ-ન → <strong>jii</strong>-van<br>Lleva la nueva જ",
+      "audioH": "audios/clase_1_1/audio_h_jiivan.mp3",
+      "audioM": "audios/clase_1_1/audio_m_jiivan.mp3"
+    },
+    {
+      "gujarati": "સમય",
+      "dictado": "સમય",
+      "significado": "tiempo, hora",
+      "imagen": "imagenes/Clase_1_1/img_samay.jpg",
+      "pronunciacion": "સ-મ-ય → sa-<strong>may</strong><br>Como en el diálogo: આજે તો સમય નથી",
+      "audioH": "audios/clase_1_1/audio_h_samay.mp3",
+      "audioM": "audios/clase_1_1/audio_m_samay.mp3"
+    },
+    {
+      "gujarati": "જરૂર",
+      "dictado": "જરૂર",
+      "significado": "necesidad; ¡claro!",
+      "imagen": "imagenes/Clase_1_1/img_jaruur.jpg",
+      "pronunciacion": "જ-ર-ૂ-ર → ja-<strong>ruur</strong><br>હા, જરૂર! = ¡sí, claro!",
+      "audioH": "audios/clase_1_1/audio_h_jaruur.mp3",
+      "audioM": "audios/clase_1_1/audio_m_jaruur.mp3"
+    },
+    {
+      "gujarati": "પ્રકાશ",
+      "dictado": "પ્રકાશ",
+      "significado": "luz",
+      "imagen": "imagenes/Clase_1_1/img_prakaash.jpg",
+      "pronunciacion": "પ્ર-ક-ા-શ → pra-<strong>kaash</strong><br>Lleva la conjuntiva પ્ર",
+      "audioH": "audios/clase_1_1/audio_h_prakaash.mp3",
+      "audioM": "audios/clase_1_1/audio_m_prakaash.mp3"
+    },
+    {
+      "gujarati": "પ્રકાશન",
+      "dictado": "પ્રકાશન",
+      "significado": "publicación (revista, folleto)",
+      "imagen": "imagenes/Clase_1_1/img_prakaashan.jpg",
+      "pronunciacion": "પ્ર-ક-ા-શ-ન → pra-<strong>kaa</strong>-shan<br>En la predicación: «આ પ્રકાશન…»",
+      "audioH": "audios/clase_1_1/audio_h_prakaashan.mp3",
+      "audioM": "audios/clase_1_1/audio_m_prakaashan.mp3"
+    },
+    {
+      "gujarati": "પ્રેમ",
+      "dictado": "પ્રેમ",
+      "significado": "amor",
+      "imagen": "imagenes/Clase_1_1/img_prem.jpg",
+      "pronunciacion": "પ્ર-ે-મ → <strong>prem</strong><br>ઈશ્વર પ્રેમ છે = Dios es amor",
+      "audioH": "audios/clase_1_1/audio_h_prem.mp3",
+      "audioM": "audios/clase_1_1/audio_m_prem.mp3"
+    },
+    {
+      "gujarati": "મજા",
+      "dictado": "મજા",
+      "significado": "alegría, gusto",
+      "imagen": "imagenes/Clase_1_1/img_majaa.jpg",
+      "pronunciacion": "મ-જ-ા → ma-<strong>jaa</strong><br>મજા આવશે! = ¡qué divertido va a ser!",
+      "audioH": "audios/clase_1_1/audio_h_majaa.mp3",
+      "audioM": "audios/clase_1_1/audio_m_majaa.mp3"
+    },
+    {
+      "gujarati": "પૈસા",
+      "dictado": "પૈસા",
+      "significado": "dinero",
+      "imagen": "imagenes/Clase_1_1/img_paisaa.jpg",
+      "pronunciacion": "પ-ૈ-સ-ા → <strong>pai</strong>-saa<br>Lleva la matra ૈ",
+      "audioH": "audios/clase_1_1/audio_h_paisaa.mp3",
+      "audioM": "audios/clase_1_1/audio_m_paisaa.mp3"
+    },
+    {
+      "gujarati": "રાજા",
+      "dictado": "રાજા",
+      "significado": "rey",
+      "imagen": "imagenes/Clase_1_1/img_raajaa.jpg",
+      "pronunciacion": "ર-ા-જ-ા → <strong>raa</strong>-jaa",
+      "audioH": "audios/clase_1_1/audio_h_raajaa.mp3",
+      "audioM": "audios/clase_1_1/audio_m_raajaa.mp3"
+    },
+    {
+      "gujarati": "હાથ",
+      "dictado": "હાથ",
+      "significado": "mano",
+      "imagen": "imagenes/Clase_1_1/img_haath.jpg",
+      "pronunciacion": "હ-ા-થ → <strong>haath</strong><br>Termina en la nueva થ",
+      "audioH": "audios/clase_1_1/audio_h_haath.mp3",
+      "audioM": "audios/clase_1_1/audio_m_haath.mp3"
+    },
+    {
+      "gujarati": "યોહાન",
+      "dictado": "યોહાન",
+      "significado": "Juan (el libro y el apóstol)",
+      "imagen": "imagenes/Clase_1_1/img_yohaan.jpg",
+      "pronunciacion": "ય-ો-હ-ા-ન → yo-<strong>haan</strong><br>«યોહાન ૧૭:૩»",
+      "audioH": "audios/clase_1_1/audio_h_yohaan.mp3",
+      "audioM": "audios/clase_1_1/audio_m_yohaan.mp3"
+    },
+    {
+      "gujarati": "જમીન",
+      "dictado": "જમીન",
+      "significado": "tierra (el suelo, el planeta)",
+      "imagen": "imagenes/Clase_1_1/img_jamiin.jpg",
+      "pronunciacion": "જ-મ-ી-ન → ja-<strong>miin</strong>",
+      "audioH": "audios/clase_1_1/audio_h_jamiin.mp3",
+      "audioM": "audios/clase_1_1/audio_m_jamiin.mp3"
+    },
+    {
+      "gujarati": "હૈયું",
+      "dictado": "હૈયું",
+      "significado": "corazón",
+      "imagen": "imagenes/Clase_1_1/img_haiyu(m).jpg",
+      "pronunciacion": "હ-ૈ-ય-ું → <strong>hai</strong>-yu<sup class=\"nas\">n</sup><br>Lleva la matra ૈ y la ય",
+      "audioH": "audios/clase_1_1/audio_h_haiyu(m).mp3",
+      "audioM": "audios/clase_1_1/audio_m_haiyu(m).mp3"
+    },
+    {
+      "gujarati": "ઐતિહાસિક",
+      "dictado": "ઐતિહાસિક",
+      "significado": "histórico",
+      "imagen": "imagenes/Clase_1_1/img_aitihaasik.jpg",
+      "pronunciacion": "ઐ-ત-િ-હ-ા-સ-િ-ક → ai-ti-<strong>haa</strong>-sik<br>Empieza con la vocal ઐ",
+      "audioH": "audios/clase_1_1/audio_h_aitihaasik.mp3",
+      "audioM": "audios/clase_1_1/audio_m_aitihaasik.mp3"
+    }
+  ]
+}

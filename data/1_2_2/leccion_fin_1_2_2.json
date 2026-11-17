@@ -1,0 +1,113 @@
+{
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "leccion": "1.2.2",
+  "resumen": {
+    "consonantes": 3,
+    "vocales": 1,
+    "palabras": 15,
+    "frase_ejemplo": "આજે તો સમય નથી."
+  },
+  "letras_aprendidas": [
+    "જ",
+    "થ",
+    "ય",
+    "ઐ",
+    "ૈ",
+    "પ્ર"
+  ],
+  "palabras_aprendidas": [
+    {
+      "gujarati": "યહોવા",
+      "se_dice": "ya-ho-vaa",
+      "significa": "Jehová"
+    },
+    {
+      "gujarati": "જીવન",
+      "se_dice": "jii-van",
+      "significa": "vida"
+    },
+    {
+      "gujarati": "સમય",
+      "se_dice": "sa-may",
+      "significa": "tiempo, hora"
+    },
+    {
+      "gujarati": "જરૂર",
+      "se_dice": "ja-ruur",
+      "significa": "necesidad; ¡claro!"
+    },
+    {
+      "gujarati": "પ્રકાશ",
+      "se_dice": "pra-kaash",
+      "significa": "luz"
+    },
+    {
+      "gujarati": "પ્રકાશન",
+      "se_dice": "pra-kaa-shan",
+      "significa": "publicación (revista, folleto)"
+    },
+    {
+      "gujarati": "પ્રેમ",
+      "se_dice": "prem",
+      "significa": "amor"
+    },
+    {
+      "gujarati": "મજા",
+      "se_dice": "ma-jaa",
+      "significa": "alegría, gusto"
+    },
+    {
+      "gujarati": "પૈસા",
+      "se_dice": "pai-saa",
+      "significa": "dinero"
+    },
+    {
+      "gujarati": "રાજા",
+      "se_dice": "raa-jaa",
+      "significa": "rey"
+    },
+    {
+      "gujarati": "હાથ",
+      "se_dice": "haath",
+      "significa": "mano"
+    },
+    {
+      "gujarati": "યોહાન",
+      "se_dice": "yo-haan",
+      "significa": "Juan (el libro y el apóstol)"
+    },
+    {
+      "gujarati": "જમીન",
+      "se_dice": "ja-miin",
+      "significa": "tierra (el suelo, el planeta)"
+    },
+    {
+      "gujarati": "હૈયું",
+      "se_dice": "hai-yuⁿ",
+      "significa": "corazón"
+    },
+    {
+      "gujarati": "ઐતિહાસિક",
+      "se_dice": "ai-ti-haa-sik",
+      "significa": "histórico"
+    }
+  ],
+  "proxima_leccion": {
+    "cantidad_letras": 0,
+    "letras": [],
+    "codigo": "1.2.3"
+  },
+  "kahevat": {
+    "numero": 34,
+    "gujarati": "ઉતાવળે આંબા ન પાકે",
+    "se_dice": "u-taa-va-ḷe aaⁿ-baa na paa-ke",
+    "literal": "Con prisa no maduran los mangos",
+    "significa": "Las cosas buenas llevan su tiempo",
+    "equivalente": "Sin prisa, pero sin pausa",
+    "cuando": "Cuando alguien quiere todo enseguida: hoy no hay tiempo, mejor el domingo y sin prisas",
+    "conocidas": "કમછઅઆએઓાેોસરહઉુંનતશઇઈિીણપવઊૂજથયઐૈ",
+    "audio_m": "audios/clase_1_1/kahevat_1_2_2_m.mp3",
+    "audio_h": "audios/clase_1_1/kahevat_1_2_2_h.mp3"
+  }
+}

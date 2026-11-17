@@ -1,0 +1,57 @@
+{
+  "leccion": "1.2.2",
+  "home": "leccion_intro.html?leccion=1.2.2",
+  "badge": "Canta en gujarati",
+  "titulo": "Aprende cantando",
+  "lead": "Canto 20: તમારો વહાલો દીકરો આપ્યો — «Diste a tu Hijo querido». Con lo que ya sabes puedes leer dos de cada tres palabras.",
+  "antes": {
+    "titulo": "Busca estas en la letra",
+    "palabras": [
+      {
+        "gu": "યહોવા",
+        "es": "Jehová"
+      },
+      {
+        "gu": "જીવન",
+        "es": "vida"
+      },
+      {
+        "gu": "પ્રેમ",
+        "es": "amor"
+      },
+      {
+        "gu": "સાથ",
+        "es": "compañía, apoyo"
+      }
+    ]
+  },
+  "escuchar": {
+    "titulo": "Primero, lee con la música",
+    "descripcion": "Suena la música con la letra en pantalla. Esta vez no cantes: sigue la letra con la vista y busca las palabras de la lección.",
+    "boton": "📖 Leer con la música",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si leíste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૨૦-તમારો-વહાલો-દીકરો-આપ્યો/?content=video"
+  },
+  "cantar": {
+    "titulo": "Ahora, canta tú",
+    "descripcion": "La misma música y la misma letra. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
+    "boton": "🎤 Cantar",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si cantaste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૨૦-તમારો-વહાલો-દીકરો-આપ્યો/?content=video"
+  },
+  "despues": {
+    "titulo": "Después de cantar",
+    "escuchar": [
+      "Tres palabras de esta lección están en la canción: <b class=\"gu\">યહોવા</b>, <b class=\"gu\">જીવન</b> y <b class=\"gu\">પ્રેમ</b>.",
+      "En el título está <b class=\"gu\">દીકરો</b>, «hijo». Su primera letra, <b class=\"gu\">દ</b>, la aprendes en la próxima lección."
+    ],
+    "cantar": [
+      "¿Encontraste <b class=\"gu\">જીવન</b> y <b class=\"gu\">સાથ</b>?",
+      "¿Cuántas veces cantaste <b class=\"gu\">યહોવા</b>?"
+    ]
+  },
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.2.2",
+  "continuar_caption": "Continuar →"
+}

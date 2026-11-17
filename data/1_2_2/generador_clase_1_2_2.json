@@ -1,0 +1,109 @@
+{
+  "leccion": "1.2.2",
+  "titulo": "Arma tus propias oraciones",
+  "subtitulo": "Elige una opción de cada columna. Todas las combinaciones son correctas.",
+  "generadores": [
+    {
+      "nombre": "Sí o no",
+      "instruccion": "Con las mismas piezas se afirma (છે) y se niega (નથી).",
+      "columnas": [
+        {
+          "pregunta": "¿qué?",
+          "pregunta_gu": "શું?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "આ પાણી",
+              "es": "esto … agua",
+              "audio": "audios/clase_1_1/audio_m_aa_paanii.mp3"
+            },
+            {
+              "gu": "આ મારું પુસ્તક",
+              "es": "este … mi libro",
+              "audio": "audios/clase_1_1/audio_m_aa_maaru(m)_pustak.mp3"
+            },
+            {
+              "gu": "પરેશ સુરતમાં",
+              "es": "Paresh … en Surat",
+              "audio": "audios/clase_1_1/audio_m_paresh_suratmaa(m).mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿sí o no?",
+          "pregunta_gu": "છે / નથી",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "છે",
+              "es": "es / está",
+              "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+            },
+            {
+              "gu": "નથી",
+              "es": "no es / no está",
+              "audio": "audios/clase_1_1/audio_m_nathii.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "¿Quién no está listo?",
+      "instruccion": "Con «sí» cambia: હું તૈયાર છું · તમે તૈયાર છો · રોશની તૈયાર છે. Con નથી, las tres son iguales.",
+      "columnas": [
+        {
+          "pregunta": "¿quién?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "હું",
+              "es": "yo",
+              "audio": "audios/clase_1_1/audio_m_hu(m).mp3"
+            },
+            {
+              "gu": "તમે",
+              "es": "usted",
+              "audio": "audios/clase_1_1/audio_m_tame.mp3"
+            },
+            {
+              "gu": "રોશની",
+              "es": "Roshni",
+              "audio": "audios/clase_1_1/audio_m_roshnii.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "listo",
+          "pregunta_gu": "તૈયાર",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "તૈયાર",
+              "es": "listo, lista",
+              "audio": "audios/clase_1_1/audio_m_taiyaar.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "no",
+          "pregunta_gu": "નથી",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "નથી",
+              "es": "no está",
+              "audio": "audios/clase_1_1/audio_m_nathii.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "leccion": "1.2.2",
+  "titulo": "¡A pensar!",
+  "intro": "Escucha, lee o mira, y responde. Entiende lo que pasa y elige la respuesta correcta.",
+  "actividades": [
+    {
+      "id": "a1",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "આજે તો સમય નથી."
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué dice Vina?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "hoy no hay tiempo",
+              "correcta": true
+            },
+            {
+              "texto": "hoy hay tiempo"
+            },
+            {
+              "texto": "el domingo no hay tiempo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "estimulo": {
+        "tipo": "imagen",
+        "imagen": "imagenes/Clase_1_1/img_pustak_noinfo.jpg"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué frase es verdad?",
+          "modo": "opcion",
+          "opciones_idioma": "gu",
+          "opciones": [
+            {
+              "texto": "આ પાણી નથી",
+              "correcta": true
+            },
+            {
+              "texto": "આ પાણી છે"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a3",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_h_pan_mane_ras_nathii.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué te dicen en la puerta?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "pero no me interesa",
+              "correcta": true
+            },
+            {
+              "texto": "sí, me interesa"
+            },
+            {
+              "texto": "no tengo tiempo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "શું થયું?"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué pregunta Manisha?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "¿qué pasó?",
+              "correcta": true
+            },
+            {
+              "texto": "¿cómo está?"
+            },
+            {
+              "texto": "¿adónde va?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a5",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_jiivan.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué es?",
+          "modo": "imagen",
+          "opciones": [
+            {
+              "imagen": "imagenes/Clase_1_1/img_jiivan_noinfo.jpg",
+              "correcta": true
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_prakaash_noinfo.jpg"
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_jamiin_noinfo.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a6",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/audio_m_prakaash.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué es?",
+          "modo": "imagen",
+          "opciones": [
+            {
+              "imagen": "imagenes/Clase_1_1/img_prakaash_noinfo.jpg",
+              "correcta": true
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_prem_noinfo.jpg"
+            },
+            {
+              "imagen": "imagenes/Clase_1_1/img_paisaa_noinfo.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a7",
+      "estimulo": {
+        "tipo": "audio",
+        "audio": "audios/clase_1_1/dialogo_1_2_2_03.mp3"
+      },
+      "preguntas": [
+        {
+          "enunciado": "Ordena lo que escuchaste",
+          "modo": "ordenar",
+          "respuesta": [
+            "આજે",
+            "અમારી",
+            "સાથે",
+            "જમવા",
+            "આવો",
+            "ને"
+          ],
+          "distractores": [
+            "તમારી",
+            "નથી"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a8",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "હું તો તૈયાર છું!"
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué dice Roshni?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "¡yo ya estoy lista!",
+              "correcta": true
+            },
+            {
+              "texto": "no estoy lista"
+            },
+            {
+              "texto": "¿estás lista?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a9",
+      "estimulo": {
+        "tipo": "texto",
+        "texto": "રોશની તૈયાર નથી."
+      },
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa?",
+          "modo": "opcion",
+          "opciones_idioma": "es",
+          "opciones": [
+            {
+              "texto": "Roshni no está lista",
+              "correcta": true
+            },
+            {
+              "texto": "Roshni está lista"
+            },
+            {
+              "texto": "Roshni no está"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

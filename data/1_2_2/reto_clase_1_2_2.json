@@ -1,0 +1,136 @@
+{
+  "leccion": "1.2.2",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "nivel1": {
+    "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
+    "maxSesiones": 2,
+    "texto": "આ મનિષા છે. આજે વીણા પાસે સમય નથી. રોહન અને રોશની પણ આવશે. રોશની તૈયાર છે. મજા આવશે!",
+    "elementos": [
+      "જ",
+      "થ",
+      "ય",
+      "ૈ",
+      "નથી"
+    ]
+  },
+  "nivel2": {
+    "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
+    "sesiones": [
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_2_audio_1.mp3",
+        "elemento": "નથી",
+        "respuesta": 3
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_2_audio_2.mp3",
+        "elemento": "મજા",
+        "respuesta": 3
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_2_audio_3.mp3",
+        "elemento": "પ્રેમ",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_2_audio_4.mp3",
+        "elemento": "તૈયાર",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_2_audio_5.mp3",
+        "elemento": "સુરતમાં",
+        "respuesta": 2
+      }
+    ]
+  },
+  "nivel3": {
+    "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
+    "maxSesiones": 2,
+    "elementos": [
+      {
+        "gujarati": "હાય વીણા! મજામાં ને?"
+      },
+      {
+        "gujarati": "આજે તો સમય નથી"
+      },
+      {
+        "gujarati": "હા, જરૂર!"
+      },
+      {
+        "gujarati": "મજા આવશે!"
+      }
+    ]
+  },
+  "nivel4": {
+    "instruccion": "Escucha el audio y toca las palabras en Gujarati para completar la oración.",
+    "sesiones": [
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_2_02.mp3",
+        "oracion_completa": "હા, હું મજામાં છું.",
+        "espanol": "sí, estoy muy bien"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_2_04.mp3",
+        "oracion_completa": "આજે? આજે તો સમય નથી.",
+        "espanol": "¿hoy? hoy no hay tiempo"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_2_08.mp3",
+        "oracion_completa": "હા, જરૂર!",
+        "espanol": "¡sí, claro!"
+      }
+    ]
+  },
+  "nivel6": {
+    "instruccion": "Escucha cada parte y repítela en voz alta. La frase irá creciendo.",
+    "oraciones": [
+      {
+        "oracion_completa": "આજે તો સમય નથી",
+        "espanol": "Hoy no hay tiempo",
+        "fragmentos": [
+          {
+            "texto": "નથી",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_01_frag_1.mp3"
+          },
+          {
+            "texto": "સમય નથી",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_01_frag_2.mp3"
+          },
+          {
+            "texto": "તો સમય નથી",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_01_frag_3.mp3"
+          },
+          {
+            "texto": "આજે તો સમય નથી",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_01_frag_4.mp3"
+          }
+        ]
+      },
+      {
+        "oracion_completa": "હું તો તૈયાર છું",
+        "espanol": "¡Yo ya estoy lista!",
+        "fragmentos": [
+          {
+            "texto": "છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_02_frag_1.mp3"
+          },
+          {
+            "texto": "તૈયાર છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_02_frag_2.mp3"
+          },
+          {
+            "texto": "તો તૈયાર છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_02_frag_3.mp3"
+          },
+          {
+            "texto": "હું તો તૈયાર છું",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_2_02_frag_4.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "video_jw": false,
+  "cantar_jw": true
+}

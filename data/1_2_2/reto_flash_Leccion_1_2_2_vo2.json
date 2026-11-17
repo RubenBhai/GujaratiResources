@@ -1,0 +1,40 @@
+{
+  "leccion": "1.2.2",
+  "letters": [
+    {
+      "letter": "પ",
+      "answer": "pa",
+      "audio": "audios/clase_1_1/audio_alfa_m_pa.mp3"
+    },
+    {
+      "letter": "ર",
+      "answer": "ra",
+      "audio": "audios/clase_1_1/audio_alfa_m_ra.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "પ્ર",
+      "answer": "pra",
+      "audio": "audios/clase_1_1/audio_alfa_m_pra.mp3"
+    },
+    {
+      "letter": "પ્રેમ",
+      "answer": "prem",
+      "audio": "audios/clase_1_1/audio_m_prem.mp3",
+      "significado": "amor"
+    },
+    {
+      "letter": "પ્રકાશ",
+      "answer": "prakaash",
+      "audio": "audios/clase_1_1/audio_m_prakaash.mp3",
+      "significado": "luz"
+    },
+    {
+      "letter": "પ્રકાશન",
+      "answer": "prakaashan",
+      "audio": "audios/clase_1_1/audio_m_prakaashan.mp3",
+      "significado": "publicación (revista, folleto)"
+    }
+  ]
+}

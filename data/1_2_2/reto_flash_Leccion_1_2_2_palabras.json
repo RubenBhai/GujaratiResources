@@ -1,0 +1,117 @@
+{
+  "leccion": "1.2.2",
+  "titulo": "Reto relámpago de palabras",
+  "badge": "Palabras",
+  "unidad": "palabras",
+  "estilo": "palabras",
+  "columnas": 2,
+  "espera_ms": 2500,
+  "vueltas": 3,
+  "letters": [
+    {
+      "letter": "યહોવા",
+      "answer": "yahovaa",
+      "audio": "audios/clase_1_1/audio_m_yahovaa.mp3",
+      "significado": "Jehová",
+      "audio_h": "audios/clase_1_1/audio_h_yahovaa.mp3"
+    },
+    {
+      "letter": "જીવન",
+      "answer": "jiivan",
+      "audio": "audios/clase_1_1/audio_m_jiivan.mp3",
+      "significado": "vida",
+      "audio_h": "audios/clase_1_1/audio_h_jiivan.mp3"
+    },
+    {
+      "letter": "સમય",
+      "answer": "samay",
+      "audio": "audios/clase_1_1/audio_m_samay.mp3",
+      "significado": "tiempo, hora",
+      "audio_h": "audios/clase_1_1/audio_h_samay.mp3"
+    },
+    {
+      "letter": "જરૂર",
+      "answer": "jaruur",
+      "audio": "audios/clase_1_1/audio_m_jaruur.mp3",
+      "significado": "necesidad; ¡claro!",
+      "audio_h": "audios/clase_1_1/audio_h_jaruur.mp3"
+    },
+    {
+      "letter": "પ્રકાશ",
+      "answer": "prakaash",
+      "audio": "audios/clase_1_1/audio_m_prakaash.mp3",
+      "significado": "luz",
+      "audio_h": "audios/clase_1_1/audio_h_prakaash.mp3"
+    },
+    {
+      "letter": "પ્રકાશન",
+      "answer": "prakaashan",
+      "audio": "audios/clase_1_1/audio_m_prakaashan.mp3",
+      "significado": "publicación (revista, folleto)",
+      "audio_h": "audios/clase_1_1/audio_h_prakaashan.mp3"
+    },
+    {
+      "letter": "પ્રેમ",
+      "answer": "prem",
+      "audio": "audios/clase_1_1/audio_m_prem.mp3",
+      "significado": "amor",
+      "audio_h": "audios/clase_1_1/audio_h_prem.mp3"
+    },
+    {
+      "letter": "મજા",
+      "answer": "majaa",
+      "audio": "audios/clase_1_1/audio_m_majaa.mp3",
+      "significado": "alegría, gusto",
+      "audio_h": "audios/clase_1_1/audio_h_majaa.mp3"
+    },
+    {
+      "letter": "પૈસા",
+      "answer": "paisaa",
+      "audio": "audios/clase_1_1/audio_m_paisaa.mp3",
+      "significado": "dinero",
+      "audio_h": "audios/clase_1_1/audio_h_paisaa.mp3"
+    },
+    {
+      "letter": "રાજા",
+      "answer": "raajaa",
+      "audio": "audios/clase_1_1/audio_m_raajaa.mp3",
+      "significado": "rey",
+      "audio_h": "audios/clase_1_1/audio_h_raajaa.mp3"
+    },
+    {
+      "letter": "હાથ",
+      "answer": "haath",
+      "audio": "audios/clase_1_1/audio_m_haath.mp3",
+      "significado": "mano",
+      "audio_h": "audios/clase_1_1/audio_h_haath.mp3"
+    },
+    {
+      "letter": "યોહાન",
+      "answer": "yohaan",
+      "audio": "audios/clase_1_1/audio_m_yohaan.mp3",
+      "significado": "Juan (el libro y el apóstol)",
+      "audio_h": "audios/clase_1_1/audio_h_yohaan.mp3"
+    },
+    {
+      "letter": "જમીન",
+      "answer": "jamiin",
+      "audio": "audios/clase_1_1/audio_m_jamiin.mp3",
+      "significado": "tierra (el suelo, el planeta)",
+      "audio_h": "audios/clase_1_1/audio_h_jamiin.mp3"
+    },
+    {
+      "letter": "હૈયું",
+      "answer": "haiyuⁿ",
+      "audio": "audios/clase_1_1/audio_m_haiyu(m).mp3",
+      "significado": "corazón",
+      "audio_h": "audios/clase_1_1/audio_h_haiyu(m).mp3"
+    },
+    {
+      "letter": "ઐતિહાસિક",
+      "answer": "aitihaasik",
+      "audio": "audios/clase_1_1/audio_m_aitihaasik.mp3",
+      "significado": "histórico",
+      "audio_h": "audios/clase_1_1/audio_h_aitihaasik.mp3"
+    }
+  ]
+}

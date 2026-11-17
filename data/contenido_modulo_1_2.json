@@ -25,9 +25,9 @@
         },
         {
           "numero": 2,
-          "titulo": "Muy pronto",
-          "sub_html": "consonantes: <strong>જ થ ય</strong><br>vocal independiente: <strong>ઐ</strong><br>vocal abreviada (matra): <strong>ૈ</strong>",
-          "estado": "proxima",
+          "titulo": "આજે તો સમય નથી - hoy no hay tiempo",
+          "sub_html": "consonantes: <strong>જ થ ય</strong><br>vocal independiente: <strong>ઐ</strong><br>vocal abreviada (matra): <strong>ૈ</strong><br>conjuntiva: <strong>પ + ર = પ્ર</strong> (se combinan)",
+          "estado": "activa",
           "codigo_leccion": "1.2.2"
         },
         {

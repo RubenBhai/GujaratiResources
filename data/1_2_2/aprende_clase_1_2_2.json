@@ -1,0 +1,125 @@
+{
+  "leccion": "1.2.2",
+  "items": [
+    {
+      "id": "palabra_1",
+      "categoria": "palabra",
+      "gujarati": "યહોવા",
+      "significado": "Jehová",
+      "audioM": "audios/clase_1_1/audio_m_yahovaa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_yahovaa_noinfo.jpg"
+    },
+    {
+      "id": "palabra_2",
+      "categoria": "palabra",
+      "gujarati": "જીવન",
+      "significado": "vida",
+      "audioM": "audios/clase_1_1/audio_m_jiivan.mp3",
+      "imagen": "imagenes/Clase_1_1/img_jiivan_noinfo.jpg"
+    },
+    {
+      "id": "palabra_3",
+      "categoria": "palabra",
+      "gujarati": "સમય",
+      "significado": "tiempo, hora",
+      "audioM": "audios/clase_1_1/audio_m_samay.mp3",
+      "imagen": "imagenes/Clase_1_1/img_samay_noinfo.jpg"
+    },
+    {
+      "id": "palabra_4",
+      "categoria": "palabra",
+      "gujarati": "જરૂર",
+      "significado": "necesidad; ¡claro!",
+      "audioM": "audios/clase_1_1/audio_m_jaruur.mp3",
+      "imagen": "imagenes/Clase_1_1/img_jaruur_noinfo.jpg"
+    },
+    {
+      "id": "palabra_5",
+      "categoria": "palabra",
+      "gujarati": "પ્રકાશ",
+      "significado": "luz",
+      "audioM": "audios/clase_1_1/audio_m_prakaash.mp3",
+      "imagen": "imagenes/Clase_1_1/img_prakaash_noinfo.jpg"
+    },
+    {
+      "id": "palabra_6",
+      "categoria": "palabra",
+      "gujarati": "પ્રકાશન",
+      "significado": "publicación (revista, folleto)",
+      "audioM": "audios/clase_1_1/audio_m_prakaashan.mp3",
+      "imagen": "imagenes/Clase_1_1/img_prakaashan_noinfo.jpg"
+    },
+    {
+      "id": "palabra_7",
+      "categoria": "palabra",
+      "gujarati": "પ્રેમ",
+      "significado": "amor",
+      "audioM": "audios/clase_1_1/audio_m_prem.mp3",
+      "imagen": "imagenes/Clase_1_1/img_prem_noinfo.jpg"
+    },
+    {
+      "id": "palabra_8",
+      "categoria": "palabra",
+      "gujarati": "મજા",
+      "significado": "alegría, gusto",
+      "audioM": "audios/clase_1_1/audio_m_majaa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_majaa_noinfo.jpg"
+    },
+    {
+      "id": "palabra_9",
+      "categoria": "palabra",
+      "gujarati": "પૈસા",
+      "significado": "dinero",
+      "audioM": "audios/clase_1_1/audio_m_paisaa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_paisaa_noinfo.jpg"
+    },
+    {
+      "id": "palabra_10",
+      "categoria": "palabra",
+      "gujarati": "રાજા",
+      "significado": "rey",
+      "audioM": "audios/clase_1_1/audio_m_raajaa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_raajaa_noinfo.jpg"
+    },
+    {
+      "id": "palabra_11",
+      "categoria": "palabra",
+      "gujarati": "હાથ",
+      "significado": "mano",
+      "audioM": "audios/clase_1_1/audio_m_haath.mp3",
+      "imagen": "imagenes/Clase_1_1/img_haath_noinfo.jpg"
+    },
+    {
+      "id": "palabra_12",
+      "categoria": "palabra",
+      "gujarati": "યોહાન",
+      "significado": "Juan (el libro y el apóstol)",
+      "audioM": "audios/clase_1_1/audio_m_yohaan.mp3",
+      "imagen": "imagenes/Clase_1_1/img_yohaan_noinfo.jpg"
+    },
+    {
+      "id": "palabra_13",
+      "categoria": "palabra",
+      "gujarati": "જમીન",
+      "significado": "tierra (el suelo, el planeta)",
+      "audioM": "audios/clase_1_1/audio_m_jamiin.mp3",
+      "imagen": "imagenes/Clase_1_1/img_jamiin_noinfo.jpg"
+    },
+    {
+      "id": "palabra_14",
+      "categoria": "palabra",
+      "gujarati": "હૈયું",
+      "significado": "corazón",
+      "audioM": "audios/clase_1_1/audio_m_haiyu(m).mp3",
+      "imagen": "imagenes/Clase_1_1/img_haiyu(m)_noinfo.jpg"
+    },
+    {
+      "id": "palabra_15",
+      "categoria": "palabra",
+      "gujarati": "ઐતિહાસિક",
+      "significado": "histórico",
+      "audioM": "audios/clase_1_1/audio_m_aitihaasik.mp3",
+      "imagen": "imagenes/Clase_1_1/img_aitihaasik_noinfo.jpg"
+    }
+  ]
+}

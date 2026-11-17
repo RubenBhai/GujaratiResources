@@ -1,0 +1,158 @@
+{
+  "leccion": "1.2.2",
+  "home": "leccion_intro.html?leccion=1.2.2",
+  "salir": "juego.html?leccion=1.2.2",
+  "fin": "leccion_pensarEnGUJ.html?leccion=1.2.2",
+  "intro": {
+    "titulo": "Algunas cosas curiosas del idioma",
+    "texto": "Antes de terminar, vamos a entender <strong>cómo se dice que no</strong> en gujarati, y las frases hechas del diálogo."
+  },
+  "notas": [
+    {
+      "destacado": true,
+      "practica_flash": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Para negar «es / está / hay», <span class=\"gu\">છે</span> se cambia por <span class=\"gu\">નથી</span>.",
+          "gu": "નથી"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આ પાણી નથી",
+          "literal": "esto agua no-es",
+          "significado": "esto no es agua"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "સમય નથી",
+          "literal": "tiempo no-hay",
+          "significado": "no hay tiempo"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "પરેશ સુરતમાં નથી",
+          "literal": "Paresh Surat-en no-está",
+          "significado": "Paresh no está en Surat"
+        }
+      ]
+    },
+    {
+      "destacado": true,
+      "practica_flash": [
+        "5"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "<strong>El truco:</strong> <span class=\"gu\">નથી</span> no cambia según quién. <span class=\"gu\">છું</span>, <span class=\"gu\">છો</span> y <span class=\"gu\">છે</span> se vuelven todos <span class=\"gu\">નથી</span>."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હું તૈયાર નથી",
+          "literal": "yo listo no-estoy",
+          "significado": "no estoy listo (lista)"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તમે તૈયાર નથી",
+          "literal": "usted listo no-está",
+          "significado": "usted no está listo"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "રોશની તૈયાર નથી",
+          "literal": "Roshni lista no-está",
+          "significado": "Roshni no está lista"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "6"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "<strong>En la puerta:</strong> la respuesta que más se oye es <span class=\"gu\">પણ મને રસ નથી</span>. Si la reconoces, no te asustas: sonríe, da las gracias y despídete con cariño."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "પણ મને રસ નથી",
+          "literal": "pero a-mí interés no-hay",
+          "significado": "pero no me interesa"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "7",
+        "8"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Frases hechas del diálogo (su explicación llega más adelante):"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "મજામાં ને?",
+          "literal": "en-alegría ¿no?",
+          "significado": "¿todo bien? (ને pide que te digan «sí»)"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "શું થયું?",
+          "literal": "qué pasó",
+          "significado": "¿qué pasó?"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હા, જરૂર!",
+          "literal": "sí, necesidad",
+          "significado": "¡sí, claro!"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હું સમજી શકું છું",
+          "literal": "yo entender puedo",
+          "significado": "lo entiendo"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હવે મારે જવું જોઈએ",
+          "literal": "ahora a-mí ir hace-falta",
+          "significado": "ya tengo que irme (para cerrar una visita)"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આવજે / આવજો",
+          "literal": "ven / vengan",
+          "significado": "ven (tú) / vengan (ustedes); también es «adiós»"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "હું તો તૈયાર છું!",
+          "literal": "yo sí-que lista estoy",
+          "significado": "¡yo ya estoy lista! (તો da fuerza)"
+        }
+      ]
+    }
+  ],
+  "fin_pantalla": {
+    "titulo": "Ya sabes decir que no",
+    "texto": "Con <span class=\"gu\">નથી</span> puedes negar cualquier cosa, sin importar quién. ¡Vamos a crear algunas oraciones!",
+    "boton_extra": {
+      "habilitado": true,
+      "caption": "🎉Vamos a crear oraciones🥳",
+      "pagina": "compone.html"
+    }
+  }
+}

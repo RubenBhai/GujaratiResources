@@ -101,6 +101,7 @@ function cargarActividad(idx){
 
   if(est.tipo === 'video')      montarEstimuloVideo(est);
   else if(est.tipo === 'texto') { montarEstimuloTexto(est); iniciarPreguntasSecuenciales(); }
+  else if(est.tipo === 'imagen') { montarEstimuloImagen(est); iniciarPreguntasSecuenciales(); }
   else                          { montarEstimuloAudio(est); iniciarPreguntasSecuenciales(); }
 }
 
@@ -124,6 +125,16 @@ function montarEstimuloTexto(est){
       '<div class="target-gu gu" id="est-texto"></div>' +
     '</div>';
   document.getElementById('est-texto').textContent = est.texto || '';
+}
+
+/* ── ESTÍMULO: IMAGEN (Claude, 16-nov-2026) ── */
+function montarEstimuloImagen(est){
+  zEstimulo.innerHTML =
+    '<div class="target-card">' +
+      '<div class="target-label">' + (est.etiqueta || 'Mira la imagen') + '</div>' +
+      '<img id="est-imagen" alt="" style="display:block;max-width:100%;max-height:36vh;margin:8px auto 0;border-radius:12px">' +
+    '</div>';
+  document.getElementById('est-imagen').src = est.imagen;
 }
 
 /* ── ESTÍMULO: VIDEO (MP4 + anclas por segundo) ── */
