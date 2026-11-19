@@ -1,7 +1,6 @@
-/* tip.js — Tips para las reuniones (Claude, 16-nov-2026)
-   tip.html          → lista de semanas, de la más reciente a la más antigua
-   tip.html?s=<id>   → el tip de esa semana · tip.html?s=ultimo → el de esta semana
-   Datos: data/tips/tips.json (índice) y data/tips/tip_<id>.json (contenido ya preparado).
+/* tip.js — Tips para las reuniones (Claude, 16-nov-2026; formato único desde el 19-nov-2026)
+   tip.html → el tip de esta semana. Hay un solo tip: cada lunes su contenido se reemplaza por el nuevo
+   (decisión de Rubén: una semana pasada ya nadie la mira). Datos: data/tips/tip.json.
    Audio de la conversación: audios/tarjetas/<audio>_<m|h>.mp3 (tarjeta 12 de las Tarjetas rápidas). */
 (function () {
   'use strict';
@@ -44,28 +43,9 @@
       };
     });
   }
-  function lista(idx) {
-    var semanas = idx.semanas.slice().sort(function (a, b) { return a.id < b.id ? 1 : -1; });   // de la más reciente a la más antigua
-    $('lista-semanas').innerHTML = semanas.map(function (s) {
-      var nueva = s.id === idx.actual ? '<span class="nueva">Esta semana</span>' : '';
-      return '<li><a class="semana" href="tip.html?s=' + encodeURIComponent(s.id) + '">' +
-        '<span class="sem-fecha">' + s.semana + nueva + '</span>' +
-        '<span class="sem-gu gu">' + s.titulo_gu + '</span>' +
-        '<span class="sem-es">' + s.titulo_es + '</span></a></li>';
-    }).join('');
-    $('cargando').hidden = true; $('vista-lista').hidden = false;
-  }
-  var pedida = new URLSearchParams(location.search).get('s');
-  fetch('data/tips/tips.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (idx) {
-    if (!pedida) { lista(idx); return null; }
-    var id = pedida === 'ultimo' ? idx.actual : pedida;
-    var sem = idx.semanas.filter(function (s) { return s.id === id; })[0];
-    if (!sem) { lista(idx); return null; }
-    $('nav-salir').href = 'tip.html'; $('nav-salir').textContent = '← Semanas';
-    return fetch(sem.archivo, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (tip) {
-      $('cargando').hidden = true; $('vista-tip').hidden = false; preparar(tip);
-    });
+  fetch('data/tips/tip.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('404'); return r.json(); }).then(function (tip) {
+    $('cargando').hidden = true; $('vista-tip').hidden = false; preparar(tip);
   }).catch(function () {
-    $('cargando').textContent = 'No pude cargar los tips. Revisa la conexión e inténtalo otra vez.';
+    $('cargando').textContent = 'No pude cargar el tip. Revisa la conexión e inténtalo otra vez.';
   });
 })();
