@@ -1,0 +1,1326 @@
+{
+  "leccion": "1.2.3",
+  "_generadoDesde": "https://piensaengujarati.com/",
+  "assets": [
+    {
+      "url": "audios/clase_1_1/Clase_1_1_Correcto.mp3",
+      "lastModified": 1795083667000,
+      "size": 71647
+    },
+    {
+      "url": "audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
+      "lastModified": 1795083667000,
+      "size": 70741
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_ai.mp3",
+      "lastModified": 1795083667000,
+      "size": 3832
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_au.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_ba.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_da.mp3",
+      "lastModified": 1795083667000,
+      "size": 5556
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_hya.mp3",
+      "lastModified": 1795083667000,
+      "size": 4929
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_ja.mp3",
+      "lastModified": 1795083667000,
+      "size": 4145
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_ka.mp3",
+      "lastModified": 1795083667000,
+      "size": 67782
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_kya.mp3",
+      "lastModified": 1795083667000,
+      "size": 4929
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_la.mp3",
+      "lastModified": 1795083667000,
+      "size": 6183
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_ma.mp3",
+      "lastModified": 1795083667000,
+      "size": 75308
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_na.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_nna.mp3",
+      "lastModified": 1795083667000,
+      "size": 6026
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_pa.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_sha.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_ta.mp3",
+      "lastModified": 1795083667000,
+      "size": 6183
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_tha.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_tya.mp3",
+      "lastModified": 1795083667000,
+      "size": 4302
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_va.mp3",
+      "lastModified": 1795083667000,
+      "size": 4929
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_h_ya.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_aa.mp3",
+      "lastModified": 1795083667000,
+      "size": 28301
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ai.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_au.mp3",
+      "lastModified": 1795083667000,
+      "size": 4302
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ba.mp3",
+      "lastModified": 1795083667000,
+      "size": 3048
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_da.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ha.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_hya.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ja.mp3",
+      "lastModified": 1795083667000,
+      "size": 4145
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ka.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_kya.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_la.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ma.mp3",
+      "lastModified": 1795083667000,
+      "size": 28991
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_na.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_nna.mp3",
+      "lastModified": 1795083667000,
+      "size": 5869
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_o.mp3",
+      "lastModified": 1795083667000,
+      "size": 75308
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_pa.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_sha.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ta.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_tha.mp3",
+      "lastModified": 1795083667000,
+      "size": 4145
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_tya.mp3",
+      "lastModified": 1795083667000,
+      "size": 4145
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_va.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_alfa_m_ya.mp3",
+      "lastModified": 1795083667000,
+      "size": 3832
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_baaibal.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_balidaan.mp3",
+      "lastModified": 1795083667000,
+      "size": 8220
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_darvaajo.mp3",
+      "lastModified": 1795083667000,
+      "size": 7750
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_dau.mp3",
+      "lastModified": 1795083667000,
+      "size": 7280
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_divas.mp3",
+      "lastModified": 1795083667000,
+      "size": 6496
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_duniyaa.mp3",
+      "lastModified": 1795083667000,
+      "size": 11355
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_javaab.mp3",
+      "lastModified": 1795083667000,
+      "size": 6183
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_kalam.mp3",
+      "lastModified": 1795083667000,
+      "size": 4615
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_lau.mp3",
+      "lastModified": 1795083667000,
+      "size": 5086
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_loko.mp3",
+      "lastModified": 1795083667000,
+      "size": 7280
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_madad.mp3",
+      "lastModified": 1795083667000,
+      "size": 4459
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_mulaakaat.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_nambar.mp3",
+      "lastModified": 1795083667000,
+      "size": 7750
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_sau.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_sauthii.mp3",
+      "lastModified": 1795083667000,
+      "size": 6183
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_savaal.mp3",
+      "lastModified": 1795083667000,
+      "size": 4459
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_sundar.mp3",
+      "lastModified": 1795083667000,
+      "size": 7280
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_tamaarii_paase_kyaare_samay_chhe.mp3",
+      "lastModified": 1795083667000,
+      "size": 9317
+    },
+    {
+      "url": "audios/clase_1_1/audio_h_yaad.mp3",
+      "lastModified": 1795083667000,
+      "size": 4929
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_ame.mp3",
+      "lastModified": 1795083667000,
+      "size": 7750
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_baa.mp3",
+      "lastModified": 1795083667000,
+      "size": 4459
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_baaibal.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_baaibalnii.mp3",
+      "lastModified": 1795083667000,
+      "size": 7280
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_balidaan.mp3",
+      "lastModified": 1795083667000,
+      "size": 7280
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_be.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_bii.mp3",
+      "lastModified": 1795083667000,
+      "size": 5556
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_bo.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_bu.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_chhe.mp3",
+      "lastModified": 1795083667000,
+      "size": 6183
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_chhiie.mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_chho.mp3",
+      "lastModified": 1795083667000,
+      "size": 135520
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_daa.mp3",
+      "lastModified": 1795083667000,
+      "size": 5556
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_darvaajo.mp3",
+      "lastModified": 1795083667000,
+      "size": 7750
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_dau.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_de.mp3",
+      "lastModified": 1795083667000,
+      "size": 4145
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_dii.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_divas.mp3",
+      "lastModified": 1795083667000,
+      "size": 5869
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_do.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_du.mp3",
+      "lastModified": 1795083667000,
+      "size": 4459
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_duniyaa.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_hu(m).mp3",
+      "lastModified": 1795083667000,
+      "size": 30661
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_javaab.mp3",
+      "lastModified": 1795083667000,
+      "size": 5242
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_kalam.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_karu(m).mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_kem.mp3",
+      "lastModified": 1795083667000,
+      "size": 82834
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_kevo.mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_konn.mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_kyaa(m).mp3",
+      "lastModified": 1795083667000,
+      "size": 3675
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_kyaa(m)_chhe.mp3",
+      "lastModified": 1795083667000,
+      "size": 5399
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_kyaare.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_laa.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_lau.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_le.mp3",
+      "lastModified": 1795083667000,
+      "size": 3518
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_lii.mp3",
+      "lastModified": 1795083667000,
+      "size": 3518
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_lo.mp3",
+      "lastModified": 1795083667000,
+      "size": 5086
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_loko.mp3",
+      "lastModified": 1795083667000,
+      "size": 7280
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_lu.mp3",
+      "lastModified": 1795083667000,
+      "size": 3518
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_maaru(m)_pustak.mp3",
+      "lastModified": 1795083667000,
+      "size": 7750
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_madad.mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_mulaakaat.mp3",
+      "lastModified": 1795083667000,
+      "size": 6653
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_nambar.mp3",
+      "lastModified": 1795083667000,
+      "size": 8220
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_paase.mp3",
+      "lastModified": 1795083667000,
+      "size": 4459
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_pustak.mp3",
+      "lastModified": 1795083667000,
+      "size": 4929
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_rahiie.mp3",
+      "lastModified": 1795083667000,
+      "size": 4615
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_raho.mp3",
+      "lastModified": 1795083667000,
+      "size": 3518
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_raho_chho.mp3",
+      "lastModified": 1795083667000,
+      "size": 8377
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_rahyo.mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_rohan.mp3",
+      "lastModified": 1795083667000,
+      "size": 4929
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_roshnii.mp3",
+      "lastModified": 1795083667000,
+      "size": 5399
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_samay.mp3",
+      "lastModified": 1795083667000,
+      "size": 4772
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_sau.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_sauthii.mp3",
+      "lastModified": 1795083667000,
+      "size": 5712
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_savaal.mp3",
+      "lastModified": 1795083667000,
+      "size": 4929
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_shahermaa(m).mp3",
+      "lastModified": 1795083667000,
+      "size": 5869
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_shu(m).mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_so.mp3",
+      "lastModified": 1795083667000,
+      "size": 4145
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_sundar.mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_suratmaa(m).mp3",
+      "lastModified": 1795083667000,
+      "size": 7750
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_tamaarii.mp3",
+      "lastModified": 1795083667000,
+      "size": 6183
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_tamaarii_paase_kyaare_samay_chhe.mp3",
+      "lastModified": 1795083667000,
+      "size": 15900
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_tame.mp3",
+      "lastModified": 1795083667000,
+      "size": 28991
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_vaa.mp3",
+      "lastModified": 1795083667000,
+      "size": 2578
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_vii.mp3",
+      "lastModified": 1795083667000,
+      "size": 5399
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_vo.mp3",
+      "lastModified": 1795083667000,
+      "size": 4145
+    },
+    {
+      "url": "audios/clase_1_1/audio_m_yaad.mp3",
+      "lastModified": 1795083667000,
+      "size": 4302
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_01.mp3",
+      "lastModified": 1795083667000,
+      "size": 16997
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_02.mp3",
+      "lastModified": 1795083667000,
+      "size": 16527
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_03.mp3",
+      "lastModified": 1795083667000,
+      "size": 14490
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_04.mp3",
+      "lastModified": 1795083667000,
+      "size": 9317
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_05.mp3",
+      "lastModified": 1795083667000,
+      "size": 13392
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_06.mp3",
+      "lastModified": 1795083667000,
+      "size": 11355
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_07.mp3",
+      "lastModified": 1795083667000,
+      "size": 12922
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_08.mp3",
+      "lastModified": 1795083667000,
+      "size": 8220
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_09.mp3",
+      "lastModified": 1795083667000,
+      "size": 15430
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_10.mp3",
+      "lastModified": 1795083667000,
+      "size": 15900
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_11.mp3",
+      "lastModified": 1795083667000,
+      "size": 14960
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_12.mp3",
+      "lastModified": 1795083667000,
+      "size": 11355
+    },
+    {
+      "url": "audios/clase_1_1/dialogo_1_2_3_13.mp3",
+      "lastModified": 1795083667000,
+      "size": 10415
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_1.mp3",
+      "lastModified": 1795083667000,
+      "size": 2578
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_2.mp3",
+      "lastModified": 1795083667000,
+      "size": 3988
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_3.mp3",
+      "lastModified": 1795083667000,
+      "size": 6339
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_4.mp3",
+      "lastModified": 1795083667000,
+      "size": 8220
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_1.mp3",
+      "lastModified": 1795083667000,
+      "size": 3518
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_2.mp3",
+      "lastModified": 1795083667000,
+      "size": 5399
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_3.mp3",
+      "lastModified": 1795083667000,
+      "size": 6810
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_4.mp3",
+      "lastModified": 1795083667000,
+      "size": 8847
+    },
+    {
+      "url": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_5.mp3",
+      "lastModified": 1795083667000,
+      "size": 12139
+    },
+    {
+      "url": "audios/clase_1_1/kahevat_1_2_3_h.mp3",
+      "lastModified": 1795083667000,
+      "size": 11668
+    },
+    {
+      "url": "audios/clase_1_1/kahevat_1_2_3_m.mp3",
+      "lastModified": 1795083667000,
+      "size": 10728
+    },
+    {
+      "url": "audios/clase_1_1/lectura_1_2_3.mp3",
+      "lastModified": 1795083667000,
+      "size": 113076
+    },
+    {
+      "url": "audios/clase_1_1/reto_leccion_1_2_3_audio_1.mp3",
+      "lastModified": 1795083667000,
+      "size": 17468
+    },
+    {
+      "url": "audios/clase_1_1/reto_leccion_1_2_3_audio_2.mp3",
+      "lastModified": 1795083667000,
+      "size": 15430
+    },
+    {
+      "url": "audios/clase_1_1/reto_leccion_1_2_3_audio_3.mp3",
+      "lastModified": 1795083667000,
+      "size": 15900
+    },
+    {
+      "url": "audios/clase_1_1/reto_leccion_1_2_3_audio_4.mp3",
+      "lastModified": 1795083667000,
+      "size": 20289
+    },
+    {
+      "url": "audios/clase_1_1/reto_leccion_1_2_3_audio_5.mp3",
+      "lastModified": 1795083667000,
+      "size": 15430
+    },
+    {
+      "url": "audios/clase_1_1/victoria.mp3",
+      "lastModified": 1795083667000,
+      "size": 121676
+    },
+    {
+      "url": "audios/musica/Leccion_1_1_3_musica_ambiente.mp3",
+      "lastModified": 1795083667000,
+      "size": 4090148
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_10_1.png",
+      "lastModified": 1795083667000,
+      "size": 163722
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_11_1.png",
+      "lastModified": 1795083667000,
+      "size": 342088
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_12_1.png",
+      "lastModified": 1795083667000,
+      "size": 49618
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_12_2.png",
+      "lastModified": 1795083667000,
+      "size": 334790
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_12_3.png",
+      "lastModified": 1795083667000,
+      "size": 63734
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_13_1.png",
+      "lastModified": 1795083667000,
+      "size": 139201
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_13_2.png",
+      "lastModified": 1795083667000,
+      "size": 193070
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_2_1.png",
+      "lastModified": 1795083667000,
+      "size": 27469
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_2_2.png",
+      "lastModified": 1795083667000,
+      "size": 128777
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_3_1.png",
+      "lastModified": 1795083667000,
+      "size": 24851
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_3_2.png",
+      "lastModified": 1795083667000,
+      "size": 121164
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_3_3.png",
+      "lastModified": 1795083667000,
+      "size": 92658
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_4_1.png",
+      "lastModified": 1795083667000,
+      "size": 92006
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_4_2.png",
+      "lastModified": 1795083667000,
+      "size": 43417
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_4_3.png",
+      "lastModified": 1795083667000,
+      "size": 42635
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_5_1.png",
+      "lastModified": 1795083667000,
+      "size": 46266
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_5_2.png",
+      "lastModified": 1795083667000,
+      "size": 37643
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_5_3.png",
+      "lastModified": 1795083667000,
+      "size": 40438
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_6_1.png",
+      "lastModified": 1795083667000,
+      "size": 41464
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_6_2.png",
+      "lastModified": 1795083667000,
+      "size": 44997
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_7_1.png",
+      "lastModified": 1795083667000,
+      "size": 40559
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_7_2.png",
+      "lastModified": 1795083667000,
+      "size": 36446
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_8_1.png",
+      "lastModified": 1795083667000,
+      "size": 66350
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_9_1.png",
+      "lastModified": 1795083667000,
+      "size": 220932
+    },
+    {
+      "url": "imagenes/Clase_1_1/D6_Dialogo_Fondo_1.jpg",
+      "lastModified": 1795083667000,
+      "size": 219397
+    },
+    {
+      "url": "imagenes/Clase_1_1/avatarActivo.jpg",
+      "lastModified": 1795083667000,
+      "size": 971
+    },
+    {
+      "url": "imagenes/Clase_1_1/avatar_manisha.jpg",
+      "lastModified": 1795083667000,
+      "size": 39277
+    },
+    {
+      "url": "imagenes/Clase_1_1/avatar_paresh.jpg",
+      "lastModified": 1795083667000,
+      "size": 30799
+    },
+    {
+      "url": "imagenes/Clase_1_1/avatar_rohan.jpg",
+      "lastModified": 1795083667000,
+      "size": 35720
+    },
+    {
+      "url": "imagenes/Clase_1_1/avatar_roshni.jpg",
+      "lastModified": 1795083667000,
+      "size": 31119
+    },
+    {
+      "url": "imagenes/Clase_1_1/avatar_vina.jpg",
+      "lastModified": 1795083667000,
+      "size": 25718
+    },
+    {
+      "url": "imagenes/Clase_1_1/guia_navegacion_alfabeto.jpg",
+      "lastModified": 1795083667000,
+      "size": 4381
+    },
+    {
+      "url": "imagenes/Clase_1_1/guia_navegacion_juegos.jpg",
+      "lastModified": 1795083667000,
+      "size": 7346
+    },
+    {
+      "url": "imagenes/Clase_1_1/guia_navegacion_pensarengujarati.jpg",
+      "lastModified": 1795083667000,
+      "size": 6691
+    },
+    {
+      "url": "imagenes/Clase_1_1/guia_navegacion_pronunciacion.jpg",
+      "lastModified": 1795083667000,
+      "size": 7525
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_alfa_conjuntiva_ya.jpg",
+      "lastModified": 1795083667000,
+      "size": 89681
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_alfa_matra_au.jpg",
+      "lastModified": 1795083667000,
+      "size": 81200
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_baaibal.jpg",
+      "lastModified": 1795083667000,
+      "size": 133916
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_baaibal_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 92891
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_balidaan.jpg",
+      "lastModified": 1795083667000,
+      "size": 156369
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_balidaan_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 111868
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_darvaajo.jpg",
+      "lastModified": 1795083667000,
+      "size": 160526
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_darvaajo_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 118741
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_divas.jpg",
+      "lastModified": 1795083667000,
+      "size": 137779
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_divas_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 96942
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_duniyaa.jpg",
+      "lastModified": 1795083667000,
+      "size": 161492
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_duniyaa_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 121457
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_javaab.jpg",
+      "lastModified": 1795083667000,
+      "size": 167767
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_javaab_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 125022
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_kalam.jpg",
+      "lastModified": 1795083667000,
+      "size": 153433
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_kalam_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 111411
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_loko.jpg",
+      "lastModified": 1795083667000,
+      "size": 157099
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_loko_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 117571
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_madad.jpg",
+      "lastModified": 1795083667000,
+      "size": 135456
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_madad_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 95958
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_mulaakaat.jpg",
+      "lastModified": 1795083667000,
+      "size": 158332
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_mulaakaat_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 116861
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_nambar.jpg",
+      "lastModified": 1795083667000,
+      "size": 119043
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_nambar_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 82225
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_plana_au.jpg",
+      "lastModified": 1795083667000,
+      "size": 136486
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_plana_ba.jpg",
+      "lastModified": 1795083667000,
+      "size": 128766
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_plana_da.jpg",
+      "lastModified": 1795083667000,
+      "size": 128495
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_plana_la.jpg",
+      "lastModified": 1795083667000,
+      "size": 117340
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_sauthii.jpg",
+      "lastModified": 1795083667000,
+      "size": 115239
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_sauthii_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 73611
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_savaal.jpg",
+      "lastModified": 1795083667000,
+      "size": 103606
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_savaal_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 63471
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_sundar.jpg",
+      "lastModified": 1795083667000,
+      "size": 169252
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_sundar_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 124086
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_yaad.jpg",
+      "lastModified": 1795083667000,
+      "size": 191712
+    },
+    {
+      "url": "imagenes/Clase_1_1/img_yaad_noinfo.jpg",
+      "lastModified": 1795083667000,
+      "size": 113769
+    },
+    {
+      "url": "videos/clase_1_1/leccion_1_2_3_video.mp3",
+      "lastModified": 1795083667000,
+      "size": 186428
+    },
+    {
+      "url": "data/1_2_3/aprende_clase_1_2_3.json",
+      "lastModified": 1795083582931,
+      "size": 3966
+    },
+    {
+      "url": "data/1_2_3/cantar_jw_1_2_3.json",
+      "lastModified": 1795083582932,
+      "size": 2595
+    },
+    {
+      "url": "data/1_2_3/compone_clase_1_2_3.json",
+      "lastModified": 1795083582933,
+      "size": 5180
+    },
+    {
+      "url": "data/1_2_3/dialogo_1_2_3.json",
+      "lastModified": 1795083582934,
+      "size": 13586
+    },
+    {
+      "url": "data/1_2_3/generador_clase_1_2_3.json",
+      "lastModified": 1795083582935,
+      "size": 3312
+    },
+    {
+      "url": "data/1_2_3/guia_navegacion_1_2_3.json",
+      "lastModified": 1795083582935,
+      "size": 728
+    },
+    {
+      "url": "data/1_2_3/juego_clase_1_2_3.json",
+      "lastModified": 1795083582936,
+      "size": 5128
+    },
+    {
+      "url": "data/1_2_3/leccion_fin_1_2_3.json",
+      "lastModified": 1795083582937,
+      "size": 2989
+    },
+    {
+      "url": "data/1_2_3/leccion_intro_1_2_3.json",
+      "lastModified": 1795083582938,
+      "size": 7472
+    },
+    {
+      "url": "data/1_2_3/leccion_letra_1_2_3.json",
+      "lastModified": 1795083582938,
+      "size": 1439
+    },
+    {
+      "url": "data/1_2_3/leccion_notas_1_2_3.json",
+      "lastModified": 1795083582939,
+      "size": 6032
+    },
+    {
+      "url": "data/1_2_3/leccion_palabra_1_2_3.json",
+      "lastModified": 1795083582940,
+      "size": 6268
+    },
+    {
+      "url": "data/1_2_3/leccion_palabra_intro_1_2_3.json",
+      "lastModified": 1795083582941,
+      "size": 1990
+    },
+    {
+      "url": "data/1_2_3/leccion_pensarEnGUJ_1_2_3.json",
+      "lastModified": 1795083582942,
+      "size": 267
+    },
+    {
+      "url": "data/1_2_3/leccion_plana_1_2_3.json",
+      "lastModified": 1795083582942,
+      "size": 770
+    },
+    {
+      "url": "data/1_2_3/leccion_vocal_1_2_3.json",
+      "lastModified": 1795083582943,
+      "size": 2993
+    },
+    {
+      "url": "data/1_2_3/lectura_1_2_3.json",
+      "lastModified": 1795083582944,
+      "size": 1758
+    },
+    {
+      "url": "data/1_2_3/piensa_clase_1_2_3.json",
+      "lastModified": 1795083582945,
+      "size": 5779
+    },
+    {
+      "url": "data/1_2_3/practica_clase_1_2_3.json",
+      "lastModified": 1795083582945,
+      "size": 7431
+    },
+    {
+      "url": "data/1_2_3/reto_clase_1_2_3.json",
+      "lastModified": 1795083582946,
+      "size": 4946
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_c1.json",
+      "lastModified": 1795083582947,
+      "size": 183
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_c2.json",
+      "lastModified": 1795083582948,
+      "size": 300
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_c3.json",
+      "lastModified": 1795083582948,
+      "size": 417
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_contraste.json",
+      "lastModified": 1795083582949,
+      "size": 2008
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_palabras.json",
+      "lastModified": 1795083582950,
+      "size": 3585
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_repaso.json",
+      "lastModified": 1795083582951,
+      "size": 2468
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_vo1.json",
+      "lastModified": 1795083582951,
+      "size": 1171
+    },
+    {
+      "url": "data/1_2_3/reto_flash_Leccion_1_2_3_vo2.json",
+      "lastModified": 1795083582953,
+      "size": 1311
+    },
+    {
+      "url": "data/1_2_3/trazos_au.json",
+      "lastModified": 1795083582953,
+      "size": 11191
+    },
+    {
+      "url": "data/1_2_3/trazos_ba.json",
+      "lastModified": 1795083582954,
+      "size": 6415
+    },
+    {
+      "url": "data/1_2_3/trazos_da.json",
+      "lastModified": 1795083582955,
+      "size": 5389
+    },
+    {
+      "url": "data/1_2_3/trazos_la.json",
+      "lastModified": 1795083582956,
+      "size": 6031
+    }
+  ]
+}
