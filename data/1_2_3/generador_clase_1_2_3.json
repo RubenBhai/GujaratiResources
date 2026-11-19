@@ -1,0 +1,109 @@
+{
+  "leccion": "1.2.3",
+  "titulo": "Arma tus propias oraciones",
+  "subtitulo": "Elige una opción de cada columna. Todas las combinaciones son correctas.",
+  "generadores": [
+    {
+      "nombre": "¿Dónde está…?",
+      "instruccion": "ક્યાં va donde irá la respuesta.",
+      "columnas": [
+        {
+          "pregunta": "¿quién o qué?",
+          "pregunta_gu": "કોણ?",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "રોહન",
+              "es": "Rohan",
+              "audio": "audios/clase_1_1/audio_m_rohan.mp3"
+            },
+            {
+              "gu": "રોશની",
+              "es": "Roshni",
+              "audio": "audios/clase_1_1/audio_m_roshnii.mp3"
+            },
+            {
+              "gu": "મારું પુસ્તક",
+              "es": "mi libro",
+              "audio": "audios/clase_1_1/audio_m_maaru(m)_pustak.mp3"
+            },
+            {
+              "gu": "બાઈબલ",
+              "es": "la Biblia",
+              "audio": "audios/clase_1_1/audio_m_baaibal.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿dónde está?",
+          "pregunta_gu": "ક્યાં છે?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "ક્યાં છે",
+              "es": "¿dónde está?",
+              "audio": "audios/clase_1_1/audio_m_kyaa(m)_chhe.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Pregunta y respuesta",
+      "instruccion": "Con las mismas piezas se pregunta (ક્યાં) o se responde (સુરતમાં, શહેરમાં): la pregunta ocupa el lugar de la respuesta.",
+      "columnas": [
+        {
+          "pregunta": "usted",
+          "pregunta_gu": "તમે",
+          "obligatorio": "SI",
+          "orden": 1,
+          "opciones": [
+            {
+              "gu": "તમે",
+              "es": "usted",
+              "audio": "audios/clase_1_1/audio_m_tame.mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "¿dónde?",
+          "pregunta_gu": "ક્યાં?",
+          "obligatorio": "SI",
+          "orden": 2,
+          "opciones": [
+            {
+              "gu": "ક્યાં",
+              "es": "¿dónde?",
+              "audio": "audios/clase_1_1/audio_m_kyaa(m).mp3"
+            },
+            {
+              "gu": "સુરતમાં",
+              "es": "en Surat",
+              "audio": "audios/clase_1_1/audio_m_suratmaa(m).mp3"
+            },
+            {
+              "gu": "શહેરમાં",
+              "es": "en la ciudad",
+              "audio": "audios/clase_1_1/audio_m_shahermaa(m).mp3"
+            }
+          ]
+        },
+        {
+          "pregunta": "vive",
+          "pregunta_gu": "રહો છો",
+          "obligatorio": "SI",
+          "orden": 3,
+          "opciones": [
+            {
+              "gu": "રહો છો",
+              "es": "vive",
+              "audio": "audios/clase_1_1/audio_m_raho_chho.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

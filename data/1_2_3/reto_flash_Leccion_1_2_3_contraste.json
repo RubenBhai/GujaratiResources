@@ -1,0 +1,89 @@
+{
+  "leccion": "1.2.3",
+  "titulo": "Contraste: બ/વ, ઓ/ઔ y ો/ૌ",
+  "badge": "Contraste",
+  "letters": [
+    {
+      "letter": "બ",
+      "answer": "ba",
+      "audio": "audios/clase_1_1/audio_alfa_m_ba.mp3"
+    },
+    {
+      "letter": "વ",
+      "answer": "va",
+      "audio": "audios/clase_1_1/audio_alfa_m_va.mp3"
+    },
+    {
+      "letter": "ઓ",
+      "answer": "o",
+      "audio": "audios/clase_1_1/audio_alfa_m_o.mp3"
+    },
+    {
+      "letter": "ઔ",
+      "answer": "au",
+      "audio": "audios/clase_1_1/audio_alfa_m_au.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "બા",
+      "answer": "baa",
+      "audio": "audios/clase_1_1/audio_m_baa.mp3"
+    },
+    {
+      "letter": "વા",
+      "answer": "vaa",
+      "audio": "audios/clase_1_1/audio_m_vaa.mp3"
+    },
+    {
+      "letter": "બી",
+      "answer": "bii",
+      "audio": "audios/clase_1_1/audio_m_bii.mp3"
+    },
+    {
+      "letter": "વી",
+      "answer": "vii",
+      "audio": "audios/clase_1_1/audio_m_vii.mp3"
+    },
+    {
+      "letter": "બો",
+      "answer": "bo",
+      "audio": "audios/clase_1_1/audio_m_bo.mp3"
+    },
+    {
+      "letter": "વો",
+      "answer": "vo",
+      "audio": "audios/clase_1_1/audio_m_vo.mp3"
+    },
+    {
+      "letter": "દો",
+      "answer": "do",
+      "audio": "audios/clase_1_1/audio_m_do.mp3"
+    },
+    {
+      "letter": "દૌ",
+      "answer": "dau",
+      "audio": "audios/clase_1_1/audio_m_dau.mp3"
+    },
+    {
+      "letter": "લો",
+      "answer": "lo",
+      "audio": "audios/clase_1_1/audio_m_lo.mp3"
+    },
+    {
+      "letter": "લૌ",
+      "answer": "lau",
+      "audio": "audios/clase_1_1/audio_m_lau.mp3"
+    },
+    {
+      "letter": "સો",
+      "answer": "so",
+      "audio": "audios/clase_1_1/audio_m_so.mp3"
+    },
+    {
+      "letter": "સૌ",
+      "answer": "sau",
+      "audio": "audios/clase_1_1/audio_m_sau.mp3"
+    }
+  ]
+}

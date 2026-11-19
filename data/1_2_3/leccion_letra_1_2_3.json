@@ -1,0 +1,29 @@
+{
+  "leccion": "1.2.3",
+  "home": "leccion_intro.html?leccion=1.2.3",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.2.3",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.R",
+  "letras": [
+    {
+      "consonante": "દ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">da</strong>: una «d» suave, con la punta de la lengua en los dientes, como en «dedo»: <span class=\"gu\">દિવસ</span> (di-vas)",
+      "audio": "audios/clase_1_1/audio_alfa_m_da.mp3",
+      "reto_flash_json": "Leccion_1_2_3_c1",
+      "plana": "leccion_plana.html?leccion=1.2.3&item=1"
+    },
+    {
+      "consonante": "બ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">ba</strong> como en «barco», con los labios bien cerrados. Cuidado: se parece a <span class=\"gu\">વ</span> (va); en el juego de contraste las verás juntas: <span class=\"gu\">બાઈબલ</span>",
+      "audio": "audios/clase_1_1/audio_alfa_m_ba.mp3",
+      "reto_flash_json": "Leccion_1_2_3_c2",
+      "plana": "leccion_plana.html?leccion=1.2.3&item=2"
+    },
+    {
+      "consonante": "લ",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">la</strong> como en «luna»: <span class=\"gu\">લોકો</span> (lo-ko)",
+      "audio": "audios/clase_1_1/audio_alfa_m_la.mp3",
+      "reto_flash_json": "Leccion_1_2_3_c3",
+      "plana": "leccion_plana.html?leccion=1.2.3&item=3"
+    }
+  ]
+}

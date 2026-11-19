@@ -1,0 +1,170 @@
+{
+  "leccion": "1.2.3",
+  "home": "leccion_intro.html?leccion=1.2.3",
+  "salir": "juego.html?leccion=1.2.3",
+  "fin": "leccion_pensarEnGUJ.html?leccion=1.2.3",
+  "intro": {
+    "titulo": "Algunas cosas curiosas del idioma",
+    "texto": "Antes de terminar, vamos a ver <strong>cómo se hacen preguntas</strong> en gujarati, y las frases hechas del diálogo."
+  },
+  "notas": [
+    {
+      "destacado": true,
+      "practica_flash": [
+        "1",
+        "3",
+        "4",
+        "6"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Las palabras de pregunta empiezan con <span class=\"gu\">ક</span>: <span class=\"gu\">કોણ</span> (¿quién?), <span class=\"gu\">ક્યાં</span> (¿dónde?), <span class=\"gu\">ક્યારે</span> (¿cuándo?), <span class=\"gu\">કેવો</span> (¿qué tal?) y <span class=\"gu\">કેમ</span> (¿cómo?, ¿por qué?). Solo <span class=\"gu\">શું</span> (¿qué?) empieza con otra letra.",
+          "gu": "ક"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આ કોણ છે?",
+          "literal": "esto quién es",
+          "significado": "¿quién es este?"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તમે ક્યાં રહો છો?",
+          "literal": "usted dónde vive",
+          "significado": "¿dónde vive usted?"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તમે કેમ છો?",
+          "literal": "usted cómo está",
+          "significado": "¿cómo está usted? (¡ya la sabías desde la 1.1.1!)"
+        }
+      ]
+    },
+    {
+      "destacado": true,
+      "practica_flash": [
+        "1",
+        "2"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "<strong>El truco:</strong> la pregunta no cambia el orden de la frase. La palabra con <span class=\"gu\">ક</span> va <strong>donde irá la respuesta</strong>."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "અમે સુરતમાં રહીએ છીએ",
+          "literal": "nosotros Surat-en vivimos",
+          "significado": "vivimos en Surat → તમે ક્યાં રહો છો?"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "આ મારા પતિ છે",
+          "literal": "este mi esposo es",
+          "significado": "es mi esposo → આ કોણ છે?"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "practica_flash": [
+        "4"
+      ],
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "<strong>Para la predicación:</strong> <span class=\"gu\">તમારી પાસે ક્યારે સમય છે?</span> Es la pregunta para dejar acordada la revisita. En la puerta también vas a oír <span class=\"gu\">તમને કયો સમય ફાવશે?</span>, la forma más cortés; la leerás cuando llegue la <span class=\"gu\">ફ</span>."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તમારી પાસે ક્યારે સમય છે?",
+          "literal": "usted-cerca cuándo tiempo hay",
+          "significado": "¿cuándo tiene tiempo?"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "<strong>Consonante + ય:</strong> se escriben juntas, y cada consonante lo hace a su manera. La <span class=\"gu\">ય</span> siempre queda a la derecha y siempre suena."
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "ત્યાં",
+          "literal": "ત + ય: la ત pierde su palito",
+          "significado": "allí"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "ક્યાં",
+          "literal": "ક + ય: la ક se acerca",
+          "significado": "¿dónde?"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "કહ્યું",
+          "literal": "હ + ય: la હ cambia de forma",
+          "significado": "dijo"
+        }
+      ]
+    },
+    {
+      "destacado": false,
+      "bloques": [
+        {
+          "tipo": "texto",
+          "html": "Frases hechas del diálogo:"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "અંદર આવો!",
+          "literal": "adentro vengan",
+          "significado": "¡adelante!, ¡pasen!"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "પરેશજી",
+          "literal": "Paresh + જી",
+          "significado": "જી después del nombre muestra respeto"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "તમે બેસો ને",
+          "literal": "usted siéntese pues",
+          "significado": "usted siéntese (ને lo hace amable)"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "કંઈ નહીં",
+          "literal": "algo no",
+          "significado": "nada, no hace falta"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "સૌથી સારું",
+          "literal": "el-que-más bueno",
+          "significado": "lo mejor (lleva la matra ૌ)"
+        },
+        {
+          "tipo": "ejemplo",
+          "gu": "બધા જમવા આવો!",
+          "literal": "todos comer vengan",
+          "significado": "¡todos a comer! · બધા = todos. Palabra nueva: tiene una letra que aún no conoces, ધ. Por ahora, reconócela de oído"
+        }
+      ]
+    }
+  ],
+  "fin_pantalla": {
+    "titulo": "Ya sabes hacer preguntas",
+    "texto": "Con las palabras que empiezan con ક puedes preguntar quién, dónde, cuándo y cómo. ¡Vamos a crear algunas oraciones!",
+    "boton_extra": {
+      "habilitado": true,
+      "caption": "🎉Vamos a crear oraciones🥳",
+      "pagina": "compone.html"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "leccion": "1.2.3",
+  "home": "leccion_intro.html?leccion=1.2.3",
+  "anterior_primera": "leccion_letra.html?leccion=1.2.3&item=3",
+  "siguiente_final": "leccion_palabra_intro.html?leccion=1.2.3",
+  "ir_a_palabras": "leccion_palabra_intro.html?leccion=1.2.3",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.R",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "repaso_final": true,
+  "pasos": [
+    {
+      "tipo": "vocal",
+      "vocal": "au",
+      "gujarati": "ઔ",
+      "badge": "Vocal 1 de 4",
+      "audio": "audios/clase_1_1/audio_alfa_m_au.mp3",
+      "detalle": "Se pronuncia <strong class=\"det-p det-s\">au</strong>, como en '<span class=\"det-s\">au</span>la'. Es la hermana de <span class=\"gu\">ઓ</span> (o): <span class=\"gu\">ઔ</span> lleva una rayita más arriba. Casi nunca empieza una palabra; la verás sobre todo como matra: <span class=\"gu\">સૌથી</span>"
+    },
+    {
+      "tipo": "plana",
+      "vocal": "au",
+      "roman": "au",
+      "imagen": "imagenes/Clase_1_1/img_plana_au.jpg",
+      "audio": "audios/clase_1_1/audio_alfa_m_au.mp3"
+    },
+    {
+      "tipo": "matra",
+      "vocal": "au",
+      "matra": "ૌ",
+      "badge": "Matra 2 de 4",
+      "imagen": "imagenes/Clase_1_1/img_alfa_matra_au.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "au",
+      "matra": "ૌ",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_m_sau.mp3",
+        "audios/clase_1_1/audio_m_dau.mp3",
+        "audios/clase_1_1/audio_m_lau.mp3"
+      ],
+      "texto_boton": "Escucha las consonantes y su matra",
+      "reto_flash_json": "Leccion_1_2_3_vo1",
+      "ecuaciones": [
+        {
+          "partes": "સ + ૌ",
+          "resultado": "સૌ"
+        },
+        {
+          "partes": "દ + ૌ",
+          "resultado": "દૌ"
+        },
+        {
+          "partes": "લ + ૌ",
+          "resultado": "લૌ"
+        }
+      ]
+    },
+    {
+      "tipo": "matra",
+      "vocal": "conjuntiva",
+      "matra": "ય",
+      "badge": "Conjuntiva 3 de 4",
+      "imagen": "imagenes/Clase_1_1/img_alfa_conjuntiva_ya.jpg"
+    },
+    {
+      "tipo": "con_matra",
+      "vocal": "conjuntiva",
+      "matra": "ય",
+      "badge": "Consonante + ય: cada una a su manera",
+      "audios_secuencia": [
+        "audios/clase_1_1/audio_alfa_m_tya.mp3",
+        "audios/clase_1_1/audio_alfa_m_kya.mp3",
+        "audios/clase_1_1/audio_alfa_m_hya.mp3"
+      ],
+      "texto_boton": "Escucha las tres formas con ય",
+      "reto_flash_json": "Leccion_1_2_3_vo2",
+      "ecuaciones": [
+        {
+          "partes": "ત + ્ + ય",
+          "resultado": "ત્ય"
+        },
+        {
+          "partes": "ક + ્ + ય",
+          "resultado": "ક્ય"
+        },
+        {
+          "partes": "હ + ્ + ય",
+          "resultado": "હ્ય"
+        }
+      ]
+    }
+  ]
+}

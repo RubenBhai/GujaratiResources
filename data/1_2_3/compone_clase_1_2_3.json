@@ -1,0 +1,223 @@
+{
+  "leccion": "1.2.3",
+  "boton_comprobar": "Comprobar",
+  "sonido_correcto": "audios/clase_1_1/Clase_1_1_Correcto.mp3",
+  "sonido_incorrecto": "audios/clase_1_1/Clase_1_1_Incorrecto.mp3",
+  "banco_palabras": [
+    {
+      "gujarati": "તમે",
+      "audio": "audios/clase_1_1/audio_m_tame.mp3"
+    },
+    {
+      "gujarati": "ક્યાં",
+      "audio": "audios/clase_1_1/audio_m_kyaa(m).mp3"
+    },
+    {
+      "gujarati": "રહો",
+      "audio": "audios/clase_1_1/audio_m_raho.mp3"
+    },
+    {
+      "gujarati": "છો",
+      "audio": "audios/clase_1_1/audio_m_chho.mp3"
+    },
+    {
+      "gujarati": "અમે",
+      "audio": "audios/clase_1_1/audio_m_ame.mp3"
+    },
+    {
+      "gujarati": "સુરતમાં",
+      "audio": "audios/clase_1_1/audio_m_suratmaa(m).mp3"
+    },
+    {
+      "gujarati": "રહીએ",
+      "audio": "audios/clase_1_1/audio_m_rahiie.mp3"
+    },
+    {
+      "gujarati": "છીએ",
+      "audio": "audios/clase_1_1/audio_m_chhiie.mp3"
+    },
+    {
+      "gujarati": "આ",
+      "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3"
+    },
+    {
+      "gujarati": "કોણ",
+      "audio": "audios/clase_1_1/audio_m_konn.mp3"
+    },
+    {
+      "gujarati": "છે",
+      "audio": "audios/clase_1_1/audio_m_chhe.mp3"
+    },
+    {
+      "gujarati": "તમારી",
+      "audio": "audios/clase_1_1/audio_m_tamaarii.mp3"
+    },
+    {
+      "gujarati": "પાસે",
+      "audio": "audios/clase_1_1/audio_m_paase.mp3"
+    },
+    {
+      "gujarati": "ક્યારે",
+      "audio": "audios/clase_1_1/audio_m_kyaare.mp3"
+    },
+    {
+      "gujarati": "સમય",
+      "audio": "audios/clase_1_1/audio_m_samay.mp3"
+    },
+    {
+      "gujarati": "દિવસ",
+      "audio": "audios/clase_1_1/audio_m_divas.mp3"
+    },
+    {
+      "gujarati": "કેવો",
+      "audio": "audios/clase_1_1/audio_m_kevo.mp3"
+    },
+    {
+      "gujarati": "રહ્યો",
+      "audio": "audios/clase_1_1/audio_m_rahyo.mp3"
+    },
+    {
+      "gujarati": "કેમ",
+      "audio": "audios/clase_1_1/audio_m_kem.mp3"
+    },
+    {
+      "gujarati": "રોહન",
+      "audio": "audios/clase_1_1/audio_m_rohan.mp3"
+    },
+    {
+      "gujarati": "હું",
+      "audio": "audios/clase_1_1/audio_m_hu(m).mp3"
+    },
+    {
+      "gujarati": "શું",
+      "audio": "audios/clase_1_1/audio_m_shu(m).mp3"
+    },
+    {
+      "gujarati": "મદદ",
+      "audio": "audios/clase_1_1/audio_m_madad.mp3"
+    },
+    {
+      "gujarati": "કરું",
+      "audio": "audios/clase_1_1/audio_m_karu(m).mp3"
+    },
+    {
+      "gujarati": "બાઈબલ",
+      "audio": "audios/clase_1_1/audio_m_baaibal.mp3"
+    },
+    {
+      "gujarati": "સુંદર",
+      "audio": "audios/clase_1_1/audio_m_sundar.mp3"
+    },
+    {
+      "gujarati": "પુસ્તક",
+      "audio": "audios/clase_1_1/audio_m_pustak.mp3"
+    },
+    {
+      "gujarati": "બાઈબલની",
+      "audio": "audios/clase_1_1/audio_m_baaibalnii.mp3"
+    },
+    {
+      "gujarati": "કલમ",
+      "audio": "audios/clase_1_1/audio_m_kalam.mp3"
+    }
+  ],
+  "oraciones": [
+    {
+      "id": "1",
+      "palabras": [
+        "તમે",
+        "ક્યાં",
+        "રહો",
+        "છો"
+      ],
+      "espanol": "¿dónde vive usted?"
+    },
+    {
+      "id": "2",
+      "palabras": [
+        "અમે",
+        "સુરતમાં",
+        "રહીએ",
+        "છીએ"
+      ],
+      "espanol": "vivimos en Surat"
+    },
+    {
+      "id": "3",
+      "palabras": [
+        "આ",
+        "કોણ",
+        "છે"
+      ],
+      "espanol": "¿quién es este?"
+    },
+    {
+      "id": "4",
+      "palabras": [
+        "તમારી",
+        "પાસે",
+        "ક્યારે",
+        "સમય",
+        "છે"
+      ],
+      "espanol": "¿cuándo tiene tiempo?"
+    },
+    {
+      "id": "5",
+      "palabras": [
+        "દિવસ",
+        "કેવો",
+        "રહ્યો"
+      ],
+      "espanol": "¿qué tal el día?"
+    },
+    {
+      "id": "6",
+      "palabras": [
+        "તમે",
+        "કેમ",
+        "છો"
+      ],
+      "espanol": "¿cómo está usted?"
+    },
+    {
+      "id": "7",
+      "palabras": [
+        "રોહન",
+        "ક્યાં",
+        "છે"
+      ],
+      "espanol": "¿dónde está Rohan?"
+    },
+    {
+      "id": "8",
+      "palabras": [
+        "હું",
+        "શું",
+        "મદદ",
+        "કરું"
+      ],
+      "espanol": "¿en qué te ayudo?"
+    },
+    {
+      "id": "9",
+      "palabras": [
+        "બાઈબલ",
+        "સુંદર",
+        "પુસ્તક",
+        "છે"
+      ],
+      "espanol": "la Biblia es un libro hermoso"
+    },
+    {
+      "id": "10",
+      "palabras": [
+        "આ",
+        "બાઈબલની",
+        "કલમ",
+        "છે"
+      ],
+      "espanol": "este es un versículo de la Biblia"
+    }
+  ]
+}

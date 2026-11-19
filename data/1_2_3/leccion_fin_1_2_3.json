@@ -1,0 +1,115 @@
+{
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "leccion": "1.2.3",
+  "resumen": {
+    "consonantes": 3,
+    "vocales": 1,
+    "palabras": 15,
+    "frase_ejemplo": "તમે ક્યાં રહો છો?"
+  },
+  "letras_aprendidas": [
+    "દ",
+    "બ",
+    "લ",
+    "ઔ",
+    "ૌ",
+    "ત્ય",
+    "ક્ય",
+    "હ્ય"
+  ],
+  "palabras_aprendidas": [
+    {
+      "gujarati": "મુલાકાત",
+      "se_dice": "mu-laa-kaat",
+      "significa": "visita"
+    },
+    {
+      "gujarati": "લોકો",
+      "se_dice": "lo-ko",
+      "significa": "gente, personas"
+    },
+    {
+      "gujarati": "કલમ",
+      "se_dice": "ka-lam",
+      "significa": "versículo, texto bíblico"
+    },
+    {
+      "gujarati": "મદદ",
+      "se_dice": "ma-dad",
+      "significa": "ayuda"
+    },
+    {
+      "gujarati": "બાઈબલ",
+      "se_dice": "baa-i-bal",
+      "significa": "Biblia"
+    },
+    {
+      "gujarati": "જવાબ",
+      "se_dice": "ja-vaab",
+      "significa": "respuesta"
+    },
+    {
+      "gujarati": "યાદ",
+      "se_dice": "yaad",
+      "significa": "recuerdo"
+    },
+    {
+      "gujarati": "સવાલ",
+      "se_dice": "sa-vaal",
+      "significa": "pregunta"
+    },
+    {
+      "gujarati": "સુંદર",
+      "se_dice": "sun-dar",
+      "significa": "hermoso"
+    },
+    {
+      "gujarati": "દુનિયા",
+      "se_dice": "du-ni-yaa",
+      "significa": "mundo"
+    },
+    {
+      "gujarati": "દિવસ",
+      "se_dice": "di-vas",
+      "significa": "día"
+    },
+    {
+      "gujarati": "નંબર",
+      "se_dice": "nam-bar",
+      "significa": "número (de teléfono)"
+    },
+    {
+      "gujarati": "બલિદાન",
+      "se_dice": "ba-li-daan",
+      "significa": "sacrificio"
+    },
+    {
+      "gujarati": "દરવાજો",
+      "se_dice": "dar-vaa-jo",
+      "significa": "puerta"
+    },
+    {
+      "gujarati": "સૌથી",
+      "se_dice": "sau-thii",
+      "significa": "el que más"
+    }
+  ],
+  "proxima_leccion": {
+    "cantidad_letras": 0,
+    "letras": [],
+    "codigo": "1.2.R"
+  },
+  "kahevat": {
+    "numero": 15,
+    "gujarati": "ટીંપે ટીંપે સરોવર ભરાય",
+    "se_dice": "ṭiiⁿ-pe ṭiiⁿ-pe sa-ro-var bha-raay",
+    "literal": "Gota a gota se llena el lago",
+    "significa": "Lo poco, si es constante, llega a ser mucho",
+    "equivalente": "Grano a grano, llena la gallina el buche",
+    "cuando": "Cuando alguien se desanima porque avanza poco: un poquito cada día, y al final el lago se llena",
+    "conocidas": "કમછઅઆએઓાેોસરહઉુંનતશઇઈિીણપવઊૂજથયઐૈદબલઔૌ",
+    "audio_m": "audios/clase_1_1/kahevat_1_2_3_m.mp3",
+    "audio_h": "audios/clase_1_1/kahevat_1_2_3_h.mp3"
+  }
+}

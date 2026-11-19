@@ -1,0 +1,145 @@
+{
+  "leccion": "1.2.3",
+  "home": "leccion_intro.html?leccion=1.2.3",
+  "anterior_primera": "leccion_palabra_intro.html?leccion=1.2.3",
+  "practicar": "practica.html?modulo=1.2&leccion=3",
+  "siguiente_leccion": "leccion_intro.html?leccion=1.2.R",
+  "siguiente_final": "juego.html?leccion=1.2.3",
+  "palabras": [
+    {
+      "gujarati": "મુલાકાત",
+      "dictado": "મુલાકાત",
+      "significado": "visita",
+      "imagen": "imagenes/Clase_1_1/img_mulaakaat.jpg",
+      "pronunciacion": "મ-ુ-લ-ા-ક-ા-ત → mu-laa-<strong>kaat</strong><br>Lleva la nueva લ",
+      "audioH": "audios/clase_1_1/audio_h_mulaakaat.mp3",
+      "audioM": "audios/clase_1_1/audio_m_mulaakaat.mp3"
+    },
+    {
+      "gujarati": "લોકો",
+      "dictado": "લોકો",
+      "significado": "gente, personas",
+      "imagen": "imagenes/Clase_1_1/img_loko.jpg",
+      "pronunciacion": "લ-ો-ક-ો → <strong>lo</strong>-ko",
+      "audioH": "audios/clase_1_1/audio_h_loko.mp3",
+      "audioM": "audios/clase_1_1/audio_m_loko.mp3"
+    },
+    {
+      "gujarati": "કલમ",
+      "dictado": "કલમ",
+      "significado": "versículo, texto bíblico",
+      "imagen": "imagenes/Clase_1_1/img_kalam.jpg",
+      "pronunciacion": "ક-લ-મ → ka-<strong>lam</strong>",
+      "audioH": "audios/clase_1_1/audio_h_kalam.mp3",
+      "audioM": "audios/clase_1_1/audio_m_kalam.mp3"
+    },
+    {
+      "gujarati": "મદદ",
+      "dictado": "મદદ",
+      "significado": "ayuda",
+      "imagen": "imagenes/Clase_1_1/img_madad.jpg",
+      "pronunciacion": "મ-દ-દ → ma-<strong>dad</strong><br>Como en el diálogo: હું શું મદદ કરું?",
+      "audioH": "audios/clase_1_1/audio_h_madad.mp3",
+      "audioM": "audios/clase_1_1/audio_m_madad.mp3"
+    },
+    {
+      "gujarati": "બાઈબલ",
+      "dictado": "બાઈબલ",
+      "significado": "Biblia",
+      "imagen": "imagenes/Clase_1_1/img_baaibal.jpg",
+      "pronunciacion": "બ-ા-ઇ-બ-લ → <strong>baa</strong>-i-bal<br>Lleva બ dos veces y la લ",
+      "audioH": "audios/clase_1_1/audio_h_baaibal.mp3",
+      "audioM": "audios/clase_1_1/audio_m_baaibal.mp3"
+    },
+    {
+      "gujarati": "જવાબ",
+      "dictado": "જવાબ",
+      "significado": "respuesta",
+      "imagen": "imagenes/Clase_1_1/img_javaab.jpg",
+      "pronunciacion": "જ-વ-ા-બ → ja-<strong>vaab</strong><br>સવાલ y જવાબ: pregunta y respuesta",
+      "audioH": "audios/clase_1_1/audio_h_javaab.mp3",
+      "audioM": "audios/clase_1_1/audio_m_javaab.mp3"
+    },
+    {
+      "gujarati": "યાદ",
+      "dictado": "યાદ",
+      "significado": "recuerdo",
+      "imagen": "imagenes/Clase_1_1/img_yaad.jpg",
+      "pronunciacion": "ય-ા-દ → <strong>yaad</strong><br>મને યાદ છે = me acuerdo",
+      "audioH": "audios/clase_1_1/audio_h_yaad.mp3",
+      "audioM": "audios/clase_1_1/audio_m_yaad.mp3"
+    },
+    {
+      "gujarati": "સવાલ",
+      "dictado": "સવાલ",
+      "significado": "pregunta",
+      "imagen": "imagenes/Clase_1_1/img_savaal.jpg",
+      "pronunciacion": "સ-વ-ા-લ → sa-<strong>vaal</strong>",
+      "audioH": "audios/clase_1_1/audio_h_savaal.mp3",
+      "audioM": "audios/clase_1_1/audio_m_savaal.mp3"
+    },
+    {
+      "gujarati": "સુંદર",
+      "dictado": "સુંદર",
+      "significado": "hermoso",
+      "imagen": "imagenes/Clase_1_1/img_sundar.jpg",
+      "pronunciacion": "સ-ું-દ-ર → <strong>sun</strong>-dar",
+      "audioH": "audios/clase_1_1/audio_h_sundar.mp3",
+      "audioM": "audios/clase_1_1/audio_m_sundar.mp3"
+    },
+    {
+      "gujarati": "દુનિયા",
+      "dictado": "દુનિયા",
+      "significado": "mundo",
+      "imagen": "imagenes/Clase_1_1/img_duniyaa.jpg",
+      "pronunciacion": "દ-ુ-ન-િ-ય-ા → du-ni-<strong>yaa</strong><br>Como વિશ્વ (1.2.1), pero de todos los días",
+      "audioH": "audios/clase_1_1/audio_h_duniyaa.mp3",
+      "audioM": "audios/clase_1_1/audio_m_duniyaa.mp3"
+    },
+    {
+      "gujarati": "દિવસ",
+      "dictado": "દિવસ",
+      "significado": "día",
+      "imagen": "imagenes/Clase_1_1/img_divas.jpg",
+      "pronunciacion": "દ-િ-વ-સ → di-<strong>vas</strong><br>Como en el diálogo: દિવસ કેવો રહ્યો?",
+      "audioH": "audios/clase_1_1/audio_h_divas.mp3",
+      "audioM": "audios/clase_1_1/audio_m_divas.mp3"
+    },
+    {
+      "gujarati": "નંબર",
+      "dictado": "નંબર",
+      "significado": "número (de teléfono)",
+      "imagen": "imagenes/Clase_1_1/img_nambar.jpg",
+      "pronunciacion": "ન-ં-બ-ર → <strong>nam</strong>-bar<br>Viene del inglés <em>number</em>",
+      "audioH": "audios/clase_1_1/audio_h_nambar.mp3",
+      "audioM": "audios/clase_1_1/audio_m_nambar.mp3"
+    },
+    {
+      "gujarati": "બલિદાન",
+      "dictado": "બલિદાન",
+      "significado": "sacrificio",
+      "imagen": "imagenes/Clase_1_1/img_balidaan.jpg",
+      "pronunciacion": "બ-લ-િ-દ-ા-ન → ba-li-<strong>daan</strong><br>Lleva las tres letras nuevas: બ, લ y દ",
+      "audioH": "audios/clase_1_1/audio_h_balidaan.mp3",
+      "audioM": "audios/clase_1_1/audio_m_balidaan.mp3"
+    },
+    {
+      "gujarati": "દરવાજો",
+      "dictado": "દરવાજો",
+      "significado": "puerta",
+      "imagen": "imagenes/Clase_1_1/img_darvaajo.jpg",
+      "pronunciacion": "દ-ર-વ-ા-જ-ો → dar-<strong>vaa</strong>-jo",
+      "audioH": "audios/clase_1_1/audio_h_darvaajo.mp3",
+      "audioM": "audios/clase_1_1/audio_m_darvaajo.mp3"
+    },
+    {
+      "gujarati": "સૌથી",
+      "dictado": "સૌથી",
+      "significado": "el que más",
+      "imagen": "imagenes/Clase_1_1/img_sauthii.jpg",
+      "pronunciacion": "સ-ૌ-થ-ી → <strong>sau</strong>-thii<br>Lleva la matra ૌ · સૌથી સારું = lo mejor",
+      "audioH": "audios/clase_1_1/audio_h_sauthii.mp3",
+      "audioM": "audios/clase_1_1/audio_m_sauthii.mp3"
+    }
+  ]
+}

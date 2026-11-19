@@ -32,9 +32,9 @@
         },
         {
           "numero": 3,
-          "titulo": "Muy pronto",
-          "sub_html": "consonantes: <strong>દ બ લ</strong><br>vocal independiente: <strong>ઔ</strong><br>vocal abreviada (matra): <strong>ૌ</strong>",
-          "estado": "proxima",
+          "titulo": "તમે ક્યાં રહો છો? - ¿dónde vive usted?",
+          "sub_html": "consonantes: <strong>દ બ લ</strong><br>vocal independiente: <strong>ઔ</strong><br>vocal abreviada (matra): <strong>ૌ</strong><br>conjuntiva: <strong>consonante + ય = ત્ય ક્ય હ્ય</strong> (se combinan)",
+          "estado": "activa",
           "codigo_leccion": "1.2.3"
         }
       ]

@@ -1,0 +1,57 @@
+{
+  "leccion": "1.2.3",
+  "letters": [
+    {
+      "letter": "ત",
+      "answer": "ta",
+      "audio": "audios/clase_1_1/audio_alfa_m_ta.mp3"
+    },
+    {
+      "letter": "ક",
+      "answer": "ka",
+      "audio": "audios/clase_1_1/audio_alfa_m_ka.mp3"
+    },
+    {
+      "letter": "હ",
+      "answer": "ha",
+      "audio": "audios/clase_1_1/audio_alfa_m_ha.mp3"
+    },
+    {
+      "letter": "ય",
+      "answer": "ya",
+      "audio": "audios/clase_1_1/audio_alfa_m_ya.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "ત્ય",
+      "answer": "tya",
+      "audio": "audios/clase_1_1/audio_alfa_m_tya.mp3"
+    },
+    {
+      "letter": "ક્ય",
+      "answer": "kya",
+      "audio": "audios/clase_1_1/audio_alfa_m_kya.mp3"
+    },
+    {
+      "letter": "હ્ય",
+      "answer": "hya",
+      "audio": "audios/clase_1_1/audio_alfa_m_hya.mp3"
+    },
+    {
+      "letter": "ક્યાં",
+      "answer": "kyaaⁿ",
+      "audio": "audios/clase_1_1/audio_m_kyaa(m).mp3"
+    },
+    {
+      "letter": "ક્યારે",
+      "answer": "kyaare",
+      "audio": "audios/clase_1_1/audio_m_kyaare.mp3"
+    },
+    {
+      "letter": "રહ્યો",
+      "answer": "rahyo",
+      "audio": "audios/clase_1_1/audio_m_rahyo.mp3"
+    }
+  ]
+}

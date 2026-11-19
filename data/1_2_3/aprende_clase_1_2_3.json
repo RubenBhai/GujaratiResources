@@ -1,0 +1,125 @@
+{
+  "leccion": "1.2.3",
+  "items": [
+    {
+      "id": "palabra_1",
+      "categoria": "palabra",
+      "gujarati": "મુલાકાત",
+      "significado": "visita",
+      "audioM": "audios/clase_1_1/audio_m_mulaakaat.mp3",
+      "imagen": "imagenes/Clase_1_1/img_mulaakaat_noinfo.jpg"
+    },
+    {
+      "id": "palabra_2",
+      "categoria": "palabra",
+      "gujarati": "લોકો",
+      "significado": "gente, personas",
+      "audioM": "audios/clase_1_1/audio_m_loko.mp3",
+      "imagen": "imagenes/Clase_1_1/img_loko_noinfo.jpg"
+    },
+    {
+      "id": "palabra_3",
+      "categoria": "palabra",
+      "gujarati": "કલમ",
+      "significado": "versículo, texto bíblico",
+      "audioM": "audios/clase_1_1/audio_m_kalam.mp3",
+      "imagen": "imagenes/Clase_1_1/img_kalam_noinfo.jpg"
+    },
+    {
+      "id": "palabra_4",
+      "categoria": "palabra",
+      "gujarati": "મદદ",
+      "significado": "ayuda",
+      "audioM": "audios/clase_1_1/audio_m_madad.mp3",
+      "imagen": "imagenes/Clase_1_1/img_madad_noinfo.jpg"
+    },
+    {
+      "id": "palabra_5",
+      "categoria": "palabra",
+      "gujarati": "બાઈબલ",
+      "significado": "Biblia",
+      "audioM": "audios/clase_1_1/audio_m_baaibal.mp3",
+      "imagen": "imagenes/Clase_1_1/img_baaibal_noinfo.jpg"
+    },
+    {
+      "id": "palabra_6",
+      "categoria": "palabra",
+      "gujarati": "જવાબ",
+      "significado": "respuesta",
+      "audioM": "audios/clase_1_1/audio_m_javaab.mp3",
+      "imagen": "imagenes/Clase_1_1/img_javaab_noinfo.jpg"
+    },
+    {
+      "id": "palabra_7",
+      "categoria": "palabra",
+      "gujarati": "યાદ",
+      "significado": "recuerdo",
+      "audioM": "audios/clase_1_1/audio_m_yaad.mp3",
+      "imagen": "imagenes/Clase_1_1/img_yaad_noinfo.jpg"
+    },
+    {
+      "id": "palabra_8",
+      "categoria": "palabra",
+      "gujarati": "સવાલ",
+      "significado": "pregunta",
+      "audioM": "audios/clase_1_1/audio_m_savaal.mp3",
+      "imagen": "imagenes/Clase_1_1/img_savaal_noinfo.jpg"
+    },
+    {
+      "id": "palabra_9",
+      "categoria": "palabra",
+      "gujarati": "સુંદર",
+      "significado": "hermoso",
+      "audioM": "audios/clase_1_1/audio_m_sundar.mp3",
+      "imagen": "imagenes/Clase_1_1/img_sundar_noinfo.jpg"
+    },
+    {
+      "id": "palabra_10",
+      "categoria": "palabra",
+      "gujarati": "દુનિયા",
+      "significado": "mundo",
+      "audioM": "audios/clase_1_1/audio_m_duniyaa.mp3",
+      "imagen": "imagenes/Clase_1_1/img_duniyaa_noinfo.jpg"
+    },
+    {
+      "id": "palabra_11",
+      "categoria": "palabra",
+      "gujarati": "દિવસ",
+      "significado": "día",
+      "audioM": "audios/clase_1_1/audio_m_divas.mp3",
+      "imagen": "imagenes/Clase_1_1/img_divas_noinfo.jpg"
+    },
+    {
+      "id": "palabra_12",
+      "categoria": "palabra",
+      "gujarati": "નંબર",
+      "significado": "número (de teléfono)",
+      "audioM": "audios/clase_1_1/audio_m_nambar.mp3",
+      "imagen": "imagenes/Clase_1_1/img_nambar_noinfo.jpg"
+    },
+    {
+      "id": "palabra_13",
+      "categoria": "palabra",
+      "gujarati": "બલિદાન",
+      "significado": "sacrificio",
+      "audioM": "audios/clase_1_1/audio_m_balidaan.mp3",
+      "imagen": "imagenes/Clase_1_1/img_balidaan_noinfo.jpg"
+    },
+    {
+      "id": "palabra_14",
+      "categoria": "palabra",
+      "gujarati": "દરવાજો",
+      "significado": "puerta",
+      "audioM": "audios/clase_1_1/audio_m_darvaajo.mp3",
+      "imagen": "imagenes/Clase_1_1/img_darvaajo_noinfo.jpg"
+    },
+    {
+      "id": "palabra_15",
+      "categoria": "palabra",
+      "gujarati": "સૌથી",
+      "significado": "el que más",
+      "audioM": "audios/clase_1_1/audio_m_sauthii.mp3",
+      "imagen": "imagenes/Clase_1_1/img_sauthii_noinfo.jpg"
+    }
+  ]
+}

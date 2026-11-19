@@ -1,0 +1,200 @@
+{
+  "1.2-3": {
+    "titulo": "Lección 1.2.3 — Consonantes, vocal, consonante + ય y preguntas",
+    "fuente": "Sesión 1.2",
+    "frases": [
+      {
+        "gujarati": "દ",
+        "espanol": "Consonante da",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_da.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_da.mp3"
+      },
+      {
+        "gujarati": "બ",
+        "espanol": "Consonante ba",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_ba.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_ba.mp3"
+      },
+      {
+        "gujarati": "લ",
+        "espanol": "Consonante la",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_la.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_la.mp3"
+      },
+      {
+        "gujarati": "ઔ",
+        "espanol": "Vocal au",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_au.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_au.mp3"
+      },
+      {
+        "gujarati": "સૌ",
+        "espanol": "sílaba sau",
+        "audioClip": "audios/clase_1_1/audio_m_sau.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_sau.mp3"
+      },
+      {
+        "gujarati": "દૌ",
+        "espanol": "sílaba dau",
+        "audioClip": "audios/clase_1_1/audio_m_dau.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_dau.mp3"
+      },
+      {
+        "gujarati": "લૌ",
+        "espanol": "sílaba lau",
+        "audioClip": "audios/clase_1_1/audio_m_lau.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_lau.mp3"
+      },
+      {
+        "gujarati": "ત્ય",
+        "espanol": "consonante + ય: tya",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_tya.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_tya.mp3"
+      },
+      {
+        "gujarati": "ક્ય",
+        "espanol": "consonante + ય: kya",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_kya.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_kya.mp3"
+      },
+      {
+        "gujarati": "હ્ય",
+        "espanol": "consonante + ય: hya",
+        "audioClip": "audios/clase_1_1/audio_alfa_m_hya.mp3",
+        "audioClip2": "audios/clase_1_1/audio_alfa_h_hya.mp3"
+      },
+      {
+        "gujarati": "મુલાકાત",
+        "espanol": "visita",
+        "audioClip": "audios/clase_1_1/audio_m_mulaakaat.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_mulaakaat.mp3"
+      },
+      {
+        "gujarati": "લોકો",
+        "espanol": "gente, personas",
+        "audioClip": "audios/clase_1_1/audio_m_loko.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_loko.mp3"
+      },
+      {
+        "gujarati": "કલમ",
+        "espanol": "versículo, texto bíblico",
+        "audioClip": "audios/clase_1_1/audio_m_kalam.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_kalam.mp3"
+      },
+      {
+        "gujarati": "મદદ",
+        "espanol": "ayuda",
+        "audioClip": "audios/clase_1_1/audio_m_madad.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_madad.mp3"
+      },
+      {
+        "gujarati": "બાઈબલ",
+        "espanol": "Biblia",
+        "audioClip": "audios/clase_1_1/audio_m_baaibal.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_baaibal.mp3"
+      },
+      {
+        "gujarati": "જવાબ",
+        "espanol": "respuesta",
+        "audioClip": "audios/clase_1_1/audio_m_javaab.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_javaab.mp3"
+      },
+      {
+        "gujarati": "યાદ",
+        "espanol": "recuerdo",
+        "audioClip": "audios/clase_1_1/audio_m_yaad.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_yaad.mp3"
+      },
+      {
+        "gujarati": "સવાલ",
+        "espanol": "pregunta",
+        "audioClip": "audios/clase_1_1/audio_m_savaal.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_savaal.mp3"
+      },
+      {
+        "gujarati": "સુંદર",
+        "espanol": "hermoso",
+        "audioClip": "audios/clase_1_1/audio_m_sundar.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_sundar.mp3"
+      },
+      {
+        "gujarati": "દુનિયા",
+        "espanol": "mundo",
+        "audioClip": "audios/clase_1_1/audio_m_duniyaa.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_duniyaa.mp3"
+      },
+      {
+        "gujarati": "દિવસ",
+        "espanol": "día",
+        "audioClip": "audios/clase_1_1/audio_m_divas.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_divas.mp3"
+      },
+      {
+        "gujarati": "નંબર",
+        "espanol": "número (de teléfono)",
+        "audioClip": "audios/clase_1_1/audio_m_nambar.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_nambar.mp3"
+      },
+      {
+        "gujarati": "બલિદાન",
+        "espanol": "sacrificio",
+        "audioClip": "audios/clase_1_1/audio_m_balidaan.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_balidaan.mp3"
+      },
+      {
+        "gujarati": "દરવાજો",
+        "espanol": "puerta",
+        "audioClip": "audios/clase_1_1/audio_m_darvaajo.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_darvaajo.mp3"
+      },
+      {
+        "gujarati": "સૌથી",
+        "espanol": "el que más",
+        "audioClip": "audios/clase_1_1/audio_m_sauthii.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_sauthii.mp3"
+      },
+      {
+        "gujarati": "આવો, આવો! અંદર આવો.",
+        "espanol": "¡pasen, pasen! adelante",
+        "audioClip": "audios/clase_1_1/dialogo_1_2_3_01.mp3",
+        "audioClip2": "audios/clase_1_1/dialogo_1_2_3_01.mp3"
+      },
+      {
+        "gujarati": "રોહન, દિવસ કેવો રહ્યો?",
+        "espanol": "Rohan, ¿qué tal el día?",
+        "audioClip": "audios/clase_1_1/dialogo_1_2_3_03.mp3",
+        "audioClip2": "audios/clase_1_1/dialogo_1_2_3_03.mp3"
+      },
+      {
+        "gujarati": "પરેશજી, તમે ક્યાં રહો છો?",
+        "espanol": "Paresh, ¿dónde viven ustedes?",
+        "audioClip": "audios/clase_1_1/dialogo_1_2_3_05.mp3",
+        "audioClip2": "audios/clase_1_1/dialogo_1_2_3_05.mp3"
+      },
+      {
+        "gujarati": "માસી, આ કોણ છે?",
+        "espanol": "tía, ¿quién es este?",
+        "audioClip": "audios/clase_1_1/dialogo_1_2_3_09.mp3",
+        "audioClip2": "audios/clase_1_1/dialogo_1_2_3_09.mp3"
+      },
+      {
+        "gujarati": "મનિષા, હું શું મદદ કરું?",
+        "espanol": "Manisha, ¿en qué te ayudo?",
+        "audioClip": "audios/clase_1_1/dialogo_1_2_3_11.mp3",
+        "audioClip2": "audios/clase_1_1/dialogo_1_2_3_11.mp3"
+      },
+      {
+        "gujarati": "બધા જમવા આવો!",
+        "espanol": "¡todos a comer!",
+        "audioClip": "audios/clase_1_1/dialogo_1_2_3_13.mp3",
+        "audioClip2": "audios/clase_1_1/dialogo_1_2_3_13.mp3"
+      },
+      {
+        "gujarati": "તમારી પાસે ક્યારે સમય છે?",
+        "espanol": "¿cuándo tiene tiempo? (para la predicación)",
+        "audioClip": "audios/clase_1_1/audio_m_tamaarii_paase_kyaare_samay_chhe.mp3",
+        "audioClip2": "audios/clase_1_1/audio_h_tamaarii_paase_kyaare_samay_chhe.mp3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "leccion": "1.2.3",
+  "letters": [
+    {
+      "letter": "ઔ",
+      "answer": "au",
+      "audio": "audios/clase_1_1/audio_alfa_m_au.mp3"
+    },
+    {
+      "letter": "ઓ",
+      "answer": "o",
+      "audio": "audios/clase_1_1/audio_alfa_m_o.mp3"
+    },
+    {
+      "letter": "દ",
+      "answer": "da",
+      "audio": "audios/clase_1_1/audio_alfa_m_da.mp3"
+    },
+    {
+      "letter": "બ",
+      "answer": "ba",
+      "audio": "audios/clase_1_1/audio_alfa_m_ba.mp3"
+    },
+    {
+      "letter": "લ",
+      "answer": "la",
+      "audio": "audios/clase_1_1/audio_alfa_m_la.mp3"
+    }
+  ],
+  "extras": [
+    {
+      "letter": "સૌ",
+      "answer": "sau",
+      "audio": "audios/clase_1_1/audio_m_sau.mp3"
+    },
+    {
+      "letter": "દૌ",
+      "answer": "dau",
+      "audio": "audios/clase_1_1/audio_m_dau.mp3"
+    },
+    {
+      "letter": "લૌ",
+      "answer": "lau",
+      "audio": "audios/clase_1_1/audio_m_lau.mp3"
+    },
+    {
+      "letter": "સૌથી",
+      "answer": "sauthii",
+      "audio": "audios/clase_1_1/audio_m_sauthii.mp3",
+      "significado": "el que más"
+    }
+  ]
+}

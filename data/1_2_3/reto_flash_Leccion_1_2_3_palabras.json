@@ -1,0 +1,117 @@
+{
+  "leccion": "1.2.3",
+  "titulo": "Reto relámpago de palabras",
+  "badge": "Palabras",
+  "unidad": "palabras",
+  "estilo": "palabras",
+  "columnas": 2,
+  "espera_ms": 2500,
+  "vueltas": 3,
+  "letters": [
+    {
+      "letter": "મુલાકાત",
+      "answer": "mulaakaat",
+      "audio": "audios/clase_1_1/audio_m_mulaakaat.mp3",
+      "significado": "visita",
+      "audio_h": "audios/clase_1_1/audio_h_mulaakaat.mp3"
+    },
+    {
+      "letter": "લોકો",
+      "answer": "loko",
+      "audio": "audios/clase_1_1/audio_m_loko.mp3",
+      "significado": "gente, personas",
+      "audio_h": "audios/clase_1_1/audio_h_loko.mp3"
+    },
+    {
+      "letter": "કલમ",
+      "answer": "kalam",
+      "audio": "audios/clase_1_1/audio_m_kalam.mp3",
+      "significado": "versículo, texto bíblico",
+      "audio_h": "audios/clase_1_1/audio_h_kalam.mp3"
+    },
+    {
+      "letter": "મદદ",
+      "answer": "madad",
+      "audio": "audios/clase_1_1/audio_m_madad.mp3",
+      "significado": "ayuda",
+      "audio_h": "audios/clase_1_1/audio_h_madad.mp3"
+    },
+    {
+      "letter": "બાઈબલ",
+      "answer": "baaibal",
+      "audio": "audios/clase_1_1/audio_m_baaibal.mp3",
+      "significado": "Biblia",
+      "audio_h": "audios/clase_1_1/audio_h_baaibal.mp3"
+    },
+    {
+      "letter": "જવાબ",
+      "answer": "javaab",
+      "audio": "audios/clase_1_1/audio_m_javaab.mp3",
+      "significado": "respuesta",
+      "audio_h": "audios/clase_1_1/audio_h_javaab.mp3"
+    },
+    {
+      "letter": "યાદ",
+      "answer": "yaad",
+      "audio": "audios/clase_1_1/audio_m_yaad.mp3",
+      "significado": "recuerdo",
+      "audio_h": "audios/clase_1_1/audio_h_yaad.mp3"
+    },
+    {
+      "letter": "સવાલ",
+      "answer": "savaal",
+      "audio": "audios/clase_1_1/audio_m_savaal.mp3",
+      "significado": "pregunta",
+      "audio_h": "audios/clase_1_1/audio_h_savaal.mp3"
+    },
+    {
+      "letter": "સુંદર",
+      "answer": "sundar",
+      "audio": "audios/clase_1_1/audio_m_sundar.mp3",
+      "significado": "hermoso",
+      "audio_h": "audios/clase_1_1/audio_h_sundar.mp3"
+    },
+    {
+      "letter": "દુનિયા",
+      "answer": "duniyaa",
+      "audio": "audios/clase_1_1/audio_m_duniyaa.mp3",
+      "significado": "mundo",
+      "audio_h": "audios/clase_1_1/audio_h_duniyaa.mp3"
+    },
+    {
+      "letter": "દિવસ",
+      "answer": "divas",
+      "audio": "audios/clase_1_1/audio_m_divas.mp3",
+      "significado": "día",
+      "audio_h": "audios/clase_1_1/audio_h_divas.mp3"
+    },
+    {
+      "letter": "નંબર",
+      "answer": "nambar",
+      "audio": "audios/clase_1_1/audio_m_nambar.mp3",
+      "significado": "número (de teléfono)",
+      "audio_h": "audios/clase_1_1/audio_h_nambar.mp3"
+    },
+    {
+      "letter": "બલિદાન",
+      "answer": "balidaan",
+      "audio": "audios/clase_1_1/audio_m_balidaan.mp3",
+      "significado": "sacrificio",
+      "audio_h": "audios/clase_1_1/audio_h_balidaan.mp3"
+    },
+    {
+      "letter": "દરવાજો",
+      "answer": "darvaajo",
+      "audio": "audios/clase_1_1/audio_m_darvaajo.mp3",
+      "significado": "puerta",
+      "audio_h": "audios/clase_1_1/audio_h_darvaajo.mp3"
+    },
+    {
+      "letter": "સૌથી",
+      "answer": "sauthii",
+      "audio": "audios/clase_1_1/audio_m_sauthii.mp3",
+      "significado": "el que más",
+      "audio_h": "audios/clase_1_1/audio_h_sauthii.mp3"
+    }
+  ]
+}

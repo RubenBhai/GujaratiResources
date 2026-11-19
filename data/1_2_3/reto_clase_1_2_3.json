@@ -1,0 +1,140 @@
+{
+  "leccion": "1.2.3",
+  "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+  "programa_efecto_victoria": "estrellas",
+  "nivel1": {
+    "instruccion": "Lee el texto y toca cada etiqueta cada vez que encuentres ese elemento.",
+    "maxSesiones": 2,
+    "texto": "રવિવારે વીણા મનિષાને ત્યાં આવે છે. મનિષા પૂછે છે: તમે ક્યાં રહો છો? રોશની પૂછે છે: આ કોણ છે? આજે સૌથી સુંદર દિવસ છે. મનિષા બાઈબલ લાવે છે.",
+    "elementos": [
+      "દ",
+      "બ",
+      "લ",
+      "ૌ",
+      "ક્યાં"
+    ]
+  },
+  "nivel2": {
+    "instruccion": "Escucha el audio y toca la etiqueta cada vez que escuches esa palabra.",
+    "sesiones": [
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_3_audio_1.mp3",
+        "elemento": "ક્યાં",
+        "respuesta": 3
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_3_audio_2.mp3",
+        "elemento": "કોણ",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_3_audio_3.mp3",
+        "elemento": "સુંદર",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_3_audio_4.mp3",
+        "elemento": "બાઈબલ",
+        "respuesta": 2
+      },
+      {
+        "audio": "audios/clase_1_1/reto_leccion_1_2_3_audio_5.mp3",
+        "elemento": "મદદ",
+        "respuesta": 3
+      }
+    ]
+  },
+  "nivel3": {
+    "instruccion": "Pronuncia cada frase. Gemini evaluará tu pronunciación.",
+    "maxSesiones": 2,
+    "elementos": [
+      {
+        "gujarati": "તમે ક્યાં રહો છો?"
+      },
+      {
+        "gujarati": "આ કોણ છે?"
+      },
+      {
+        "gujarati": "દિવસ કેવો રહ્યો?"
+      },
+      {
+        "gujarati": "તમારી પાસે ક્યારે સમય છે?"
+      }
+    ]
+  },
+  "nivel4": {
+    "instruccion": "Escucha el audio y toca las palabras en Gujarati para completar la oración.",
+    "sesiones": [
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_3_05.mp3",
+        "oracion_completa": "પરેશજી, તમે ક્યાં રહો છો?",
+        "espanol": "Paresh, ¿dónde viven ustedes?"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_3_06.mp3",
+        "oracion_completa": "અમે સુરતમાં રહીએ છીએ.",
+        "espanol": "vivimos en Surat"
+      },
+      {
+        "audio_oracion_completa": "audios/clase_1_1/dialogo_1_2_3_09.mp3",
+        "oracion_completa": "માસી, આ કોણ છે?",
+        "espanol": "tía, ¿quién es este?"
+      }
+    ]
+  },
+  "nivel6": {
+    "instruccion": "Escucha cada parte y repítela en voz alta. La frase irá creciendo.",
+    "oraciones": [
+      {
+        "oracion_completa": "તમે ક્યાં રહો છો",
+        "espanol": "¿Dónde vive usted?",
+        "fragmentos": [
+          {
+            "texto": "છો",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_1.mp3"
+          },
+          {
+            "texto": "રહો છો",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_2.mp3"
+          },
+          {
+            "texto": "ક્યાં રહો છો",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_3.mp3"
+          },
+          {
+            "texto": "તમે ક્યાં રહો છો",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_01_frag_4.mp3"
+          }
+        ]
+      },
+      {
+        "oracion_completa": "તમારી પાસે ક્યારે સમય છે",
+        "espanol": "¿Cuándo tiene tiempo?",
+        "fragmentos": [
+          {
+            "texto": "છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_1.mp3"
+          },
+          {
+            "texto": "સમય છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_2.mp3"
+          },
+          {
+            "texto": "ક્યારે સમય છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_3.mp3"
+          },
+          {
+            "texto": "પાસે ક્યારે સમય છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_4.mp3"
+          },
+          {
+            "texto": "તમારી પાસે ક્યારે સમય છે",
+            "audio": "audios/clase_1_1/dictado_backwards_1_2_3_02_frag_5.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "video_jw": false,
+  "cantar_jw": true
+}

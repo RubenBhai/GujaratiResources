@@ -1,0 +1,534 @@
+{
+  "leccion": "1.2.3",
+  "video": {
+    "titulo": "Escucha esta conversación",
+    "subtitulo": "Antes de empezar",
+    "intro": "Es domingo: Vina, Paresh, Roshni y Rohan llegan a comer a casa de Manisha. Al terminar la lección podrás leer y entender toda la conversación.",
+    "audio": "videos/clase_1_1/leccion_1_2_3_video.mp3",
+    "altoPorDialogo": 175,
+    "subtitulo_fin": "Al terminar la lección",
+    "intro_fin": "Es el momento de probar tus conocimientos. ¿Cuántas palabras o frases puedes reconocer?",
+    "subtitulo_desafio": "El desafío final",
+    "titulo_desafio": "¿Te animas a conversar?",
+    "intro_desafio": "Ya escuchaste el diálogo muchas veces. Ahora te toca a ti: elige un personaje y participa en la conversación.",
+    "secuencias": [
+      {
+        "dialogos": [
+          1,
+          2
+        ]
+      },
+      {
+        "dialogos": [
+          3,
+          4
+        ]
+      },
+      {
+        "dialogos": [
+          5,
+          6
+        ]
+      },
+      {
+        "dialogos": [
+          7,
+          8
+        ]
+      },
+      {
+        "dialogos": [
+          9,
+          10
+        ]
+      },
+      {
+        "dialogos": [
+          11,
+          12
+        ]
+      },
+      {
+        "dialogos": [
+          13
+        ]
+      }
+    ],
+    "vertical": "4:3"
+  },
+  "video_interactivo": {
+    "titulo": "Practica la conversación",
+    "subtitulo": "Tu turno de hablar",
+    "intro": "Escoge un personaje. Cuando llegue su turno, te tocará hablar a ti en gujarati. ¡Vamos a practicar!"
+  },
+  "avatares": {
+    "manisha": {
+      "nombre": "મનિષાબેન",
+      "color": "#A8362A",
+      "imagen": "imagenes/Clase_1_1/avatar_manisha.jpg"
+    },
+    "vina": {
+      "nombre": "વીણા",
+      "color": "#5F6E4F",
+      "imagen": "imagenes/Clase_1_1/avatar_vina.jpg"
+    },
+    "roshni": {
+      "nombre": "રોશની",
+      "color": "#8A5A8C",
+      "imagen": "imagenes/Clase_1_1/avatar_roshni.jpg"
+    },
+    "rohan": {
+      "nombre": "રોહન",
+      "color": "#4A6B8A",
+      "imagen": "imagenes/Clase_1_1/avatar_rohan.jpg"
+    },
+    "paresh": {
+      "nombre": "પરેશ",
+      "color": "#3F6E8C",
+      "imagen": "imagenes/Clase_1_1/avatar_paresh.jpg"
+    }
+  },
+  "imagenAvatarActivo": "imagenes/Clase_1_1/avatarActivo.jpg",
+  "dialogos": [
+    {
+      "id": 1,
+      "avatar": "manisha",
+      "lado": "abajo",
+      "gujarati": "આવો, આવો! અંદર આવો.",
+      "espanol": "¡Pasen, pasen! Adelante.",
+      "ini": 0.3,
+      "fin": 2.55,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_01.mp3",
+      "imagenFondo": "imagenes/Clase_1_1/D6_Dialogo_Fondo_1.jpg",
+      "Burbuja_Posicion": {
+        "x": 370,
+        "y": 600,
+        "cola": 370
+      },
+      "avatarActivo": {
+        "x": 370,
+        "y": 123
+      }
+    },
+    {
+      "id": 2,
+      "avatar": "vina",
+      "lado": "arriba",
+      "gujarati": "નમસ્તે! વાહ, બહુ સરસ!",
+      "espanol": "¡Hola! ¡Qué bonito!",
+      "ini": 3.05,
+      "fin": 5.17,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_02.mp3",
+      "Burbuja_Posicion": {
+        "x": 760,
+        "y": 12,
+        "cola": 760
+      },
+      "avatarActivo": {
+        "x": 760,
+        "y": 156
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_2_1.png",
+          "x": 688,
+          "y": 155,
+          "ancho": 114,
+          "alto": 112
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_2_2.png",
+          "x": 658,
+          "y": 239,
+          "ancho": 201,
+          "alto": 291
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "avatar": "manisha",
+      "lado": "abajo",
+      "gujarati": "રોહન, દિવસ કેવો રહ્યો?",
+      "espanol": "Rohan, ¿qué tal el día?",
+      "ini": 5.67,
+      "fin": 7.54,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_03.mp3",
+      "Burbuja_Posicion": {
+        "x": 370,
+        "y": 600,
+        "cola": 370
+      },
+      "avatarActivo": {
+        "x": 370,
+        "y": 123
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_3_1.png",
+          "x": 689,
+          "y": 155,
+          "ancho": 110,
+          "alto": 106
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_3_2.png",
+          "x": 659,
+          "y": 256,
+          "ancho": 200,
+          "alto": 273
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_3_3.png",
+          "x": 391,
+          "y": 280,
+          "ancho": 199,
+          "alto": 248
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "avatar": "rohan",
+      "lado": "arriba",
+      "gujarati": "બહુ સરસ, માસી!",
+      "espanol": "¡Muy bien, tía!",
+      "ini": 8.04,
+      "fin": 9.24,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_04.mp3",
+      "Burbuja_Posicion": {
+        "x": 1120,
+        "y": 12,
+        "cola": 1120
+      },
+      "avatarActivo": {
+        "x": 1120,
+        "y": 263
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_4_1.png",
+          "x": 392,
+          "y": 280,
+          "ancho": 197,
+          "alto": 246
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_4_2.png",
+          "x": 1070,
+          "y": 284,
+          "ancho": 133,
+          "alto": 154
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_4_3.png",
+          "x": 1011,
+          "y": 393,
+          "ancho": 112,
+          "alto": 210
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "avatar": "manisha",
+      "lado": "abajo",
+      "gujarati": "પરેશજી, તમે ક્યાં રહો છો?",
+      "espanol": "Paresh, ¿dónde viven ustedes?",
+      "ini": 9.74,
+      "fin": 11.77,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_05.mp3",
+      "Burbuja_Posicion": {
+        "x": 370,
+        "y": 600,
+        "cola": 370
+      },
+      "avatarActivo": {
+        "x": 370,
+        "y": 123
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_5_1.png",
+          "x": 400,
+          "y": 280,
+          "ancho": 195,
+          "alto": 123
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_5_2.png",
+          "x": 1070,
+          "y": 293,
+          "ancho": 131,
+          "alto": 142
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_5_3.png",
+          "x": 1012,
+          "y": 393,
+          "ancho": 111,
+          "alto": 210
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "avatar": "paresh",
+      "lado": "arriba",
+      "gujarati": "અમે સુરતમાં રહીએ છીએ.",
+      "espanol": "Vivimos en Surat.",
+      "ini": 12.27,
+      "fin": 13.94,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_06.mp3",
+      "Burbuja_Posicion": {
+        "x": 918,
+        "y": 12,
+        "cola": 918
+      },
+      "avatarActivo": {
+        "x": 918,
+        "y": 118
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_6_1.png",
+          "x": 824,
+          "y": 277,
+          "ancho": 145,
+          "alto": 130
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_6_2.png",
+          "x": 400,
+          "y": 280,
+          "ancho": 192,
+          "alto": 123
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "avatar": "manisha",
+      "lado": "abajo",
+      "gujarati": "અહીં ક્યારે આવ્યા?",
+      "espanol": "¿Y cuándo llegaron aquí?",
+      "ini": 14.44,
+      "fin": 16.27,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_07.mp3",
+      "Burbuja_Posicion": {
+        "x": 370,
+        "y": 600,
+        "cola": 370
+      },
+      "avatarActivo": {
+        "x": 370,
+        "y": 123
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_7_1.png",
+          "x": 329,
+          "y": 131,
+          "ancho": 133,
+          "alto": 132
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_7_2.png",
+          "x": 824,
+          "y": 278,
+          "ancho": 144,
+          "alto": 129
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "avatar": "paresh",
+      "lado": "arriba",
+      "gujarati": "બે વરસ પહેલાં.",
+      "espanol": "Hace dos años.",
+      "ini": 16.77,
+      "fin": 17.94,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_08.mp3",
+      "Burbuja_Posicion": {
+        "x": 918,
+        "y": 12,
+        "cola": 918
+      },
+      "avatarActivo": {
+        "x": 918,
+        "y": 118
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_8_1.png",
+          "x": 761,
+          "y": 215,
+          "ancho": 157,
+          "alto": 188
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "avatar": "roshni",
+      "lado": "arriba",
+      "gujarati": "માસી, આ કોણ છે?",
+      "espanol": "Tía, ¿quién es este?",
+      "ini": 18.44,
+      "fin": 20.92,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_09.mp3",
+      "Burbuja_Posicion": {
+        "x": 885,
+        "y": 12,
+        "cola": 885
+      },
+      "avatarActivo": {
+        "x": 885,
+        "y": 343
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_9_1.png",
+          "x": 802,
+          "y": 215,
+          "ancho": 217,
+          "alto": 518
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "avatar": "manisha",
+      "lado": "abajo",
+      "gujarati": "આ મારા પતિ છે. તે સાંજે આવશે.",
+      "espanol": "Es mi esposo. Llega en la tarde.",
+      "ini": 21.42,
+      "fin": 23.83,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_10.mp3",
+      "Burbuja_Posicion": {
+        "x": 370,
+        "y": 600,
+        "cola": 370
+      },
+      "avatarActivo": {
+        "x": 370,
+        "y": 123
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_10_1.png",
+          "x": 802,
+          "y": 334,
+          "ancho": 217,
+          "alto": 397
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "avatar": "vina",
+      "lado": "arriba",
+      "gujarati": "મનિષા, હું શું મદદ કરું?",
+      "espanol": "Manisha, ¿en qué te ayudo?",
+      "ini": 24.33,
+      "fin": 26.45,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_11.mp3",
+      "Burbuja_Posicion": {
+        "x": 760,
+        "y": 12,
+        "cola": 760
+      },
+      "avatarActivo": {
+        "x": 760,
+        "y": 156
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_11_1.png",
+          "x": 574,
+          "y": 156,
+          "ancho": 288,
+          "alto": 612
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "avatar": "manisha",
+      "lado": "abajo",
+      "gujarati": "ના, ના. તમે બેસો ને.",
+      "espanol": "No, no. Usted siéntese.",
+      "ini": 26.95,
+      "fin": 28.69,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_12.mp3",
+      "Burbuja_Posicion": {
+        "x": 370,
+        "y": 600,
+        "cola": 370
+      },
+      "avatarActivo": {
+        "x": 370,
+        "y": 123
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_12_1.png",
+          "x": 304,
+          "y": 130,
+          "ancho": 162,
+          "alto": 135
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_12_2.png",
+          "x": 575,
+          "y": 155,
+          "ancho": 287,
+          "alto": 613
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_12_3.png",
+          "x": 397,
+          "y": 233,
+          "ancho": 192,
+          "alto": 177
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "avatar": "manisha",
+      "lado": "abajo",
+      "gujarati": "બધા જમવા આવો!",
+      "espanol": "¡Todos a comer!",
+      "ini": 29.19,
+      "fin": 30.48,
+      "audio": "audios/clase_1_1/dialogo_1_2_3_13.mp3",
+      "Burbuja_Posicion": {
+        "x": 370,
+        "y": 600,
+        "cola": 370
+      },
+      "avatarActivo": {
+        "x": 370,
+        "y": 123
+      },
+      "coordenada_escena": [
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_13_1.png",
+          "x": 330,
+          "y": 133,
+          "ancho": 267,
+          "alto": 280
+        },
+        {
+          "imagen": "imagenes/Clase_1_1/D6_Dialogo_Cambio_Escena_13_2.png",
+          "x": 182,
+          "y": 180,
+          "ancho": 204,
+          "alto": 459
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "leccion": "1.2.3",
+  "home": "leccion_intro.html?leccion=1.2.3",
+  "badge": "Canta en gujarati",
+  "titulo": "Aprende cantando",
+  "lead": "Canto 159: યહોવાનો મહિમા ગાઉં — «Canto la grandeza de Jehová». Con lo que ya sabes puedes leer tres de cada cuatro palabras.",
+  "antes": {
+    "titulo": "Busca estas en la letra",
+    "palabras": [
+      {
+        "gu": "કોણ",
+        "es": "¿quién?"
+      },
+      {
+        "gu": "દિલ",
+        "es": "corazón"
+      },
+      {
+        "gu": "નદી",
+        "es": "río"
+      },
+      {
+        "gu": "હાથ",
+        "es": "mano"
+      }
+    ]
+  },
+  "escuchar": {
+    "titulo": "Primero, lee con la música",
+    "descripcion": "Suena la música con la letra en pantalla. Esta vez no cantes: sigue la letra con la vista y busca las palabras de la lección.",
+    "boton": "📖 Leer con la música",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si leíste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૫૯-યહોવાનો-મહિમા-ગાઉં/?content=video"
+  },
+  "cantar": {
+    "titulo": "Ahora, canta tú",
+    "descripcion": "La misma música y la misma letra. Ahora te toca a ti: canta leyendo las palabras a tu propio ritmo.",
+    "boton": "🎤 Cantar",
+    "aviso": "Se abre en jw.org, en otra pestaña",
+    "etiqueta": "Si cantaste",
+    "url": "https://www.jw.org/gu/લાઇબ્રેરી/સંગીત-ગીતો/ખુશીથી-ગાઓ/૧૫૯-યહોવાનો-મહિમા-ગાઉં/?content=video"
+  },
+  "despues": {
+    "titulo": "Después de cantar",
+    "escuchar": [
+      "La canción empieza con una pregunta: su primera palabra es <b class=\"gu\">કોણ</b>, «¿quién?». Es una de las preguntas con ક de esta lección.",
+      "<b class=\"gu\">દિલ</b> también quiere decir «corazón», como <b class=\"gu\">હૈયું</b> en la lección anterior.",
+      "En el estribillo está <b class=\"gu\">ગૌરવ</b>, «gloria». Ya reconoces su matra <b class=\"gu\">ૌ</b>; la primera letra, <b class=\"gu\">ગ</b>, llega más adelante."
+    ],
+    "cantar": [
+      "¿Encontraste <b class=\"gu\">નદી</b> y <b class=\"gu\">હાથ</b>?",
+      "¿Te fijaste? En la canción también aparece <b class=\"gu\">રોશની</b>: además de un nombre, quiere decir «luz»."
+    ]
+  },
+  "continuar": "leccion_pensarEnGUJ.html?leccion=1.2.3",
+  "continuar_caption": "Continuar →"
+}

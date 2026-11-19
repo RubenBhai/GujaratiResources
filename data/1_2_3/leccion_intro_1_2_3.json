@@ -1,0 +1,227 @@
+{
+  "leccion": "1.2.3",
+  "anterior": "contenido_modulo.html?modulo=1.2",
+  "home": "contenido_modulo.html?modulo=1.2",
+  "empezar": "leccion_letra.html?leccion=1.2.3&item=1",
+  "musica_ambiente": "audios/musica/Leccion_1_1_3_musica_ambiente.mp3",
+  "pantallas": [
+    {
+      "badge": "Lección 3 · Módulo 2",
+      "titulo": "Domingo en casa de Manisha",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p style=\"text-align: center;\"><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">તમે ક્યાં રહો છો?</span><br><span style=\"color:var(--rojo-ladrillo);font-size:1.2rem;font-weight:600\">ta-me kyaaⁿ ra-ho chho</span> - <span style=\"color:var(--sindoor-azul);font-size:1.2rem;font-weight:600\">¿dónde vive usted?</span></p>"
+        },
+        {
+          "tipo": "info-box",
+          "html": "<p>En esta lección aprenderás <strong>3 consonantes</strong>, la vocal <strong>ઔ</strong> con su matra y cómo se junta una consonante con <strong>ય</strong>.</p><br><p>Con ellas podrás <strong>hacer preguntas</strong>: <span class=\"gu\">કોણ</span> (¿quién?), <span class=\"gu\">ક્યાં</span> (¿dónde?), <span class=\"gu\">ક્યારે</span> (¿cuándo?). Y leer palabras de la predicación como <span class=\"gu\">બાઈબલ</span>, <span class=\"gu\">મુલાકાત</span> y <span class=\"gu\">કલમ</span>.</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Ejemplo"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "દ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "da"
+              },
+              {
+                "tipo": "texto",
+                "valor": "una <strong>d</strong> suave, como en <em>dedo</em>: <span class=\"gu\">દિવસ</span>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "બ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "ba"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>b</strong> de <em>barco</em>: <span class=\"gu\">બાઈબલ</span>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "લ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "la"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>l</strong> de <em>luna</em>: <span class=\"gu\">લોકો</span>"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 2
+      },
+      "boton_secundario": {
+        "tipo": "href",
+        "texto": "⏭️ Siguiente lección",
+        "destino": "leccion_intro.html?leccion=1.2.R"
+      }
+    },
+    {
+      "badge": "La vocal y las formas con ય",
+      "titulo": "La vocal ઔ y consonante + ય",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p><span class=\"gu\">ઔ</span> suena <strong>au</strong>, como en «<strong>au</strong>la». Su matra <span class=\"gu\">ૌ</span> lleva una rayita más que la de <span class=\"gu\">ો</span>: <span class=\"gu\">સ</span> + <span class=\"gu\">ૌ</span> = <span class=\"gu\">સૌ</span> (sau), como en <span class=\"gu\">સૌથી</span>.</p><br><p>Cuando una consonante sin vocal va antes de <span class=\"gu\">ય</span>, se escriben juntas, <strong>cada una a su manera</strong>: <span class=\"gu\">ત્ય</span>, <span class=\"gu\">ક્ય</span>, <span class=\"gu\">હ્ય</span>. Así lees <span class=\"gu\">ક્યાં</span> (¿dónde?).</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Letra Gujarati",
+            "Cómo suena",
+            "Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "ઔ"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'au'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "ૌ"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "ક્ય"
+              },
+              {
+                "tipo": "acento",
+                "valor": "'kya'"
+              },
+              {
+                "tipo": "matra",
+                "valor": "્"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "pantalla",
+        "texto": "Siguiente →",
+        "destino": 3
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 1
+      }
+    },
+    {
+      "badge": "Resumen",
+      "titulo": "Las consonantes y sus matras",
+      "bloques": [
+        {
+          "tipo": "info-box",
+          "html": "<p>Mira cómo se combinan las letras nuevas con las matras que ya conoces:</p>"
+        },
+        {
+          "tipo": "tabla",
+          "columnas": [
+            "Gujarati",
+            "Sonido",
+            "Matra",
+            "Letra+Matra"
+          ],
+          "filas": [
+            [
+              {
+                "tipo": "gu",
+                "valor": "દ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>da</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ી"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>દ + ી  =  દી (dii)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "બ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>ba</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ા"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>બ + ા  =  બા (baa)</strong>"
+              }
+            ],
+            [
+              {
+                "tipo": "gu",
+                "valor": "લ"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>la</strong>"
+              },
+              {
+                "tipo": "gu",
+                "valor": "ો"
+              },
+              {
+                "tipo": "texto",
+                "valor": "<strong>લ + ો  =  લો (lo)</strong>"
+              }
+            ]
+          ]
+        }
+      ],
+      "boton_principal": {
+        "tipo": "empezar_leccion",
+        "texto": "¡Empezar la lección! →"
+      },
+      "boton_secundario": {
+        "tipo": "pantalla",
+        "texto": "← Anterior",
+        "destino": 2
+      }
+    }
+  ]
+}
