@@ -46,7 +46,7 @@
 
 <main class="main">
 
-  <!-- ══ TARJETAS RÁPIDAS (16-nov-2026): ayuda para la predicación, con audio y para imprimir ══ -->
+  <!-- ══ ACCESOS (plan de contenido v2, 19-nov-2026): siempre abiertos ══ -->
   <a href="tip.html" class="tarjeta-frases">
     <span class="tf-icono">💡</span>
     <div class="tf-info">
@@ -65,27 +65,31 @@
     <span class="tf-flecha">→</span>
   </a>
 
-  <!-- ══ CURSO DE FRASES: OCULTO hasta terminar la lección 1.2.3 (sorpresa) ══
-       Para activarlo, borra la línea de arriba que abre este comentario y la de
-       abajo que lo cierra («FIN CURSO DE FRASES»). El código de frases_*.html ya está
-       subido; solo falta esta puerta de entrada.
+  <div class="tarjeta-frases" style="cursor:default;opacity:0.8">
+    <span class="tf-icono">🧩</span>
+    <div class="tf-info">
+      <div class="tf-titulo">Palabra → Frase → Diálogo</div>
+      <div class="tf-sub">Repasa lo que ya aprendiste: las palabras, frases y diálogos de tus lecciones.</div>
+      <span class="modulo-badge badge-locked" style="display:inline-block;margin-top:8px">Muy pronto</span>
+    </div>
+  </div>
+
   <a href="frases.html" class="tarjeta-frases">
     <span class="tf-icono">💬</span>
     <div class="tf-info">
       <div class="tf-titulo">Curso de frases</div>
-      <div class="tf-sub">¿Quieres empezar a hablar ya? Aprende frases para conversar, sin pasar por todo el curso.</div>
+      <div class="tf-sub">¿Quieres hablar ya? Frases para conversar, aunque todavía no las sepas leer. Se irán sumando categorías.</div>
     </div>
     <span class="tf-flecha">→</span>
   </a>
-  ══ FIN CURSO DE FRASES ══ -->
 
-  <!-- ══ ETAPA 1 ══ -->
+  <!-- ══ ETAPA 1: cuatro módulos de 3 lecciones + repaso (X.X.R) ══ -->
   <div class="etapa">
     <div class="etapa-header">
       <div class="etapa-num">1</div>
       <div class="etapa-info">
         <div class="etapa-title">Tus primeros pasos</div>
-        <div class="etapa-meta">Aprende a leer las letras, saludar y nombrar las cosas que te rodean.</div>
+        <div class="etapa-meta">Aprende a leer todas las letras mientras saludas, recibes visitas, opinas y cuentas lo que pasó.</div>
       </div>
     </div>
 
@@ -94,126 +98,64 @@
         <div class="modulo-num">1</div>
         <div class="modulo-info">
           <div class="modulo-title">Aprende a leer</div>
-          <div class="modulo-sub">Reconoce cada letra y léela en voz alta</div>
+          <div class="modulo-sub">Cuatro módulos: tres lecciones y un repaso en cada uno</div>
         </div>
       </summary>
-
       <div class="details-body lecciones">
-
         <!-- data-leccion = ÚLTIMA lección del módulo: el ✔ sale al terminar el módulo entero -->
         <a class="leccion activa" href="contenido_modulo.html?modulo=1.1" data-leccion="1_1_3">
           <span class="lec-num">1.1</span>
           <div class="lec-info">
-            <div class="lec-title">Tus primeras palabras</div>
+            <div class="lec-title">Saluda y preséntate</div>
             <div class="lec-sub">
-               <span class="palabra-guj">કેમ છો?</span> - <span class="palabra-es">¿Cómo estás?</span> / 
+               <span class="palabra-guj">કેમ છો?</span> - <span class="palabra-es">¿cómo está?</span> / 
                <span class="palabra-guj">સારું છે</span> - <span class="palabra-es">bien</span> / 
                <span class="palabra-guj">નમસ્તે</span> - <span class="palabra-es">hola</span>
             </div>
+            <div class="lec-sub" style="font-size:0.85rem;opacity:0.7;margin-top:4px">ક મ છ · સ ર હ · ન ત શ · અ આ ઇ ઈ ઉ એ ઓ · સ્ત</div>
             <span class="modulo-badge badge-active">Empieza aquí</span>
           </div>
           <span class="lec-status play">▶</span>
         </a>
-
         <a class="leccion activa" href="contenido_modulo.html?modulo=1.2" data-leccion="1_2_3">
           <span class="lec-num">1.2</span>
           <div class="lec-info">
-            <div class="lec-title">Más letras nuevas</div>
+            <div class="lec-title">Recibe una visita</div>
             <div class="lec-sub">
-               <span class="palabra-guj">આવો!</span> - <span class="palabra-es">¡pase!</span> / 
-               <span class="palabra-guj">આ મારા પતિ છે</span> - <span class="palabra-es">este es mi esposo</span>
+               <span class="palabra-guj">આવો, આવો!</span> - <span class="palabra-es">¡pasen!</span> / 
+               <span class="palabra-guj">આ મારા પતિ છે</span> - <span class="palabra-es">este es mi esposo</span> / 
+               <span class="palabra-guj">તમે ક્યાં રહો છો?</span> - <span class="palabra-es">¿dónde vive?</span>
             </div>
+            <div class="lec-sub" style="font-size:0.85rem;opacity:0.7;margin-top:4px">ણ પ વ · જ થ ય · દ બ લ · ઊ ઐ ઔ · શ્વ પ્ર ક્ય</div>
           </div>
           <span class="lec-status play">▶</span>
         </a>
-
         <div class="leccion bloqueada">
           <span class="lec-num">1.3</span>
           <div class="lec-info">
-            <div class="lec-title">Seguimos con más letras</div>
-            <div class="lec-sub">પ ણ ખ ભ શ ઠ · ઈ ઊ ઐ · ી ૂ ૈ</div>
+            <div class="lec-title">Opina y queda para otro día</div>
+            <div class="lec-sub">
+               <span class="palabra-guj">તમને શું લાગે છે?</span> - <span class="palabra-es">¿qué le parece?</span> / 
+               <span class="palabra-guj">મને ગમશે</span> - <span class="palabra-es">me gustaría</span> / 
+               <span class="palabra-guj">ફરી મળીશું</span> - <span class="palabra-es">nos vemos</span>
+            </div>
+            <div class="lec-sub" style="font-size:0.85rem;opacity:0.7;margin-top:4px">ખ ગ ચ · ટ ડ ધ · ફ ભ ળ · ઋ</div>
           </div>
           <span class="lec-status lock">🔒</span>
         </div>
-
         <div class="leccion bloqueada">
           <span class="lec-num">1.4</span>
           <div class="lec-info">
-            <div class="lec-title">Letras que se unen</div>
-            <div class="lec-sub">ક ઘ છ ડ ય ષ · ઔ અં ઋ · ત્ર દ્ર સ્ત્ર</div>
+            <div class="lec-title">Cuenta lo que pasó y lee todo</div>
+            <div class="lec-sub">
+               <span class="palabra-guj">ઘરે કોણ છે?</span> - <span class="palabra-es">¿quién está en casa?</span> / 
+               <span class="palabra-guj">લખ્યું છે</span> - <span class="palabra-es">está escrito</span> / 
+               <span class="palabra-guj">ઈસુએ કહ્યું</span> - <span class="palabra-es">Jesús dijo</span>
+            </div>
+            <div class="lec-sub" style="font-size:0.85rem;opacity:0.7;margin-top:4px">ઘ ઝ ઠ ઢ · letras unidas con ર · letras dobles · ક્ષ જ્ઞ</div>
           </div>
           <span class="lec-status lock">🔒</span>
         </div>
-
-        <div class="leccion bloqueada">
-          <span class="lec-num">1.5</span>
-          <div class="lec-info">
-            <div class="lec-title">Más uniones de letras</div>
-            <div class="lec-sub">ગ ચ ઝ ફ ળ ક્ષ જ્ઞ · શ્ર શ્ચ દ્દ દ્ધ</div>
-          </div>
-          <span class="lec-status lock">🔒</span>
-        </div>
-
-        <div class="leccion bloqueada">
-          <span class="lec-num">1.6</span>
-          <div class="lec-info">
-            <div class="lec-title">Uniones especiales</div>
-            <div class="lec-sub">ન્દ ગ્ન સ્મ ત્સ લ્ક ટ્ટ ઠ્ઠ ત્ત ન્ન</div>
-          </div>
-          <span class="lec-status lock">🔒</span>
-        </div>
-
-        <div class="leccion bloqueada">
-          <span class="lec-num">1.7</span>
-          <div class="lec-info">
-            <div class="lec-title">Lee con soltura</div>
-            <div class="lec-sub">Consejos para leer con naturalidad</div>
-          </div>
-          <span class="lec-status lock">🔒</span>
-        </div>
-
-      </div>
-    </details>
-
-    <details class="modulo" id="mod-2">
-      <summary class="modulo-header">
-        <div class="modulo-num">2</div>
-        <div class="modulo-info">
-          <div class="modulo-title">Aprende a saludar</div>
-          <div class="modulo-sub">Saluda, responde y sé amable en gujarati</div>
-        </div>
-        <span class="modulo-badge badge-locked">Muy pronto</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">Lo verás cuando termines lo anterior</div>
-      </div>
-    </details>
-
-    <details class="modulo" id="mod-3">
-      <summary class="modulo-header">
-        <div class="modulo-num">3</div>
-        <div class="modulo-info">
-          <div class="modulo-title">Nombra lo que te rodea</div>
-          <div class="modulo-sub">Personas, objetos y lugares</div>
-        </div>
-        <span class="modulo-badge badge-locked">Muy pronto</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">Lo verás cuando termines lo anterior</div>
-      </div>
-    </details>
-
-    <details class="modulo" id="mod-4">
-      <summary class="modulo-header">
-        <div class="modulo-num">4</div>
-        <div class="modulo-info">
-          <div class="modulo-title">Aprende a preguntar</div>
-          <div class="modulo-sub">¿Quién? ¿Qué? ¿Dónde? ¿Cuándo?</div>
-        </div>
-        <span class="modulo-badge badge-locked">Muy pronto</span>
-      </summary>
-      <div class="details-body lecciones">
-        <div class="nota-construccion">Lo verás cuando termines lo anterior</div>
       </div>
     </details>
   </div>
@@ -224,7 +166,7 @@
       <div class="etapa-num">2</div>
       <div class="etapa-info">
         <div class="etapa-title">Tus primeras frases</div>
-        <div class="etapa-meta">Empieza a formar frases para describir y preguntar.</div>
+        <div class="etapa-meta">Pide con cortesía, di de dónde vienen las cosas y lo que puedes hacer.</div>
       </div>
     </div>
     <details class="modulo" id="mod-e2">
@@ -232,7 +174,7 @@
         <div class="modulo-num">★</div>
         <div class="modulo-info">
           <div class="modulo-title">Tus primeras frases</div>
-          <div class="modulo-sub">Describe cosas y haz preguntas sencillas</div>
+          <div class="modulo-sub">વાંચશો? – ¿lo lee? · સમજી શકું છું – lo entiendo</div>
         </div>
         <span class="modulo-badge badge-locked">Muy pronto</span>
       </summary>
@@ -247,7 +189,7 @@
       <div class="etapa-num">3</div>
       <div class="etapa-info">
         <div class="etapa-title">Conversa con confianza</div>
-        <div class="etapa-meta">Habla del pasado, del futuro y de lo que necesitas.</div>
+        <div class="etapa-meta">Une ideas: después de, el que, si… entonces, estar haciendo.</div>
       </div>
     </div>
     <details class="modulo" id="mod-e3">
@@ -255,7 +197,7 @@
         <div class="modulo-num">★</div>
         <div class="modulo-info">
           <div class="modulo-title">Conversa con confianza</div>
-          <div class="modulo-sub">Cuenta lo que pasó, lo que harás y lo que quieres</div>
+          <div class="modulo-sub">તમે જે કહ્યું તે… – lo que usted dijo…</div>
         </div>
         <span class="modulo-badge badge-locked">Muy pronto</span>
       </summary>
@@ -270,7 +212,7 @@
       <div class="etapa-num">4</div>
       <div class="etapa-info">
         <div class="etapa-title">Exprésate mejor</div>
-        <div class="etapa-meta">Aprende a explicar ideas más completas y a compartir textos de la Biblia.</div>
+        <div class="etapa-meta">Explica ideas más completas y comparte textos de la Biblia.</div>
       </div>
     </div>
     <details class="modulo" id="mod-e4">
@@ -293,7 +235,7 @@
       <div class="etapa-num">5</div>
       <div class="etapa-info">
         <div class="etapa-title">Habla con naturalidad</div>
-        <div class="etapa-meta">Comprende y conversa con naturalidad, todo en gujarati.</div>
+        <div class="etapa-meta">Entiende el gujarati de la calle y el formal: películas, entrevistas y discursos.</div>
       </div>
     </div>
     <details class="modulo" id="mod-e5">

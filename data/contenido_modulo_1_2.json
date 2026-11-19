@@ -2,7 +2,7 @@
   "modulo": "1.2",
   "atras": "contenido.html",
   "home": "contenido.html",
-  "badge": "Más letras nuevas",
+  "badge": "Recibe una visita",
   "titulo": "Lo que vas a aprender",
   "subtitulo_html": "<span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">આવો!</span> - aavo! - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">¡Pase!</span><br><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">આ મારા પતિ છે</span> - aa maaraa pati chhe - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">Este es mi esposo</span><br><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">શું વાત છે!</span> - shu<sup>n</sup> vaat chhe! - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">¡Qué coincidencia!</span>",
   "secciones": [
@@ -36,6 +36,13 @@
           "sub_html": "consonantes: <strong>દ બ લ</strong><br>vocal independiente: <strong>ઔ</strong><br>vocal abreviada (matra): <strong>ૌ</strong><br>conjuntiva: <strong>consonante + ય = ત્ય ક્ય હ્ય</strong> (se combinan)",
           "estado": "activa",
           "codigo_leccion": "1.2.3"
+        },
+        {
+          "numero": 4,
+          "titulo": "Repaso: palabra → frase → diálogo",
+          "sub_html": "repasa los módulos 1.1 y 1.2<br>nota especial: <strong>las terminaciones ો ી ું ા ાં</strong>",
+          "estado": "proxima",
+          "codigo_leccion": "1.2.R"
         }
       ]
     }

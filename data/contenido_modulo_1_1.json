@@ -2,7 +2,7 @@
   "modulo": "1.1",
   "atras": "contenido.html",
   "home": "contenido.html",
-  "badge": "Tus primeras palabras",
+  "badge": "Saluda y preséntate",
   "titulo": "Lo que vas a aprender",
   "subtitulo_html": "<span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">કેમ છો?</span> - kem chho? - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">¿Cómo está?</span> <br><span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">સારું છે</span> - saaru<sup>n</sup> chhe - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">Bien</span><br> <span style=\"font-family:'Noto Serif Gujarati',serif;color:var(--sindoor-azul);font-size:1.5rem;font-weight:600\">નમસ્તે</span> - namaste - <span style=\"color:var(--rojo-ladrillo);font-weight:600\">Hola (para hindúes)</span>",
   "secciones": [
