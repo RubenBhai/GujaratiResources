@@ -1,0 +1,250 @@
+{
+  "_generadoDesde": "https://piensaengujarati.com/",
+  "assets": [
+    {
+      "url": "audios/transforma/tr1_ame_biimaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 10258
+    },
+    {
+      "url": "audios/transforma/tr1_ame_biimaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 9788
+    },
+    {
+      "url": "audios/transforma/tr1_ame_biimaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 9788
+    },
+    {
+      "url": "audios/transforma/tr1_ame_taiyaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 6810
+    },
+    {
+      "url": "audios/transforma/tr1_ame_taiyaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 8847
+    },
+    {
+      "url": "audios/transforma/tr1_ame_taiyaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 9317
+    },
+    {
+      "url": "audios/transforma/tr1_ame_thaak_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 12139
+    },
+    {
+      "url": "audios/transforma/tr1_ame_thaak_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 10258
+    },
+    {
+      "url": "audios/transforma/tr1_ame_thaak_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 14019
+    },
+    {
+      "url": "audios/transforma/tr1_huf_biimaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 6810
+    },
+    {
+      "url": "audios/transforma/tr1_huf_biimaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7750
+    },
+    {
+      "url": "audios/transforma/tr1_huf_biimaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 11198
+    },
+    {
+      "url": "audios/transforma/tr1_huf_taiyaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 6810
+    },
+    {
+      "url": "audios/transforma/tr1_huf_taiyaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 8220
+    },
+    {
+      "url": "audios/transforma/tr1_huf_taiyaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/transforma/tr1_huf_thaak_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 10101
+    },
+    {
+      "url": "audios/transforma/tr1_huf_thaak_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 8220
+    },
+    {
+      "url": "audios/transforma/tr1_huf_thaak_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 12609
+    },
+    {
+      "url": "audios/transforma/tr1_hum_biimaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 5869
+    },
+    {
+      "url": "audios/transforma/tr1_hum_biimaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7750
+    },
+    {
+      "url": "audios/transforma/tr1_hum_biimaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 10258
+    },
+    {
+      "url": "audios/transforma/tr1_hum_taiyaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 5869
+    },
+    {
+      "url": "audios/transforma/tr1_hum_taiyaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/transforma/tr1_hum_taiyaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7750
+    },
+    {
+      "url": "audios/transforma/tr1_hum_thaak_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 6339
+    },
+    {
+      "url": "audios/transforma/tr1_hum_thaak_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/transforma/tr1_hum_thaak_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 8847
+    },
+    {
+      "url": "audios/transforma/tr1_tame_biimaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/transforma/tr1_tame_biimaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7750
+    },
+    {
+      "url": "audios/transforma/tr1_tame_biimaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 10728
+    },
+    {
+      "url": "audios/transforma/tr1_tame_taiyaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/transforma/tr1_tame_taiyaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 9317
+    },
+    {
+      "url": "audios/transforma/tr1_tame_taiyaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 8220
+    },
+    {
+      "url": "audios/transforma/tr1_tame_thaak_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 8847
+    },
+    {
+      "url": "audios/transforma/tr1_tame_thaak_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 10728
+    },
+    {
+      "url": "audios/transforma/tr1_tame_thaak_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 10258
+    },
+    {
+      "url": "audios/transforma/tr1_tef_thaak_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 7750
+    },
+    {
+      "url": "audios/transforma/tr1_tef_thaak_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 8220
+    },
+    {
+      "url": "audios/transforma/tr1_tef_thaak_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 9788
+    },
+    {
+      "url": "audios/transforma/tr1_tem_biimaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 6339
+    },
+    {
+      "url": "audios/transforma/tr1_tem_biimaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/transforma/tr1_tem_biimaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 11668
+    },
+    {
+      "url": "audios/transforma/tr1_tem_taiyaar_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 6339
+    },
+    {
+      "url": "audios/transforma/tr1_tem_taiyaar_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 8220
+    },
+    {
+      "url": "audios/transforma/tr1_tem_taiyaar_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 10258
+    },
+    {
+      "url": "audios/transforma/tr1_tem_thaak_af.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/transforma/tr1_tem_thaak_neg.mp3",
+      "lastModified": 1795202812000,
+      "size": 9317
+    },
+    {
+      "url": "audios/transforma/tr1_tem_thaak_preg.mp3",
+      "lastModified": 1795202812000,
+      "size": 10728
+    },
+    {
+      "url": "data/transforma/clase_1.json",
+      "lastModified": 1795150494979,
+      "size": 11214
+    }
+  ]
+}

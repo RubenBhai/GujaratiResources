@@ -1,0 +1,28 @@
+{
+ "assets": [
+  "audios/frases/predicar/pred-01.mp3",
+  "audios/frases/predicar/pred-01-b1.mp3",
+  "audios/frases/predicar/pred-01-b2.mp3",
+  "audios/frases/predicar/pred-01-b3.mp3",
+  "audios/frases/predicar/pred-01-b4.mp3",
+  "audios/frases/predicar/pred-01-b5.mp3",
+  "audios/frases/predicar/pred-01-b2-s1.mp3",
+  "audios/frases/predicar/pred-01-b2-s2.mp3",
+  "audios/frases/predicar/pred-01-b2-s3.mp3",
+  "audios/frases/predicar/pred-01-b4-s1.mp3",
+  "audios/frases/predicar/pred-01-b4-s2.mp3",
+  "audios/frases/predicar/pred-02.mp3",
+  "audios/frases/predicar/pred-02-b1.mp3",
+  "audios/frases/predicar/pred-02-b2.mp3",
+  "audios/frases/predicar/pred-03.mp3",
+  "audios/frases/predicar/pred-03-b1.mp3",
+  "audios/frases/predicar/pred-03-b2.mp3",
+  "audios/frases/predicar/pred-04.mp3",
+  "audios/frases/predicar/pred-04-b1.mp3",
+  "audios/frases/predicar/pred-04-b2.mp3",
+  "audios/frases/predicar/pred-04-b1-s1.mp3",
+  "audios/frases/predicar/pred-04-b1-s2.mp3",
+  "audios/frases/predicar/pred-04-b1-s3.mp3",
+  "audios/frases/predicar/pred-04-b2-s1.mp3"
+ ]
+}

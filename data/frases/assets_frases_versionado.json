@@ -1,0 +1,135 @@
+{
+  "_generadoDesde": "https://piensaengujarati.com/",
+  "assets": [
+    {
+      "url": "audios/frases/predicar/pred-01.mp3",
+      "lastModified": 1795202812000,
+      "size": 29379
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b1.mp3",
+      "lastModified": 1795202812000,
+      "size": 8220
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b2.mp3",
+      "lastModified": 1795202812000,
+      "size": 5869
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b3.mp3",
+      "lastModified": 1795202812000,
+      "size": 6339
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b4.mp3",
+      "lastModified": 1795202812000,
+      "size": 7750
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b5.mp3",
+      "lastModified": 1795202812000,
+      "size": 9474
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b2-s1.mp3",
+      "lastModified": 1795202812000,
+      "size": 5869
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b2-s2.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b2-s3.mp3",
+      "lastModified": 1795202812000,
+      "size": 8220
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b4-s1.mp3",
+      "lastModified": 1795202812000,
+      "size": 6810
+    },
+    {
+      "url": "audios/frases/predicar/pred-01-b4-s2.mp3",
+      "lastModified": 1795202812000,
+      "size": 6339
+    },
+    {
+      "url": "audios/frases/predicar/pred-02.mp3",
+      "lastModified": 1795202812000,
+      "size": 9317
+    },
+    {
+      "url": "audios/frases/predicar/pred-02-b1.mp3",
+      "lastModified": 1795202812000,
+      "size": 5399
+    },
+    {
+      "url": "audios/frases/predicar/pred-02-b2.mp3",
+      "lastModified": 1795202812000,
+      "size": 5399
+    },
+    {
+      "url": "audios/frases/predicar/pred-03.mp3",
+      "lastModified": 1795202812000,
+      "size": 8847
+    },
+    {
+      "url": "audios/frases/predicar/pred-03-b1.mp3",
+      "lastModified": 1795202812000,
+      "size": 5399
+    },
+    {
+      "url": "audios/frases/predicar/pred-03-b2.mp3",
+      "lastModified": 1795202812000,
+      "size": 4459
+    },
+    {
+      "url": "audios/frases/predicar/pred-04.mp3",
+      "lastModified": 1795202812000,
+      "size": 9788
+    },
+    {
+      "url": "audios/frases/predicar/pred-04-b1.mp3",
+      "lastModified": 1795202812000,
+      "size": 7750
+    },
+    {
+      "url": "audios/frases/predicar/pred-04-b2.mp3",
+      "lastModified": 1795202812000,
+      "size": 5399
+    },
+    {
+      "url": "audios/frases/predicar/pred-04-b1-s1.mp3",
+      "lastModified": 1795202812000,
+      "size": 7280
+    },
+    {
+      "url": "audios/frases/predicar/pred-04-b1-s2.mp3",
+      "lastModified": 1795202812000,
+      "size": 9317
+    },
+    {
+      "url": "audios/frases/predicar/pred-04-b1-s3.mp3",
+      "lastModified": 1795202812000,
+      "size": 9317
+    },
+    {
+      "url": "audios/frases/predicar/pred-04-b2-s1.mp3",
+      "lastModified": 1795202812000,
+      "size": 4929
+    },
+    {
+      "url": "data/frases/categorias.json",
+      "lastModified": 1794605399713,
+      "size": 331
+    },
+    {
+      "url": "data/frases/frases_predicar.json",
+      "lastModified": 1795114604101,
+      "size": 6688
+    }
+  ]
+}
