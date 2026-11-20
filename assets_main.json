@@ -82,6 +82,11 @@
       "size": 7692
     },
     {
+      "url": "descarga_offline.js",
+      "lastModified": 1795202720367,
+      "size": 4736
+    },
+    {
       "url": "dictado.html",
       "lastModified": 1794605400256,
       "size": 2269
@@ -133,8 +138,8 @@
     },
     {
       "url": "frases.html",
-      "lastModified": 1794605399716,
-      "size": 1227
+      "lastModified": 1795202720369,
+      "size": 1388
     },
     {
       "url": "frases.js",
@@ -448,13 +453,13 @@
     },
     {
       "url": "pfd.html",
-      "lastModified": 1795151765429,
-      "size": 970
+      "lastModified": 1795202720370,
+      "size": 1135
     },
     {
       "url": "pfd.js",
-      "lastModified": 1795156569803,
-      "size": 16762
+      "lastModified": 1795202720370,
+      "size": 16858
     },
     {
       "url": "pfd_repaso.html",
@@ -893,8 +898,8 @@
     },
     {
       "url": "transforma.html",
-      "lastModified": 1795150494981,
-      "size": 1467
+      "lastModified": 1795202720372,
+      "size": 1640
     },
     {
       "url": "transforma.js",

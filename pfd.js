@@ -237,6 +237,7 @@
   function ruta() {
     var r = location.hash.replace('#', '');
     window.scrollTo(0, 0);
+    var off = document.getElementById('offline'); if (off) off.style.display = r ? 'none' : '';
     if (r === 'palabras') palabras(); else if (r === 'frases') frases(); else if (r === 'dialogos') dialogos(); else if (r === 'numeros') numeros(); else menu();
   }
   fetch('data/pfd/tramos.json?t=' + Date.now(), { cache: 'no-store' })
