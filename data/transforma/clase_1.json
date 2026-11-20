@@ -1,0 +1,388 @@
+{
+ "id": "tr1",
+ "titulo": "¿Cómo está?",
+ "badge": "Clase maestra 1",
+ "subtitulo": "Toca las fichas y mira qué cambia en la frase: lo que cambia se pinta de verde.",
+ "nota_html": "Fíjate en <span class=\"gu\">થાકેલો</span>: cambia con quien habla (<span class=\"gu\">થાકેલો · થાકેલી · થાકેલા</span>). <span class=\"gu\">બીમાર</span> y <span class=\"gu\">તૈયાર</span> no cambian nunca.",
+ "inicial": {
+  "persona": "hum",
+  "adj": "thaak",
+  "forma": "af",
+  "tiempo": "pres"
+ },
+ "grupos": [
+  {
+   "id": "persona",
+   "label": "¿Quién?",
+   "opciones": [
+    {
+     "id": "hum",
+     "es": "yo",
+     "sub": "hombre",
+     "gu": "હું"
+    },
+    {
+     "id": "huf",
+     "es": "yo",
+     "sub": "mujer",
+     "gu": "હું"
+    },
+    {
+     "id": "tame",
+     "es": "usted",
+     "sub": "",
+     "gu": "તમે"
+    },
+    {
+     "id": "tem",
+     "es": "él",
+     "sub": "",
+     "gu": "તે"
+    },
+    {
+     "id": "tef",
+     "es": "ella",
+     "sub": "",
+     "gu": "તે"
+    },
+    {
+     "id": "ame",
+     "es": "nosotros",
+     "sub": "",
+     "gu": "અમે"
+    }
+   ]
+  },
+  {
+   "id": "adj",
+   "label": "¿Cómo está?",
+   "opciones": [
+    {
+     "id": "thaak",
+     "es": "cansado"
+    },
+    {
+     "id": "biimaar",
+     "es": "enfermo"
+    },
+    {
+     "id": "taiyaar",
+     "es": "listo"
+    }
+   ]
+  },
+  {
+   "id": "forma",
+   "label": "Forma",
+   "opciones": [
+    {
+     "id": "af",
+     "es": "afirmativo"
+    },
+    {
+     "id": "neg",
+     "es": "negativo"
+    },
+    {
+     "id": "preg",
+     "es": "pregunta"
+    }
+   ]
+  },
+  {
+   "id": "tiempo",
+   "label": "¿Cuándo?",
+   "opciones": [
+    {
+     "id": "pres",
+     "es": "presente",
+     "sub": "ahora"
+    },
+    {
+     "id": "fut",
+     "es": "futuro",
+     "sub": "mañana",
+     "desde": "1.3.2"
+    },
+    {
+     "id": "pas",
+     "es": "pasado",
+     "sub": "ayer",
+     "desde": "1.3.3"
+    }
+   ]
+  }
+ ],
+ "frases": {
+  "hum|thaak|af|pres": {
+   "gu": "હું થાકેલો છું.",
+   "es": "Estoy cansado.",
+   "audio": "audios/transforma/tr1_hum_thaak_af.mp3"
+  },
+  "hum|thaak|neg|pres": {
+   "gu": "હું થાકેલો નથી.",
+   "es": "No estoy cansado.",
+   "audio": "audios/transforma/tr1_hum_thaak_neg.mp3"
+  },
+  "hum|thaak|preg|pres": {
+   "gu": "શું હું થાકેલો છું?",
+   "es": "¿Estoy cansado?",
+   "audio": "audios/transforma/tr1_hum_thaak_preg.mp3"
+  },
+  "hum|biimaar|af|pres": {
+   "gu": "હું બીમાર છું.",
+   "es": "Estoy enfermo.",
+   "audio": "audios/transforma/tr1_hum_biimaar_af.mp3"
+  },
+  "hum|biimaar|neg|pres": {
+   "gu": "હું બીમાર નથી.",
+   "es": "No estoy enfermo.",
+   "audio": "audios/transforma/tr1_hum_biimaar_neg.mp3"
+  },
+  "hum|biimaar|preg|pres": {
+   "gu": "શું હું બીમાર છું?",
+   "es": "¿Estoy enfermo?",
+   "audio": "audios/transforma/tr1_hum_biimaar_preg.mp3"
+  },
+  "hum|taiyaar|af|pres": {
+   "gu": "હું તૈયાર છું.",
+   "es": "Estoy listo.",
+   "audio": "audios/transforma/tr1_hum_taiyaar_af.mp3"
+  },
+  "hum|taiyaar|neg|pres": {
+   "gu": "હું તૈયાર નથી.",
+   "es": "No estoy listo.",
+   "audio": "audios/transforma/tr1_hum_taiyaar_neg.mp3"
+  },
+  "hum|taiyaar|preg|pres": {
+   "gu": "શું હું તૈયાર છું?",
+   "es": "¿Estoy listo?",
+   "audio": "audios/transforma/tr1_hum_taiyaar_preg.mp3"
+  },
+  "huf|thaak|af|pres": {
+   "gu": "હું થાકેલી છું.",
+   "es": "Estoy cansada.",
+   "audio": "audios/transforma/tr1_huf_thaak_af.mp3"
+  },
+  "huf|thaak|neg|pres": {
+   "gu": "હું થાકેલી નથી.",
+   "es": "No estoy cansada.",
+   "audio": "audios/transforma/tr1_huf_thaak_neg.mp3"
+  },
+  "huf|thaak|preg|pres": {
+   "gu": "શું હું થાકેલી છું?",
+   "es": "¿Estoy cansada?",
+   "audio": "audios/transforma/tr1_huf_thaak_preg.mp3"
+  },
+  "huf|biimaar|af|pres": {
+   "gu": "હું બીમાર છું.",
+   "es": "Estoy enferma.",
+   "audio": "audios/transforma/tr1_huf_biimaar_af.mp3"
+  },
+  "huf|biimaar|neg|pres": {
+   "gu": "હું બીમાર નથી.",
+   "es": "No estoy enferma.",
+   "audio": "audios/transforma/tr1_huf_biimaar_neg.mp3"
+  },
+  "huf|biimaar|preg|pres": {
+   "gu": "શું હું બીમાર છું?",
+   "es": "¿Estoy enferma?",
+   "audio": "audios/transforma/tr1_huf_biimaar_preg.mp3"
+  },
+  "huf|taiyaar|af|pres": {
+   "gu": "હું તૈયાર છું.",
+   "es": "Estoy lista.",
+   "audio": "audios/transforma/tr1_huf_taiyaar_af.mp3"
+  },
+  "huf|taiyaar|neg|pres": {
+   "gu": "હું તૈયાર નથી.",
+   "es": "No estoy lista.",
+   "audio": "audios/transforma/tr1_huf_taiyaar_neg.mp3"
+  },
+  "huf|taiyaar|preg|pres": {
+   "gu": "શું હું તૈયાર છું?",
+   "es": "¿Estoy lista?",
+   "audio": "audios/transforma/tr1_huf_taiyaar_preg.mp3"
+  },
+  "tame|thaak|af|pres": {
+   "gu": "તમે થાકેલા છો.",
+   "es": "Usted está cansado.",
+   "audio": "audios/transforma/tr1_tame_thaak_af.mp3"
+  },
+  "tame|thaak|neg|pres": {
+   "gu": "તમે થાકેલા નથી.",
+   "es": "Usted no está cansado.",
+   "audio": "audios/transforma/tr1_tame_thaak_neg.mp3"
+  },
+  "tame|thaak|preg|pres": {
+   "gu": "શું તમે થાકેલા છો?",
+   "es": "¿Está usted cansado?",
+   "audio": "audios/transforma/tr1_tame_thaak_preg.mp3"
+  },
+  "tame|biimaar|af|pres": {
+   "gu": "તમે બીમાર છો.",
+   "es": "Usted está enfermo.",
+   "audio": "audios/transforma/tr1_tame_biimaar_af.mp3"
+  },
+  "tame|biimaar|neg|pres": {
+   "gu": "તમે બીમાર નથી.",
+   "es": "Usted no está enfermo.",
+   "audio": "audios/transforma/tr1_tame_biimaar_neg.mp3"
+  },
+  "tame|biimaar|preg|pres": {
+   "gu": "શું તમે બીમાર છો?",
+   "es": "¿Está usted enfermo?",
+   "audio": "audios/transforma/tr1_tame_biimaar_preg.mp3"
+  },
+  "tame|taiyaar|af|pres": {
+   "gu": "તમે તૈયાર છો.",
+   "es": "Usted está listo.",
+   "audio": "audios/transforma/tr1_tame_taiyaar_af.mp3"
+  },
+  "tame|taiyaar|neg|pres": {
+   "gu": "તમે તૈયાર નથી.",
+   "es": "Usted no está listo.",
+   "audio": "audios/transforma/tr1_tame_taiyaar_neg.mp3"
+  },
+  "tame|taiyaar|preg|pres": {
+   "gu": "શું તમે તૈયાર છો?",
+   "es": "¿Está usted listo?",
+   "audio": "audios/transforma/tr1_tame_taiyaar_preg.mp3"
+  },
+  "tem|thaak|af|pres": {
+   "gu": "તે થાકેલો છે.",
+   "es": "Él está cansado.",
+   "audio": "audios/transforma/tr1_tem_thaak_af.mp3"
+  },
+  "tem|thaak|neg|pres": {
+   "gu": "તે થાકેલો નથી.",
+   "es": "Él no está cansado.",
+   "audio": "audios/transforma/tr1_tem_thaak_neg.mp3"
+  },
+  "tem|thaak|preg|pres": {
+   "gu": "શું તે થાકેલો છે?",
+   "es": "¿Está él cansado?",
+   "audio": "audios/transforma/tr1_tem_thaak_preg.mp3"
+  },
+  "tem|biimaar|af|pres": {
+   "gu": "તે બીમાર છે.",
+   "es": "Él está enfermo.",
+   "audio": "audios/transforma/tr1_tem_biimaar_af.mp3"
+  },
+  "tem|biimaar|neg|pres": {
+   "gu": "તે બીમાર નથી.",
+   "es": "Él no está enfermo.",
+   "audio": "audios/transforma/tr1_tem_biimaar_neg.mp3"
+  },
+  "tem|biimaar|preg|pres": {
+   "gu": "શું તે બીમાર છે?",
+   "es": "¿Está él enfermo?",
+   "audio": "audios/transforma/tr1_tem_biimaar_preg.mp3"
+  },
+  "tem|taiyaar|af|pres": {
+   "gu": "તે તૈયાર છે.",
+   "es": "Él está listo.",
+   "audio": "audios/transforma/tr1_tem_taiyaar_af.mp3"
+  },
+  "tem|taiyaar|neg|pres": {
+   "gu": "તે તૈયાર નથી.",
+   "es": "Él no está listo.",
+   "audio": "audios/transforma/tr1_tem_taiyaar_neg.mp3"
+  },
+  "tem|taiyaar|preg|pres": {
+   "gu": "શું તે તૈયાર છે?",
+   "es": "¿Está él listo?",
+   "audio": "audios/transforma/tr1_tem_taiyaar_preg.mp3"
+  },
+  "tef|thaak|af|pres": {
+   "gu": "તે થાકેલી છે.",
+   "es": "Ella está cansada.",
+   "audio": "audios/transforma/tr1_tef_thaak_af.mp3"
+  },
+  "tef|thaak|neg|pres": {
+   "gu": "તે થાકેલી નથી.",
+   "es": "Ella no está cansada.",
+   "audio": "audios/transforma/tr1_tef_thaak_neg.mp3"
+  },
+  "tef|thaak|preg|pres": {
+   "gu": "શું તે થાકેલી છે?",
+   "es": "¿Está ella cansada?",
+   "audio": "audios/transforma/tr1_tef_thaak_preg.mp3"
+  },
+  "tef|biimaar|af|pres": {
+   "gu": "તે બીમાર છે.",
+   "es": "Ella está enferma.",
+   "audio": "audios/transforma/tr1_tem_biimaar_af.mp3"
+  },
+  "tef|biimaar|neg|pres": {
+   "gu": "તે બીમાર નથી.",
+   "es": "Ella no está enferma.",
+   "audio": "audios/transforma/tr1_tem_biimaar_neg.mp3"
+  },
+  "tef|biimaar|preg|pres": {
+   "gu": "શું તે બીમાર છે?",
+   "es": "¿Está ella enferma?",
+   "audio": "audios/transforma/tr1_tem_biimaar_preg.mp3"
+  },
+  "tef|taiyaar|af|pres": {
+   "gu": "તે તૈયાર છે.",
+   "es": "Ella está lista.",
+   "audio": "audios/transforma/tr1_tem_taiyaar_af.mp3"
+  },
+  "tef|taiyaar|neg|pres": {
+   "gu": "તે તૈયાર નથી.",
+   "es": "Ella no está lista.",
+   "audio": "audios/transforma/tr1_tem_taiyaar_neg.mp3"
+  },
+  "tef|taiyaar|preg|pres": {
+   "gu": "શું તે તૈયાર છે?",
+   "es": "¿Está ella lista?",
+   "audio": "audios/transforma/tr1_tem_taiyaar_preg.mp3"
+  },
+  "ame|thaak|af|pres": {
+   "gu": "અમે થાકેલા છીએ.",
+   "es": "Estamos cansados.",
+   "audio": "audios/transforma/tr1_ame_thaak_af.mp3"
+  },
+  "ame|thaak|neg|pres": {
+   "gu": "અમે થાકેલા નથી.",
+   "es": "No estamos cansados.",
+   "audio": "audios/transforma/tr1_ame_thaak_neg.mp3"
+  },
+  "ame|thaak|preg|pres": {
+   "gu": "શું અમે થાકેલા છીએ?",
+   "es": "¿Estamos cansados?",
+   "audio": "audios/transforma/tr1_ame_thaak_preg.mp3"
+  },
+  "ame|biimaar|af|pres": {
+   "gu": "અમે બીમાર છીએ.",
+   "es": "Estamos enfermos.",
+   "audio": "audios/transforma/tr1_ame_biimaar_af.mp3"
+  },
+  "ame|biimaar|neg|pres": {
+   "gu": "અમે બીમાર નથી.",
+   "es": "No estamos enfermos.",
+   "audio": "audios/transforma/tr1_ame_biimaar_neg.mp3"
+  },
+  "ame|biimaar|preg|pres": {
+   "gu": "શું અમે બીમાર છીએ?",
+   "es": "¿Estamos enfermos?",
+   "audio": "audios/transforma/tr1_ame_biimaar_preg.mp3"
+  },
+  "ame|taiyaar|af|pres": {
+   "gu": "અમે તૈયાર છીએ.",
+   "es": "Estamos listos.",
+   "audio": "audios/transforma/tr1_ame_taiyaar_af.mp3"
+  },
+  "ame|taiyaar|neg|pres": {
+   "gu": "અમે તૈયાર નથી.",
+   "es": "No estamos listos.",
+   "audio": "audios/transforma/tr1_ame_taiyaar_neg.mp3"
+  },
+  "ame|taiyaar|preg|pres": {
+   "gu": "શું અમે તૈયાર છીએ?",
+   "es": "¿Estamos listos?",
+   "audio": "audios/transforma/tr1_ame_taiyaar_preg.mp3"
+  }
+ }
+}
