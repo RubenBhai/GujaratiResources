@@ -1,0 +1,2448 @@
+{
+ "generado": "construir_pfd.py",
+ "lecciones": [
+  {
+   "codigo": "1.1.1",
+   "titulo_gu": "કેમ છો?",
+   "titulo_es": "¿cómo estás?"
+  },
+  {
+   "codigo": "1.1.2",
+   "titulo_gu": "સારું છે",
+   "titulo_es": "estoy bien"
+  },
+  {
+   "codigo": "1.1.3",
+   "titulo_gu": "નમસ્તે",
+   "titulo_es": "hola (para hindúes)"
+  },
+  {
+   "codigo": "1.2.1",
+   "titulo_gu": "આ મારા પતિ છે",
+   "titulo_es": "este es mi esposo"
+  },
+  {
+   "codigo": "1.2.2",
+   "titulo_gu": "આજે તો સમય નથી",
+   "titulo_es": "hoy no hay tiempo"
+  },
+  {
+   "codigo": "1.2.3",
+   "titulo_gu": "તમે ક્યાં રહો છો?",
+   "titulo_es": "¿dónde vive usted?"
+  }
+ ],
+ "palabras": [
+  {
+   "leccion": "1.1.1",
+   "gu": "કેમ છો?",
+   "es": "¿cómo estás?",
+   "img": "imagenes/Clase_1_1/img_kem_chho.jpg",
+   "pron": "ક-ે-મ + છ-ો → kem + <strong>chho</strong>",
+   "audio": "audios/clase_1_1/audio_m_kem_chho.mp3",
+   "audio2": "audios/clase_1_1/audio_h_kem_chho.mp3",
+   "ejemplo": {
+    "gu": "કેમ છો શ્રીયાબેન?",
+    "es": "¿Cómo está Shriya?",
+    "audio": "audios/clase_1_1/dialogo_1_1_1_01.mp3",
+    "quien": "રાહુલભાઈ",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "કેમ કે...",
+   "es": "porque...",
+   "img": "imagenes/Clase_1_1/img_kem_ke.jpg",
+   "pron": "ક-ે-મ + ક-ે → kem + <strong>ke</strong>",
+   "audio": "audios/clase_1_1/audio_m_kem_ke.mp3",
+   "audio2": "audios/clase_1_1/audio_h_kem_ke.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "કેમ?",
+   "es": "¿cómo? / ¿por qué?",
+   "img": "imagenes/Clase_1_1/img_kem.jpg",
+   "pron": "ક-ે-મ → <strong>kem</strong>",
+   "audio": "audios/clase_1_1/audio_m_kem.mp3",
+   "audio2": "audios/clase_1_1/audio_h_kem.mp3",
+   "ejemplo": {
+    "gu": "કેમ છો?",
+    "es": "¿cómo estás?",
+    "audio": "audios/clase_1_1/audio_m_kem_chho.mp3",
+    "quien": "",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "કામ",
+   "es": "trabajo",
+   "img": "imagenes/Clase_1_1/img_kaam.jpg",
+   "pron": "ક-ા-મ → kaa-<strong>m</strong>",
+   "audio": "audios/clase_1_1/audio_m_kaam.mp3",
+   "audio2": "audios/clase_1_1/audio_h_kaam.mp3",
+   "ejemplo": {
+    "gu": "કામ છે",
+    "es": "hay trabajo",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "મોકો",
+   "es": "oportunidad",
+   "img": "imagenes/Clase_1_1/img_moko.jpg",
+   "pron": "મ-ો-ક-ો → mo-<strong>ko</strong>",
+   "audio": "audios/clase_1_1/audio_m_moko.mp3",
+   "audio2": "audios/clase_1_1/audio_h_moko.mp3",
+   "ejemplo": {
+    "gu": "મોકો છે",
+    "es": "hay oportunidad",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "મામા",
+   "es": "tío materno",
+   "img": "imagenes/Clase_1_1/img_maamaa.jpg",
+   "pron": "મ-ા-મ-ા → maa-<strong>maa</strong><br>Tío Materno",
+   "audio": "audios/clase_1_1/audio_m_maamaa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_maamaa.mp3",
+   "ejemplo": {
+    "gu": "મજામાં. આ મામા છે?",
+    "es": "Muy bien. ¿Este es tu tío materno?",
+    "audio": "audios/clase_1_1/dialogo_1_1_1_03.mp3",
+    "quien": "રાહુલભાઈ",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "કાકા",
+   "es": "tío paterno",
+   "img": "imagenes/Clase_1_1/img_kaakaa.jpg",
+   "pron": "ક + ા + ક + ા → kaa-<strong>kaa</strong><br>Tío Paterno",
+   "audio": "audios/clase_1_1/audio_m_kaakaa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_kaakaa.mp3",
+   "ejemplo": {
+    "gu": "અને એ કાકા છે, સોહાનભાઈ.",
+    "es": "Y ese es mi tío paterno, Sojan.",
+    "audio": "audios/clase_1_1/dialogo_1_1_1_05.mp3",
+    "quien": "શ્રીયાબેન",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "ઓછો",
+   "es": "poco",
+   "img": "imagenes/Clase_1_1/img_ochho.jpg",
+   "pron": "ઓ + છ + ો   → <strong>o+chho</strong> <br>Adjetivo 'poco' ",
+   "audio": "audios/clase_1_1/audio_m_ochho.mp3",
+   "audio2": "audios/clase_1_1/audio_h_ochho.mp3",
+   "ejemplo": {
+    "gu": "ઓછો છે",
+    "es": "es poco",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "છ",
+   "es": "número 6",
+   "img": "imagenes/Clase_1_1/img_chha.jpg",
+   "pron": "છ <strong>chha</strong><br>Número 6",
+   "audio": "audios/clase_1_1/audio_m_chha.mp3",
+   "audio2": "audios/clase_1_1/audio_h_chha.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "છે",
+   "es": "es/está/hay",
+   "img": "imagenes/Clase_1_1/img_chhe.jpg",
+   "pron": " છ +  ે  → <strong>chhe</strong><br>Forma del verbo 'ser' o 'estar'",
+   "audio": "audios/clase_1_1/audio_m_chhe.mp3",
+   "audio2": "audios/clase_1_1/audio_h_chhe.mp3",
+   "ejemplo": {
+    "gu": "મજામાં. આ મામા છે?",
+    "es": "Muy bien. ¿Este es tu tío materno?",
+    "audio": "audios/clase_1_1/dialogo_1_1_1_03.mp3",
+    "quien": "રાહુલભાઈ",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "એ",
+   "es": "eso",
+   "img": "imagenes/Clase_1_1/img_e.jpg",
+   "pron": " એે  → <strong>e</strong><br>Pronombre 'eso/esa' para señalar algo lejos",
+   "audio": "audios/clase_1_1/audio_alfa_m_e.mp3",
+   "audio2": "audios/clase_1_1/audio_alfa_h_e.mp3",
+   "ejemplo": {
+    "gu": "અને એ કાકા છે, સોહાનભાઈ.",
+    "es": "Y ese es mi tío paterno, Sojan.",
+    "audio": "audios/clase_1_1/dialogo_1_1_1_05.mp3",
+    "quien": "શ્રીયાબેન",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "આ",
+   "es": "esto",
+   "img": "imagenes/Clase_1_1/img_aa.jpg",
+   "pron": " આ  → <strong>aa</strong><br>Pronombre 'esto/esta' para señalar algo cerca",
+   "audio": "audios/clase_1_1/audio_alfa_m_aa.mp3",
+   "audio2": "audios/clase_1_1/audio_alfa_h_aa.mp3",
+   "ejemplo": {
+    "gu": "મજામાં. આ મામા છે?",
+    "es": "Muy bien. ¿Este es tu tío materno?",
+    "audio": "audios/clase_1_1/dialogo_1_1_1_03.mp3",
+    "quien": "રાહુલભાઈ",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "મા",
+   "es": "mamá",
+   "img": "imagenes/Clase_1_1/img_maa.jpg",
+   "pron": " મ + ા  → <strong>maa</strong>",
+   "audio": "audios/clase_1_1/audio_m_maa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_maa.mp3",
+   "ejemplo": {
+    "gu": "એ મા છે",
+    "es": "esa es la mamá",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "આરામ",
+   "es": "descanso",
+   "img": "imagenes/Clase_1_1/img_aaraam.jpg",
+   "pron": "આ-ર-ા-મ → aa-<strong>raam</strong>",
+   "audio": "audios/clase_1_1/audio_m_aaram.mp3",
+   "audio2": "audios/clase_1_1/audio_h_aaram.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "અહેસાસ",
+   "es": "sensación / sentimiento",
+   "img": "imagenes/Clase_1_1/img_ahesaas.jpg",
+   "pron": "અ-હ-ે-સ-ા-સ → a-he-<strong>saas</strong>",
+   "audio": "audios/clase_1_1/audio_m_ahesaas.mp3",
+   "audio2": "audios/clase_1_1/audio_h_ahesaas.mp3",
+   "ejemplo": {
+    "gu": "મારું અહેસાસ છે",
+    "es": "es mi sentimiento",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "અમારું",
+   "es": "nuestro",
+   "img": "imagenes/Clase_1_1/img_amaaru(m)_chhe.jpg",
+   "pron": "અ-મ-ા-ર-ું → a-maa-<strong>ruⁿ</strong><br>Posesivo neutro",
+   "audio": "audios/clase_1_1/audio_m_amaaru(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_amaaru(m).mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "છોકરો",
+   "es": "niño",
+   "img": "imagenes/Clase_1_1/img_chokro.jpg",
+   "pron": "છ-ો-ક-ર-ો → cho-<strong>kro</strong>",
+   "audio": "audios/clase_1_1/audio_m_chokro.mp3",
+   "audio2": "audios/clase_1_1/audio_h_chokro.mp3",
+   "ejemplo": {
+    "gu": "મજામાં! આ મારો છોકરો છે, રોહન.",
+    "es": "¡Muy bien! Este es mi hijo, Rohan.",
+    "audio": "audios/clase_1_1/dialogo_1_1_2_03.mp3",
+    "quien": "વીણાબેન",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "હુકમ",
+   "es": "mandato",
+   "img": "imagenes/Clase_1_1/img_hukam.jpg",
+   "pron": "હ-ુ-ક-મ → hu-<strong>kam</strong>",
+   "audio": "audios/clase_1_1/audio_m_hukam.mp3",
+   "audio2": "audios/clase_1_1/audio_h_hukam.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "મારું",
+   "es": "mío",
+   "img": "imagenes/Clase_1_1/img_maaru(m).jpg",
+   "pron": "મ-ા-ર-ું → maa-<strong>ruⁿ</strong><br>Posesivo neutro",
+   "audio": "audios/clase_1_1/audio_m_maaru(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_maaru(m).mp3",
+   "ejemplo": {
+    "gu": "મારું અહેસાસ છે",
+    "es": "es mi sentimiento",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "મહાન",
+   "es": "grande / majestuoso",
+   "img": "imagenes/Clase_1_1/img_mahaan.jpg",
+   "pron": "મ-હ-ા-ન → ma-<strong>haan</strong>",
+   "audio": "audios/clase_1_1/audio_m_mahaan.mp3",
+   "audio2": "audios/clase_1_1/audio_h_mahaan.mp3",
+   "ejemplo": {
+    "gu": "અમારો સરકાર મહાન છે",
+    "es": "nuestro gobierno es grande",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "સારું છે",
+   "es": "está bien",
+   "img": "imagenes/Clase_1_1/img_saaru(m)_chhe.jpg",
+   "pron": "સ-ા-ર-ું   છે→ saa-<strong>ruⁿ</strong> chhe",
+   "audio": "audios/clase_1_1/audio_m_saaru(m)_chhe.mp3",
+   "audio2": "audios/clase_1_1/audio_h_saaru(m)_chhe.mp3",
+   "ejemplo": {
+    "gu": "સારું છે. કેમ છો રાહુલભાઈ?",
+    "es": "Bien. ¿Cómo está Rajul?",
+    "audio": "audios/clase_1_1/dialogo_1_1_1_02.mp3",
+    "quien": "શ્રીયાબેન",
+    "leccion": "1.1.1"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "સહારો",
+   "es": "apoyo",
+   "img": "imagenes/Clase_1_1/img_sahaaro.jpg",
+   "pron": "સ-હ-ા-ર-ો → sa-haa-<strong>ro</strong>",
+   "audio": "audios/clase_1_1/audio_m_sahaaro.mp3",
+   "audio2": "audios/clase_1_1/audio_h_sahaaro.mp3",
+   "ejemplo": {
+    "gu": "આ અમારો સહારો છે",
+    "es": "este es nuestro apoyo",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "સરસ",
+   "es": "excelente",
+   "img": "imagenes/Clase_1_1/img_saras.jpg",
+   "pron": "સ-ર-સ → <strong>saras</strong>",
+   "audio": "audios/clase_1_1/audio_m_saras.mp3",
+   "audio2": "audios/clase_1_1/audio_h_saras.mp3",
+   "ejemplo": {
+    "gu": "વાહ! કેટલા સરસ!",
+    "es": "¡Wua! Qué bien.",
+    "audio": "audios/clase_1_1/dialogo_1_1_2_10.mp3",
+    "quien": "મનિષાબેન",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "સરકાર",
+   "es": "gobierno",
+   "img": "imagenes/Clase_1_1/img_sarkaar.jpg",
+   "pron": "સ-ર-ક-ા-ર → sar-<strong>kaar</strong>",
+   "audio": "audios/clase_1_1/audio_m_sarkaar.mp3",
+   "audio2": "audios/clase_1_1/audio_h_sarkaar.mp3",
+   "ejemplo": {
+    "gu": "મારો સરકાર છે",
+    "es": "es mi gobierno",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "ઉંમર",
+   "es": "edad",
+   "img": "imagenes/Clase_1_1/img_u(m)mar.jpg",
+   "pron": "ઉં-મ-ર → <strong>u<sup class=\"nas\">n</sup>mar</strong>",
+   "audio": "audios/clase_1_1/audio_m_u(m)mar.mp3",
+   "audio2": "audios/clase_1_1/audio_h_u(m)mar.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "હું",
+   "es": "yo",
+   "img": "imagenes/Clase_1_1/img_hu(m).jpg",
+   "pron": "હ-ું → <strong>huⁿ</strong><br>Pronombre 'yo'",
+   "audio": "audios/clase_1_1/audio_m_hu(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_hu(m).mp3",
+   "ejemplo": {
+    "gu": "હું છું",
+    "es": "yo soy",
+    "audio": "audios/clase_1_1/audio_m_hu(m)_chhu(m).mp3",
+    "quien": "",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "છું",
+   "es": "soy / estoy",
+   "img": "imagenes/Clase_1_1/img_chhu(m).jpg",
+   "pron": "છ-ું → <strong>chhuⁿ</strong><br>Forma del verbo 'ser/estar' para 'yo'",
+   "audio": "audios/clase_1_1/audio_m_chhu(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_chhu(m).mp3",
+   "ejemplo": {
+    "gu": "હું છું",
+    "es": "yo soy",
+    "audio": "audios/clase_1_1/audio_m_hu(m)_chhu(m).mp3",
+    "quien": "",
+    "leccion": "1.1.2"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "નમસ્તે",
+   "es": "hola (saludo)",
+   "img": "imagenes/Clase_1_1/img_namaste.jpg",
+   "pron": "ન-મ-સ્ત-ે → na-mas-<strong>te</strong>",
+   "audio": "audios/clase_1_1/audio_m_namaste.mp3",
+   "audio2": "audios/clase_1_1/audio_h_namaste.mp3",
+   "ejemplo": {
+    "gu": "નમસ્તે. હું સારી છું.",
+    "es": "Hola. Estoy bien.",
+    "audio": "audios/clase_1_1/dialogo_1_1_3_02.mp3",
+    "quien": "વીણા",
+    "leccion": "1.1.3"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "શું",
+   "es": "¿qué?",
+   "img": "imagenes/Clase_1_1/img_shu(m).jpg",
+   "pron": "શ-ું → <strong>shu<sup class=\"nas\">n</sup></strong><br>La palabra para preguntar «qué»",
+   "audio": "audios/clase_1_1/audio_m_shu(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_shu(m).mp3",
+   "ejemplo": {
+    "gu": "મા, હું શું કરું?",
+    "es": "Mamá, ¿qué hago?",
+    "audio": "audios/clase_1_1/dialogo_1_1_3_11.mp3",
+    "quien": "રોહન",
+    "leccion": "1.1.3"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "નામ",
+   "es": "nombre",
+   "img": "imagenes/Clase_1_1/img_naam.jpg",
+   "pron": "ન-ા-મ → <strong>naam</strong>",
+   "audio": "audios/clase_1_1/audio_m_naam.mp3",
+   "audio2": "audios/clase_1_1/audio_h_naam.mp3",
+   "ejemplo": {
+    "gu": "હા, આ મારો છોકરો છે. તેનું નામ રોહન છે.",
+    "es": "Sí, es mi hijo. Se llama Rohan.",
+    "audio": "audios/clase_1_1/dialogo_1_1_3_04.mp3",
+    "quien": "વીણા",
+    "leccion": "1.1.3"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "રસ્તો",
+   "es": "camino",
+   "img": "imagenes/Clase_1_1/img_rasto.jpg",
+   "pron": "ર-સ્ત-ો → ras-<strong>to</strong><br>Lleva la conjuntiva સ્ત",
+   "audio": "audios/clase_1_1/audio_m_rasto.mp3",
+   "audio2": "audios/clase_1_1/audio_h_rasto.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "શહેર",
+   "es": "ciudad",
+   "img": "imagenes/Clase_1_1/img_shaher.jpg",
+   "pron": "શ-હ-ે-ર → sha-<strong>her</strong>",
+   "audio": "audios/clase_1_1/audio_m_shaher.mp3",
+   "audio2": "audios/clase_1_1/audio_h_shaher.mp3",
+   "ejemplo": {
+    "gu": "આ અમારું શહેર છે",
+    "es": "esta es nuestra ciudad",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.3"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "મશીન",
+   "es": "máquina",
+   "img": "imagenes/Clase_1_1/img_mashiin.jpg",
+   "pron": "મ-શ-ી-ન → ma-<strong>shiin</strong>",
+   "audio": "audios/clase_1_1/audio_m_mashiin.mp3",
+   "audio2": "audios/clase_1_1/audio_h_mashiin.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "નાક",
+   "es": "nariz",
+   "img": "imagenes/Clase_1_1/img_naak.jpg",
+   "pron": "ન-ા-ક → <strong>naak</strong>",
+   "audio": "audios/clase_1_1/audio_m_naak.mp3",
+   "audio2": "audios/clase_1_1/audio_h_naak.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "કાન",
+   "es": "oreja",
+   "img": "imagenes/Clase_1_1/img_kaan.jpg",
+   "pron": "ક-ા-ન → <strong>kaan</strong><br>No la confundas con કામ (trabajo)",
+   "audio": "audios/clase_1_1/audio_m_kaan.mp3",
+   "audio2": "audios/clase_1_1/audio_h_kaan.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "રાત",
+   "es": "noche",
+   "img": "imagenes/Clase_1_1/img_raat.jpg",
+   "pron": "ર-ા-ત → <strong>raat</strong>",
+   "audio": "audios/clase_1_1/audio_m_raat.mp3",
+   "audio2": "audios/clase_1_1/audio_h_raat.mp3",
+   "ejemplo": {
+    "gu": "રાત છે. આરામ કરો!",
+    "es": "Es de noche. ¡A descansar!",
+    "audio": "audios/clase_1_1/dialogo_1_1_3_12.mp3",
+    "quien": "વીણા",
+    "leccion": "1.1.3"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "સોનું",
+   "es": "oro",
+   "img": "imagenes/Clase_1_1/img_sonu(m).jpg",
+   "pron": "સ-ો-ન-ું → so-<strong>nu<sup class=\"nas\">n</sup></strong>",
+   "audio": "audios/clase_1_1/audio_m_sonu(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_sonu(m).mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "માતા",
+   "es": "madre",
+   "img": "imagenes/Clase_1_1/img_maataa.jpg",
+   "pron": "મ-ા-ત-ા → maa-<strong>taa</strong>",
+   "audio": "audios/clase_1_1/audio_m_maataa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_maataa.mp3",
+   "ejemplo": {
+    "gu": "મારી માતા સારી છે",
+    "es": "mi madre es buena",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.1.3"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "છોકરી",
+   "es": "niña / hija",
+   "img": "imagenes/Clase_1_1/img_chokrii.jpg",
+   "pron": "છ-ો-ક-ર-ી → cho-<strong>krii</strong><br>Femenino de છોકરો",
+   "audio": "audios/clase_1_1/audio_m_chokrii.mp3",
+   "audio2": "audios/clase_1_1/audio_h_chokrii.mp3",
+   "ejemplo": {
+    "gu": "આ મારી છોકરી છે",
+    "es": "esta es mi hija",
+    "audio": "audios/clase_1_1/audio_m_aa_maarii_chokrii_chhe.mp3",
+    "quien": "",
+    "leccion": "1.1.3"
+   }
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "નોકરી",
+   "es": "empleo, trabajo",
+   "img": "imagenes/Clase_1_1/img_nokrii.jpg",
+   "pron": "ન-ો-ક-ર-ી → no-<strong>krii</strong>",
+   "audio": "audios/clase_1_1/audio_m_nokrii.mp3",
+   "audio2": "audios/clase_1_1/audio_h_nokrii.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "શરીર",
+   "es": "cuerpo",
+   "img": "imagenes/Clase_1_1/img_shariir.jpg",
+   "pron": "શ-ર-ી-ર → sha-<strong>riir</strong>",
+   "audio": "audios/clase_1_1/audio_m_shariir.mp3",
+   "audio2": "audios/clase_1_1/audio_h_shariir.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "શાંતિ",
+   "es": "paz",
+   "img": "imagenes/Clase_1_1/img_shaa(m)ti.jpg",
+   "pron": "શ-ા-ં-ત-િ → <strong>shaa<sup class=\"nas\">n</sup></strong>-ti",
+   "audio": "audios/clase_1_1/audio_m_shaa(m)ti.mp3",
+   "audio2": "audios/clase_1_1/audio_h_shaa(m)ti.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "મન",
+   "es": "mente",
+   "img": "imagenes/Clase_1_1/img_man.jpg",
+   "pron": "મ-ન → <strong>man</strong>",
+   "audio": "audios/clase_1_1/audio_m_man.mp3",
+   "audio2": "audios/clase_1_1/audio_h_man.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "પાણી",
+   "es": "agua",
+   "img": "imagenes/Clase_1_1/img_paanii.jpg",
+   "pron": "પ-ા-ણ-ી → paa-<strong>ṇii</strong><br>Lleva la nueva ણ",
+   "audio": "audios/clase_1_1/audio_m_paanii.mp3",
+   "audio2": "audios/clase_1_1/audio_h_paanii.mp3",
+   "ejemplo": {
+    "gu": "આ પાણી છે",
+    "es": "esto es agua",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.2.1"
+   }
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "રાણી",
+   "es": "reina",
+   "img": "imagenes/Clase_1_1/img_raanii.jpg",
+   "pron": "ર-ા-ણ-ી → raa-<strong>ṇii</strong>",
+   "audio": "audios/clase_1_1/audio_m_raanii.mp3",
+   "audio2": "audios/clase_1_1/audio_h_raanii.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "પરિવાર",
+   "es": "familia",
+   "img": "imagenes/Clase_1_1/img_parivaar.jpg",
+   "pron": "પ-ર-િ-વ-ા-ર → pa-ri-<strong>vaar</strong>",
+   "audio": "audios/clase_1_1/audio_m_parivaar.mp3",
+   "audio2": "audios/clase_1_1/audio_h_parivaar.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "પતિ",
+   "es": "esposo",
+   "img": "imagenes/Clase_1_1/img_pati.jpg",
+   "pron": "પ-ત-િ → <strong>pa</strong>-ti<br>Como en el diálogo: આ મારા પતિ છે",
+   "audio": "audios/clase_1_1/audio_m_pati.mp3",
+   "audio2": "audios/clase_1_1/audio_h_pati.mp3",
+   "ejemplo": {
+    "gu": "આ મારા પતિ છે",
+    "es": "este es mi esposo",
+    "audio": "audios/clase_1_1/audio_m_aa_maaraa_pati_chhe.mp3",
+    "quien": "",
+    "leccion": "1.2.1"
+   }
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "પુસ્તક",
+   "es": "libro",
+   "img": "imagenes/Clase_1_1/img_pustak.jpg",
+   "pron": "પ-ુ-સ્ત-ક → pus-<strong>tak</strong><br>Lleva la conjuntiva સ્ત de la lección anterior",
+   "audio": "audios/clase_1_1/audio_m_pustak.mp3",
+   "audio2": "audios/clase_1_1/audio_h_pustak.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "પવન",
+   "es": "viento",
+   "img": "imagenes/Clase_1_1/img_pavan.jpg",
+   "pron": "પ-વ-ન → pa-<strong>van</strong>",
+   "audio": "audios/clase_1_1/audio_m_pavan.mp3",
+   "audio2": "audios/clase_1_1/audio_h_pavan.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "વાત",
+   "es": "conversación, asunto",
+   "img": "imagenes/Clase_1_1/img_vaat.jpg",
+   "pron": "વ-ા-ત → <strong>vaat</strong><br>શું વાત છે! = ¡qué coincidencia!",
+   "audio": "audios/clase_1_1/audio_m_vaat.mp3",
+   "audio2": "audios/clase_1_1/audio_h_vaat.mp3",
+   "ejemplo": {
+    "gu": "પછી વાત કરીશું",
+    "es": "hablamos después",
+    "audio": "audios/clase_1_1/audio_m_pachhii_vaat_kariishu(m).mp3",
+    "quien": "",
+    "leccion": "1.2.1"
+   }
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "વિશ્વ",
+   "es": "mundo",
+   "img": "imagenes/Clase_1_1/img_vishva.jpg",
+   "pron": "વ-િ-શ્વ → <strong>vish</strong>-va<br>Lleva la conjuntiva શ્વ",
+   "audio": "audios/clase_1_1/audio_m_vishva.mp3",
+   "audio2": "audios/clase_1_1/audio_h_vishva.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "વિશ્વાસ",
+   "es": "confianza, fe",
+   "img": "imagenes/Clase_1_1/img_vishvaas.jpg",
+   "pron": "વ-િ-શ્વ-ા-સ → vish-<strong>vaas</strong>",
+   "audio": "audios/clase_1_1/audio_m_vishvaas.mp3",
+   "audio2": "audios/clase_1_1/audio_h_vishvaas.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "શ્વાસ",
+   "es": "respiración",
+   "img": "imagenes/Clase_1_1/img_shvaas.jpg",
+   "pron": "શ્વ-ા-સ → <strong>shvaas</strong>",
+   "audio": "audios/clase_1_1/audio_m_shvaas.mp3",
+   "audio2": "audios/clase_1_1/audio_h_shvaas.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "ઊન",
+   "es": "lana",
+   "img": "imagenes/Clase_1_1/img_uun.jpg",
+   "pron": "ઊ-ન → <strong>uun</strong><br>Empieza con la vocal larga ઊ",
+   "audio": "audios/clase_1_1/audio_m_uun.mp3",
+   "audio2": "audios/clase_1_1/audio_h_uun.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "પૂરી",
+   "es": "puri (pan frito)",
+   "img": "imagenes/Clase_1_1/img_puurii.jpg",
+   "pron": "પ-ૂ-ર-ી → puu-<strong>rii</strong><br>Lleva la matra ૂ",
+   "audio": "audios/clase_1_1/audio_m_puurii.mp3",
+   "audio2": "audios/clase_1_1/audio_h_puurii.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "સૂપ",
+   "es": "sopa",
+   "img": "imagenes/Clase_1_1/img_suup.jpg",
+   "pron": "સ-ૂ-પ → <strong>suup</strong>",
+   "audio": "audios/clase_1_1/audio_m_suup.mp3",
+   "audio2": "audios/clase_1_1/audio_h_suup.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "વેપારી",
+   "es": "comerciante",
+   "img": "imagenes/Clase_1_1/img_vepaarii.jpg",
+   "pron": "વ-ે-પ-ા-ર-ી → ve-paa-<strong>rii</strong>",
+   "audio": "audios/clase_1_1/audio_m_vepaarii.mp3",
+   "audio2": "audios/clase_1_1/audio_h_vepaarii.mp3",
+   "ejemplo": {
+    "gu": "વેપારી સુરતમાં છે",
+    "es": "el comerciante está en Surat",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.2.1"
+   }
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "નવું",
+   "es": "nuevo",
+   "img": "imagenes/Clase_1_1/img_navu(m).jpg",
+   "pron": "ન-વ-ું → na-<strong>vu<sup class=\"nas\">n</sup></strong><br>Termina en ું, como સારું",
+   "audio": "audios/clase_1_1/audio_m_navu(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_navu(m).mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "યહોવા",
+   "es": "Jehová",
+   "img": "imagenes/Clase_1_1/img_yahovaa.jpg",
+   "pron": "ય-હ-ો-વ-ા → ya-<strong>ho</strong>-vaa<br>Empieza con la nueva ય",
+   "audio": "audios/clase_1_1/audio_m_yahovaa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_yahovaa.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "જીવન",
+   "es": "vida",
+   "img": "imagenes/Clase_1_1/img_jiivan.jpg",
+   "pron": "જ-ી-વ-ન → <strong>jii</strong>-van<br>Lleva la nueva જ",
+   "audio": "audios/clase_1_1/audio_m_jiivan.mp3",
+   "audio2": "audios/clase_1_1/audio_h_jiivan.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "સમય",
+   "es": "tiempo, hora",
+   "img": "imagenes/Clase_1_1/img_samay.jpg",
+   "pron": "સ-મ-ય → sa-<strong>may</strong><br>Como en el diálogo: આજે તો સમય નથી",
+   "audio": "audios/clase_1_1/audio_m_samay.mp3",
+   "audio2": "audios/clase_1_1/audio_h_samay.mp3",
+   "ejemplo": {
+    "gu": "આજે? આજે તો સમય નથી.",
+    "es": "¿Hoy? Hoy no hay tiempo.",
+    "audio": "audios/clase_1_1/dialogo_1_2_2_04.mp3",
+    "quien": "વીણા",
+    "leccion": "1.2.2"
+   }
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "જરૂર",
+   "es": "necesidad; ¡claro!",
+   "img": "imagenes/Clase_1_1/img_jaruur.jpg",
+   "pron": "જ-ર-ૂ-ર → ja-<strong>ruur</strong><br>હા, જરૂર! = ¡sí, claro!",
+   "audio": "audios/clase_1_1/audio_m_jaruur.mp3",
+   "audio2": "audios/clase_1_1/audio_h_jaruur.mp3",
+   "ejemplo": {
+    "gu": "હા, જરૂર!",
+    "es": "¡Sí, claro!",
+    "audio": "audios/clase_1_1/dialogo_1_2_2_08.mp3",
+    "quien": "વીણા",
+    "leccion": "1.2.2"
+   }
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "પ્રકાશ",
+   "es": "luz",
+   "img": "imagenes/Clase_1_1/img_prakaash.jpg",
+   "pron": "પ્ર-ક-ા-શ → pra-<strong>kaash</strong><br>Lleva la conjuntiva પ્ર",
+   "audio": "audios/clase_1_1/audio_m_prakaash.mp3",
+   "audio2": "audios/clase_1_1/audio_h_prakaash.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "પ્રકાશન",
+   "es": "publicación (revista, folleto)",
+   "img": "imagenes/Clase_1_1/img_prakaashan.jpg",
+   "pron": "પ્ર-ક-ા-શ-ન → pra-<strong>kaa</strong>-shan<br>En la predicación: «આ પ્રકાશન…»",
+   "audio": "audios/clase_1_1/audio_m_prakaashan.mp3",
+   "audio2": "audios/clase_1_1/audio_h_prakaashan.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "પ્રેમ",
+   "es": "amor",
+   "img": "imagenes/Clase_1_1/img_prem.jpg",
+   "pron": "પ્ર-ે-મ → <strong>prem</strong><br>ઈશ્વર પ્રેમ છે = Dios es amor",
+   "audio": "audios/clase_1_1/audio_m_prem.mp3",
+   "audio2": "audios/clase_1_1/audio_h_prem.mp3",
+   "ejemplo": {
+    "gu": "ઈશ્વર પ્રેમ છે",
+    "es": "Dios es amor",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.2.2"
+   }
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "મજા",
+   "es": "alegría, gusto",
+   "img": "imagenes/Clase_1_1/img_majaa.jpg",
+   "pron": "મ-જ-ા → ma-<strong>jaa</strong><br>મજા આવશે! = ¡qué divertido va a ser!",
+   "audio": "audios/clase_1_1/audio_m_majaa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_majaa.mp3",
+   "ejemplo": {
+    "gu": "મજા આવશે!",
+    "es": "¡Qué divertido va a ser!",
+    "audio": "audios/clase_1_1/dialogo_1_2_2_12.mp3",
+    "quien": "મનિષાબેન",
+    "leccion": "1.2.2"
+   }
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "પૈસા",
+   "es": "dinero",
+   "img": "imagenes/Clase_1_1/img_paisaa.jpg",
+   "pron": "પ-ૈ-સ-ા → <strong>pai</strong>-saa<br>Lleva la matra ૈ",
+   "audio": "audios/clase_1_1/audio_m_paisaa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_paisaa.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "રાજા",
+   "es": "rey",
+   "img": "imagenes/Clase_1_1/img_raajaa.jpg",
+   "pron": "ર-ા-જ-ા → <strong>raa</strong>-jaa",
+   "audio": "audios/clase_1_1/audio_m_raajaa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_raajaa.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હાથ",
+   "es": "mano",
+   "img": "imagenes/Clase_1_1/img_haath.jpg",
+   "pron": "હ-ા-થ → <strong>haath</strong><br>Termina en la nueva થ",
+   "audio": "audios/clase_1_1/audio_m_haath.mp3",
+   "audio2": "audios/clase_1_1/audio_h_haath.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "યોહાન",
+   "es": "Juan (el libro y el apóstol)",
+   "img": "imagenes/Clase_1_1/img_yohaan.jpg",
+   "pron": "ય-ો-હ-ા-ન → yo-<strong>haan</strong><br>«યોહાન ૧૭:૩»",
+   "audio": "audios/clase_1_1/audio_m_yohaan.mp3",
+   "audio2": "audios/clase_1_1/audio_h_yohaan.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "જમીન",
+   "es": "tierra (el suelo, el planeta)",
+   "img": "imagenes/Clase_1_1/img_jamiin.jpg",
+   "pron": "જ-મ-ી-ન → ja-<strong>miin</strong>",
+   "audio": "audios/clase_1_1/audio_m_jamiin.mp3",
+   "audio2": "audios/clase_1_1/audio_h_jamiin.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હૈયું",
+   "es": "corazón",
+   "img": "imagenes/Clase_1_1/img_haiyu(m).jpg",
+   "pron": "હ-ૈ-ય-ું → <strong>hai</strong>-yu<sup class=\"nas\">n</sup><br>Lleva la matra ૈ y la ય",
+   "audio": "audios/clase_1_1/audio_m_haiyu(m).mp3",
+   "audio2": "audios/clase_1_1/audio_h_haiyu(m).mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "ઐતિહાસિક",
+   "es": "histórico",
+   "img": "imagenes/Clase_1_1/img_aitihaasik.jpg",
+   "pron": "ઐ-ત-િ-હ-ા-સ-િ-ક → ai-ti-<strong>haa</strong>-sik<br>Empieza con la vocal ઐ",
+   "audio": "audios/clase_1_1/audio_m_aitihaasik.mp3",
+   "audio2": "audios/clase_1_1/audio_h_aitihaasik.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "મુલાકાત",
+   "es": "visita",
+   "img": "imagenes/Clase_1_1/img_mulaakaat.jpg",
+   "pron": "મ-ુ-લ-ા-ક-ા-ત → mu-laa-<strong>kaat</strong><br>Lleva la nueva લ",
+   "audio": "audios/clase_1_1/audio_m_mulaakaat.mp3",
+   "audio2": "audios/clase_1_1/audio_h_mulaakaat.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "લોકો",
+   "es": "gente, personas",
+   "img": "imagenes/Clase_1_1/img_loko.jpg",
+   "pron": "લ-ો-ક-ો → <strong>lo</strong>-ko",
+   "audio": "audios/clase_1_1/audio_m_loko.mp3",
+   "audio2": "audios/clase_1_1/audio_h_loko.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "કલમ",
+   "es": "versículo, texto bíblico",
+   "img": "imagenes/Clase_1_1/img_kalam.jpg",
+   "pron": "ક-લ-મ → ka-<strong>lam</strong>",
+   "audio": "audios/clase_1_1/audio_m_kalam.mp3",
+   "audio2": "audios/clase_1_1/audio_h_kalam.mp3",
+   "ejemplo": {
+    "gu": "આ બાઈબલની કલમ છે",
+    "es": "este es un versículo de la Biblia",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.2.3"
+   }
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "મદદ",
+   "es": "ayuda",
+   "img": "imagenes/Clase_1_1/img_madad.jpg",
+   "pron": "મ-દ-દ → ma-<strong>dad</strong><br>Como en el diálogo: હું શું મદદ કરું?",
+   "audio": "audios/clase_1_1/audio_m_madad.mp3",
+   "audio2": "audios/clase_1_1/audio_h_madad.mp3",
+   "ejemplo": {
+    "gu": "મનિષા, હું શું મદદ કરું?",
+    "es": "Manisha, ¿en qué te ayudo?",
+    "audio": "audios/clase_1_1/dialogo_1_2_3_11.mp3",
+    "quien": "વીણા",
+    "leccion": "1.2.3"
+   }
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "બાઈબલ",
+   "es": "Biblia",
+   "img": "imagenes/Clase_1_1/img_baaibal.jpg",
+   "pron": "બ-ા-ઇ-બ-લ → <strong>baa</strong>-i-bal<br>Lleva બ dos veces y la લ",
+   "audio": "audios/clase_1_1/audio_m_baaibal.mp3",
+   "audio2": "audios/clase_1_1/audio_h_baaibal.mp3",
+   "ejemplo": {
+    "gu": "બાઈબલ સુંદર પુસ્તક છે",
+    "es": "la Biblia es un libro hermoso",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.2.3"
+   }
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "જવાબ",
+   "es": "respuesta",
+   "img": "imagenes/Clase_1_1/img_javaab.jpg",
+   "pron": "જ-વ-ા-બ → ja-<strong>vaab</strong><br>સવાલ y જવાબ: pregunta y respuesta",
+   "audio": "audios/clase_1_1/audio_m_javaab.mp3",
+   "audio2": "audios/clase_1_1/audio_h_javaab.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "યાદ",
+   "es": "recuerdo",
+   "img": "imagenes/Clase_1_1/img_yaad.jpg",
+   "pron": "ય-ા-દ → <strong>yaad</strong><br>મને યાદ છે = me acuerdo",
+   "audio": "audios/clase_1_1/audio_m_yaad.mp3",
+   "audio2": "audios/clase_1_1/audio_h_yaad.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "સવાલ",
+   "es": "pregunta",
+   "img": "imagenes/Clase_1_1/img_savaal.jpg",
+   "pron": "સ-વ-ા-લ → sa-<strong>vaal</strong>",
+   "audio": "audios/clase_1_1/audio_m_savaal.mp3",
+   "audio2": "audios/clase_1_1/audio_h_savaal.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "સુંદર",
+   "es": "hermoso",
+   "img": "imagenes/Clase_1_1/img_sundar.jpg",
+   "pron": "સ-ું-દ-ર → <strong>sun</strong>-dar",
+   "audio": "audios/clase_1_1/audio_m_sundar.mp3",
+   "audio2": "audios/clase_1_1/audio_h_sundar.mp3",
+   "ejemplo": {
+    "gu": "બાઈબલ સુંદર પુસ્તક છે",
+    "es": "la Biblia es un libro hermoso",
+    "audio": "",
+    "quien": "compón",
+    "leccion": "1.2.3"
+   }
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "દુનિયા",
+   "es": "mundo",
+   "img": "imagenes/Clase_1_1/img_duniyaa.jpg",
+   "pron": "દ-ુ-ન-િ-ય-ા → du-ni-<strong>yaa</strong><br>Como વિશ્વ (1.2.1), pero de todos los días",
+   "audio": "audios/clase_1_1/audio_m_duniyaa.mp3",
+   "audio2": "audios/clase_1_1/audio_h_duniyaa.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "દિવસ",
+   "es": "día",
+   "img": "imagenes/Clase_1_1/img_divas.jpg",
+   "pron": "દ-િ-વ-સ → di-<strong>vas</strong><br>Como en el diálogo: દિવસ કેવો રહ્યો?",
+   "audio": "audios/clase_1_1/audio_m_divas.mp3",
+   "audio2": "audios/clase_1_1/audio_h_divas.mp3",
+   "ejemplo": {
+    "gu": "રોહન, દિવસ કેવો રહ્યો?",
+    "es": "Rohan, ¿qué tal el día?",
+    "audio": "audios/clase_1_1/dialogo_1_2_3_03.mp3",
+    "quien": "મનિષાબેન",
+    "leccion": "1.2.3"
+   }
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "નંબર",
+   "es": "número (de teléfono)",
+   "img": "imagenes/Clase_1_1/img_nambar.jpg",
+   "pron": "ન-ં-બ-ર → <strong>nam</strong>-bar<br>Viene del inglés <em>number</em>",
+   "audio": "audios/clase_1_1/audio_m_nambar.mp3",
+   "audio2": "audios/clase_1_1/audio_h_nambar.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "બલિદાન",
+   "es": "sacrificio",
+   "img": "imagenes/Clase_1_1/img_balidaan.jpg",
+   "pron": "બ-લ-િ-દ-ા-ન → ba-li-<strong>daan</strong><br>Lleva las tres letras nuevas: બ, લ y દ",
+   "audio": "audios/clase_1_1/audio_m_balidaan.mp3",
+   "audio2": "audios/clase_1_1/audio_h_balidaan.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "દરવાજો",
+   "es": "puerta",
+   "img": "imagenes/Clase_1_1/img_darvaajo.jpg",
+   "pron": "દ-ર-વ-ા-જ-ો → dar-<strong>vaa</strong>-jo",
+   "audio": "audios/clase_1_1/audio_m_darvaajo.mp3",
+   "audio2": "audios/clase_1_1/audio_h_darvaajo.mp3",
+   "ejemplo": null
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "સૌથી",
+   "es": "el que más",
+   "img": "imagenes/Clase_1_1/img_sauthii.jpg",
+   "pron": "સ-ૌ-થ-ી → <strong>sau</strong>-thii<br>Lleva la matra ૌ · સૌથી સારું = lo mejor",
+   "audio": "audios/clase_1_1/audio_m_sauthii.mp3",
+   "audio2": "audios/clase_1_1/audio_h_sauthii.mp3",
+   "ejemplo": null
+  }
+ ],
+ "frases": [
+  {
+   "leccion": "1.1.1",
+   "gu": "કેમ છો શ્રીયાબેન?",
+   "es": "¿Cómo está Shriya?",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_01.mp3",
+   "quien": "રાહુલભાઈ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "સારું છે. કેમ છો રાહુલભાઈ?",
+   "es": "Bien. ¿Cómo está Rajul?",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_02.mp3",
+   "quien": "શ્રીયાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "મજામાં. આ મામા છે?",
+   "es": "Muy bien. ¿Este es tu tío materno?",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_03.mp3",
+   "quien": "રાહુલભાઈ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "હા, આ મામા છે, રીતુભાઈ.",
+   "es": "Sí, este es mi tío materno, Ritu.",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_04.mp3",
+   "quien": "શ્રીયાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "અને એ કાકા છે, સોહાનભાઈ.",
+   "es": "Y ese es mi tío paterno, Sojan.",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_05.mp3",
+   "quien": "શ્રીયાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "નમસ્તે રીતુભાઈ.",
+   "es": "Hola Ritu.",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_06.mp3",
+   "quien": "રાહુલભાઈ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "નમસ્તે રાહુલભાઈ.",
+   "es": "Hola Rajul.",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_07.mp3",
+   "quien": "રીતુભાઈ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "નમસ્તે સોહાનભાઈ.",
+   "es": "Hola Sojan.",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_08.mp3",
+   "quien": "રાહુલભાઈ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "નમસ્તે રાહુલભાઈ.",
+   "es": "Hola Rajul.",
+   "audio": "audios/clase_1_1/dialogo_1_1_1_09.mp3",
+   "quien": "સોહાનભાઈ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "કેમ છો?",
+   "es": "¿cómo estás?",
+   "audio": "audios/clase_1_1/audio_m_kem_chho.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.1",
+   "gu": "કેમ કે...",
+   "es": "porque...",
+   "audio": "audios/clase_1_1/audio_m_kem_ke.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "કેમ છો મનિષાબેન?",
+   "es": "¿Cómo estás Manisha?",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_01.mp3",
+   "quien": "વીણાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "મજામાં છું. કેમ છો?",
+   "es": "Estoy muy bien. ¿Cómo estás?",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_02.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "મજામાં! આ મારો છોકરો છે, રોહન.",
+   "es": "¡Muy bien! Este es mi hijo, Rohan.",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_03.mp3",
+   "quien": "વીણાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "સરસ! કેમ છે રોહન?",
+   "es": "¡Qué bien! ¿Cómo estás, Rohan?",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_04.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "સારું છે.",
+   "es": "Estoy bien.",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_05.mp3",
+   "quien": "રોહન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "તારી બેન શ્રીયા કેમ છે?",
+   "es": "¿Cómo está tu hermana Shriya?",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_06.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "શ્રીયાબેન સારી છે.",
+   "es": "Shriya está bien.",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_07.mp3",
+   "quien": "વીણાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "હવે ક્યાં રહો છો?",
+   "es": "¿Dónde vives ahora?",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_08.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "હું સુરતમાં રહું છું.",
+   "es": "Yo vivo en Surat.",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_09.mp3",
+   "quien": "વીણાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "વાહ! કેટલા સરસ!",
+   "es": "¡Wua! Qué bien.",
+   "audio": "audios/clase_1_1/dialogo_1_1_2_10.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "હું છું",
+   "es": "yo soy",
+   "audio": "audios/clase_1_1/audio_m_hu(m)_chhu(m).mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.2",
+   "gu": "સારું છે",
+   "es": "está bien",
+   "audio": "audios/clase_1_1/audio_m_saaru(m)_chhe.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "નમસ્તે, વીણા. તમે કેમ છો?",
+   "es": "Hola, Vina. ¿Cómo está?",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_01.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "નમસ્તે. હું સારી છું.",
+   "es": "Hola. Estoy bien.",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_02.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "આ તમારો છોકરો છે?",
+   "es": "¿Este es su hijo?",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_03.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "હા, આ મારો છોકરો છે. તેનું નામ રોહન છે.",
+   "es": "Sí, es mi hijo. Se llama Rohan.",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_04.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "અને આ તમારી છોકરી છે?",
+   "es": "¿Y esta es su hija?",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_05.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "હા, આ મારી છોકરી છે. તેનું નામ રોશની છે.",
+   "es": "Sí, es mi hija. Se llama Roshni.",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_06.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "નમસ્તે, રોશની! તારી ઉંમર શું છે?",
+   "es": "¡Hola, Roshni! ¿Qué edad tienes?",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_07.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "મારી ઉંમર સાત છે.",
+   "es": "Tengo siete años.",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_08.mp3",
+   "quien": "રોશની",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "અને રોહન, તારી ઉંમર શું છે?",
+   "es": "¿Y tú, Rohan, qué edad tienes?",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_09.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "તેની ઉંમર છ છે!",
+   "es": "¡Tiene seis años!",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_10.mp3",
+   "quien": "રોશની",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "મા, હું શું કરું?",
+   "es": "Mamá, ¿qué hago?",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_11.mp3",
+   "quien": "રોહન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "રાત છે. આરામ કરો!",
+   "es": "Es de noche. ¡A descansar!",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_12.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "અમારી રાત મસ્ત છે!",
+   "es": "¡Nuestra noche es genial!",
+   "audio": "audios/clase_1_1/dialogo_1_1_3_13.mp3",
+   "quien": "રોશની",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "તમે કેમ છો?",
+   "es": "¿cómo está usted?",
+   "audio": "audios/clase_1_1/audio_m_tame_kem_chho.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "હું સારી છું",
+   "es": "estoy bien (dice una mujer)",
+   "audio": "audios/clase_1_1/audio_m_hu(m)_saarii_chhu(m).mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "હું સારો છું",
+   "es": "estoy bien (dice un hombre)",
+   "audio": "",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "આ મારો છોકરો છે",
+   "es": "este es mi hijo",
+   "audio": "audios/clase_1_1/audio_m_aa_maaro_chokro_chhe.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "આ મારી છોકરી છે",
+   "es": "esta es mi hija",
+   "audio": "audios/clase_1_1/audio_m_aa_maarii_chokrii_chhe.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "તારી ઉંમર શું છે?",
+   "es": "¿qué edad tienes?",
+   "audio": "audios/clase_1_1/audio_m_taarii_u(m)mar_shu(m)_chhe.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.1.3",
+   "gu": "મારી ઉંમર સાત છે",
+   "es": "tengo siete años",
+   "audio": "audios/clase_1_1/audio_m_maarii_u(m)mar_saat_chhe.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "આવો, આવો! તમે કેમ છો?",
+   "es": "¡Pasen, pasen! ¿Cómo están?",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_01.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "હું સારી છું. આ મારા પતિ છે.",
+   "es": "Estoy bien. Este es mi esposo.",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_02.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "નમસ્તે. મારું નામ પરેશ.",
+   "es": "Hola. Me llamo Paresh.",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_03.mp3",
+   "quien": "પરેશ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "સરસ નામ છે!",
+   "es": "¡Bonito nombre!",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_04.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "તમે શું કામ કરો છો?",
+   "es": "¿En qué trabaja usted?",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_05.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "હું સુરતમાં સરકારી નોકરી કરું છું.",
+   "es": "Tengo un empleo en el gobierno, en Surat.",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_06.mp3",
+   "quien": "પરેશ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "એમ? મારા પતિ પણ!",
+   "es": "¿Ah, sí? ¡Mi esposo también!",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_07.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "અરે, શું વાત છે!",
+   "es": "¡Vaya, qué coincidencia!",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_08.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "નમસ્તે, માસી!",
+   "es": "¡Hola, tía!",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_09.mp3",
+   "quien": "રોશની",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "નમસ્તે, રોશની! તું કેમ છે?",
+   "es": "¡Hola, Roshni! ¿Cómo estás?",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_10.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "આવો ને!",
+   "es": "¡Pasen, pues!",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_11.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "ના, હમણાં તો નહીં. પછી વાત કરીશું.",
+   "es": "No, ahora no. Hablamos después.",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_12.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "હા, સારું.",
+   "es": "Sí, está bien.",
+   "audio": "audios/clase_1_1/dialogo_1_2_1_13.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "આવો, આવો!",
+   "es": "¡pase! / ¡pasen!",
+   "audio": "audios/clase_1_1/audio_m_aavo_aavo.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "આ મારા પતિ છે",
+   "es": "este es mi esposo",
+   "audio": "audios/clase_1_1/audio_m_aa_maaraa_pati_chhe.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "મારું નામ પરેશ",
+   "es": "me llamo Paresh",
+   "audio": "audios/clase_1_1/audio_m_maaru(m)_naam_paresh.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "હું સુરતમાં સરકારી નોકરી કરું છું",
+   "es": "tengo un empleo en el gobierno, en Surat",
+   "audio": "audios/clase_1_1/audio_m_hu(m)_suratmaa(m)_sarkaarii_nokrii_karu(m)_chhu(m).mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.2.1",
+   "gu": "પછી વાત કરીશું",
+   "es": "hablamos después",
+   "audio": "audios/clase_1_1/audio_m_pachhii_vaat_kariishu(m).mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હાય વીણા! મજામાં ને?",
+   "es": "¡Hola, Vina! ¿Todo bien?",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_01.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હા, હું મજામાં છું.",
+   "es": "Sí, estoy muy bien.",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_02.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "આજે અમારી સાથે જમવા આવો ને.",
+   "es": "Vengan hoy a comer con nosotros.",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_03.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "આજે? આજે તો સમય નથી.",
+   "es": "¿Hoy? Hoy no hay tiempo.",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_04.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "શું થયું?",
+   "es": "¿Qué pasó?",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_05.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "મારે કામ પર જવું જોઈએ.",
+   "es": "Tengo que ir al trabajo.",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_06.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હું સમજી શકું છું. તો રવિવારે?",
+   "es": "Lo entiendo. ¿Entonces el domingo?",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_07.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હા, જરૂર!",
+   "es": "¡Sí, claro!",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_08.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "મા, હું પણ આવું?",
+   "es": "Mamá, ¿yo también voy?",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_09.mp3",
+   "quien": "રોહન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હા, હા! તું પણ આવજે.",
+   "es": "¡Sí, sí! Tú también ven.",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_10.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હું તો તૈયાર છું!",
+   "es": "¡Yo ya estoy lista!",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_11.mp3",
+   "quien": "રોશની",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "મજા આવશે!",
+   "es": "¡Qué divertido va a ser!",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_12.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હું રાહ જોઈશ. આવજો!",
+   "es": "Los espero. ¡Hasta luego!",
+   "audio": "audios/clase_1_1/dialogo_1_2_2_13.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.2",
+   "gu": "હવે મારે જવું જોઈએ",
+   "es": "ya tengo que irme",
+   "audio": "audios/clase_1_1/audio_m_have_maare_javu(m)_joiie.mp3",
+   "quien": "",
+   "origen": "práctica"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "આવો, આવો! અંદર આવો.",
+   "es": "¡Pasen, pasen! Adelante.",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_01.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "નમસ્તે! વાહ, બહુ સરસ!",
+   "es": "¡Hola! ¡Qué bonito!",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_02.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "રોહન, દિવસ કેવો રહ્યો?",
+   "es": "Rohan, ¿qué tal el día?",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_03.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "બહુ સરસ, માસી!",
+   "es": "¡Muy bien, tía!",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_04.mp3",
+   "quien": "રોહન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "પરેશજી, તમે ક્યાં રહો છો?",
+   "es": "Paresh, ¿dónde viven ustedes?",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_05.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "અમે સુરતમાં રહીએ છીએ.",
+   "es": "Vivimos en Surat.",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_06.mp3",
+   "quien": "પરેશ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "અહીં ક્યારે આવ્યા?",
+   "es": "¿Y cuándo llegaron aquí?",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_07.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "બે વરસ પહેલાં.",
+   "es": "Hace dos años.",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_08.mp3",
+   "quien": "પરેશ",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "માસી, આ કોણ છે?",
+   "es": "Tía, ¿quién es este?",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_09.mp3",
+   "quien": "રોશની",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "આ મારા પતિ છે. તે સાંજે આવશે.",
+   "es": "Es mi esposo. Llega en la tarde.",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_10.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "મનિષા, હું શું મદદ કરું?",
+   "es": "Manisha, ¿en qué te ayudo?",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_11.mp3",
+   "quien": "વીણા",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "ના, ના. તમે બેસો ને.",
+   "es": "No, no. Usted siéntese.",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_12.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "બધા જમવા આવો!",
+   "es": "¡Todos a comer!",
+   "audio": "audios/clase_1_1/dialogo_1_2_3_13.mp3",
+   "quien": "મનિષાબેન",
+   "origen": "diálogo"
+  },
+  {
+   "leccion": "1.2.3",
+   "gu": "તમારી પાસે ક્યારે સમય છે?",
+   "es": "¿cuándo tiene tiempo? (para la predicación)",
+   "audio": "audios/clase_1_1/audio_m_tamaarii_paase_kyaare_samay_chhe.mp3",
+   "quien": "",
+   "origen": "práctica"
+  }
+ ],
+ "dialogos": [
+  {
+   "leccion": "1.1.1",
+   "titulo": "Así suena el gujarati en una charla real. Al terminar la lección podrás reconocer y entender algunas letras y palabras de este diálogo!",
+   "lineas": [
+    {
+     "quien": "રાહુલભાઈ",
+     "color": "#5F6E4F",
+     "gu": "કેમ છો શ્રીયાબેન?",
+     "es": "¿Cómo está Shriya?",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_01.mp3"
+    },
+    {
+     "quien": "શ્રીયાબેન",
+     "color": "#A8362A",
+     "gu": "સારું છે. કેમ છો રાહુલભાઈ?",
+     "es": "Bien. ¿Cómo está Rajul?",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_02.mp3"
+    },
+    {
+     "quien": "રાહુલભાઈ",
+     "color": "#5F6E4F",
+     "gu": "મજામાં. આ મામા છે?",
+     "es": "Muy bien. ¿Este es tu tío materno?",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_03.mp3"
+    },
+    {
+     "quien": "શ્રીયાબેન",
+     "color": "#A8362A",
+     "gu": "હા, આ મામા છે, રીતુભાઈ.",
+     "es": "Sí, este es mi tío materno, Ritu.",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_04.mp3"
+    },
+    {
+     "quien": "શ્રીયાબેન",
+     "color": "#A8362A",
+     "gu": "અને એ કાકા છે, સોહાનભાઈ.",
+     "es": "Y ese es mi tío paterno, Sojan.",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_05.mp3"
+    },
+    {
+     "quien": "રાહુલભાઈ",
+     "color": "#5F6E4F",
+     "gu": "નમસ્તે રીતુભાઈ.",
+     "es": "Hola Ritu.",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_06.mp3"
+    },
+    {
+     "quien": "રીતુભાઈ",
+     "color": "#B8863D",
+     "gu": "નમસ્તે રાહુલભાઈ.",
+     "es": "Hola Rajul.",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_07.mp3"
+    },
+    {
+     "quien": "રાહુલભાઈ",
+     "color": "#5F6E4F",
+     "gu": "નમસ્તે સોહાનભાઈ.",
+     "es": "Hola Sojan.",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_08.mp3"
+    },
+    {
+     "quien": "સોહાનભાઈ",
+     "color": "#4A6B8A",
+     "gu": "નમસ્તે રાહુલભાઈ.",
+     "es": "Hola Rajul.",
+     "audio": "audios/clase_1_1/dialogo_1_1_1_09.mp3"
+    }
+   ],
+   "avatares": [
+    "imagenes/Clase_1_1/avatar_rahul.jpg",
+    "imagenes/Clase_1_1/avatar_shriya.jpg",
+    "imagenes/Clase_1_1/avatar_ritu.jpg",
+    "imagenes/Clase_1_1/avatar_sohan.jpg"
+   ]
+  },
+  {
+   "leccion": "1.1.2",
+   "titulo": "Así suena el gujarati en una charla real. Al terminar la lección podrás reconocer y entender algunas letras y palabras de este diálogo!",
+   "lineas": [
+    {
+     "quien": "વીણાબેન",
+     "color": "#5F6E4F",
+     "gu": "કેમ છો મનિષાબેન?",
+     "es": "¿Cómo estás Manisha?",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_01.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "મજામાં છું. કેમ છો?",
+     "es": "Estoy muy bien. ¿Cómo estás?",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_02.mp3"
+    },
+    {
+     "quien": "વીણાબેન",
+     "color": "#5F6E4F",
+     "gu": "મજામાં! આ મારો છોકરો છે, રોહન.",
+     "es": "¡Muy bien! Este es mi hijo, Rohan.",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_03.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "સરસ! કેમ છે રોહન?",
+     "es": "¡Qué bien! ¿Cómo estás, Rohan?",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_04.mp3"
+    },
+    {
+     "quien": "રોહન",
+     "color": "#4A6B8A",
+     "gu": "સારું છે.",
+     "es": "Estoy bien.",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_05.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "તારી બેન શ્રીયા કેમ છે?",
+     "es": "¿Cómo está tu hermana Shriya?",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_06.mp3"
+    },
+    {
+     "quien": "વીણાબેન",
+     "color": "#5F6E4F",
+     "gu": "શ્રીયાબેન સારી છે.",
+     "es": "Shriya está bien.",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_07.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "હવે ક્યાં રહો છો?",
+     "es": "¿Dónde vives ahora?",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_08.mp3"
+    },
+    {
+     "quien": "વીણાબેન",
+     "color": "#5F6E4F",
+     "gu": "હું સુરતમાં રહું છું.",
+     "es": "Yo vivo en Surat.",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_09.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "વાહ! કેટલા સરસ!",
+     "es": "¡Wua! Qué bien.",
+     "audio": "audios/clase_1_1/dialogo_1_1_2_10.mp3"
+    }
+   ],
+   "avatares": [
+    "imagenes/Clase_1_1/avatar_vina.jpg",
+    "imagenes/Clase_1_1/avatar_manisha.jpg",
+    "imagenes/Clase_1_1/avatar_rohan.jpg"
+   ]
+  },
+  {
+   "leccion": "1.1.3",
+   "titulo": "Manisha se encuentra con Vina y sus hijos. Al terminar la lección podrás leer y entender toda la conversación.",
+   "lineas": [
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "નમસ્તે, વીણા. તમે કેમ છો?",
+     "es": "Hola, Vina. ¿Cómo está?",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_01.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "નમસ્તે. હું સારી છું.",
+     "es": "Hola. Estoy bien.",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_02.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "આ તમારો છોકરો છે?",
+     "es": "¿Este es su hijo?",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_03.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "હા, આ મારો છોકરો છે. તેનું નામ રોહન છે.",
+     "es": "Sí, es mi hijo. Se llama Rohan.",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_04.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "અને આ તમારી છોકરી છે?",
+     "es": "¿Y esta es su hija?",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_05.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "હા, આ મારી છોકરી છે. તેનું નામ રોશની છે.",
+     "es": "Sí, es mi hija. Se llama Roshni.",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_06.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "નમસ્તે, રોશની! તારી ઉંમર શું છે?",
+     "es": "¡Hola, Roshni! ¿Qué edad tienes?",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_07.mp3"
+    },
+    {
+     "quien": "રોશની",
+     "color": "#8A5A8C",
+     "gu": "મારી ઉંમર સાત છે.",
+     "es": "Tengo siete años.",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_08.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "અને રોહન, તારી ઉંમર શું છે?",
+     "es": "¿Y tú, Rohan, qué edad tienes?",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_09.mp3"
+    },
+    {
+     "quien": "રોશની",
+     "color": "#8A5A8C",
+     "gu": "તેની ઉંમર છ છે!",
+     "es": "¡Tiene seis años!",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_10.mp3"
+    },
+    {
+     "quien": "રોહન",
+     "color": "#4A6B8A",
+     "gu": "મા, હું શું કરું?",
+     "es": "Mamá, ¿qué hago?",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_11.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "રાત છે. આરામ કરો!",
+     "es": "Es de noche. ¡A descansar!",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_12.mp3"
+    },
+    {
+     "quien": "રોશની",
+     "color": "#8A5A8C",
+     "gu": "અમારી રાત મસ્ત છે!",
+     "es": "¡Nuestra noche es genial!",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_13.mp3"
+    }
+   ],
+   "avatares": [
+    "imagenes/Clase_1_1/avatar_vina.jpg",
+    "imagenes/Clase_1_1/avatar_manisha.jpg",
+    "imagenes/Clase_1_1/avatar_rohan.jpg",
+    "imagenes/Clase_1_1/avatar_roshni.jpg"
+   ]
+  },
+  {
+   "leccion": "1.2.1",
+   "titulo": "Vina y su esposo Paresh pasan por la casa de Manisha. Al terminar la lección podrás leer y entender toda la conversación.",
+   "lineas": [
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "આવો, આવો! તમે કેમ છો?",
+     "es": "¡Pasen, pasen! ¿Cómo están?",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_01.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "હું સારી છું. આ મારા પતિ છે.",
+     "es": "Estoy bien. Este es mi esposo.",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_02.mp3"
+    },
+    {
+     "quien": "પરેશ",
+     "color": "#3F6E8C",
+     "gu": "નમસ્તે. મારું નામ પરેશ.",
+     "es": "Hola. Me llamo Paresh.",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_03.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "સરસ નામ છે!",
+     "es": "¡Bonito nombre!",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_04.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "તમે શું કામ કરો છો?",
+     "es": "¿En qué trabaja usted?",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_05.mp3"
+    },
+    {
+     "quien": "પરેશ",
+     "color": "#3F6E8C",
+     "gu": "હું સુરતમાં સરકારી નોકરી કરું છું.",
+     "es": "Tengo un empleo en el gobierno, en Surat.",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_06.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "એમ? મારા પતિ પણ!",
+     "es": "¿Ah, sí? ¡Mi esposo también!",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_07.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "અરે, શું વાત છે!",
+     "es": "¡Vaya, qué coincidencia!",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_08.mp3"
+    },
+    {
+     "quien": "રોશની",
+     "color": "#8A5A8C",
+     "gu": "નમસ્તે, માસી!",
+     "es": "¡Hola, tía!",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_09.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "નમસ્તે, રોશની! તું કેમ છે?",
+     "es": "¡Hola, Roshni! ¿Cómo estás?",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_10.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "આવો ને!",
+     "es": "¡Pasen, pues!",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_11.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "ના, હમણાં તો નહીં. પછી વાત કરીશું.",
+     "es": "No, ahora no. Hablamos después.",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_12.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "હા, સારું.",
+     "es": "Sí, está bien.",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_13.mp3"
+    }
+   ],
+   "avatares": [
+    "imagenes/Clase_1_1/avatar_manisha.jpg",
+    "imagenes/Clase_1_1/avatar_vina.jpg",
+    "imagenes/Clase_1_1/avatar_roshni.jpg",
+    "imagenes/Clase_1_1/avatar_paresh.jpg"
+   ]
+  },
+  {
+   "leccion": "1.2.2",
+   "titulo": "Manisha riega sus plantas cuando pasan Vina, Roshni y Rohan. Al terminar la lección podrás leer y entender toda la conversación.",
+   "lineas": [
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "હાય વીણા! મજામાં ને?",
+     "es": "¡Hola, Vina! ¿Todo bien?",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_01.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "હા, હું મજામાં છું.",
+     "es": "Sí, estoy muy bien.",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_02.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "આજે અમારી સાથે જમવા આવો ને.",
+     "es": "Vengan hoy a comer con nosotros.",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_03.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "આજે? આજે તો સમય નથી.",
+     "es": "¿Hoy? Hoy no hay tiempo.",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_04.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "શું થયું?",
+     "es": "¿Qué pasó?",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_05.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "મારે કામ પર જવું જોઈએ.",
+     "es": "Tengo que ir al trabajo.",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_06.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "હું સમજી શકું છું. તો રવિવારે?",
+     "es": "Lo entiendo. ¿Entonces el domingo?",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_07.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "હા, જરૂર!",
+     "es": "¡Sí, claro!",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_08.mp3"
+    },
+    {
+     "quien": "રોહન",
+     "color": "#4A6B8A",
+     "gu": "મા, હું પણ આવું?",
+     "es": "Mamá, ¿yo también voy?",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_09.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "હા, હા! તું પણ આવજે.",
+     "es": "¡Sí, sí! Tú también ven.",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_10.mp3"
+    },
+    {
+     "quien": "રોશની",
+     "color": "#8A5A8C",
+     "gu": "હું તો તૈયાર છું!",
+     "es": "¡Yo ya estoy lista!",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_11.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "મજા આવશે!",
+     "es": "¡Qué divertido va a ser!",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_12.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "હું રાહ જોઈશ. આવજો!",
+     "es": "Los espero. ¡Hasta luego!",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_13.mp3"
+    }
+   ],
+   "avatares": [
+    "imagenes/Clase_1_1/avatar_manisha.jpg",
+    "imagenes/Clase_1_1/avatar_vina.jpg",
+    "imagenes/Clase_1_1/avatar_roshni.jpg",
+    "imagenes/Clase_1_1/avatar_rohan.jpg"
+   ]
+  },
+  {
+   "leccion": "1.2.3",
+   "titulo": "Es domingo: Vina, Paresh, Roshni y Rohan llegan a comer a casa de Manisha. Al terminar la lección podrás leer y entender toda la conversación.",
+   "lineas": [
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "આવો, આવો! અંદર આવો.",
+     "es": "¡Pasen, pasen! Adelante.",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_01.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "નમસ્તે! વાહ, બહુ સરસ!",
+     "es": "¡Hola! ¡Qué bonito!",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_02.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "રોહન, દિવસ કેવો રહ્યો?",
+     "es": "Rohan, ¿qué tal el día?",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_03.mp3"
+    },
+    {
+     "quien": "રોહન",
+     "color": "#4A6B8A",
+     "gu": "બહુ સરસ, માસી!",
+     "es": "¡Muy bien, tía!",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_04.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "પરેશજી, તમે ક્યાં રહો છો?",
+     "es": "Paresh, ¿dónde viven ustedes?",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_05.mp3"
+    },
+    {
+     "quien": "પરેશ",
+     "color": "#3F6E8C",
+     "gu": "અમે સુરતમાં રહીએ છીએ.",
+     "es": "Vivimos en Surat.",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_06.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "અહીં ક્યારે આવ્યા?",
+     "es": "¿Y cuándo llegaron aquí?",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_07.mp3"
+    },
+    {
+     "quien": "પરેશ",
+     "color": "#3F6E8C",
+     "gu": "બે વરસ પહેલાં.",
+     "es": "Hace dos años.",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_08.mp3"
+    },
+    {
+     "quien": "રોશની",
+     "color": "#8A5A8C",
+     "gu": "માસી, આ કોણ છે?",
+     "es": "Tía, ¿quién es este?",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_09.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "આ મારા પતિ છે. તે સાંજે આવશે.",
+     "es": "Es mi esposo. Llega en la tarde.",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_10.mp3"
+    },
+    {
+     "quien": "વીણા",
+     "color": "#5F6E4F",
+     "gu": "મનિષા, હું શું મદદ કરું?",
+     "es": "Manisha, ¿en qué te ayudo?",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_11.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "ના, ના. તમે બેસો ને.",
+     "es": "No, no. Usted siéntese.",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_12.mp3"
+    },
+    {
+     "quien": "મનિષાબેન",
+     "color": "#A8362A",
+     "gu": "બધા જમવા આવો!",
+     "es": "¡Todos a comer!",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_13.mp3"
+    }
+   ],
+   "avatares": [
+    "imagenes/Clase_1_1/avatar_manisha.jpg",
+    "imagenes/Clase_1_1/avatar_vina.jpg",
+    "imagenes/Clase_1_1/avatar_roshni.jpg",
+    "imagenes/Clase_1_1/avatar_rohan.jpg",
+    "imagenes/Clase_1_1/avatar_paresh.jpg"
+   ]
+  }
+ ]
+}
