@@ -68,3 +68,19 @@ mark { background:none; color:var(--verde); font-weight:700; }
   border-radius:var(--r-full); font-size:.95rem; opacity:0; transition:all .3s; pointer-events:none; z-index:200; max-width:90vw; text-align:center; }
 .toast.ver { opacity:1; transform:translateX(-50%) translateY(0); }
 @media (min-width:900px){ h1 { font-size:2.3rem; } .tarjeta { height:480px; } }
+/* menú principal por tramos (pfd.js, 20-nov-2026) */
+.chip.pronto { opacity:.45; } .chip.sit { font-size:.88rem; padding:7px 12px; }
+.filtro[data-fila="sit"] { margin-top:-8px; }
+.item .pal { color:var(--saffron); font-size:.85rem; margin-bottom:2px; } .item .pal .gu { font-size:1rem; }
+.item.activa { border-color:var(--verde); background:#3B3329; }
+.dlg.sin-es .es2 { visibility:hidden; }
+.avs { align-items:center; } .avs .av { width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid var(--bg); margin-right:-8px; }
+.avs .av.ini { display:inline-flex; align-items:center; justify-content:center; color:#fff; font-family:'Noto Serif Gujarati',serif; font-weight:700; }
+.avs .nombres { margin-left:18px; color:var(--ink-soft); font-size:.9rem; font-family:'Noto Serif Gujarati',serif; }
+.btn.todo.on { background:var(--verde-fondo); color:#fff; }
+.nota { font-size:.9rem; margin-top:14px; }
+.nums { display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:10px; }
+.num { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-sm); padding:14px 6px; color:var(--paper); cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:4px; font-family:inherit; }
+.num .cifra { font-size:2rem; font-weight:700; line-height:1.2; } .num .pal { font-size:1.1rem; color:var(--ink-soft); }
+.num.oculta .pal { visibility:hidden; }

@@ -1,0 +1,778 @@
+{
+ "tramos": [
+  {
+   "id": "1",
+   "nombre": "1.1.1 → 1.2.3",
+   "listo": true,
+   "palabras": [
+    {
+     "gu": "સંદેશ",
+     "es": "mensaje",
+     "sit": "puerta",
+     "ejemplo": {
+      "gu": "આ સંદેશ બાઈબલમાંથી છે. જુઓ, યશાયા ૯:૭.",
+      "es": "Este mensaje es de la Biblia. Mire Isaías 9:7.",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "ઈશ્વર",
+     "es": "Dios",
+     "sit": "puerta",
+     "ejemplo": {
+      "gu": "શું તમે ઈશ્વરમાં માનો છો?",
+      "es": "¿Cree usted en Dios?",
+      "audio": "audios/pfd/pfd_t1_d1_06.mp3"
+     }
+    },
+    {
+     "gu": "સવાલ",
+     "es": "pregunta",
+     "sit": "puerta",
+     "ejemplo": {
+      "gu": "શું હું તમને એક સવાલ પૂછું?",
+      "es": "¿Le puedo hacer una pregunta?",
+      "audio": "audios/pfd/pfd_t1_d1_04.mp3"
+     }
+    },
+    {
+     "gu": "જવાબ",
+     "es": "respuesta",
+     "sit": "puerta",
+     "ejemplo": {
+      "gu": "બાઈબલમાં એનો જવાબ છે.",
+      "es": "La Biblia tiene la respuesta.",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "કલમ",
+     "es": "versículo",
+     "sit": "puerta",
+     "ejemplo": {
+      "gu": "જુઓ, રોમનો ૧૦:૧૩. આ કલમ શું કહે છે?",
+      "es": "Mire Romanos 10:13. ¿Qué dice este versículo?",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "સમય",
+     "es": "tiempo",
+     "sit": "puerta",
+     "ejemplo": {
+      "gu": "તમારી પાસે ક્યારે સમય છે?",
+      "es": "¿Cuándo tiene tiempo?",
+      "audio": "audios/pfd/pfd_t1_d1_10.mp3"
+     }
+    },
+    {
+     "gu": "નંબર",
+     "es": "número (de teléfono)",
+     "sit": "puerta",
+     "ejemplo": {
+      "gu": "મારો નંબર ૯૯૨૧૦ ૨૬૭૧૨ છે.",
+      "es": "Mi número es 99210 26712.",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "મુલાકાત",
+     "es": "visita",
+     "sit": "revisita",
+     "ejemplo": {
+      "gu": "મારી પાછલી મુલાકાતમાં મેં તમારી પાસે એક પુસ્તિકા મૂકી હતી.",
+      "es": "En mi visita anterior le dejé un folleto.",
+      "audio": "audios/pfd/pfd_t1_d2_03.mp3"
+     }
+    },
+    {
+     "gu": "પુસ્તિકા",
+     "es": "folleto",
+     "sit": "revisita",
+     "ejemplo": {
+      "gu": "આ પુસ્તિકાનું પ્રકરણ ૨ જુઓ.",
+      "es": "Mire el capítulo 2 de este folleto.",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "યાદ",
+     "es": "recuerdo (યાદ છે = me acuerdo)",
+     "sit": "revisita",
+     "ejemplo": {
+      "gu": "યાદ છે ને? આપણે રોમનો ૧૦:૧૩ જોઈ હતી.",
+      "es": "¿Se acuerda? Vimos Romanos 10:13.",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "નવું",
+     "es": "nuevo",
+     "sit": "revisita",
+     "ejemplo": {
+      "gu": "હા, આ નવું સાહિત્ય છે. એમાં સરસ માહિતી આપી છે.",
+      "es": "Sí, esta es la nueva publicación. Tiene muy buena información.",
+      "audio": "audios/pfd/pfd_t1_d2_06.mp3"
+     }
+    },
+    {
+     "gu": "માહિતી",
+     "es": "información",
+     "sit": "revisita",
+     "ejemplo": {
+      "gu": "હા, આ નવું સાહિત્ય છે. એમાં સરસ માહિતી આપી છે.",
+      "es": "Sí, esta es la nueva publicación. Tiene muy buena información.",
+      "audio": "audios/pfd/pfd_t1_d2_06.mp3"
+     }
+    },
+    {
+     "gu": "નકલ",
+     "es": "ejemplar, copia",
+     "sit": "revisita",
+     "ejemplo": {
+      "gu": "તમે એક નકલ લઈ શકો છો.",
+      "es": "Puede tomar un ejemplar.",
+      "audio": "audios/pfd/pfd_t1_d2_07.mp3"
+     }
+    },
+    {
+     "gu": "રાહ",
+     "es": "espera (રાહ જોવી = esperar)",
+     "sit": "revisita",
+     "ejemplo": {
+      "gu": "હું રાહ જોઇશ.",
+      "es": "Esperaré.",
+      "audio": "audios/pfd/pfd_t1_d2_11.mp3"
+     }
+    },
+    {
+     "gu": "પ્રકરણ",
+     "es": "capítulo",
+     "sit": "estudio",
+     "ejemplo": {
+      "gu": "આજે આપણે પ્રકરણ ૭ જોઈશું.",
+      "es": "Hoy veremos el capítulo 7.",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "નામ",
+     "es": "nombre",
+     "sit": "estudio",
+     "ejemplo": {
+      "gu": "ઈશ્વરનું નામ યહોવા છે. જુઓ, રોમનો ૧૦:૧૩.",
+      "es": "El nombre de Dios es Jehová. Mire Romanos 10:13.",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "પ્રેમ",
+     "es": "amor",
+     "sit": "estudio",
+     "ejemplo": {
+      "gu": "યોહાન ૧૫:૧૩ પ્રેમ વિશે શું કહે છે?",
+      "es": "¿Qué dice Juan 15:13 sobre el amor?",
+      "audio": ""
+     }
+    },
+    {
+     "gu": "સમજવું",
+     "es": "entender",
+     "sit": "estudio",
+     "ejemplo": {
+      "gu": "એ બહુ જરૂરી છે. હવે હું સમજી શકું છું.",
+      "es": "Eso es muy importante. Ahora lo entiendo.",
+      "audio": "audios/pfd/pfd_t1_d3_08.mp3"
+     }
+    },
+    {
+     "gu": "જરૂરી",
+     "es": "importante, necesario",
+     "sit": "estudio",
+     "ejemplo": {
+      "gu": "એ બહુ જરૂરી છે. હવે હું સમજી શકું છું.",
+      "es": "Eso es muy importante. Ahora lo entiendo.",
+      "audio": "audios/pfd/pfd_t1_d3_08.mp3"
+     }
+    },
+    {
+     "gu": "દિવસ",
+     "es": "día",
+     "sit": "estudio",
+     "ejemplo": {
+      "gu": "કેમ છો સીમાબેન. કેવો રહ્યો દિવસ?",
+      "es": "¿Cómo está, Seema? ¿Cómo estuvo su día?",
+      "audio": "audios/pfd/pfd_t1_d3_01.mp3"
+     }
+    },
+    {
+     "gu": "તબિયત",
+     "es": "salud",
+     "sit": "reunion",
+     "ejemplo": {
+      "gu": "એકલા આવ્યા? આજે તબિયત કેવી છે?",
+      "es": "¿Vino sola? ¿Cómo se siente hoy?",
+      "audio": "audios/pfd/pfd_t1_d4_03.mp3"
+     }
+    },
+    {
+     "gu": "રસપ્રદ",
+     "es": "interesante",
+     "sit": "reunion",
+     "ejemplo": {
+      "gu": "તમારો જવાબ બહુ રસપ્રદ હતો!",
+      "es": "¡Su comentario fue muy interesante!",
+      "audio": "audios/pfd/pfd_t1_d4_06.mp3"
+     }
+    },
+    {
+     "gu": "કદર",
+     "es": "aprecio",
+     "sit": "reunion",
+     "ejemplo": {
+      "gu": "અમે તમારા જવાબોની કદર કરીએ છીએ.",
+      "es": "Apreciamos sus comentarios.",
+      "audio": "audios/pfd/pfd_t1_d4_07.mp3"
+     }
+    },
+    {
+     "gu": "મદદ",
+     "es": "ayuda",
+     "sit": "reunion",
+     "ejemplo": {
+      "gu": "કંઈ પણ મદદની જરૂર હોય તો મને કહેજો.",
+      "es": "Si necesita cualquier ayuda, dígame.",
+      "audio": "audios/pfd/pfd_t1_d4_09.mp3"
+     }
+    },
+    {
+     "gu": "એકલા",
+     "es": "solo(s)",
+     "sit": "reunion",
+     "ejemplo": {
+      "gu": "એકલા આવ્યા? આજે તબિયત કેવી છે?",
+      "es": "¿Vino sola? ¿Cómo se siente hoy?",
+      "audio": "audios/pfd/pfd_t1_d4_03.mp3"
+     }
+    },
+    {
+     "gu": "જમવું",
+     "es": "comer",
+     "sit": "casa",
+     "ejemplo": {
+      "gu": "જમવા આવી જાવ!",
+      "es": "¡Vengan a comer!",
+      "audio": "audios/pfd/pfd_t1_d5_10.mp3"
+     }
+    },
+    {
+     "gu": "પાણી",
+     "es": "agua",
+     "sit": "casa",
+     "ejemplo": {
+      "gu": "હા. મહેરબાની કરીને મને પાણી આપશો?",
+      "es": "Sí. ¿Me das agua, por favor?",
+      "audio": "audios/pfd/pfd_t1_d5_06.mp3"
+     }
+    },
+    {
+     "gu": "કામ",
+     "es": "trabajo",
+     "sit": "casa",
+     "ejemplo": {
+      "gu": "કેમ છો? આજે કામ પર કેવું રહ્યું?",
+      "es": "¿Cómo estás? ¿Cómo te fue hoy en el trabajo?",
+      "audio": "audios/pfd/pfd_t1_d5_01.mp3"
+     }
+    },
+    {
+     "gu": "આરામ",
+     "es": "descanso",
+     "sit": "casa",
+     "ejemplo": {
+      "gu": "તો આરામ કર.",
+      "es": "Entonces descansa.",
+      "audio": "audios/pfd/pfd_t1_d5_09.mp3"
+     }
+    },
+    {
+     "gu": "બીમાર",
+     "es": "enfermo",
+     "sit": "casa",
+     "ejemplo": {
+      "gu": "હું બીમાર છું એવું કોઈ કહેશે નહીં.",
+      "es": "Nadie dirá: «Estoy enfermo».",
+      "audio": ""
+     }
+    }
+   ],
+   "dialogos": [
+    {
+     "id": "1-1",
+     "sit": "puerta",
+     "titulo": "En la puerta",
+     "lineas": [
+      {
+       "quien": "વીણા",
+       "gu": "નમસ્તે! કેમ છો?",
+       "es": "¡Hola! ¿Cómo está?",
+       "audio": "audios/pfd/pfd_t1_d1_01.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હું મજામાં.",
+       "es": "Estoy bien.",
+       "audio": "audios/pfd/pfd_t1_d1_02.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "મારું નામ વીણા છે. અમે ઈશ્વરનો સંદેશ લોકો સાથે શેર કરી રહ્યા છીએ.",
+       "es": "Me llamo Vina. Estamos compartiendo un mensaje de Dios con la gente.",
+       "audio": "audios/pfd/pfd_t1_d1_03.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "શું હું તમને એક સવાલ પૂછું?",
+       "es": "¿Le puedo hacer una pregunta?",
+       "audio": "audios/pfd/pfd_t1_d1_04.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા, પૂછો.",
+       "es": "Sí, pregunte.",
+       "audio": "audios/pfd/pfd_t1_d1_05.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "શું તમે ઈશ્વરમાં માનો છો?",
+       "es": "¿Cree usted en Dios?",
+       "audio": "audios/pfd/pfd_t1_d1_06.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા, માનું છું.",
+       "es": "Sí, creo.",
+       "audio": "audios/pfd/pfd_t1_d1_07.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "જુઓ, આ કલમ શું કહે છે.",
+       "es": "Mire lo que dice este versículo.",
+       "audio": "audios/pfd/pfd_t1_d1_08.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "સરસ! પણ હમણાં વાત કરવાનો સમય નથી.",
+       "es": "¡Qué bien! Pero ahora no tengo tiempo de hablar.",
+       "audio": "audios/pfd/pfd_t1_d1_09.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "તમારી પાસે ક્યારે સમય છે?",
+       "es": "¿Cuándo tiene tiempo?",
+       "audio": "audios/pfd/pfd_t1_d1_10.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "રવિવારે.",
+       "es": "El domingo.",
+       "audio": "audios/pfd/pfd_t1_d1_11.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "તમારો નંબર આપશો?",
+       "es": "¿Me da su número?",
+       "audio": "audios/pfd/pfd_t1_d1_12.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા, આ લો મારો નંબર.",
+       "es": "Sí, aquí tiene mi número.",
+       "audio": "audios/pfd/pfd_t1_d1_13.mp3"
+      }
+     ]
+    },
+    {
+     "id": "1-2",
+     "sit": "revisita",
+     "titulo": "La revisita",
+     "lineas": [
+      {
+       "quien": "વીણા",
+       "gu": "કેમ છો સીમાબેન? યાદ છે ને?",
+       "es": "¿Cómo está, Seema? Se acuerda, ¿verdad?",
+       "audio": "audios/pfd/pfd_t1_d2_01.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા, યાદ આવ્યું.",
+       "es": "Sí, me acuerdo.",
+       "audio": "audios/pfd/pfd_t1_d2_02.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "મારી પાછલી મુલાકાતમાં મેં તમારી પાસે એક પુસ્તિકા મૂકી હતી.",
+       "es": "En mi visita anterior le dejé un folleto.",
+       "audio": "audios/pfd/pfd_t1_d2_03.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "અને મેં તમને એક સવાલ પૂછ્યો હતો.",
+       "es": "Y le hice una pregunta.",
+       "audio": "audios/pfd/pfd_t1_d2_04.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા. કંઈ નવું આવ્યું છે?",
+       "es": "Sí. ¿Hay algo nuevo?",
+       "audio": "audios/pfd/pfd_t1_d2_05.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "હા, આ નવું સાહિત્ય છે. એમાં સરસ માહિતી આપી છે.",
+       "es": "Sí, esta es la nueva publicación. Tiene muy buena información.",
+       "audio": "audios/pfd/pfd_t1_d2_06.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "તમે એક નકલ લઈ શકો છો.",
+       "es": "Puede tomar un ejemplar.",
+       "audio": "audios/pfd/pfd_t1_d2_07.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "આમાંથી એકાદ લઈ શકું?",
+       "es": "¿Puedo tomar uno de estos?",
+       "audio": "audios/pfd/pfd_t1_d2_08.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "હા. લઈ શકો.",
+       "es": "Sí, puede tomarlo.",
+       "audio": "audios/pfd/pfd_t1_d2_09.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "એના વિશે બીજી વાર વાત કરીશું.",
+       "es": "De eso hablamos en otra ocasión.",
+       "audio": "audios/pfd/pfd_t1_d2_10.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હું રાહ જોઇશ.",
+       "es": "Esperaré.",
+       "audio": "audios/pfd/pfd_t1_d2_11.mp3"
+      }
+     ]
+    },
+    {
+     "id": "1-3",
+     "sit": "estudio",
+     "titulo": "El estudio bíblico",
+     "lineas": [
+      {
+       "quien": "મનિષા",
+       "gu": "કેમ છો સીમાબેન. કેવો રહ્યો દિવસ?",
+       "es": "¿Cómo está, Seema? ¿Cómo estuvo su día?",
+       "audio": "audios/pfd/pfd_t1_d3_01.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "સારો. તમારો?",
+       "es": "Bien. ¿Y el suyo?",
+       "audio": "audios/pfd/pfd_t1_d3_02.mp3"
+      },
+      {
+       "quien": "મનિષા",
+       "gu": "કાલે આપણે જોયું કે ઈશ્વરનું નામ શું છે.",
+       "es": "Ayer vimos cuál es el nombre de Dios.",
+       "audio": "audios/pfd/pfd_t1_d3_03.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા, યહોવા.",
+       "es": "Sí, Jehová.",
+       "audio": "audios/pfd/pfd_t1_d3_04.mp3"
+      },
+      {
+       "quien": "મનિષા",
+       "gu": "આ પ્રકરણમાં તમારા સવાલનો જવાબ છે. જુઓ, આ કલમ શું કહે છે.",
+       "es": "En este capítulo está la respuesta a su pregunta. Mire lo que dice este versículo.",
+       "audio": "audios/pfd/pfd_t1_d3_05.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "ઈશ્વર પ્રેમ છે.",
+       "es": "Dios es amor.",
+       "audio": "audios/pfd/pfd_t1_d3_06.mp3"
+      },
+      {
+       "quien": "મનિષા",
+       "gu": "આ કલમ વિશે તમારું શું માનવું છે?",
+       "es": "¿Qué opina usted de este versículo?",
+       "audio": "audios/pfd/pfd_t1_d3_07.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "એ બહુ જરૂરી છે. હવે હું સમજી શકું છું.",
+       "es": "Eso es muy importante. Ahora lo entiendo.",
+       "audio": "audios/pfd/pfd_t1_d3_08.mp3"
+      },
+      {
+       "quien": "મનિષા",
+       "gu": "સરસ! શું આપણે એના વિશે બીજી વાર વાત કરી શકીએ?",
+       "es": "¡Qué bien! ¿Podemos hablar de eso en otra ocasión?",
+       "audio": "audios/pfd/pfd_t1_d3_09.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા, જરૂર.",
+       "es": "Sí, claro.",
+       "audio": "audios/pfd/pfd_t1_d3_10.mp3"
+      }
+     ]
+    },
+    {
+     "id": "1-4",
+     "sit": "reunion",
+     "titulo": "Al llegar a la reunión",
+     "lineas": [
+      {
+       "quien": "મનિષા",
+       "gu": "નમસ્તે સીમાબેન! સારું થયું તમે આવ્યા!",
+       "es": "¡Hola, Seema! ¡Qué bueno que vino!",
+       "audio": "audios/pfd/pfd_t1_d4_01.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "નમસ્તે!",
+       "es": "¡Hola!",
+       "audio": "audios/pfd/pfd_t1_d4_02.mp3"
+      },
+      {
+       "quien": "મનિષા",
+       "gu": "એકલા આવ્યા? આજે તબિયત કેવી છે?",
+       "es": "¿Vino sola? ¿Cómo se siente hoy?",
+       "audio": "audios/pfd/pfd_t1_d4_03.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હવે મને સારું છે.",
+       "es": "Ahora estoy mejor.",
+       "audio": "audios/pfd/pfd_t1_d4_04.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "સીમાબેન, મને તમારી યાદ આવતી હતી.",
+       "es": "Seema, la he tenido en mente.",
+       "audio": "audios/pfd/pfd_t1_d4_05.mp3"
+      },
+      {
+       "quien": "રોશની",
+       "gu": "તમારો જવાબ બહુ રસપ્રદ હતો!",
+       "es": "¡Su comentario fue muy interesante!",
+       "audio": "audios/pfd/pfd_t1_d4_06.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "અમે તમારા જવાબોની કદર કરીએ છીએ.",
+       "es": "Apreciamos sus comentarios.",
+       "audio": "audios/pfd/pfd_t1_d4_07.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "થેંક્યુ!",
+       "es": "¡Gracias!",
+       "audio": "audios/pfd/pfd_t1_d4_08.mp3"
+      },
+      {
+       "quien": "મનિષા",
+       "gu": "કંઈ પણ મદદની જરૂર હોય તો મને કહેજો.",
+       "es": "Si necesita cualquier ayuda, dígame.",
+       "audio": "audios/pfd/pfd_t1_d4_09.mp3"
+      },
+      {
+       "quien": "મનિષા",
+       "gu": "તમને કોઈ મૂકી જશે? હું તમને મૂકી જાઉં?",
+       "es": "¿Alguien la lleva? ¿La llevo yo?",
+       "audio": "audios/pfd/pfd_t1_d4_10.mp3"
+      },
+      {
+       "quien": "સીમા",
+       "gu": "હા, સારું.",
+       "es": "Sí, está bien.",
+       "audio": "audios/pfd/pfd_t1_d4_11.mp3"
+      }
+     ]
+    },
+    {
+     "id": "1-5",
+     "sit": "casa",
+     "titulo": "En casa",
+     "lineas": [
+      {
+       "quien": "પરેશ",
+       "gu": "કેમ છો? આજે કામ પર કેવું રહ્યું?",
+       "es": "¿Cómo estás? ¿Cómo te fue hoy en el trabajo?",
+       "audio": "audios/pfd/pfd_t1_d5_01.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "સારું રહ્યું. મજા આવી.",
+       "es": "Bien. Lo pasé bien.",
+       "audio": "audios/pfd/pfd_t1_d5_02.mp3"
+      },
+      {
+       "quien": "રોહન",
+       "gu": "મા, જમવાનું ક્યારે છે?",
+       "es": "Mamá, ¿cuándo comemos?",
+       "audio": "audios/pfd/pfd_t1_d5_03.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "હા, પણ પહેલા બનવા તો દો. બની જાય ત્યારે બોલાવું.",
+       "es": "Sí, pero primero deja que se cocine. Te aviso cuando esté listo.",
+       "audio": "audios/pfd/pfd_t1_d5_04.mp3"
+      },
+      {
+       "quien": "રોશની",
+       "gu": "હું મદદ કરું?",
+       "es": "¿Te ayudo?",
+       "audio": "audios/pfd/pfd_t1_d5_05.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "હા. મહેરબાની કરીને મને પાણી આપશો?",
+       "es": "Sí. ¿Me das agua, por favor?",
+       "audio": "audios/pfd/pfd_t1_d5_06.mp3"
+      },
+      {
+       "quien": "પરેશ",
+       "gu": "રોહન, તને સારું નથી?",
+       "es": "Rohan, ¿no te sientes bien?",
+       "audio": "audios/pfd/pfd_t1_d5_07.mp3"
+      },
+      {
+       "quien": "રોહન",
+       "gu": "હું બીમાર છું.",
+       "es": "Estoy enfermo.",
+       "audio": "audios/pfd/pfd_t1_d5_08.mp3"
+      },
+      {
+       "quien": "પરેશ",
+       "gu": "તો આરામ કર.",
+       "es": "Entonces descansa.",
+       "audio": "audios/pfd/pfd_t1_d5_09.mp3"
+      },
+      {
+       "quien": "વીણા",
+       "gu": "જમવા આવી જાવ!",
+       "es": "¡Vengan a comer!",
+       "audio": "audios/pfd/pfd_t1_d5_10.mp3"
+      }
+     ]
+    }
+   ],
+   "numeros": [
+    {
+     "cifra": "૦",
+     "gu": "શૂન્ય"
+    },
+    {
+     "cifra": "૧",
+     "gu": "એક"
+    },
+    {
+     "cifra": "૨",
+     "gu": "બે"
+    },
+    {
+     "cifra": "૬",
+     "gu": "છ"
+    },
+    {
+     "cifra": "૭",
+     "gu": "સાત"
+    },
+    {
+     "cifra": "૯",
+     "gu": "નવ"
+    },
+    {
+     "cifra": "૧૦",
+     "gu": "દસ"
+    },
+    {
+     "cifra": "૧૨",
+     "gu": "બાર"
+    },
+    {
+     "cifra": "૧૩",
+     "gu": "તેર"
+    },
+    {
+     "cifra": "૧૫",
+     "gu": "પંદર"
+    },
+    {
+     "cifra": "૨૦",
+     "gu": "વીસ"
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "nombre": "1.3.1 → 1.3.3",
+   "listo": false
+  },
+  {
+   "id": "3",
+   "nombre": "1.4.1 → 1.4.3",
+   "listo": false
+  },
+  {
+   "id": "4",
+   "nombre": "2.1.1 → …",
+   "listo": false
+  }
+ ],
+ "situaciones": {
+  "puerta": "Predicar en la puerta",
+  "revisita": "Revisitas y publicaciones",
+  "estudio": "Estudio bíblico",
+  "reunion": "Al llegar a la reunión",
+  "casa": "La vida diaria en casa"
+ },
+ "personajes": {
+  "મનિષા": {
+   "id": "manisha",
+   "color": "#A8362A",
+   "img": "imagenes/Clase_1_1/avatar_manisha.jpg"
+  },
+  "વીણા": {
+   "id": "vina",
+   "color": "#5F6E4F",
+   "img": "imagenes/Clase_1_1/avatar_vina.jpg"
+  },
+  "પરેશ": {
+   "id": "paresh",
+   "color": "#3F6E8C",
+   "img": "imagenes/Clase_1_1/avatar_paresh.jpg"
+  },
+  "રોશની": {
+   "id": "roshni",
+   "color": "#8A5A8C",
+   "img": "imagenes/Clase_1_1/avatar_roshni.jpg"
+  },
+  "રોહન": {
+   "id": "rohan",
+   "color": "#4A6B8A",
+   "img": "imagenes/Clase_1_1/avatar_rohan.jpg"
+  },
+  "સીમા": {
+   "id": "seema",
+   "color": "#C0703A",
+   "img": ""
+  }
+ }
+}
