@@ -52,10 +52,19 @@ function crearBloqueNota(b){
   } else if(b.tipo === 'ejemplo'){
     var div = document.createElement('div');
     div.className = 'ejemplo';
+    // X.X.R (Claude, 20-nov-2026): «audio» y «detalle» opcionales
     div.innerHTML =
-      '<div class="gu ejemplo-gu">' + b.gu + '</div>' +
-      '<div class="ejemplo-lit">literalmente: "' + b.literal + '"</div>' +
+      '<div class="gu ejemplo-gu">' + b.gu +
+        (b.audio ? ' <button type="button" class="ej-play" aria-label="Escuchar" style="margin-left:8px;width:36px;height:36px;border-radius:50%;border:2px solid currentColor;background:transparent;color:inherit;cursor:pointer;font-size:.9rem;vertical-align:middle">▶</button>' : '') + '</div>' +
+      (b.literal ? '<div class="ejemplo-lit">literalmente: "' + b.literal + '"</div>' : '') +
+      (b.detalle ? '<div class="ejemplo-lit">' + b.detalle + '</div>' : '') +
       '<div class="ejemplo-sig">se entiende: "' + b.significado + '"</div>';
+    if(b.audio){
+      div.querySelector('.ej-play').onclick = function(){
+        if(!window._ejAudio) window._ejAudio = new Audio();
+        window._ejAudio.pause(); window._ejAudio.src = b.audio; window._ejAudio.play().catch(function(){});
+      };
+    }
     nodos.push(div);
   }
   return nodos;
@@ -66,7 +75,8 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
   .then(function(data){
     document.getElementById('nav-salir').href    = data.salir;
     document.getElementById('nav-home').href     = data.home;
-    document.getElementById('nav-terminar').href = 'leccion_pensarEnGUJ.html?leccion=' + _leccionRaw;
+    document.getElementById('nav-terminar').href = data.terminar || ('leccion_pensarEnGUJ.html?leccion=' + _leccionRaw);
+    if(data.terminar_texto) document.getElementById('nav-terminar').textContent = data.terminar_texto;
 
     var notas      = data.notas;
     var totalNotas = notas.length;
@@ -162,7 +172,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
     var btnFin        = document.createElement('a');
     btnFin.className  = 'btn-main';
     btnFin.href       = data.fin;
-    btnFin.textContent = 'A Pensar en GUJARATI →';
+    btnFin.textContent = data.fin_texto || 'A Pensar en GUJARATI →';
     sFin.appendChild(btnFin);
     contenedor.appendChild(sFin);
   })

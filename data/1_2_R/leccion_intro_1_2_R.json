@@ -1,0 +1,122 @@
+{
+ "leccion": "1.2.R",
+ "anterior": "contenido_modulo.html?modulo=1.2",
+ "home": "contenido_modulo.html?modulo=1.2",
+ "empezar": "repaso.html?leccion=1.2.R",
+ "musica_ambiente": "audios/musica/Leccion_1_1_3_musica_ambiente.mp3",
+ "pantallas": [
+  {
+   "badge": "Repaso · Módulo 2",
+   "titulo": "Al llegar a la reunión",
+   "bloques": [
+    {
+     "tipo": "frase-destacada",
+     "gu": "તમે અહીં પહેલી વાર આવ્યા?",
+     "traduccion": "¿Es la primera vez que viene?"
+    },
+    {
+     "tipo": "info-box",
+     "html": "<p>Esta lección <strong>no trae letras nuevas</strong>. Repasas los módulos 1.1 y 1.2 en tres pasos:</p><br><p><strong>Palabra → Frase → Diálogo.</strong> Primero 15 palabras de tus lecciones; después cada una dentro de una frase de la predicación; y al final un diálogo nuevo en la reunión.</p><br><p>Y aprendes <strong>una sola cosa nueva</strong>: por qué decimos <span class=\"gu\">મારો</span>, <span class=\"gu\">મારી</span> o <span class=\"gu\">મારું</span>.</p>"
+    }
+   ],
+   "boton_principal": {
+    "tipo": "pantalla",
+    "texto": "Siguiente →",
+    "destino": 2
+   },
+   "boton_secundario": {
+    "tipo": "href",
+    "texto": "🧭 Mapa de la lección",
+    "destino": "guia_navegacion.html?leccion=1.2.R"
+   }
+  },
+  {
+   "badge": "Lo que ya lees",
+   "titulo": "Mira todo lo que ya lees",
+   "bloques": [
+    {
+     "tipo": "info-box",
+     "html": "<p>Estas son las letras de las seis lecciones. Con ellas lees todo lo de este repaso.</p>"
+    },
+    {
+     "tipo": "tabla",
+     "columnas": [
+      "Lección",
+      "Letras"
+     ],
+     "filas": [
+      [
+       {
+        "tipo": "texto",
+        "valor": "<strong>1.1.1</strong>"
+       },
+       {
+        "tipo": "texto",
+        "valor": "<span class=\"gu\" style=\"font-size:1.5rem;letter-spacing:.12em\">ક મ છ આ એ ઓ</span>"
+       }
+      ],
+      [
+       {
+        "tipo": "texto",
+        "valor": "<strong>1.1.2</strong>"
+       },
+       {
+        "tipo": "texto",
+        "valor": "<span class=\"gu\" style=\"font-size:1.5rem;letter-spacing:.12em\">સ ર હ ઉ ુ ં</span>"
+       }
+      ],
+      [
+       {
+        "tipo": "texto",
+        "valor": "<strong>1.1.3</strong>"
+       },
+       {
+        "tipo": "texto",
+        "valor": "<span class=\"gu\" style=\"font-size:1.5rem;letter-spacing:.12em\">ન ત શ ઇ ઈ િ ી સ્ત</span>"
+       }
+      ],
+      [
+       {
+        "tipo": "texto",
+        "valor": "<strong>1.2.1</strong>"
+       },
+       {
+        "tipo": "texto",
+        "valor": "<span class=\"gu\" style=\"font-size:1.5rem;letter-spacing:.12em\">ણ પ વ ઊ ૂ શ્વ</span>"
+       }
+      ],
+      [
+       {
+        "tipo": "texto",
+        "valor": "<strong>1.2.2</strong>"
+       },
+       {
+        "tipo": "texto",
+        "valor": "<span class=\"gu\" style=\"font-size:1.5rem;letter-spacing:.12em\">જ થ ય ઐ ૈ પ્ર</span>"
+       }
+      ],
+      [
+       {
+        "tipo": "texto",
+        "valor": "<strong>1.2.3</strong>"
+       },
+       {
+        "tipo": "texto",
+        "valor": "<span class=\"gu\" style=\"font-size:1.5rem;letter-spacing:.12em\">દ બ લ ઔ ૌ ત્ય ક્ય હ્ય</span>"
+       }
+      ]
+     ]
+    }
+   ],
+   "boton_principal": {
+    "tipo": "empezar_leccion",
+    "texto": "¡Empezar el repaso! →"
+   },
+   "boton_secundario": {
+    "tipo": "pantalla",
+    "texto": "← Anterior",
+    "destino": 1
+   }
+  }
+ ]
+}

@@ -1,0 +1,311 @@
+{
+ "leccion": "1.2.R",
+ "salir": "contenido_modulo.html?modulo=1.2",
+ "home": "contenido_modulo.html?modulo=1.2",
+ "anterior": "leccion_intro.html?leccion=1.2.R",
+ "despues_palabras": "leccion_notas.html?leccion=1.2.R",
+ "despues_dialogo": "leccion_fin.html?leccion=1.2.R",
+ "palabras": [
+  {
+   "gu": "નામ",
+   "es": "nombre",
+   "img": "imagenes/Clase_1_1/img_naam.jpg",
+   "audioM": "audios/clase_1_1/audio_m_naam.mp3",
+   "audioH": "audios/clase_1_1/audio_h_naam.mp3",
+   "leccion": "1.1.3",
+   "frase": {
+    "gu": "તેમનું નામ યહોવા છે.",
+    "es": "Su nombre es Jehová.",
+    "audio": "audios/clase_1_1/frase_1_2_R_01.mp3"
+   }
+  },
+  {
+   "gu": "યહોવા",
+   "es": "Jehová",
+   "img": "imagenes/Clase_1_1/img_yahovaa.jpg",
+   "audioM": "audios/clase_1_1/audio_m_yahovaa.mp3",
+   "audioH": "audios/clase_1_1/audio_h_yahovaa.mp3",
+   "leccion": "1.2.2",
+   "frase": {
+    "gu": "યહોવા દરેકને પ્રેમ કરે છે.",
+    "es": "Jehová ama a todos.",
+    "audio": "audios/clase_1_1/frase_1_2_R_02.mp3"
+   }
+  },
+  {
+   "gu": "પ્રેમ",
+   "es": "amor",
+   "img": "imagenes/Clase_1_1/img_prem.jpg",
+   "audioM": "audios/clase_1_1/audio_m_prem.mp3",
+   "audioH": "audios/clase_1_1/audio_h_prem.mp3",
+   "leccion": "1.2.2",
+   "frase": {
+    "gu": "ઈશ્વર પ્રેમ છે.",
+    "es": "Dios es amor.",
+    "audio": "audios/clase_1_1/frase_1_2_R_03.mp3"
+   }
+  },
+  {
+   "gu": "બાઈબલ",
+   "es": "Biblia",
+   "img": "imagenes/Clase_1_1/img_baaibal.jpg",
+   "audioM": "audios/clase_1_1/audio_m_baaibal.mp3",
+   "audioH": "audios/clase_1_1/audio_h_baaibal.mp3",
+   "leccion": "1.2.3",
+   "frase": {
+    "gu": "બાઈબલ વિશે જાણકારી જોઈએ છે.",
+    "es": "Quiero información sobre la Biblia.",
+    "audio": "audios/clase_1_1/frase_1_2_R_04.mp3"
+   }
+  },
+  {
+   "gu": "પુસ્તક",
+   "es": "libro",
+   "img": "imagenes/Clase_1_1/img_pustak.jpg",
+   "audioM": "audios/clase_1_1/audio_m_pustak.mp3",
+   "audioH": "audios/clase_1_1/audio_h_pustak.mp3",
+   "leccion": "1.2.1",
+   "frase": {
+    "gu": "આ પુસ્તક શું કહે છે તે જુઓ.",
+    "es": "Fíjese en lo que dice este libro.",
+    "audio": "audios/clase_1_1/frase_1_2_R_05.mp3"
+   }
+  },
+  {
+   "gu": "જવાબ",
+   "es": "respuesta",
+   "img": "imagenes/Clase_1_1/img_javaab.jpg",
+   "audioM": "audios/clase_1_1/audio_m_javaab.mp3",
+   "audioH": "audios/clase_1_1/audio_h_javaab.mp3",
+   "leccion": "1.2.3",
+   "frase": {
+    "gu": "ઈશ્વરે એ સવાલોના જવાબ એક પુસ્તકમાં આપ્યા છે.",
+    "es": "Dios dio las respuestas a esas preguntas en un libro.",
+    "audio": "audios/clase_1_1/frase_1_2_R_06.mp3"
+   }
+  },
+  {
+   "gu": "જીવન",
+   "es": "vida",
+   "img": "imagenes/Clase_1_1/img_jiivan.jpg",
+   "audioM": "audios/clase_1_1/audio_m_jiivan.mp3",
+   "audioH": "audios/clase_1_1/audio_h_jiivan.mp3",
+   "leccion": "1.2.2",
+   "frase": {
+    "gu": "જીવન બહુ કીમતી છે.",
+    "es": "La vida es muy valiosa.",
+    "audio": "audios/clase_1_1/frase_1_2_R_07.mp3"
+   }
+  },
+  {
+   "gu": "શાંતિ",
+   "es": "paz",
+   "img": "imagenes/Clase_1_1/img_shaa(m)ti.jpg",
+   "audioM": "audios/clase_1_1/audio_m_shaa(m)ti.mp3",
+   "audioH": "audios/clase_1_1/audio_h_shaa(m)ti.mp3",
+   "leccion": "1.1.3",
+   "frase": {
+    "gu": "માણસો શાંતિ લાવી શક્યા નથી.",
+    "es": "Los humanos no han podido traer paz.",
+    "audio": "audios/clase_1_1/frase_1_2_R_08.mp3"
+   }
+  },
+  {
+   "gu": "દુનિયા",
+   "es": "mundo",
+   "img": "imagenes/Clase_1_1/img_duniyaa.jpg",
+   "audioM": "audios/clase_1_1/audio_m_duniyaa.mp3",
+   "audioH": "audios/clase_1_1/audio_h_duniyaa.mp3",
+   "leccion": "1.2.3",
+   "frase": {
+    "gu": "દુનિયા પર કોણ રાજ કરે છે?",
+    "es": "¿Quién gobierna el mundo?",
+    "audio": "audios/clase_1_1/frase_1_2_R_09.mp3"
+   }
+  },
+  {
+   "gu": "લોકો",
+   "es": "gente, personas",
+   "img": "imagenes/Clase_1_1/img_loko.jpg",
+   "audioM": "audios/clase_1_1/audio_m_loko.mp3",
+   "audioH": "audios/clase_1_1/audio_h_loko.mp3",
+   "leccion": "1.2.3",
+   "frase": {
+    "gu": "એ દુનિયામાં બધા લોકો સારા હશે.",
+    "es": "En ese mundo todas las personas serán buenas.",
+    "audio": "audios/clase_1_1/frase_1_2_R_10.mp3"
+   }
+  },
+  {
+   "gu": "સમય",
+   "es": "tiempo, hora",
+   "img": "imagenes/Clase_1_1/img_samay.jpg",
+   "audioM": "audios/clase_1_1/audio_m_samay.mp3",
+   "audioH": "audios/clase_1_1/audio_h_samay.mp3",
+   "leccion": "1.2.2",
+   "frase": {
+    "gu": "ના, બહુ સમય નથી.",
+    "es": "No, no hay mucho tiempo.",
+    "audio": "audios/clase_1_1/frase_1_2_R_11.mp3"
+   }
+  },
+  {
+   "gu": "વાત",
+   "es": "conversación, asunto",
+   "img": "imagenes/Clase_1_1/img_vaat.jpg",
+   "audioM": "audios/clase_1_1/audio_m_vaat.mp3",
+   "audioH": "audios/clase_1_1/audio_h_vaat.mp3",
+   "leccion": "1.2.1",
+   "frase": {
+    "gu": "પછી વાત કરીશું.",
+    "es": "Hablamos después.",
+    "audio": "audios/clase_1_1/frase_1_2_R_12.mp3"
+   }
+  },
+  {
+   "gu": "કામ",
+   "es": "trabajo",
+   "img": "imagenes/Clase_1_1/img_kaam.jpg",
+   "audioM": "audios/clase_1_1/audio_m_kaam.mp3",
+   "audioH": "audios/clase_1_1/audio_h_kaam.mp3",
+   "leccion": "1.1.1",
+   "frase": {
+    "gu": "એક કામ કરીએ.",
+    "es": "Hagamos una cosa.",
+    "audio": "audios/clase_1_1/frase_1_2_R_13.mp3"
+   }
+  },
+  {
+   "gu": "પરિવાર",
+   "es": "familia",
+   "img": "imagenes/Clase_1_1/img_parivaar.jpg",
+   "audioM": "audios/clase_1_1/audio_m_parivaar.mp3",
+   "audioH": "audios/clase_1_1/audio_h_parivaar.mp3",
+   "leccion": "1.2.1",
+   "frase": {
+    "gu": "આ મારો પરિવાર છે.",
+    "es": "Esta es mi familia.",
+    "audio": "audios/clase_1_1/frase_1_2_R_14.mp3"
+   }
+  },
+  {
+   "gu": "પતિ",
+   "es": "esposo",
+   "img": "imagenes/Clase_1_1/img_pati.jpg",
+   "audioM": "audios/clase_1_1/audio_m_pati.mp3",
+   "audioH": "audios/clase_1_1/audio_h_pati.mp3",
+   "leccion": "1.2.1",
+   "frase": {
+    "gu": "આ મારા પતિ છે.",
+    "es": "Este es mi esposo.",
+    "audio": "audios/clase_1_1/frase_1_2_R_15.mp3"
+   }
+  }
+ ],
+ "dialogo": {
+  "titulo": "Al llegar a la reunión",
+  "intro": "Vina lleva a Seema por primera vez a la reunión, y Manisha la recibe. Todo lo que dicen ya lo sabes leer.",
+  "avatares": {
+   "manisha": {
+    "nombre": "મનિષા",
+    "color": "#A8362A",
+    "img": "imagenes/Clase_1_1/avatar_manisha.jpg"
+   },
+   "vina": {
+    "nombre": "વીણા",
+    "color": "#5F6E4F",
+    "img": "imagenes/Clase_1_1/avatar_vina.jpg"
+   },
+   "seema": {
+    "nombre": "સીમા",
+    "color": "#C0703A",
+    "img": ""
+   },
+   "roshni": {
+    "nombre": "રોશની",
+    "color": "#8A5A8C",
+    "img": "imagenes/Clase_1_1/avatar_roshni.jpg"
+   }
+  },
+  "lineas": [
+   {
+    "quien": "manisha",
+    "gu": "નમસ્તે વીણા! આવો, આવો!",
+    "es": "¡Hola, Vina! ¡Pasen, pasen!",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_01.mp3"
+   },
+   {
+    "quien": "vina",
+    "gu": "નમસ્તે મનિષાબેન. આ સીમાબેન છે.",
+    "es": "Hola, Manisha. Ella es Seema.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_02.mp3"
+   },
+   {
+    "quien": "manisha",
+    "gu": "નમસ્તે સીમાબેન! તમે કેમ છો?",
+    "es": "¡Hola, Seema! ¿Cómo está?",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_03.mp3"
+   },
+   {
+    "quien": "seema",
+    "gu": "હું મજામાં છું.",
+    "es": "Estoy muy bien.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_04.mp3"
+   },
+   {
+    "quien": "vina",
+    "gu": "અમે સાથે બાઈબલની વાત કરીએ છીએ.",
+    "es": "Hablamos juntas de la Biblia.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_05.mp3"
+   },
+   {
+    "quien": "manisha",
+    "gu": "સરસ! તમે અહીં પહેલી વાર આવ્યા?",
+    "es": "¡Qué bien! ¿Es la primera vez que viene?",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_06.mp3"
+   },
+   {
+    "quien": "seema",
+    "gu": "હા, પહેલી વાર.",
+    "es": "Sí, la primera vez.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_07.mp3"
+   },
+   {
+    "quien": "manisha",
+    "gu": "તમે ક્યાં રહો છો?",
+    "es": "¿Dónde vive usted?",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_08.mp3"
+   },
+   {
+    "quien": "seema",
+    "gu": "હું અહીં પાસે જ રહું છું.",
+    "es": "Vivo aquí cerca.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_09.mp3"
+   },
+   {
+    "quien": "vina",
+    "gu": "આ મારા પતિ, પરેશ. અને આ મારી છોકરી, રોશની.",
+    "es": "Este es mi esposo, Paresh. Y esta es mi hija, Roshni.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_10.mp3"
+   },
+   {
+    "quien": "roshni",
+    "gu": "નમસ્તે, સીમામાસી!",
+    "es": "¡Hola, tía Seema!",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_11.mp3"
+   },
+   {
+    "quien": "manisha",
+    "gu": "સીમાબેન, રવિવારે અમારી સાથે જમવા આવો ને.",
+    "es": "Seema, venga el domingo a comer con nosotros.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_12.mp3"
+   },
+   {
+    "quien": "seema",
+    "gu": "જરૂર! હું આવીશ.",
+    "es": "¡Claro! Iré.",
+    "audio": "audios/clase_1_1/dialogo_1_2_R_13.mp3"
+   }
+  ]
+ }
+}

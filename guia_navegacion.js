@@ -66,6 +66,16 @@
         });
         if(seccionEl) seccionEl.style.display = algunoVisible ? '' : 'none';
       });
+
+      // X.X.R (Claude, 20-nov-2026): enlaces propios de la lección
+      if(data.enlaces && data.enlaces.length){
+        var sec = document.createElement('section');
+        sec.className = 'guia-card tema-pensar';
+        sec.innerHTML = '<div class="card-icon">🧩</div><h2>' + (data.enlaces_titulo || 'Repaso') + '</h2><div class="card-links">' +
+          data.enlaces.map(function(e){ return '<a class="link-item" href="' + e.href + '">' + e.texto + '</a>'; }).join('') + '</div>';
+        var cont = document.querySelector('.guia-container');
+        if(cont) cont.insertBefore(sec, cont.firstChild);
+      }
     })
     .catch(function(){
       // Sin JSON de visibilidad → todos los botones y secciones visibles por defecto

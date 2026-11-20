@@ -283,8 +283,8 @@
     },
     {
       "url": "guia_navegacion.js",
-      "lastModified": 1794605400263,
-      "size": 3478
+      "lastModified": 1795200544857,
+      "size": 4098
     },
     {
       "url": "guia_navegacion_common.css",
@@ -323,8 +323,8 @@
     },
     {
       "url": "leccion_fin.js",
-      "lastModified": 1794630220611,
-      "size": 7076
+      "lastModified": 1795200544858,
+      "size": 7189
     },
     {
       "url": "leccion_intro.html",
@@ -353,8 +353,8 @@
     },
     {
       "url": "leccion_loader.js",
-      "lastModified": 1794605400270,
-      "size": 12078
+      "lastModified": 1795200544859,
+      "size": 12202
     },
     {
       "url": "leccion_notas.html",
@@ -363,8 +363,8 @@
     },
     {
       "url": "leccion_notas.js",
-      "lastModified": 1794605400272,
-      "size": 7399
+      "lastModified": 1795200544860,
+      "size": 8253
     },
     {
       "url": "leccion_palabra.html",
@@ -490,6 +490,16 @@
       "url": "practica.js",
       "lastModified": 1794605400284,
       "size": 12810
+    },
+    {
+      "url": "repaso.html",
+      "lastModified": 1795200544853,
+      "size": 1139
+    },
+    {
+      "url": "repaso.js",
+      "lastModified": 1795200544854,
+      "size": 8766
     },
     {
       "url": "reto.html",
@@ -788,8 +798,8 @@
     },
     {
       "url": "tema-pfd.css",
-      "lastModified": 1795156569803,
-      "size": 8405
+      "lastModified": 1795200544861,
+      "size": 10396
     },
     {
       "url": "tema-piensa.css",
@@ -933,8 +943,8 @@
     },
     {
       "url": "data/contenido_modulo_1_2.json",
-      "lastModified": 1795086073306,
-      "size": 2986
+      "lastModified": 1795200544856,
+      "size": 3028
     },
     {
       "url": "data/destello.js",

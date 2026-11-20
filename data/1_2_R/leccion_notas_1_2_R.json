@@ -1,0 +1,143 @@
+{
+ "leccion": "1.2.R",
+ "home": "leccion_intro.html?leccion=1.2.R",
+ "salir": "contenido_modulo.html?modulo=1.2",
+ "fin": "repaso.html?leccion=1.2.R#dialogo",
+ "terminar": "repaso.html?leccion=1.2.R#dialogo",
+ "terminar_texto": "Diálogo →",
+ "fin_texto": "Al diálogo →",
+ "intro": {
+  "titulo": "Nota especial: las terminaciones",
+  "texto": "Antes del diálogo, una regla que vas a usar todos los días: <strong>el final de <span class=\"gu\">મારો</span>, <span class=\"gu\">સારો</span> o <span class=\"gu\">નવો</span> cambia</strong> según la palabra que acompaña."
+ },
+ "notas": [
+  {
+   "destacado": true,
+   "bloques": [
+    {
+     "tipo": "texto",
+     "html": "La palabra que acompaña (mío, bueno, nuevo…) cambia su final según acompañe a <strong>él</strong>, a <strong>ella</strong> o a <strong>eso</strong>."
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "આ મારો છોકરો છે.",
+     "detalle": "-ો · él (masculino)",
+     "significado": "este es mi hijo",
+     "audio": "audios/clase_1_1/nota_1_2_R_01.mp3"
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "આ મારી છોકરી છે.",
+     "detalle": "-ી · ella (femenino)",
+     "significado": "esta es mi hija",
+     "audio": "audios/clase_1_1/nota_1_2_R_02.mp3"
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "આ મારું નામ છે.",
+     "detalle": "-ું · eso (neutro)",
+     "significado": "este es mi nombre",
+     "audio": "audios/clase_1_1/nota_1_2_R_03.mp3"
+    }
+   ]
+  },
+  {
+   "destacado": true,
+   "bloques": [
+    {
+     "tipo": "texto",
+     "html": "Y dos finales más: <strong>-ા</strong> para varios o para una persona a la que se respeta, y <strong>-ાં</strong> para varias cosas."
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "આ મારા પતિ છે.",
+     "detalle": "-ા · ellos, o alguien a quien se respeta",
+     "significado": "este es mi esposo",
+     "audio": "audios/clase_1_1/nota_1_2_R_04.mp3"
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "આ મારાં પુસ્તકો છે.",
+     "detalle": "-ાં · varias cosas (neutro plural)",
+     "significado": "estos son mis libros",
+     "audio": "audios/clase_1_1/nota_1_2_R_05.mp3"
+    }
+   ]
+  },
+  {
+   "destacado": false,
+   "bloques": [
+    {
+     "tipo": "texto",
+     "html": "<strong>Una palabra, cinco finales.</strong> Así se dice «bueno»:",
+     "gu": "સારો · સારી · સારું · સારા · સારાં"
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "સારો, સારી, સારું, સારા, સારાં.",
+     "detalle": "él · ella · eso · ellos · cosas",
+     "significado": "bueno, buena…",
+     "audio": "audios/clase_1_1/nota_1_2_R_06.mp3"
+    },
+    {
+     "tipo": "texto",
+     "html": "Lo mismo pasa con <span class=\"gu\">તમારો</span> (su, de usted):"
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "તમારો નંબર",
+     "detalle": "-ો · નંબર es masculino",
+     "significado": "su número",
+     "audio": "audios/clase_1_1/nota_1_2_R_07.mp3"
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "તમારી છોકરી",
+     "detalle": "-ી · છોકરી es femenino",
+     "significado": "su hija",
+     "audio": "audios/clase_1_1/nota_1_2_R_08.mp3"
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "તમારું નામ",
+     "detalle": "-ું · નામ es neutro",
+     "significado": "su nombre",
+     "audio": "audios/clase_1_1/nota_1_2_R_09.mp3"
+    }
+   ]
+  },
+  {
+   "destacado": false,
+   "bloques": [
+    {
+     "tipo": "texto",
+     "html": "<strong>Ojo:</strong> cambia la palabra que acompaña, no la palabra principal. En <span class=\"gu\">નવી પુસ્તિકા</span>, la -ી es de <span class=\"gu\">નવી</span>."
+    },
+    {
+     "tipo": "ejemplo",
+     "gu": "નવી પુસ્તિકા",
+     "detalle": "નવી cambia; પુસ્તિકા no",
+     "significado": "un folleto nuevo",
+     "audio": "audios/clase_1_1/nota_1_2_R_10.mp3"
+    },
+    {
+     "tipo": "texto",
+     "html": "Y hay palabras que nunca cambian, como <span class=\"gu\">સરસ</span> y <span class=\"gu\">સુંદર</span>."
+    }
+   ]
+  },
+  {
+   "destacado": false,
+   "bloques": [
+    {
+     "tipo": "texto",
+     "html": "<strong>Para más adelante:</strong> el pasado sigue la misma regla: <span class=\"gu\">થયો</span> · <span class=\"gu\">થઈ</span> · <span class=\"gu\">થયું</span>. Ya la usaste en <span class=\"gu\">શું થયું?</span> (¿qué pasó?)."
+    }
+   ]
+  }
+ ],
+ "fin_pantalla": {
+  "titulo": "Ya conoces las terminaciones",
+  "texto": "Ahora escúchalas en un diálogo. Fíjate en <span class=\"gu\">મારા પતિ</span> y <span class=\"gu\">મારી છોકરી</span>."
+ }
+}

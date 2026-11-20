@@ -1,0 +1,113 @@
+{
+ "sonido_victoria": "audios/clase_1_1/victoria.mp3",
+ "programa_efecto_victoria": "estrellas",
+ "leccion": "1.2.R",
+ "resumen": {
+  "consonantes": 0,
+  "vocales": 0,
+  "palabras": 15,
+  "frase_ejemplo": "તમે અહીં પહેલી વાર આવ્યા?",
+  "texto_html": "Repasaste <strong>15 palabras</strong> en frases de la predicación, aprendiste <strong>las terminaciones</strong> y ya puedes recibir a alguien en la reunión: <span class=\"gu-inline\">તમે અહીં પહેલી વાર આવ્યા?</span>"
+ },
+ "letras_aprendidas": [
+  "ો",
+  "ી",
+  "ું",
+  "ા",
+  "ાં"
+ ],
+ "palabras_aprendidas": [
+  {
+   "gujarati": "નામ",
+   "se_dice": "naam",
+   "significa": "nombre"
+  },
+  {
+   "gujarati": "યહોવા",
+   "se_dice": "ya-ho-vaa",
+   "significa": "Jehová"
+  },
+  {
+   "gujarati": "પ્રેમ",
+   "se_dice": "prem",
+   "significa": "amor"
+  },
+  {
+   "gujarati": "બાઈબલ",
+   "se_dice": "baa-i-bal",
+   "significa": "Biblia"
+  },
+  {
+   "gujarati": "પુસ્તક",
+   "se_dice": "pus-tak",
+   "significa": "libro"
+  },
+  {
+   "gujarati": "જવાબ",
+   "se_dice": "ja-vaab",
+   "significa": "respuesta"
+  },
+  {
+   "gujarati": "જીવન",
+   "se_dice": "jii-van",
+   "significa": "vida"
+  },
+  {
+   "gujarati": "શાંતિ",
+   "se_dice": "shaaⁿ-ti",
+   "significa": "paz"
+  },
+  {
+   "gujarati": "દુનિયા",
+   "se_dice": "du-ni-yaa",
+   "significa": "mundo"
+  },
+  {
+   "gujarati": "લોકો",
+   "se_dice": "lo-ko",
+   "significa": "gente, personas"
+  },
+  {
+   "gujarati": "સમય",
+   "se_dice": "sa-may",
+   "significa": "tiempo, hora"
+  },
+  {
+   "gujarati": "વાત",
+   "se_dice": "vaat",
+   "significa": "conversación, asunto"
+  },
+  {
+   "gujarati": "કામ",
+   "se_dice": "kaam",
+   "significa": "trabajo"
+  },
+  {
+   "gujarati": "પરિવાર",
+   "se_dice": "pa-ri-vaar",
+   "significa": "familia"
+  },
+  {
+   "gujarati": "પતિ",
+   "se_dice": "pa-ti",
+   "significa": "esposo"
+  }
+ ],
+ "proxima_leccion": {
+  "cantidad_letras": 0,
+  "letras": [],
+  "codigo": "1.3.1"
+ },
+ "kahevat": {
+  "numero": 5,
+  "gujarati": "સંપ ત્યાં જંપ",
+  "se_dice": "samp tyaaⁿ jamp",
+  "literal": "Donde hay unidad, hay calma",
+  "significa": "Una familia o un grupo unido vive en paz",
+  "equivalente": "La unión hace la fuerza",
+  "cuando": "Cuando una familia o un grupo trabaja junto y en armonía: así todo sale mejor",
+  "conocidas": "કમછઅઆએઓાેોસરહઉુંનતશઇઈિીણપવઊૂજથયઐૈદબલઔૌ",
+  "audio_m": "audios/clase_1_1/kahevat_1_2_R_m.mp3",
+  "audio_h": "audios/clase_1_1/kahevat_1_2_R_h.mp3"
+ }
+}

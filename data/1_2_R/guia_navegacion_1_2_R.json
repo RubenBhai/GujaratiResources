@@ -1,0 +1,29 @@
+{
+ "leccion": "1.2.R",
+ "iconos": {
+  "alfabeto": "imagenes/Clase_1_1/guia_navegacion_alfabeto.jpg",
+  "juegos": "imagenes/Clase_1_1/guia_navegacion_juegos.jpg",
+  "practica": "imagenes/Clase_1_1/guia_navegacion_pronunciacion.jpg",
+  "pensar": "imagenes/Clase_1_1/guia_navegacion_pensarengujarati.jpg"
+ },
+ "botones": {},
+ "enlaces_titulo": "Repaso del módulo 1.2",
+ "enlaces": [
+  {
+   "texto": "🔤 Palabra → frase",
+   "href": "repaso.html?leccion=1.2.R"
+  },
+  {
+   "texto": "📝 Nota: las terminaciones",
+   "href": "leccion_notas.html?leccion=1.2.R"
+  },
+  {
+   "texto": "🎭 Diálogo «Al llegar a la reunión»",
+   "href": "repaso.html?leccion=1.2.R#dialogo"
+  },
+  {
+   "texto": "🗂️ Repaso de lecciones (tarjetas)",
+   "href": "pfd_repaso.html"
+  }
+ ]
+}

@@ -87,6 +87,7 @@ fetch(JSON_URL + '?t=' + Date.now(), { cache: 'no-store' })
 
     // Subtitle: usa clase .gu-inline en lugar de style= inline
     var r = data.resumen;
+    if(r.texto_html) document.getElementById('subtitle').innerHTML = r.texto_html; else   // X.X.R (20-nov-2026)
     document.getElementById('subtitle').innerHTML =
       'Aprendiste <strong>' + r.consonantes + ' consonantes</strong>, ' +
       '<strong>' + r.vocales + ' vocales</strong> y ' +

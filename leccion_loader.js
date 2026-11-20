@@ -4,7 +4,8 @@
   // 1. Definición de variables de entorno y rutas (¡Movido arriba!)
   var _leccionRaw = _params.get('leccion') || '1.1.1';
   var _folder     = _leccionRaw.replace(/\./g, '_');   // "1.1.1" → "1_1_1"
-  var _destino    = 'video.html?leccion=' + _leccionRaw + '&next=leccion_intro.html&modo=intro';
+  var _destino    = /\.R$/.test(_leccionRaw) ? 'leccion_intro.html?leccion=' + _leccionRaw   // X.X.R: sin video de entrada
+                  : 'video.html?leccion=' + _leccionRaw + '&next=leccion_intro.html&modo=intro';
   
   var CACHE_NAME       = 'gujarati-media';   // misma caché que usa el sw.js
   var localManifestKey = 'manifest_' + _folder;

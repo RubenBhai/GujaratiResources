@@ -39,9 +39,9 @@
         },
         {
           "numero": 4,
-          "titulo": "Repaso: palabra → frase → diálogo",
+          "titulo": "Repaso: al llegar a la reunión",
           "sub_html": "repasa los módulos 1.1 y 1.2<br>nota especial: <strong>las terminaciones ો ી ું ા ાં</strong>",
-          "estado": "proxima",
+          "estado": "activa",
           "codigo_leccion": "1.2.R"
         }
       ]
