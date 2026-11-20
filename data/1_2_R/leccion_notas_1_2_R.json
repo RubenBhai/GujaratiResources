@@ -138,6 +138,6 @@
  ],
  "fin_pantalla": {
   "titulo": "Ya conoces las terminaciones",
-  "texto": "Ahora escúchalas en un diálogo. Fíjate en <span class=\"gu\">મારા પતિ</span> y <span class=\"gu\">મારી છોકરી</span>."
+  "texto": "Ahora escúchalas en un diálogo. Fíjate en <span class=\"gu\">મારા પતિ</span> y <span class=\"gu\">મારી છોકરી</span>.<br><br>¿Quieres practicarlas tocando fichas? <a href=\"transforma.html?clase=2\" style=\"color:inherit;font-weight:700\">Clase maestra 2: Esto es mío →</a>"
  }
 }

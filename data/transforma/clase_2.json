@@ -1,0 +1,361 @@
+{
+ "id": "tr2",
+ "titulo": "Esto es mío",
+ "badge": "Clase maestra 2",
+ "subtitulo": "Toca las fichas y mira cómo cambia el final de મારું, તમારું y અમારું según la cosa.",
+ "nota_html": "La regla de la 1.2.R: <span class=\"gu\">મારો</span> con <span class=\"gu\">દીકરો</span> (él), <span class=\"gu\">મારી</span> con <span class=\"gu\">પુસ્તિકા</span> (ella), <span class=\"gu\">મારું</span> con <span class=\"gu\">સરનામું</span> (eso). En plural: <span class=\"gu\">મારા દીકરા</span> · <span class=\"gu\">મારી પુસ્તિકાઓ</span> · <span class=\"gu\">મારાં પુસ્તકો</span>. Fíjate: en <span class=\"gu\">મારી પુસ્તિકાઓ</span> la <span class=\"gu\">મારી</span> no cambia; cambia la cosa.",
+ "inicial": {
+  "quien": "mio",
+  "cosa": "diikro",
+  "num": "uno",
+  "forma": "af"
+ },
+ "grupos": [
+  {
+   "id": "quien",
+   "label": "¿De quién?",
+   "opciones": [
+    {
+     "id": "mio",
+     "es": "mío",
+     "gu": "મારું"
+    },
+    {
+     "id": "suyo",
+     "es": "suyo",
+     "gu": "તમારું"
+    },
+    {
+     "id": "nuestro",
+     "es": "nuestro",
+     "gu": "અમારું"
+    }
+   ]
+  },
+  {
+   "id": "cosa",
+   "label": "¿Qué?",
+   "opciones": [
+    {
+     "id": "diikro",
+     "es": "hijo",
+     "sub": "masculino"
+    },
+    {
+     "id": "pustikaa",
+     "es": "folleto",
+     "sub": "femenino"
+    },
+    {
+     "id": "neutro",
+     "es": "dirección · libros",
+     "sub": "neutro"
+    }
+   ]
+  },
+  {
+   "id": "num",
+   "label": "¿Cuántos?",
+   "opciones": [
+    {
+     "id": "uno",
+     "es": "uno"
+    },
+    {
+     "id": "varios",
+     "es": "varios"
+    }
+   ]
+  },
+  {
+   "id": "forma",
+   "label": "Forma",
+   "opciones": [
+    {
+     "id": "af",
+     "es": "afirmativo"
+    },
+    {
+     "id": "neg",
+     "es": "negativo"
+    },
+    {
+     "id": "preg",
+     "es": "pregunta"
+    }
+   ]
+  }
+ ],
+ "frases": {
+  "mio|diikro|uno|af": {
+   "gu": "આ મારો દીકરો છે.",
+   "es": "Este es mi hijo.",
+   "audio": "audios/transforma/tr2_mio_diikro_uno_af.mp3"
+  },
+  "mio|diikro|uno|neg": {
+   "gu": "આ મારો દીકરો નથી.",
+   "es": "Este no es mi hijo.",
+   "audio": "audios/transforma/tr2_mio_diikro_uno_neg.mp3"
+  },
+  "mio|diikro|uno|preg": {
+   "gu": "શું આ મારો દીકરો છે?",
+   "es": "¿Este es mi hijo?",
+   "audio": "audios/transforma/tr2_mio_diikro_uno_preg.mp3"
+  },
+  "mio|diikro|varios|af": {
+   "gu": "આ મારા દીકરા છે.",
+   "es": "Estos son mis hijos.",
+   "audio": "audios/transforma/tr2_mio_diikro_varios_af.mp3"
+  },
+  "mio|diikro|varios|neg": {
+   "gu": "આ મારા દીકરા નથી.",
+   "es": "Estos no son mis hijos.",
+   "audio": "audios/transforma/tr2_mio_diikro_varios_neg.mp3"
+  },
+  "mio|diikro|varios|preg": {
+   "gu": "શું આ મારા દીકરા છે?",
+   "es": "¿Estos son mis hijos?",
+   "audio": "audios/transforma/tr2_mio_diikro_varios_preg.mp3"
+  },
+  "mio|pustikaa|uno|af": {
+   "gu": "આ મારી પુસ્તિકા છે.",
+   "es": "Este es mi folleto.",
+   "audio": "audios/transforma/tr2_mio_pustikaa_uno_af.mp3"
+  },
+  "mio|pustikaa|uno|neg": {
+   "gu": "આ મારી પુસ્તિકા નથી.",
+   "es": "Este no es mi folleto.",
+   "audio": "audios/transforma/tr2_mio_pustikaa_uno_neg.mp3"
+  },
+  "mio|pustikaa|uno|preg": {
+   "gu": "શું આ મારી પુસ્તિકા છે?",
+   "es": "¿Este es mi folleto?",
+   "audio": "audios/transforma/tr2_mio_pustikaa_uno_preg.mp3"
+  },
+  "mio|pustikaa|varios|af": {
+   "gu": "આ મારી પુસ્તિકાઓ છે.",
+   "es": "Estos son mis folletos.",
+   "audio": "audios/transforma/tr2_mio_pustikaa_varios_af.mp3"
+  },
+  "mio|pustikaa|varios|neg": {
+   "gu": "આ મારી પુસ્તિકાઓ નથી.",
+   "es": "Estos no son mis folletos.",
+   "audio": "audios/transforma/tr2_mio_pustikaa_varios_neg.mp3"
+  },
+  "mio|pustikaa|varios|preg": {
+   "gu": "શું આ મારી પુસ્તિકાઓ છે?",
+   "es": "¿Estos son mis folletos?",
+   "audio": "audios/transforma/tr2_mio_pustikaa_varios_preg.mp3"
+  },
+  "mio|neutro|uno|af": {
+   "gu": "આ મારું સરનામું છે.",
+   "es": "Esta es mi dirección.",
+   "audio": "audios/transforma/tr2_mio_sarnaamu_uno_af.mp3"
+  },
+  "mio|neutro|uno|neg": {
+   "gu": "આ મારું સરનામું નથી.",
+   "es": "Esta no es mi dirección.",
+   "audio": "audios/transforma/tr2_mio_sarnaamu_uno_neg.mp3"
+  },
+  "mio|neutro|uno|preg": {
+   "gu": "શું આ મારું સરનામું છે?",
+   "es": "¿Esta es mi dirección?",
+   "audio": "audios/transforma/tr2_mio_sarnaamu_uno_preg.mp3"
+  },
+  "mio|neutro|varios|af": {
+   "gu": "આ મારાં પુસ્તકો છે.",
+   "es": "Estos son mis libros.",
+   "audio": "audios/transforma/tr2_mio_pustak_varios_af.mp3"
+  },
+  "mio|neutro|varios|neg": {
+   "gu": "આ મારાં પુસ્તકો નથી.",
+   "es": "Estos no son mis libros.",
+   "audio": "audios/transforma/tr2_mio_pustak_varios_neg.mp3"
+  },
+  "mio|neutro|varios|preg": {
+   "gu": "શું આ મારાં પુસ્તકો છે?",
+   "es": "¿Estos son mis libros?",
+   "audio": "audios/transforma/tr2_mio_pustak_varios_preg.mp3"
+  },
+  "suyo|diikro|uno|af": {
+   "gu": "આ તમારો દીકરો છે.",
+   "es": "Este es su hijo.",
+   "audio": "audios/transforma/tr2_suyo_diikro_uno_af.mp3"
+  },
+  "suyo|diikro|uno|neg": {
+   "gu": "આ તમારો દીકરો નથી.",
+   "es": "Este no es su hijo.",
+   "audio": "audios/transforma/tr2_suyo_diikro_uno_neg.mp3"
+  },
+  "suyo|diikro|uno|preg": {
+   "gu": "શું આ તમારો દીકરો છે?",
+   "es": "¿Este es su hijo?",
+   "audio": "audios/transforma/tr2_suyo_diikro_uno_preg.mp3"
+  },
+  "suyo|diikro|varios|af": {
+   "gu": "આ તમારા દીકરા છે.",
+   "es": "Estos son sus hijos.",
+   "audio": "audios/transforma/tr2_suyo_diikro_varios_af.mp3"
+  },
+  "suyo|diikro|varios|neg": {
+   "gu": "આ તમારા દીકરા નથી.",
+   "es": "Estos no son sus hijos.",
+   "audio": "audios/transforma/tr2_suyo_diikro_varios_neg.mp3"
+  },
+  "suyo|diikro|varios|preg": {
+   "gu": "શું આ તમારા દીકરા છે?",
+   "es": "¿Estos son sus hijos?",
+   "audio": "audios/transforma/tr2_suyo_diikro_varios_preg.mp3"
+  },
+  "suyo|pustikaa|uno|af": {
+   "gu": "આ તમારી પુસ્તિકા છે.",
+   "es": "Este es su folleto.",
+   "audio": "audios/transforma/tr2_suyo_pustikaa_uno_af.mp3"
+  },
+  "suyo|pustikaa|uno|neg": {
+   "gu": "આ તમારી પુસ્તિકા નથી.",
+   "es": "Este no es su folleto.",
+   "audio": "audios/transforma/tr2_suyo_pustikaa_uno_neg.mp3"
+  },
+  "suyo|pustikaa|uno|preg": {
+   "gu": "શું આ તમારી પુસ્તિકા છે?",
+   "es": "¿Este es su folleto?",
+   "audio": "audios/transforma/tr2_suyo_pustikaa_uno_preg.mp3"
+  },
+  "suyo|pustikaa|varios|af": {
+   "gu": "આ તમારી પુસ્તિકાઓ છે.",
+   "es": "Estos son sus folletos.",
+   "audio": "audios/transforma/tr2_suyo_pustikaa_varios_af.mp3"
+  },
+  "suyo|pustikaa|varios|neg": {
+   "gu": "આ તમારી પુસ્તિકાઓ નથી.",
+   "es": "Estos no son sus folletos.",
+   "audio": "audios/transforma/tr2_suyo_pustikaa_varios_neg.mp3"
+  },
+  "suyo|pustikaa|varios|preg": {
+   "gu": "શું આ તમારી પુસ્તિકાઓ છે?",
+   "es": "¿Estos son sus folletos?",
+   "audio": "audios/transforma/tr2_suyo_pustikaa_varios_preg.mp3"
+  },
+  "suyo|neutro|uno|af": {
+   "gu": "આ તમારું સરનામું છે.",
+   "es": "Esta es su dirección.",
+   "audio": "audios/transforma/tr2_suyo_sarnaamu_uno_af.mp3"
+  },
+  "suyo|neutro|uno|neg": {
+   "gu": "આ તમારું સરનામું નથી.",
+   "es": "Esta no es su dirección.",
+   "audio": "audios/transforma/tr2_suyo_sarnaamu_uno_neg.mp3"
+  },
+  "suyo|neutro|uno|preg": {
+   "gu": "શું આ તમારું સરનામું છે?",
+   "es": "¿Esta es su dirección?",
+   "audio": "audios/transforma/tr2_suyo_sarnaamu_uno_preg.mp3"
+  },
+  "suyo|neutro|varios|af": {
+   "gu": "આ તમારાં પુસ્તકો છે.",
+   "es": "Estos son sus libros.",
+   "audio": "audios/transforma/tr2_suyo_pustak_varios_af.mp3"
+  },
+  "suyo|neutro|varios|neg": {
+   "gu": "આ તમારાં પુસ્તકો નથી.",
+   "es": "Estos no son sus libros.",
+   "audio": "audios/transforma/tr2_suyo_pustak_varios_neg.mp3"
+  },
+  "suyo|neutro|varios|preg": {
+   "gu": "શું આ તમારાં પુસ્તકો છે?",
+   "es": "¿Estos son sus libros?",
+   "audio": "audios/transforma/tr2_suyo_pustak_varios_preg.mp3"
+  },
+  "nuestro|diikro|uno|af": {
+   "gu": "આ અમારો દીકરો છે.",
+   "es": "Este es nuestro hijo.",
+   "audio": "audios/transforma/tr2_nuestro_diikro_uno_af.mp3"
+  },
+  "nuestro|diikro|uno|neg": {
+   "gu": "આ અમારો દીકરો નથી.",
+   "es": "Este no es nuestro hijo.",
+   "audio": "audios/transforma/tr2_nuestro_diikro_uno_neg.mp3"
+  },
+  "nuestro|diikro|uno|preg": {
+   "gu": "શું આ અમારો દીકરો છે?",
+   "es": "¿Este es nuestro hijo?",
+   "audio": "audios/transforma/tr2_nuestro_diikro_uno_preg.mp3"
+  },
+  "nuestro|diikro|varios|af": {
+   "gu": "આ અમારા દીકરા છે.",
+   "es": "Estos son nuestros hijos.",
+   "audio": "audios/transforma/tr2_nuestro_diikro_varios_af.mp3"
+  },
+  "nuestro|diikro|varios|neg": {
+   "gu": "આ અમારા દીકરા નથી.",
+   "es": "Estos no son nuestros hijos.",
+   "audio": "audios/transforma/tr2_nuestro_diikro_varios_neg.mp3"
+  },
+  "nuestro|diikro|varios|preg": {
+   "gu": "શું આ અમારા દીકરા છે?",
+   "es": "¿Estos son nuestros hijos?",
+   "audio": "audios/transforma/tr2_nuestro_diikro_varios_preg.mp3"
+  },
+  "nuestro|pustikaa|uno|af": {
+   "gu": "આ અમારી પુસ્તિકા છે.",
+   "es": "Este es nuestro folleto.",
+   "audio": "audios/transforma/tr2_nuestro_pustikaa_uno_af.mp3"
+  },
+  "nuestro|pustikaa|uno|neg": {
+   "gu": "આ અમારી પુસ્તિકા નથી.",
+   "es": "Este no es nuestro folleto.",
+   "audio": "audios/transforma/tr2_nuestro_pustikaa_uno_neg.mp3"
+  },
+  "nuestro|pustikaa|uno|preg": {
+   "gu": "શું આ અમારી પુસ્તિકા છે?",
+   "es": "¿Este es nuestro folleto?",
+   "audio": "audios/transforma/tr2_nuestro_pustikaa_uno_preg.mp3"
+  },
+  "nuestro|pustikaa|varios|af": {
+   "gu": "આ અમારી પુસ્તિકાઓ છે.",
+   "es": "Estos son nuestros folletos.",
+   "audio": "audios/transforma/tr2_nuestro_pustikaa_varios_af.mp3"
+  },
+  "nuestro|pustikaa|varios|neg": {
+   "gu": "આ અમારી પુસ્તિકાઓ નથી.",
+   "es": "Estos no son nuestros folletos.",
+   "audio": "audios/transforma/tr2_nuestro_pustikaa_varios_neg.mp3"
+  },
+  "nuestro|pustikaa|varios|preg": {
+   "gu": "શું આ અમારી પુસ્તિકાઓ છે?",
+   "es": "¿Estos son nuestros folletos?",
+   "audio": "audios/transforma/tr2_nuestro_pustikaa_varios_preg.mp3"
+  },
+  "nuestro|neutro|uno|af": {
+   "gu": "આ અમારું સરનામું છે.",
+   "es": "Esta es nuestra dirección.",
+   "audio": "audios/transforma/tr2_nuestro_sarnaamu_uno_af.mp3"
+  },
+  "nuestro|neutro|uno|neg": {
+   "gu": "આ અમારું સરનામું નથી.",
+   "es": "Esta no es nuestra dirección.",
+   "audio": "audios/transforma/tr2_nuestro_sarnaamu_uno_neg.mp3"
+  },
+  "nuestro|neutro|uno|preg": {
+   "gu": "શું આ અમારું સરનામું છે?",
+   "es": "¿Esta es nuestra dirección?",
+   "audio": "audios/transforma/tr2_nuestro_sarnaamu_uno_preg.mp3"
+  },
+  "nuestro|neutro|varios|af": {
+   "gu": "આ અમારાં પુસ્તકો છે.",
+   "es": "Estos son nuestros libros.",
+   "audio": "audios/transforma/tr2_nuestro_pustak_varios_af.mp3"
+  },
+  "nuestro|neutro|varios|neg": {
+   "gu": "આ અમારાં પુસ્તકો નથી.",
+   "es": "Estos no son nuestros libros.",
+   "audio": "audios/transforma/tr2_nuestro_pustak_varios_neg.mp3"
+  },
+  "nuestro|neutro|varios|preg": {
+   "gu": "શું આ અમારાં પુસ્તકો છે?",
+   "es": "¿Estos son nuestros libros?",
+   "audio": "audios/transforma/tr2_nuestro_pustak_varios_preg.mp3"
+  }
+ }
+}

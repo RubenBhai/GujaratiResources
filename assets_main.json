@@ -458,8 +458,8 @@
     },
     {
       "url": "pfd.js",
-      "lastModified": 1795202720370,
-      "size": 16858
+      "lastModified": 1795215387019,
+      "size": 18923
     },
     {
       "url": "pfd_repaso.html",
@@ -468,8 +468,8 @@
     },
     {
       "url": "pfd_repaso.js",
-      "lastModified": 1795156569800,
-      "size": 13721
+      "lastModified": 1795215387020,
+      "size": 13840
     },
     {
       "url": "piensa.html",
@@ -995,6 +995,16 @@
       "url": "data/sello.js",
       "lastModified": 1794605400255,
       "size": 1582
+    },
+    {
+      "url": "data/frases/assets_frases.json",
+      "lastModified": 1795105227726,
+      "size": 1092
+    },
+    {
+      "url": "data/frases/assets_frases_versionado.json",
+      "lastModified": 1795202827290,
+      "size": 3271
     },
     {
       "url": "data/frases/categorias.json",

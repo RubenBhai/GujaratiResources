@@ -14,6 +14,14 @@
   var $app = document.getElementById('app');
   var D = null, player = new Audio(), sonando = null, cola = [];
   var DIAS = [0, 1, 3, 7, 14, 30];
+  // Clases maestras de gramática (transforma.html?clase=N). Las que no están listas salen como «Muy pronto».
+  var CLASES = [
+    { n: 1, t: '¿Cómo está?', d: 'yo, usted, él, ella · sí, no, pregunta', ok: true },
+    { n: 2, t: 'Esto es mío', d: 'mío, suyo, nuestro · las terminaciones', ok: true },
+    { n: 3, t: '¿Dónde está?', d: 'la cosa y el lugar' }, { n: 4, t: 'Me gusta', d: 'a mí, a usted · gustar, parecer, saber' },
+    { n: 5, t: 'Mi día', d: 'hoy, mañana, ayer' }, { n: 6, t: 'Lo que pasó', d: 'el pasado' },
+    { n: 7, t: 'Números y tiempo', d: 'días, semanas, meses, años' }, { n: 8, t: 'Puedo, quiero, tengo que', d: '' },
+    { n: 9, t: 'Por favor', d: 'pedir con cortesía' }, { n: 10, t: 'Mi idioma, mi congregación', d: 'frases para el ministerio' }];
 
   function leer(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
   function guardar(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -90,6 +98,8 @@
       '<a class="opcion" href="#palabras"><span class="ico">🔤</span><div><div class="t">Palabras</div><div class="d">Tarjetas que se voltean, con un ejemplo</div></div><span class="n">' + np + '</span></a>' +
       '<a class="opcion" href="#frases"><span class="ico">💬</span><div><div class="t">Frases</div><div class="d">Cada palabra dentro de una frase, por situación</div></div><span class="n">' + nf + '</span></a>' +
       '<a class="opcion" href="#dialogos"><span class="ico">🎭</span><div><div class="t">Diálogos</div><div class="d">Escucha cómo se usan en una conversación</div></div><span class="n">' + nd + '</span></a>' +
+      '<a class="opcion" href="#clases"><span class="ico">🎛️</span><div><div class="t">Clases maestras</div><div class="d">Toca fichas y mira cómo cambia la frase</div></div><span class="n">' +
+        CLASES.filter(function (c) { return c.ok; }).length + '</span></a>' +
       (nn ? '<a class="opcion" href="#numeros"><span class="ico">🔢</span><div><div class="t">Números</div><div class="d">Los que ya sabes leer: para citas y capítulos</div></div><span class="n">' + nn + '</span></a>' : '') +
       '<p class="sub" style="margin-top:22px">¿Ya terminaste una lección? Repasa sus palabras y su diálogo en el <a href="pfd_repaso.html" style="color:var(--saffron)">repaso de lecciones →</a></p>';
     enlazarFiltros(menu);
@@ -218,6 +228,21 @@
     });
   }
 
+  /* ── clases maestras ── */
+  function clases() {
+    parar();
+    document.getElementById('nav-atras').href = '#';
+    var h = '<span class="badge">Clases maestras</span><h1>Transforma la frase</h1>' +
+      '<p class="sub">Una frase base y unas fichas: toca una ficha y mira qué cambia. Lo que cambia se pinta de verde, y cada frase tiene su audio.</p>';
+    CLASES.forEach(function (c) {
+      h += '<a class="opcion"' + (c.ok ? ' href="transforma.html?clase=' + c.n + '"' : ' data-pronto="1"') + (c.ok ? '' : ' style="opacity:.5"') + '>' +
+        '<span class="ico">🎛️</span><div><div class="t">' + c.n + '. ' + E(c.t) + '</div><div class="d">' + E(c.d || '') + '</div></div>' +
+        '<span class="n">' + (c.ok ? '→' : 'pronto') + '</span></a>';
+    });
+    $app.innerHTML = h;
+    $app.querySelectorAll('[data-pronto]').forEach(function (a) { a.onclick = function () { toast('Muy pronto: llega con su lección'); }; });
+  }
+
   /* ── números ── */
   function numeros() {
     parar();
@@ -238,7 +263,7 @@
     var r = location.hash.replace('#', '');
     window.scrollTo(0, 0);
     var off = document.getElementById('offline'); if (off) off.style.display = r ? 'none' : '';
-    if (r === 'palabras') palabras(); else if (r === 'frases') frases(); else if (r === 'dialogos') dialogos(); else if (r === 'numeros') numeros(); else menu();
+    if (r === 'palabras') palabras(); else if (r === 'frases') frases(); else if (r === 'dialogos') dialogos(); else if (r === 'numeros') numeros(); else if (r === 'clases') clases(); else menu();
   }
   fetch('data/pfd/tramos.json?t=' + Date.now(), { cache: 'no-store' })
     .then(function (r) { if (!r.ok) throw new Error('404'); return r.json(); })

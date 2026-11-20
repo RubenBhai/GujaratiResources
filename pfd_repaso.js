@@ -13,7 +13,8 @@
   var TODO = new URLSearchParams(location.search).get('todo') === '1';
   var D = null, player = new Audio(), sonando = null;
   var DIAS = [0, 1, 3, 7, 14, 30];                       // días hasta el próximo repaso según la caja
-  var CLASES = [{ clase: 1, titulo: '¿Cómo está?', sub: 'persona, género, sí / no / pregunta', desde: '1.2.3' }];
+  var CLASES = [{ clase: 1, titulo: '¿Cómo está?', sub: 'persona, género, sí / no / pregunta', desde: '1.2.3' },
+                { clase: 2, titulo: 'Esto es mío', sub: 'mío, suyo, nuestro · las terminaciones', desde: '1.2.R' }];
 
   function leer(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
   function guardar(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
