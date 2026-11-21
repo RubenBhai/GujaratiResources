@@ -83,8 +83,8 @@
     },
     {
       "url": "contenido.html",
-      "lastModified": 1795291667021,
-      "size": 13974
+      "lastModified": 1795292476235,
+      "size": 15823
     },
     {
       "url": "contenido.js",
@@ -290,6 +290,11 @@
       "url": "generador.js",
       "lastModified": 1794605400260,
       "size": 8837
+    },
+    {
+      "url": "guia.html",
+      "lastModified": 1795292476234,
+      "size": 9516
     },
     {
       "url": "guia_mapa_common.css",
