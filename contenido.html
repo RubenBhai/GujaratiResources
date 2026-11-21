@@ -46,43 +46,47 @@
 
 <main class="main">
 
-  <!-- ══ ACCESOS (plan de contenido v2, 19-nov-2026): siempre abiertos ══ -->
-  <a href="tip.html" class="tarjeta-frases">
-    <span class="tf-icono">💡</span>
-    <div class="tf-info">
-      <div class="tf-titulo">Tips para las reuniones</div>
-      <div class="tf-sub">Cada lunes, las pistas para el estudio de La Atalaya de este domingo.</div>
-    </div>
-    <span class="tf-flecha">→</span>
-  </a>
-
-  <a href="tarjetas.html" class="tarjeta-frases">
-    <span class="tf-icono">🗂️</span>
-    <div class="tf-info">
-      <div class="tf-titulo">Tarjetas rápidas</div>
-      <div class="tf-sub">Para la predicación: lo que digo y lo que me pueden decir, con audio. También para imprimir.</div>
-    </div>
-    <span class="tf-flecha">→</span>
-  </a>
-
-  <a href="pfd.html" class="tarjeta-frases">
-    <span class="tf-icono">🧩</span>
-    <div class="tf-info">
-      <div class="tf-titulo">Palabra → Frase → Diálogo</div>
-      <div class="tf-sub">Palabras, frases y diálogos para predicar, revisitas, estudios y la casa, con las letras que ya lees.</div>
-    </div>
-    <span class="tf-flecha">→</span>
-  </a>
-  </div>
-
-  <a href="frases.html" class="tarjeta-frases">
-    <span class="tf-icono">💬</span>
-    <div class="tf-info">
-      <div class="tf-titulo">Curso de frases</div>
-      <div class="tf-sub">¿Quieres hablar ya? Frases para conversar, aunque todavía no las sepas leer. Se irán sumando categorías.</div>
-    </div>
-    <span class="tf-flecha">→</span>
-  </a>
+  <!-- ══ RECURSOS PARA PRACTICAR (carril, 21-nov-2026): todo a la vista en una fila; el punto verde marca lo nuevo ══ -->
+  <section class="recursos">
+  <style>
+    .recursos { margin:0 0 6px; }
+    .recursos-lbl { font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--saffron,#B8863D); margin:4px 0 10px; font-weight:600; }
+    .carril { display:flex; gap:10px; overflow-x:auto; scrollbar-width:none; padding:2px 2px 6px; margin:0;
+      -webkit-mask-image:linear-gradient(to right,#000 88%,transparent); mask-image:linear-gradient(to right,#000 88%,transparent); }
+    .carril::-webkit-scrollbar { display:none; }
+    .carril.al-final { -webkit-mask-image:none; mask-image:none; }
+    .rc { flex:0 0 92px; min-height:100px; background:var(--surface,#362C28); border:1px solid rgba(184,134,61,.25); border-radius:16px;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:10px 6px; text-align:center;
+      color:inherit; text-decoration:none; font-size:.8rem; line-height:1.2; position:relative; }
+    .rc:hover, .rc:focus-visible { border-color:var(--saffron,#B8863D); outline:none; }
+    .rc-ico { font-size:1.7rem; line-height:1; }
+    .rc-dot { position:absolute; top:7px; right:9px; width:10px; height:10px; border-radius:50%; background:#A3C945; box-shadow:0 0 0 3px rgba(163,201,69,.18); }
+    @media (min-width:700px) { .carril { flex-wrap:wrap; -webkit-mask-image:none; mask-image:none; } .rc { flex:1 1 120px; } }
+  </style>
+  <div class="recursos-lbl">Recursos para practicar</div>
+  <nav class="carril" id="carril" aria-label="Recursos para practicar">
+    <a class="rc" href="tip.html" data-id="tip"><span class="rc-ico">💡</span>Tip de la semana</a>
+    <a class="rc" href="tarjetas.html" data-id="tarjetas" data-nuevo="2026-11-21"><span class="rc-ico">🗂️</span>Tarjetas rápidas</a>
+    <a class="rc" href="bloques.html" data-id="bloques" data-nuevo="2026-11-21"><span class="rc-ico">🧱</span>Bloques de construcción</a>
+    <a class="rc" href="clases.html" data-id="clases" data-nuevo="2026-11-20"><span class="rc-ico">🎛️</span>Clases maestras</a>
+    <a class="rc" href="pfd.html" data-id="pfd" data-nuevo="2026-11-20"><span class="rc-ico">🧩</span>Palabra → Frase → Diálogo</a>
+    <a class="rc" href="frases.html" data-id="frases"><span class="rc-ico">💬</span>Curso de frases</a>
+  </nav>
+  <script>
+  (function () {
+    // Punto verde hasta que el alumno abre ese recurso. Para avisar de algo nuevo, se cambia la fecha de data-nuevo.
+    function leer(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+    var c = document.getElementById('carril');
+    [].forEach.call(c.querySelectorAll('.rc[data-nuevo]'), function (a) {
+      var k = 'recurso_visto_' + a.dataset.id;
+      if (leer(k) !== a.dataset.nuevo) { var d = document.createElement('span'); d.className = 'rc-dot'; d.title = 'Nuevo'; a.appendChild(d); }
+      a.addEventListener('click', function () { try { localStorage.setItem(k, a.dataset.nuevo); } catch (e) {} });
+    });
+    function fin() { c.classList.toggle('al-final', c.scrollLeft + c.clientWidth >= c.scrollWidth - 4); }
+    c.addEventListener('scroll', fin); window.addEventListener('resize', fin); fin();
+  })();
+  </script>
+  </section>
 
   <!-- ══ ETAPA 1: cuatro módulos de 3 lecciones + repaso (X.X.R) ══ -->
   <div class="etapa">

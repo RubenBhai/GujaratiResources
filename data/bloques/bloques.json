@@ -1,0 +1,320 @@
+{
+ "categorias": [
+  {
+   "id": "animar",
+   "titulo": "Para animar"
+  },
+  {
+   "id": "suponer",
+   "titulo": "Para suponer"
+  },
+  {
+   "id": "unir",
+   "titulo": "Para unir ideas"
+  },
+  {
+   "id": "cambio",
+   "titulo": "Para contar un cambio"
+  },
+  {
+   "id": "costumbre",
+   "titulo": "Para lo de siempre"
+  }
+ ],
+ "bloques": [
+  {
+   "id": "thai-javu",
+   "bloque": "થઈ જવું",
+   "que": "ponerse, volverse",
+   "cat": "cambio",
+   "explica": "Cuenta un <b>cambio de estado</b>: alguien «se pone» o «se vuelve» de cierta forma. Se arma con <b>થઈ</b> (habiéndose vuelto) + <b>જવું</b> (ir) conjugado: <b>થઈ જાઉં છું · થઈ જાઓ છો · થઈ જશે</b>.",
+   "ojo": "No es lo mismo <b>હું નિરાશ છું</b> (estoy desanimado) que <b>હું નિરાશ થઈ જાઉં છું</b> (me desanimo).",
+   "marca": "થઈ જ[઀-૿]*",
+   "cm": 3,
+   "lee": "1.2.3",
+   "ejemplos": [
+    {
+     "gu": "જલદી જ સારા થઈ જાઓ.",
+     "literal": "pronto · mismo · bien · habiéndose vuelto · vaya",
+     "natural": "¡Que se mejore pronto!",
+     "origen": "● 18217",
+     "audio": "audios/bloques/blq_thai_javu_1.mp3"
+    },
+    {
+     "gu": "શું આ દુનિયાનો વિનાશ થઈ જશે?",
+     "literal": "¿acaso · este · mundo-de · destrucción · habiéndose vuelto · irá?",
+     "natural": "¿Será destruido este mundo?",
+     "origen": "● 9383",
+     "audio": "audios/bloques/blq_thai_javu_2.mp3"
+    },
+    {
+     "gu": "ક્યારેક હું નિરાશ થઈ જાઉં છું.",
+     "literal": "a veces · yo · desanimado · habiéndome vuelto · voy · estoy",
+     "natural": "A veces me desanimo.",
+     "origen": "○"
+    },
+    {
+     "gu": "શાંત થઈ જા!",
+     "literal": "tranquilo · habiéndote vuelto · ve",
+     "natural": "¡Cálmate!",
+     "origen": "● 14268"
+    }
+   ],
+   "arma": [
+    {
+     "es": "A veces me desanimo.",
+     "piezas": [
+      "ક્યારેક",
+      "હું",
+      "નિરાશ",
+      "થઈ",
+      "જાઉં",
+      "છું."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hashe",
+   "bloque": "હશે",
+   "que": "estará, será… (y «debe de estar»)",
+   "cat": "suponer",
+   "explica": "<b>હશે</b> es el futuro de <b>હોવું</b> (estar, ser). Sirve para el futuro y también para <b>suponer</b> algo de ahora: «debe de estar», «seguramente».",
+   "ojo": "Con <b>તમે</b> es <b>હશો</b>; con <b>હું</b>, <b>હોઈશ</b>. <b>તમે જોયું હશે</b> supone algo del pasado: «seguramente ha visto».",
+   "marca": "હશે|હશો",
+   "cm": null,
+   "lee": "1.2.3",
+   "ejemplos": [
+    {
+     "gu": "તમે જોયું હશે.",
+     "literal": "usted · visto · habrá",
+     "natural": "Seguramente usted lo ha visto.",
+     "origen": "● 15620",
+     "audio": "audios/bloques/blq_hashe_1.mp3"
+    },
+    {
+     "gu": "તે અત્યારે કામ પર હશે.",
+     "literal": "él/ella · ahora · trabajo · en · estará",
+     "natural": "Debe de estar en el trabajo.",
+     "origen": "○",
+     "audio": "audios/bloques/blq_hashe_2.mp3"
+    },
+    {
+     "gu": "ઈશ્વરના રાજ્યમાં આપણું જીવન કેવું હશે?",
+     "literal": "Dios-del · reino-en · nuestra · vida · cómo · será",
+     "natural": "¿Cómo será nuestra vida en el Reino de Dios?",
+     "origen": "● 24386",
+     "audio": "audios/bloques/blq_hashe_3.mp3"
+    },
+    {
+     "gu": "લોકો અત્યારે ક્યાં હશે?",
+     "literal": "gente · ahora · dónde · estará",
+     "natural": "¿Dónde estará la gente ahora?",
+     "origen": "○ (texto diario)"
+    }
+   ],
+   "arma": [
+    {
+     "es": "Debe de estar en el trabajo.",
+     "piezas": [
+      "તે",
+      "અત્યારે",
+      "કામ",
+      "પર",
+      "હશે."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoy-chhe",
+   "bloque": "હોય છે",
+   "que": "suele estar, siempre es",
+   "cat": "costumbre",
+   "explica": "<b>છે</b> dice cómo es algo <b>ahora</b>. <b>હોય છે</b> dice cómo es <b>siempre, de costumbre</b> o en general.",
+   "ojo": "Compara: <b>આજે સમય નથી</b> (hoy no hay tiempo) y <b>રવિવારે મારી પાસે સમય હોય છે</b> (los domingos tengo tiempo).",
+   "marca": "હોય છે",
+   "cm": null,
+   "lee": "1.2.3",
+   "ejemplos": [
+    {
+     "gu": "રવિવારે મારી પાસે સમય હોય છે.",
+     "literal": "domingo-en · mi · cerca · tiempo · suele haber",
+     "natural": "Los domingos tengo tiempo.",
+     "origen": "○",
+     "audio": "audios/bloques/blq_hoy_chhe_1.mp3"
+    },
+    {
+     "gu": "યહોવા હંમેશાં આપણી સાથે હોય છે.",
+     "literal": "Jehová · siempre · nuestra · con · suele estar",
+     "natural": "Jehová siempre está con nosotros.",
+     "origen": "○",
+     "audio": "audios/bloques/blq_hoy_chhe_2.mp3"
+    },
+    {
+     "gu": "તારા જવાબ બહુ સરસ હોય છે.",
+     "literal": "tus · respuestas · muy · bonitas · suelen ser",
+     "natural": "Tus comentarios siempre son muy buenos.",
+     "origen": "● 42859",
+     "audio": "audios/bloques/blq_hoy_chhe_3.mp3"
+    },
+    {
+     "gu": "દરેક રાજ્યના એક રાજા હોય છે.",
+     "literal": "cada · reino-de · un · rey · suele haber",
+     "natural": "Todo reino tiene un rey.",
+     "origen": "● 957"
+    }
+   ],
+   "arma": [
+    {
+     "es": "Los domingos tengo tiempo.",
+     "piezas": [
+      "રવિવારે",
+      "મારી",
+      "પાસે",
+      "સમય",
+      "હોય",
+      "છે."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eva-samaye",
+   "bloque": "એવા સમયે",
+   "que": "en esos momentos, en ese caso",
+   "cat": "unir",
+   "explica": "Literalmente «en un tiempo así». Se usa para hablar de <b>esos momentos</b> que se acaban de mencionar. Es muy natural en la conversación.",
+   "ojo": "Casi siempre va al principio de la oración, después de contar la situación.",
+   "marca": "એવા સમયે",
+   "cm": null,
+   "lee": "1.2.3",
+   "ejemplos": [
+    {
+     "gu": "એવા સમયે તમે શું કરી શકો?",
+     "literal": "así · tiempo-en · usted · qué · hacer · puede",
+     "natural": "¿Qué puede hacer en esos momentos?",
+     "origen": "● 26148",
+     "audio": "audios/bloques/blq_eva_samaye_1.mp3"
+    },
+    {
+     "gu": "ક્યારેક હું નિરાશ થઈ જાઉં છું. એવા સમયે હું કોઈની સાથે વાત કરું છું.",
+     "literal": "a veces · me desanimo. · así · tiempo-en · yo · alguien-de · con · conversación · hago",
+     "natural": "A veces me desanimo. En esos momentos hablo con alguien.",
+     "origen": "○"
+    }
+   ],
+   "arma": [
+    {
+     "es": "¿Qué puede hacer en esos momentos?",
+     "piezas": [
+      "એવા",
+      "સમયે",
+      "તમે",
+      "શું",
+      "કરી",
+      "શકો?"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jo-evu",
+   "bloque": "જો એવું હોય તો",
+   "que": "si es así…",
+   "cat": "unir",
+   "explica": "Une dos ideas: <b>જો</b> (si) … <b>તો</b> (entonces). <b>એવું હોય</b> = «sea así». Muy útil para responder sin repetir todo.",
+   "ojo": "Muchas veces se dice sin <b>જો</b>: <b>એવું હોય તો સારું</b>. Y con <b>હશે</b>: <b>શક્ય હશે તો આવીશ</b> (si me es posible, iré).",
+   "marca": "(?:જો )?એવું હોય તો|હશે તો",
+   "cm": null,
+   "lee": "1.2.3",
+   "ejemplos": [
+    {
+     "gu": "એવું હોય તો સારું.",
+     "literal": "así · fuera · entonces · bien",
+     "natural": "Ojalá sea así.",
+     "origen": "● 18191",
+     "audio": "audios/bloques/blq_jo_evu_1.mp3"
+    },
+    {
+     "gu": "જો એવું હોય તો હિંમત હારશો નહિ.",
+     "literal": "si · así · fuera · entonces · ánimo · perderá · no",
+     "natural": "Si es así, no se desanime.",
+     "origen": "● 11964",
+     "audio": "audios/bloques/blq_jo_evu_2.mp3"
+    },
+    {
+     "gu": "તમે બીમાર છો? જો એવું હોય તો આરામ કરો.",
+     "literal": "¿usted · enfermo · está? · si · así · fuera · entonces · descanso · haga",
+     "natural": "¿Está enfermo? Si es así, descanse.",
+     "origen": "○"
+    },
+    {
+     "gu": "શક્ય હશે તો આવીશ.",
+     "literal": "posible · será · entonces · vendré",
+     "natural": "Si me es posible, iré.",
+     "origen": "● 42278",
+     "audio": "audios/bloques/blq_jo_evu_4.mp3"
+    }
+   ],
+   "arma": [
+    {
+     "es": "Ojalá sea así.",
+     "piezas": [
+      "એવું",
+      "હોય",
+      "તો",
+      "સારું."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ni-madadthi",
+   "bloque": "…ની મદદથી",
+   "que": "con la ayuda de…",
+   "cat": "animar",
+   "explica": "<b>મદદ</b> (ayuda) + <b>-થી</b> (con, por medio de). Delante va de quién es la ayuda, con <b>-ની</b>: <b>યહોવાની મદદથી</b>, <b>તમારી મદદથી</b>.",
+   "ojo": "Con «su» (de usted) no lleva -ની: <b>તમારી મદદથી</b>. Más adelante verás <b>જેની મદદથી</b> («con cuya ayuda»).",
+   "marca": "[઀-૿]*ની મદદથી|તમારી મદદથી",
+   "cm": null,
+   "lee": "1.2.3",
+   "ejemplos": [
+    {
+     "gu": "યહોવાની મદદથી અમે આ કરી શકીએ છીએ.",
+     "literal": "Jehová-de · ayuda-con · nosotros · esto · hacer · podemos",
+     "natural": "Con la ayuda de Jehová podemos hacerlo.",
+     "origen": "○ (con ● 4944)",
+     "audio": "audios/bloques/blq_ni_madadthi_1.mp3"
+    },
+    {
+     "gu": "તમારી મદદથી મને સમજાયું.",
+     "literal": "su · ayuda-con · a mí · se entendió",
+     "natural": "Gracias a su ayuda lo entendí.",
+     "origen": "○",
+     "audio": "audios/bloques/blq_ni_madadthi_2.mp3"
+    },
+    {
+     "gu": "તેઓ બીજાઓની મદદથી બાઇબલની વાતો સારી રીતે સમજી શક્યા છે.",
+     "literal": "ellos · otros-de · ayuda-con · Biblia-de · cosas · buena · manera · entender · han podido",
+     "natural": "Con la ayuda de otros, han podido entender mejor la Biblia.",
+     "origen": "● 8032"
+    }
+   ],
+   "arma": [
+    {
+     "es": "Con la ayuda de Jehová podemos hacerlo.",
+     "piezas": [
+      "યહોવાની",
+      "મદદથી",
+      "અમે",
+      "આ",
+      "કરી",
+      "શકીએ",
+      "છીએ."
+     ]
+    }
+   ]
+  }
+ ]
+}

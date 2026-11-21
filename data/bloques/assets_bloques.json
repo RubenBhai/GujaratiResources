@@ -1,0 +1,19 @@
+{
+ "leccion": "bloques",
+ "assets": [
+  "audios/bloques/blq_thai_javu_1.mp3",
+  "audios/bloques/blq_thai_javu_2.mp3",
+  "audios/bloques/blq_hashe_1.mp3",
+  "audios/bloques/blq_hashe_2.mp3",
+  "audios/bloques/blq_hashe_3.mp3",
+  "audios/bloques/blq_hoy_chhe_1.mp3",
+  "audios/bloques/blq_hoy_chhe_2.mp3",
+  "audios/bloques/blq_hoy_chhe_3.mp3",
+  "audios/bloques/blq_eva_samaye_1.mp3",
+  "audios/bloques/blq_jo_evu_1.mp3",
+  "audios/bloques/blq_jo_evu_2.mp3",
+  "audios/bloques/blq_jo_evu_4.mp3",
+  "audios/bloques/blq_ni_madadthi_1.mp3",
+  "audios/bloques/blq_ni_madadthi_2.mp3"
+ ]
+}

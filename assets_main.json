@@ -27,6 +27,16 @@
       "size": 5170
     },
     {
+      "url": "bloques.html",
+      "lastModified": 1795291667016,
+      "size": 1145
+    },
+    {
+      "url": "bloques.js",
+      "lastModified": 1795291667017,
+      "size": 8905
+    },
+    {
       "url": "cache_admin.html",
       "lastModified": 1794604186225,
       "size": 2257
@@ -52,6 +62,16 @@
       "size": 4489
     },
     {
+      "url": "clases.html",
+      "lastModified": 1795291667018,
+      "size": 1116
+    },
+    {
+      "url": "clases.js",
+      "lastModified": 1795291667018,
+      "size": 2281
+    },
+    {
       "url": "compone.html",
       "lastModified": 1794605400242,
       "size": 1855
@@ -63,8 +83,8 @@
     },
     {
       "url": "contenido.html",
-      "lastModified": 1795156569802,
-      "size": 11900
+      "lastModified": 1795291667021,
+      "size": 13974
     },
     {
       "url": "contenido.js",
@@ -458,8 +478,8 @@
     },
     {
       "url": "pfd.js",
-      "lastModified": 1795215387019,
-      "size": 18923
+      "lastModified": 1795291667022,
+      "size": 18680
     },
     {
       "url": "pfd_repaso.html",
@@ -803,8 +823,8 @@
     },
     {
       "url": "tema-pfd.css",
-      "lastModified": 1795200544861,
-      "size": 10396
+      "lastModified": 1795291667024,
+      "size": 12651
     },
     {
       "url": "tema-piensa.css",
