@@ -1,0 +1,81 @@
+{
+  "leccion": "bloques",
+  "_generadoDesde": "https://piensaengujarati.com/",
+  "assets": [
+    {
+      "url": "audios/bloques/blq_thai_javu_1.mp3",
+      "lastModified": 1795291752000,
+      "size": 8847
+    },
+    {
+      "url": "audios/bloques/blq_thai_javu_2.mp3",
+      "lastModified": 1795291752000,
+      "size": 15430
+    },
+    {
+      "url": "audios/bloques/blq_hashe_1.mp3",
+      "lastModified": 1795291752000,
+      "size": 7280
+    },
+    {
+      "url": "audios/bloques/blq_hashe_2.mp3",
+      "lastModified": 1795291752000,
+      "size": 9788
+    },
+    {
+      "url": "audios/bloques/blq_hashe_3.mp3",
+      "lastModified": 1795291752000,
+      "size": 19819
+    },
+    {
+      "url": "audios/bloques/blq_hoy_chhe_1.mp3",
+      "lastModified": 1795291752000,
+      "size": 14019
+    },
+    {
+      "url": "audios/bloques/blq_hoy_chhe_2.mp3",
+      "lastModified": 1795291752000,
+      "size": 17938
+    },
+    {
+      "url": "audios/bloques/blq_hoy_chhe_3.mp3",
+      "lastModified": 1795291752000,
+      "size": 11198
+    },
+    {
+      "url": "audios/bloques/blq_eva_samaye_1.mp3",
+      "lastModified": 1795291752000,
+      "size": 13079
+    },
+    {
+      "url": "audios/bloques/blq_jo_evu_1.mp3",
+      "lastModified": 1795291752000,
+      "size": 6810
+    },
+    {
+      "url": "audios/bloques/blq_jo_evu_2.mp3",
+      "lastModified": 1795291752000,
+      "size": 13549
+    },
+    {
+      "url": "audios/bloques/blq_jo_evu_4.mp3",
+      "lastModified": 1795291752000,
+      "size": 10728
+    },
+    {
+      "url": "audios/bloques/blq_ni_madadthi_1.mp3",
+      "lastModified": 1795291752000,
+      "size": 17468
+    },
+    {
+      "url": "audios/bloques/blq_ni_madadthi_2.mp3",
+      "lastModified": 1795291752000,
+      "size": 10728
+    },
+    {
+      "url": "data/bloques/bloques.json",
+      "lastModified": 1795291667020,
+      "size": 11250
+    }
+  ]
+}
