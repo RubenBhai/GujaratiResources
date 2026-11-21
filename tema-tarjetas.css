@@ -103,7 +103,17 @@ body.con-visor { overflow:hidden; }
 
 /* IMPRESIÓN: una tarjeta por momento, caras lado a lado, en tinta oscura */
 .solo-print { display:none; }
+/* categorías y marca de lectura (20-nov-2026) */
+.cats { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; margin:0 0 14px; padding-bottom:2px; }
+.cats::-webkit-scrollbar { display:none; }
+.cat { flex:0 0 auto; background:#241D1A; color:var(--paper); border:1px solid transparent; border-radius:var(--r-full); padding:8px 14px;
+  font:inherit; font-size:.95rem; cursor:pointer; white-space:nowrap; }
+.cat.on { background:var(--surface-light); border-color:var(--saffron); }
+.momento-lee { display:block; font-size:.8rem; color:var(--saffron-light); margin-top:3px; }
+.momento-lee.toda { color:var(--amo); }
+.frase-gu .lee { font-size:.85rem; vertical-align:middle; }
 @media print {
+  .imp-cat { font-family:'Fraunces',serif; font-size:15pt; margin:3mm 0 3mm; color:#222; break-after:avoid; }
   @page { size:A4; margin:12mm; }
   body { background:#fff; color:#222; padding:0; }
   .no-print, .nav-bar, .controles { display:none !important; }

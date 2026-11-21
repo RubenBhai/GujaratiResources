@@ -2,7 +2,12 @@
    Datos: data/tarjetas/tarjetas_rapidas.json · Audio: audios/tarjetas/<audio>_<m|h>.mp3 */
 (function () {
   var PDF = 'data/tarjetas/Tarjetas_Rapidas_Piensa_en_Gujarati.pdf';
-  var DATOS = null, actual = 0, cara = 'digo', voz = 'm', sinEs = false;
+  var DATOS = null, actual = 0, cara = 'digo', voz = 'm', sinEs = false, cat = 'todas';
+  // Categorías y marca de lectura (Claude, 20-nov-2026): cada frase trae «lee» = la lección desde la que se puede leer
+  function completada(cod) { return leer('leccion_' + String(cod).replace(/\./g, '_'), '') === 'completada'; }
+  function visibles() { return DATOS.momentos.map(function (m, i) { return i; }).filter(function (i) { return cat === 'todas' || DATOS.momentos[i].cat === cat; }); }
+  function maxLee(m) { var ORD = ['1.1.1','1.1.2','1.1.3','1.2.1','1.2.2','1.2.3','1.3.1','1.3.2','1.3.3','1.4.1','1.4.2'];
+    return m.digo.concat(m.dicen).reduce(function (a, f) { return ORD.indexOf(f.lee) > ORD.indexOf(a) ? f.lee : a; }, '1.1.1'); }
   var audio = new Audio(), cola = [], filaSonando = null;
   var $ = function (id) { return document.getElementById(id); };
 
@@ -43,10 +48,20 @@
 
   /* ── vistas ── */
   function pintarLista() {
-    $('momentos').innerHTML = DATOS.momentos.map(function (m, i) {
+    var cats = (DATOS.categorias || []).filter(function (c) { return DATOS.momentos.some(function (m) { return m.cat === c.id; }); }), fila = $('cats');
+    if (!fila && cats.length) { fila = document.createElement('div'); fila.id = 'cats'; fila.className = 'cats'; $('momentos').before(fila); }
+    if (fila) {
+      fila.innerHTML = [{ id: 'todas', titulo: 'Todas' }].concat(cats).map(function (c) {
+        return '<button class="cat' + (c.id === cat ? ' on' : '') + '" data-c="' + c.id + '">' + esc(c.titulo) + '</button>'; }).join('');
+      [].forEach.call(fila.querySelectorAll('.cat'), function (b) { b.onclick = function () { cat = b.dataset.c; guardar('tarjetas_cat', cat); pintarLista(); }; });
+    }
+    $('momentos').innerHTML = visibles().map(function (i) {
+      var m = DATOS.momentos[i], todas = m.digo.concat(m.dicen), ya = todas.filter(function (f) { return f.lee && completada(f.lee); }).length;
+      var lect = !todas[0].lee ? '' : (ya === todas.length ? '📖 ya la puedes leer toda' : (ya ? '📖 ya lees ' + ya + ' de ' + todas.length + ' · ' : '📖 ') + 'toda desde la ' + maxLee(m));
       return '<button class="momento" data-i="' + i + '"><span class="momento-num">' + (i + 1) + '</span>' +
         '<span><span class="momento-tit">' + esc(m.titulo) + '</span>' +
-        '<span class="momento-sub">' + m.digo.length + ' para decir · ' + m.dicen.length + ' para entender</span></span></button>';
+        '<span class="momento-sub">' + m.digo.length + ' para decir · ' + m.dicen.length + ' para entender</span>' +
+        (lect ? '<span class="momento-lee' + (ya === todas.length ? ' toda' : '') + '">' + lect + '</span>' : '') + '</span></button>';
     }).join('');
     [].forEach.call($('momentos').querySelectorAll('.momento'), function (b) {
       b.onclick = function () { abrir(+b.dataset.i); };
@@ -54,10 +69,12 @@
   }
   function pintarTarjeta() {
     var m = DATOS.momentos[actual];
-    $('t-num').textContent = 'MOMENTO ' + (actual + 1) + ' DE ' + DATOS.momentos.length;
+    var vis = visibles(), pos = vis.indexOf(actual);
+    if (pos < 0) { vis = DATOS.momentos.map(function (x, i) { return i; }); pos = actual; }
+    $('t-num').textContent = 'MOMENTO ' + (pos + 1) + ' DE ' + vis.length;
     $('t-titulo').textContent = m.titulo;
-    $('btn-ant').disabled = actual === 0;
-    $('btn-sig').disabled = actual === DATOS.momentos.length - 1;
+    $('btn-ant').disabled = pos === 0;
+    $('btn-sig').disabled = pos === vis.length - 1;
     [].forEach.call(document.querySelectorAll('.cara-btn'), function (b) {
       var on = b.dataset.cara === cara; b.classList.toggle('activa', on); b.setAttribute('aria-selected', on);
     });
@@ -65,7 +82,7 @@
     var av = $('aviso-audio'); if (av) av.remove();
     ul.innerHTML = m[cara].map(function (f, i) {
       return '<li><button class="frase" data-i="' + i + '"><span class="frase-play">▶</span><span>' +
-        '<span class="frase-gu">' + esc(textoDe(f)) + '</span><span class="frase-es">' + esc(espDe(f)) + '</span></span></button></li>';
+        '<span class="frase-gu">' + esc(textoDe(f)) + (f.lee && completada(f.lee) ? ' <span class="lee" title="Ya la puedes leer">📖</span>' : '') + '</span><span class="frase-es">' + esc(espDe(f)) + '</span></span></button></li>';
     }).join('');
     [].forEach.call(ul.querySelectorAll('.frase'), function (b) {
       b.onclick = function () { parar(); tocar(m[cara][+b.dataset.i], b); };
@@ -82,13 +99,17 @@
     try { history.replaceState(null, '', location.pathname); } catch (e) {}
   }
   function pintarImpresion() {
-    $('vista-impresion').innerHTML = DATOS.momentos.map(function (m, i) {
+    var catPrev = null, catTit = {}; (DATOS.categorias || []).forEach(function (c) { catTit[c.id] = c.titulo; });
+    $('vista-impresion').innerHTML = DATOS.momentos.map(function (m, i) { return i; }).sort(function (a, b) {
+      var ca = (DATOS.categorias || []).findIndex(function (c) { return c.id === DATOS.momentos[a].cat; }), cb = (DATOS.categorias || []).findIndex(function (c) { return c.id === DATOS.momentos[b].cat; });
+      return ca - cb || a - b; }).map(function (i) { var m = DATOS.momentos[i];
       var cara_ = function (lista, clase, tit) {
         return '<div class="imp-cara ' + clase + '"><h4>' + tit + '</h4><ul>' + lista.map(function (f) {
           return '<li><span class="gu">' + esc(f.gu) + '</span><span class="es">' + esc(f.es) + '</span></li>';
         }).join('') + '</ul></div>';
       };
-      return '<div class="imp-tarjeta"><h3><span>' + (i + 1) + '</span>' + esc(m.titulo) + '</h3><div class="imp-caras">' +
+      var h2 = (m.cat && m.cat !== catPrev) ? '<h2 class="imp-cat">' + esc(catTit[m.cat] || '') + '</h2>' : ''; catPrev = m.cat;
+      return h2 + '<div class="imp-tarjeta"><h3><span>' + (i + 1) + '</span>' + esc(m.titulo) + '</h3><div class="imp-caras">' +
         cara_(m.digo, 'digo', 'Lo que digo') + cara_(m.dicen, 'dicen', 'Lo que me pueden decir') + '</div></div>';
     }).join('');
   }
@@ -138,6 +159,7 @@
   /* ── arranque ── */
   function iniciar() {
     voz = leer('tarjetas_voz', 'm') === 'h' ? 'h' : 'm';
+    cat = leer('tarjetas_cat', 'todas'); if (cat !== 'todas' && !(DATOS.categorias || []).some(function (c) { return c.id === cat; })) cat = 'todas';
     sinEs = leer('tarjetas_sin_es', '0') === '1';
     $('btn-es').setAttribute('aria-pressed', sinEs);
     $('btn-es').textContent = sinEs ? '👁️ Mostrar español' : '🙈 Ocultar español';
@@ -185,8 +207,10 @@
     };
     $('btn-descargar').onclick = descargar; revisarDescarga();
     [].forEach.call(document.querySelectorAll('.cara-btn'), function (b) { b.onclick = function () { parar(); cara = b.dataset.cara; pintarTarjeta(); }; });
-    $('btn-ant').onclick = function () { if (actual > 0) abrir(actual - 1); };
-    $('btn-sig').onclick = function () { if (actual < DATOS.momentos.length - 1) abrir(actual + 1); };
+    function mover(d) { var vis = visibles(), p = vis.indexOf(actual); if (p < 0) { vis = DATOS.momentos.map(function (x, i) { return i; }); p = actual; }
+      if (vis[p + d] !== undefined) abrir(vis[p + d]); }
+    $('btn-ant').onclick = function () { mover(-1); };
+    $('btn-sig').onclick = function () { mover(1); };
     $('btn-todas').onclick = tocarTodas;
     $('btn-volver').onclick = volver;
     $('fuente').textContent = DATOS.fuente || '';
