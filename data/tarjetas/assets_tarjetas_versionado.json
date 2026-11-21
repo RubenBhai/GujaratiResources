@@ -99,8 +99,8 @@
     },
     {
       "url": "audios/tarjetas/tr_m02_r1_m.mp3",
-      "lastModified": 1794854431823,
-      "noEncontrado": true
+      "lastModified": 28200727196443,
+      "size": 4929
     },
     {
       "url": "audios/tarjetas/tr_m02_r2_h.mp3",
@@ -874,8 +874,8 @@
     },
     {
       "url": "data/tarjetas/tarjetas_rapidas.json",
-      "lastModified": 1794854333593,
-      "size": 15214
+      "lastModified": 1795219250661,
+      "size": 18197
     }
   ]
 }
