@@ -28,8 +28,8 @@
     },
     {
       "url": "bloques.html",
-      "lastModified": 1795291667016,
-      "size": 1145
+      "lastModified": 1795293081652,
+      "size": 1225
     },
     {
       "url": "bloques.js",
@@ -63,8 +63,8 @@
     },
     {
       "url": "clases.html",
-      "lastModified": 1795291667018,
-      "size": 1116
+      "lastModified": 1795293081652,
+      "size": 1196
     },
     {
       "url": "clases.js",
@@ -293,8 +293,8 @@
     },
     {
       "url": "guia.html",
-      "lastModified": 1795292476234,
-      "size": 9516
+      "lastModified": 1795293081653,
+      "size": 9674
     },
     {
       "url": "guia_mapa_common.css",
@@ -477,9 +477,14 @@
       "size": 6415
     },
     {
+      "url": "nav_atras.js",
+      "lastModified": 1795293081650,
+      "size": 854
+    },
+    {
       "url": "pfd.html",
-      "lastModified": 1795202720370,
-      "size": 1135
+      "lastModified": 1795293081654,
+      "size": 1215
     },
     {
       "url": "pfd.js",
@@ -488,8 +493,8 @@
     },
     {
       "url": "pfd_repaso.html",
-      "lastModified": 1795156569800,
-      "size": 966
+      "lastModified": 1795293081655,
+      "size": 1044
     },
     {
       "url": "pfd_repaso.js",
@@ -558,8 +563,8 @@
     },
     {
       "url": "tarjetas.html",
-      "lastModified": 1794802973021,
-      "size": 3156
+      "lastModified": 1795293081656,
+      "size": 3293
     },
     {
       "url": "tarjetas.js",
@@ -913,8 +918,8 @@
     },
     {
       "url": "tip.html",
-      "lastModified": 1795100854547,
-      "size": 1797
+      "lastModified": 1795293081657,
+      "size": 1900
     },
     {
       "url": "tip.js",
@@ -923,8 +928,8 @@
     },
     {
       "url": "transforma.html",
-      "lastModified": 1795202720372,
-      "size": 1640
+      "lastModified": 1795293081658,
+      "size": 1652
     },
     {
       "url": "transforma.js",
