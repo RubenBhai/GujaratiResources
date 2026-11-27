@@ -24,6 +24,7 @@
   .siguiente .btn { display:block; margin-bottom:10px; }
   .siguiente ul { list-style:none; } .siguiente li { margin:8px 0; } .siguiente li a { color:var(--paper); }
   .siguiente li a b { color:var(--saffron); }
+  a.paso.test-link { color:inherit; text-decoration:none; } a.paso.test-link:hover { border-color:var(--saffron); }
   .semana td:first-child { color:var(--saffron); font-weight:700; width:96px; } .semana tr:last-child td { border-bottom:0; }
 </style>
 </head>
@@ -37,7 +38,9 @@
   <h1>🧭 ¿Por dónde empiezo?</h1>
   <p class="sub">El corazón del curso son las <b>lecciones</b>. Todo lo demás te ayuda a practicar lo que ya aprendiste. Con 15 a 30 minutos al día avanzas bien.</p>
 
+  <div id="continuar" data-guia="1" hidden></div>
   <div class="siguiente" id="siguiente"></div>
+  <a class="paso test-link" href="test_nivel.html"><div class="num">🎯</div><div><div class="t">¿Vuelves después de un tiempo?</div><p>Si te sientes perdido, haz el <b>test de nivel</b>: unos 3 minutos y te decimos en qué lección seguir.</p></div></a>
 
   <h2>El camino</h2>
   <div class="paso"><div class="num">1</div><div><div class="t">Haz las lecciones en orden</div><p>Empieza por la 1.1.1. Cada lección te enseña unas letras, las usa en palabras y termina con un diálogo de la vida real. No te saltes ninguna: cada una prepara la siguiente.</p></div></div>
@@ -89,7 +92,10 @@
   var orden = LECCIONES.map(function (l) { return l[0]; });
   var sig = LECCIONES.filter(function (l) { return !hecha(l[0]); })[0];
   var ultima = -1; orden.forEach(function (c, i) { if (hecha(c)) ultima = i; });
-  var h = '<div class="lbl">👉 Tu siguiente paso</div>';
+  var tn = null; try { tn = JSON.parse(localStorage.getItem('test_nivel') || 'null'); } catch (e) {}
+  if (tn && tn.leccion && tn.leccion !== 'todas' && Date.now() - tn.t < 60 * 864e5 && (!sig || orden.indexOf(tn.leccion) < orden.indexOf(sig[0])))
+    sig = LECCIONES.filter(function (l) { return l[0] === tn.leccion; })[0] || sig;   // el test de nivel manda volver a una lección anterior
+  var h = '<div class="lbl">👉 Tu siguiente paso' + (tn && tn.leccion !== 'todas' && sig && sig[0] === tn.leccion ? ' (según tu test de nivel)' : '') + '</div>';
   if (sig) h += '<div class="t">' + (ultima < 0 ? 'Empieza por la lección ' : 'Lección ') + sig[0] + ' · ' + sig[1] + '</div>' +
                 '<a class="btn sabe" href="leccion_loader.html?leccion=' + sig[0] + '">Ir a la lección ' + sig[0] + ' →</a>';
   else h += '<div class="t">¡Terminaste todas las lecciones publicadas! 🎉</div><p class="sub">La próxima está en camino. Mientras tanto, practica con los recursos de abajo.</p>';
@@ -99,6 +105,7 @@
   document.getElementById('siguiente').innerHTML = h;
 })();
 </script>
+<script src="continuar.js"></script>
 <script src="nav_atras.js"></script>
 </body>
 </html>

@@ -1,0 +1,233 @@
+{
+ "version": 1,
+ "niveles": [
+  {
+   "leccion": "1.1.1",
+   "preguntas": [
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_kaam.mp3",
+     "correcta": "કામ",
+     "opciones": [
+      "કામ",
+      "મામા",
+      "કાકા"
+     ],
+     "significado": "trabajo"
+    },
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_moko.mp3",
+     "correcta": "મોકો",
+     "opciones": [
+      "મોકો",
+      "ઓછો",
+      "મામા"
+     ],
+     "significado": "oportunidad"
+    },
+    {
+     "tipo": "significa",
+     "gu": "આ મામા છે.",
+     "audio": null,
+     "correcta": "Este es mi tío materno.",
+     "opciones": [
+      "Este es mi tío materno.",
+      "Ese es mi tío paterno.",
+      "¿Cómo está tu mamá?"
+     ]
+    }
+   ]
+  },
+  {
+   "leccion": "1.1.2",
+   "preguntas": [
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_sarkaar.mp3",
+     "correcta": "સરકાર",
+     "opciones": [
+      "સરકાર",
+      "સહારો",
+      "સરસ"
+     ],
+     "significado": "gobierno"
+    },
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_u(m)mar.mp3",
+     "correcta": "ઉંમર",
+     "opciones": [
+      "ઉંમર",
+      "અમારું",
+      "આરામ"
+     ],
+     "significado": "edad"
+    },
+    {
+     "tipo": "significa",
+     "gu": "આ મારો છોકરો છે.",
+     "audio": null,
+     "correcta": "Este es mi hijo.",
+     "opciones": [
+      "Este es mi hijo.",
+      "Esta es mi hija.",
+      "Este es mi tío."
+     ]
+    }
+   ]
+  },
+  {
+   "leccion": "1.1.3",
+   "preguntas": [
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_shaher.mp3",
+     "correcta": "શહેર",
+     "opciones": [
+      "શહેર",
+      "શરીર",
+      "શાંતિ"
+     ],
+     "significado": "ciudad"
+    },
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_nokrii.mp3",
+     "correcta": "નોકરી",
+     "opciones": [
+      "નોકરી",
+      "છોકરી",
+      "નાક"
+     ],
+     "significado": "empleo, trabajo"
+    },
+    {
+     "tipo": "significa",
+     "gu": "રાત છે. આરામ કરો!",
+     "audio": "audios/clase_1_1/dialogo_1_1_3_12.mp3",
+     "correcta": "Es de noche. ¡A descansar!",
+     "opciones": [
+      "Es de noche. ¡A descansar!",
+      "Es de día. ¡A trabajar!",
+      "¿Qué hora es?"
+     ]
+    }
+   ]
+  },
+  {
+   "leccion": "1.2.1",
+   "preguntas": [
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_parivaar.mp3",
+     "correcta": "પરિવાર",
+     "opciones": [
+      "પરિવાર",
+      "પવન",
+      "વેપારી"
+     ],
+     "significado": "familia"
+    },
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_vishvaas.mp3",
+     "correcta": "વિશ્વાસ",
+     "opciones": [
+      "વિશ્વાસ",
+      "શ્વાસ",
+      "વિશ્વ"
+     ],
+     "significado": "confianza, fe"
+    },
+    {
+     "tipo": "significa",
+     "gu": "હું સારી છું. આ મારા પતિ છે.",
+     "audio": "audios/clase_1_1/dialogo_1_2_1_02.mp3",
+     "correcta": "Estoy bien. Este es mi esposo.",
+     "opciones": [
+      "Estoy bien. Este es mi esposo.",
+      "Estoy bien. Esta es mi hija.",
+      "¿Cómo está su esposo?"
+     ]
+    }
+   ]
+  },
+  {
+   "leccion": "1.2.2",
+   "preguntas": [
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_prakaashan.mp3",
+     "correcta": "પ્રકાશન",
+     "opciones": [
+      "પ્રકાશન",
+      "પ્રકાશ",
+      "પ્રેમ"
+     ],
+     "significado": "publicación (revista, folleto)"
+    },
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_jamiin.mp3",
+     "correcta": "જમીન",
+     "opciones": [
+      "જમીન",
+      "જીવન",
+      "યહોવા"
+     ],
+     "significado": "tierra (el suelo, el planeta)"
+    },
+    {
+     "tipo": "significa",
+     "gu": "આજે? આજે તો સમય નથી.",
+     "audio": "audios/clase_1_1/dialogo_1_2_2_04.mp3",
+     "correcta": "¿Hoy? Hoy no hay tiempo.",
+     "opciones": [
+      "¿Hoy? Hoy no hay tiempo.",
+      "¿Hoy? Hoy sí podemos.",
+      "¿Mañana? Mañana no hay trabajo."
+     ]
+    }
+   ]
+  },
+  {
+   "leccion": "1.2.3",
+   "preguntas": [
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_balidaan.mp3",
+     "correcta": "બલિદાન",
+     "opciones": [
+      "બલિદાન",
+      "બાઈબલ",
+      "દરવાજો"
+     ],
+     "significado": "sacrificio"
+    },
+    {
+     "tipo": "oir",
+     "audio": "audios/clase_1_1/audio_m_mulaakaat.mp3",
+     "correcta": "મુલાકાત",
+     "opciones": [
+      "મુલાકાત",
+      "લોકો",
+      "કલમ"
+     ],
+     "significado": "visita"
+    },
+    {
+     "tipo": "significa",
+     "gu": "મનિષા, હું શું મદદ કરું?",
+     "audio": "audios/clase_1_1/dialogo_1_2_3_11.mp3",
+     "correcta": "Manisha, ¿en qué te ayudo?",
+     "opciones": [
+      "Manisha, ¿en qué te ayudo?",
+      "Manisha, ¿qué hora es?",
+      "Manisha, ¿quién es este?"
+     ]
+    }
+   ]
+  }
+ ]
+}

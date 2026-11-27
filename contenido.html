@@ -71,6 +71,7 @@
     .rc-dot { position:absolute; top:7px; right:9px; width:10px; height:10px; border-radius:50%; background:#A3C945; box-shadow:0 0 0 3px rgba(163,201,69,.18); }
     @media (min-width:700px) { .carril { flex-wrap:wrap; -webkit-mask-image:none; mask-image:none; } .rc { flex:1 1 120px; } }
   </style>
+  <div id="continuar" hidden></div>
   <div class="bienvenida" id="bienvenida" hidden>
     <div><b>¿Primera vez aquí?</b> Empieza por la lección 1.1.1 y mira cómo aprovechar cada recurso.</div>
     <div class="bv-btns"><a href="guia.html" id="bv-guia">🧭 ¿Por dónde empiezo?</a><button type="button" id="bv-cerrar" aria-label="Cerrar">✕</button></div>
@@ -102,6 +103,7 @@
     c.addEventListener('scroll', fin); window.addEventListener('resize', fin); fin();
   })();
   </script>
+  <script src="continuar.js"></script>
   </section>
 
   <!-- ══ ETAPA 1: cuatro módulos de 3 lecciones + repaso (X.X.R) ══ -->
